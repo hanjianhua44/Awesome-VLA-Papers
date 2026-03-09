@@ -1,0 +1,1130 @@
+- title: 'DriveWorld-VLA: Unified Latent-Space World Modeling with VLA for AD'
+  arxiv: '2602.06521'
+  url: https://arxiv.org/abs/2602.06521
+  institution: 北京交通大学, 香港理工
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 在潜空间统一世界模型与VLA规划，用世界模型潜在状态作为VLA决策状态，NAVSIM SOTA
+- title: 'DriveFine: Refining-Augmented Masked Diffusion VLA'
+  arxiv: '2602.14577'
+  url: https://arxiv.org/abs/2602.14577
+  institution: 华南理工, 大连理工
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 掩码扩散VLA + 可插拔Block-MoE，生成/修正专家解耦，结合混合RL自纠错
+- title: 'HiST-VLA: Hierarchical Spatio-Temporal VLA for E2E AD'
+  arxiv: '2602.13329'
+  url: https://arxiv.org/abs/2602.13329
+  institution: 中科院自动化所
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 层次化时空VLA，融合多尺度时空特征用于端到端驾驶感知预测规划
+- title: 'UniUGP: Unifying Understanding, Generation, and Planning for E2E AD'
+  arxiv: '2512.09864'
+  url: https://arxiv.org/abs/2512.09864
+  institution: 清华
+  venue: arXiv 2025
+  domain: ad
+  subcategory: e2e
+  summary: 统一场景理解、视频生成与轨迹规划，端到端多任务联合训练
+- title: 'MindDrive: VLA for AD via Online RL'
+  arxiv: '2512.13636'
+  url: https://arxiv.org/abs/2512.13636
+  institution: 国防科大
+  venue: arXiv 2025
+  domain: ad
+  subcategory: e2e
+  summary: 将在线RL引入自动驾驶VLA训练，提升闭环场景鲁棒性
+- title: 'E3AD: Emotion-Aware VLA for Human-Centric E2E AD'
+  arxiv: '2512.04733'
+  url: https://arxiv.org/abs/2512.04733
+  institution: 澳门大学, McGill
+  venue: arXiv 2025
+  domain: ad
+  subcategory: e2e
+  summary: 首个情感感知自动驾驶VLA，VAD情绪模型+双路径空间推理
+- title: Unleashing the Potential of Diffusion Models for E2E AD
+  arxiv: '2602.22801'
+  url: https://arxiv.org/abs/2602.22801
+  institution: 华中科大
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 系统性探索扩散模型在端到端自动驾驶规划中的范式
+- title: 'AlignDrive: Aligned Lateral-Longitudinal Planning for E2E AD'
+  arxiv: '2601.01762'
+  url: https://arxiv.org/abs/2601.01762
+  institution: 华为
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 横纵向对齐规划，解耦横向和纵向决策提升端到端规划精度
+- title: 'VGGDrive: Cross-View Geometric Grounding for AD'
+  arxiv: '2602.20794'
+  url: https://arxiv.org/abs/2602.20794
+  institution: 天津大学, 香港理工
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 将3D基础模型的跨视图几何特征注入VLM，层次自适应注入赋予3D感知
+- title: From Representational Complementarity to Dual Systems (HybridDriveVLA)
+  arxiv: '2602.10719'
+  url: https://arxiv.org/abs/2602.10719
+  institution: 大连理工, 理想汽车
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: VLM与纯视觉backbone互补，快慢双系统策略，VLM仅低置信时介入，吞吐量提升3.2x
+- title: 'ReCogDrive: Reinforced Cognitive Framework for E2E AD'
+  arxiv: '2506.08052'
+  url: https://arxiv.org/abs/2506.08052
+  institution: 大连理工
+  venue: arXiv 2025
+  domain: ad
+  subcategory: e2e
+  summary: 强化认知框架，增强端到端驾驶场景理解与推理决策
+- title: 'Alpamayo-R1: Reasoning and Action Prediction for AD in the Long Tail'
+  arxiv: '2511.00088'
+  url: https://arxiv.org/abs/2511.00088
+  institution: NVIDIA
+  venue: arXiv 2025
+  domain: ad
+  subcategory: e2e
+  summary: 面向长尾场景的推理-动作桥接方案，增强自动驾驶泛化能力
+- title: 'KnowVal: Knowledge-Augmented and Value-Guided AD System'
+  arxiv: '2512.20299'
+  url: https://arxiv.org/abs/2512.20299
+  institution: 北大, UC Merced
+  venue: arXiv 2025
+  domain: ad
+  subcategory: e2e
+  summary: 驾驶知识图谱（交规+防御驾驶+伦理）+ 价值模型，知识增强可解释规划
+- title: 'ZTRS: Zero-Imitation E2E AD with Trajectory Scoring'
+  arxiv: '2510.24108'
+  url: https://arxiv.org/abs/2510.24108
+  institution: Waymo, UT Austin
+  venue: arXiv 2025
+  domain: ad
+  subcategory: e2e
+  summary: 零模仿学习，通过轨迹评分替代传统模仿实现端到端驾驶
+- title: 'F1: A VLA Bridging Understanding and Generation to Actions'
+  arxiv: '2509.06951'
+  url: https://arxiv.org/abs/2509.06951
+  institution: 中科院自动化所, 上海AI Lab
+  venue: arXiv 2025
+  domain: ad
+  subcategory: e2e
+  summary: 统一视觉理解与生成能力的VLA，克服反应式策略的局限
+- title: 'DrivePI: Spatial-aware 4D MLLM for Unified AD'
+  arxiv: '2512.12799'
+  url: https://arxiv.org/abs/2512.12799
+  institution: 华为诺亚
+  venue: arXiv 2025
+  domain: ad
+  subcategory: e2e
+  summary: 空间感知的4D多模态大模型，统一感知、预测和规划
+- title: 'OmniNWM: Omniscient Driving Navigation World Models'
+  arxiv: '2510.18313'
+  url: https://arxiv.org/abs/2510.18313
+  institution: 清华, 鹏城实验室
+  venue: arXiv 2025
+  domain: ad
+  subcategory: world-model
+  summary: 全景导航世界模型，联合生成RGB/语义/深度/3D占据，支持精确动作控制
+- title: 'LCDrive: Latent CoT World Modeling for E2E Driving'
+  arxiv: '2512.10226'
+  url: https://arxiv.org/abs/2512.10226
+  institution: UT Austin, NVIDIA, Stanford
+  venue: arXiv 2025
+  domain: ad
+  subcategory: world-model
+  summary: 潜空间交替生成动作提议token和世界模型token，统一推理与决策
+- title: 'FutureX: Latent CoT World Model for E2E AD'
+  arxiv: '2512.11226'
+  url: https://arxiv.org/abs/2512.11226
+  institution: 哈工大深圳, CUHK-SZ
+  venue: arXiv 2025
+  domain: ad
+  subcategory: world-model
+  summary: Auto-think Switch自适应启用潜在世界模型CoT rollout
+- title: Risk-Aware World Model Predictive Control for E2E AD
+  arxiv: '2602.23259'
+  url: https://arxiv.org/abs/2602.23259
+  institution: 中山大学
+  venue: arXiv 2026
+  domain: ad
+  subcategory: world-model
+  summary: 风险感知的世界模型预测控制，提升不确定环境泛化
+- title: 'DriveLaW: Unifying Planning and Video Generation in a Latent Driving World'
+  arxiv: '2512.23421'
+  url: https://arxiv.org/abs/2512.23421
+  institution: 大连理工
+  venue: arXiv 2025
+  domain: ad
+  subcategory: world-model
+  summary: 潜空间统一规划与视频生成
+- title: 'Map-World: Masked Action Planning and Path-Integral World Model for AD'
+  arxiv: '2511.20156'
+  url: https://arxiv.org/abs/2511.20156
+  institution: 澳门大学
+  venue: arXiv 2025
+  domain: ad
+  subcategory: world-model
+  summary: 掩码动作规划+路径积分世界模型，高效处理多模态未来
+- title: 'Stag-1: Realistic 4D Driving Simulation with Video Generation'
+  arxiv: '2412.05280'
+  url: https://arxiv.org/abs/2412.05280
+  institution: 上海AI Lab, 港大
+  venue: arXiv 2024
+  domain: ad
+  subcategory: world-model
+  summary: 视频生成模型构建逼真4D驾驶仿真
+- title: 'VFMF: World Modeling by Forecasting Vision Foundation Model Features'
+  arxiv: '2512.11225'
+  url: https://arxiv.org/abs/2512.11225
+  institution: Oxford
+  venue: arXiv 2025
+  domain: ad
+  subcategory: world-model
+  summary: 在视觉基础模型特征空间中预测未来而非像素
+- title: 'DiST-4D: Disentangled Spatiotemporal Diffusion for 4D Driving Scene Generation'
+  arxiv: '2503.15208'
+  url: https://arxiv.org/abs/2503.15208
+  institution: 清华, 鹏城实验室
+  venue: arXiv 2025
+  domain: ad
+  subcategory: world-model
+  summary: 解耦空间时间的扩散+度量深度，4D驾驶场景生成
+- title: 'HybridWorldSim: Scalable High-fidelity Simulator for AD'
+  arxiv: '2511.22187'
+  url: https://arxiv.org/abs/2511.22187
+  institution: 华为
+  venue: arXiv 2025
+  domain: ad
+  subcategory: world-model
+  summary: 混合式高保真自动驾驶仿真器
+- title: 'World Guidance: World Modeling in Condition Space for Action Generation'
+  arxiv: '2602.22010'
+  url: https://arxiv.org/abs/2602.22010
+  institution: 清华
+  venue: arXiv 2026
+  domain: ad
+  subcategory: world-model
+  summary: 条件空间世界建模指导动作生成
+- title: 'Motus: A Unified Latent Action World Model'
+  arxiv: '2512.13030'
+  url: https://arxiv.org/abs/2512.13030
+  institution: 清华
+  venue: arXiv 2025
+  domain: ad
+  subcategory: world-model
+  summary: 统一潜在动作世界模型，联合建模动作与环境动态
+- title: 'SimScale: Learning to Drive via Real-World Simulation at Scale'
+  arxiv: '2511.23369'
+  url: https://arxiv.org/abs/2511.23369
+  institution: 上海AI Lab
+  venue: arXiv 2025
+  domain: ad
+  subcategory: simulation-data
+  summary: 真实数据大规模仿真框架，3D渲染+轨迹扰动覆盖安全关键状态
+- title: Are All Data Necessary? Efficient Data Pruning for AD Dataset
+  arxiv: '2512.19270'
+  url: https://arxiv.org/abs/2512.19270
+  institution: 清华
+  venue: arXiv 2025
+  domain: ad
+  subcategory: simulation-data
+  summary: 轨迹熵最大化高效裁剪大规模自动驾驶数据集
+- title: 'Driving with A Thousand Faces: Closed-Loop Personalized E2E AD Benchmark'
+  arxiv: '2602.18757'
+  url: https://arxiv.org/abs/2602.18757
+  institution: 清华
+  venue: arXiv 2026
+  domain: ad
+  subcategory: simulation-data
+  summary: 首个闭环个性化端到端驾驶评估基准
+- title: Evaluating Gemini Robotics Policies in a Veo World Simulator
+  arxiv: '2512.10675'
+  url: https://arxiv.org/abs/2512.10675
+  institution: Google DeepMind
+  venue: arXiv 2025
+  domain: ad
+  subcategory: simulation-data
+  summary: Veo视频基础模型构建策略评估系统，覆盖OOD泛化与安全测试
+- title: 'WaymoQA: Multi-View VQA for Safety-Critical Reasoning in AD'
+  arxiv: '2511.20022'
+  url: https://arxiv.org/abs/2511.20022
+  institution: 延世大学
+  venue: arXiv 2025
+  domain: ad
+  subcategory: simulation-data
+  summary: 面向安全关键推理的多视角驾驶VQA数据集
+- title: 'WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching'
+  arxiv: '2512.06112'
+  url: https://arxiv.org/abs/2512.06112
+  institution: 上海交大
+  venue: arXiv 2025
+  domain: ad
+  subcategory: planning
+  summary: 并行粗到细运动规划，离散流匹配高效轨迹生成
+- title: 'TrajMoE: Scene-Adaptive Trajectory Planning with MoE and RL'
+  arxiv: '2512.07135'
+  url: https://arxiv.org/abs/2512.07135
+  institution: 清华
+  venue: arXiv 2025
+  domain: ad
+  subcategory: planning
+  summary: 场景自适应轨迹规划，MoE+RL专家路由
+- title: 'WorldLens: Full-Spectrum Evaluations of Driving World Models'
+  arxiv: '2512.10958'
+  url: https://arxiv.org/abs/2512.10958
+  institution: NTU, S-Lab
+  venue: arXiv 2025
+  domain: ad
+  subcategory: safety-benchmark
+  summary: 五维度全谱系驾驶世界模型评估（生成/重建/动作跟随/下游任务/人类偏好）
+- title: 'WorldModelBench: Judging Video Generation Models As World Models'
+  arxiv: '2502.20694'
+  url: https://arxiv.org/abs/2502.20694
+  institution: Berkeley, MIT, NVIDIA
+  venue: arXiv 2025
+  domain: ad
+  subcategory: safety-benchmark
+  summary: 世界建模能力评估，67K人工标注，含物理遵循维度
+- title: 'Safe-SDL: Safety Boundaries for AI-Driven Self-Driving Labs'
+  arxiv: '2602.15061'
+  url: https://arxiv.org/abs/2602.15061
+  institution: 苏州大学
+  venue: arXiv 2026
+  domain: ad
+  subcategory: safety-benchmark
+  summary: AI自动实验室安全框架（ODD + CBF + 事务安全协议）
+- title: 'π₀.₆: a VLA That Learns From Experience'
+  arxiv: '2511.14759'
+  url: https://arxiv.org/abs/2511.14759
+  institution: Physical Intelligence
+  venue: arXiv 2025
+  domain: robot
+  subcategory: vla-arch
+  summary: PI公司VLA，通过自主经验积累提升策略
+- title: 'MiMo-Embodied: X-Embodied Foundation Model'
+  arxiv: '2511.16518'
+  url: https://arxiv.org/abs/2511.16518
+  institution: 小米
+  venue: arXiv 2025
+  domain: robot
+  subcategory: vla-arch
+  summary: 小米跨具身基础模型，支持多机器人形态统一策略
+- title: 'Xiaomi-Robotics-0: Open-Sourced VLA with Real-Time Execution'
+  arxiv: '2602.12684'
+  url: https://arxiv.org/abs/2602.12684
+  institution: 小米
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 小米开源VLA，强调实时推理
+- title: 'DM0: Embodied-Native VLA towards Physical AI'
+  arxiv: '2602.14974'
+  url: https://arxiv.org/abs/2602.14974
+  institution: 地平线
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 具身原生VLA，面向Physical AI的端到端设计
+- title: 'RynnBrain: Open Embodied Foundation Models'
+  arxiv: '2602.14979'
+  url: https://arxiv.org/abs/2602.14979
+  institution: RynnAI
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 开放具身基础模型，统一多任务多模态
+- title: 'RynnVLA-002: A Unified VLA and World Model'
+  arxiv: '2511.17502'
+  url: https://arxiv.org/abs/2511.17502
+  institution: RynnAI, 浙大
+  venue: arXiv 2025
+  domain: robot
+  subcategory: vla-arch
+  summary: 统一VLA与世界模型的双能力架构
+- title: 'ABot-M0: VLA Foundation Model with Action Manifold Learning'
+  arxiv: '2602.11236'
+  url: https://arxiv.org/abs/2602.11236
+  institution: 西安交大
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 动作流形学习构建机器人操作VLA
+- title: 'WholeBodyVLA: Unified Latent VLA for Whole-Body Loco-Manipulation'
+  arxiv: '2512.11047'
+  url: https://arxiv.org/abs/2512.11047
+  institution: 上海AI Lab
+  venue: arXiv 2025
+  domain: robot
+  subcategory: vla-arch
+  summary: 全身运动操作VLA，从无标注自我中心视频学习+定制运动RL控制器
+- title: 'HiMoE-VLA: Hierarchical MoE for Generalist VLA'
+  arxiv: '2512.05693'
+  url: https://arxiv.org/abs/2512.05693
+  institution: 微软, 复旦
+  venue: arXiv 2025
+  domain: robot
+  subcategory: vla-arch
+  summary: 层次MoE处理跨具身/动作空间异构数据，逐层抽象共享知识
+- title: 'BagelVLA: Long-Horizon Manipulation via Interleaved VLA Generation'
+  arxiv: '2602.09849'
+  url: https://arxiv.org/abs/2602.09849
+  institution: 清华, 上海AI Lab
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 交错式VLA生成，增强长时域操作能力
+- title: 'Stellar VLA: Continually Evolving Skill Knowledge'
+  arxiv: '2511.18085'
+  url: https://arxiv.org/abs/2511.18085
+  institution: 上海交大
+  venue: arXiv 2025
+  domain: robot
+  subcategory: vla-arch
+  summary: 知识驱动持续学习VLA，知识空间建模+专家路由实现技能进化
+- title: 'ManualVLA: CoT Manual Generation and Robotic Manipulation'
+  arxiv: '2512.02013'
+  url: https://arxiv.org/abs/2512.02013
+  institution: 北大
+  venue: arXiv 2025
+  domain: robot
+  subcategory: vla-arch
+  summary: 同时生成思维链操作手册和执行机器人操作
+- title: 'HALO: Unified VLA for Embodied Multimodal CoT Reasoning'
+  arxiv: '2602.21157'
+  url: https://arxiv.org/abs/2602.21157
+  institution: 上海交大
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: VLA + 多模态CoT推理，增强长时域和OOD场景
+- title: 'AsyncVLA: Asynchronous Flow Matching for VLA'
+  arxiv: '2511.14148'
+  url: https://arxiv.org/abs/2511.14148
+  institution: 清华
+  venue: arXiv 2025
+  domain: robot
+  subcategory: vla-arch
+  summary: 异步流匹配，解耦视觉语言理解与动作生成频率
+- title: 'LDA-1B: Scaling Latent Dynamics Action Model'
+  arxiv: '2602.12215'
+  url: https://arxiv.org/abs/2602.12215
+  institution: 字节跳动
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 10亿参数潜在动力学动作模型，通用具身数据摄取
+- title: 'MEM: Multi-Scale Embodied Memory for VLA'
+  arxiv: '2603.03596'
+  url: https://arxiv.org/abs/2603.03596
+  institution: Stanford, Google DeepMind
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 多尺度记忆（视频短时+文本长时），支持15分钟复杂多阶段任务
+- title: 'SIMA 2: Generalist Embodied Agent for Virtual Worlds'
+  arxiv: '2512.04797'
+  url: https://arxiv.org/abs/2512.04797
+  institution: Google DeepMind
+  venue: arXiv 2025
+  domain: robot
+  subcategory: vla-arch
+  summary: 通用虚拟世界具身智能体，跨游戏环境泛化
+- title: 'RoboMIND 2.0: Multimodal Bimanual Mobile Manipulation Dataset'
+  arxiv: '2512.24653'
+  url: https://arxiv.org/abs/2512.24653
+  institution: 北大
+  venue: arXiv 2025
+  domain: robot
+  subcategory: vla-arch
+  summary: 多模态双臂移动操作数据集
+- title: 'GigaBrain-0.5M: VLA from World Model-Based RL'
+  arxiv: '2602.12099'
+  url: https://arxiv.org/abs/2602.12099
+  institution: GigaBrain Team
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 基于世界模型RL训练的VLA
+- title: 'OAT: Ordered Action Tokenization'
+  arxiv: '2602.04215'
+  url: https://arxiv.org/abs/2602.04215
+  institution: MIT
+  venue: arXiv 2026
+  domain: robot
+  subcategory: action-token
+  summary: 有序动作词元化，高压缩+因果有序+前缀可解码，推理时精度-速度任意权衡
+- title: 'ActionCodec: What Makes for Good Action Tokenizers'
+  arxiv: '2602.15397'
+  url: https://arxiv.org/abs/2602.15397
+  institution: 清华, 复旦
+  venue: arXiv 2026
+  domain: robot
+  subcategory: action-token
+  summary: 从VLA优化角度建立动作词元化设计原则，SmolVLM-2.2B LIBERO 95.5%
+- title: 'VQ-BeT: Behavior Generation with Latent Actions'
+  arxiv: '2403.03181'
+  url: https://arxiv.org/abs/2403.03181
+  institution: NYU
+  venue: arXiv 2024
+  domain: robot
+  subcategory: action-token
+  summary: 层次化VQ增强行为Transformer，推理5x快于扩散策略
+- title: 'RDT-2: Scaling UMI Data with RVQ'
+  arxiv: '2602.03310'
+  url: https://arxiv.org/abs/2602.03310
+  institution: 清华
+  venue: arXiv 2026
+  domain: robot
+  subcategory: action-token
+  summary: 7B VLM + RVQ对齐语言与连续控制，首次跨具身零样本泛化
+- title: 'NIAF: Neural Implicit Action Fields'
+  arxiv: '2603.01766'
+  url: https://arxiv.org/abs/2603.01766
+  institution: 西安交大
+  venue: arXiv 2026
+  domain: robot
+  subcategory: action-token
+  summary: 动作预测重构为连续函数回归，MLLM层次频谱调制器生成无限分辨率轨迹
+- title: 'FASTer: Efficient Autoregressive VLA via Neural Action Tokenization'
+  arxiv: '2512.04952'
+  url: https://arxiv.org/abs/2512.04952
+  institution: 腾讯
+  venue: arXiv 2025
+  domain: robot
+  subcategory: action-token
+  summary: 神经动作词元化加速自回归VLA
+- title: 'LatBot: Distilling Universal Latent Actions for VLA'
+  arxiv: '2511.23034'
+  url: https://arxiv.org/abs/2511.23034
+  institution: 微软亚研
+  venue: arXiv 2025
+  domain: robot
+  subcategory: action-token
+  summary: 大规模操作视频蒸馏通用潜在动作表征
+- title: 'World-VLA-Loop: Closed-Loop Learning of Video World Model and VLA Policy'
+  arxiv: '2602.06508'
+  url: https://arxiv.org/abs/2602.06508
+  institution: NUS
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 视频世界模型与VLA策略闭环协同学习
+- title: 'DreamDojo: Generalist Robot World Model from Human Videos'
+  arxiv: '2602.06949'
+  url: https://arxiv.org/abs/2602.06949
+  institution: UC San Diego, KAIST
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 从大规模人类视频学习通用机器人世界模型
+- title: 'RISE: Self-Improving Robot Policy with Compositional World Model'
+  arxiv: '2602.11075'
+  url: https://arxiv.org/abs/2602.11075
+  institution: 上海AI Lab
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 组合式世界模型驱动机器人策略自我进化
+- title: 'VLAW: Iterative Co-Improvement of VLA Policy and World Model'
+  arxiv: '2602.12063'
+  url: https://arxiv.org/abs/2602.12063
+  institution: Stanford
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: VLA策略与世界模型迭代协同提升
+- title: 'WoVR: World Models as Reliable Simulators for Post-Training VLA with RL'
+  arxiv: '2602.13977'
+  url: https://arxiv.org/abs/2602.13977
+  institution: 港中文
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 世界模型作为可靠模拟器用于VLA后训练RL
+- title: 'NORA-1.5: VLA with World Model and Action-based Preference Rewards'
+  arxiv: '2511.14659'
+  url: https://arxiv.org/abs/2511.14659
+  institution: CMU
+  venue: arXiv 2025
+  domain: robot
+  subcategory: world-model-policy
+  summary: 世界模型+动作偏好奖励训练VLA
+- title: World Action Models are Zero-shot Policies (DreamZero)
+  arxiv: '2602.15922'
+  url: https://arxiv.org/abs/2602.15922
+  institution: KAIST, Google
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 世界动作模型直接作为零样本策略，无需额外训练
+- title: 'RoboScape-R: Unified Reward-Observation World Models for RL'
+  arxiv: '2512.03556'
+  url: https://arxiv.org/abs/2512.03556
+  institution: 人大
+  venue: arXiv 2025
+  domain: robot
+  subcategory: world-model-policy
+  summary: 统一奖励-观测世界模型，面向泛化机器人RL
+- title: 'SRPO: Self-Referential Policy Optimization for VLA'
+  arxiv: '2511.15605'
+  url: https://arxiv.org/abs/2511.15605
+  institution: 上海交大
+  venue: arXiv 2025
+  domain: robot
+  subcategory: rl-policy
+  summary: 自参照策略优化，用自身预测做参考信号
+- title: 'πRL: Online RL Fine-tuning for Flow-based VLA'
+  arxiv: '2510.25889'
+  url: https://arxiv.org/abs/2510.25889
+  institution: UC Berkeley
+  venue: arXiv 2025
+  domain: robot
+  subcategory: rl-policy
+  summary: 面向流匹配VLA的在线RL微调
+- title: Reinforcing Action Policies by Prophesying
+  arxiv: '2511.20633'
+  url: https://arxiv.org/abs/2511.20633
+  institution: 复旦
+  venue: arXiv 2025
+  domain: robot
+  subcategory: rl-policy
+  summary: 通过预言（预测未来状态）强化动作策略
+  star: true
+- title: Alleviating Sparse Rewards in Flow-Based GRPO
+  arxiv: '2602.06422'
+  url: https://arxiv.org/abs/2602.06422
+  institution: 浙大
+  venue: arXiv 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: 建模逐步和长期采样效应，缓解流式GRPO稀疏奖励
+- title: 'PhyCritic: Multimodal Critic Models for Physical AI'
+  arxiv: '2602.11124'
+  url: https://arxiv.org/abs/2602.11124
+  institution: UMD, NVIDIA
+  venue: arXiv 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: 多模态物理Critic，评估动作物理合理性
+- title: 'Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling'
+  arxiv: '2602.11146'
+  url: https://arxiv.org/abs/2602.11146
+  institution: 港大
+  venue: arXiv 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: 扩散原生潜在奖励建模
+- title: Unified RL and Imitation Learning for VLMs
+  arxiv: '2510.19307'
+  url: https://arxiv.org/abs/2510.19307
+  institution: KAIST
+  venue: arXiv 2025
+  domain: robot
+  subcategory: rl-policy
+  summary: 统一RL与模仿学习的VLM训练范式
+- title: Modular Safety Guardrails for FM-Enabled Robots
+  arxiv: '2602.04056'
+  url: https://arxiv.org/abs/2602.04056
+  institution: Purdue, UMich
+  venue: arXiv 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: 模块化安全护栏：动作安全+决策安全+以人为中心安全
+- title: Action Hallucination in Generative VLA Models
+  arxiv: '2602.06339'
+  url: https://arxiv.org/abs/2602.06339
+  institution: NUS
+  venue: arXiv 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: 分析VLA动作幻觉（拓扑/精度/视野障碍），提出结构性解释
+- title: 'IGen: Scalable Data Generation from Open-World Images'
+  arxiv: '2512.01773'
+  url: https://arxiv.org/abs/2512.01773
+  institution: 清华深圳
+  venue: arXiv 2025
+  domain: robot
+  subcategory: data-pretrain
+  summary: 开放世界图像→逼真视觉观测+可执行动作，合成数据媲美真实
+- title: 'RoboWheel: Data Engine from Real-World Human Demonstrations'
+  arxiv: '2512.02729'
+  url: https://arxiv.org/abs/2512.02729
+  institution: 清华
+  venue: arXiv 2025
+  domain: robot
+  subcategory: data-pretrain
+  summary: HOI视频→跨具身训练数据，首次量化证明HOI可监督机器人学习
+- title: 'In-N-On: Scaling Egocentric Manipulation with Wild+On-task Data'
+  arxiv: '2511.15704'
+  url: https://arxiv.org/abs/2511.15704
+  institution: UC San Diego
+  venue: arXiv 2025
+  domain: robot
+  subcategory: data-pretrain
+  summary: 1000+小时自我中心数据配方，训练大规模流匹配策略Human0
+- title: Scalable VLA Pretraining with Real-Life Human Activity Videos
+  arxiv: '2510.21571'
+  url: https://arxiv.org/abs/2510.21571
+  institution: 微软亚研
+  venue: arXiv 2025
+  domain: robot
+  subcategory: data-pretrain
+  summary: 人类活动视频预训练VLA，扩展数据规模
+- title: 'TraceGen: World Modeling in 3D Trace Space'
+  arxiv: '2511.21690'
+  url: https://arxiv.org/abs/2511.21690
+  institution: NYU
+  venue: arXiv 2025
+  domain: robot
+  subcategory: data-pretrain
+  summary: 3D轨迹空间建模，跨具身视频学习操作
+- title: How Do VLAs Effectively Inherit from VLMs?
+  arxiv: '2511.06619'
+  url: https://arxiv.org/abs/2511.06619
+  institution: 微软亚研
+  venue: arXiv 2025
+  domain: robot
+  subcategory: data-pretrain
+  summary: 系统研究VLA继承VLM预训练知识的机制
+- title: 'LAP: Language-Action Pre-Training for Zero-shot Cross-Embodiment'
+  arxiv: '2602.10556'
+  url: https://arxiv.org/abs/2602.10556
+  institution: Princeton
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: 动作直接用自然语言表示，无需词元化器即可跨具身零样本迁移
+- title: 'InternData-A1: High-Fidelity Synthetic Data for Generalist Policy'
+  arxiv: '2511.16651'
+  url: https://arxiv.org/abs/2511.16651
+  institution: 上海AI Lab
+  venue: arXiv 2025
+  domain: robot
+  subcategory: data-pretrain
+  summary: 高保真合成数据管线，面向通用策略预训练
+- title: 'SAGE: Scalable Agentic 3D Scene Generation for Embodied AI'
+  arxiv: '2602.10116'
+  url: https://arxiv.org/abs/2602.10116
+  institution: NVIDIA
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: 智能体式3D场景生成，为具身AI提供训练环境
+- title: 'VLM²: Vision-Language Memory for Spatial Reasoning'
+  arxiv: '2511.20644'
+  url: https://arxiv.org/abs/2511.20644
+  institution: SUNY Buffalo
+  venue: arXiv 2025
+  domain: general
+  subcategory: spatial
+  summary: 双记忆模块（工作记忆+情景记忆），视图一致3D空间推理
+- title: 'MoE3D: MoE meets Multi-Modal 3D Understanding'
+  arxiv: '2511.22103'
+  url: https://arxiv.org/abs/2511.22103
+  institution: 港中文, 上科大
+  venue: arXiv 2025
+  domain: general
+  subcategory: spatial
+  summary: MoE引入多模态3D理解，专家分别处理不同模态
+- title: 'DynamicVerse: Physically-Aware Multimodal 4D World Modeling'
+  arxiv: '2512.03000'
+  url: https://arxiv.org/abs/2512.03000
+  institution: 厦大, Meta
+  venue: arXiv 2025
+  domain: general
+  subcategory: spatial
+  summary: 100K+视频物理尺度多模态4D标注框架
+- title: '4DLangVGGT: 4D Language-Visual Geometry Grounded Transformer'
+  arxiv: '2512.05060'
+  url: https://arxiv.org/abs/2512.05060
+  institution: 华科
+  venue: arXiv 2025
+  domain: general
+  subcategory: spatial
+  summary: 首个Transformer前馈式4D语言接地框架
+- title: 'G²VLM: Geometry Grounded VLM'
+  arxiv: '2511.21688'
+  url: https://arxiv.org/abs/2511.21688
+  institution: 上海AI Lab
+  venue: arXiv 2025
+  domain: general
+  subcategory: spatial
+  summary: 统一3D重建与空间推理的几何VLM
+- title: Scaling Spatial Intelligence with Multimodal Foundation Models
+  arxiv: '2511.13719'
+  url: https://arxiv.org/abs/2511.13719
+  institution: 上海AI Lab
+  venue: arXiv 2025
+  domain: general
+  subcategory: spatial
+  summary: 规模化多模态基础模型培养空间智能
+- title: 'Forging Spatial Intelligence: Roadmap'
+  arxiv: '2512.24385'
+  url: https://arxiv.org/abs/2512.24385
+  institution: NTU
+  venue: arXiv 2025
+  domain: general
+  subcategory: spatial
+  summary: 面向自主系统的多模态数据预训练空间智能路线图
+- title: 'SpatialTree: How Spatial Abilities Branch Out in MLLMs'
+  arxiv: '2512.20617'
+  url: https://arxiv.org/abs/2512.20617
+  institution: 北航
+  venue: arXiv 2025
+  domain: general
+  subcategory: spatial
+  summary: 空间能力层次评估：感知→推理→交互
+- title: '4D-RGPT: Region-level 4D Understanding'
+  arxiv: '2512.17012'
+  url: https://arxiv.org/abs/2512.17012
+  institution: NVIDIA, NTU
+  venue: arXiv 2025
+  domain: general
+  subcategory: spatial
+  summary: 感知蒸馏实现区域级4D时空推理
+- title: 'Motion4D: 3D-Consistent Motion and Semantics for 4D Scene Understanding'
+  arxiv: '2512.03601'
+  url: https://arxiv.org/abs/2512.03601
+  institution: NUS
+  venue: arXiv 2025
+  domain: general
+  subcategory: spatial
+  summary: 3D一致运动+语义，4D场景理解
+- title: 'SAM 3D: 3Dfy Anything in Images'
+  arxiv: '2511.16624'
+  url: https://arxiv.org/abs/2511.16624
+  institution: Meta AI
+  venue: arXiv 2025
+  domain: general
+  subcategory: spatial
+  summary: 单图像3D物体重建（几何+纹理+布局）
+- title: 'PixelRefer: Unified Spatio-Temporal Object Referring'
+  arxiv: '2510.23603'
+  url: https://arxiv.org/abs/2510.23603
+  institution: 浙大
+  venue: arXiv 2025
+  domain: general
+  subcategory: spatial
+  summary: 任意粒度时空对象引用框架
+- title: Revisiting Multimodal Positional Encoding in VLMs
+  arxiv: '2510.23095'
+  url: https://arxiv.org/abs/2510.23095
+  institution: 阿里巴巴
+  venue: arXiv 2025
+  domain: general
+  subcategory: spatial
+  summary: 系统分析VLM多模态位置编码设计
+- title: 'ThinkMorph: Emergent Properties in Multimodal Interleaved CoT'
+  arxiv: '2510.27492'
+  url: https://arxiv.org/abs/2510.27492
+  institution: UW, Microsoft
+  venue: arXiv 2025
+  domain: general
+  subcategory: latent-reasoning
+  summary: 交错文本-图像推理链，涌现多模态智能
+- title: 'LaST₀: Latent Spatio-Temporal CoT for Robotic VLA'
+  arxiv: '2601.05248'
+  url: https://arxiv.org/abs/2601.05248
+  institution: 北大, 港中文
+  venue: arXiv 2026
+  domain: general
+  subcategory: latent-reasoning
+  summary: 潜在时空CoT + 双系统MoT（低频推理+高频动作），实机提升13-14%
+- title: 'Mull-Tokens: Modality-Agnostic Latent Thinking'
+  arxiv: '2512.10941'
+  url: https://arxiv.org/abs/2512.10941
+  institution: BU, Meta, Stanford
+  venue: arXiv 2025
+  domain: general
+  subcategory: latent-reasoning
+  summary: 模态无关潜在token，自由在图像/文本空间思考
+- title: 'Chain-of-Visual-Thought: Teaching VLMs with Continuous Visual Tokens'
+  arxiv: '2511.19418'
+  url: https://arxiv.org/abs/2511.19418
+  institution: UC Berkeley
+  venue: arXiv 2025
+  domain: general
+  subcategory: latent-reasoning
+  summary: 连续视觉token视觉思维链，增强密集视觉感知
+- title: 'SwimBird: Switchable Reasoning Mode in Hybrid Autoregressive MLLMs'
+  arxiv: '2602.06040'
+  url: https://arxiv.org/abs/2602.06040
+  institution: 中科大
+  venue: arXiv 2026
+  domain: general
+  subcategory: latent-reasoning
+  summary: 按需切换语言/视觉推理模式
+- title: 'COCONUT: Training LLMs to Reason in Continuous Latent Space'
+  arxiv: '2412.06769'
+  url: https://arxiv.org/abs/2412.06769
+  institution: Meta FAIR
+  venue: arXiv 2024
+  domain: general
+  subcategory: latent-reasoning
+  summary: LLM连续潜空间推理，突破语言推理表征瓶颈
+- title: 'Unifying Perception and Action: Implicit Visual CoT'
+  arxiv: '2511.19859'
+  url: https://arxiv.org/abs/2511.19859
+  institution: 南京大学
+  venue: arXiv 2025
+  domain: general
+  subcategory: latent-reasoning
+  summary: 混合模态管线+隐式视觉CoT统一感知与动作
+- title: 'VideoAuto-R1: Video Auto Reasoning (Thinking Once, Answering Twice)'
+  arxiv: '2601.05175'
+  url: https://arxiv.org/abs/2601.05175
+  institution: Meta
+  venue: arXiv 2026
+  domain: general
+  subcategory: latent-reasoning
+  summary: 按需推理，低置信才激活，响应长度减少3.3x
+- title: 'VL-JEPA: Joint Embedding Predictive Architecture for Vision-language'
+  arxiv: '2512.10942'
+  url: https://arxiv.org/abs/2512.10942
+  institution: HKUST, Meta FAIR
+  venue: arXiv 2025
+  domain: general
+  subcategory: multimodal-arch
+  summary: JEPA范式VLM，嵌入空间预测，参数少50%性能更强
+- title: 'BAGEL: Emerging Properties in Unified Multimodal Pretraining'
+  arxiv: '2505.14683'
+  url: https://arxiv.org/abs/2505.14683
+  institution: 字节跳动
+  venue: arXiv 2025
+  domain: general
+  subcategory: multimodal-arch
+  summary: 统一多模态理解和生成的开源基础模型
+- title: 'CLI: Dynamic Cross-Layer Injection for Deep VL Fusion'
+  arxiv: '2601.10710'
+  url: https://arxiv.org/abs/2601.10710
+  institution: 电子科大
+  venue: arXiv 2026
+  domain: general
+  subcategory: multimodal-arch
+  summary: 动态多对多跨层注入，LLM按需访问完整视觉层次
+- title: 'LightFusion: Double Fusion for Unified Multimodal'
+  arxiv: '2510.22946'
+  url: https://arxiv.org/abs/2510.22946
+  institution: 字节跳动
+  venue: arXiv 2025
+  domain: general
+  subcategory: multimodal-arch
+  summary: 轻量双融合框架统一理解与生成
+- title: Qwen3-VL Technical Report
+  arxiv: '2511.21631'
+  url: https://arxiv.org/abs/2511.21631
+  institution: 阿里巴巴
+  venue: arXiv 2025
+  domain: general
+  subcategory: multimodal-arch
+  summary: Qwen系列最强VLM，原生交错多模态+agentic能力
+- title: 'SAM 3: Segment Anything with Concepts'
+  arxiv: '2511.16719'
+  url: https://arxiv.org/abs/2511.16719
+  institution: Meta AI
+  venue: arXiv 2025
+  domain: general
+  subcategory: multimodal-arch
+  summary: SAM第三代，概念提示驱动的统一检测分割跟踪
+- title: 'Rethinking Generative Image Pretraining: Scaling Next-Pixel Prediction'
+  arxiv: '2511.08704'
+  url: https://arxiv.org/abs/2511.08704
+  institution: Google
+  venue: arXiv 2025
+  domain: general
+  subcategory: multimodal-arch
+  summary: 自回归逐像素预测缩放特性研究
+- title: 'DeepSeek-OCR 2: Visual Causal Flow'
+  arxiv: '2601.20552'
+  url: https://arxiv.org/abs/2601.20552
+  institution: DeepSeek AI
+  venue: arXiv 2026
+  domain: general
+  subcategory: multimodal-arch
+  summary: 视觉因果流模型
+- title: 'Efficient Training of Diffusion MoE: A Practical Recipe'
+  arxiv: '2512.01252'
+  url: https://arxiv.org/abs/2512.01252
+  institution: 字节跳动
+  venue: arXiv 2025
+  domain: general
+  subcategory: multimodal-arch
+  summary: 扩散MoE高效训练配方
+- title: 'MindGPT-4ov: Enhanced MLLM via Multi-Stage Post-Training'
+  arxiv: '2512.02895'
+  url: https://arxiv.org/abs/2512.02895
+  institution: 腾讯
+  venue: arXiv 2025
+  domain: general
+  subcategory: multimodal-arch
+  summary: 多阶段后训练增强多模态大模型
+- title: 'VLA-Perf: Demystifying VLA Inference Performance'
+  arxiv: '2602.18397'
+  url: https://arxiv.org/abs/2602.18397
+  institution: Stanford
+  venue: arXiv 2026
+  domain: general
+  subcategory: efficient
+  summary: 首个VLA推理性能分析基准工具
+- title: 'PSA: Pyramid Sparse Attention for Efficient Video'
+  arxiv: '2512.04025'
+  url: https://arxiv.org/abs/2512.04025
+  institution: Monash
+  venue: arXiv 2025
+  domain: general
+  subcategory: efficient
+  summary: 金字塔稀疏注意力，高效视频理解/生成
+- title: 'Blink: Dynamic Visual Token Resolution'
+  arxiv: '2512.10548'
+  url: https://arxiv.org/abs/2512.10548
+  institution: 中科院
+  venue: arXiv 2025
+  domain: general
+  subcategory: efficient
+  summary: 动态视觉token分辨率
+- title: 'ApET: Approximation-Error Guided Token Compression'
+  arxiv: '2602.19870'
+  url: https://arxiv.org/abs/2602.19870
+  institution: 中科院深圳
+  venue: arXiv 2026
+  domain: general
+  subcategory: efficient
+  summary: 近似误差引导token压缩
+- title: 'AstraNav-Memory: Contexts Compression for Long Memory'
+  arxiv: '2512.21627'
+  url: https://arxiv.org/abs/2512.21627
+  institution: 浙大
+  venue: arXiv 2025
+  domain: general
+  subcategory: efficient
+  summary: 长程记忆上下文压缩
+- title: Efficient Multi-Camera Tokenization with Triplanes
+  arxiv: '2506.12251'
+  url: https://arxiv.org/abs/2506.12251
+  institution: NVIDIA, Stanford
+  venue: arXiv 2025
+  domain: general
+  subcategory: efficient
+  summary: 三平面高效多相机词元化
+- title: Towards Efficient Multi-Camera Encoding for E2E Driving
+  arxiv: '2512.10947'
+  url: https://arxiv.org/abs/2512.10947
+  institution: NVIDIA
+  venue: arXiv 2025
+  domain: general
+  subcategory: efficient
+  summary: 高效多相机编码方案
+- title: 'PAI-Bench: A Comprehensive Benchmark For Physical AI'
+  arxiv: '2512.01989'
+  url: https://arxiv.org/abs/2512.01989
+  institution: CMU, SHI Lab
+  venue: arXiv 2025
+  domain: general
+  subcategory: physical-benchmark
+  summary: 物理AI统一基准，2808真实案例评估感知与预测
+- title: 'ProPhy: Progressive Physical Alignment for Dynamic World Simulation'
+  arxiv: '2512.05564'
+  url: https://arxiv.org/abs/2512.05564
+  institution: 中山大学
+  venue: arXiv 2025
+  domain: general
+  subcategory: physical-benchmark
+  summary: 渐进式物理对齐，MoE物理专家+VLM推理迁移
+- title: 'PICABench: How Far from Physically Realistic Image Editing?'
+  arxiv: '2510.17681'
+  url: https://arxiv.org/abs/2510.17681
+  institution: 港中文, 上海AI Lab
+  venue: arXiv 2025
+  domain: general
+  subcategory: physical-benchmark
+  summary: 系统评估T2I编辑物理真实性（光学/力学/状态转换）
+- title: 'Beyond Words and Pixels: Implicit World Knowledge Reasoning'
+  arxiv: '2511.18271'
+  url: https://arxiv.org/abs/2511.18271
+  institution: 快手
+  venue: arXiv 2025
+  domain: general
+  subcategory: physical-benchmark
+  summary: T2I模型隐含世界知识与物理因果推理评估
+- title: 'PhyBlock: Physical Understanding via 3D Block Assembly'
+  arxiv: '2506.08708'
+  url: https://arxiv.org/abs/2506.08708
+  institution: CMU, 中山大学
+  venue: arXiv 2025
+  domain: general
+  subcategory: physical-benchmark
+  summary: 3D积木组装的渐进式物理理解基准
+- title: 'WorldArena: Unified Benchmark for Embodied World Models'
+  arxiv: '2602.08971'
+  url: https://arxiv.org/abs/2602.08971
+  institution: 人大
+  venue: arXiv 2026
+  domain: general
+  subcategory: physical-benchmark
+  summary: 统一评估具身世界模型感知与功能效用
+- title: A Comprehensive Survey on World Models for Embodied AI
+  arxiv: '2510.16732'
+  url: https://arxiv.org/abs/2510.16732
+  institution: A*STAR
+  venue: arXiv 2025
+  domain: general
+  subcategory: survey
+  summary: ''
+- title: A Survey on Efficient Vision-Language-Action Models
+  arxiv: '2510.24795'
+  url: https://arxiv.org/abs/2510.24795
+  institution: 武大
+  venue: arXiv 2025
+  domain: general
+  subcategory: survey
+  summary: ''
+- title: 'Reliable and Responsible Foundation Models: A Comprehensive Survey'
+  arxiv: '2602.08145'
+  url: https://arxiv.org/abs/2602.08145
+  institution: 多机构
+  venue: arXiv 2026
+  domain: general
+  subcategory: survey
+  summary: ''
+- title: Video Generation Models in Robotics
+  arxiv: '2601.07823'
+  url: https://arxiv.org/abs/2601.07823
+  institution: Stanford
+  venue: arXiv 2026
+  domain: general
+  subcategory: survey
+  summary: ''
+- title: 'Multimodal Spatial Reasoning in the Large Model Era: Survey'
+  arxiv: '2510.25760'
+  url: https://arxiv.org/abs/2510.25760
+  institution: 港大
+  venue: arXiv 2025
+  domain: general
+  subcategory: survey
+  summary: ''
+- title: Real Deep Research for AI, Robotics and Beyond
+  arxiv: '2510.20809'
+  url: https://arxiv.org/abs/2510.20809
+  institution: Wisconsin, Apple
+  venue: arXiv 2025
+  domain: general
+  subcategory: survey
+  summary: ''
+- title: Paper Title
+  arxiv: ''
+  url: link
+  institution: Institution
+  venue: Venue Year
+  domain: general
+  subcategory: survey
+  summary: 一句话中文简介
+  code: link
