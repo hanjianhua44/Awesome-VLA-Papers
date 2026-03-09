@@ -1,7 +1,7 @@
 - title: 'DriveWorld-VLA: Unified Latent-Space World Modeling with VLA for AD'
   arxiv: '2602.06521'
   url: https://arxiv.org/abs/2602.06521
-  institution: 北京交通大学, 香港理工
+  institution: BJTU, PolyU
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
@@ -9,7 +9,7 @@
 - title: 'DriveFine: Refining-Augmented Masked Diffusion VLA'
   arxiv: '2602.14577'
   url: https://arxiv.org/abs/2602.14577
-  institution: 华南理工, 大连理工
+  institution: SCUT, DUT
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
@@ -17,7 +17,7 @@
 - title: 'HiST-VLA: Hierarchical Spatio-Temporal VLA for E2E AD'
   arxiv: '2602.13329'
   url: https://arxiv.org/abs/2602.13329
-  institution: 中科院自动化所
+  institution: CASIA
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
@@ -25,7 +25,7 @@
 - title: 'UniUGP: Unifying Understanding, Generation, and Planning for E2E AD'
   arxiv: '2512.09864'
   url: https://arxiv.org/abs/2512.09864
-  institution: 清华
+  institution: Tsinghua
   venue: arXiv 2025
   domain: ad
   subcategory: e2e
@@ -33,7 +33,7 @@
 - title: 'MindDrive: VLA for AD via Online RL'
   arxiv: '2512.13636'
   url: https://arxiv.org/abs/2512.13636
-  institution: 国防科大
+  institution: NUDT
   venue: arXiv 2025
   domain: ad
   subcategory: e2e
@@ -41,7 +41,7 @@
 - title: 'E3AD: Emotion-Aware VLA for Human-Centric E2E AD'
   arxiv: '2512.04733'
   url: https://arxiv.org/abs/2512.04733
-  institution: 澳门大学, McGill
+  institution: Univ of Macau, McGill
   venue: arXiv 2025
   domain: ad
   subcategory: e2e
@@ -49,7 +49,7 @@
 - title: Unleashing the Potential of Diffusion Models for E2E AD
   arxiv: '2602.22801'
   url: https://arxiv.org/abs/2602.22801
-  institution: 华中科大
+  institution: HUST
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
@@ -57,7 +57,7 @@
 - title: 'AlignDrive: Aligned Lateral-Longitudinal Planning for E2E AD'
   arxiv: '2601.01762'
   url: https://arxiv.org/abs/2601.01762
-  institution: 华为
+  institution: Huawei
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
@@ -65,7 +65,7 @@
 - title: 'VGGDrive: Cross-View Geometric Grounding for AD'
   arxiv: '2602.20794'
   url: https://arxiv.org/abs/2602.20794
-  institution: 天津大学, 香港理工
+  institution: Tianjin Univ, PolyU
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
@@ -73,7 +73,7 @@
 - title: From Representational Complementarity to Dual Systems (HybridDriveVLA)
   arxiv: '2602.10719'
   url: https://arxiv.org/abs/2602.10719
-  institution: 大连理工, 理想汽车
+  institution: DUT, Li Auto
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
@@ -81,7 +81,7 @@
 - title: 'ReCogDrive: Reinforced Cognitive Framework for E2E AD'
   arxiv: '2506.08052'
   url: https://arxiv.org/abs/2506.08052
-  institution: 大连理工
+  institution: DUT
   venue: arXiv 2025
   domain: ad
   subcategory: e2e
@@ -97,7 +97,7 @@
 - title: 'KnowVal: Knowledge-Augmented and Value-Guided AD System'
   arxiv: '2512.20299'
   url: https://arxiv.org/abs/2512.20299
-  institution: 北大, UC Merced
+  institution: PKU, UC Merced
   venue: arXiv 2025
   domain: ad
   subcategory: e2e
@@ -113,7 +113,7 @@
 - title: 'F1: A VLA Bridging Understanding and Generation to Actions'
   arxiv: '2509.06951'
   url: https://arxiv.org/abs/2509.06951
-  institution: 中科院自动化所, 上海AI Lab
+  institution: CASIA, Shanghai AI Lab
   venue: arXiv 2025
   domain: ad
   subcategory: e2e
@@ -121,7 +121,7 @@
 - title: 'DrivePI: Spatial-aware 4D MLLM for Unified AD'
   arxiv: '2512.12799'
   url: https://arxiv.org/abs/2512.12799
-  institution: 华为诺亚
+  institution: Huawei Noah
   venue: arXiv 2025
   domain: ad
   subcategory: e2e
@@ -129,7 +129,7 @@
 - title: 'OmniNWM: Omniscient Driving Navigation World Models'
   arxiv: '2510.18313'
   url: https://arxiv.org/abs/2510.18313
-  institution: 清华, 鹏城实验室
+  institution: Tsinghua, PCL
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
@@ -145,7 +145,7 @@
 - title: 'FutureX: Latent CoT World Model for E2E AD'
   arxiv: '2512.11226'
   url: https://arxiv.org/abs/2512.11226
-  institution: 哈工大深圳, CUHK-SZ
+  institution: HIT Shenzhen, CUHK-SZ
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
@@ -153,7 +153,7 @@
 - title: Risk-Aware World Model Predictive Control for E2E AD
   arxiv: '2602.23259'
   url: https://arxiv.org/abs/2602.23259
-  institution: 中山大学
+  institution: SYSU
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
@@ -161,7 +161,7 @@
 - title: 'DriveLaW: Unifying Planning and Video Generation in a Latent Driving World'
   arxiv: '2512.23421'
   url: https://arxiv.org/abs/2512.23421
-  institution: 大连理工
+  institution: DUT
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
@@ -169,7 +169,7 @@
 - title: 'Map-World: Masked Action Planning and Path-Integral World Model for AD'
   arxiv: '2511.20156'
   url: https://arxiv.org/abs/2511.20156
-  institution: 澳门大学
+  institution: Univ of Macau
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
@@ -177,7 +177,7 @@
 - title: 'Stag-1: Realistic 4D Driving Simulation with Video Generation'
   arxiv: '2412.05280'
   url: https://arxiv.org/abs/2412.05280
-  institution: 上海AI Lab, 港大
+  institution: Shanghai AI Lab, HKU
   venue: arXiv 2024
   domain: ad
   subcategory: world-model
@@ -193,7 +193,7 @@
 - title: 'DiST-4D: Disentangled Spatiotemporal Diffusion for 4D Driving Scene Generation'
   arxiv: '2503.15208'
   url: https://arxiv.org/abs/2503.15208
-  institution: 清华, 鹏城实验室
+  institution: Tsinghua, PCL
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
@@ -201,7 +201,7 @@
 - title: 'HybridWorldSim: Scalable High-fidelity Simulator for AD'
   arxiv: '2511.22187'
   url: https://arxiv.org/abs/2511.22187
-  institution: 华为
+  institution: Huawei
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
@@ -209,7 +209,7 @@
 - title: 'World Guidance: World Modeling in Condition Space for Action Generation'
   arxiv: '2602.22010'
   url: https://arxiv.org/abs/2602.22010
-  institution: 清华
+  institution: Tsinghua
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
@@ -217,7 +217,7 @@
 - title: 'Motus: A Unified Latent Action World Model'
   arxiv: '2512.13030'
   url: https://arxiv.org/abs/2512.13030
-  institution: 清华
+  institution: Tsinghua
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
@@ -225,7 +225,7 @@
 - title: 'SimScale: Learning to Drive via Real-World Simulation at Scale'
   arxiv: '2511.23369'
   url: https://arxiv.org/abs/2511.23369
-  institution: 上海AI Lab
+  institution: Shanghai AI Lab
   venue: arXiv 2025
   domain: ad
   subcategory: simulation-data
@@ -233,7 +233,7 @@
 - title: Are All Data Necessary? Efficient Data Pruning for AD Dataset
   arxiv: '2512.19270'
   url: https://arxiv.org/abs/2512.19270
-  institution: 清华
+  institution: Tsinghua
   venue: arXiv 2025
   domain: ad
   subcategory: simulation-data
@@ -241,7 +241,7 @@
 - title: 'Driving with A Thousand Faces: Closed-Loop Personalized E2E AD Benchmark'
   arxiv: '2602.18757'
   url: https://arxiv.org/abs/2602.18757
-  institution: 清华
+  institution: Tsinghua
   venue: arXiv 2026
   domain: ad
   subcategory: simulation-data
@@ -257,7 +257,7 @@
 - title: 'WaymoQA: Multi-View VQA for Safety-Critical Reasoning in AD'
   arxiv: '2511.20022'
   url: https://arxiv.org/abs/2511.20022
-  institution: 延世大学
+  institution: Yonsei Univ
   venue: arXiv 2025
   domain: ad
   subcategory: simulation-data
@@ -265,7 +265,7 @@
 - title: 'WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching'
   arxiv: '2512.06112'
   url: https://arxiv.org/abs/2512.06112
-  institution: 上海交大
+  institution: SJTU
   venue: arXiv 2025
   domain: ad
   subcategory: planning
@@ -273,7 +273,7 @@
 - title: 'TrajMoE: Scene-Adaptive Trajectory Planning with MoE and RL'
   arxiv: '2512.07135'
   url: https://arxiv.org/abs/2512.07135
-  institution: 清华
+  institution: Tsinghua
   venue: arXiv 2025
   domain: ad
   subcategory: planning
@@ -297,7 +297,7 @@
 - title: 'Safe-SDL: Safety Boundaries for AI-Driven Self-Driving Labs'
   arxiv: '2602.15061'
   url: https://arxiv.org/abs/2602.15061
-  institution: 苏州大学
+  institution: Soochow Univ
   venue: arXiv 2026
   domain: ad
   subcategory: safety-benchmark
@@ -313,7 +313,7 @@
 - title: 'MiMo-Embodied: X-Embodied Foundation Model'
   arxiv: '2511.16518'
   url: https://arxiv.org/abs/2511.16518
-  institution: 小米
+  institution: Xiaomi
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
@@ -321,7 +321,7 @@
 - title: 'Xiaomi-Robotics-0: Open-Sourced VLA with Real-Time Execution'
   arxiv: '2602.12684'
   url: https://arxiv.org/abs/2602.12684
-  institution: 小米
+  institution: Xiaomi
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
@@ -329,7 +329,7 @@
 - title: 'DM0: Embodied-Native VLA towards Physical AI'
   arxiv: '2602.14974'
   url: https://arxiv.org/abs/2602.14974
-  institution: 地平线
+  institution: Horizon Robotics
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
@@ -345,7 +345,7 @@
 - title: 'RynnVLA-002: A Unified VLA and World Model'
   arxiv: '2511.17502'
   url: https://arxiv.org/abs/2511.17502
-  institution: RynnAI, 浙大
+  institution: RynnAI, ZJU
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
@@ -353,7 +353,7 @@
 - title: 'ABot-M0: VLA Foundation Model with Action Manifold Learning'
   arxiv: '2602.11236'
   url: https://arxiv.org/abs/2602.11236
-  institution: 西安交大
+  institution: XJTU
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
@@ -361,7 +361,7 @@
 - title: 'WholeBodyVLA: Unified Latent VLA for Whole-Body Loco-Manipulation'
   arxiv: '2512.11047'
   url: https://arxiv.org/abs/2512.11047
-  institution: 上海AI Lab
+  institution: Shanghai AI Lab
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
@@ -369,7 +369,7 @@
 - title: 'HiMoE-VLA: Hierarchical MoE for Generalist VLA'
   arxiv: '2512.05693'
   url: https://arxiv.org/abs/2512.05693
-  institution: 微软, 复旦
+  institution: Microsoft, Fudan
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
@@ -377,7 +377,7 @@
 - title: 'BagelVLA: Long-Horizon Manipulation via Interleaved VLA Generation'
   arxiv: '2602.09849'
   url: https://arxiv.org/abs/2602.09849
-  institution: 清华, 上海AI Lab
+  institution: Tsinghua, Shanghai AI Lab
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
@@ -385,7 +385,7 @@
 - title: 'Stellar VLA: Continually Evolving Skill Knowledge'
   arxiv: '2511.18085'
   url: https://arxiv.org/abs/2511.18085
-  institution: 上海交大
+  institution: SJTU
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
@@ -393,7 +393,7 @@
 - title: 'ManualVLA: CoT Manual Generation and Robotic Manipulation'
   arxiv: '2512.02013'
   url: https://arxiv.org/abs/2512.02013
-  institution: 北大
+  institution: PKU
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
@@ -401,7 +401,7 @@
 - title: 'HALO: Unified VLA for Embodied Multimodal CoT Reasoning'
   arxiv: '2602.21157'
   url: https://arxiv.org/abs/2602.21157
-  institution: 上海交大
+  institution: SJTU
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
@@ -409,7 +409,7 @@
 - title: 'AsyncVLA: Asynchronous Flow Matching for VLA'
   arxiv: '2511.14148'
   url: https://arxiv.org/abs/2511.14148
-  institution: 清华
+  institution: Tsinghua
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
@@ -417,7 +417,7 @@
 - title: 'LDA-1B: Scaling Latent Dynamics Action Model'
   arxiv: '2602.12215'
   url: https://arxiv.org/abs/2602.12215
-  institution: 字节跳动
+  institution: ByteDance
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
@@ -441,7 +441,7 @@
 - title: 'RoboMIND 2.0: Multimodal Bimanual Mobile Manipulation Dataset'
   arxiv: '2512.24653'
   url: https://arxiv.org/abs/2512.24653
-  institution: 北大
+  institution: PKU
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
@@ -465,7 +465,7 @@
 - title: 'ActionCodec: What Makes for Good Action Tokenizers'
   arxiv: '2602.15397'
   url: https://arxiv.org/abs/2602.15397
-  institution: 清华, 复旦
+  institution: Tsinghua, Fudan
   venue: arXiv 2026
   domain: robot
   subcategory: action-token
@@ -481,7 +481,7 @@
 - title: 'RDT-2: Scaling UMI Data with RVQ'
   arxiv: '2602.03310'
   url: https://arxiv.org/abs/2602.03310
-  institution: 清华
+  institution: Tsinghua
   venue: arXiv 2026
   domain: robot
   subcategory: action-token
@@ -489,7 +489,7 @@
 - title: 'NIAF: Neural Implicit Action Fields'
   arxiv: '2603.01766'
   url: https://arxiv.org/abs/2603.01766
-  institution: 西安交大
+  institution: XJTU
   venue: arXiv 2026
   domain: robot
   subcategory: action-token
@@ -497,7 +497,7 @@
 - title: 'FASTer: Efficient Autoregressive VLA via Neural Action Tokenization'
   arxiv: '2512.04952'
   url: https://arxiv.org/abs/2512.04952
-  institution: 腾讯
+  institution: Tencent
   venue: arXiv 2025
   domain: robot
   subcategory: action-token
@@ -505,7 +505,7 @@
 - title: 'LatBot: Distilling Universal Latent Actions for VLA'
   arxiv: '2511.23034'
   url: https://arxiv.org/abs/2511.23034
-  institution: 微软亚研
+  institution: MSRA
   venue: arXiv 2025
   domain: robot
   subcategory: action-token
@@ -529,7 +529,7 @@
 - title: 'RISE: Self-Improving Robot Policy with Compositional World Model'
   arxiv: '2602.11075'
   url: https://arxiv.org/abs/2602.11075
-  institution: 上海AI Lab
+  institution: Shanghai AI Lab
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
@@ -545,7 +545,7 @@
 - title: 'WoVR: World Models as Reliable Simulators for Post-Training VLA with RL'
   arxiv: '2602.13977'
   url: https://arxiv.org/abs/2602.13977
-  institution: 港中文
+  institution: CUHK
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
@@ -569,7 +569,7 @@
 - title: 'RoboScape-R: Unified Reward-Observation World Models for RL'
   arxiv: '2512.03556'
   url: https://arxiv.org/abs/2512.03556
-  institution: 人大
+  institution: RUC
   venue: arXiv 2025
   domain: robot
   subcategory: world-model-policy
@@ -577,7 +577,7 @@
 - title: 'SRPO: Self-Referential Policy Optimization for VLA'
   arxiv: '2511.15605'
   url: https://arxiv.org/abs/2511.15605
-  institution: 上海交大
+  institution: SJTU
   venue: arXiv 2025
   domain: robot
   subcategory: rl-policy
@@ -593,7 +593,7 @@
 - title: Reinforcing Action Policies by Prophesying
   arxiv: '2511.20633'
   url: https://arxiv.org/abs/2511.20633
-  institution: 复旦
+  institution: Fudan
   venue: arXiv 2025
   domain: robot
   subcategory: rl-policy
@@ -602,7 +602,7 @@
 - title: Alleviating Sparse Rewards in Flow-Based GRPO
   arxiv: '2602.06422'
   url: https://arxiv.org/abs/2602.06422
-  institution: 浙大
+  institution: ZJU
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
@@ -618,7 +618,7 @@
 - title: 'Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling'
   arxiv: '2602.11146'
   url: https://arxiv.org/abs/2602.11146
-  institution: 港大
+  institution: HKU
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
@@ -650,7 +650,7 @@
 - title: 'IGen: Scalable Data Generation from Open-World Images'
   arxiv: '2512.01773'
   url: https://arxiv.org/abs/2512.01773
-  institution: 清华深圳
+  institution: Tsinghua Shenzhen
   venue: arXiv 2025
   domain: robot
   subcategory: data-pretrain
@@ -658,7 +658,7 @@
 - title: 'RoboWheel: Data Engine from Real-World Human Demonstrations'
   arxiv: '2512.02729'
   url: https://arxiv.org/abs/2512.02729
-  institution: 清华
+  institution: Tsinghua
   venue: arXiv 2025
   domain: robot
   subcategory: data-pretrain
@@ -674,7 +674,7 @@
 - title: Scalable VLA Pretraining with Real-Life Human Activity Videos
   arxiv: '2510.21571'
   url: https://arxiv.org/abs/2510.21571
-  institution: 微软亚研
+  institution: MSRA
   venue: arXiv 2025
   domain: robot
   subcategory: data-pretrain
@@ -690,7 +690,7 @@
 - title: How Do VLAs Effectively Inherit from VLMs?
   arxiv: '2511.06619'
   url: https://arxiv.org/abs/2511.06619
-  institution: 微软亚研
+  institution: MSRA
   venue: arXiv 2025
   domain: robot
   subcategory: data-pretrain
@@ -706,7 +706,7 @@
 - title: 'InternData-A1: High-Fidelity Synthetic Data for Generalist Policy'
   arxiv: '2511.16651'
   url: https://arxiv.org/abs/2511.16651
-  institution: 上海AI Lab
+  institution: Shanghai AI Lab
   venue: arXiv 2025
   domain: robot
   subcategory: data-pretrain
@@ -730,7 +730,7 @@
 - title: 'MoE3D: MoE meets Multi-Modal 3D Understanding'
   arxiv: '2511.22103'
   url: https://arxiv.org/abs/2511.22103
-  institution: 港中文, 上科大
+  institution: CUHK, ShanghaiTech
   venue: arXiv 2025
   domain: general
   subcategory: spatial
@@ -738,7 +738,7 @@
 - title: 'DynamicVerse: Physically-Aware Multimodal 4D World Modeling'
   arxiv: '2512.03000'
   url: https://arxiv.org/abs/2512.03000
-  institution: 厦大, Meta
+  institution: XMU, Meta
   venue: arXiv 2025
   domain: general
   subcategory: spatial
@@ -746,7 +746,7 @@
 - title: '4DLangVGGT: 4D Language-Visual Geometry Grounded Transformer'
   arxiv: '2512.05060'
   url: https://arxiv.org/abs/2512.05060
-  institution: 华科
+  institution: HUST
   venue: arXiv 2025
   domain: general
   subcategory: spatial
@@ -754,7 +754,7 @@
 - title: 'G²VLM: Geometry Grounded VLM'
   arxiv: '2511.21688'
   url: https://arxiv.org/abs/2511.21688
-  institution: 上海AI Lab
+  institution: Shanghai AI Lab
   venue: arXiv 2025
   domain: general
   subcategory: spatial
@@ -762,7 +762,7 @@
 - title: Scaling Spatial Intelligence with Multimodal Foundation Models
   arxiv: '2511.13719'
   url: https://arxiv.org/abs/2511.13719
-  institution: 上海AI Lab
+  institution: Shanghai AI Lab
   venue: arXiv 2025
   domain: general
   subcategory: spatial
@@ -778,7 +778,7 @@
 - title: 'SpatialTree: How Spatial Abilities Branch Out in MLLMs'
   arxiv: '2512.20617'
   url: https://arxiv.org/abs/2512.20617
-  institution: 北航
+  institution: BUAA
   venue: arXiv 2025
   domain: general
   subcategory: spatial
@@ -810,7 +810,7 @@
 - title: 'PixelRefer: Unified Spatio-Temporal Object Referring'
   arxiv: '2510.23603'
   url: https://arxiv.org/abs/2510.23603
-  institution: 浙大
+  institution: ZJU
   venue: arXiv 2025
   domain: general
   subcategory: spatial
@@ -818,7 +818,7 @@
 - title: Revisiting Multimodal Positional Encoding in VLMs
   arxiv: '2510.23095'
   url: https://arxiv.org/abs/2510.23095
-  institution: 阿里巴巴
+  institution: Alibaba
   venue: arXiv 2025
   domain: general
   subcategory: spatial
@@ -834,7 +834,7 @@
 - title: 'LaST₀: Latent Spatio-Temporal CoT for Robotic VLA'
   arxiv: '2601.05248'
   url: https://arxiv.org/abs/2601.05248
-  institution: 北大, 港中文
+  institution: PKU, CUHK
   venue: arXiv 2026
   domain: general
   subcategory: latent-reasoning
@@ -858,7 +858,7 @@
 - title: 'SwimBird: Switchable Reasoning Mode in Hybrid Autoregressive MLLMs'
   arxiv: '2602.06040'
   url: https://arxiv.org/abs/2602.06040
-  institution: 中科大
+  institution: USTC
   venue: arXiv 2026
   domain: general
   subcategory: latent-reasoning
@@ -874,7 +874,7 @@
 - title: 'Unifying Perception and Action: Implicit Visual CoT'
   arxiv: '2511.19859'
   url: https://arxiv.org/abs/2511.19859
-  institution: 南京大学
+  institution: Nanjing Univ
   venue: arXiv 2025
   domain: general
   subcategory: latent-reasoning
@@ -898,7 +898,7 @@
 - title: 'BAGEL: Emerging Properties in Unified Multimodal Pretraining'
   arxiv: '2505.14683'
   url: https://arxiv.org/abs/2505.14683
-  institution: 字节跳动
+  institution: ByteDance
   venue: arXiv 2025
   domain: general
   subcategory: multimodal-arch
@@ -906,7 +906,7 @@
 - title: 'CLI: Dynamic Cross-Layer Injection for Deep VL Fusion'
   arxiv: '2601.10710'
   url: https://arxiv.org/abs/2601.10710
-  institution: 电子科大
+  institution: UESTC
   venue: arXiv 2026
   domain: general
   subcategory: multimodal-arch
@@ -914,7 +914,7 @@
 - title: 'LightFusion: Double Fusion for Unified Multimodal'
   arxiv: '2510.22946'
   url: https://arxiv.org/abs/2510.22946
-  institution: 字节跳动
+  institution: ByteDance
   venue: arXiv 2025
   domain: general
   subcategory: multimodal-arch
@@ -922,7 +922,7 @@
 - title: Qwen3-VL Technical Report
   arxiv: '2511.21631'
   url: https://arxiv.org/abs/2511.21631
-  institution: 阿里巴巴
+  institution: Alibaba
   venue: arXiv 2025
   domain: general
   subcategory: multimodal-arch
@@ -954,7 +954,7 @@
 - title: 'Efficient Training of Diffusion MoE: A Practical Recipe'
   arxiv: '2512.01252'
   url: https://arxiv.org/abs/2512.01252
-  institution: 字节跳动
+  institution: ByteDance
   venue: arXiv 2025
   domain: general
   subcategory: multimodal-arch
@@ -962,7 +962,7 @@
 - title: 'MindGPT-4ov: Enhanced MLLM via Multi-Stage Post-Training'
   arxiv: '2512.02895'
   url: https://arxiv.org/abs/2512.02895
-  institution: 腾讯
+  institution: Tencent
   venue: arXiv 2025
   domain: general
   subcategory: multimodal-arch
@@ -986,7 +986,7 @@
 - title: 'Blink: Dynamic Visual Token Resolution'
   arxiv: '2512.10548'
   url: https://arxiv.org/abs/2512.10548
-  institution: 中科院
+  institution: CAS
   venue: arXiv 2025
   domain: general
   subcategory: efficient
@@ -994,7 +994,7 @@
 - title: 'ApET: Approximation-Error Guided Token Compression'
   arxiv: '2602.19870'
   url: https://arxiv.org/abs/2602.19870
-  institution: 中科院深圳
+  institution: CAS Shenzhen
   venue: arXiv 2026
   domain: general
   subcategory: efficient
@@ -1002,7 +1002,7 @@
 - title: 'AstraNav-Memory: Contexts Compression for Long Memory'
   arxiv: '2512.21627'
   url: https://arxiv.org/abs/2512.21627
-  institution: 浙大
+  institution: ZJU
   venue: arXiv 2025
   domain: general
   subcategory: efficient
@@ -1034,7 +1034,7 @@
 - title: 'ProPhy: Progressive Physical Alignment for Dynamic World Simulation'
   arxiv: '2512.05564'
   url: https://arxiv.org/abs/2512.05564
-  institution: 中山大学
+  institution: SYSU
   venue: arXiv 2025
   domain: general
   subcategory: physical-benchmark
@@ -1042,7 +1042,7 @@
 - title: 'PICABench: How Far from Physically Realistic Image Editing?'
   arxiv: '2510.17681'
   url: https://arxiv.org/abs/2510.17681
-  institution: 港中文, 上海AI Lab
+  institution: CUHK, Shanghai AI Lab
   venue: arXiv 2025
   domain: general
   subcategory: physical-benchmark
@@ -1050,7 +1050,7 @@
 - title: 'Beyond Words and Pixels: Implicit World Knowledge Reasoning'
   arxiv: '2511.18271'
   url: https://arxiv.org/abs/2511.18271
-  institution: 快手
+  institution: Kuaishou
   venue: arXiv 2025
   domain: general
   subcategory: physical-benchmark
@@ -1058,7 +1058,7 @@
 - title: 'PhyBlock: Physical Understanding via 3D Block Assembly'
   arxiv: '2506.08708'
   url: https://arxiv.org/abs/2506.08708
-  institution: CMU, 中山大学
+  institution: CMU, SYSU
   venue: arXiv 2025
   domain: general
   subcategory: physical-benchmark
@@ -1066,7 +1066,7 @@
 - title: 'WorldArena: Unified Benchmark for Embodied World Models'
   arxiv: '2602.08971'
   url: https://arxiv.org/abs/2602.08971
-  institution: 人大
+  institution: RUC
   venue: arXiv 2026
   domain: general
   subcategory: physical-benchmark
@@ -1082,7 +1082,7 @@
 - title: A Survey on Efficient Vision-Language-Action Models
   arxiv: '2510.24795'
   url: https://arxiv.org/abs/2510.24795
-  institution: 武大
+  institution: WHU
   venue: arXiv 2025
   domain: general
   subcategory: survey
@@ -1090,7 +1090,7 @@
 - title: 'Reliable and Responsible Foundation Models: A Comprehensive Survey'
   arxiv: '2602.08145'
   url: https://arxiv.org/abs/2602.08145
-  institution: 多机构
+  institution: Multi-institution
   venue: arXiv 2026
   domain: general
   subcategory: survey
@@ -1106,7 +1106,7 @@
 - title: 'Multimodal Spatial Reasoning in the Large Model Era: Survey'
   arxiv: '2510.25760'
   url: https://arxiv.org/abs/2510.25760
-  institution: 港大
+  institution: HKU
   venue: arXiv 2025
   domain: general
   subcategory: survey
