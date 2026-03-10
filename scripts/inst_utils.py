@@ -6,6 +6,7 @@ Single source of truth for INST_PATTERNS, RESEARCHER_INST, and extraction logic.
 import io
 import re
 import ssl
+import time
 import urllib.request
 
 try:
@@ -349,34 +350,39 @@ TIER1_INSTITUTIONS = {
 
 
 
-def extract_institutions_from_pdf(arxiv_id: str) -> str:
+def extract_institutions_from_pdf(arxiv_id: str, max_retries: int = 3) -> str:
     """Download PDF first page, search entire page for known institutions.
 
     Searches the full first-page text because many papers put institution
     names in footnotes at the bottom of page 1, well beyond the first 2500
     characters. INST_PATTERNS are specific enough (university names, lab
     names, company + qualifier) to avoid false positives even in body text.
+
+    Retries up to max_retries times on network failures with exponential backoff.
     """
     if not HAS_PDFPLUMBER:
         return ""
     url = f"https://arxiv.org/pdf/{arxiv_id}"
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        resp = urllib.request.urlopen(req, context=SSL_CTX, timeout=30)
-        pdf_bytes = resp.read()
-        with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
-            if not pdf.pages:
-                return ""
-            text = pdf.pages[0].extract_text() or ""
+    for attempt in range(max_retries):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            resp = urllib.request.urlopen(req, context=SSL_CTX, timeout=30)
+            pdf_bytes = resp.read()
+            with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
+                if not pdf.pages:
+                    return ""
+                text = pdf.pages[0].extract_text() or ""
 
-        found = []
-        for pattern, inst in INST_PATTERNS.items():
-            if re.search(pattern, text, re.IGNORECASE):
-                if inst not in found:
-                    found.append(inst)
-        return ", ".join(found[:4]) if found else ""
-    except Exception:
-        return ""
+            found = []
+            for pattern, inst in INST_PATTERNS.items():
+                if re.search(pattern, text, re.IGNORECASE):
+                    if inst not in found:
+                        found.append(inst)
+            return ", ".join(found[:4]) if found else ""
+        except Exception:
+            if attempt < max_retries - 1:
+                time.sleep(3 * (attempt + 1))
+    return ""
 
 
 def _name_match(known: str, author: str) -> bool:
