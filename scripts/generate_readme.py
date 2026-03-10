@@ -103,18 +103,6 @@ def generate_readme(papers: list) -> str:
     lines.append("Other views: [Timeline (by date)](TIMELINE.md) | [By Institution](BY_INSTITUTION.md)")
     lines.append("")
 
-    # --- Recently Added ---
-    sorted_by_id = sorted(papers, key=lambda p: p.get("arxiv", "0000"), reverse=True)
-    recent = sorted_by_id[:10]
-    lines.append("## Recently Added")
-    lines.append("")
-    lines.append("| Paper | Category | Institution | Link |")
-    lines.append("|:------|:---------|:-----------|:-----|")
-    for p in recent:
-        cat = f"{domain_short(p['domain'])} / {SUB_LABELS[p['subcategory']]}"
-        lines.append(f"| **{p['title']}** | {cat} | {p['institution']} | [Paper]({p['url']}) |")
-    lines.append("")
-
     # --- Table of Contents ---
     lines.append("---")
     lines.append("")

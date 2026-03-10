@@ -8,21 +8,6 @@
 
 Other views: [Timeline (by date)](TIMELINE.md) | [By Institution](BY_INSTITUTION.md)
 
-## Recently Added
-
-| Paper | Category | Institution | Link |
-|:------|:---------|:-----------|:-----|
-| **MEM: Multi-Scale Embodied Memory for VLA** | Robotics / VLA Architecture | Stanford, Google DeepMind | [Paper](https://arxiv.org/abs/2603.03596) |
-| **NIAF: Neural Implicit Action Fields** | Robotics / Action Tokenization | XJTU | [Paper](https://arxiv.org/abs/2603.01766) |
-| **Risk-Aware World Model Predictive Control for E2E AD** | Autonomous Driving / World Models | SYSU | [Paper](https://arxiv.org/abs/2602.23259) |
-| **Unleashing the Potential of Diffusion Models for E2E AD** | Autonomous Driving / End-to-End VLA Architecture | HUST | [Paper](https://arxiv.org/abs/2602.22801) |
-| **World Guidance: World Modeling in Condition Space for Action Generation** | Autonomous Driving / World Models | Tsinghua | [Paper](https://arxiv.org/abs/2602.22010) |
-| **HALO: Unified VLA for Embodied Multimodal CoT Reasoning** | Robotics / VLA Architecture | SJTU | [Paper](https://arxiv.org/abs/2602.21157) |
-| **VGGDrive: Cross-View Geometric Grounding for AD** | Autonomous Driving / End-to-End VLA Architecture | Tianjin Univ, PolyU | [Paper](https://arxiv.org/abs/2602.20794) |
-| **ApET: Approximation-Error Guided Token Compression** | General / Cross-domain / Efficient Inference | CAS Shenzhen | [Paper](https://arxiv.org/abs/2602.19870) |
-| **Driving with A Thousand Faces: Closed-Loop Personalized E2E AD Benchmark** | Autonomous Driving / Simulation & Data | Tsinghua | [Paper](https://arxiv.org/abs/2602.18757) |
-| **VLA-Perf: Demystifying VLA Inference Performance** | General / Cross-domain / Efficient Inference | Stanford | [Paper](https://arxiv.org/abs/2602.18397) |
-
 ---
 
 ## Table of Contents

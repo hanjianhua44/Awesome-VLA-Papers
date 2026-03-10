@@ -1,0 +1,656 @@
+[
+  {
+    "arxiv_id": "2603.06576",
+    "title": "BEVLM: Distilling Semantic Knowledge from LLMs into Bird's-Eye View Representations",
+    "authors": [
+      "Thomas Monninger",
+      "Shaoyuan Xie",
+      "Qi Alfred Chen",
+      "Sihao Ding"
+    ],
+    "affiliations": [],
+    "abstract": "The integration of Large Language Models (LLMs) into autonomous driving has attracted growing interest for their strong reasoning and semantic understanding abilities, which are essential for handling complex decision-making and long-tail scenarios. However, existing methods typically feed LLMs with tokens from multi-view and multi-frame images independently, leading to redundant computation and limited spatial consistency. This separation in visual processing hinders accurate 3D spatial reasoning and fails to maintain geometric coherence across views. On the other hand, Bird's-Eye View (BEV) representations learned from geometrically annotated tasks (e.g., object detection) provide spatial structure but lack the semantic richness of foundation vision encoders. To bridge this gap, we propose BEVLM, a framework that connects a spatially consistent and semantically distilled BEV representation with LLMs. Through extensive experiments, we show that BEVLM enables LLMs to reason more effectively in cross-view driving scenes, improving accuracy by 46%, by leveraging BEV features as unified inputs. Furthermore, by distilling semantic knowledge from LLMs into BEV representations, BEVLM significantly improves closed-loop end-to-end driving performance by 29% in safety-critical scenarios.",
+    "categories": "cs.CV cs.AI cs.LG cs.RO",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06576",
+    "score": 11,
+    "topics": [
+      "end-to-end driving",
+      "autonomous driving",
+      "VLM",
+      "spatial reasoning",
+      "large.*model.*driving"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.05868",
+    "title": "AnyCamVLA: Zero-Shot Camera Adaptation for Viewpoint Robust Vision-Language-Action Models",
+    "authors": [
+      "Hyeongjun Heo",
+      "Seungyeon Woo",
+      "Sang Min Kim",
+      "Junho Kim",
+      "Junho Lee",
+      "Yonghyeon Lee",
+      "Young Min Kim"
+    ],
+    "affiliations": [],
+    "abstract": "Despite remarkable progress in Vision-Language-Action models (VLAs) for robot manipulation, these large pre-trained models require fine-tuning to be deployed in specific environments. These fine-tuned models are highly sensitive to camera viewpoint changes that frequently occur in unstructured environments. In this paper, we propose a zero-shot camera adaptation framework without additional demonstration data, policy fine-tuning, or architectural modification. Our key idea is to virtually adjust test-time camera observations to match the training camera configuration in real-time. For that, we use a recent feed-forward novel view synthesis model which outputs high-quality target view images, handling both extrinsic and intrinsic parameters. This plug-and-play approach preserves the pre-trained capabilities of VLAs and applies to any RGB-based policy. Through extensive experiments on the LIBERO benchmark, our method consistently outperforms baselines that use data augmentation for policy fine-tuning or additional 3D-aware features for visual input. We further validate that our approach constantly enhances viewpoint robustness in real-world robotic manipulation scenarios, including settings with varying camera extrinsics, intrinsics, and freely moving handheld cameras.",
+    "categories": "cs.RO",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.05868",
+    "score": 10,
+    "topics": [
+      "vision-language-action",
+      "VLA",
+      "robotic manipulation"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.06049",
+    "title": "Devil is in Narrow Policy: Unleashing Exploration in Driving VLA Models",
+    "authors": [
+      "Canyu Chen",
+      "Yuguang Yang",
+      "Zhewen Tan",
+      "Yizhi Wang",
+      "Ruiyi Zhan",
+      "Haiyan Liu",
+      "Xuanyao Mao",
+      "Jason Bao",
+      "Xinyue Tang",
+      "Linlin Yang",
+      "Bingchuan Sun",
+      "Yan Wang",
+      "Baochang Zhang"
+    ],
+    "affiliations": [],
+    "abstract": "We identify a fundamental Narrow Policy limitation undermining the performance of autonomous VLA models, where driving Imitation Learning (IL) tends to collapse exploration and limit the potential of subsequent Reinforcement Learning (RL) stages, which often saturate prematurely due to insufficient feedback diversity. Thereby, we propose Curious-VLA, a framework that alleviates the exploit-explore dilemma through a two-stage design. During IL, we introduce a Feasible Trajectory Expansion (FTE) strategy to generate multiple physically valid trajectories and a step-wise normalized trajectory representation to adapt this diverse data. In the RL stage, we present Adaptive Diversity-Aware Sampling (ADAS) that prioritizes high-diversity samples and introduce Spanning Driving Reward (SDR) with a focal style weighting to amplify reward's value span for improving sensitivity to driving quality. On the Navsim benchmark, Curious-VLA achieves SoTA results (PDMS 90.3, EPDMS 85.4) and a Best-of-N PDMS of 94.8, demonstrating its effectiveness in unlocking the exploratory potential of VLA models. Code: https://github.com/Mashiroln/curious_vla.git.",
+    "categories": "cs.CV cs.RO",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06049",
+    "score": 8,
+    "topics": [
+      "VLA",
+      "imitation learning"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.06001",
+    "title": "Restoring Linguistic Grounding in VLA Models via Train-Free Attention Recalibration",
+    "authors": [
+      "Ninghao Zhang",
+      "Bin Zhu",
+      "Shijie Zhou",
+      "Jingjing Chen"
+    ],
+    "affiliations": [],
+    "abstract": "Vision-Language-Action (VLA) models enable robots to perform manipulation tasks directly from natural language instructions and are increasingly viewed as a foundation for generalist robotic policies. However, their reliability under Out-of-Distribution (OOD) instructions remains underexplored. In this paper, we reveal a critical failure mode in which VLA policies continue executing visually plausible actions even when the language instruction contradicts the scene. We refer to this phenomenon as linguistic blindness, where VLA policies prioritize visual priors over instruction semantics during action generation. To systematically analyze this issue, we introduce ICBench, a diagnostic benchmark constructed from the LIBERO dataset that probes language-action coupling by injecting controlled OOD instruction contradictions while keeping the visual environment unchanged. Evaluations on three representative VLA architectures, including Pi0, Pi0.5 and OpenVLA OFT, show that these models frequently succeed at tasks despite logically impossible instructions, revealing a strong visual bias in action generation. To mitigate this issue, we propose Instruction-Guided Attention Recalibration (IGAR), a train-free inference-time mechanism that rebalances attention distributions to restore the influence of language instructions. IGAR operates without retraining or architectural modification and can be directly applied to existing VLA models. Experiments across 30 LIBERO tasks demonstrate that IGAR substantially reduces erroneous execution under OOD contradictory instructions while preserving baseline task performance. We additionally validate the approach on a real Franka robotic arm, where IGAR effectively prevents manipulation triggered by inconsistent instructions.",
+    "categories": "cs.RO cs.AI cs.CV",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06001",
+    "score": 8,
+    "topics": [
+      "vision-language-action",
+      "VLA"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.05982",
+    "title": "HarvestFlex: Strawberry Harvesting via Vision-Language-Action Policy Adaptation in the Wild",
+    "authors": [
+      "Ziyang Zhao",
+      "Shuheng Wang",
+      "Zhonghua Miao",
+      "Ya Xiong"
+    ],
+    "affiliations": [],
+    "abstract": "This work presents the first study on transferring vision-language-action (VLA) policies to real greenhouse tabletop strawberry harvesting, a long-horizon, unstructured task challenged by occlusion and specular reflections. We built an end-to-end closed-loop system on the HarvestFlex platform using three-view RGB sensing (two fixed scene views plus a wrist-mounted view) and intentionally avoided depth clouds and explicit geometric calibration. We collected 3.71 h of VR teleoperated demonstrations (227 episodes) and fine-tuned pi_0, pi_0.5, and WALL-OSS with full fine-tuning and LoRA. Under a unified 50 trials real-greenhouse protocol and metrics spanning completion, pi_0.5 with full fine-tuning achieved success rate of 74.0% with 32.6 s/pick and damage rate of 4.1%. Asynchronous inference-control decoupling further improved performance over synchronous deployment. Results showed non-trivial closed-loop picking with fewer than four hours of real data, while remaining limited by close-range observability loss and contact-dynamics mismatch. A demonstration video is available at: https://youtu.be/bN8ZowZKPMI.",
+    "categories": "cs.RO cs.CV",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.05982",
+    "score": 8,
+    "topics": [
+      "vision-language-action",
+      "VLA"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.05936",
+    "title": "OD-RASE: Ontology-Driven Risk Assessment and Safety Enhancement for Autonomous Driving",
+    "authors": [
+      "Kota Shimomura",
+      "Masaki Nambata",
+      "Atsuya Ishikawa",
+      "Ryota Mimura",
+      "Takayuki Kawabuchi",
+      "Takayoshi Yamashita",
+      "Koki Inoue"
+    ],
+    "affiliations": [],
+    "abstract": "Although autonomous driving systems demonstrate high perception performance, they still face limitations when handling rare situations or complex road structures. Such road infrastructures are designed for human drivers, safety improvements are typically introduced only after accidents occur. This reactive approach poses a significant challenge for autonomous systems, which require proactive risk mitigation. To address this issue, we propose OD-RASE, a framework for enhancing the safety of autonomous driving systems by detecting road structures that cause traffic accidents and connecting these findings to infrastructure development. First, we formalize an ontology based on specialized domain knowledge of road traffic systems. In parallel, we generate infrastructure improvement proposals using a large-scale visual language model (LVLM) and use ontology-driven data filtering to enhance their reliability. This process automatically annotates improvement proposals on pre-accident road images, leading to the construction of a new dataset. Furthermore, we introduce the Baseline approach (OD-RASE model), which leverages LVLM and a diffusion model to produce both infrastructure improvement proposals and generated images of the improved road environment. Our experiments demonstrate that ontology-driven data filtering enables highly accurate prediction of accident-causing road structures and the corresponding improvement plans. We believe that this work contributes to the overall safety of traffic environments and marks an important step toward the broader adoption of autonomous driving systems.",
+    "categories": "cs.CV",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.05936",
+    "score": 7,
+    "topics": [
+      "autonomous driving",
+      "VLM",
+      "large.*model.*driving",
+      "driving.*large.*model"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.06480",
+    "title": "History-Conditioned Spatio-Temporal Visual Token Pruning for Efficient Vision-Language Navigation",
+    "authors": [
+      "Qitong Wang",
+      "Yijun Liang",
+      "Ming Li",
+      "Tianyi Zhou",
+      "Christopher Rasmussen"
+    ],
+    "affiliations": [],
+    "abstract": "Vision-Language Navigation (VLN) enables robots to follow natural-language instructions in visually grounded environments, serving as a key capability for embodied robotic systems. Recent Vision-Language-Action (VLA) models have demonstrated strong navigation performance, but their high computational cost introduces latency that limits real-time deployment. We propose a training-free spatio-temporal vision token pruning framework tailored to VLA-based VLN. We apply spatial token selection to the current view, alongside spatio-temporal compression for historical memories, enabling efficient long-horizon inference while reducing redundant computation. Leveraging attention-based token importance and query-guided spatio-temporal filtering, the proposed approach preserves navigation-relevant information without retraining or modifying pretrained models, allowing plug-and-play integration into existing VLA systems. Through experiments on standard VLN benchmarks, we confirm that our method significantly outperforms existing pruning strategies. It successfully preserves superior navigation accuracy under extreme pruning scenarios, all while maintaining the highly competitive inference efficiency. Real-world deployment on a Unitree Go2 quadruped robot further validates reliable and low-latency instruction-following navigation under practical robotic constraints. We hope this work helps bridge the gap between large-scale multimodal modeling and efficient, real-time embodied deployment in robotic navigation systems.",
+    "categories": "cs.RO",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06480",
+    "score": 7,
+    "topics": [
+      "vision-language-action",
+      "VLA"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.06190",
+    "title": "DreamToNav: Generalizable Navigation for Robots via Generative Video Planning",
+    "authors": [
+      "Valerii Serpiva",
+      "Jeffrin Sam",
+      "Chidera Simon",
+      "Hajira Amjad",
+      "Iana Zhura",
+      "Artem Lykov",
+      "Dzmitry Tsetserukou"
+    ],
+    "affiliations": [],
+    "abstract": "We present DreamToNav, a novel autonomous robot framework that uses generative video models to enable intuitive, human-in-the-loop control. Instead of relying on rigid waypoint navigation, users provide natural language prompts (e.g. ``Follow the person carefully''), which the system translates into executable motion. Our pipeline first employs Qwen 2.5-VL-7B-Instruct to refine vague user instructions into precise visual descriptions. These descriptions condition NVIDIA Cosmos 2.5, a state-of-the-art video foundation model, to synthesize a physically consistent video sequence of the robot performing the task. From this synthetic video, we extract a valid kinematic path using visual pose estimation, robot detection and trajectory recovery. By treating video generation as a planning engine, DreamToNav allows robots to visually \"dream\" complex behaviors before executing them, providing a unified framework for obstacle avoidance and goal-directed navigation without task-specific engineering. We evaluate the approach on both a wheeled mobile robot and a quadruped robot in indoor navigation tasks. DreamToNav achieves a success rate of 76.7%, with final goal errors typically within 0.05-0.10 m and trajectory tracking errors below 0.15 m. These results demonstrate that trajectories extracted from generative video predictions can be reliably executed on physical robots across different locomotion platforms.",
+    "categories": "cs.RO",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06190",
+    "score": 7,
+    "topics": [
+      "foundation model.*robot",
+      "robot.*foundation model",
+      "video generation.*robot",
+      "robot.*video generation"
+    ],
+    "institution": "NVIDIA"
+  },
+  {
+    "arxiv_id": "2603.05804",
+    "title": "CDF-Glove: A Cable-Driven Force Feedback Glove for Dexterous Teleoperation",
+    "authors": [
+      "Huayue Liang",
+      "Ruochong Li",
+      "Yaodong Yang",
+      "Long Zeng",
+      "Yuanpei Chen",
+      "Xueqian Wang"
+    ],
+    "affiliations": [],
+    "abstract": "High-quality teleoperated demonstrations are a primary bottleneck for imitation learning (IL) in dexterous manipulation. However, haptic feedback provides operators with real-time contact information, enabling real-time finger posture adjustments, and thereby improving demonstration quality. Existing dexterous teleoperation platforms typically omit haptic feedback and remain bulky and expensive. We introduce CDF-Glove, a lightweight and low cost cable-driven force-feedback glove. The real-time state is available for 20 finger degrees of freedom (DoF), of which 16 are directly sensed and 4 are passively coupled (inferred from kinematic constraints). We develop a kinematic model and control stack for the glove, and validate them across multiple robotic hands with diverse kinematics and DoF. The CDF-Glove achieves distal joint repeatability of 0.4 degrees, and delivers about 200 ms force feedback latency, yielding a 4x improvement in task success rate relative to no-feedback teleoperation. We collect two bimanual teleoperation datasets, on which we train and evaluate Diffusion Policy baselines. Compared to kinesthetic teaching, the policies trained in our teleoperated demonstrations increase the average success rate by 55% and reduce the mean completion time by approximately 15.2 seconds (a 47.2% relative reduction). In particular, the CDF-Glove costs approximately US$230. The code and designs are released as open source at https://cdfglove.github.io/.",
+    "categories": "cs.RO",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.05804",
+    "score": 7,
+    "topics": [
+      "diffusion policy",
+      "imitation learning"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.06254",
+    "title": "NOVA: Next-step Open-Vocabulary Autoregression for 3D Multi-Object Tracking in Autonomous Driving",
+    "authors": [
+      "Kai Luo",
+      "Xu Wang",
+      "Rui Fan",
+      "Kailun Yang"
+    ],
+    "affiliations": [],
+    "abstract": "Generalizing across unknown targets is critical for open-world perception, yet existing 3D Multi-Object Tracking (3D MOT) pipelines remain limited by closed-set assumptions and ``semantic-blind'' heuristics. To address this, we propose Next-step Open-Vocabulary Autoregression (NOVA), an innovative paradigm that shifts 3D tracking from traditional fragmented distance-based matching toward generative spatio-temporal semantic modeling. NOVA reformulates 3D trajectories as structured spatio-temporal semantic sequences, enabling the simultaneous encoding of physical motion continuity and deep linguistic priors. By leveraging the autoregressive capabilities of Large Language Models (LLMs), we transform the tracking task into a principled process of next-step sequence completion. This mechanism allows the model to explicitly utilize the hierarchical structure of language space to resolve fine-grained semantic ambiguities and maintain identity consistency across complex long-range sequences through high-level commonsense reasoning. Extensive experiments on nuScenes, V2X-Seq-SPD, and KITTI demonstrate the superior performance of NOVA. Notably, on the nuScenes dataset, NOVA achieves an AMOTA of 22.41% for Novel categories, yielding a significant 20.21% absolute improvement over the baseline. These gains are realized through a compact 0.5B autoregressive model. Code will be available at https://github.com/xifen523/NOVA.",
+    "categories": "cs.CV cs.RO eess.IV",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06254",
+    "score": 6,
+    "topics": [
+      "autonomous driving",
+      "driving.*large.*model"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.06231",
+    "title": "TaPD: Temporal-adaptive Progressive Distillation for Observation-Adaptive Trajectory Forecasting in Autonomous Driving",
+    "authors": [
+      "Mingyu Fan",
+      "Yi Liu",
+      "Hao Zhou",
+      "Deheng Qian",
+      "Mohammad Haziq Khan",
+      "Matthias Raetsch"
+    ],
+    "affiliations": [],
+    "abstract": "Trajectory prediction is essential for autonomous driving, enabling vehicles to anticipate the motion of surrounding agents to support safe planning. However, most existing predictors assume fixed-length histories and suffer substantial performance degradation when observations are variable or extremely short in real-world settings (e.g., due to occlusion or a limited sensing range). We propose TaPD (Temporal-adaptive Progressive Distillation), a unified plug-and-play framework for observation-adaptive trajectory forecasting under variable history lengths. TaPD comprises two cooperative modules: an Observation-Adaptive Forecaster (OAF) for future prediction and a Temporal Backfilling Module (TBM) for explicit reconstruction of the past. OAF is built on progressive knowledge distillation (PKD), which transfers motion pattern knowledge from long-horizon \"teachers\" to short-horizon \"students\" via hierarchical feature regression, enabling short observations to recover richer motion context. We further introduce a cosine-annealed distillation weighting scheme to balance forecasting supervision and feature alignment, improving optimization stability and cross-length consistency. For extremely short histories where implicit alignment is insufficient, TBM backfills missing historical segments conditioned on scene evolution, producing context-rich trajectories that strengthen PKD and thereby improve OAF. We employ a decoupled pretrain-reconstruct-finetune protocol to preserve real-motion priors while adapting to backfilled inputs. Extensive experiments on Argoverse 1 and Argoverse 2 show that TaPD consistently outperforms strong baselines across all observation lengths, delivers especially large gains under very short inputs, and improves other predictors (e.g., HiVT) in a plug-and-play manner. Code will be available at https://github.com/zhouhao94/TaPD.",
+    "categories": "cs.CV cs.AI cs.RO",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06231",
+    "score": 6,
+    "topics": [
+      "autonomous driving",
+      "trajectory prediction"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.05815",
+    "title": "Hierarchical Latent Action Model",
+    "authors": [
+      "Hanjung Kim",
+      "Lerrel Pinto",
+      "Seon Joo Kim"
+    ],
+    "affiliations": [],
+    "abstract": "Latent Action Models (LAMs) enable learning from actionless data for applications ranging from robotic control to interactive world models. However, existing LAMs typically focus on short-horizon frame transitions and capture low-level motion while overlooking longer-term temporal structure. In contrast, actionless videos often contain temporally extended and high-level skills. We present HiLAM, a hierarchical latent action model that discovers latent skills by modeling long-term temporal information. To capture these dependencies across long horizons, we utilize a pretrained LAM as a low-level extractor. This architecture aggregates latent action sequences, which contain the underlying dynamic patterns of the video, into high-level latent skills. Our experiments demonstrate that HiLAM improves over the baseline and exhibits robust dynamic skill discovery.",
+    "categories": "cs.RO",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.05815",
+    "score": 6,
+    "topics": [
+      "world model"
+    ],
+    "institution": "NYU"
+  },
+  {
+    "arxiv_id": "2603.06569",
+    "title": "Penguin-VL: Exploring the Efficiency Limits of VLM with LLM-based Vision Encoders",
+    "authors": [
+      "Boqiang Zhang",
+      "Lei Ke",
+      "Ruihan Yang",
+      "Qi Gao",
+      "Tianyuan Qu",
+      "Rossell Chen",
+      "Dong Yu",
+      "Leoweiliang"
+    ],
+    "affiliations": [],
+    "abstract": "Vision Language Model (VLM) development has largely relied on scaling model size, which hinders deployment on compute-constrained mobile and edge devices such as smartphones and robots. In this work, we explore the performance limits of compact (e.g., 2B and 8B) VLMs. We challenge the prevailing practice that state-of-the-art VLMs must rely on vision encoders initialized via massive contrastive pretraining (e.g., CLIP/SigLIP). We identify an objective mismatch: contrastive learning, optimized for discrimination, enforces coarse and category-level invariances that suppress fine-grained visual cues needed for dense captioning and complex VLM reasoning. To address this issue, we present Penguin-VL, whose vision encoder is initialized from a text-only LLM. Our experiments reveal that Penguin-Encoder serves as a superior alternative to traditional contrastive pretraining, unlocking a higher degree of visual fidelity and data efficiency for multimodal understanding. Across various image and video benchmarks, Penguin-VL achieves performance comparable to leading VLMs (e.g., Qwen3-VL) in mathematical reasoning and surpasses them in tasks such as document understanding, visual knowledge, and multi-perspective video understanding. Notably, these gains are achieved with a lightweight architecture, demonstrating that improved visual representation rather than model scaling is the primary driver of performance. Our ablations show that Penguin-Encoder consistently outperforms contrastive-pretrained encoders, preserving fine-grained spatial and temporal cues that are critical for dense perception and complex reasoning. This makes it a strong drop-in alternative for compute-efficient VLMs and enables high performance in resource-constrained settings. Code: https://github.com/tencent-ailab/Penguin-VL",
+    "categories": "cs.CV",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06569",
+    "score": 5,
+    "topics": [
+      "VLM",
+      "robot.*pretraining"
+    ],
+    "institution": "Tencent"
+  },
+  {
+    "arxiv_id": "2603.06544",
+    "title": "Modeling and Measuring Redundancy in Multisource Multimodal Data for Autonomous Driving",
+    "authors": [
+      "Yuhan Zhou",
+      "Mehri Sattari",
+      "Haihua Chen",
+      "Kewei Sha"
+    ],
+    "affiliations": [],
+    "abstract": "Next-generation autonomous vehicles (AVs) rely on large volumes of multisource and multimodal ($M^2$) data to support real-time decision-making. In practice, data quality (DQ) varies across sources and modalities due to environmental conditions and sensor limitations, yet AV research has largely prioritized algorithm design over DQ analysis. This work focuses on redundancy as a fundamental but underexplored DQ issue in AV datasets. Using the nuScenes and Argoverse 2 (AV2) datasets, we model and measure redundancy in multisource camera data and multimodal image-LiDAR data, and evaluate how removing redundant labels affects the YOLOv8 object detection task. Experimental results show that selectively removing redundant multisource image object labels from cameras with shared fields of view improves detection. In nuScenes, mAP${50}$ gains from $0.66$ to $0.70$, $0.64$ to $0.67$, and from $0.53$ to $0.55$, on three representative overlap regions, while detection on other overlapping camera pairs remains at the baseline even under stronger pruning. In AV2, $4.1$-$8.6\\%$ of labels are removed, and mAP${50}$ stays near the $0.64$ baseline. Multimodal analysis also reveals substantial redundancy between image and LiDAR data. These findings demonstrate that redundancy is a measurable and actionable DQ factor with direct implications for AV performance. This work highlights the role of redundancy as a data quality factor in AV perception and motivates a data-centric perspective for evaluating and improving AV datasets. Code, data, and implementation details are publicly available at: https://github.com/yhZHOU515/RedundancyAD",
+    "categories": "cs.CV",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06544",
+    "score": 5,
+    "topics": [
+      "autonomous driving",
+      "driving.*large.*model"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.06210",
+    "title": "VG3S: Visual Geometry Grounded Gaussian Splatting for Semantic Occupancy Prediction",
+    "authors": [
+      "Xiaoyang Yan",
+      "Muleilan Pei",
+      "Shaojie Shen"
+    ],
+    "affiliations": [],
+    "abstract": "3D semantic occupancy prediction has become a crucial perception task for comprehensive scene understanding in autonomous driving. While recent advances have explored 3D Gaussian splatting for occupancy modeling to substantially reduce computational overhead, the generation of high-quality 3D Gaussians relies heavily on accurate geometric cues, which are often insufficient in purely vision-centric paradigms. To bridge this gap, we advocate for injecting the strong geometric grounding capability from Vision Foundation Models (VFMs) into occupancy prediction. In this regard, we introduce Visual Geometry Grounded Gaussian Splatting (VG3S), a novel framework that empowers Gaussian-based occupancy prediction with cross-view 3D geometric grounding. Specifically, to fully exploit the rich 3D geometric priors from a frozen VFM, we propose a plug-and-play hierarchical geometric feature adapter, which can effectively transform generic VFM tokens via feature aggregation, task-specific alignment, and multi-scale restructuring. Extensive experiments on the nuScenes occupancy benchmark demonstrate that VG3S achieves remarkable improvements of 12.6% in IoU and 7.5% in mIoU over the baseline. Furthermore, we show that VG3S generalizes seamlessly across diverse VFMs, consistently enhancing occupancy prediction accuracy and firmly underscoring the immense value of integrating priors derived from powerful, pre-trained geometry-grounded VFMs.",
+    "categories": "cs.CV cs.RO",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06210",
+    "score": 5,
+    "topics": [
+      "autonomous driving"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.06148",
+    "title": "VLM-RobustBench: A Comprehensive Benchmark for Robustness of Vision-Language Models",
+    "authors": [
+      "Rohit Saxena",
+      "Alessandro Suglia",
+      "Pasquale Minervini"
+    ],
+    "affiliations": [],
+    "abstract": "Vision-language models (VLMs) achieve strong performance on standard, high-quality datasets, but we still do not fully understand how they perform under real-world image distortions. We present VLM-RobustBench, a benchmark spanning 49 augmentation types across noise, blur, weather, digital, and geometric perturbations, evaluated under graded severities (low/mid/high) and binary transforms, yielding 133 corrupted settings. We evaluate VLMs from four families (Qwen, InternVL, Molmo, Gemma) on two complementary benchmarks: MMBench (visually grounded) and MMMU-Pro (reasoning-oriented). Our results reveal that visual severity is a weak predictor of difficulty: low-severity spatial perturbations often degrade performance more than visually severe photometric corruptions. In particular, low-severity glass_blur reduces MMBench accuracy by about 8 pp on average across models, while the largest drops arise from resampling and geometric distortions (e.g., upsample, elastic_transform), reaching up to 34 pp. Overall, our findings suggest current VLMs are semantically strong but spatially fragile, motivating the definition of novel robustness evaluation protocols and training regimes that emphasize resampling and geometric invariances.",
+    "categories": "cs.CV cs.AI",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06148",
+    "score": 5,
+    "topics": [
+      "vision-language model",
+      "VLM"
+    ],
+    "institution": "HIT"
+  },
+  {
+    "arxiv_id": "2603.06061",
+    "title": "Transforming Omnidirectional RGB-LiDAR data into 3D Gaussian Splatting",
+    "authors": [
+      "Semin Bae",
+      "Hansol Lim",
+      "Jongseong Brad Choi"
+    ],
+    "affiliations": [],
+    "abstract": "The demand for large-scale digital twins is rapidly growing in robotics and autonomous driving. However, constructing these environments with 3D Gaussian Splatting (3DGS) usually requires expensive, purpose-built data collection. Meanwhile, deployed platforms routinely collect extensive omnidirectional RGB and LiDAR logs, but a significant portion of these sensor data is directly discarded or strictly underutilized due to transmission constraints and the lack of scalable reuse pipeline. In this paper, we present an omnidirectional RGB-LiDAR reuse pipeline that transforms these archived logs into robust initialization assets for 3DGS. Direct conversion of such raw logs introduces practical bottlenecks: inherent non-linear distortion leads to unreliable Structure-from-Motion (SfM) tracking, and dense, unorganized LiDAR clouds cause computational overhead during 3DGS optimization. To overcome these challenges, our pipeline strategically integrates an ERP-to-cubemap conversion module for deterministic spatial anchoring, alongside PRISM-a color stratified downsampling strategy. By bridging these multi-modal inputs via Fast Point Feature Histograms (FPFH) based global registration and Iterative Closest Point (ICP), our pipeline successfully repurposes a considerable fraction of discarded data into usable SfM geometry. Furthermore, our LiDAR-reinforced initialization consistently enhances the final 3DGS rendering fidelity in structurally complex scenes compared to vision-only baselines. Ultimately, this work provides a deterministic workflow for creating simulation-grade digital twins from standard archived sensor logs.",
+    "categories": "cs.CV cs.RO",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06061",
+    "score": 5,
+    "topics": [
+      "autonomous driving"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.05995",
+    "title": "TADPO: Reinforcement Learning Goes Off-road",
+    "authors": [
+      "Zhouchonghao Wu",
+      "Raymond Song",
+      "Vedant Mundheda",
+      "Luis E. Navarro-Serment",
+      "Christof Schoenborn",
+      "Jeff Schneider"
+    ],
+    "affiliations": [],
+    "abstract": "Off-road autonomous driving poses significant challenges such as navigating unmapped, variable terrain with uncertain and diverse dynamics. Addressing these challenges requires effective long-horizon planning and adaptable control. Reinforcement Learning (RL) offers a promising solution by learning control policies directly from interaction. However, because off-road driving is a long-horizon task with low-signal rewards, standard RL methods are challenging to apply in this setting. We introduce TADPO, a novel policy gradient formulation that extends Proximal Policy Optimization (PPO), leveraging off-policy trajectories for teacher guidance and on-policy trajectories for student exploration. Building on this, we develop a vision-based, end-to-end RL system for high-speed off-road driving, capable of navigating extreme slopes and obstacle-rich terrain. We demonstrate our performance in simulation and, importantly, zero-shot sim-to-real transfer on a full-scale off-road vehicle. To our knowledge, this work represents the first deployment of RL-based policies on a full-scale off-road platform.",
+    "categories": "cs.RO cs.AI cs.LG",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.05995",
+    "score": 5,
+    "topics": [
+      "autonomous driving",
+      "sim-to-real"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.06512",
+    "title": "SG-DOR: Learning Scene Graphs with Direction-Conditioned Occlusion Reasoning for Pepper Plants",
+    "authors": [
+      "Rohit Menon",
+      "Niklas Mueller-Goldingen",
+      "Sicong Pan",
+      "Gokul Krishna Chenchani",
+      "Maren Bennewitz"
+    ],
+    "affiliations": [],
+    "abstract": "Robotic harvesting in dense crop canopies requires effective interventions that depend not only on geometry, but also on explicit, direction-conditioned relations identifying which organs obstruct a target fruit. We present SG-DOR (Scene Graphs with Direction-Conditioned Occlusion Reasoning), a relational framework that, given instance-segmented organ point clouds, infers a scene graph encoding physical attachments and direction-conditioned occlusion. We introduce an occlusion ranking task for retrieving and ranking candidate leaves for a target fruit and approach direction, and propose a direction-aware graph neural architecture with per-fruit leaf-set attention and union-level aggregation. Experiments on a multi-plant synthetic pepper dataset show improved occlusion prediction (F1=0.73, NDCG@3=0.85) and attachment inference (edge F1=0.83) over strong ablations, yielding a structured relational signal for downstream intervention planning.",
+    "categories": "cs.RO cs.CV",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06512",
+    "score": 4,
+    "topics": [],
+    "institution": "HIT"
+  },
+  {
+    "arxiv_id": "2603.06445",
+    "title": "What if? Emulative Simulation with World Models for Situated Reasoning",
+    "authors": [
+      "Ruiping Liu",
+      "Yufan Chen",
+      "Yuheng Zhang",
+      "Junwei Zheng",
+      "Kunyu Peng",
+      "Chengzhi Wu",
+      "Chenguang Huang",
+      "Di Wen",
+      "Jiaming Zhang",
+      "Kailun Yang",
+      "Rainer Stiefelhagen"
+    ],
+    "affiliations": [],
+    "abstract": "Situated reasoning often relies on active exploration, yet in many real-world scenarios such exploration is infeasible due to physical constraints of robots or safety concerns of visually impaired users. Given only a limited observation, can an agent mentally simulate a future trajectory toward a target situation and answer spatial what-if questions? We introduce WanderDream, the first large-scale dataset designed for the emulative simulation of mental exploration, enabling models to reason without active exploration. WanderDream-Gen comprises 15.8K panoramic videos across 1,088 real scenes from HM3D, ScanNet++, and real-world captures, depicting imagined trajectories from current viewpoints to target situations. WanderDream-QA contains 158K question-answer pairs, covering starting states, paths, and end states along each trajectory to comprehensively evaluate exploration-based reasoning. Extensive experiments with world models and MLLMs demonstrate (1) that mental exploration is essential for situated reasoning, (2) that world models achieve compelling performance on WanderDream-Gen, (3) that imagination substantially facilitates reasoning on WanderDream-QA, and (4) that WanderDream data exhibit remarkable transferability to real-world scenarios. The source code and all data will be released.",
+    "categories": "cs.CV",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06445",
+    "score": 4,
+    "topics": [
+      "world model"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.06386",
+    "title": "REACT++: Efficient Cross-Attention for Real-Time Scene Graph Generation",
+    "authors": [
+      "Maëlic Neau",
+      "Zoe Falomir"
+    ],
+    "affiliations": [],
+    "abstract": "Scene Graph Generation (SGG) is a task that encodes visual relationships between objects in images as graph structures. SGG shows significant promise as a foundational component for downstream tasks, such as reasoning for embodied agents. To enable real-time applications, SGG must address the trade-off between performance and inference speed. However, current methods tend to focus on one of the following: (1) improving relation prediction accuracy, (2) enhancing object detection accuracy, or (3) reducing latency, without aiming to balance all three objectives simultaneously. To address this limitation, we build on the powerful Real-time Efficiency and Accuracy Compromise for Tradeoffs in Scene Graph Generation (REACT) architecture and propose REACT++, a new state-of-the-art model for real-time SGG. By leveraging efficient feature extraction and subject-to-object cross-attention within the prototype space, REACT++ balances latency and representational power. REACT++ achieves the highest inference speed among existing SGG models, improving relation prediction accuracy without sacrificing object detection performance. Compared to the previous REACT version, REACT++ is 20% faster with a gain of 10% in relation prediction accuracy on average. The code is available at https://github.com/Maelic/SGG-Benchmark.",
+    "categories": "cs.CV",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06386",
+    "score": 4,
+    "topics": [
+      "embodied agent"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.06331",
+    "title": "WorldCache: Accelerating World Models for Free via Heterogeneous Token Caching",
+    "authors": [
+      "Weilun Feng",
+      "Guoxin Fan",
+      "Haotong Qin",
+      "Chuanguang Yang",
+      "Mingqiang Wu",
+      "Yuqi Li",
+      "Xiangqi Li",
+      "Zhulin An",
+      "Libo Huang",
+      "Dingrui Wang",
+      "Longlong Liao",
+      "Michele Magno",
+      "Yongjun Xu"
+    ],
+    "affiliations": [],
+    "abstract": "Diffusion-based world models have shown strong potential for unified world simulation, but the iterative denoising remains too costly for interactive use and long-horizon rollouts. While feature caching can accelerate inference without training, we find that policies designed for single-modal diffusion transfer poorly to world models due to two world-model-specific obstacles: \\emph{token heterogeneity} from multi-modal coupling and spatial variation, and \\emph{non-uniform temporal dynamics} where a small set of hard tokens drives error growth, making uniform skipping either unstable or overly conservative. We propose \\textbf{WorldCache}, a caching framework tailored to diffusion world models. We introduce \\textit{Curvature-guided Heterogeneous Token Prediction}, which uses a physics-grounded curvature score to estimate token predictability and applies a Hermite-guided damped predictor for chaotic tokens with abrupt direction changes. We also design \\textit{Chaotic-prioritized Adaptive Skipping}, which accumulates a curvature-normalized, dimensionless drift signal and recomputes only when bottleneck tokens begin to drift. Experiments on diffusion world models show that WorldCache delivers up to \\textbf{3.7$\\times$} end-to-end speedups while maintaining \\textbf{98\\%} rollout quality, demonstrating the vast advantages and practicality of WorldCache in resource-constrained scenarios. Our code is released in https://github.com/FofGofx/WorldCache.",
+    "categories": "cs.CV",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06331",
+    "score": 4,
+    "topics": [
+      "world model"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.06270",
+    "title": "HiPP-Prune: Hierarchical Preference-Conditioned Structured Pruning for Vision-Language Models",
+    "authors": [
+      "Lincen Bai",
+      "Hedi Tabia",
+      "Raul Santos-Rodriguez"
+    ],
+    "affiliations": [],
+    "abstract": "Pruning vision-language models (VLMs) for efficient deployment is challenging because compression can affect not only task utility but also visual grounding, often amplifying object hallucinations even at the same sparsity level. We present HiPP-Prune, a hierarchical preference-conditioned structured pruning framework that treats pruning as conditional resource allocation under multiple objectives. HiPP-Prune makes plan-level decisions: a single policy invocation outputs a global pruning blueprint by factorizing decisions into an overall sparsity budget and a layer-wise allocation, enabling queryable trade-offs via a user-specified preference vector. To account for VLM-specific failure modes, our policy state integrates a visual sensitivity signal derived from attention flow between vision tokens and language hidden states, discouraging over-pruning of vision-critical layers that facilitate cross-modal fusion. We optimize pruning plans with plan-level Group Relative Policy Optimization (GRPO) under a multi-objective return that combines task utility, hallucination robustness (POPE), compression, and a synaptic-flow-inspired stability proxy to reduce unproductive exploration in high-sparsity regimes. Experiments on LLaVA with POPE and ScienceQA demonstrate that HiPP-Prune discovers diverse non-dominated pruning plans and provides controllable robustness--utility trade-offs under matched sparsity budgets.",
+    "categories": "cs.CV cs.AI",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06270",
+    "score": 4,
+    "topics": [
+      "vision-language model",
+      "VLM",
+      "visual grounding"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.05869",
+    "title": "PatchCue: Enhancing Vision-Language Model Reasoning with Patch-Based Visual Cues",
+    "authors": [
+      "Yukun Qi",
+      "Pei Fu",
+      "Hang Li",
+      "Yuhan Liu",
+      "Chao Jiang",
+      "Bin Qin",
+      "Zhenbo Luo",
+      "Jian Luan"
+    ],
+    "affiliations": [],
+    "abstract": "Vision-Language Models (VLMs) have achieved remarkable progress on a wide range of challenging multimodal understanding and reasoning tasks. However, existing reasoning paradigms, such as the classical Chain-of-Thought (CoT), rely solely on textual information and often underutilize important visual cues. While prior work has incorporated pixel-level visual cues, these representations require precise spatial localization, introducing additional learning complexity. To address this, we propose PatchCue, a novel patch-based visual cue paradigm designed to significantly enhance the visual reasoning capabilities of VLMs. By partitioning images into patches and representing cues at the patch level, PatchCue aligns better with human perceptual habits and leverages the patch-tokenized input of modern VLMs. We train VLMs using a two-stage approach: cold-start supervised fine-tuning to output patch-level cues, followed by reinforcement learning with a process-supervised cue reward that guides intermediate visual reasoning steps. Extensive experiments on multiple VLMs and diverse benchmarks, including general visual question answering, complex reasoning, and document understanding, demonstrate that PatchCue consistently improves overall model performance. Our results show that patch-level cues outperform both pixel-level bounding boxes and point-based cues, providing a more effective and cognitively aligned visual reasoning paradigm.",
+    "categories": "cs.CV",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.05869",
+    "score": 4,
+    "topics": [
+      "vision-language model",
+      "VLM",
+      "chain-of-thought"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.06450",
+    "title": "Data Analogies Enable Efficient Cross-Embodiment Transfer",
+    "authors": [
+      "Jonathan Yang",
+      "Chelsea Finn",
+      "Dorsa Sadigh"
+    ],
+    "affiliations": [],
+    "abstract": "Generalist robot policies are trained on demonstrations collected across a wide variety of robots, scenes, and viewpoints. Yet it remains unclear how to best organize and scale such heterogeneous data so that it genuinely improves performance in a given target setting. In this work, we ask: what form of demonstration data is most useful for enabling transfer across robot set-ups? We conduct controlled experiments that vary end-effector morphology, robot platform appearance, and camera perspective, and compare the effects of simply scaling the number of demonstrations against systematically broadening the diversity in different ways. Our simulated experiments show that while perceptual shifts such as viewpoint benefit most from broad diversity, morphology shifts benefit far less from unstructured diversity and instead see the largest gains from data analogies, i.e. paired demonstrations that align scenes, tasks, and/or trajectories across different embodiments. Informed by the simulation results, we improve real-world cross-embodiment transfer success by an average of $22.5\\%$ over large-scale, unpaired datasets by changing only the composition of the data.",
+    "categories": "cs.RO",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06450",
+    "score": 4,
+    "topics": [
+      "cross-embodiment"
+    ],
+    "institution": "Stanford"
+  },
+  {
+    "arxiv_id": "2603.06280",
+    "title": "SuperSuit: An Isomorphic Bimodal Interface for Scalable Mobile Manipulation",
+    "authors": [
+      "Tongqing Chen",
+      "Hang Wu",
+      "Jiasen Wang",
+      "Xiaotao Li",
+      "Zhu Jin",
+      "Lu Fang"
+    ],
+    "affiliations": [],
+    "abstract": "High-quality, long-horizon demonstrations are essential for embodied AI, yet acquiring such data for tightly coupled wheeled mobile manipulators remains a fundamental bottleneck. Unlike fixed-base systems, mobile manipulators require continuous coordination between $SE(2)$ locomotion and precise manipulation, exposing limitations in existing teleoperation and wearable interfaces. We present \\textbf{SuperSuit}, a bimodal data acquisition framework that supports both robot-in-the-loop teleoperation and active demonstration under a shared kinematic interface. Both modalities produce structurally identical joint-space trajectories, enabling direct data mixing without modifying downstream policies. For locomotion, SuperSuit maps natural human stepping to continuous planar base velocities, eliminating discrete command switches. For manipulation, it employs a strictly isomorphic wearable arm in both modes, while policy training is formulated in a shift-invariant delta-joint representation to mitigate calibration offsets and structural compliance without inverse kinematics. Real-world experiments on long-horizon mobile manipulation tasks show 2.6$\\times$ higher demonstration throughput in active mode compared to a teleoperation baseline, comparable policy performance when substituting teleoperation data with active demonstrations at fixed dataset size, and monotonic performance improvement as active data volume increases. These results indicate that consistent kinematic representations across collection modalities enable scalable data acquisition for long-horizon mobile manipulation.",
+    "categories": "cs.RO",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06280",
+    "score": 4,
+    "topics": [
+      "embodied AI"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.06218",
+    "title": "Few-Shot Neural Differentiable Simulator: Real-to-Sim Rigid-Contact Modeling",
+    "authors": [
+      "Zhenhao Huang",
+      "Siyuan Luo",
+      "Bingyang Zhou",
+      "Ziqiu Zeng",
+      "Jason Pho",
+      "Fan Shi"
+    ],
+    "affiliations": [],
+    "abstract": "Accurate physics simulation is essential for robotic learning and control, yet analytical simulators often fail to capture complex contact dynamics, while learning-based simulators typically require large amounts of costly real-world data. To bridge this gap, we propose a few-shot real-to-sim approach that combines the physical consistency of analytical formulations with the representational capacity of graph neural network (GNN)-based models. Using only a small amount of real-world data, our method calibrates analytical simulators to generate large-scale synthetic datasets that capture diverse contact interactions. On this foundation, we introduce a mesh-based GNN that implicitly models rigid-body forward dynamics and derive surrogate gradients for collision detection, achieving full differentiability. Experimental results demonstrate that our approach enables learning-based simulators to outperform differentiable baselines in replicating real-world trajectories. In addition, the differentiable design supports gradient-based optimization, which we validate through simulation-based policy learning in multi-object interaction scenarios. Extensive experiments show that our framework not only improves simulation fidelity with minimal supervision but also increases the efficiency of policy learning. Taken together, these findings suggest that differentiable simulation with few-shot real-world grounding provides a powerful direction for advancing future robotic manipulation and control.",
+    "categories": "cs.RO",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.06218",
+    "score": 4,
+    "topics": [
+      "robotic manipulation"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.05861",
+    "title": "DexEMG: Towards Dexterous Teleoperation System via EMG2Pose Generalization",
+    "authors": [
+      "Qianyou Zhao",
+      "Wenqiao Li",
+      "Chiyu Wang",
+      "Kaifeng Zhang"
+    ],
+    "affiliations": [],
+    "abstract": "High-fidelity teleoperation of dexterous robotic hands is essential for bringing robots into unstructured domestic environments. However, existing teleoperation systems often face a trade-off between performance and portability: vision-based capture systems are constrained by costs and line-of-sight requirements, while mechanical exoskeletons are bulky and physically restrictive. In this paper, we present DexEMG, a lightweight and cost-effective teleoperation system leveraging surface electromyography (sEMG) to bridge the gap between human intent and robotic execution. We first collect a synchronized dataset of sEMG signals and hand poses via a MoCap glove to train EMG2Pose, a neural network capable of continuously predicting hand kinematics directly from muscle activity. To ensure seamless control, we develop a robust hand retargeting algorithm that maps the predicted poses onto a multi-fingered dexterous hand in real-time. Experimental results demonstrate that DexEMG achieves high precision in diverse teleoperation tasks. Notably, our system exhibits strong generalization capabilities across novel objects and complex environments without the need for intensive individual-specific recalibration. This work offers a scalable and intuitive interface for both general-purpose robotic manipulation and assistive technologies.",
+    "categories": "cs.RO",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.05861",
+    "score": 4,
+    "topics": [
+      "robotic manipulation"
+    ],
+    "institution": "—"
+  },
+  {
+    "arxiv_id": "2603.05842",
+    "title": "Expert Knowledge-driven Reinforcement Learning for Autonomous Racing via Trajectory Guidance and Dynamics Constraints",
+    "authors": [
+      "Bo Leng",
+      "Weiqi Zhang",
+      "Zhuoren Li",
+      "Lu Xiong",
+      "Guizhe Jin",
+      "Ran Yu",
+      "Chen Lv"
+    ],
+    "affiliations": [],
+    "abstract": "Reinforcement learning has demonstrated significant potential in the field of autonomous driving. However, it suffers from defects such as training instability and unsafe action outputs when faced with autonomous racing environments characterized by high dynamics and strong nonlinearities. To this end, this paper proposes a trajectory guidance and dynamics constraints Reinforcement Learning (TraD-RL) method for autonomous racing. The key features of this method are as follows: 1) leveraging the prior expert racing line to construct an augmented state representation and facilitate reward shaping, thereby integrating domain knowledge to stabilize early-stage policy learning; 2) embedding explicit vehicle dynamic priors into a safe operating envelope formulated via control barrier functions to enable safety-constrained learning; and 3) adopting a multi-stage curriculum learning strategy that shifts from expert-guided learning to autonomous exploration, allowing the learned policy to surpass expert-level performance. The proposed method is evaluated in a high-fidelity simulation environment modeled after the Tempelhof Airport Street Circuit. Experimental results demonstrate that TraD-RL effectively improves both lap speed and driving stability of the autonomous racing vehicle, achieving a synergistic optimization of racing performance and safety.",
+    "categories": "cs.RO",
+    "published": "2026-03-06",
+    "url": "https://arxiv.org/abs/2603.05842",
+    "score": 4,
+    "topics": [
+      "autonomous driving"
+    ],
+    "institution": "—"
+  }
+]
