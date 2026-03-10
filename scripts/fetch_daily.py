@@ -331,22 +331,21 @@ def fetch_arxiv_papers(date_str: str = None):
 
     results.sort(key=lambda p: p["score"], reverse=True)
 
-    # Phase 2: enrich institutions via PDF for papers missing them
+    # Phase 2: enrich ALL papers via PDF (PDF is more reliable than author-name guesses)
     if HAS_PDFPLUMBER:
-        no_inst = [p for p in results if p["institution"] == "\u2014"]
-        if no_inst:
-            print(f"  Enriching institutions from PDF for {len(no_inst)} papers...")
-            for i, p in enumerate(no_inst):
-                pdf_inst = extract_institutions_from_pdf(p["arxiv_id"])
-                if pdf_inst:
-                    p["institution"] = pdf_inst
-                    if is_known_institution(pdf_inst):
-                        p["score"] += 3
-                if (i + 1) % 10 == 0:
-                    print(f"    Processed {i+1}/{len(no_inst)}...")
-                time.sleep(1)
-            enriched = sum(1 for p in no_inst if p["institution"] != "\u2014")
-            print(f"    PDF enrichment: {enriched}/{len(no_inst)} institutions found")
+        print(f"  Enriching institutions from PDF for {len(results)} papers...")
+        enriched = 0
+        for i, p in enumerate(results):
+            pdf_inst = extract_institutions_from_pdf(p["arxiv_id"])
+            if pdf_inst:
+                p["institution"] = pdf_inst
+                if is_known_institution(pdf_inst):
+                    p["score"] += 3
+                enriched += 1
+            if (i + 1) % 10 == 0:
+                print(f"    Processed {i+1}/{len(results)}...")
+            time.sleep(1)
+        print(f"    PDF enrichment: {enriched}/{len(results)} institutions found")
 
     return results, len(date_filtered)
 

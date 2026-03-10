@@ -31,7 +31,7 @@ INST_PATTERNS = {
     r"\bMicrosoft\b.*?Research": "Microsoft Research",
     r"\bMSRA\b": "MSRA",
     r"\bOpenAI\b": "OpenAI",
-    r"\bApple\b": "Apple",
+    r"Apple\s+(?:Inc|Research|Machine Learning)": "Apple",
     r"\bAmazon\b": "Amazon",
     r"\bTesla\b": "Tesla",
     r"\bUber\b": "Uber",
@@ -137,8 +137,8 @@ INST_PATTERNS = {
     r"\bZhejiang\b.*?Univ|\bZJU\b": "ZJU",
     r"\bFudan\b": "Fudan",
     r"\bNanjing\b.*?Univ|\bNJU\b": "Nanjing Univ",
-    r"Univ.*?Sci.*?Tech.*?China|\bUSTC\b": "USTC",
-    r"\bHuazhong\b|\bHUST\b": "HUST",
+    r"\bUSTC\b|University of Science and Technology of China": "USTC",
+    r"\bHuazhong\b|\bHUST\b|Huazhong University of Science": "HUST",
     r"South China.*?Tech|\bSCUT\b": "SCUT",
     r"\bHarbin\b.*?Inst|\bHIT\b": "HIT",
     r"\bBeihang\b|\bBUAA\b": "BUAA",
@@ -222,7 +222,7 @@ RESEARCHER_INST = {
     "Lerrel Pinto": "NYU",
     # === UCSD ===
     "Xiaolong Wang": "UCSD",
-    "Hao Su": "UCSD",
+    "Hao Su": "UCSD",  # full name only, _name_match prevents 'Xinhao Sun' false positive
     # === UT Austin ===
     "Philipp Krahenbuhl": "UT Austin",
     "Yuke Zhu": "UT Austin",
@@ -254,9 +254,7 @@ RESEARCHER_INST = {
     "Hang Zhao": "Tsinghua",
     "Hao Zhao": "Tsinghua",
     "Huazhe Xu": "Tsinghua",
-    "He Wang": "PKU",
     "Hao Dong": "PKU",
-    "Li Zhang": "Fudan",
     "Cewu Lu": "SJTU",
     "Hesheng Wang": "SJTU",
     "Xinge Zhu": "CUHK",
@@ -309,11 +307,12 @@ TIER1_INSTITUTIONS = {
 
 
 def _extract_affiliation_block(page_text: str) -> str:
-    """Extract the affiliation region from PDF first page (before Abstract)."""
+    """Extract the affiliation region from PDF first page (before Abstract / figures)."""
     header = page_text[:2000]
-    for marker in ["Abstract", "ABSTRACT", "Abstract.", "Abstract—",
+    for marker in ["Abstract", "ABSTRACT", "Abstract.", "Abstract\u2014",
                    "I. INTRODUCTION", "1 Introduction", "1. Introduction",
-                   "I. I NTRODUCTION"]:
+                   "I. I NTRODUCTION",
+                   "Fig. 1", "Fig.1", "Figure 1", "Figure1"]:
         idx = header.find(marker)
         if idx > 0:
             header = header[:idx]
@@ -346,6 +345,24 @@ def extract_institutions_from_pdf(arxiv_id: str) -> str:
         return ""
 
 
+def _name_match(known: str, author: str) -> bool:
+    """Exact full-name match (not substring).
+
+    Handles: 'He Wang' == 'He Wang' but NOT 'Zhe Wang'.
+    Also handles minor variations like middle initials.
+    """
+    k = known.lower().strip()
+    a = author.lower().strip()
+    if k == a:
+        return True
+    k_parts = k.split()
+    a_parts = a.split()
+    if len(k_parts) >= 2 and len(a_parts) >= 2:
+        if k_parts[0] == a_parts[0] and k_parts[-1] == a_parts[-1]:
+            return True
+    return False
+
+
 def identify_institutions(authors: list, affiliations_text: str = "") -> str:
     """Identify institutions from author names and affiliation text only.
 
@@ -357,7 +374,7 @@ def identify_institutions(authors: list, affiliations_text: str = "") -> str:
     for author in authors[:8]:
         name = author.strip()
         for known, inst in RESEARCHER_INST.items():
-            if known.lower() in name.lower():
+            if _name_match(known, name):
                 if inst not in found:
                     found.append(inst)
 
