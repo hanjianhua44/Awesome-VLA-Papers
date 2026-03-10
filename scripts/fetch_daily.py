@@ -777,15 +777,81 @@ def categorize_paper(topics: list, categories: str, title: str = "", abstract: s
     return "Related"
 
 
+CAT_CN = {
+    "VLA": ("🤖 VLA 模型", "视觉-语言-动作模型，连接感知、理解与控制的核心架构"),
+    "Autonomous Driving": ("🚗 自动驾驶", "端到端驾驶、规划、仿真与安全"),
+    "Robotics": ("🦾 机器人操作", "灵巧操作、双臂协同、移动操控与具身智能"),
+    "Agent": ("🧠 智能体", "通用智能体、任务规划与多模态决策"),
+    "World Models": ("🌍 世界模型", "环境动态建模、视频预测与物理仿真"),
+    "RL & Policy Optimization": ("🎯 强化学习与策略优化", "RLHF、GRPO、在线 RL 与奖励建模"),
+    "Spatial & Perception": ("👁️ 空间感知与 3D 理解", "3D 重建、空间推理与多模态几何"),
+    "Efficient & Architecture": ("⚡ 高效架构与推理加速", "模型压缩、token 优化与部署加速"),
+    "Related": ("📎 相关工作", ""),
+}
+
+def _make_summary_cn(title: str, abstract: str) -> str:
+    """Generate a concise Chinese-style summary from abstract."""
+    abs_lower = (title + " " + abstract).lower()
+    parts = []
+
+    if "autonomous driving" in abs_lower or "end-to-end driving" in abs_lower:
+        domain = "自动驾驶"
+    elif "robot" in abs_lower or "manipulation" in abs_lower:
+        domain = "机器人"
+    elif "embodied" in abs_lower:
+        domain = "具身智能"
+    else:
+        domain = "多模态AI"
+
+    method_keywords = {
+        "diffusion": "扩散模型", "flow matching": "流匹配", "reinforcement learning": "强化学习",
+        "mixture of experts": "混合专家 (MoE)", "moe": "混合专家 (MoE)",
+        "world model": "世界模型", "chain-of-thought": "思维链 (CoT)",
+        "transformer": "Transformer", "tokeniz": "动作token化",
+        "imitation learning": "模仿学习", "contrastive": "对比学习",
+        "distillation": "蒸馏", "pruning": "剪枝", "quantiz": "量化",
+        "vla": "VLA", "pretraining": "预训练", "fine-tun": "微调",
+        "zero-shot": "零样本", "few-shot": "少样本",
+    }
+    methods = [cn for en, cn in method_keywords.items() if en in abs_lower]
+
+    sents = abstract.replace("\n", " ").split(". ")
+    core_sent = ""
+    for s in sents:
+        sl = s.lower()
+        if any(k in sl for k in ["we propose", "we present", "we introduce", "this paper", "in this work"]):
+            core_sent = s.strip().rstrip(".")
+            break
+    if not core_sent and len(sents) > 1:
+        core_sent = sents[1].strip().rstrip(".")
+
+    if core_sent:
+        if len(core_sent) > 200:
+            core_sent = core_sent[:200] + "..."
+        parts.append(core_sent)
+
+    if methods:
+        parts.append(f"**关键技术：** {' / '.join(methods[:4])}")
+
+    result_keywords = ["state-of-the-art", "sota", "outperform", "surpass", "improve", "achieve"]
+    for s in sents:
+        if any(k in s.lower() for k in result_keywords):
+            result = s.strip().rstrip(".")
+            if len(result) > 150:
+                result = result[:150] + "..."
+            parts.append(f"**核心结果：** {result}")
+            break
+
+    return "\n>\n> ".join(parts) if parts else abstract[:200] + "..."
+
+
 def generate_daily_report(papers: list, date_str: str, total_scanned: int = 0) -> str:
-    """Generate markdown report for a given day."""
+    """Generate 机器之心 style Chinese daily report."""
     lines = []
-    lines.append(f"# arXiv Daily Report: {date_str}")
+
+    lines.append(f"# 📄 每日 arXiv 速递 | {date_str}")
     lines.append("")
-    scanned_str = f" (scanned {total_scanned} papers from cs.CV + cs.RO)" if total_scanned else ""
-    lines.append(f"> **{len(papers)} relevant papers**{scanned_str} | Focus: VLA, Autonomous Driving, Robotics, Agent")
-    lines.append("")
-    lines.append("To add a paper to the main list, tell me: `add #N` (e.g. `add #1 #3 #7`)")
+    lines.append(f"> 🔍 扫描 cs.CV + cs.RO 共 **{total_scanned}** 篇，筛选出 **{len(papers)}** 篇与 VLA / 自动驾驶 / 机器人 / Agent 相关的工作")
     lines.append("")
 
     by_cat = {}
@@ -796,41 +862,80 @@ def generate_daily_report(papers: list, date_str: str, total_scanned: int = 0) -
     cat_order = ["VLA", "Autonomous Driving", "Robotics", "Agent", "World Models",
                  "RL & Policy Optimization", "Spatial & Perception",
                  "Efficient & Architecture", "Related"]
-    idx = 1
 
+    lines.append("## 📊 今日概览")
+    lines.append("")
+    lines.append("| 方向 | 数量 | 亮点 |")
+    lines.append("|------|------|------|")
+    for cat in cat_order:
+        cat_papers = by_cat.get(cat, [])
+        if not cat_papers:
+            continue
+        cn_name, _ = CAT_CN.get(cat, (cat, ""))
+        top_inst = []
+        for p in cat_papers[:3]:
+            if p["institution"] != "—" and p["institution"] not in top_inst:
+                top_inst.append(p["institution"])
+        inst_preview = ", ".join(top_inst[:3]) if top_inst else "—"
+        lines.append(f"| {cn_name} | {len(cat_papers)} | {inst_preview} |")
+    lines.append("")
+
+    lines.append("> 💡 想要将某篇论文加入主列表？回复 `add #N`（如 `add #1 #3 #7`）")
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+
+    idx = 1
     for cat in cat_order:
         cat_papers = by_cat.get(cat, [])
         if not cat_papers:
             continue
 
-        lines.append(f"## {cat} ({len(cat_papers)})")
+        cn_name, cn_desc = CAT_CN.get(cat, (cat, ""))
+        lines.append(f"## {cn_name}（{len(cat_papers)} 篇）")
+        if cn_desc:
+            lines.append(f"*{cn_desc}*")
         lines.append("")
 
         for p in cat_papers:
-            stars = "⭐" * min(p["score"] // 3, 3)
-            inst_str = f" | **{p['institution']}**" if p["institution"] != "—" else ""
-            authors_short = ", ".join(p["authors"][:4])
-            if len(p["authors"]) > 4:
-                authors_short += f" et al. ({len(p['authors'])})"
+            score = p["score"]
+            if score >= 9:
+                badge = "🔥"
+            elif score >= 6:
+                badge = "⭐"
+            else:
+                badge = "📌"
 
-            lines.append(f"### #{idx}. {p['title']} {stars}")
+            inst_tag = ""
+            if p["institution"] != "—":
+                inst_tag = f" `{p['institution']}`"
+
+            lines.append(f"### {badge} #{idx}｜{p['title']}")
             lines.append("")
-            lines.append(f"**{authors_short}**{inst_str}")
+            authors_short = ", ".join(p["authors"][:3])
+            if len(p["authors"]) > 3:
+                authors_short += f" 等 ({len(p['authors'])} 位作者)"
+
+            meta_parts = [f"**{authors_short}**"]
+            if inst_tag:
+                meta_parts.append(inst_tag)
+            lines.append(" | ".join(meta_parts))
             lines.append("")
-            lines.append(f"Categories: `{p['categories']}` | [{p['arxiv_id']}]({p['url']})")
+            lines.append(f"📎 [{p['arxiv_id']}]({p['url']}) | `{p['categories']}`")
             lines.append("")
 
-            abstract_short = p["abstract"][:400]
-            if len(p["abstract"]) > 400:
-                abstract_short += "..."
-            lines.append(f"> {abstract_short}")
+            summary = _make_summary_cn(p["title"], p["abstract"])
+            lines.append(f"> {summary}")
+            lines.append("")
+            lines.append("---")
             lines.append("")
             idx += 1
 
     if not papers:
-        lines.append("*No relevant papers found for this date.*")
+        lines.append("*今日暂无相关论文。*")
         lines.append("")
 
+    lines.append(f"*本报告由 Awesome-VLA-Papers 自动生成，基于 arXiv cs.CV + cs.RO 每日更新。*")
     return "\n".join(lines)
 
 

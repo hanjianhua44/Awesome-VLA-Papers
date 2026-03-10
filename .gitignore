@@ -1,0 +1,8 @@
+daily/*.json
+scripts/__pycache__/
+scripts/verify_output.json
+scripts/verify_result.txt
+scripts/test_*.py
+scripts/check_*.py
+scripts/count_*.py
+scripts/show_*.py
