@@ -181,6 +181,41 @@ INST_PATTERNS = {
     r"\bA\*STAR\b|Agency.*?Science.*?Tech": "A*STAR",
     r"Univ.*?Toronto": "Univ of Toronto",
     r"Univ.*?Alberta": "Univ of Alberta",
+    r"Univ.*?Waterloo": "Univ of Waterloo",
+    # === More US Universities ===
+    r"Texas A.?M": "Texas A&M",
+    r"Ohio State": "Ohio State",
+    r"Iowa State": "Iowa State",
+    r"UC Irvine|\bUCI\b": "UC Irvine",
+    r"UC Davis": "UC Davis",
+    r"UC Santa Barbara|\bUCSB\b": "UC Santa Barbara",
+    r"Northeastern\s+Univ": "Northeastern Univ",
+    r"Univ.*?Florida|\bUFL\b": "Univ of Florida",
+    r"Univ.*?Virginia|\bUVA\b": "UVA",
+    r"Duke\s+Univ": "Duke",
+    r"Brown\s+Univ": "Brown",
+    r"Univ.*?Minnesota": "Univ of Minnesota",
+    r"Arizona\s+State|\bASU\b": "ASU",
+    r"Rutgers": "Rutgers",
+    r"Johns\s+Hopkins|\bJHU\b": "JHU",
+    # === Industry ===
+    r"Mercedes.Benz": "Mercedes-Benz",
+    r"\bFord\b.*(?:Motor|Research)": "Ford",
+    r"\bVolvo\b": "Volvo",
+    r"\bBMW\b": "BMW",
+    r"\bHyundai\b": "Hyundai",
+    r"Foxconn": "Foxconn",
+    r"Midea": "Midea",
+    # === More Chinese Universities ===
+    r"Southeast.*?Univ|SEU\b": "Southeast Univ",
+    r"Tongji\b": "Tongji",
+    r"Beijing\s+Institute\s+of\s+Tech": "BIT",
+    r"South.*?Univ.*?Tech|\bSUST\b|Southern University of Science": "SUSTech",
+    r"Shandong\s+Univ": "Shandong Univ",
+    # === More EU ===
+    r"Delft": "TU Delft",
+    r"Zurich\b.*Univ|Univ.*Zurich|\bUZH\b": "Univ of Zurich",
+    r"Univ.*?Bonn": "Univ of Bonn",
 }
 
 # ---------------------------------------------------------------------------
@@ -303,25 +338,25 @@ TIER1_INSTITUTIONS = {
     "ntu", "nanyang", "nus",
     "kaist", "snu", "seoul national",
     "univ of tokyo", "monash", "anu",
+    "uc irvine", "uc davis", "uc santa barbara",
+    "texas a&m", "ohio state", "duke", "brown", "jhu", "johns hopkins",
+    "northeastern univ", "rutgers", "asu",
+    "mercedes-benz", "ford", "volvo", "bmw", "hyundai",
+    "southeast univ", "tongji", "bit", "sustech", "shandong univ",
+    "tu delft", "univ of bonn", "univ of zurich",
+    "univ of toronto", "univ of alberta", "univ of waterloo",
 }
 
 
-def _extract_affiliation_block(page_text: str) -> str:
-    """Extract the affiliation region from PDF first page (before Abstract / figures)."""
-    header = page_text[:2000]
-    for marker in ["Abstract", "ABSTRACT", "Abstract.", "Abstract\u2014",
-                   "I. INTRODUCTION", "1 Introduction", "1. Introduction",
-                   "I. I NTRODUCTION",
-                   "Fig. 1", "Fig.1", "Figure 1", "Figure1"]:
-        idx = header.find(marker)
-        if idx > 0:
-            header = header[:idx]
-            break
-    return header
-
 
 def extract_institutions_from_pdf(arxiv_id: str) -> str:
-    """Download PDF first page and extract institution names from affiliation block."""
+    """Download PDF first page, search entire page for known institutions.
+
+    Searches the full first-page text because many papers put institution
+    names in footnotes at the bottom of page 1, well beyond the first 2500
+    characters. INST_PATTERNS are specific enough (university names, lab
+    names, company + qualifier) to avoid false positives even in body text.
+    """
     if not HAS_PDFPLUMBER:
         return ""
     url = f"https://arxiv.org/pdf/{arxiv_id}"
@@ -334,10 +369,9 @@ def extract_institutions_from_pdf(arxiv_id: str) -> str:
                 return ""
             text = pdf.pages[0].extract_text() or ""
 
-        header = _extract_affiliation_block(text)
         found = []
         for pattern, inst in INST_PATTERNS.items():
-            if re.search(pattern, header, re.IGNORECASE):
+            if re.search(pattern, text, re.IGNORECASE):
                 if inst not in found:
                     found.append(inst)
         return ", ".join(found[:4]) if found else ""
