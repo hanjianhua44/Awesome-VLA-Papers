@@ -46,15 +46,40 @@ def load_papers():
         return yaml.safe_load(f)
 
 
-def extract_year(venue: str) -> int:
-    m = re.search(r"(\d{4})", venue)
-    return int(m.group(1)) if m else 2025
+MONTH_NAMES = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+               "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
 
-def year_badge(year: int) -> str:
+def extract_date(p: dict) -> tuple:
+    """Return (year, month, day) from the 'date' field or arXiv ID fallback."""
+    d = p.get("date", "")
+    if d and len(d) >= 10:
+        try:
+            return int(d[:4]), int(d[5:7]), int(d[8:10])
+        except ValueError:
+            pass
+    aid = p.get("arxiv", "")
+    if aid and len(aid) >= 4:
+        try:
+            yy, mm = int(aid[:2]), int(aid[2:4])
+            if 1 <= mm <= 12:
+                return 2000 + yy, mm, 1
+        except ValueError:
+            pass
+    m = re.search(r"(\d{4})", p.get("venue", ""))
+    return (int(m.group(1)), 1, 1) if m else (2025, 1, 1)
+
+
+def format_date(year: int, month: int, day: int) -> str:
+    return f"{MONTH_NAMES[month]} {day}, {year}"
+
+
+def date_badge(year: int, month: int, day: int) -> str:
     colors = {2024: "gray", 2025: "blue", 2026: "red"}
     c = colors.get(year, "lightgrey")
-    return f"![{year}](https://img.shields.io/badge/{year}-{c}?style=flat-square)"
+    label = f"{MONTH_NAMES[month]}_{day},_{year}"
+    display = f"{MONTH_NAMES[month]} {day}, {year}"
+    return f"![{display}](https://img.shields.io/badge/{label}-{c}?style=flat-square)"
 
 
 def make_anchor(text: str) -> str:
@@ -68,7 +93,7 @@ def domain_short(dom: str) -> str:
 
 
 def paper_row(p: dict) -> str:
-    year = extract_year(p["venue"])
+    year, month, day = extract_date(p)
     title = p["title"]
     if p.get("star"):
         title += " ⭐"
@@ -77,7 +102,7 @@ def paper_row(p: dict) -> str:
     if p.get("code"):
         links += f" [Code]({p['code']})"
 
-    return f"| **{title}** | {p['institution']} | {year_badge(year)} | {links} |"
+    return f"| **{title}** | {p['institution']} | {date_badge(year, month, day)} | {links} |"
 
 
 def generate_readme(papers: list) -> str:
@@ -137,7 +162,7 @@ def generate_readme(papers: list) -> str:
             lines.append("<details open>")
             lines.append(f"<summary><h3>{sub_label} ({cnt})</h3></summary>")
             lines.append("")
-            lines.append("| Paper | Institution | Year | Links |")
+            lines.append("| Paper | Institution | Date | Links |")
             lines.append("|:------|:-----------|:----:|:------|")
             for p in sub_papers_sorted:
                 lines.append(paper_row(p))
@@ -176,11 +201,14 @@ def generate_readme(papers: list) -> str:
 
 def generate_timeline(papers: list) -> str:
     today = datetime.now().strftime("%Y-%m-%d")
-    sorted_papers = sorted(papers, key=lambda p: p.get("arxiv", "0000"), reverse=True)
+    for p in papers:
+        p["_date_tuple"] = extract_date(p)
+    sorted_papers = sorted(papers, key=lambda p: p["_date_tuple"], reverse=True)
 
-    by_year = defaultdict(list)
+    by_ym = defaultdict(list)
     for p in sorted_papers:
-        by_year[extract_year(p["venue"])].append(p)
+        y, m, _ = p["_date_tuple"]
+        by_ym[(y, m)].append(p)
 
     lines = []
     lines.append("# VLA Papers Timeline")
@@ -190,16 +218,21 @@ def generate_timeline(papers: list) -> str:
     lines.append("[Back to Main](README.md)")
     lines.append("")
 
-    for year in sorted(by_year.keys(), reverse=True):
-        ypapers = by_year[year]
-        lines.append(f"## {year} ({len(ypapers)} papers)")
+    for (year, month) in sorted(by_ym.keys(), reverse=True):
+        ym_papers = by_ym[(year, month)]
+        label = f"{MONTH_NAMES[month]} {year}"
+        lines.append(f"## {label} ({len(ym_papers)} papers)")
         lines.append("")
-        lines.append("| # | Paper | Institution | Category | Link |")
-        lines.append("|:-:|:------|:-----------|:---------|:-----|")
-        for i, p in enumerate(ypapers, 1):
+        lines.append("| # | Paper | Institution | Date | Category | Link |")
+        lines.append("|:-:|:------|:-----------|:----:|:---------|:-----|")
+        for i, p in enumerate(ym_papers, 1):
+            y, m, d = p["_date_tuple"]
             cat = f"{domain_short(p['domain'])} / {SUB_LABELS[p['subcategory']]}"
-            lines.append(f"| {i} | **{p['title']}** | {p['institution']} | {cat} | [Paper]({p['url']}) |")
+            lines.append(f"| {i} | **{p['title']}** | {p['institution']} | {MONTH_NAMES[m]} {d} | {cat} | [Paper]({p['url']}) |")
         lines.append("")
+
+    for p in papers:
+        p.pop("_date_tuple", None)
 
     return "\n".join(lines)
 
@@ -236,10 +269,11 @@ def generate_by_institution(papers: list) -> str:
             continue
         lines.append(f"## {inst}")
         lines.append("")
-        lines.append("| Paper | Category | Year | Link |")
+        lines.append("| Paper | Category | Date | Link |")
         lines.append("|:------|:---------|:----:|:-----|")
         for p in sorted(plist, key=lambda x: x.get("arxiv", "0000"), reverse=True):
-            lines.append(f"| **{p['title']}** | {SUB_LABELS[p['subcategory']]} | {extract_year(p['venue'])} | [Paper]({p['url']}) |")
+            y, m, d = extract_date(p)
+            lines.append(f"| **{p['title']}** | {SUB_LABELS[p['subcategory']]} | {format_date(y, m, d)} | [Paper]({p['url']}) |")
         lines.append("")
 
     singles = [(inst, plist[0]) for inst, plist in sorted_insts if len(plist) == 1]
