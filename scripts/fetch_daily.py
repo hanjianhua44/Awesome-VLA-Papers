@@ -3,6 +3,7 @@ Fetch daily arXiv papers from cs.CV and cs.RO, filter by VLA/AD/robotics relevan
 Outputs a markdown report to daily/YYYY-MM-DD.md
 """
 import re
+import io
 import ssl
 import json
 import time
@@ -11,6 +12,12 @@ import urllib.parse
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from datetime import datetime, timedelta
+
+try:
+    import pdfplumber
+    HAS_PDFPLUMBER = True
+except ImportError:
+    HAS_PDFPLUMBER = False
 
 ROOT = Path(__file__).parent.parent
 DAILY_DIR = ROOT / "daily"
@@ -24,47 +31,105 @@ SSL_CTX.verify_mode = ssl.CERT_NONE
 # Research interest keywords (weighted)
 # ---------------------------------------------------------------------------
 HIGH_KEYWORDS = [
-    "vision-language-action", "VLA", "vision language action",
-    "end-to-end driving", "end-to-end autonomous",
-    "autonomous driving", "self-driving",
-    "robotic manipulation", "robot learning", "robot policy",
-    "embodied agent", "embodied AI", "embodied foundation",
-    "world model", "action token", "action space",
-    "diffusion policy", "flow matching policy",
-    "imitation learning", "behavior cloning",
+    # === Core VLA ===
+    r"vision.language.action", r"\bVLA\b", r"visuomotor policy",
+    r"generalist.{0,10}(policy|robot|agent)", r"language.conditioned.{0,10}(policy|control|manipulation)",
+    r"latent action", r"action prediction", r"action generation",
+    # === End-to-End Driving ===
+    r"end.to.end.{0,10}(driving|autonomous)", r"autonomous driving", r"self.driving",
+    # === Robotics Core ===
+    r"robotic manipulation", r"robot learning", r"robot policy",
+    r"embodied.{0,5}(agent|AI|foundation|intelligence)",
+    # === World Models ===
+    r"world model", r"driving.{0,10}world", r"robot.{0,10}world model",
+    # === Action Representation ===
+    r"action token", r"action.{0,5}space", r"action chunking",
+    # === Policy Learning ===
+    r"diffusion policy", r"flow matching.{0,10}(policy|action|robot)",
+    r"imitation learning", r"behavior cloning",
+    r"closed.loop.{0,10}(policy|control|driving|learning)",
 ]
 
 MID_KEYWORDS = [
-    "multimodal agent", "vision-language model", "VLM",
-    "spatial reasoning", "3D understanding", "4D scene",
-    "chain-of-thought", "latent reasoning",
-    "reinforcement learning from human",
-    "sim-to-real", "cross-embodiment",
-    "trajectory prediction", "motion planning",
-    "visual grounding", "scene generation",
-    "physical AI", "physical understanding",
-    "foundation model.*robot", "robot.*foundation model",
-    "large.*model.*driving", "driving.*large.*model",
-    "pretraining.*robot", "robot.*pretraining",
-    "video generation.*robot", "robot.*video generation",
-    "reward model.*robot", "robot.*reward",
+    # === VLM / Multimodal for Robotics ===
+    r"vision.language model", r"\bVLM\b",
+    r"multimodal.{0,10}(agent|robot|driving|embodied)",
+    # === Reasoning ===
+    r"chain.of.thought", r"latent reasoning", r"spatial reasoning",
+    r"3D understanding", r"4D.{0,5}(scene|world|understanding)",
+    r"embodied reasoning", r"visual reasoning",
+    # === RL / Reward ===
+    r"reinforcement learning.{0,15}(robot|policy|driving|human|action)",
+    r"reward.{0,10}(model|learning|shaping)",
+    r"\bRLHF\b", r"\bGRPO\b", r"\bDPO\b", r"\bPPO\b",
+    r"online.{0,5}(RL|reinforcement|fine.tun)",
+    # === Transfer & Generalization ===
+    r"sim.to.real", r"real.to.sim", r"cross.embodiment",
+    r"zero.shot.{0,10}(transfer|policy|manipulation|driving)",
+    r"few.shot.{0,10}(learning|adapt|robot|policy)",
+    r"domain.{0,5}(adapt|random|transfer)",
+    # === Trajectory & Planning ===
+    r"trajectory.{0,5}(prediction|planning|optimization|forecast)",
+    r"motion planning", r"path planning",
+    r"long.horizon.{0,10}(planning|task|manipulation)",
+    r"task planning", r"task.{0,5}and.{0,5}motion planning",
+    # === Scene & Generation ===
+    r"visual grounding", r"scene generation",
+    r"physical.{0,5}(AI|understanding|simulation|reasoning)",
+    # === Foundation Models for Robotics/Driving ===
+    r"foundation model.{0,20}(robot|driving|embod|manipul)",
+    r"(robot|driving|embod).{0,20}foundation model",
+    r"pretrain.{0,15}(robot|driving|embod|policy|action)",
+    r"(robot|driving|embod).{0,15}pretrain",
+    # === Driving Perception ===
+    r"\bBEV\b", r"bird.s.eye.view", r"occupancy.{0,5}(prediction|network|map)",
+    r"sensor fusion", r"\bLiDAR\b",
+    r"multi.camera", r"multi.view.{0,10}(driving|percep|represent)",
+    r"lane.{0,5}(detection|prediction|change)",
+    r"scene understanding", r"semantic map",
+    r"driving.{0,10}planning", r"planning.{0,10}driving",
+    # === Robotics Specific ===
+    r"grasp(ing)?", r"dexterous.{0,10}(manipulation|hand)",
+    r"(visual|object|robot).{0,5}navigation",
+    r"manipulation policy", r"policy.{0,5}learning",
+    r"teleoperation", r"human demonstration",
+    r"humanoid", r"quadruped", r"legged.{0,5}(robot|locomotion)",
+    r"bimanual", r"mobile.{0,5}manipulat",
+    r"affordance",
+    # === Data & Scaling ===
+    r"data.{0,5}engine", r"data.{0,5}(scaling|curation|augment).{0,10}(robot|driving|policy)",
+    # === LLM/GPT for Driving/Robotics ===
+    r"LLM.{0,10}(robot|driving|embod|manipul|plan)",
+    r"(robot|driving|embod).{0,10}LLM",
+    r"GPT.{0,10}driv", r"driv.{0,10}GPT",
+    # === Video / Visual Prediction ===
+    r"video.{0,5}(prediction|world|generation).{0,10}(robot|driving|embod|action)",
+    # === Safety ===
+    r"safe.{0,5}(driving|robot|policy|RL|reinforcement|control)",
+    # === Tokenization ===
+    r"action.{0,5}tokeniz", r"visual.{0,5}tokeniz",
+    # === Gaussian / NeRF for Driving/Robot ===
+    r"gaussian.{0,5}splat.{0,15}(driving|robot|scene|world)",
+    r"(NeRF|neural.radiance).{0,15}(driving|robot|scene|world)",
 ]
 
 LOW_KEYWORDS = [
-    "object detection", "segmentation",
-    "image generation", "video generation",
-    "3D reconstruction", "point cloud",
-    "visual question answering",
-    "multi-modal", "multimodal",
-    "transformer", "attention mechanism",
-    "mixture of experts", "MoE",
+    r"object detection", r"semantic segmentation",
+    r"image generation", r"video generation",
+    r"3D reconstruction", r"point cloud",
+    r"visual question answering",
+    r"\bMoE\b", r"mixture of experts",
+    r"scene graph", r"visual relationship",
+    r"depth estimation",
+    r"benchmark.{0,10}(robot|driving|embod|manipul|autonom)",
+    r"survey.{0,10}(robot|driving|embod|VLA|autonomous|world model)",
 ]
 
 # ---------------------------------------------------------------------------
 # Known institution patterns (author name / affiliation hints)
 # ---------------------------------------------------------------------------
 INST_PATTERNS = {
-    # Big tech
+    # === Big Tech (US/Global) ===
     r"\bNVIDIA\b": "NVIDIA",
     r"\bGoogle\b.*\b(DeepMind|Brain|Research)\b": "Google DeepMind",
     r"\bDeepMind\b": "Google DeepMind",
@@ -76,16 +141,45 @@ INST_PATTERNS = {
     r"\bApple\b": "Apple",
     r"\bAmazon\b": "Amazon",
     r"\bTesla\b": "Tesla",
+    r"\bUber\b": "Uber",
+    r"\bQualcomm\b": "Qualcomm",
+    r"\bIntel\b.*(?:Lab|Research)": "Intel",
+    r"\bSamsung\b": "Samsung",
+    r"\bSony\b": "Sony",
+    # === Autonomous Driving Companies ===
+    r"\bWaabi\b": "Waabi",
     r"\bWaymo\b": "Waymo",
-    r"\bPhysical Intelligence\b": "Physical Intelligence",
+    r"\bCruise\b": "Cruise",
+    r"\bAurora\b.*(?:Innovation|Driv)": "Aurora",
+    r"\bNuro\b": "Nuro",
+    r"\bZoox\b": "Zoox",
+    r"\bMotional\b": "Motional",
+    r"\bMobileye\b": "Mobileye",
+    r"\bWoven\b.*Planet|Woven\b.*Toyota": "Woven by Toyota",
+    r"\bPony\.?ai\b": "Pony.ai",
+    r"\bMomenta\b": "Momenta",
+    r"\bTuSimple\b": "TuSimple",
+    r"\bBosch\b": "Bosch",
+    r"\bValeo\b": "Valeo",
+    r"\bContinental\b": "Continental",
+    # === Robotics Companies ===
+    r"\bPhysical Intelligence\b|\bpi0\b|\\u03C0.*Intelligence": "Physical Intelligence",
     r"\bBoston Dynamics\b": "Boston Dynamics",
-    r"\bToyota\b.*Research": "TRI",
-    # Chinese tech
+    r"\bToyota\b.*Research|\bTRI\b": "TRI",
+    r"\bAgility\b.*Robotics": "Agility Robotics",
+    r"\bFigure\b.*AI|Figure\b.*Robot": "Figure AI",
+    r"\b1X\b.*Technolog": "1X Technologies",
+    r"\bUnitre+\b": "Unitree",
+    r"\bCovariant\b": "Covariant",
+    r"\bAgibot\b": "Agibot",
+    r"\bGalbot\b": "Galbot",
+    r"\bUBTECH\b": "UBTECH",
+    # === Chinese Tech ===
     r"\bBaidu\b": "Baidu",
     r"\bTencent\b": "Tencent",
-    r"\bAlibaba\b": "Alibaba",
+    r"\bAlibaba\b|DAMO\s*Academy": "Alibaba",
     r"\bByteDance\b": "ByteDance",
-    r"\bHuawei\b": "Huawei",
+    r"\bHuawei\b|Noah.s Ark": "Huawei",
     r"\bXiaomi\b": "Xiaomi",
     r"\bSenseTime\b": "SenseTime",
     r"\bMegvii\b": "Megvii",
@@ -95,8 +189,12 @@ INST_PATTERNS = {
     r"\bDeepSeek\b": "DeepSeek",
     r"\bLi Auto\b": "Li Auto",
     r"\bNIO\b": "NIO",
-    r"\bXPeng\b": "XPeng",
-    # Top universities
+    r"\bXPeng\b|XMotors": "XPeng",
+    r"\bKuaishou\b": "Kuaishou",
+    r"\bZhipu\b|GLM": "Zhipu AI",
+    r"\bHikvision\b": "Hikvision",
+    r"\biFlytek\b": "iFlytek",
+    # === Top US Universities ===
     r"\bStanford\b": "Stanford",
     r"\bMIT\b": "MIT",
     r"\bBerkeley\b": "UC Berkeley",
@@ -110,31 +208,57 @@ INST_PATTERNS = {
     r"\bUCSD\b|UC San Diego": "UCSD",
     r"\bUCLA\b": "UCLA",
     r"\bUMich\b|Univ.*Michigan": "UMich",
+    r"\bUIUC\b|Univ.*Illinois.*Urbana": "UIUC",
+    r"\bUSC\b|Univ.*Southern.*California": "USC",
+    r"\bUW\b.*(?:Seattle|Madison)|Univ.*Washington": "UW",
+    # === Top EU Universities & Labs ===
     r"\bOxford\b": "Oxford",
     r"\bCambridge\b": "Cambridge",
     r"\bETH\b.*Z": "ETH Zurich",
     r"\bEPFL\b": "EPFL",
-    r"\bTsinghua\b": "Tsinghua",
-    r"\bPeking\b.*Univ": "PKU",
-    r"\bShanghai Jiao Tong\b|SJTU\b": "SJTU",
-    r"\bZhejiang\b.*Univ": "ZJU",
+    r"\bImperial\b.*College": "Imperial",
+    r"\bTU Munich\b|\bTUM\b": "TUM",
+    r"\bFreiburg\b": "Univ of Freiburg",
+    r"\bMax Planck\b|\bMPI\b": "Max Planck",
+    r"\bDFKI\b": "DFKI",
+    r"\bINRIA\b": "INRIA",
+    r"\bIIT\b.*(?:Italian|Genova|Istituto)": "IIT",
+    # === Chinese Universities ===
+    r"\bTsinghua\b|\bTHU\b": "Tsinghua",
+    r"\bPeking\b.*Univ|\bPKU\b": "PKU",
+    r"\bShanghai Jiao Tong\b|\bSJTU\b": "SJTU",
+    r"\bZhejiang\b.*Univ|\bZJU\b": "ZJU",
     r"\bFudan\b": "Fudan",
-    r"\bNanjing\b.*Univ": "Nanjing Univ",
-    r"\bUni.*Sci.*Tech.*China\b|USTC\b": "USTC",
-    r"\bHuazhong\b|HUST\b": "HUST",
-    r"\bSouth China\b.*Tech|SCUT\b": "SCUT",
-    r"\bHarbin\b.*Inst|HIT\b": "HIT",
-    r"\bBeihang\b|BUAA\b": "BUAA",
+    r"\bNanjing\b.*Univ|\bNJU\b": "Nanjing Univ",
+    r"\bUni.*Sci.*Tech.*China\b|\bUSTC\b": "USTC",
+    r"\bHuazhong\b|\bHUST\b": "HUST",
+    r"\bSouth China\b.*Tech|\bSCUT\b": "SCUT",
+    r"\bHarbin\b.*Inst|\bHIT\b": "HIT",
+    r"\bBeihang\b|\bBUAA\b": "BUAA",
     r"\bTianjin\b.*Univ": "Tianjin Univ",
-    r"\bDalian\b.*Univ.*Tech|DUT\b": "DUT",
-    r"\bXi.an Jiao.*Tong|XJTU\b": "XJTU",
-    r"\bSun Yat-sen\b|SYSU\b": "SYSU",
-    r"\bRenmin\b|RUC\b": "RUC",
-    r"\bWuhan\b.*Univ": "WHU",
-    r"\bNorthwest.*Poly|NWPU\b": "NWPU",
+    r"\bDalian\b.*Univ.*Tech|\bDUT\b": "DUT",
+    r"\bXi.an Jiao.*Tong|\bXJTU\b": "XJTU",
+    r"\bSun Yat-sen\b|\bSYSU\b": "SYSU",
+    r"\bRenmin\b|\bRUC\b": "RUC",
+    r"\bWuhan\b.*Univ|\bWHU\b": "WHU",
+    r"\bNorthwest.*Poly|\bNWPU\b": "NWPU",
+    r"\bUESTC\b|Univ.*Electronic.*Sci.*Tech": "UESTC",
+    r"\bBJTU\b|Beijing Jiaotong": "BJTU",
+    r"\bNUDT\b|National Univ.*Defense": "NUDT",
+    r"\bXiamen\b.*Univ|\bXMU\b": "XMU",
+    r"\bSoochow\b.*Univ": "Soochow Univ",
+    # === Chinese Labs & Institutes ===
     r"\bShanghai AI Lab\b": "Shanghai AI Lab",
-    r"\bChinese Univ.*Hong Kong\b|CUHK\b": "CUHK",
-    r"\bHong Kong Univ\b|HKU\b": "HKU",
+    r"\bCASIA\b|Inst.*Automation.*CAS": "CASIA",
+    r"\bCAS\b|Chinese Academy of Sci": "CAS",
+    r"\bPCL\b|Peng\s*Cheng\s*Lab": "PCL",
+    r"\bShanghaiTech\b": "ShanghaiTech",
+    r"\bBAAI\b|Beijing Academy": "BAAI",
+    r"\bQi\s*Zhi\b": "Qi Zhi Institute",
+    r"\bAllen\s*(?:AI|Institute)|AI2\b": "Allen AI",
+    # === HK / SG / KR / JP / AU ===
+    r"\bChinese Univ.*Hong Kong\b|\bCUHK\b": "CUHK",
+    r"\bHong Kong Univ\b|\bHKU\b": "HKU",
     r"\bPolyU\b|Hong Kong Poly": "PolyU",
     r"\bHKUST\b|Hong Kong.*Sci.*Tech": "HKUST",
     r"\bNTU\b|Nanyang\b": "NTU",
@@ -143,80 +267,144 @@ INST_PATTERNS = {
     r"\bSNU\b|Seoul National": "SNU",
     r"\bTokyo\b.*Univ|Univ.*Tokyo": "Univ of Tokyo",
     r"\bMonash\b": "Monash",
-    r"\bShanghaiTech\b": "ShanghaiTech",
-    r"\bCAS\b|Chinese Academy of Sci": "CAS",
-    r"\bCASIA\b|Inst.*Automation.*CAS": "CASIA",
-    r"\bUESTC\b|Univ.*Electronic.*Sci.*Tech": "UESTC",
-    r"\bBJTU\b|Beijing Jiaotong": "BJTU",
-    r"\bNUDT\b|National Univ.*Defense": "NUDT",
-    r"\bXiamen\b.*Univ|XMU\b": "XMU",
-    r"\bSoochow\b.*Univ": "Soochow Univ",
-    r"\bPCL\b|Peng\s*Cheng\s*Lab": "PCL",
-    r"\bTHU\b": "Tsinghua",
-    r"\bUber\b": "Uber",
-    r"\bQualcomm\b": "Qualcomm",
-    r"\bIntel\b.*(?:Lab|Research)": "Intel",
-    r"\bSamsung\b": "Samsung",
-    r"\bSony\b": "Sony",
-    r"\bImperial\b.*College": "Imperial",
+    r"\bANU\b|Australian National": "ANU",
 }
 
-# Well-known researcher -> institution lookup
 RESEARCHER_INST = {
+    # === Stanford (VLA/Robotics) ===
     "Chelsea Finn": "Stanford",
-    "Sergey Levine": "UC Berkeley",
-    "Pieter Abbeel": "UC Berkeley",
-    "Yann LeCun": "Meta AI",
-    "Kaiming He": "MIT",
-    "Saining Xie": "NYU",
-    "Song Han": "MIT",
-    "Trevor Darrell": "UC Berkeley",
-    "Deva Ramanan": "CMU",
-    "Philipp Krahenbuhl": "UT Austin",
+    "Dorsa Sadigh": "Stanford",
+    "Fei-Fei Li": "Stanford",
+    "Jiajun Wu": "Stanford",
     "Marco Pavone": "Stanford",
     "Leonidas Guibas": "Stanford",
-    "Andrea Vedaldi": "Oxford",
-    "Lerrel Pinto": "NYU",
-    "Dieter Fox": "NVIDIA/UW",
     "Shuran Song": "Stanford",
+    "Karl Pertsch": "Stanford",
+    "Percy Liang": "Stanford",
+    # === UC Berkeley ===
+    "Sergey Levine": "UC Berkeley",
+    "Pieter Abbeel": "UC Berkeley",
+    "Trevor Darrell": "UC Berkeley",
+    "Jitendra Malik": "UC Berkeley",
+    "Oier Mees": "UC Berkeley",
+    "Mingyu Ding": "UC Berkeley",
+    # === MIT ===
+    "Kaiming He": "MIT",
+    "Song Han": "MIT",
+    "Yilun Du": "MIT",
+    "Russ Tedrake": "MIT/TRI",
+    "Pulkit Agrawal": "MIT",
+    "Leslie Kaelbling": "MIT",
+    "Tomas Lozano-Perez": "MIT",
+    # === CMU ===
+    "Deva Ramanan": "CMU",
+    "Abhinav Gupta": "CMU",
+    "Deepak Pathak": "CMU",
+    "Katerina Fragkiadaki": "CMU",
+    # === NYU ===
+    "Saining Xie": "NYU",
+    "Lerrel Pinto": "NYU",
+    # === UCSD ===
     "Xiaolong Wang": "UCSD",
+    "Hao Su": "UCSD",
+    # === UT Austin ===
+    "Philipp Krahenbuhl": "UT Austin",
+    "Yuke Zhu": "UT Austin",
+    # === Google DeepMind / Brain ===
+    "Ted Xiao": "Google DeepMind",
+    "Brian Ichter": "Google DeepMind",
+    "Pete Florence": "Google DeepMind",
+    "Andy Zeng": "Google DeepMind",
+    "Danny Driess": "Google DeepMind",
+    "Karol Hausman": "Google DeepMind",
+    # === NVIDIA ===
+    "Dieter Fox": "NVIDIA/UW",
     "Ming-Yu Liu": "NVIDIA",
     "Sifei Liu": "NVIDIA",
     "Boris Ivanovic": "NVIDIA",
-    "Yilun Du": "MIT",
-    "Russ Tedrake": "MIT/TRI",
-    "Abhinav Gupta": "CMU",
-    "Deepak Pathak": "CMU",
-    "Mike Zheng Shou": "NUS",
-    "Gim Hee Lee": "NUS",
+    "Jim Fan": "NVIDIA",
+    "Yuke Zhu": "NVIDIA/UT Austin",
+    "Linxi Fan": "NVIDIA",
+    # === Meta AI ===
+    "Yann LeCun": "Meta AI",
+    "Aravind Rajeswaran": "Meta AI",
+    # === Physical Intelligence ===
+    "Quan Vuong": "Physical Intelligence",
+    # === Other US/EU ===
+    "Andrea Vedaldi": "Oxford",
+    "Wolfram Burgard": "Univ of Freiburg",
+    # === Chinese Researchers ===
     "Wenqi Shao": "Shanghai AI Lab",
     "Hongyang Li": "Shanghai AI Lab",
-    "Jiaming Liu": "PKU",
     "Hang Zhao": "Tsinghua",
     "Hao Zhao": "Tsinghua",
+    "Huazhe Xu": "Tsinghua",
+    "He Wang": "PKU",
+    "Hao Dong": "PKU",
     "Li Zhang": "Fudan",
+    "Cewu Lu": "SJTU",
+    "Hesheng Wang": "SJTU",
     "Xinge Zhu": "CUHK",
     "Pheng-Ann Heng": "CUHK",
-    "Hesheng Wang": "SJTU",
+    "Yao Mu": "HKU",
     "Jingkuan Song": "UESTC",
     "Jianlong Fu": "MSRA",
     "Bei Liu": "MSRA",
     "Yaobo Liang": "MSRA",
+    "Yunzhu Li": "UIUC",
+    # === NUS/NTU ===
+    "Mike Zheng Shou": "NUS",
+    "Gim Hee Lee": "NUS",
+    "Lin Shao": "NUS",
 }
 
 
-def scrape_affiliations(arxiv_id: str) -> list:
-    """Scrape author affiliations from arXiv abstract page."""
-    url = f"https://arxiv.org/abs/{arxiv_id}"
+def extract_institutions_from_pdf(arxiv_id: str) -> str:
+    """Download PDF first page and extract institution names."""
+    if not HAS_PDFPLUMBER:
+        return ""
+    url = f"https://arxiv.org/pdf/{arxiv_id}"
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "VLA-Paper-Agent/1.0"})
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
         resp = urllib.request.urlopen(req, context=SSL_CTX, timeout=30)
-        html = resp.read().decode("utf-8", errors="ignore")
-        # arXiv shows affiliations in parentheses after author names, or in meta tags
-        affs = re.findall(r'\(([^)]{3,80})\)', html[html.find("authors"):html.find("authors")+5000] if "authors" in html else "")
-        return affs[:10]
+        pdf_bytes = resp.read()
+        with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
+            if not pdf.pages:
+                return ""
+            text = pdf.pages[0].extract_text() or ""
+            header = text[:2500]
+
+        # Phase 1: match known institution patterns
+        found = []
+        for pattern, inst in INST_PATTERNS.items():
+            if re.search(pattern, header, re.IGNORECASE):
+                if inst not in found:
+                    found.append(inst)
+        if found:
+            return ", ".join(found[:3])
+
+        # Phase 2: broader heuristic — extract any university/institute/lab name
+        broad_patterns = [
+            r"([A-Z][\w\s]{2,35}University)",
+            r"(University\s+of\s+[A-Z][\w\s]{2,25})",
+            r"([A-Z][\w\s]{2,30}Institute\s+of\s+Technology)",
+            r"([A-Z][\w\s]{2,30}Research\s+(?:Lab|Center|Institute))",
+        ]
+        for bp in broad_patterns:
+            m = re.search(bp, header)
+            if m:
+                name = re.sub(r"[\d\n\r]+", " ", m.group(1)).strip()
+                name = re.sub(r"\s+", " ", name)
+                # Reject garbage patterns
+                reject = ["Department", "Science and", "the University",
+                          "USA University", "This University"]
+                if (len(name) > 8 and name[0].isupper()
+                        and not any(r in name for r in reject)):
+                    return name
+
+        return ""
     except Exception:
-        return []
+        return ""
 
 
 def identify_institutions(authors: list, abstract: str, extra_text: str = "") -> str:
@@ -249,32 +437,43 @@ def identify_institutions(authors: list, abstract: str, extra_text: str = "") ->
 
 
 TIER1_INSTITUTIONS = {
-    # Big tech
-    "nvidia", "google deepmind", "google", "meta ai", "meta", "openai",
-    "apple", "tesla", "waymo", "physical intelligence", "boston dynamics", "tri",
-    "microsoft research", "microsoft", "msra", "deepseek", "amazon",
-    "bytedance", "tencent", "alibaba", "baidu", "huawei", "huawei noah", "xiaomi",
-    "sensetime", "megvii", "horizon robotics", "li auto", "byd", "dji", "nio", "xpeng",
-    "uber", "qualcomm", "intel", "samsung", "sony",
-    # Top US/EU universities
+    # Big tech (US/Global)
+    "nvidia", "nvidia/uw", "nvidia/ut austin",
+    "google deepmind", "google", "meta ai", "meta", "openai",
+    "apple", "tesla", "amazon", "microsoft research", "msra",
+    "uber", "qualcomm", "intel", "samsung", "sony", "deepseek",
+    # Autonomous driving companies
+    "waymo", "cruise", "aurora", "nuro", "zoox", "motional", "mobileye",
+    "woven by toyota", "pony.ai", "momenta", "tusimple",
+    "bosch", "valeo", "continental", "waabi",
+    # Robotics companies
+    "physical intelligence", "boston dynamics", "tri", "mit/tri",
+    "agility robotics", "figure ai", "1x technologies",
+    "unitree", "covariant", "agibot", "galbot", "ubtech",
+    # Chinese tech
+    "bytedance", "tencent", "alibaba", "baidu", "huawei",
+    "xiaomi", "sensetime", "megvii", "horizon robotics",
+    "li auto", "byd", "dji", "nio", "xpeng",
+    "kuaishou", "zhipu ai", "hikvision", "iflytek",
+    # Top US universities
     "stanford", "mit", "uc berkeley", "berkeley", "cmu", "carnegie mellon",
     "princeton", "georgia tech", "ut austin", "cornell", "columbia", "nyu",
-    "ucsd", "uc san diego", "ucla", "umich", "university of michigan",
+    "ucsd", "uc san diego", "ucla", "umich", "uiuc", "uw", "usc",
+    # Top EU universities & labs
     "oxford", "cambridge", "eth zurich", "epfl", "imperial",
+    "tum", "univ of freiburg", "max planck", "dfki", "inria", "iit",
     # Top CN universities
     "tsinghua", "thu", "pku", "peking", "sjtu", "zju", "zhejiang",
-    "fudan", "ustc", "hust", "huazhong", "scut", "buaa", "beihang",
-    "hit", "harbin", "xjtu", "nudt", "sysu", "sun yat-sen",
-    "whu", "wuhan", "uestc", "bjtu", "ruc", "nanjing univ",
-    "tsinghua shenzhen", "hit shenzhen",
+    "fudan", "ustc", "hust", "scut", "buaa", "hit", "xjtu",
+    "nudt", "sysu", "whu", "uestc", "bjtu", "ruc", "nanjing univ",
     # CN labs & institutes
-    "shanghai ai lab", "casia", "cas", "cas shenzhen", "pcl",
-    "shanghaitech",
-    # HK / SG / KR / JP
+    "shanghai ai lab", "casia", "cas", "pcl", "shanghaitech",
+    "baai", "qi zhi institute", "allen ai",
+    # HK / SG / KR / JP / AU
     "cuhk", "hku", "hkust", "polyu",
     "ntu", "nanyang", "nus",
     "kaist", "snu", "seoul national",
-    "univ of tokyo", "monash",
+    "univ of tokyo", "monash", "anu",
 }
 
 
@@ -298,6 +497,11 @@ def compute_relevance(title: str, abstract: str, categories: str) -> tuple:
 
     for kw in MID_KEYWORDS:
         if re.search(kw.lower(), text):
+            score += 2
+            topics.append(kw)
+
+    for kw in LOW_KEYWORDS:
+        if re.search(kw.lower(), text):
             score += 1
             topics.append(kw)
 
@@ -306,7 +510,7 @@ def compute_relevance(title: str, abstract: str, categories: str) -> tuple:
     if "cs.RO" in categories:
         score += 1
 
-    return score, topics[:5]
+    return score, topics[:8]
 
 
 def fetch_arxiv_batch(query: str, start: int, max_results: int, retries: int = 3) -> str:
@@ -412,31 +616,43 @@ def fetch_arxiv_papers(date_str: str = None):
     for cat in ["cs.CV", "cs.RO"]:
         query = f"cat:{cat}"
         batch_size = 200
-        for start in range(0, 400, batch_size):
+        # cs.CV can have 150-200/day, weekends accumulate; fetch up to 800
+        max_fetch = 800 if cat == "cs.CV" else 400
+        for start in range(0, max_fetch, batch_size):
             print(f"  Fetching {cat} start={start}...")
             xml_data = fetch_arxiv_batch(query, start, batch_size)
             batch = parse_entries(xml_data)
             if not batch:
                 break
+            new_count = 0
             for p in batch:
                 if p["arxiv_id"] not in seen_ids:
                     seen_ids.add(p["arxiv_id"])
                     all_raw.append(p)
+                    new_count += 1
+            print(f"    Got {len(batch)} entries, {new_count} new")
+            if new_count == 0:
+                break
             time.sleep(5)
 
-    # Filter by published date: keep papers from target day and day before
-    # (arXiv listings for day X include papers published on X-1 and X)
-    target_dates = {
-        dt.strftime("%Y-%m-%d"),
-        (dt - timedelta(days=1)).strftime("%Y-%m-%d"),
-    }
-    date_filtered = [p for p in all_raw if p["published"] in target_dates]
+    # arXiv listing schedule:
+    #   Mon listing = Thu~Sun submissions (4 days)
+    #   Tue listing = Mon submissions (1 day)
+    #   Wed listing = Tue submissions (1 day)
+    #   Thu listing = Wed submissions (1 day)
+    #   Fri listing = Thu submissions (1 day)
+    weekday = dt.weekday()  # 0=Mon
+    if weekday == 0:
+        lookback = 4  # Mon: covers Thu-Sun
+    elif weekday == 1:
+        lookback = 2  # Tue: covers Mon (+ buffer)
+    else:
+        lookback = 2  # Wed-Fri: covers previous day (+ buffer)
 
-    # If weekend/holiday yields few results, widen to 3 days
-    if len(date_filtered) < 30:
-        target_dates.add((dt - timedelta(days=2)).strftime("%Y-%m-%d"))
-        target_dates.add((dt - timedelta(days=3)).strftime("%Y-%m-%d"))
-        date_filtered = [p for p in all_raw if p["published"] in target_dates]
+    target_dates = set()
+    for i in range(lookback):
+        target_dates.add((dt - timedelta(days=i)).strftime("%Y-%m-%d"))
+    date_filtered = [p for p in all_raw if p["published"] in target_dates]
 
     print(f"  Raw total: {len(all_raw)}, date-filtered ({', '.join(sorted(target_dates))}): {len(date_filtered)}")
 
@@ -453,31 +669,111 @@ def fetch_arxiv_papers(date_str: str = None):
 
         known = is_known_institution(institution)
         if known:
-            p["score"] += 2
+            p["score"] += 3
 
-        # Keep if: known institution with any relevance, OR moderate+ keyword relevance
+        # Keep if: known institution with some relevance, OR strong keyword relevance
+        # Target: ~20-30% pass rate
         if known and score >= 2:
             results.append(p)
-        elif score >= 4:
+        elif score >= 5:
             results.append(p)
 
     results.sort(key=lambda p: p["score"], reverse=True)
+
+    # Phase 2: enrich institutions via PDF for papers missing them
+    if HAS_PDFPLUMBER:
+        no_inst = [p for p in results if p["institution"] == "\u2014"]
+        if no_inst:
+            print(f"  Enriching institutions from PDF for {len(no_inst)} papers...")
+            for i, p in enumerate(no_inst):
+                pdf_inst = extract_institutions_from_pdf(p["arxiv_id"])
+                if pdf_inst:
+                    p["institution"] = pdf_inst
+                    if is_known_institution(pdf_inst):
+                        p["score"] += 3
+                if (i + 1) % 10 == 0:
+                    print(f"    Processed {i+1}/{len(no_inst)}...")
+                time.sleep(1)
+            enriched = sum(1 for p in no_inst if p["institution"] != "\u2014")
+            print(f"    PDF enrichment: {enriched}/{len(no_inst)} institutions found")
+
     return results, len(date_filtered)
 
 
-def categorize_paper(topics: list, categories: str) -> str:
-    """Assign a rough category based on matched topics."""
-    text = " ".join(topics).lower() + " " + categories.lower()
-    if any(k in text for k in ["driving", "autonomous", "navigation"]):
-        return "Autonomous Driving"
-    if any(k in text for k in ["robot", "manipulation", "embodied", "cross-embodiment", "sim-to-real"]):
-        return "Robotics"
-    if any(k in text for k in ["agent"]):
-        return "Agent"
-    if any(k in text for k in ["world model", "physical"]):
-        return "World Models"
-    if any(k in text for k in ["VLA", "vision-language-action", "vision language action"]):
+def categorize_paper(topics: list, categories: str, title: str = "", abstract: str = "") -> str:
+    """Assign a rough category based on matched topics, categories, and content."""
+    topic_text = " ".join(topics).lower()
+    full_text = (topic_text + " " + title + " " + abstract).lower()
+    cats = categories.lower()
+
+    # VLA first (most specific)
+    if re.search(r"vision.language.action|\bvla\b|visuomotor.{0,5}policy|generalist.{0,10}(policy|robot)", full_text):
         return "VLA"
+
+    # Autonomous Driving
+    if re.search(
+        r"autonomous driving|self.driving|end.to.end.{0,5}driv|driving.{0,5}(model|policy|scene|planning|world)"
+        r"|lane.{0,5}(detect|predict)|traffic.{0,5}(scene|predict)"
+        r"|\bbev\b|bird.s.eye|occupancy.{0,5}(prediction|network)"
+        r"|driving.{0,5}simulat|driving.{0,5}benchmark",
+        full_text
+    ):
+        return "Autonomous Driving"
+
+    # World Models
+    if re.search(
+        r"world model|video.{0,5}prediction|future.{0,5}prediction"
+        r"|latent.{0,5}dynamics|physical.{0,5}simulat"
+        r"|world.{0,5}simulat|4d.{0,5}generat",
+        full_text
+    ):
+        return "World Models"
+
+    # Robotics
+    if re.search(
+        r"robot|manipulation|embodied|grasp|dexterous|locomotion|teleoperat"
+        r"|sim.to.real|cross.embodiment|imitation learning|behavior cloning"
+        r"|diffusion policy|action.{0,5}token|action.{0,5}chunk"
+        r"|humanoid|quadruped|legged|bimanual"
+        r"|navigation|mobile.{0,5}manipulat"
+        r"|affordance|pick.{0,5}(and|&).{0,5}place",
+        full_text
+    ):
+        return "Robotics"
+    if "cs.ro" in cats and "cs.cv" not in cats:
+        return "Robotics"
+
+    # Agent
+    if re.search(r"embodied.{0,5}agent|multi.agent|llm.{0,5}agent|autonomous.{0,5}agent", full_text):
+        return "Agent"
+
+    # RL & Policy Optimization
+    if re.search(
+        r"reinforcement learning|reward.{0,5}(model|learning)|policy.{0,5}(optimiz|gradient)"
+        r"|\brlhf\b|\bgrpo\b|\bdpo\b|\bppo\b|online.{0,5}(rl|fine.tun)",
+        full_text
+    ):
+        return "RL & Policy Optimization"
+
+    # Spatial & Perception
+    if re.search(
+        r"spatial reasoning|3d.{0,5}understand|4d.{0,5}scene"
+        r"|depth.{0,5}estim|point cloud|3d.{0,5}reconstruct"
+        r"|scene understanding|visual grounding"
+        r"|scene graph|gaussian.{0,5}splat|nerf",
+        full_text
+    ):
+        return "Spatial & Perception"
+
+    # Efficient & Architecture
+    if re.search(
+        r"efficient|compression|pruning|distill"
+        r"|tokeniz|mixture of experts|\bmoe\b"
+        r"|sparse attention|visual.{0,5}encoder",
+        full_text
+    ):
+        return "Efficient & Architecture"
+
     return "Related"
 
 
@@ -494,10 +790,12 @@ def generate_daily_report(papers: list, date_str: str, total_scanned: int = 0) -
 
     by_cat = {}
     for p in papers:
-        cat = categorize_paper(p["topics"], p["categories"])
+        cat = categorize_paper(p["topics"], p["categories"], p.get("title", ""), p.get("abstract", ""))
         by_cat.setdefault(cat, []).append(p)
 
-    cat_order = ["VLA", "Autonomous Driving", "Robotics", "Agent", "World Models", "Related"]
+    cat_order = ["VLA", "Autonomous Driving", "Robotics", "Agent", "World Models",
+                 "RL & Policy Optimization", "Spatial & Perception",
+                 "Efficient & Architecture", "Related"]
     idx = 1
 
     for cat in cat_order:
