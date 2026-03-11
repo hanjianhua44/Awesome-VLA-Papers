@@ -351,11 +351,11 @@ def fetch_arxiv_papers(date_str: str = None):
             time.sleep(1)
         print(f"    PDF enrichment: {enriched}/{len(candidates)} institutions found")
 
-    # Phase 3: Keep only papers with identified institutions
-    results = [p for p in candidates if p["institution"] not in ("", "—")]
+    # Phase 3: Keep only papers with at least one TIER1 institution
+    results = [p for p in candidates if is_known_institution(p["institution"])]
     results.sort(key=lambda p: p["score"], reverse=True)
-    no_inst = len(candidates) - len(results)
-    print(f"  Final results: {len(results)} (dropped {no_inst} without institution)")
+    dropped = len(candidates) - len(results)
+    print(f"  Final results: {len(results)} (dropped {dropped} without TIER1 institution)")
 
     return results, len(date_filtered)
 

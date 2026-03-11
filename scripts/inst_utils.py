@@ -312,42 +312,42 @@ RESEARCHER_INST = {
 
 # Tier-1 institutions for filtering (known big labs)
 TIER1_INSTITUTIONS = {
+    # --- Big Tech / AI Labs ---
     "nvidia", "nvidia/uw", "nvidia/ut austin",
     "google deepmind", "google", "meta ai", "meta", "openai",
     "apple", "tesla", "amazon", "microsoft research", "msra",
     "uber", "qualcomm", "intel", "samsung", "sony", "deepseek",
+    # --- Autonomous Driving ---
     "waymo", "cruise", "aurora", "nuro", "zoox", "motional", "mobileye",
     "woven by toyota", "pony.ai", "momenta", "tusimple",
     "bosch", "valeo", "continental", "waabi",
+    "mercedes-benz", "ford", "volvo", "bmw", "hyundai",
+    # --- Robotics Companies ---
     "physical intelligence", "boston dynamics", "tri", "mit/tri",
     "agility robotics", "figure ai", "1x technologies",
     "unitree", "covariant", "agibot", "galbot", "ubtech",
+    # --- Chinese Tech ---
     "bytedance", "tencent", "alibaba", "baidu", "huawei",
     "xiaomi", "sensetime", "megvii", "horizon robotics",
     "li auto", "byd", "dji", "nio", "xpeng",
-    "kuaishou", "zhipu ai", "hikvision", "iflytek",
+    "kuaishou", "zhipu ai",
+    # --- US Top Universities ---
     "stanford", "mit", "uc berkeley", "berkeley", "cmu", "carnegie mellon",
     "princeton", "georgia tech", "ut austin", "cornell", "columbia", "nyu",
     "ucsd", "uc san diego", "ucla", "umich", "uiuc", "uw", "usc",
-    "purdue", "umd", "rice", "upenn",
+    # --- Europe Top ---
     "oxford", "cambridge", "eth zurich", "epfl", "imperial",
-    "tum", "univ of freiburg", "max planck", "dfki", "inria", "iit",
+    # --- China Top Universities ---
     "tsinghua", "thu", "pku", "peking", "sjtu", "zju", "zhejiang",
     "fudan", "ustc", "hust", "scut", "buaa", "hit", "xjtu",
-    "nudt", "sysu", "whu", "uestc", "bjtu", "ruc", "nanjing univ",
+    "nudt", "sysu",
+    # --- China Research Institutes ---
     "shanghai ai lab", "casia", "cas", "pcl", "shanghaitech",
-    "baai", "siat", "allen ai",
-    "cuhk", "hku", "hkust", "polyu",
+    "baai", "allen ai",
+    # --- HK ---
+    "cuhk", "hku", "hkust",
+    # --- Singapore ---
     "ntu", "nanyang", "nus",
-    "kaist", "snu", "seoul national",
-    "univ of tokyo", "monash", "anu",
-    "uc irvine", "uc davis", "uc santa barbara",
-    "texas a&m", "ohio state", "duke", "brown", "jhu", "johns hopkins",
-    "northeastern univ", "rutgers", "asu",
-    "mercedes-benz", "ford", "volvo", "bmw", "hyundai",
-    "southeast univ", "tongji", "bit", "sustech", "shandong univ",
-    "tu delft", "univ of bonn", "univ of zurich",
-    "univ of toronto", "univ of alberta", "univ of waterloo",
 }
 
 

@@ -76,10 +76,10 @@ def main():
 
     changes = re_identify_institutions(papers, use_pdf=use_pdf)
 
-    # Keep only papers with identified institutions
+    # Keep only papers with at least one TIER1 institution
     before = len(papers)
-    papers = [p for p in papers if p.get("institution", "—") not in ("", "—")]
-    _flush(f"Filtered: {before} -> {len(papers)} (dropped {before - len(papers)} without institution)")
+    papers = [p for p in papers if is_known_institution(p.get("institution", "—"))]
+    _flush(f"Filtered: {before} -> {len(papers)} (dropped {before - len(papers)} without TIER1 institution)")
 
     # Save to new directory structure
     out_json = daily_dir / f"{date_str}.json"
