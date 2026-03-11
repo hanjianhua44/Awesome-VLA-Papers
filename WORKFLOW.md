@@ -112,7 +112,35 @@ For each candidate paper, institutions are identified via two methods:
 1. **Author name matching** — known researcher → institution mapping (~50 entries)
 2. **PDF header + footnotes extraction** — download PDF, extract author/affiliation lines (above "Abstract") and page-bottom footnotes, match against ~200 institution regex patterns
 
-Only the **title-block affiliations and footnotes** are searched — abstract and body text are excluded to prevent false matches (e.g., "uses NVIDIA hardware" ≠ "from NVIDIA").
+**Search area** — only two narrow zones of the PDF first page are searched:
+- **Author block**: lines between the title and the first non-affiliation line (stops at "Abstract", "Fig.", "Table", or after 12 lines from author start). Only lines containing affiliation keywords (University, Lab, Inc, email, etc.) extend the block — figure captions and body text are excluded.
+- **Footnotes**: bottom ~20 lines, filtered to keep only affiliation-bearing footnotes. Numbered footnotes must contain an institution keyword; lines are truncated at 80 chars to avoid column-merged body text.
+
+Abstract, body text, figure captions, and methodology footnotes are excluded — this prevents false matches from citations and comparisons (e.g., "we compare with LLaMA" ≠ "from Meta AI", "Since CLIP is trained" ≠ affiliation).
+
+**Model name mapping** — in addition to official institution names, well-known model/product brands are mapped to their parent organizations:
+
+| Pattern | → Institution |
+|:--------|:-------------|
+| `LLaMA`, `Llama` | Meta AI |
+| `Gemini`, `Gemma`, `PaLM` | Google DeepMind |
+| `GPT-*`, `CLIP`, `DALL-E`, `Sora`, `Whisper` | OpenAI |
+| `Cosmos`, `Nemotron`, `NeMo` | NVIDIA |
+| `Claude` | Anthropic |
+| `Mixtral` | Mistral |
+| `Grok` | xAI |
+| `Qwen`, `Tongyi` | Alibaba |
+| `Seed`, `Seed Team` | ByteDance |
+| `ERNIE`, `PaddlePaddle` | Baidu |
+| `Hunyuan` | Tencent |
+| `PanGu` | Huawei |
+| `ChatGLM`, `GLM-*` | Zhipu AI |
+| `InternLM`, `InternVL`, `OpenGVLab` | Shanghai AI Lab |
+| `Kimi` | Moonshot AI |
+| `Kling`, `KwaiVGI` | Kuaishou |
+| `SenseNova` | SenseTime |
+| `Yi-Lightning`, `Yi-Large` | 01.AI |
+| `Step Star` | StepFun |
 
 Extracted PDF text is **cached locally** (`.pdf_cache/*.txt`) so repeated runs skip both download and parsing.
 

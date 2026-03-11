@@ -33,7 +33,7 @@ INST_PATTERNS = {
     r"\bFAIR\b|\bLLaMA\b|\bLlama\b": "Meta AI",
     r"\bMicrosoft\s+Research": "Microsoft Research",
     r"\bMSRA\b|\bOrca\b|\bFlorence\b": "MSRA",
-    r"\bOpenAI\b|\bGPT-\d|\bDALL[\-\s]*E\b|\bSora\b|\bWhisper\b|\bCLIP\b": "OpenAI",
+    r"\bOpenAI\b|\bGPT-\d|\bDALL[-\s]E\b|\bSora\b|\bWhisper\b|\bCLIP\b": "OpenAI",
     r"Apple\s+(?:Inc|Research|Machine Learning)": "Apple",
     r"\bAmazon\b|\bAlexa\s+AI\b": "Amazon",
     r"\bTesla\b": "Tesla",
@@ -425,8 +425,45 @@ _ABSTRACT_RE = re.compile(
     re.MULTILINE,
 )
 
+_HEADER_STOP_RE = re.compile(
+    r"^\s*(?:Abstract|ABSTRACT)\s*(?:[—\-:.]\s*)?"
+    r"|^\s*Fig\.\s*\d"
+    r"|^\s*Figure\s+\d"
+    r"|^\s*Table\s+\d"
+    r"|^\s*\(a\)\s",
+)
+
+_AFFIL_LINE_RE = re.compile(
+    r"Universit|Institut|Laborator|\bLab\b|Academy|Departm"
+    r"|School|College|Center|Centre|\bCorp\b|\bInc\b|\bLtd\b"
+    r"|Company|\bCo\.\b|Technolog|Research|Foundation"
+    r"|@|https?://"
+    r"|[Cc]orrespond|\bEqual\b",
+    re.IGNORECASE,
+)
+
 _ARXIV_NOISE_RE = re.compile(
     r"^\s*(?:\d{4}\s*$|[a-zA-Z]{2,4}\s*$|\d{1,2}\s*$|\].*?\[|.*viXra)",
+)
+
+_FOOTNOTE_RE = re.compile(
+    r"^\d+\s*[A-Z]"
+    r"|@"
+    r"|\bis\s+with\b"
+    r"|\bare\s+with\b"
+    r"|[Cc]orrespond"
+    r"|[Ee]qual\s+[Cc]ontribution"
+    r"|∗|†|‡"
+    r"|[Ww]ork\s+done\s+at"
+)
+
+_AFFIL_KW_RE = re.compile(
+    r"Universit|Institut|Laborator|\bLab\b|Academy|Departm"
+    r"|School|College|Center|Centre|\bCorp\b|\bInc\b|\bLtd\b"
+    r"|Company|\bCo\.\b|Technology|Research|Foundation"
+    r"|@"
+    r"|[Cc]orrespond",
+    re.IGNORECASE,
 )
 
 
@@ -434,22 +471,23 @@ def _extract_header_and_footnotes(text: str) -> str:
     """Extract only header (title/authors/affiliations) and page-bottom
     footnotes from first-page text.
 
-    This deliberately excludes the abstract and body paragraphs to avoid
-    false institution matches from citations, related-work mentions,
-    benchmark descriptions, etc.
+    Header extraction stops at "Abstract", "Fig.", "Figure", "Table" lines,
+    and also trims after the last line that looks like an affiliation
+    (contains institution keywords, emails, URLs, etc.).
+
+    Footer extraction keeps only lines with affiliation-related content.
     """
     lines = text.split("\n")
 
-    # --- Header: authors+affiliations before "Abstract", skip title ---
+    # --- Header: find hard stop (Abstract / Fig. / Table) ---
     header_end = len(lines)
     for i, line in enumerate(lines):
-        if _ABSTRACT_RE.match(line):
+        if _HEADER_STOP_RE.match(line):
             header_end = i
             break
 
-    # Skip title lines (typically first 1-3 lines of all-caps or mixed text
-    # before author names appear). Author lines contain commas, superscript
-    # digits fused with names, or email-like patterns.
+    # Skip title lines — author lines contain commas, superscript digits
+    # fused with names, email, or footnote markers.
     author_start = 0
     for i in range(min(header_end, 5)):
         line = lines[i].strip()
@@ -463,32 +501,34 @@ def _extract_header_and_footnotes(text: str) -> str:
             author_start = i
             break
 
-    header_raw = "\n".join(lines[author_start:header_end])
-    # PDF superscript numbers often fuse with text: "1CASIA 2SJTU"
+    # Trim header at last line with affiliation indicators, capped at
+    # 12 lines from author_start to avoid body text leaking in papers
+    # without explicit "Abstract" headers (e.g. NeurIPS/ICLR format).
+    max_header = min(header_end, author_start + 12)
+    affil_end = author_start + 1
+    for i in range(author_start, max_header):
+        if _AFFIL_LINE_RE.search(lines[i]):
+            affil_end = i + 1
+
+    header_raw = "\n".join(lines[author_start:affil_end])
     header = re.sub(r"(\d)([A-Z])", r"\1 \2", header_raw)
 
-    # --- Footer: extract only footnote-like lines from page bottom ---
-    # PDF two-column layout mixes footnotes with body text, so we only
-    # keep lines that look like actual footnotes (numbered affiliations,
-    # "is with" / "are with" phrases, email addresses, etc.)
-    _FOOTNOTE_RE = re.compile(
-        r"^\d+\s*[A-Z]"       # "1Yuning Wang..." or "2Pu Zhang..."
-        r"|@"                  # email addresses
-        r"|\bis\s+with\b"     # "is with the University..."
-        r"|\bare\s+with\b"    # "are with ..."
-        r"|[Cc]orrespond"     # "Corresponding author"
-        r"|[Ee]qual\s+[Cc]ontribution"
-        r"|∗|†|‡"             # footnote markers
-        r"|[Ww]ork\s+done\s+at"
-    )
+    # --- Footer: only affiliation-bearing footnote lines from page bottom ---
     footer_start = max(header_end, len(lines) - 20)
     footer_lines = []
     for line in lines[footer_start:]:
         stripped = line.strip()
         if _ARXIV_NOISE_RE.match(stripped):
             continue
-        if _FOOTNOTE_RE.search(stripped):
-            footer_lines.append(line)
+        if not _FOOTNOTE_RE.search(stripped):
+            continue
+        # Numbered footnotes (e.g. "1Since CLIP...") must also contain
+        # an affiliation keyword to avoid methodological footnotes.
+        if re.match(r"^\d+\s*[A-Z]", stripped) and not _AFFIL_KW_RE.search(stripped):
+            continue
+        # Truncate long lines to avoid column-merged body text that
+        # may contain model names from comparisons (e.g. "CLIP").
+        footer_lines.append(line[:80])
     footer = "\n".join(footer_lines)
 
     return header + "\n" + footer
