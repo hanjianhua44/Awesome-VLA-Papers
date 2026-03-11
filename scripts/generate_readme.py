@@ -105,8 +105,13 @@ def paper_row(p: dict) -> str:
     return f"| **{title}** | {p['institution']} | {date_badge(year, month, day)} | {links} |"
 
 
+def _latest_paper_date(papers: list) -> str:
+    dates = [p.get("date", "") for p in papers if p.get("date")]
+    return max(dates) if dates else datetime.now().strftime("%Y-%m-%d")
+
+
 def generate_readme(papers: list) -> str:
-    today = datetime.now().strftime("%Y-%m-%d")
+    last_updated = _latest_paper_date(papers)
     total = len(papers)
 
     grouped = defaultdict(lambda: defaultdict(list))
@@ -123,9 +128,11 @@ def generate_readme(papers: list) -> str:
     lines.append("")
     lines.append("> A curated collection of papers on **Vision-Language-Action (VLA)** models, covering autonomous driving, robotics, world models, spatial reasoning, and more.")
     lines.append("")
-    lines.append(f"**{total} papers** | **AD: {ad_c} | Robotics: {rob_c} | General: {gen_c}** | Last updated: {today}")
+    lines.append(f"**{total} papers** | **AD: {ad_c} | Robotics: {rob_c} | General: {gen_c}** | Last updated: {last_updated}")
     lines.append("")
-    lines.append("Other views: [Timeline (by date)](TIMELINE.md) | [By Institution](BY_INSTITUTION.md)")
+    lines.append("📡 **[Daily arXiv Feed →](daily/)** — auto-updated every morning with latest VLA papers from top institutions")
+    lines.append("")
+    lines.append("Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Workflow & Methodology](WORKFLOW.md)")
     lines.append("")
 
     # --- Table of Contents ---
@@ -200,7 +207,7 @@ def generate_readme(papers: list) -> str:
 
 
 def generate_timeline(papers: list) -> str:
-    today = datetime.now().strftime("%Y-%m-%d")
+    today = _latest_paper_date(papers)
     for p in papers:
         p["_date_tuple"] = extract_date(p)
     sorted_papers = sorted(papers, key=lambda p: p["_date_tuple"], reverse=True)
@@ -238,7 +245,7 @@ def generate_timeline(papers: list) -> str:
 
 
 def generate_by_institution(papers: list) -> str:
-    today = datetime.now().strftime("%Y-%m-%d")
+    today = _latest_paper_date(papers)
     inst_papers = defaultdict(list)
     for p in papers:
         for inst in [s.strip() for s in p["institution"].split(",")]:

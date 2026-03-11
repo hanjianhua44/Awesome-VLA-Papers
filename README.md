@@ -4,9 +4,11 @@
 
 > A curated collection of papers on **Vision-Language-Action (VLA)** models, covering autonomous driving, robotics, world models, spatial reasoning, and more.
 
-**140 papers** | **AD: 38 | Robotics: 52 | General: 50** | Last updated: 2026-03-10
+**140 papers** | **AD: 38 | Robotics: 52 | General: 50** | Last updated: 2026-03-04
 
-Other views: [Timeline (by date)](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [**Daily arXiv Feed**](daily/)
+📡 **[Daily arXiv Feed →](daily/)** — auto-updated every morning with latest VLA papers from top institutions
+
+Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Workflow & Methodology](WORKFLOW.md)
 
 ---
 

@@ -1,6 +1,6 @@
 # VLA Papers Timeline
 
-> 140 papers sorted by date (newest first) | Updated: 2026-03-10
+> 140 papers sorted by date (newest first) | Updated: 2026-03-04
 
 [Back to Main](README.md)
 
