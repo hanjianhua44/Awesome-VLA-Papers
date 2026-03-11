@@ -80,7 +80,7 @@ INST_PATTERNS = {
     r"\bBaidu\b|\bERNIE\b|\bPaddlePaddle\b": "Baidu",
     r"\bTencent\b": "Tencent",
     r"\bAlibaba\b|DAMO Academy|\bQwen\b|\bTongyi\b": "Alibaba",
-    r"\bByteDance\b|\bByteDance Seed\b|\bSeed Team\b": "ByteDance",
+    r"\bByteDance\b|\bByteDance Seed\b|\bSeed Team\b|\bSeed\b": "ByteDance",
     r"\bHuawei\b|Noah.s Ark": "Huawei",
     r"\bXiaomi\b": "Xiaomi",
     r"\bSenseTime\b": "SenseTime",
