@@ -4,10 +4,12 @@ Used by fetch_daily.py, verify_institutions.py, and regen_daily.py.
 Single source of truth for INST_PATTERNS, RESEARCHER_INST, and extraction logic.
 """
 import io
+import os
 import re
 import ssl
 import time
 import urllib.request
+from pathlib import Path
 
 try:
     import pdfplumber
@@ -350,18 +352,36 @@ TIER1_INSTITUTIONS = {
 
 
 
-def extract_institutions_from_pdf(arxiv_id: str, max_retries: int = 3) -> str:
-    """Download PDF first page, search entire page for known institutions.
+_CACHE_DIR = Path(__file__).parent.parent / ".pdf_cache"
 
-    Searches the full first-page text because many papers put institution
-    names in footnotes at the bottom of page 1, well beyond the first 2500
-    characters. INST_PATTERNS are specific enough (university names, lab
-    names, company + qualifier) to avoid false positives even in body text.
 
-    Retries up to max_retries times on network failures with exponential backoff.
-    """
+def _get_first_page_text(arxiv_id: str, max_retries: int = 3) -> str:
+    """Get first-page text from PDF, caching the extracted text locally."""
+    _CACHE_DIR.mkdir(exist_ok=True)
+    safe_id = arxiv_id.replace("/", "_")
+    text_cache = _CACHE_DIR / f"{safe_id}.txt"
+
+    if text_cache.exists():
+        return text_cache.read_text(encoding="utf-8")
+
     if not HAS_PDFPLUMBER:
         return ""
+
+    # Check for legacy .pdf cache from previous code version
+    pdf_cache = _CACHE_DIR / f"{safe_id}.pdf"
+    if pdf_cache.exists():
+        try:
+            with pdfplumber.open(pdf_cache) as pdf:
+                if not pdf.pages:
+                    text_cache.write_text("", encoding="utf-8")
+                    return ""
+                text = pdf.pages[0].extract_text() or ""
+            text_cache.write_text(text, encoding="utf-8")
+            pdf_cache.unlink(missing_ok=True)
+            return text
+        except Exception:
+            pass
+
     url = f"https://arxiv.org/pdf/{arxiv_id}"
     for attempt in range(max_retries):
         try:
@@ -370,19 +390,40 @@ def extract_institutions_from_pdf(arxiv_id: str, max_retries: int = 3) -> str:
             pdf_bytes = resp.read()
             with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
                 if not pdf.pages:
+                    text_cache.write_text("", encoding="utf-8")
                     return ""
                 text = pdf.pages[0].extract_text() or ""
-
-            found = []
-            for pattern, inst in INST_PATTERNS.items():
-                if re.search(pattern, text, re.IGNORECASE):
-                    if inst not in found:
-                        found.append(inst)
-            return ", ".join(found[:4]) if found else ""
+            text_cache.write_text(text, encoding="utf-8")
+            return text
         except Exception:
             if attempt < max_retries - 1:
                 time.sleep(3 * (attempt + 1))
     return ""
+
+
+def extract_institutions_from_pdf(arxiv_id: str, max_retries: int = 3) -> str:
+    """Extract institution names from the first page of a paper's PDF.
+
+    Searches the full first-page text because many papers put institution
+    names in footnotes at the bottom of page 1. INST_PATTERNS are specific
+    enough to avoid false positives even in body text.
+
+    First-page text is cached locally in .pdf_cache/ so repeated runs
+    skip both the download and PDF parsing.
+    """
+    try:
+        text = _get_first_page_text(arxiv_id, max_retries)
+        if not text:
+            return ""
+
+        found = []
+        for pattern, inst in INST_PATTERNS.items():
+            if re.search(pattern, text, re.IGNORECASE):
+                if inst not in found:
+                    found.append(inst)
+        return ", ".join(found[:4]) if found else ""
+    except Exception:
+        return ""
 
 
 def _name_match(known: str, author: str) -> bool:

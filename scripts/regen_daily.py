@@ -41,7 +41,6 @@ def re_identify_institutions(papers: list, use_pdf: bool = True) -> int:
                     changes += 1
             if (i + 1) % 10 == 0:
                 _flush(f"  [{i+1}/{len(papers)}] ...")
-            time.sleep(2)
 
     with_inst = sum(1 for p in papers if p["institution"] != "—")
     _flush(f"Done. {with_inst}/{len(papers)} papers have institutions, {changes} changed by PDF.")
@@ -61,6 +60,13 @@ def main():
     _flush(f"Loaded {len(papers)} papers from {json_path}")
 
     changes = re_identify_institutions(papers, use_pdf=use_pdf)
+
+    # Filter: TIER1 institutions keep with score>=2, others need score>=8
+    before = len(papers)
+    papers = [p for p in papers
+              if (is_known_institution(p["institution"]) and p.get("score", 0) >= 2)
+              or p.get("score", 0) >= 8]
+    _flush(f"Filtered: {before} -> {len(papers)} (removed {before - len(papers)} non-TIER1 low-relevance papers)")
 
     json_path.write_text(json.dumps(papers, ensure_ascii=False, indent=2), encoding="utf-8")
     _flush(f"Updated {json_path}")

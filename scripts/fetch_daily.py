@@ -307,8 +307,8 @@ def fetch_arxiv_papers(date_str: str = None):
 
     print(f"  Raw total: {len(all_raw)}, date-filtered ({', '.join(sorted(target_dates))}): {len(date_filtered)}")
 
-    # Score and filter
-    results = []
+    # Phase 1: Score and broad filter (score >= 5) to build candidate pool
+    candidates = []
     for p in date_filtered:
         score, topics = compute_relevance(p["title"], p["abstract"], p["categories"])
         aff_text = " ".join(p.get("affiliations", []))
@@ -318,34 +318,42 @@ def fetch_arxiv_papers(date_str: str = None):
         p["topics"] = topics
         p["institution"] = institution
 
-        known = is_known_institution(institution)
-        if known:
+        if is_known_institution(institution):
             p["score"] += 3
 
-        # Keep if: known institution with some relevance, OR strong keyword relevance
-        # Target: ~20-30% pass rate
-        if known and score >= 2:
-            results.append(p)
-        elif score >= 5:
-            results.append(p)
+        if score >= 3:
+            candidates.append(p)
 
-    results.sort(key=lambda p: p["score"], reverse=True)
+    print(f"  Candidates after keyword filter: {len(candidates)}/{len(date_filtered)}")
 
-    # Phase 2: enrich ALL papers via PDF (PDF is more reliable than author-name guesses)
+    # Phase 2: PDF enrichment — identify institutions before final filtering
     if HAS_PDFPLUMBER:
-        print(f"  Enriching institutions from PDF for {len(results)} papers...")
+        print(f"  Enriching institutions from PDF for {len(candidates)} papers...")
         enriched = 0
-        for i, p in enumerate(results):
+        for i, p in enumerate(candidates):
             pdf_inst = extract_institutions_from_pdf(p["arxiv_id"])
             if pdf_inst:
                 p["institution"] = pdf_inst
-                if is_known_institution(pdf_inst):
+                if is_known_institution(pdf_inst) and not is_known_institution(p.get("_prev_inst", "")):
                     p["score"] += 3
                 enriched += 1
             if (i + 1) % 10 == 0:
-                print(f"    Processed {i+1}/{len(results)}...")
+                print(f"    Processed {i+1}/{len(candidates)}...")
             time.sleep(1)
-        print(f"    PDF enrichment: {enriched}/{len(results)} institutions found")
+        print(f"    PDF enrichment: {enriched}/{len(candidates)} institutions found")
+
+    # Phase 3: Final filter — TIER1 institutions get low bar, others need high relevance
+    results = []
+    for p in candidates:
+        known = is_known_institution(p["institution"])
+        if known and p["score"] >= 2:
+            results.append(p)
+        elif p["score"] >= 8:
+            results.append(p)
+
+    results.sort(key=lambda p: p["score"], reverse=True)
+    print(f"  Final results: {len(results)} (TIER1: {sum(1 for p in results if is_known_institution(p['institution']))}, "
+          f"high-relevance: {sum(1 for p in results if not is_known_institution(p['institution']))})")
 
     return results, len(date_filtered)
 
