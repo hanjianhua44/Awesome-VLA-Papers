@@ -70,11 +70,17 @@ INST_PATTERNS = {
     r"\bAgibot\b": "Agibot",
     r"\bGalbot\b": "Galbot",
     r"\bUBTECH\b": "UBTECH",
-    # === Chinese Tech ===
-    r"\bBaidu\b": "Baidu",
+    # === AI Model Companies (Global) ===
+    r"\bAnthropic\b": "Anthropic",
+    r"\bMistral\b": "Mistral",
+    r"\bCohere\b": "Cohere",
+    r"\bxAI\b": "xAI",
+    r"\bStability\s+AI\b": "Stability AI",
+    # === Chinese Tech (Big Companies) ===
+    r"\bBaidu\b|ERNIE|PaddlePaddle": "Baidu",
     r"\bTencent\b": "Tencent",
-    r"\bAlibaba\b|DAMO Academy": "Alibaba",
-    r"\bByteDance\b": "ByteDance",
+    r"\bAlibaba\b|DAMO Academy|Tongyi|Qwen Team": "Alibaba",
+    r"\bByteDance\b|ByteDance Seed|\bSeed Team\b": "ByteDance",
     r"\bHuawei\b|Noah.s Ark": "Huawei",
     r"\bXiaomi\b": "Xiaomi",
     r"\bSenseTime\b": "SenseTime",
@@ -87,9 +93,19 @@ INST_PATTERNS = {
     r"\bNIO\b": "NIO",
     r"\bXPeng\b|XMotors": "XPeng",
     r"\bKuaishou\b": "Kuaishou",
-    r"\bZhipu\b": "Zhipu AI",
+    r"\bZhipu\b|GLM": "Zhipu AI",
     r"\bHikvision\b": "Hikvision",
     r"\biFlytek\b": "iFlytek",
+    # === Chinese AI Model Companies ===
+    r"\bMiniMax\b": "MiniMax",
+    r"\bMoonshot\b|Kimi\b": "Moonshot AI",
+    r"\bBaichuan\b": "Baichuan",
+    r"\b01\.AI\b|Yi-Lightning|Yi-Large": "01.AI",
+    r"\bStepFun\b|Step\s*Star": "StepFun",
+    # === Chinese Tech (Internet/Platform) ===
+    r"\bMeituan\b": "Meituan",
+    r"\bDiDi\b": "DiDi",
+    r"\bJD\.com\b|JD\s+AI|JD Explore": "JD",
     # === Top US Universities ===
     r"\bStanford\b": "Stanford",
     r"\bMIT\b": "MIT",
@@ -158,7 +174,7 @@ INST_PATTERNS = {
     r"\bXiamen\b.*?Univ|\bXMU\b": "XMU",
     r"\bSoochow\b.*?Univ": "Soochow Univ",
     # === Chinese Labs & Institutes ===
-    r"\bShanghai AI Lab\b": "Shanghai AI Lab",
+    r"\bShanghai AI Lab\b|InternLM|InternVL|OpenGVLab": "Shanghai AI Lab",
     r"\bCASIA\b|Inst.*?Automation": "CASIA",
     r"Chinese Academy of Sci": "CAS",
     r"Peng\s*Cheng\s*Lab|\bPCL\b": "PCL",
@@ -317,6 +333,7 @@ TIER1_INSTITUTIONS = {
     "google deepmind", "google", "meta ai", "meta", "openai",
     "apple", "tesla", "amazon", "microsoft research", "msra",
     "uber", "qualcomm", "intel", "samsung", "sony", "deepseek",
+    "anthropic", "mistral", "cohere", "xai", "stability ai",
     # --- Autonomous Driving ---
     "waymo", "cruise", "aurora", "nuro", "zoox", "motional", "mobileye",
     "woven by toyota", "pony.ai", "momenta", "tusimple",
@@ -331,6 +348,8 @@ TIER1_INSTITUTIONS = {
     "xiaomi", "sensetime", "megvii", "horizon robotics",
     "li auto", "byd", "dji", "nio", "xpeng",
     "kuaishou", "zhipu ai",
+    "minimax", "moonshot ai", "baichuan", "01.ai", "stepfun",
+    "meituan", "didi", "jd",
     # --- US Top Universities ---
     "stanford", "mit", "uc berkeley", "berkeley", "cmu", "carnegie mellon",
     "princeton", "georgia tech", "ut austin", "cornell", "columbia", "nyu",

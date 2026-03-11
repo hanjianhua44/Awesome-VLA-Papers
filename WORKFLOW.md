@@ -178,7 +178,7 @@ Features of the generated README:
 Papers must be from at least one of these institutions to appear in daily reports.
 
 ### Big Tech / AI Labs
-NVIDIA, Google DeepMind, Google, Meta AI, OpenAI, Apple, Tesla, Amazon, Microsoft Research (MSRA), Uber, Qualcomm, Intel, Samsung, Sony, DeepSeek
+NVIDIA, Google DeepMind, Google, Meta AI, OpenAI, Apple, Tesla, Amazon, Microsoft Research (MSRA), Uber, Qualcomm, Intel, Samsung, Sony, DeepSeek, Anthropic, Mistral, Cohere, xAI, Stability AI
 
 ### Autonomous Driving
 Waymo, Cruise, Aurora, Nuro, Zoox, Motional, Mobileye, Woven by Toyota, Pony.ai, Momenta, TuSimple, Bosch, Valeo, Continental, Waabi, Mercedes-Benz, Ford, Volvo, BMW, Hyundai
@@ -187,7 +187,7 @@ Waymo, Cruise, Aurora, Nuro, Zoox, Motional, Mobileye, Woven by Toyota, Pony.ai,
 Physical Intelligence, Boston Dynamics, TRI, Agility Robotics, Figure AI, 1X Technologies, Unitree, Covariant, Agibot, Galbot, UBTech
 
 ### Chinese Tech
-ByteDance, Tencent, Alibaba, Baidu, Huawei, Xiaomi, SenseTime, Megvii, Horizon Robotics, Li Auto, BYD, DJI, NIO, XPeng, Kuaishou, Zhipu AI
+ByteDance (Seed), Tencent, Alibaba (Qwen/Tongyi), Baidu, Huawei (Noah's Ark), Xiaomi, SenseTime, Megvii, Horizon Robotics, Li Auto, BYD, DJI, NIO, XPeng, Kuaishou, Zhipu AI, MiniMax, Moonshot AI, Baichuan, 01.AI, StepFun, Meituan, DiDi, JD
 
 ### US Top Universities
 Stanford, MIT, UC Berkeley, CMU, Princeton, Georgia Tech, UT Austin, Cornell, Columbia, NYU, UCSD, UCLA, UMich, UIUC, UW, USC
