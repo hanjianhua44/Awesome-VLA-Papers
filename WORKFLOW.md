@@ -8,28 +8,29 @@ This document explains how the **Awesome VLA Papers** list is built and maintain
 
 ## Overview
 
-The paper list is maintained through a two-track system:
+The paper list is maintained through multiple sources converging into one curated list:
 
 ```
-                   ┌──────────────────────┐
-                   │   arXiv (cs.CV/cs.RO) │
-                   └──────────┬───────────┘
-                              │ daily automated fetch
-                              ▼
-                   ┌──────────────────────┐
-                   │    Daily Reports     │  ← auto-generated, TIER1 only
-                   │  daily/YYYY/MM/*.md  │
-                   └──────────┬───────────┘
-                              │ manual review & selection
-                              ▼
-                   ┌──────────────────────┐
-                   │   Curated Main List  │  ← README.md (papers.yaml)
-                   │  + manual additions  │
-                   └──────────────────────┘
+  ┌──────────────────────┐          ┌──────────────────────────┐
+  │  arXiv (cs.CV/cs.RO) │          │   Other Sources          │
+  └──────────┬───────────┘          │  · Twitter / X           │
+             │ daily auto fetch     │  · Conference proceedings │
+             ▼                      │  · Lab blogs / tech blogs │
+  ┌──────────────────────┐          │  · Peer recommendations  │
+  │    Daily Reports     │          │  · Related work sections │
+  │  daily/YYYY/MM/*.md  │          └────────────┬─────────────┘
+  └──────────┬───────────┘                       │
+             │ review & select                   │ manual add
+             ▼                                   ▼
+  ┌────────────────────────────────────────────────┐
+  │              Curated Main List                 │
+  │          README.md  ←  papers.yaml             │
+  └────────────────────────────────────────────────┘
 ```
 
-- **Daily Reports** are fully automated — fetched, filtered, and published every morning.
-- **Main List** is manually curated — papers are promoted from daily reports (or added directly) after review.
+- **Daily Reports** — fully automated; fetched, filtered, and published every morning.
+- **Other Sources** — papers discovered via social media, conferences, blogs, or recommendations can be added directly at any time.
+- **Main List** — manually curated; papers are promoted from daily reports or added from any other channel after review.
 
 ---
 
@@ -126,10 +127,13 @@ The main `README.md` paper list is built from `data/papers.yaml` and generated b
 
 ### Adding Papers
 
-Papers can be added to the main list in two ways:
+Papers can be added to the main list from multiple sources:
 
 1. **From Daily Reports** — review the daily digest, select high-quality papers, and add them to `papers.yaml`
-2. **Manual Addition** — directly add papers discovered through other channels
+2. **From Social Media / Blogs** — interesting papers spotted on Twitter/X, WeChat, tech blogs, etc.
+3. **From Conferences** — notable papers from top venues (CVPR, NeurIPS, ICRA, CoRL, RSS, etc.)
+4. **From Related Work** — relevant references found while reading other papers
+5. **From Peer Recommendations** — shared by colleagues or research groups
 
 Each paper entry in `papers.yaml` includes:
 - `title`, `arxiv` (ID), `authors`
