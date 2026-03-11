@@ -20,8 +20,15 @@ except ImportError:
     HAS_PDFPLUMBER = False
 
 ROOT = Path(__file__).parent.parent
-DAILY_DIR = ROOT / "daily"
-DAILY_DIR.mkdir(exist_ok=True)
+DAILY_BASE = ROOT / "daily"
+
+
+def _daily_dir(date_str: str) -> Path:
+    """Return daily/YYYY/MM/ directory for a given date, creating it if needed."""
+    year, month = date_str[:4], date_str[5:7]
+    d = DAILY_BASE / year / month
+    d.mkdir(parents=True, exist_ok=True)
+    return d
 
 SSL_CTX = ssl.create_default_context()
 SSL_CTX.check_hostname = False
@@ -342,18 +349,11 @@ def fetch_arxiv_papers(date_str: str = None):
             time.sleep(1)
         print(f"    PDF enrichment: {enriched}/{len(candidates)} institutions found")
 
-    # Phase 3: Final filter — TIER1 institutions get low bar, others need high relevance
-    results = []
-    for p in candidates:
-        known = is_known_institution(p["institution"])
-        if known and p["score"] >= 2:
-            results.append(p)
-        elif p["score"] >= 8:
-            results.append(p)
-
+    # Phase 3: Keep only papers with identified institutions
+    results = [p for p in candidates if p["institution"] not in ("", "—")]
     results.sort(key=lambda p: p["score"], reverse=True)
-    print(f"  Final results: {len(results)} (TIER1: {sum(1 for p in results if is_known_institution(p['institution']))}, "
-          f"high-relevance: {sum(1 for p in results if not is_known_institution(p['institution']))})")
+    no_inst = len(candidates) - len(results)
+    print(f"  Final results: {len(results)} (dropped {no_inst} without institution)")
 
     return results, len(date_filtered)
 
@@ -605,13 +605,14 @@ def main():
     papers, total_scanned = fetch_arxiv_papers(date_str)
     print(f"Scanned {total_scanned} papers, {len(papers)} passed relevance + institution filter")
 
+    daily_dir = _daily_dir(date_str)
     report = generate_daily_report(papers, date_str, total_scanned)
-    out_path = DAILY_DIR / f"{date_str}.md"
+    out_path = daily_dir / f"{date_str}.md"
     out_path.write_text(report, encoding="utf-8")
     print(f"Report saved to {out_path}")
 
     # Also save raw JSON for programmatic access
-    json_path = DAILY_DIR / f"{date_str}.json"
+    json_path = daily_dir / f"{date_str}.json"
     json_data = [{k: v for k, v in p.items()} for p in papers]
     json_path.write_text(json.dumps(json_data, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Raw data saved to {json_path}")

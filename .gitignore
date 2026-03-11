@@ -1,4 +1,4 @@
-daily/*.json
+daily/**/*.json
 .pdf_cache/
 scripts/__pycache__/
 scripts/verify_output.json
