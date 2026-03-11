@@ -330,9 +330,10 @@ RESEARCHER_INST = {
 TIER1_INSTITUTIONS = {
     # --- Big Tech / AI Labs ---
     "nvidia", "nvidia/uw", "nvidia/ut austin",
-    "google deepmind", "google", "meta ai", "meta", "openai",
+    "google deepmind", "google", "meta ai", "meta", "meta fair", "openai",
     "apple", "tesla", "amazon", "microsoft research", "msra",
-    "uber", "qualcomm", "intel", "samsung", "sony", "deepseek",
+    "uber", "qualcomm", "intel", "samsung", "sony",
+    "deepseek", "deepseek ai",
     "anthropic", "mistral", "cohere", "xai", "stability ai",
     # --- Autonomous Driving ---
     "waymo", "cruise", "aurora", "nuro", "zoox", "motional", "mobileye",
@@ -344,7 +345,8 @@ TIER1_INSTITUTIONS = {
     "agility robotics", "figure ai", "1x technologies",
     "unitree", "covariant", "agibot", "galbot", "ubtech",
     # --- Chinese Tech ---
-    "bytedance", "tencent", "alibaba", "baidu", "huawei",
+    "bytedance", "tencent", "alibaba", "alibaba damo", "ant group",
+    "baidu", "huawei",
     "xiaomi", "sensetime", "megvii", "horizon robotics",
     "li auto", "byd", "dji", "nio", "xpeng",
     "kuaishou", "zhipu ai",
@@ -364,9 +366,9 @@ TIER1_INSTITUTIONS = {
     "shanghai ai lab", "casia", "cas", "pcl", "shanghaitech",
     "baai", "allen ai",
     # --- HK ---
-    "cuhk", "hku", "hkust",
+    "cuhk", "cuhk-sz", "hku", "hkust",
     # --- Singapore ---
-    "ntu", "nanyang", "nus",
+    "ntu", "nanyang", "nus", "s-lab",
 }
 
 

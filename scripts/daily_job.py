@@ -3,6 +3,7 @@ Daily scheduled job: fetch arXiv papers → commit → push → notify dashboard
 
 Designed to run via Windows Task Scheduler at 8:30 AM daily.
 """
+import re
 import subprocess
 import sys
 import json
@@ -10,6 +11,7 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
+DAILY_INDEX = ROOT / "daily" / "README.md"
 DASHBOARD_PUSH = Path(r"D:\projects\test\personal-dashboard\scripts\push-message.cjs")
 
 
@@ -42,6 +44,37 @@ def notify_dashboard(content, msg_type="success"):
         print(f"Dashboard notified: {content}")
     except Exception as e:
         print(f"Dashboard notification failed: {e}")
+
+
+DAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+
+
+def _update_daily_index(date_str: str, paper_count: str, cover_str: str, dt: datetime):
+    """Insert a new row into daily/README.md index table."""
+    if not DAILY_INDEX.exists():
+        print(f"  daily/README.md not found, skipping index update")
+        return
+
+    content = DAILY_INDEX.read_text(encoding="utf-8")
+    short_date = date_str[5:]  # "2026-03-11" -> "03-11"
+    day_name = DAY_NAMES[dt.weekday()]
+    year, month = date_str[:4], date_str[5:7]
+
+    new_row = f"| {short_date} | {day_name} | {cover_str} | {paper_count} | [Report]({year}/{month}/{date_str}.md) |"
+
+    if short_date in content:
+        # Update existing row
+        old_pattern = re.compile(rf"^\|.*?{re.escape(short_date)}.*?\|.*$", re.MULTILINE)
+        content = old_pattern.sub(new_row, content, count=1)
+    else:
+        # Insert after table header (find "| Link |" header row + separator row)
+        header_match = re.search(r"(\|:--.*:--.*\|\n)", content)
+        if header_match:
+            insert_pos = header_match.end()
+            content = content[:insert_pos] + new_row + "\n" + content[insert_pos:]
+
+    DAILY_INDEX.write_text(content, encoding="utf-8")
+    print(f"  Updated daily/README.md with {date_str} entry")
 
 
 def main():
@@ -79,14 +112,18 @@ def main():
                 if "passed" in p:
                     paper_count = p.strip().split()[0]
 
+    # Step 1.5: Update daily/README.md index
+    print("\n[1.5/5] Updating daily index...")
+    _update_daily_index(date_str, paper_count, cover_str, dt)
+
     # Step 2: Git add
-    print("\n[2/4] Staging changes...")
+    print("\n[2/5] Staging changes...")
     year, month = date_str[:4], date_str[5:7]
     daily_dir = f"daily/{year}/{month}"
-    run(["git", "add", f"{daily_dir}/{date_str}.md"])
+    run(["git", "add", f"{daily_dir}/{date_str}.md", "daily/README.md"])
 
     # Step 3: Git commit
-    print("\n[3/4] Committing...")
+    print("\n[3/5] Committing...")
     try:
         run([
             "git", "-c", "user.name=hanjianhua44",
@@ -97,7 +134,7 @@ def main():
         print("Nothing to commit or commit failed")
 
     # Step 4: Git push
-    print("\n[4/4] Pushing...")
+    print("\n[4/5] Pushing...")
     try:
         run(["git", "push", "origin", "main"])
     except RuntimeError as e:
