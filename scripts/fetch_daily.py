@@ -475,38 +475,33 @@ def _make_summary_cn(title: str, abstract: str) -> str:
     }
     methods = [cn for en, cn in method_keywords.items() if en in abs_lower]
 
-    sents = abstract.replace("\n", " ").split(". ")
-    key_idx = -1
-    for i, s in enumerate(sents):
-        sl = s.lower()
-        if any(k in sl for k in ["we propose", "we present", "we introduce", "this paper", "in this work"]):
-            key_idx = i
-            break
-    if key_idx < 0 and len(sents) > 1:
-        key_idx = 1
+    result_kw = ["state-of-the-art", "sota", "outperform", "surpass",
+                  "benchmark", "experiment", "evaluat", "demonstrat",
+                  "validat", "code is available", "code and data",
+                  "project page", "code will be", "will be released",
+                  "available at http"]
 
-    if key_idx >= 0:
-        desc_sents = []
-        total_len = 0
-        for s in sents[key_idx:]:
-            s = s.strip().rstrip(".")
-            if not s:
-                continue
-            if total_len + len(s) > 400:
-                if not desc_sents:
-                    desc_sents.append(s[:350] + "...")
-                break
-            desc_sents.append(s)
-            total_len += len(s)
-            if len(desc_sents) >= 3:
-                break
-        if desc_sents:
-            parts.append(". ".join(desc_sents))
+    sents = abstract.replace("\n", " ").split(". ")
+    desc_sents = []
+    total_len = 0
+    for s in sents:
+        s = s.strip().rstrip(".")
+        if not s:
+            continue
+        sl = s.lower()
+        if any(k in sl for k in result_kw):
+            continue
+        if total_len + len(s) > 800:
+            break
+        desc_sents.append(s)
+        total_len += len(s)
+    if desc_sents:
+        parts.append(". ".join(desc_sents))
 
     if methods:
         parts.append(f"**关键技术：** {' / '.join(methods[:4])}")
 
-    return "\n>\n> ".join(parts) if parts else abstract[:300] + "..."
+    return "\n>\n> ".join(parts) if parts else abstract[:400] + "..."
 
 
 def _cover_str(date_str: str, cover_dates: list = None) -> str:
