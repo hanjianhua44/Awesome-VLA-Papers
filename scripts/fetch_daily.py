@@ -1,7 +1,8 @@
 """
 Fetch daily arXiv papers from cs.CV and cs.RO, filter by VLA/AD/robotics relevance.
-Outputs a markdown report to daily/YYYY-MM-DD.md
+Outputs a markdown report to daily/YYYY/MM/YYYY-MM-DD.md
 """
+import functools
 import re
 import io
 import ssl
@@ -12,6 +13,8 @@ import urllib.parse
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from datetime import datetime, timedelta
+
+print = functools.partial(print, flush=True)
 
 try:
     import pdfplumber
@@ -294,22 +297,19 @@ def fetch_arxiv_papers(date_str: str = None):
             time.sleep(5)
 
     # arXiv listing schedule:
-    #   Mon listing = Thu~Sun submissions (4 days)
-    #   Tue listing = Mon submissions (1 day)
-    #   Wed listing = Tue submissions (1 day)
-    #   Thu listing = Wed submissions (1 day)
-    #   Fri listing = Thu submissions (1 day)
+    #   Fri listing  = Thu submissions
+    #   (no Sat/Sun listing)
+    #   Mon listing  = Fri + Sat + Sun submissions
+    #   Tue listing  = Mon submissions
+    #   Wed listing  = Tue submissions
+    #   Thu listing  = Wed submissions
     weekday = dt.weekday()  # 0=Mon
     if weekday == 0:
-        lookback = 4  # Mon: covers Thu-Sun
-    elif weekday == 1:
-        lookback = 2  # Tue: covers Mon (+ buffer)
+        # Monday: Fri(-3), Sat(-2), Sun(-1)
+        target_dates = {(dt - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(1, 4)}
     else:
-        lookback = 2  # Wed-Fri: covers previous day (+ buffer)
-
-    target_dates = set()
-    for i in range(lookback):
-        target_dates.add((dt - timedelta(days=i)).strftime("%Y-%m-%d"))
+        # Tue-Fri: previous day only
+        target_dates = {(dt - timedelta(days=1)).strftime("%Y-%m-%d")}
     date_filtered = [p for p in all_raw if p["published"] in target_dates]
 
     print(f"  Raw total: {len(all_raw)}, date-filtered ({', '.join(sorted(target_dates))}): {len(date_filtered)}")
@@ -599,6 +599,7 @@ def generate_daily_report(papers: list, date_str: str, total_scanned: int = 0) -
 
 def main():
     import sys
+    sys.stdout.reconfigure(encoding='utf-8')
     date_str = sys.argv[1] if len(sys.argv) > 1 else datetime.now().strftime("%Y-%m-%d")
 
     print(f"Fetching arXiv papers for {date_str} (cs.CV + cs.RO)...")
