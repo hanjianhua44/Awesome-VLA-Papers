@@ -357,7 +357,7 @@ def fetch_arxiv_papers(date_str: str = None):
     dropped = len(candidates) - len(results)
     print(f"  Final results: {len(results)} (dropped {dropped} without TIER1 institution)")
 
-    return results, len(date_filtered)
+    return results, len(date_filtered), sorted(target_dates)
 
 
 def categorize_paper(topics: list, categories: str, title: str = "", abstract: str = "") -> str:
@@ -505,11 +505,29 @@ def _make_summary_cn(title: str, abstract: str) -> str:
     return "\n>\n> ".join(parts) if parts else abstract[:200] + "..."
 
 
-def generate_daily_report(papers: list, date_str: str, total_scanned: int = 0) -> str:
+def _cover_str(date_str: str, cover_dates: list = None) -> str:
+    """Build a human-readable coverage string for the report title."""
+    if cover_dates and len(cover_dates) > 0:
+        short = [d[5:] for d in cover_dates]  # "2026-03-10" -> "03-10"
+        if len(short) == 1:
+            return short[0]
+        return f"{short[0]} ~ {short[-1]}"
+    # fallback: compute from date_str
+    from datetime import datetime as _dt, timedelta
+    dt = _dt.strptime(date_str, "%Y-%m-%d")
+    if dt.weekday() == 0:
+        dates = sorted((dt - timedelta(days=i)).strftime("%m-%d") for i in range(1, 4))
+        return f"{dates[0]} ~ {dates[-1]}"
+    return (dt - timedelta(days=1)).strftime("%m-%d")
+
+
+def generate_daily_report(papers: list, date_str: str, total_scanned: int = 0,
+                          cover_dates: list = None) -> str:
     """Generate 机器之心 style Chinese daily report."""
     lines = []
 
-    lines.append(f"# 📄 每日 arXiv 速递 | {date_str}")
+    cover = _cover_str(date_str, cover_dates)
+    lines.append(f"# 📄 arXiv VLA 速递 | {cover} 论文")
     lines.append("")
     lines.append(f"> 🔍 扫描 cs.CV + cs.RO 共 **{total_scanned}** 篇，筛选出 **{len(papers)}** 篇与 VLA / 自动驾驶 / 机器人 / Agent 相关的工作")
     lines.append("")
@@ -605,11 +623,11 @@ def main():
     date_str = sys.argv[1] if len(sys.argv) > 1 else datetime.now().strftime("%Y-%m-%d")
 
     print(f"Fetching arXiv papers for {date_str} (cs.CV + cs.RO)...")
-    papers, total_scanned = fetch_arxiv_papers(date_str)
+    papers, total_scanned, cover_dates = fetch_arxiv_papers(date_str)
     print(f"Scanned {total_scanned} papers, {len(papers)} passed relevance + institution filter")
 
     daily_dir = _daily_dir(date_str)
-    report = generate_daily_report(papers, date_str, total_scanned)
+    report = generate_daily_report(papers, date_str, total_scanned, cover_dates)
     out_path = daily_dir / f"{date_str}.md"
     out_path.write_text(report, encoding="utf-8")
     print(f"Report saved to {out_path}")

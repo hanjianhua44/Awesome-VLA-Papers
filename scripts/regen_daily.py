@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 sys.stdout.reconfigure(encoding='utf-8')
 
 from inst_utils import identify_institutions, extract_institutions_from_pdf, is_known_institution
-from fetch_daily import generate_daily_report
+from fetch_daily import generate_daily_report, _cover_str
 
 DAILY_BASE = Path(__file__).parent.parent / "daily"
 
@@ -94,7 +94,7 @@ def main():
         meta = json.loads(count_info_path.read_text(encoding="utf-8"))
         total_scanned = meta.get("total_scanned", 599)
 
-    report = generate_daily_report(papers, date_str, total_scanned)
+    report = generate_daily_report(papers, date_str, total_scanned, cover_dates=None)
     out_path = daily_dir / f"{date_str}.md"
     out_path.write_text(report, encoding="utf-8")
     _flush(f"Regenerated {out_path} ({len(papers)} papers)")
