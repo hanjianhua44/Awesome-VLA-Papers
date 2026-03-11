@@ -45,23 +45,23 @@ def notify_dashboard(content, msg_type="success"):
 
 
 def main():
+    sys.stdout.reconfigure(encoding='utf-8')
     date_str = sys.argv[1] if len(sys.argv) > 1 else datetime.now().strftime("%Y-%m-%d")
     dt = datetime.strptime(date_str, "%Y-%m-%d")
     weekday = dt.weekday()
 
     if weekday in (5, 6):
         print(f"{date_str} is weekend, skipping")
-        notify_dashboard(f"{date_str} 周末无 arXiv 更新，跳过", "info")
+        notify_dashboard(f"{date_str} weekend, skip", "info")
         return
 
     # Determine coverage dates for display
+    from datetime import timedelta
     if weekday == 0:
-        from datetime import timedelta
-        covers = [f"{(dt - timedelta(days=i)).strftime('%m-%d')}" for i in range(1, 4)]
+        covers = sorted((dt - timedelta(days=i)).strftime('%m-%d') for i in range(1, 4))
     else:
-        from datetime import timedelta
         covers = [(dt - timedelta(days=1)).strftime("%m-%d")]
-    cover_str = ", ".join(covers)
+    cover_str = " ~ ".join([covers[0], covers[-1]]) if len(covers) > 1 else covers[0]
 
     print(f"=== Daily Job: {date_str} (covers {cover_str}) ===")
 
