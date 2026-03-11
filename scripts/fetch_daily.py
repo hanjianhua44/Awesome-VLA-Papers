@@ -476,33 +476,37 @@ def _make_summary_cn(title: str, abstract: str) -> str:
     methods = [cn for en, cn in method_keywords.items() if en in abs_lower]
 
     sents = abstract.replace("\n", " ").split(". ")
-    core_sent = ""
-    for s in sents:
+    key_idx = -1
+    for i, s in enumerate(sents):
         sl = s.lower()
         if any(k in sl for k in ["we propose", "we present", "we introduce", "this paper", "in this work"]):
-            core_sent = s.strip().rstrip(".")
+            key_idx = i
             break
-    if not core_sent and len(sents) > 1:
-        core_sent = sents[1].strip().rstrip(".")
+    if key_idx < 0 and len(sents) > 1:
+        key_idx = 1
 
-    if core_sent:
-        if len(core_sent) > 200:
-            core_sent = core_sent[:200] + "..."
-        parts.append(core_sent)
+    if key_idx >= 0:
+        desc_sents = []
+        total_len = 0
+        for s in sents[key_idx:]:
+            s = s.strip().rstrip(".")
+            if not s:
+                continue
+            if total_len + len(s) > 400:
+                if not desc_sents:
+                    desc_sents.append(s[:350] + "...")
+                break
+            desc_sents.append(s)
+            total_len += len(s)
+            if len(desc_sents) >= 3:
+                break
+        if desc_sents:
+            parts.append(". ".join(desc_sents))
 
     if methods:
         parts.append(f"**关键技术：** {' / '.join(methods[:4])}")
 
-    result_keywords = ["state-of-the-art", "sota", "outperform", "surpass", "improve", "achieve"]
-    for s in sents:
-        if any(k in s.lower() for k in result_keywords):
-            result = s.strip().rstrip(".")
-            if len(result) > 150:
-                result = result[:150] + "..."
-            parts.append(f"**核心结果：** {result}")
-            break
-
-    return "\n>\n> ".join(parts) if parts else abstract[:200] + "..."
+    return "\n>\n> ".join(parts) if parts else abstract[:300] + "..."
 
 
 def _cover_str(date_str: str, cover_dates: list = None) -> str:
