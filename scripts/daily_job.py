@@ -49,8 +49,17 @@ def notify_dashboard(content, msg_type="success"):
 DAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
 
+TABLE_HEADER = """\
+| Date | Day | Covers | Papers | Link |
+|:-----|:----|:-------|-------:|:-----|
+"""
+
+
 def _update_daily_index(date_str: str, paper_count: str, cover_str: str, dt: datetime):
-    """Insert a new row into daily/README.md index table."""
+    """Insert or update a row in daily/README.md index table.
+
+    Handles month boundaries: creates a new month section if needed.
+    """
     if not DAILY_INDEX.exists():
         print(f"  daily/README.md not found, skipping index update")
         return
@@ -59,19 +68,29 @@ def _update_daily_index(date_str: str, paper_count: str, cover_str: str, dt: dat
     short_date = date_str[5:]  # "2026-03-11" -> "03-11"
     day_name = DAY_NAMES[dt.weekday()]
     year, month = date_str[:4], date_str[5:7]
+    month_section = f"## {year}-{month}"
 
     new_row = f"| {short_date} | {day_name} | {cover_str} | {paper_count} | [Report]({year}/{month}/{date_str}.md) |"
 
     if short_date in content:
-        # Update existing row
         old_pattern = re.compile(rf"^\|.*?{re.escape(short_date)}.*?\|.*$", re.MULTILINE)
         content = old_pattern.sub(new_row, content, count=1)
-    else:
-        # Insert after table header (find "| Link |" header row + separator row)
-        header_match = re.search(r"(\|:--.*:--.*\|\n)", content)
-        if header_match:
-            insert_pos = header_match.end()
+    elif month_section in content:
+        # Month section exists — insert after its table separator row
+        section_pos = content.index(month_section)
+        sep_match = re.search(r"(\|:--.*:--.*\|\n)", content[section_pos:])
+        if sep_match:
+            insert_pos = section_pos + sep_match.end()
             content = content[:insert_pos] + new_row + "\n" + content[insert_pos:]
+    else:
+        # New month — insert a new section before the first existing month section
+        first_section = re.search(r"\n## \d{4}-\d{2}\n", content)
+        if first_section:
+            insert_pos = first_section.start() + 1
+        else:
+            insert_pos = len(content)
+        new_section = f"{month_section}\n\n{TABLE_HEADER}{new_row}\n"
+        content = content[:insert_pos] + new_section + "\n" + content[insert_pos:]
 
     DAILY_INDEX.write_text(content, encoding="utf-8")
     print(f"  Updated daily/README.md with {date_str} entry")
@@ -99,7 +118,7 @@ def main():
     print(f"=== Daily Job: {date_str} (covers {cover_str}) ===")
 
     # Step 1: Fetch
-    print("\n[1/4] Fetching papers...")
+    print("\n[1/5] Fetching papers...")
     fetch_output = run([sys.executable, str(ROOT / "scripts" / "fetch_daily.py"), date_str])
     print(fetch_output)
 
@@ -112,18 +131,15 @@ def main():
                 if "passed" in p:
                     paper_count = p.strip().split()[0]
 
-    # Step 1.5: Update daily/README.md index
-    print("\n[1.5/5] Updating daily index...")
+    # Step 2: Update daily/README.md index
+    print("\n[2/5] Updating daily index...")
     _update_daily_index(date_str, paper_count, cover_str, dt)
 
-    # Step 2: Git add
-    print("\n[2/5] Staging changes...")
+    # Step 3: Git add + commit
+    print("\n[3/5] Staging and committing...")
     year, month = date_str[:4], date_str[5:7]
     daily_dir = f"daily/{year}/{month}"
     run(["git", "add", f"{daily_dir}/{date_str}.md", "daily/README.md"])
-
-    # Step 3: Git commit
-    print("\n[3/5] Committing...")
     try:
         run([
             "git", "-c", "user.name=hanjianhua44",
@@ -133,9 +149,10 @@ def main():
     except RuntimeError:
         print("Nothing to commit or commit failed")
 
-    # Step 4: Git push
-    print("\n[4/5] Pushing...")
+    # Step 4: Git pull + push (pull first to avoid push rejection)
+    print("\n[4/5] Syncing with remote...")
     try:
+        run(["git", "pull", "--rebase", "origin", "main"], check=False)
         run(["git", "push", "origin", "main"])
     except RuntimeError as e:
         notify_dashboard(f"{date_str} 日报推送失败: {e}", "error")
