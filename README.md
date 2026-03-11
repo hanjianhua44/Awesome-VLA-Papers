@@ -6,7 +6,7 @@
 
 **140 papers** | **AD: 38 | Robotics: 52 | General: 50** | Last updated: 2026-03-10
 
-Other views: [Timeline (by date)](TIMELINE.md) | [By Institution](BY_INSTITUTION.md)
+Other views: [Timeline (by date)](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [**Daily arXiv Feed**](daily/)
 
 ---
 
