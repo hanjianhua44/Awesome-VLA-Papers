@@ -401,12 +401,71 @@ def _get_first_page_text(arxiv_id: str, max_retries: int = 3) -> str:
     return ""
 
 
-def extract_institutions_from_pdf(arxiv_id: str, max_retries: int = 3) -> str:
-    """Extract institution names from the first page of a paper's PDF.
+_ABSTRACT_RE = re.compile(
+    r"^\s*(?:Abstract|ABSTRACT)\s*(?:[—\-:.]\s*)?",
+    re.MULTILINE,
+)
 
-    Searches the full first-page text because many papers put institution
-    names in footnotes at the bottom of page 1. INST_PATTERNS are specific
-    enough to avoid false positives even in body text.
+_ARXIV_NOISE_RE = re.compile(
+    r"^\s*(?:\d{4}\s*$|[a-zA-Z]{2,4}\s*$|\d{1,2}\s*$|\].*?\[|.*viXra)",
+)
+
+
+def _extract_header_and_footnotes(text: str) -> str:
+    """Extract only header (title/authors/affiliations) and page-bottom
+    footnotes from first-page text.
+
+    This deliberately excludes the abstract and body paragraphs to avoid
+    false institution matches from citations, related-work mentions,
+    benchmark descriptions, etc.
+    """
+    lines = text.split("\n")
+
+    # --- Header: authors+affiliations before "Abstract", skip title ---
+    header_end = len(lines)
+    for i, line in enumerate(lines):
+        if _ABSTRACT_RE.match(line):
+            header_end = i
+            break
+
+    # Skip title lines (typically first 1-3 lines of all-caps or mixed text
+    # before author names appear). Author lines contain commas, superscript
+    # digits fused with names, or email-like patterns.
+    author_start = 0
+    for i in range(min(header_end, 5)):
+        line = lines[i].strip()
+        if not line:
+            continue
+        has_comma = "," in line
+        has_digit_name = re.search(r"\d[A-Z]", line)
+        has_email = "@" in line
+        has_superscript = re.search(r"[*†‡∗]", line)
+        if has_comma or has_digit_name or has_email or has_superscript:
+            author_start = i
+            break
+
+    header_raw = "\n".join(lines[author_start:header_end])
+    # PDF superscript numbers often fuse with text: "1CASIA 2SJTU"
+    header = re.sub(r"(\d)([A-Z])", r"\1 \2", header_raw)
+
+    # --- Footer: last ~20 lines, skip trailing arXiv ID noise ---
+    footer_start = max(header_end, len(lines) - 20)
+    footer_lines = []
+    for line in lines[footer_start:]:
+        if _ARXIV_NOISE_RE.match(line.strip()):
+            continue
+        footer_lines.append(line)
+    footer = "\n".join(footer_lines)
+
+    return header + "\n" + footer
+
+
+def extract_institutions_from_pdf(arxiv_id: str, max_retries: int = 3) -> str:
+    """Extract institution names from header + footnotes of page 1.
+
+    Only searches the area above "Abstract" (title / authors / affiliations)
+    and the bottom footnotes.  This avoids false positives from body text
+    that mentions other institutions in passing.
 
     First-page text is cached locally in .pdf_cache/ so repeated runs
     skip both the download and PDF parsing.
@@ -416,9 +475,11 @@ def extract_institutions_from_pdf(arxiv_id: str, max_retries: int = 3) -> str:
         if not text:
             return ""
 
+        search_text = _extract_header_and_footnotes(text)
+
         found = []
         for pattern, inst in INST_PATTERNS.items():
-            if re.search(pattern, text, re.IGNORECASE):
+            if re.search(pattern, search_text, re.IGNORECASE):
                 if inst not in found:
                     found.append(inst)
         return ", ".join(found[:4]) if found else ""
