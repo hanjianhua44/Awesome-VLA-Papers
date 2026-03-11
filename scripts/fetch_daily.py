@@ -139,7 +139,6 @@ LOW_KEYWORDS = [
 # Institution identification (shared module)
 # ---------------------------------------------------------------------------
 from inst_utils import (
-    INST_PATTERNS, RESEARCHER_INST, TIER1_INSTITUTIONS,
     extract_institutions_from_pdf, identify_institutions, is_known_institution,
 )
 
@@ -342,8 +341,9 @@ def fetch_arxiv_papers(date_str: str = None):
         for i, p in enumerate(candidates):
             pdf_inst = extract_institutions_from_pdf(p["arxiv_id"])
             if pdf_inst:
+                old_inst = p["institution"]
                 p["institution"] = pdf_inst
-                if is_known_institution(pdf_inst) and not is_known_institution(p.get("_prev_inst", "")):
+                if is_known_institution(pdf_inst) and not is_known_institution(old_inst):
                     p["score"] += 3
                 enriched += 1
             if (i + 1) % 10 == 0:
