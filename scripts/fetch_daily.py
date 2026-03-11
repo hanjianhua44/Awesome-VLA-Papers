@@ -265,20 +265,32 @@ def fetch_arxiv_papers(date_str: str = None):
     else:
         dt = datetime.now()
 
-    # arXiv new listings appear ~20:00 UTC the day before for next day
-    # Use submittedDate range: target day covers papers announced that day
-    d = dt.strftime("%Y%m%d")
-    d_prev = (dt - timedelta(days=1)).strftime("%Y%m%d")
+    # arXiv listing schedule:
+    #   Fri listing  = Thu submissions
+    #   (no Sat/Sun listing)
+    #   Mon listing  = Fri + Sat + Sun submissions
+    #   Tue listing  = Mon submissions
+    #   Wed listing  = Tue submissions
+    #   Thu listing  = Wed submissions
+    weekday = dt.weekday()  # 0=Mon
+    if weekday == 0:
+        target_dates = {(dt - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(1, 4)}
+    else:
+        target_dates = {(dt - timedelta(days=1)).strftime("%Y-%m-%d")}
 
-    # Fetch cs.CV and cs.RO separately for completeness, paginated
+    earliest_target = min(target_dates)
+    print(f"  Target dates: {sorted(target_dates)} (earliest: {earliest_target})")
+
+    # Fetch cs.CV and cs.RO separately, paginated
     all_raw = []
     seen_ids = set()
+    days_ago = max(0, (datetime.now() - dt).days)
 
     for cat in ["cs.CV", "cs.RO"]:
         query = f"cat:{cat}"
         batch_size = 200
-        # cs.CV can have 150-200/day, weekends accumulate; fetch up to 800
-        max_fetch = 800 if cat == "cs.CV" else 400
+        base = 800 if cat == "cs.CV" else 400
+        max_fetch = base + days_ago * (200 if cat == "cs.CV" else 80)
         for start in range(0, max_fetch, batch_size):
             print(f"  Fetching {cat} start={start}...")
             xml_data = fetch_arxiv_batch(query, start, batch_size)
@@ -291,25 +303,15 @@ def fetch_arxiv_papers(date_str: str = None):
                     seen_ids.add(p["arxiv_id"])
                     all_raw.append(p)
                     new_count += 1
-            print(f"    Got {len(batch)} entries, {new_count} new")
+            batch_dates = [p["published"] for p in batch if p["published"]]
+            latest_in_batch = max(batch_dates) if batch_dates else ""
+            print(f"    Got {len(batch)} entries, {new_count} new (latest: {latest_in_batch})")
             if new_count == 0:
                 break
+            if latest_in_batch and latest_in_batch < earliest_target:
+                print(f"    Reached papers older than {earliest_target}, stopping")
+                break
             time.sleep(5)
-
-    # arXiv listing schedule:
-    #   Fri listing  = Thu submissions
-    #   (no Sat/Sun listing)
-    #   Mon listing  = Fri + Sat + Sun submissions
-    #   Tue listing  = Mon submissions
-    #   Wed listing  = Tue submissions
-    #   Thu listing  = Wed submissions
-    weekday = dt.weekday()  # 0=Mon
-    if weekday == 0:
-        # Monday: Fri(-3), Sat(-2), Sun(-1)
-        target_dates = {(dt - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(1, 4)}
-    else:
-        # Tue-Fri: previous day only
-        target_dates = {(dt - timedelta(days=1)).strftime("%Y-%m-%d")}
     date_filtered = [p for p in all_raw if p["published"] in target_dates]
 
     print(f"  Raw total: {len(all_raw)}, date-filtered ({', '.join(sorted(target_dates))}): {len(date_filtered)}")
