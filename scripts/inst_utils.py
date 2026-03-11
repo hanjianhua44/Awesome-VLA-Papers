@@ -27,11 +27,11 @@ SSL_CTX.verify_mode = ssl.CERT_NONE
 INST_PATTERNS = {
     # === Big Tech (US/Global) ===
     r"\bNVIDIA\b": "NVIDIA",
-    r"\bGoogle\b.*?(DeepMind|Brain|Research)": "Google DeepMind",
+    r"\bGoogle\s+(DeepMind|Brain|Research)\b": "Google DeepMind",
     r"\bDeepMind\b": "Google DeepMind",
-    r"\bMeta\b.*?(FAIR|AI|Research)": "Meta AI",
+    r"\bMeta\s+(FAIR|AI|Research)\b": "Meta AI",
     r"\bFAIR\b": "Meta AI",
-    r"\bMicrosoft\b.*?Research": "Microsoft Research",
+    r"\bMicrosoft\s+Research": "Microsoft Research",
     r"\bMSRA\b": "MSRA",
     r"\bOpenAI\b": "OpenAI",
     r"Apple\s+(?:Inc|Research|Machine Learning)": "Apple",
@@ -448,13 +448,28 @@ def _extract_header_and_footnotes(text: str) -> str:
     # PDF superscript numbers often fuse with text: "1CASIA 2SJTU"
     header = re.sub(r"(\d)([A-Z])", r"\1 \2", header_raw)
 
-    # --- Footer: last ~20 lines, skip trailing arXiv ID noise ---
+    # --- Footer: extract only footnote-like lines from page bottom ---
+    # PDF two-column layout mixes footnotes with body text, so we only
+    # keep lines that look like actual footnotes (numbered affiliations,
+    # "is with" / "are with" phrases, email addresses, etc.)
+    _FOOTNOTE_RE = re.compile(
+        r"^\d+\s*[A-Z]"       # "1Yuning Wang..." or "2Pu Zhang..."
+        r"|@"                  # email addresses
+        r"|\bis\s+with\b"     # "is with the University..."
+        r"|\bare\s+with\b"    # "are with ..."
+        r"|[Cc]orrespond"     # "Corresponding author"
+        r"|[Ee]qual\s+[Cc]ontribution"
+        r"|∗|†|‡"             # footnote markers
+        r"|[Ww]ork\s+done\s+at"
+    )
     footer_start = max(header_end, len(lines) - 20)
     footer_lines = []
     for line in lines[footer_start:]:
-        if _ARXIV_NOISE_RE.match(line.strip()):
+        stripped = line.strip()
+        if _ARXIV_NOISE_RE.match(stripped):
             continue
-        footer_lines.append(line)
+        if _FOOTNOTE_RE.search(stripped):
+            footer_lines.append(line)
     footer = "\n".join(footer_lines)
 
     return header + "\n" + footer
