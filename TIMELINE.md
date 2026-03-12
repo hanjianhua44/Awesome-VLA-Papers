@@ -1,15 +1,19 @@
 # VLA Papers Timeline
 
-> 140 papers sorted by date (newest first) | Updated: 2026-03-04
+> 149 papers sorted by date (newest first) | Updated: 2026-03-11
 
 [Back to Main](README.md)
 
-## Mar 2026 (2 papers)
+## Mar 2026 (6 papers)
 
 | # | Paper | Institution | Date | Category | Link |
 |:-:|:------|:-----------|:----:|:---------|:-----|
-| 1 | **MEM: Multi-Scale Embodied Memory for VLA** | Physical Intelligence | Mar 4 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.03596) |
-| 2 | **NIAF: Neural Implicit Action Fields** | — | Mar 2 | Robotics / Action Tokenization | [Paper](https://arxiv.org/abs/2603.01766) |
+| 1 | **DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving** | Huawei, Fudan, CUHK | Mar 9 | Autonomous Driving / World Models | [Paper](https://arxiv.org/abs/2603.08254) |
+| 2 | **MEM: Multi-Scale Embodied Memory for VLA** | Physical Intelligence | Mar 4 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.03596) |
+| 3 | **ACE-Brain-0: Spatial Intelligence as a Shared Scaffold for Universal Embodiments** | SJTU, Fudan, USTC, SYSU | Mar 3 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.03198) |
+| 4 | **Beyond Language Modeling: An Exploration of Multimodal Pretraining** | Meta AI, NYU | Mar 3 | General / Cross-domain / Multimodal Architecture & Pre-training | [Paper](https://arxiv.org/abs/2603.03276) |
+| 5 | **NIAF: Neural Implicit Action Fields** | — | Mar 2 | Robotics / Action Tokenization | [Paper](https://arxiv.org/abs/2603.01766) |
+| 6 | **Unleashing VLA Potentials in Autonomous Driving via Explicit Learning from Failures** | Tsinghua, Univ of Macau | Mar 1 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2603.01063) |
 
 ## Feb 2026 (39 papers)
 
@@ -55,16 +59,17 @@
 | 38 | **RDT-2: Scaling UMI Data with RVQ** | Tsinghua | Feb 3 | Robotics / Action Tokenization | [Paper](https://arxiv.org/abs/2602.03310) |
 | 39 | **Modular Safety Guardrails for FM-Enabled Robots** | Purdue, UMich | Feb 3 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2602.04056) |
 
-## Jan 2026 (6 papers)
+## Jan 2026 (7 papers)
 
 | # | Paper | Institution | Date | Category | Link |
 |:-:|:------|:-----------|:----:|:---------|:-----|
 | 1 | **DeepSeek-OCR 2: Visual Causal Flow** | DeepSeek AI | Jan 28 | General / Cross-domain / Multimodal Architecture & Pre-training | [Paper](https://arxiv.org/abs/2601.20552) |
 | 2 | **CLI: Dynamic Cross-Layer Injection for Deep VL Fusion** | Ant Group, Tongji | Jan 15 | General / Cross-domain / Multimodal Architecture & Pre-training | [Paper](https://arxiv.org/abs/2601.10710) |
-| 3 | **Video Generation Models in Robotics** | Princeton | Jan 12 | General / Cross-domain / Surveys | [Paper](https://arxiv.org/abs/2601.07823) |
-| 4 | **LaST₀: Latent Spatio-Temporal CoT for Robotic VLA** | PKU, CUHK | Jan 8 | General / Cross-domain / Latent Reasoning & Chain-of-Thought | [Paper](https://arxiv.org/abs/2601.05248) |
-| 5 | **VideoAuto-R1: Video Auto Reasoning (Thinking Once, Answering Twice)** | Meta, KAUST | Jan 8 | General / Cross-domain / Latent Reasoning & Chain-of-Thought | [Paper](https://arxiv.org/abs/2601.05175) |
-| 6 | **AlignDrive: Aligned Lateral-Longitudinal Planning for E2E AD** | XJTU, Horizon Robotics | Jan 5 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2601.01762) |
+| 3 | **V-DPM: 4D Video Reconstruction with Dynamic Point Maps** | Univ of Oxford | Jan 14 | General / Cross-domain / Spatial Perception & 3D/4D | [Paper](https://arxiv.org/abs/2601.09499) |
+| 4 | **Video Generation Models in Robotics** | Princeton | Jan 12 | General / Cross-domain / Surveys | [Paper](https://arxiv.org/abs/2601.07823) |
+| 5 | **LaST₀: Latent Spatio-Temporal CoT for Robotic VLA** | PKU, CUHK | Jan 8 | General / Cross-domain / Latent Reasoning & Chain-of-Thought | [Paper](https://arxiv.org/abs/2601.05248) |
+| 6 | **VideoAuto-R1: Video Auto Reasoning (Thinking Once, Answering Twice)** | Meta, KAUST | Jan 8 | General / Cross-domain / Latent Reasoning & Chain-of-Thought | [Paper](https://arxiv.org/abs/2601.05175) |
+| 7 | **AlignDrive: Aligned Lateral-Longitudinal Planning for E2E AD** | XJTU, Horizon Robotics | Jan 5 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2601.01762) |
 
 ## Dec 2025 (40 papers)
 
@@ -111,38 +116,40 @@
 | 39 | **Efficient Training of Diffusion MoE: A Practical Recipe** | ByteDance | Dec 1 | General / Cross-domain / Multimodal Architecture & Pre-training | [Paper](https://arxiv.org/abs/2512.01252) |
 | 40 | **PAI-Bench: A Comprehensive Benchmark For Physical AI** | Georgia Tech, CMU | Dec 1 | General / Cross-domain / Physical AI Benchmarks | [Paper](https://arxiv.org/abs/2512.01989) |
 
-## Nov 2025 (28 papers)
+## Nov 2025 (30 papers)
 
 | # | Paper | Institution | Date | Category | Link |
 |:-:|:------|:-----------|:----:|:---------|:-----|
 | 1 | **SimScale: Learning to Drive via Real-World Simulation at Scale** | CASIA, HKU, Xiaomi | Nov 28 | Autonomous Driving / Simulation & Data | [Paper](https://arxiv.org/abs/2511.23369) |
 | 2 | **LatBot: Distilling Universal Latent Actions for VLA** | CAS, MSRA | Nov 28 | Robotics / Action Tokenization | [Paper](https://arxiv.org/abs/2511.23034) |
 | 3 | **HybridWorldSim: Scalable High-fidelity Simulator for AD** | XPeng, ShanghaiTech, USTC | Nov 27 | Autonomous Driving / World Models | [Paper](https://arxiv.org/abs/2511.22187) |
-| 4 | **MoE3D: MoE meets Multi-Modal 3D Understanding** | NUDT, Shanghai AI Lab, CUHK, ShanghaiTech | Nov 27 | General / Cross-domain / Spatial Perception & 3D/4D | [Paper](https://arxiv.org/abs/2511.22103) |
-| 5 | **TraceGen: World Modeling in 3D Trace Space** | UMD, NYU | Nov 26 | Robotics / Data & Pre-training | [Paper](https://arxiv.org/abs/2511.21690) |
-| 6 | **G²VLM: Geometry Grounded VLM** | Shanghai AI Lab | Nov 26 | General / Cross-domain / Spatial Perception & 3D/4D | [Paper](https://arxiv.org/abs/2511.21688) |
-| 7 | **Qwen3-VL Technical Report** | Alibaba | Nov 26 | General / Cross-domain / Multimodal Architecture & Pre-training | [Paper](https://arxiv.org/abs/2511.21631) |
-| 8 | **Map-World: Masked Action Planning and Path-Integral World Model for AD** | Univ of Macau | Nov 25 | Autonomous Driving / World Models | [Paper](https://arxiv.org/abs/2511.20156) |
-| 9 | **WaymoQA: Multi-View VQA for Safety-Critical Reasoning in AD** | KAIST | Nov 25 | Autonomous Driving / Simulation & Data | [Paper](https://arxiv.org/abs/2511.20022) |
-| 10 | **Reinforcing Action Policies by Prophesying** | Fudan | Nov 25 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2511.20633) |
-| 11 | **VLM²: Vision-Language Memory for Spatial Reasoning** | SUNY Buffalo | Nov 25 | General / Cross-domain / Spatial Perception & 3D/4D | [Paper](https://arxiv.org/abs/2511.20644) |
-| 12 | **Unifying Perception and Action: Implicit Visual CoT** | Nanjing Univ | Nov 25 | General / Cross-domain / Latent Reasoning & Chain-of-Thought | [Paper](https://arxiv.org/abs/2511.19859) |
-| 13 | **Chain-of-Visual-Thought: Teaching VLMs with Continuous Visual Tokens** | UC Berkeley | Nov 24 | General / Cross-domain / Latent Reasoning & Chain-of-Thought | [Paper](https://arxiv.org/abs/2511.19418) |
-| 14 | **Beyond Words and Pixels: Implicit World Knowledge Reasoning** | Meituan | Nov 23 | General / Cross-domain / Physical AI Benchmarks | [Paper](https://arxiv.org/abs/2511.18271) |
-| 15 | **Stellar VLA: Continually Evolving Skill Knowledge** | SJTU, Cambridge, Agibot | Nov 22 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2511.18085) |
-| 16 | **RynnVLA-002: A Unified VLA and World Model** | Alibaba DAMO, ZJU | Nov 21 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2511.17502) |
-| 17 | **MiMo-Embodied: X-Embodied Foundation Model** | Xiaomi | Nov 20 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2511.16518) |
-| 18 | **InternData-A1: High-Fidelity Synthetic Data for Generalist Policy** | Shanghai AI Lab, PKU | Nov 20 | Robotics / Data & Pre-training | [Paper](https://arxiv.org/abs/2511.16651) |
-| 19 | **SAM 3D: 3Dfy Anything in Images** | Meta AI | Nov 20 | General / Cross-domain / Spatial Perception & 3D/4D | [Paper](https://arxiv.org/abs/2511.16624) |
-| 20 | **SAM 3: Segment Anything with Concepts** | Meta AI | Nov 20 | General / Cross-domain / Multimodal Architecture & Pre-training | [Paper](https://arxiv.org/abs/2511.16719) |
-| 21 | **SRPO: Self-Referential Policy Optimization for VLA** | Fudan, Tongji | Nov 19 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2511.15605) |
-| 22 | **In-N-On: Scaling Egocentric Manipulation with Wild+On-task Data** | UCSD | Nov 19 | Robotics / Data & Pre-training | [Paper](https://arxiv.org/abs/2511.15704) |
-| 23 | **π₀.₆: a VLA That Learns From Experience** | Physical Intelligence | Nov 18 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2511.14759) |
-| 24 | **AsyncVLA: Asynchronous Flow Matching for VLA** | Shanghai AI Lab, Tsinghua, ZJU | Nov 18 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2511.14148) |
-| 25 | **NORA-1.5: VLA with World Model and Action-based Preference Rewards** | NTU | Nov 18 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2511.14659) |
-| 26 | **Scaling Spatial Intelligence with Multimodal Foundation Models** | SenseTime, NTU | Nov 17 | General / Cross-domain / Spatial Perception & 3D/4D | [Paper](https://arxiv.org/abs/2511.13719) |
-| 27 | **Rethinking Generative Image Pretraining: Scaling Next-Pixel Prediction** | Google | Nov 11 | General / Cross-domain / Multimodal Architecture & Pre-training | [Paper](https://arxiv.org/abs/2511.08704) |
-| 28 | **How Do VLAs Effectively Inherit from VLMs?** | MSRA | Nov 10 | Robotics / Data & Pre-training | [Paper](https://arxiv.org/abs/2511.06619) |
+| 4 | **DriveVGGT: Visual Geometry Transformer for Autonomous Driving** | SJTU, Fudan | Nov 27 | Autonomous Driving / World Models | [Paper](https://arxiv.org/abs/2511.22264) |
+| 5 | **MoE3D: MoE meets Multi-Modal 3D Understanding** | NUDT, Shanghai AI Lab, CUHK, ShanghaiTech | Nov 27 | General / Cross-domain / Spatial Perception & 3D/4D | [Paper](https://arxiv.org/abs/2511.22103) |
+| 6 | **TraceGen: World Modeling in 3D Trace Space** | UMD, NYU | Nov 26 | Robotics / Data & Pre-training | [Paper](https://arxiv.org/abs/2511.21690) |
+| 7 | **G²VLM: Geometry Grounded VLM** | Shanghai AI Lab | Nov 26 | General / Cross-domain / Spatial Perception & 3D/4D | [Paper](https://arxiv.org/abs/2511.21688) |
+| 8 | **Qwen3-VL Technical Report** | Alibaba | Nov 26 | General / Cross-domain / Multimodal Architecture & Pre-training | [Paper](https://arxiv.org/abs/2511.21631) |
+| 9 | **Map-World: Masked Action Planning and Path-Integral World Model for AD** | Univ of Macau | Nov 25 | Autonomous Driving / World Models | [Paper](https://arxiv.org/abs/2511.20156) |
+| 10 | **WaymoQA: Multi-View VQA for Safety-Critical Reasoning in AD** | KAIST | Nov 25 | Autonomous Driving / Simulation & Data | [Paper](https://arxiv.org/abs/2511.20022) |
+| 11 | **Reinforcing Action Policies by Prophesying** | Fudan | Nov 25 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2511.20633) |
+| 12 | **VLM²: Vision-Language Memory for Spatial Reasoning** | SUNY Buffalo | Nov 25 | General / Cross-domain / Spatial Perception & 3D/4D | [Paper](https://arxiv.org/abs/2511.20644) |
+| 13 | **Unifying Perception and Action: Implicit Visual CoT** | Nanjing Univ | Nov 25 | General / Cross-domain / Latent Reasoning & Chain-of-Thought | [Paper](https://arxiv.org/abs/2511.19859) |
+| 14 | **Chain-of-Visual-Thought: Teaching VLMs with Continuous Visual Tokens** | UC Berkeley | Nov 24 | General / Cross-domain / Latent Reasoning & Chain-of-Thought | [Paper](https://arxiv.org/abs/2511.19418) |
+| 15 | **Beyond Words and Pixels: Implicit World Knowledge Reasoning** | Meituan | Nov 23 | General / Cross-domain / Physical AI Benchmarks | [Paper](https://arxiv.org/abs/2511.18271) |
+| 16 | **Stellar VLA: Continually Evolving Skill Knowledge** | SJTU, Cambridge, Agibot | Nov 22 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2511.18085) |
+| 17 | **RynnVLA-002: A Unified VLA and World Model** | Alibaba DAMO, ZJU | Nov 21 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2511.17502) |
+| 18 | **MiMo-Embodied: X-Embodied Foundation Model** | Xiaomi | Nov 20 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2511.16518) |
+| 19 | **InternData-A1: High-Fidelity Synthetic Data for Generalist Policy** | Shanghai AI Lab, PKU | Nov 20 | Robotics / Data & Pre-training | [Paper](https://arxiv.org/abs/2511.16651) |
+| 20 | **SAM 3D: 3Dfy Anything in Images** | Meta AI | Nov 20 | General / Cross-domain / Spatial Perception & 3D/4D | [Paper](https://arxiv.org/abs/2511.16624) |
+| 21 | **SAM 3: Segment Anything with Concepts** | Meta AI | Nov 20 | General / Cross-domain / Multimodal Architecture & Pre-training | [Paper](https://arxiv.org/abs/2511.16719) |
+| 22 | **SRPO: Self-Referential Policy Optimization for VLA** | Fudan, Tongji | Nov 19 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2511.15605) |
+| 23 | **In-N-On: Scaling Egocentric Manipulation with Wild+On-task Data** | UCSD | Nov 19 | Robotics / Data & Pre-training | [Paper](https://arxiv.org/abs/2511.15704) |
+| 24 | **π₀.₆: a VLA That Learns From Experience** | Physical Intelligence | Nov 18 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2511.14759) |
+| 25 | **AsyncVLA: Asynchronous Flow Matching for VLA** | Shanghai AI Lab, Tsinghua, ZJU | Nov 18 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2511.14148) |
+| 26 | **NORA-1.5: VLA with World Model and Action-based Preference Rewards** | NTU | Nov 18 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2511.14659) |
+| 27 | **Scaling Spatial Intelligence with Multimodal Foundation Models** | SenseTime, NTU | Nov 17 | General / Cross-domain / Spatial Perception & 3D/4D | [Paper](https://arxiv.org/abs/2511.13719) |
+| 28 | **Rethinking Generative Image Pretraining: Scaling Next-Pixel Prediction** | Google | Nov 11 | General / Cross-domain / Multimodal Architecture & Pre-training | [Paper](https://arxiv.org/abs/2511.08704) |
+| 29 | **How Do VLAs Effectively Inherit from VLMs?** | MSRA | Nov 10 | Robotics / Data & Pre-training | [Paper](https://arxiv.org/abs/2511.06619) |
+| 30 | **How Many Tokens Do 3D Point Cloud Transformer Architectures Really Need?** | DFKI | Nov 7 | General / Cross-domain / Efficient Inference | [Paper](https://arxiv.org/abs/2511.05449) |
 
 ## Oct 2025 (15 papers)
 
@@ -190,11 +197,12 @@
 |:-:|:------|:-----------|:----:|:---------|:-----|
 | 1 | **DiST-4D: Disentangled Spatiotemporal Diffusion for 4D Driving Scene Generation** | Tsinghua, Megvii | Mar 19 | Autonomous Driving / World Models | [Paper](https://arxiv.org/abs/2503.15208) |
 
-## Feb 2025 (1 papers)
+## Feb 2025 (2 papers)
 
 | # | Paper | Institution | Date | Category | Link |
 |:-:|:------|:-----------|:----:|:---------|:-----|
 | 1 | **WorldModelBench: Judging Video Generation Models As World Models** | UC Berkeley, NVIDIA, UCSD, MIT | Feb 28 | Autonomous Driving / Safety & Benchmarks | [Paper](https://arxiv.org/abs/2502.20694) |
+| 2 | **FASTer: Focal Token Acquiring-and-Scaling Transformer for Long-term 3D Object Detection** | HUST | Feb 28 | General / Cross-domain / Efficient Inference | [Paper](https://arxiv.org/abs/2503.01899) |
 
 ## Dec 2024 (2 papers)
 
@@ -208,3 +216,9 @@
 | # | Paper | Institution | Date | Category | Link |
 |:-:|:------|:-----------|:----:|:---------|:-----|
 | 1 | **VQ-BeT: Behavior Generation with Latent Actions** | NYU | Mar 5 | Robotics / Action Tokenization | [Paper](https://arxiv.org/abs/2403.03181) |
+
+## Oct 2022 (1 papers)
+
+| # | Paper | Institution | Date | Category | Link |
+|:-:|:------|:-----------|:----:|:---------|:-----|
+| 1 | **Token Merging: Your ViT But Faster** | Georgia Tech, Meta AI | Oct 17 | General / Cross-domain / Efficient Inference | [Paper](https://arxiv.org/abs/2210.09461) |
