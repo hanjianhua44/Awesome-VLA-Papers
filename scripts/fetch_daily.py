@@ -257,33 +257,11 @@ def parse_entries(xml_data: str) -> list:
     return papers
 
 
-def fetch_arxiv_papers(date_str: str = None):
-    """Fetch ALL cs.CV + cs.RO papers, then filter locally by relevance + institution."""
-    if date_str:
-        dt = datetime.strptime(date_str, "%Y-%m-%d")
-    else:
-        dt = datetime.now()
-
-    # arXiv listing schedule:
-    #   Fri listing  = Thu submissions
-    #   (no Sat/Sun listing)
-    #   Mon listing  = Fri + Sat + Sun submissions
-    #   Tue listing  = Mon submissions
-    #   Wed listing  = Tue submissions
-    #   Thu listing  = Wed submissions
-    weekday = dt.weekday()  # 0=Mon
-    if weekday == 0:
-        target_dates = {(dt - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(1, 4)}
-    else:
-        target_dates = {(dt - timedelta(days=1)).strftime("%Y-%m-%d")}
-
+def _fetch_raw(target_dates: set, days_ago: int) -> list:
+    """Fetch raw papers from arXiv API for the given target dates."""
     earliest_target = min(target_dates)
-    print(f"  Target dates: {sorted(target_dates)} (earliest: {earliest_target})")
-
-    # Fetch cs.CV and cs.RO separately, paginated
     all_raw = []
     seen_ids = set()
-    days_ago = max(0, (datetime.now() - dt).days)
 
     for cat in ["cs.CV", "cs.RO"]:
         query = f"cat:{cat}"
@@ -311,9 +289,49 @@ def fetch_arxiv_papers(date_str: str = None):
                 print(f"    Reached papers older than {earliest_target}, stopping")
                 break
             time.sleep(5)
-    date_filtered = [p for p in all_raw if p["published"] in target_dates]
 
-    print(f"  Raw total: {len(all_raw)}, date-filtered ({', '.join(sorted(target_dates))}): {len(date_filtered)}")
+    return [p for p in all_raw if p["published"] in target_dates]
+
+
+def fetch_arxiv_papers(date_str: str = None):
+    """Fetch ALL cs.CV + cs.RO papers, then filter locally by relevance + institution."""
+    if date_str:
+        dt = datetime.strptime(date_str, "%Y-%m-%d")
+    else:
+        dt = datetime.now()
+
+    # arXiv listing schedule:
+    #   Fri listing  = Thu submissions
+    #   (no Sat/Sun listing)
+    #   Mon listing  = Fri + Sat + Sun submissions
+    #   Tue listing  = Mon submissions
+    #   Wed listing  = Tue submissions
+    #   Thu listing  = Wed submissions
+    weekday = dt.weekday()  # 0=Mon
+    if weekday == 0:
+        target_dates = {(dt - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(1, 4)}
+    else:
+        target_dates = {(dt - timedelta(days=1)).strftime("%Y-%m-%d")}
+
+    earliest_target = min(target_dates)
+    print(f"  Target dates: {sorted(target_dates)} (earliest: {earliest_target})")
+
+    days_ago = max(0, (datetime.now() - dt).days)
+
+    # Retry up to 3 times if arXiv index hasn't updated yet (common before ~9 AM CST)
+    MAX_RETRIES = 3
+    RETRY_WAIT = 600  # 10 minutes
+    date_filtered = []
+    for attempt in range(MAX_RETRIES):
+        date_filtered = _fetch_raw(target_dates, days_ago)
+        if date_filtered:
+            break
+        if attempt < MAX_RETRIES - 1:
+            print(f"  ⚠ 0 papers found for target dates, arXiv index may not be updated yet.")
+            print(f"  Waiting {RETRY_WAIT // 60} minutes before retry ({attempt + 2}/{MAX_RETRIES})...")
+            time.sleep(RETRY_WAIT)
+
+    print(f"  Raw date-filtered ({', '.join(sorted(target_dates))}): {len(date_filtered)}")
 
     # Phase 1: Score and broad filter (score >= 5) to build candidate pool
     candidates = []
