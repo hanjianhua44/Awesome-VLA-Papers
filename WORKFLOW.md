@@ -14,7 +14,7 @@ A curated, continuously updated collection of **Vision-Language-Action (VLA)** r
 
 | Feature | Description |
 |:--------|:------------|
-| **Curated Paper List** | 140+ hand-picked VLA papers organized by topic, with institution, date, and arXiv links |
+| **Curated Paper List** | 149+ hand-picked VLA papers organized by topic, with institution, date, and arXiv links |
 | **Multi-View Browsing** | Main list (by topic), [Timeline](TIMELINE.md) (by date), [By Institution](BY_INSTITUTION.md) |
 | **Daily arXiv Feed** | Automated daily digest of new papers from cs.CV + cs.RO, filtered for VLA relevance and top institutions |
 | **Institution Identification** | Automatic extraction of author affiliations from PDF first pages (~200 institution patterns) |
@@ -56,12 +56,12 @@ A curated, continuously updated collection of **Vision-Language-Action (VLA)** r
 
 ## Daily Fetch Pipeline
 
-Runs every day at **08:30 AM** via Windows Task Scheduler (`daily_job.py`).
+Runs at **09:30 AM** (Tue–Sat) via Windows Task Scheduler (`daily_job.py`).
 
 ### End-to-End Flow
 
 ```
-08:30 AM  Task Scheduler triggers daily_job.py
+09:30 AM  Task Scheduler triggers daily_job.py
               │
               ▼
          fetch_daily.py
@@ -84,13 +84,19 @@ Runs every day at **08:30 AM** via Windows Task Scheduler (`daily_job.py`).
 
 - Query `cs.CV` and `cs.RO` categories, sorted by submission date
 - Pagination with early stopping to handle large result sets
-- Coverage schedule (no overlap between days):
+- Coverage schedule (each job looks back +1 extra day for safety, with dedup against prior reports):
 
-  | Report Day | Covers |
-  |:-----------|:-------|
-  | Monday | Friday + Saturday + Sunday |
-  | Tuesday–Friday | Previous day |
-  | Saturday–Sunday | Skip (no arXiv updates) |
+  | Report Day | Target `published` dates | Notes |
+  |:-----------|:-------------------------|:------|
+  | Saturday | Thursday + Friday | Fri papers + Thu stragglers |
+  | Sunday | Skip | No new arXiv listings |
+  | Monday | Skip | No new arXiv listings |
+  | Tuesday | Friday + Saturday + Sunday + Monday | Weekend batch + Fri stragglers |
+  | Wednesday | Monday + Tuesday | Tue papers + Mon stragglers |
+  | Thursday | Tuesday + Wednesday | |
+  | Friday | Wednesday + Thursday | |
+
+  > arXiv API `published` = submission date. Each job fetches one extra day back to catch papers that were submitted late but not yet indexed when the previous job ran. Duplicates with existing reports are automatically removed.
 
 ### Step 2: Keyword Relevance Scoring
 
@@ -156,8 +162,8 @@ Surviving papers are:
 3. **Saved** to `daily/YYYY/MM/YYYY-MM-DD.md`
 
 The report title shows **paper dates** (not report date) for clarity:
-- Tuesday–Friday: `arXiv VLA 速递 | 03-10 论文`
-- Monday: `arXiv VLA 速递 | 03-06 ~ 03-08 论文`
+- Wednesday–Saturday: `arXiv VLA 速递 | 03-10 论文` (single-day range)
+- Tuesday: `arXiv VLA 速递 | 03-06 ~ 03-09 论文` (weekend batch)
 
 ---
 
@@ -262,7 +268,7 @@ This regenerates all three view files (`README.md`, `TIMELINE.md`, `BY_INSTITUTI
 | Script | Purpose | When to Use |
 |:-------|:--------|:------------|
 | `fetch_daily.py` | Fetch arXiv papers, filter, generate daily report | Called by `daily_job.py` automatically |
-| `daily_job.py` | Orchestrate daily workflow: fetch → commit → push → notify | Runs via Task Scheduler at 08:30 |
+| `daily_job.py` | Orchestrate daily workflow: fetch → commit → push → notify | Runs via Task Scheduler at 09:30 (Tue–Sat) |
 | `generate_readme.py` | Generate README + Timeline + By-Institution from `papers.yaml` | After adding/editing papers in YAML |
 | `regen_daily.py <date>` | Regenerate a daily report from cached JSON data | After updating institution logic |
 | `inst_utils.py` | Shared institution patterns, PDF extraction, TIER1 list | Imported by other scripts (not run directly) |
