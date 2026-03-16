@@ -102,14 +102,15 @@ def main():
     dt = datetime.strptime(date_str, "%Y-%m-%d")
     weekday = dt.weekday()
 
-    if weekday in (5, 6):
-        print(f"{date_str} is weekend, skipping")
-        notify_dashboard(f"{date_str} weekend, skip", "info")
+    # Sun(6) and Mon(0): no new arXiv listings, skip
+    if weekday in (0, 6):
+        print(f"{date_str} is {'Sunday' if weekday == 6 else 'Monday'}, no new arXiv listings, skipping")
+        notify_dashboard(f"{date_str} no arXiv listing, skip", "info")
         return
 
     # Determine coverage dates for display
     from datetime import timedelta
-    if weekday == 0:
+    if weekday == 1:  # Tuesday → weekend batch (Sat, Sun, Mon)
         covers = sorted((dt - timedelta(days=i)).strftime('%m-%d') for i in range(1, 4))
     else:
         covers = [(dt - timedelta(days=1)).strftime("%m-%d")]

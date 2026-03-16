@@ -105,7 +105,11 @@ def paper_row(p: dict) -> str:
     return f"| **{title}** | {p['institution']} | {date_badge(year, month, day)} | {links} |"
 
 
+_DATE_OVERRIDE = None
+
 def _latest_paper_date(papers: list) -> str:
+    if _DATE_OVERRIDE:
+        return _DATE_OVERRIDE
     dates = [p.get("date", "") for p in papers if p.get("date")]
     return max(dates) if dates else datetime.now().strftime("%Y-%m-%d")
 
@@ -297,6 +301,12 @@ def generate_by_institution(papers: list) -> str:
 
 
 def main():
+    import sys
+    global _DATE_OVERRIDE
+
+    if len(sys.argv) > 1:
+        _DATE_OVERRIDE = sys.argv[1]
+
     papers = load_papers()
 
     readme = generate_readme(papers)

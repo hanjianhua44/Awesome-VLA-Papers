@@ -300,15 +300,20 @@ def fetch_arxiv_papers(date_str: str = None):
     else:
         dt = datetime.now()
 
-    # arXiv listing schedule:
-    #   Fri listing  = Thu submissions
-    #   (no Sat/Sun listing)
-    #   Mon listing  = Fri + Sat + Sun submissions
-    #   Tue listing  = Mon submissions
-    #   Wed listing  = Tue submissions
-    #   Thu listing  = Wed submissions
+    # arXiv announcement schedule (US Eastern → China CST):
+    #   Thu 20:00 ET → Fri ~9am CST   (Thu submissions)
+    #   No Fri/Sat/Sun announcements
+    #   Mon 20:00 ET → Tue ~9am CST   (Fri–Mon submissions, weekend batch)
+    #   Tue 20:00 ET → Wed ~9am CST   (Tue submissions)
+    #   Wed 20:00 ET → Thu ~9am CST   (Wed submissions)
+    #
+    # Job schedule:
+    #   Sat: fetch Fri papers          (target = yesterday)
+    #   Sun/Mon: skip
+    #   Tue: fetch Sat+Sun+Mon papers  (target = 3 days back)
+    #   Wed–Fri: fetch yesterday
     weekday = dt.weekday()  # 0=Mon
-    if weekday == 0:
+    if weekday == 1:  # Tuesday → weekend batch (Sat, Sun, Mon)
         target_dates = {(dt - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(1, 4)}
     else:
         target_dates = {(dt - timedelta(days=1)).strftime("%Y-%m-%d")}

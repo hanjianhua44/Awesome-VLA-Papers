@@ -12,7 +12,7 @@ Automated daily paper digest from **arXiv cs.CV + cs.RO**, filtered for VLA / au
 4. **Select** — Keep only papers from [TIER1 institutions](../WORKFLOW.md#tier1-institution-list) (top labs, companies, universities)
 5. **Report** — Generate a categorized Markdown digest
 
-Reports run daily at 09:30 AM (local), covering the previous day's submissions (Mon report covers Fri–Sun).
+Reports run at 09:30 AM (local) on Tue–Sat, covering the previous day's arXiv listings (Tue report covers the Sat–Mon weekend batch).
 
 Papers from the daily feed can be promoted to the [curated main list](../README.md) after manual review.
 
