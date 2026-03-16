@@ -4,7 +4,7 @@
 
 > A curated collection of papers on **Vision-Language-Action (VLA)** models, covering autonomous driving, robotics, world models, spatial reasoning, and more.
 
-**149 papers** | **AD: 41 | Robotics: 53 | General: 55** | Last updated: 2026-03-11
+**154 papers** | **AD: 42 | Robotics: 57 | General: 55** | Last updated: 2026-03-13
 
 📡 **[Daily arXiv Feed →](daily/)** — auto-updated every morning with latest VLA papers from top institutions
 
@@ -17,19 +17,19 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 - [I. Autonomous Driving](#i-autonomous-driving)
   - [End-to-End VLA Architecture (17)](#end-to-end-vla-architecture)
   - [World Models (14)](#world-models)
-  - [Simulation & Data (5)](#simulation--data)
-  - [Planning & Control (2)](#planning--control)
-  - [Safety & Benchmarks (3)](#safety--benchmarks)
+  - [Simulation & Data (5)](#simulation-data)
+  - [Planning & Control (2)](#planning-control)
+  - [Safety & Benchmarks (4)](#safety-benchmarks)
 - [II. Robotics](#ii-robotics)
-  - [VLA Architecture (20)](#vla-architecture)
+  - [VLA Architecture (22)](#vla-architecture)
   - [Action Tokenization (7)](#action-tokenization)
-  - [World Models & Policy Co-learning (8)](#world-models--policy-co-learning)
-  - [RL & Policy Optimization (9)](#rl--policy-optimization)
-  - [Data & Pre-training (9)](#data--pre-training)
-- [III. General / Cross-domain](#iii-general-/-cross-domain)
-  - [Spatial Perception & 3D/4D (14)](#spatial-perception--3d/4d)
-  - [Latent Reasoning & Chain-of-Thought (8)](#latent-reasoning--chain-of-thought)
-  - [Multimodal Architecture & Pre-training (11)](#multimodal-architecture--pre-training)
+  - [World Models & Policy Co-learning (10)](#world-models-policy-co-learning)
+  - [RL & Policy Optimization (9)](#rl-policy-optimization)
+  - [Data & Pre-training (9)](#data-pre-training)
+- [III. General / Cross-domain](#iii-general-cross-domain)
+  - [Spatial Perception & 3D/4D (14)](#spatial-perception-3d4d)
+  - [Latent Reasoning & Chain-of-Thought (8)](#latent-reasoning-chain-of-thought)
+  - [Multimodal Architecture & Pre-training (11)](#multimodal-architecture-pre-training)
   - [Efficient Inference (10)](#efficient-inference)
   - [Physical AI Benchmarks (6)](#physical-ai-benchmarks)
   - [Surveys (6)](#surveys)
@@ -109,12 +109,13 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 </details>
 
 <details open>
-<summary><h3>Safety & Benchmarks (3)</h3></summary>
+<summary><h3>Safety & Benchmarks (4)</h3></summary>
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
 | **Safe-SDL: Safety Boundaries for AI-Driven Self-Driving Labs** | SJTU | ![Feb 13, 2026](https://img.shields.io/badge/Feb_13,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.15061) |
 | **WorldLens: Full-Spectrum Evaluations of Driving World Models** | NTU, S-Lab | ![Dec 11, 2025](https://img.shields.io/badge/Dec_11,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2512.10958) |
+| **DriveCritic: Towards Context-Aware, Human-Aligned Evaluation for Autonomous Driving with Vision-Language Models** | NVIDIA, UMich, Fudan | ![Oct 15, 2025](https://img.shields.io/badge/Oct_15,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2510.13108) |
 | **WorldModelBench: Judging Video Generation Models As World Models** | UC Berkeley, NVIDIA, UCSD, MIT | ![Feb 28, 2025](https://img.shields.io/badge/Feb_28,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2502.20694) |
 
 </details>
@@ -124,10 +125,12 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 ## II. Robotics
 
 <details open>
-<summary><h3>VLA Architecture (20)</h3></summary>
+<summary><h3>VLA Architecture (22)</h3></summary>
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **PVI: Plug-in Visual Injection for Vision-Language-Action Models** | PKU, HKU | ![Mar 13, 2026](https://img.shields.io/badge/Mar_13,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.12772) |
+| **OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams** | Oxford, SJTU | ![Mar 12, 2026](https://img.shields.io/badge/Mar_12,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.12265) |
 | **MEM: Multi-Scale Embodied Memory for VLA** | Physical Intelligence | ![Mar 4, 2026](https://img.shields.io/badge/Mar_4,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.03596) |
 | **ACE-Brain-0: Spatial Intelligence as a Shared Scaffold for Universal Embodiments** | SJTU, Fudan, USTC, SYSU | ![Mar 3, 2026](https://img.shields.io/badge/Mar_3,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.03198) |
 | **HALO: Unified VLA for Embodied Multimodal CoT Reasoning** | HKUST | ![Feb 24, 2026](https://img.shields.io/badge/Feb_24,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.21157) |
@@ -167,10 +170,12 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 </details>
 
 <details open>
-<summary><h3>World Models & Policy Co-learning (8)</h3></summary>
+<summary><h3>World Models & Policy Co-learning (10)</h3></summary>
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **RoboStereo: Dual-Tower 4D Embodied World Models for Unified Policy Optimization** | Tsinghua, HKUST | ![Mar 13, 2026](https://img.shields.io/badge/Mar_13,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.12639) |
+| **Beyond Dense Futures: World Models as Structured Planners for Robotic Manipulation** | USTC | ![Mar 13, 2026](https://img.shields.io/badge/Mar_13,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.12553) |
 | **World Action Models are Zero-shot Policies (DreamZero)** | NVIDIA | ![Feb 17, 2026](https://img.shields.io/badge/Feb_17,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.15922) |
 | **WoVR: World Models as Reliable Simulators for Post-Training VLA with RL** | Tsinghua, CASIA | ![Feb 15, 2026](https://img.shields.io/badge/Feb_15,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.13977) |
 | **VLAW: Iterative Co-Improvement of VLA Policy and World Model** | Stanford, Tsinghua | ![Feb 12, 2026](https://img.shields.io/badge/Feb_12,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.12063) |

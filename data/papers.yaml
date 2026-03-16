@@ -367,6 +367,15 @@
   subcategory: safety-benchmark
   summary: AI自动实验室安全框架（ODD + CBF + 事务安全协议）
   date: '2026-02-13'
+- title: 'DriveCritic: Towards Context-Aware, Human-Aligned Evaluation for Autonomous Driving with Vision-Language Models'
+  arxiv: '2510.13108'
+  url: https://arxiv.org/abs/2510.13108
+  institution: NVIDIA, UMich, Fudan
+  venue: arXiv 2025
+  domain: ad
+  subcategory: safety-benchmark
+  summary: 上下文感知的自动驾驶评估框架，利用VLM实现人类对齐的驾驶评价
+  date: '2025-10-15'
 - title: 'π₀.₆: a VLA That Learns From Experience'
   arxiv: '2511.14759'
   url: https://arxiv.org/abs/2511.14759
@@ -547,6 +556,24 @@
   subcategory: vla-arch
   summary: 以空间智能为统一支架，构建跨自动驾驶/机器人/无人机的通用具身智能
   date: '2026-03-03'
+- title: 'PVI: Plug-in Visual Injection for Vision-Language-Action Models'
+  arxiv: '2603.12772'
+  url: https://arxiv.org/abs/2603.12772
+  institution: PKU, HKU
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 即插即用视觉注入模块，为VLA模型引入高分辨率视觉特征提升操作精度
+  date: '2026-03-13'
+- title: 'OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams'
+  arxiv: '2603.12265'
+  url: https://arxiv.org/abs/2603.12265
+  institution: Oxford, SJTU
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 统一感知、重建与动作的连续流式处理框架，实现实时具身智能
+  date: '2026-03-12'
 - title: 'OAT: Ordered Action Tokenization'
   arxiv: '2602.04215'
   url: https://arxiv.org/abs/2602.04215
@@ -682,6 +709,24 @@
   subcategory: world-model-policy
   summary: 统一奖励-观测世界模型，面向泛化机器人RL
   date: '2025-12-03'
+- title: 'Beyond Dense Futures: World Models as Structured Planners for Robotic Manipulation'
+  arxiv: '2603.12553'
+  url: https://arxiv.org/abs/2603.12553
+  institution: USTC
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 世界模型作为结构化规划器，将密集未来预测转化为关键子目标引导机器人操作
+  date: '2026-03-13'
+- title: 'RoboStereo: Dual-Tower 4D Embodied World Models for Unified Policy Optimization'
+  arxiv: '2603.12639'
+  url: https://arxiv.org/abs/2603.12639
+  institution: Tsinghua, HKUST
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 双塔4D具身世界模型，统一策略优化实现跨任务机器人操作
+  date: '2026-03-13'
 - title: 'SRPO: Self-Referential Policy Optimization for VLA'
   arxiv: '2511.15605'
   url: https://arxiv.org/abs/2511.15605

@@ -1,19 +1,23 @@
 # VLA Papers Timeline
 
-> 149 papers sorted by date (newest first) | Updated: 2026-03-11
+> 154 papers sorted by date (newest first) | Updated: 2026-03-13
 
 [Back to Main](README.md)
 
-## Mar 2026 (6 papers)
+## Mar 2026 (10 papers)
 
 | # | Paper | Institution | Date | Category | Link |
 |:-:|:------|:-----------|:----:|:---------|:-----|
-| 1 | **DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving** | Huawei, Fudan, CUHK | Mar 9 | Autonomous Driving / World Models | [Paper](https://arxiv.org/abs/2603.08254) |
-| 2 | **MEM: Multi-Scale Embodied Memory for VLA** | Physical Intelligence | Mar 4 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.03596) |
-| 3 | **ACE-Brain-0: Spatial Intelligence as a Shared Scaffold for Universal Embodiments** | SJTU, Fudan, USTC, SYSU | Mar 3 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.03198) |
-| 4 | **Beyond Language Modeling: An Exploration of Multimodal Pretraining** | Meta AI, NYU | Mar 3 | General / Cross-domain / Multimodal Architecture & Pre-training | [Paper](https://arxiv.org/abs/2603.03276) |
-| 5 | **NIAF: Neural Implicit Action Fields** | — | Mar 2 | Robotics / Action Tokenization | [Paper](https://arxiv.org/abs/2603.01766) |
-| 6 | **Unleashing VLA Potentials in Autonomous Driving via Explicit Learning from Failures** | Tsinghua, Univ of Macau | Mar 1 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2603.01063) |
+| 1 | **PVI: Plug-in Visual Injection for Vision-Language-Action Models** | PKU, HKU | Mar 13 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.12772) |
+| 2 | **Beyond Dense Futures: World Models as Structured Planners for Robotic Manipulation** | USTC | Mar 13 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2603.12553) |
+| 3 | **RoboStereo: Dual-Tower 4D Embodied World Models for Unified Policy Optimization** | Tsinghua, HKUST | Mar 13 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2603.12639) |
+| 4 | **OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams** | Oxford, SJTU | Mar 12 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.12265) |
+| 5 | **DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving** | Huawei, Fudan, CUHK | Mar 9 | Autonomous Driving / World Models | [Paper](https://arxiv.org/abs/2603.08254) |
+| 6 | **MEM: Multi-Scale Embodied Memory for VLA** | Physical Intelligence | Mar 4 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.03596) |
+| 7 | **ACE-Brain-0: Spatial Intelligence as a Shared Scaffold for Universal Embodiments** | SJTU, Fudan, USTC, SYSU | Mar 3 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.03198) |
+| 8 | **Beyond Language Modeling: An Exploration of Multimodal Pretraining** | Meta AI, NYU | Mar 3 | General / Cross-domain / Multimodal Architecture & Pre-training | [Paper](https://arxiv.org/abs/2603.03276) |
+| 9 | **NIAF: Neural Implicit Action Fields** | — | Mar 2 | Robotics / Action Tokenization | [Paper](https://arxiv.org/abs/2603.01766) |
+| 10 | **Unleashing VLA Potentials in Autonomous Driving via Explicit Learning from Failures** | Tsinghua, Univ of Macau | Mar 1 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2603.01063) |
 
 ## Feb 2026 (39 papers)
 
@@ -151,7 +155,7 @@
 | 29 | **How Do VLAs Effectively Inherit from VLMs?** | MSRA | Nov 10 | Robotics / Data & Pre-training | [Paper](https://arxiv.org/abs/2511.06619) |
 | 30 | **How Many Tokens Do 3D Point Cloud Transformer Architectures Really Need?** | DFKI | Nov 7 | General / Cross-domain / Efficient Inference | [Paper](https://arxiv.org/abs/2511.05449) |
 
-## Oct 2025 (15 papers)
+## Oct 2025 (16 papers)
 
 | # | Paper | Institution | Date | Category | Link |
 |:-:|:------|:-----------|:----:|:---------|:-----|
@@ -170,6 +174,7 @@
 | 13 | **OmniNWM: Omniscient Driving Navigation World Models** | SJTU, Tsinghua, NUS | Oct 21 | Autonomous Driving / World Models | [Paper](https://arxiv.org/abs/2510.18313) |
 | 14 | **PICABench: How Far from Physically Realistic Image Editing?** | SJTU, Shanghai AI Lab, CUHK | Oct 20 | General / Cross-domain / Physical AI Benchmarks | [Paper](https://arxiv.org/abs/2510.17681) |
 | 15 | **A Comprehensive Survey on World Models for Embodied AI** | A*STAR | Oct 19 | General / Cross-domain / Surveys | [Paper](https://arxiv.org/abs/2510.16732) |
+| 16 | **DriveCritic: Towards Context-Aware, Human-Aligned Evaluation for Autonomous Driving with Vision-Language Models** | NVIDIA, UMich, Fudan | Oct 15 | Autonomous Driving / Safety & Benchmarks | [Paper](https://arxiv.org/abs/2510.13108) |
 
 ## Sep 2025 (1 papers)
 
