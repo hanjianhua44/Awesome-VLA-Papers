@@ -152,8 +152,8 @@ def generate_readme(papers: list) -> str:
         lines.append(f"- [{label}](#{anchor})")
         for sub in SUB_ORDER[dom]:
             sub_label = SUB_LABELS[sub]
-            a = make_anchor(sub_label)
             cnt = len(grouped[dom][sub])
+            a = make_anchor(f"{sub_label} ({cnt})")
             lines.append(f"  - [{sub_label} ({cnt})](#{a})")
     lines.append("")
 
@@ -172,15 +172,12 @@ def generate_readme(papers: list) -> str:
             sub_papers_sorted = sorted(sub_papers, key=lambda p: p.get("arxiv", "0000"), reverse=True)
             cnt = len(sub_papers_sorted)
 
-            lines.append("<details open>")
-            lines.append(f"<summary><h3>{sub_label} ({cnt})</h3></summary>")
+            lines.append(f"### {sub_label} ({cnt})")
             lines.append("")
             lines.append("| Paper | Institution | Date | Links |")
             lines.append("|:------|:-----------|:----:|:------|")
             for p in sub_papers_sorted:
                 lines.append(paper_row(p))
-            lines.append("")
-            lines.append("</details>")
             lines.append("")
 
     # --- Contributing ---
