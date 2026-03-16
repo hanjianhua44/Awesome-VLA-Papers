@@ -83,10 +83,10 @@ def date_badge(year: int, month: int, day: int) -> str:
 
 
 def make_anchor(text: str) -> str:
-    """GitHub-compatible anchor: lowercase, spaces→hyphens, strip non-alnum."""
+    """GitHub-compatible anchor: lowercase, spaces→hyphens, strip non-alnum.
+    GitHub keeps consecutive hyphens (e.g. 'A & B' → 'a--b'), so we must too."""
     anchor = text.lower().replace(" ", "-")
     anchor = re.sub(r"[^a-z0-9\-]", "", anchor)
-    anchor = re.sub(r"-{2,}", "-", anchor)
     return anchor
 
 
