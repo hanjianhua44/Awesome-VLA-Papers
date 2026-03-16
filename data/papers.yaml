@@ -753,7 +753,6 @@
   domain: robot
   subcategory: rl-policy
   summary: 通过预言（预测未来状态）强化动作策略
-  star: true
   date: '2025-11-25'
 - title: Alleviating Sparse Rewards in Flow-Based GRPO
   arxiv: '2602.06422'

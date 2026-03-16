@@ -172,7 +172,7 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 | **Alleviating Sparse Rewards in Flow-Based GRPO** | — | ![Feb 6, 2026](https://img.shields.io/badge/Feb_6,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.06422) |
 | **Action Hallucination in Generative VLA Models** | NUS | ![Feb 6, 2026](https://img.shields.io/badge/Feb_6,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.06339) |
 | **Modular Safety Guardrails for FM-Enabled Robots** | Purdue, UMich | ![Feb 3, 2026](https://img.shields.io/badge/Feb_3,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.04056) |
-| **Reinforcing Action Policies by Prophesying ⭐** | Fudan | ![Nov 25, 2025](https://img.shields.io/badge/Nov_25,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2511.20633) |
+| **Reinforcing Action Policies by Prophesying** | Fudan | ![Nov 25, 2025](https://img.shields.io/badge/Nov_25,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2511.20633) |
 | **SRPO: Self-Referential Policy Optimization for VLA** | Fudan, Tongji | ![Nov 19, 2025](https://img.shields.io/badge/Nov_19,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2511.15605) |
 | **πRL: Online RL Fine-tuning for Flow-based VLA** | Tsinghua | ![Oct 29, 2025](https://img.shields.io/badge/Oct_29,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2510.25889) |
 | **Unified RL and Imitation Learning for VLMs** | NVIDIA, KAIST | ![Oct 22, 2025](https://img.shields.io/badge/Oct_22,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2510.19307) |
