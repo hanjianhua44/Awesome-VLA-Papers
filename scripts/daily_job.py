@@ -108,12 +108,12 @@ def main():
         notify_dashboard(f"{date_str} no arXiv listing, skip", "info")
         return
 
-    # Determine coverage dates for display
+    # Determine coverage dates for display (matches fetch_daily overlap window)
     from datetime import timedelta
-    if weekday == 1:  # Tuesday → weekend batch (Sat, Sun, Mon)
-        covers = sorted((dt - timedelta(days=i)).strftime('%m-%d') for i in range(1, 4))
-    else:
-        covers = [(dt - timedelta(days=1)).strftime("%m-%d")]
+    if weekday == 1:  # Tuesday → Fri+Sat+Sun+Mon
+        covers = sorted((dt - timedelta(days=i)).strftime('%m-%d') for i in range(1, 5))
+    else:  # Wed–Sat → yesterday + day before
+        covers = sorted((dt - timedelta(days=i)).strftime('%m-%d') for i in range(1, 3))
     cover_str = " ~ ".join([covers[0], covers[-1]]) if len(covers) > 1 else covers[0]
 
     print(f"=== Daily Job: {date_str} (covers {cover_str}) ===")

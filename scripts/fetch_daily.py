@@ -300,23 +300,35 @@ def fetch_arxiv_papers(date_str: str = None):
     else:
         dt = datetime.now()
 
-    # arXiv announcement schedule (US Eastern → China CST):
-    #   Thu 20:00 ET → Fri ~9am CST   (Thu submissions)
-    #   No Fri/Sat/Sun announcements
-    #   Mon 20:00 ET → Tue ~9am CST   (Fri–Mon submissions, weekend batch)
-    #   Tue 20:00 ET → Wed ~9am CST   (Tue submissions)
-    #   Wed 20:00 ET → Thu ~9am CST   (Wed submissions)
+    # arXiv API `published` = submission date (any day of the week).
+    # Papers may take hours to be indexed, so each job looks back +1 extra
+    # day to catch late-indexed stragglers; duplicates with prior reports
+    # are removed after fetching.
     #
-    # Job schedule:
-    #   Sat: fetch Fri papers          (target = yesterday)
+    # Job schedule (CST):
+    #   Sat: fetch Thu+Fri       (Fri papers + Thu stragglers)
     #   Sun/Mon: skip
-    #   Tue: fetch Sat+Sun+Mon papers  (target = 3 days back)
-    #   Wed–Fri: fetch yesterday
+    #   Tue: fetch Fri–Mon       (weekend batch + Fri stragglers)
+    #   Wed: fetch Mon+Tue       (Tue papers + Mon stragglers)
+    #   Thu: fetch Tue+Wed
+    #   Fri: fetch Wed+Thu
     weekday = dt.weekday()  # 0=Mon
-    if weekday == 1:  # Tuesday → weekend batch (Sat, Sun, Mon)
-        target_dates = {(dt - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(1, 4)}
-    else:
-        target_dates = {(dt - timedelta(days=1)).strftime("%Y-%m-%d")}
+    if weekday == 1:  # Tuesday → Fri+Sat+Sun+Mon
+        target_dates = {(dt - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(1, 5)}
+    else:  # Wed–Sat → yesterday + day before
+        target_dates = {(dt - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(1, 3)}
+
+    # Load arxiv_ids from existing recent reports for dedup
+    existing_ids = set()
+    for back in range(1, 8):
+        prev_date = (dt - timedelta(days=back)).strftime("%Y-%m-%d")
+        prev_json = _daily_dir(prev_date) / f"{prev_date}.json"
+        if prev_json.exists():
+            try:
+                prev_data = json.loads(prev_json.read_text(encoding="utf-8"))
+                existing_ids.update(p["arxiv_id"] for p in prev_data)
+            except Exception:
+                pass
 
     earliest_target = min(target_dates)
     print(f"  Target dates: {sorted(target_dates)} (earliest: {earliest_target})")
@@ -336,7 +348,15 @@ def fetch_arxiv_papers(date_str: str = None):
             print(f"  Waiting {RETRY_WAIT // 60} minutes before retry ({attempt + 2}/{MAX_RETRIES})...")
             time.sleep(RETRY_WAIT)
 
-    print(f"  Raw date-filtered ({', '.join(sorted(target_dates))}): {len(date_filtered)}")
+    # Dedup: remove papers already in prior daily reports
+    if existing_ids:
+        before = len(date_filtered)
+        date_filtered = [p for p in date_filtered if p["arxiv_id"] not in existing_ids]
+        deduped = before - len(date_filtered)
+        if deduped:
+            print(f"  Dedup: removed {deduped} papers already in prior reports")
+
+    print(f"  Date-filtered ({', '.join(sorted(target_dates))}): {len(date_filtered)}")
 
     # Phase 1: Score and broad filter (score >= 5) to build candidate pool
     candidates = []
