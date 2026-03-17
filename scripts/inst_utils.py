@@ -80,7 +80,7 @@ INST_PATTERNS = {
     r"\bBaidu\b|\bERNIE\b|\bPaddlePaddle\b": "Baidu",
     r"\bTencent\b|\bHunyuan\b": "Tencent",
     r"\bAlibaba\b|DAMO Academy|\bQwen\b|\bTongyi\b": "Alibaba",
-    r"\bByteDance\b|\bByteDance Seed\b|\bSeed Team\b|\bSeed\b": "ByteDance",
+    r"\bByte\s*Dance\b|\bByte\s*Dance Seed\b|\bSeed Team\b|\bSeed\b": "ByteDance",
     r"\bHuawei\b|Noah.s Ark|\bPanGu\b": "Huawei",
     r"\bXiaomi\b": "Xiaomi",
     r"\bSenseTime\b|\bSenseNova\b": "SenseTime",
@@ -112,7 +112,7 @@ INST_PATTERNS = {
     r"\bBerkeley\b": "UC Berkeley",
     r"\bCMU\b|Carnegie Mellon": "CMU",
     r"\bPrinceton\b": "Princeton",
-    r"\bGeorgia Tech\b": "Georgia Tech",
+    r"\bGeorgia Tech\b|Georgia Inst.*?Tech": "Georgia Tech",
     r"\bUT Austin\b|Univ.*?Texas.*?Austin": "UT Austin",
     r"\bCornell\b": "Cornell",
     r"\bColumbia\b": "Columbia",
@@ -120,11 +120,11 @@ INST_PATTERNS = {
     r"\bUCSD\b|UC San Diego": "UCSD",
     r"\bUCLA\b": "UCLA",
     r"\bUMich\b|Univ.*?Michigan": "UMich",
-    r"\bUIUC\b|Univ.*?Illinois.*?Urbana": "UIUC",
+    r"\bUIUC\b|Univ.*?Illinois.*?Urbana|illinois\.edu": "UIUC",
     r"\bUSC\b|Univ.*?Southern California": "USC",
     r"\bUW\b.*?(?:Seattle|Madison)|Univ.*?Washington": "UW",
     r"Purdue\b": "Purdue",
-    r"Maryland\b.*?Univ|UMD\b": "UMD",
+    r"Maryland\b.*?Univ|Univ.*?Maryland|UMD\b": "UMD",
     r"Wisconsin\b": "UW-Madison",
     r"Boston\s*University": "BU",
     r"UC\s+Merced": "UC Merced",
@@ -235,6 +235,27 @@ INST_PATTERNS = {
     r"Delft": "TU Delft",
     r"Zurich\b.*Univ|Univ.*Zurich|\bUZH\b": "Univ of Zurich",
     r"Univ.*?Bonn": "Univ of Bonn",
+    # === Additional Missing ===
+    r"Caltech|California Inst.*?Tech": "Caltech",
+    r"Yale\b": "Yale",
+    r"Harvard\b": "Harvard",
+    r"Univ.*?Chicago": "Univ of Chicago",
+    r"Northwestern\b(?!.*?Poly)": "Northwestern",
+    r"King.s College London": "King's College London",
+    r"Hunan\s+Univ": "Hunan Univ",
+    r"Jilin\s+Univ": "Jilin Univ",
+    r"Univ.*?Texas.*?Dallas": "UT Dallas",
+    r"IIT\s+Delhi|Indian\s+Inst.*?Tech.*?Delhi": "IIT Delhi",
+    r"IIT\s+Bombay|Indian\s+Inst.*?Tech.*?Bombay": "IIT Bombay",
+    r"IIT\s+Kanpur|Indian\s+Inst.*?Tech.*?Kanpur": "IIT Kanpur",
+    r"Indian\s+Inst.*?Tech": "IIT",
+    r"Univ.*?British Columbia|\bUBC\b": "UBC",
+    r"Univ.*?Sydney": "Univ of Sydney",
+    r"Univ.*?Melbourne": "Univ of Melbourne",
+    r"\bKU Leuven\b|Katholieke\b": "KU Leuven",
+    r"Tsinghua.*?Shenzhen|TBSI\b": "Tsinghua Shenzhen",
+    r"CityU|City Univ.*?Hong Kong": "CityU HK",
+    r"Nanjing\s+Univ.*?Aero|NUAA\b": "NUAA",
 }
 
 # ---------------------------------------------------------------------------
@@ -369,6 +390,32 @@ TIER1_INSTITUTIONS = {
     "cuhk", "cuhk-sz", "hku", "hkust",
     # --- Singapore ---
     "ntu", "nanyang", "nus", "s-lab",
+    # --- Additional ---
+    "caltech", "yale", "harvard", "univ of chicago", "northwestern",
+    "king's college london", "ku leuven",
+    "ubc", "univ of sydney", "univ of melbourne",
+    "cityu hk", "tsinghua shenzhen", "nuaa",
+    "iit delhi", "iit bombay", "iit kanpur", "iit",
+    "ut dallas", "hunan univ", "jilin univ",
+    "purdue", "rice", "upenn", "penn state",
+    "bu", "uc merced", "northeastern univ",
+    "univ of florida", "uva", "duke", "brown",
+    "univ of minnesota", "asu", "rutgers", "jhu",
+    "ohio state", "iowa state", "uc irvine", "uc davis", "uc santa barbara",
+    "univ of tokyo", "yonsei univ",
+    "univ of toronto", "univ of alberta", "univ of waterloo", "mcgill",
+    "univ of macau", "a*star",
+    "tu delft", "univ of zurich", "univ of bonn",
+    "soochow univ", "xmu", "shandong univ",
+    "southeast univ", "tongji", "bit", "sustech",
+    "monash", "anu",
+    "kaist", "snu",
+    "polyu",
+    "tu delft", "univ of freiburg", "dfki", "inria",
+    "univ of trento", "univ of edinburgh", "ucl", "kth", "sorbonne", "saclay",
+    "nanjing univ", "ruc", "whu", "nwpu", "uestc", "bjtu",
+    "siat", "dut", "xjtu", "tianjin univ",
+    "texas a&m",
 }
 
 
@@ -536,6 +583,33 @@ def _extract_header_and_footnotes(text: str) -> str:
     return header + "\n" + footer
 
 
+def _normalize_pdf_text(text: str) -> str:
+    """Fix common PDF extraction artifacts: missing spaces between words.
+
+    Many PDF extractors concatenate words (e.g. 'UniversityofMaryland').
+    This inserts spaces at camelCase boundaries and around fused prepositions.
+    """
+    _PREPS = r"of|and|the|for|in|at|de|des|di|von|und|du"
+    # Insert space between lowercase and uppercase: 'CollegeLondon' → 'College London'
+    text = re.sub(r"([a-z])([A-Z])", r"\1 \2", text)
+    # Split acronym from following word: 'KTHRoyal' → 'KTH Royal', 'MITPress' → 'MIT Press'
+    text = re.sub(r"([A-Z]{2,})([A-Z][a-z])", r"\1 \2", text)
+    # 'Universityof Technology' → 'University of Technology' (prep fused to preceding word, space after)
+    text = re.sub(r"([a-zA-Z])(" + _PREPS + r")\s", r"\1 \2 ", text)
+    # 'Instituteof Technology' → 'Institute of Technology' (prep fused both sides)
+    text = re.sub(r"([a-zA-Z])(" + _PREPS + r")([A-Z])", r"\1 \2 \3", text)
+    # 'ofMaryland' → 'of Maryland' (prep fused to following word)
+    text = re.sub(r"\b(" + _PREPS + r")([A-Z])", r"\1 \2", text)
+    # Fix digits fused to letters: '1University' → '1 University'
+    text = re.sub(r"(\d)([A-Z][a-z])", r"\1 \2", text)
+    # Fix broken emails from PDF: 'illinois.e du' → 'illinois.edu'
+    text = re.sub(r"\.e\s+du\b", ".edu", text)
+    # Fix common PDF word splits: 'Mc Gill' → 'McGill', 'De ep' → 'Deep'
+    text = re.sub(r"\bMc\s+Gill\b", "McGill", text)
+    text = re.sub(r"\bDe\s+ep\b", "Deep", text)
+    return text
+
+
 def extract_institutions_from_pdf(arxiv_id: str, max_retries: int = 3) -> str:
     """Extract institution names from header + footnotes of page 1.
 
@@ -552,6 +626,8 @@ def extract_institutions_from_pdf(arxiv_id: str, max_retries: int = 3) -> str:
             return ""
 
         search_text = _extract_header_and_footnotes(text)
+        search_text = _normalize_pdf_text(search_text)
+        search_text = search_text.replace("\n", " ")
 
         found = []
         for pattern, inst in INST_PATTERNS.items():
