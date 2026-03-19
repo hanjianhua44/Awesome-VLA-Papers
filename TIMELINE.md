@@ -1,25 +1,27 @@
 # VLA Papers Timeline
 
-> 154 papers sorted by date (newest first) | Updated: 2026-03-13
+> 158 papers sorted by date (newest first) | Updated: 2026-03-17
 
 [Back to Main](README.md)
 
-## Mar 2026 (10 papers)
+## Mar 2026 (12 papers)
 
 | # | Paper | Institution | Date | Category | Link |
 |:-:|:------|:-----------|:----:|:---------|:-----|
-| 1 | **PVI: Plug-in Visual Injection for Vision-Language-Action Models** | PKU, HKU | Mar 13 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.12772) |
-| 2 | **Beyond Dense Futures: World Models as Structured Planners for Robotic Manipulation** | USTC | Mar 13 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2603.12553) |
-| 3 | **RoboStereo: Dual-Tower 4D Embodied World Models for Unified Policy Optimization** | Tsinghua, HKUST | Mar 13 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2603.12639) |
-| 4 | **OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams** | Oxford, SJTU | Mar 12 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.12265) |
-| 5 | **DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving** | Huawei, Fudan, CUHK | Mar 9 | Autonomous Driving / World Models | [Paper](https://arxiv.org/abs/2603.08254) |
-| 6 | **MEM: Multi-Scale Embodied Memory for VLA** | Physical Intelligence | Mar 4 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.03596) |
-| 7 | **ACE-Brain-0: Spatial Intelligence as a Shared Scaffold for Universal Embodiments** | SJTU, Fudan, USTC, SYSU | Mar 3 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.03198) |
-| 8 | **Beyond Language Modeling: An Exploration of Multimodal Pretraining** | Meta AI, NYU | Mar 3 | General / Cross-domain / Multimodal Architecture & Pre-training | [Paper](https://arxiv.org/abs/2603.03276) |
-| 9 | **NIAF: Neural Implicit Action Fields** | — | Mar 2 | Robotics / Action Tokenization | [Paper](https://arxiv.org/abs/2603.01766) |
-| 10 | **Unleashing VLA Potentials in Autonomous Driving via Explicit Learning from Failures** | Tsinghua, Univ of Macau | Mar 1 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2603.01063) |
+| 1 | **RARRL: Resource-Aware Reasoning via RL for Embodied Robotic Decision-Making** | CMU, Harvard, MIT, Cornell, Tsinghua, PKU | Mar 17 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2603.16673) |
+| 2 | **PVI: Plug-in Visual Injection for Vision-Language-Action Models** | PKU, HKU | Mar 13 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.12772) |
+| 3 | **Beyond Dense Futures: World Models as Structured Planners for Robotic Manipulation** | USTC | Mar 13 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2603.12553) |
+| 4 | **RoboStereo: Dual-Tower 4D Embodied World Models for Unified Policy Optimization** | Tsinghua, HKUST | Mar 13 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2603.12639) |
+| 5 | **OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams** | Oxford, SJTU | Mar 12 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.12265) |
+| 6 | **DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving** | Huawei, Fudan, CUHK | Mar 9 | Autonomous Driving / World Models | [Paper](https://arxiv.org/abs/2603.08254) |
+| 7 | **MEM: Multi-Scale Embodied Memory for VLA** | Physical Intelligence | Mar 4 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.03596) |
+| 8 | **ACE-Brain-0: Spatial Intelligence as a Shared Scaffold for Universal Embodiments** | SJTU, Fudan, USTC, SYSU | Mar 3 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.03198) |
+| 9 | **Beyond Language Modeling: An Exploration of Multimodal Pretraining** | Meta AI, NYU | Mar 3 | General / Cross-domain / Multimodal Architecture & Pre-training | [Paper](https://arxiv.org/abs/2603.03276) |
+| 10 | **NIAF: Neural Implicit Action Fields** | — | Mar 2 | Robotics / Action Tokenization | [Paper](https://arxiv.org/abs/2603.01766) |
+| 11 | **π-StepNFT: Wider Space Needs Finer Steps in Online RL for Flow-based VLAs** | GigaAI, CASIA, Tsinghua, Edinburgh, UCL | Mar 2 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2603.02083) |
+| 12 | **Unleashing VLA Potentials in Autonomous Driving via Explicit Learning from Failures** | Tsinghua, Univ of Macau | Mar 1 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2603.01063) |
 
-## Feb 2026 (39 papers)
+## Feb 2026 (40 papers)
 
 | # | Paper | Institution | Date | Category | Link |
 |:-:|:------|:-----------|:----:|:---------|:-----|
@@ -39,29 +41,30 @@
 | 14 | **Safe-SDL: Safety Boundaries for AI-Driven Self-Driving Labs** | SJTU | Feb 13 | Autonomous Driving / Safety & Benchmarks | [Paper](https://arxiv.org/abs/2602.15061) |
 | 15 | **Xiaomi-Robotics-0: Open-Sourced VLA with Real-Time Execution** | Xiaomi | Feb 13 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2602.12684) |
 | 16 | **RynnBrain: Open Embodied Foundation Models** | Alibaba DAMO | Feb 13 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2602.14979) |
-| 17 | **LDA-1B: Scaling Latent Dynamics Action Model** | PKU, Galbot, CASIA | Feb 12 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2602.12215) |
-| 18 | **GigaBrain-0.5M: VLA from World Model-Based RL** | GigaAI | Feb 12 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2602.12099) |
-| 19 | **VLAW: Iterative Co-Improvement of VLA Policy and World Model** | Stanford, Tsinghua | Feb 12 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2602.12063) |
-| 20 | **HiST-VLA: Hierarchical Spatio-Temporal VLA for E2E AD** | — | Feb 11 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2602.13329) |
-| 21 | **From Representational Complementarity to Dual Systems (HybridDriveVLA)** | — | Feb 11 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2602.10719) |
-| 22 | **ABot-M0: VLA Foundation Model with Action Manifold Learning** | Alibaba | Feb 11 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2602.11236) |
-| 23 | **RISE: Self-Improving Robot Policy with Compositional World Model** | CUHK, HKU, Horizon Robotics, Tsinghua | Feb 11 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2602.11075) |
-| 24 | **PhyCritic: Multimodal Critic Models for Physical AI** | UMD, NVIDIA | Feb 11 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2602.11124) |
-| 25 | **Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling** | HKUST, Huawei, Tsinghua | Feb 11 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2602.11146) |
-| 26 | **LAP: Language-Action Pre-Training for Zero-shot Cross-Embodiment** | Princeton, Physical Intelligence | Feb 11 | Robotics / Data & Pre-training | [Paper](https://arxiv.org/abs/2602.10556) |
-| 27 | **BagelVLA: Long-Horizon Manipulation via Interleaved VLA Generation** | Tsinghua, ByteDance | Feb 10 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2602.09849) |
-| 28 | **SAGE: Scalable Agentic 3D Scene Generation for Embodied AI** | NVIDIA, UIUC | Feb 10 | Robotics / Data & Pre-training | [Paper](https://arxiv.org/abs/2602.10116) |
-| 29 | **WorldArena: Unified Benchmark for Embodied World Models** | Tsinghua | Feb 9 | General / Cross-domain / Physical AI Benchmarks | [Paper](https://arxiv.org/abs/2602.08971) |
-| 30 | **DriveWorld-VLA: Unified Latent-Space World Modeling with VLA for AD** | — | Feb 6 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2602.06521) |
-| 31 | **World-VLA-Loop: Closed-Loop Learning of Video World Model and VLA Policy** | NUS | Feb 6 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2602.06508) |
-| 32 | **DreamDojo: Generalist Robot World Model from Human Videos** | NVIDIA | Feb 6 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2602.06949) |
-| 33 | **Alleviating Sparse Rewards in Flow-Based GRPO** | — | Feb 6 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2602.06422) |
-| 34 | **Action Hallucination in Generative VLA Models** | NUS | Feb 6 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2602.06339) |
-| 35 | **SwimBird: Switchable Reasoning Mode in Hybrid Autoregressive MLLMs** | HUST, Alibaba | Feb 5 | General / Cross-domain / Latent Reasoning & Chain-of-Thought | [Paper](https://arxiv.org/abs/2602.06040) |
-| 36 | **OAT: Ordered Action Tokenization** | Harvard, Stanford | Feb 4 | Robotics / Action Tokenization | [Paper](https://arxiv.org/abs/2602.04215) |
-| 37 | **Reliable and Responsible Foundation Models: A Comprehensive Survey** | CMU, Oxford, UMD | Feb 4 | General / Cross-domain / Surveys | [Paper](https://arxiv.org/abs/2602.08145) |
-| 38 | **RDT-2: Scaling UMI Data with RVQ** | Tsinghua | Feb 3 | Robotics / Action Tokenization | [Paper](https://arxiv.org/abs/2602.03310) |
-| 39 | **Modular Safety Guardrails for FM-Enabled Robots** | Purdue, UMich | Feb 3 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2602.04056) |
+| 17 | **Human and Algorithmic Visual Attention in Driving Tasks** | Tsinghua (AIR) | Feb 12 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://www.nature.com/articles/s44387-026-00079-1) |
+| 18 | **LDA-1B: Scaling Latent Dynamics Action Model** | PKU, Galbot, CASIA | Feb 12 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2602.12215) |
+| 19 | **GigaBrain-0.5M: VLA from World Model-Based RL** | GigaAI | Feb 12 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2602.12099) |
+| 20 | **VLAW: Iterative Co-Improvement of VLA Policy and World Model** | Stanford, Tsinghua | Feb 12 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2602.12063) |
+| 21 | **HiST-VLA: Hierarchical Spatio-Temporal VLA for E2E AD** | — | Feb 11 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2602.13329) |
+| 22 | **From Representational Complementarity to Dual Systems (HybridDriveVLA)** | — | Feb 11 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2602.10719) |
+| 23 | **ABot-M0: VLA Foundation Model with Action Manifold Learning** | Alibaba | Feb 11 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2602.11236) |
+| 24 | **RISE: Self-Improving Robot Policy with Compositional World Model** | CUHK, HKU, Horizon Robotics, Tsinghua | Feb 11 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2602.11075) |
+| 25 | **PhyCritic: Multimodal Critic Models for Physical AI** | UMD, NVIDIA | Feb 11 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2602.11124) |
+| 26 | **Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling** | HKUST, Huawei, Tsinghua | Feb 11 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2602.11146) |
+| 27 | **LAP: Language-Action Pre-Training for Zero-shot Cross-Embodiment** | Princeton, Physical Intelligence | Feb 11 | Robotics / Data & Pre-training | [Paper](https://arxiv.org/abs/2602.10556) |
+| 28 | **BagelVLA: Long-Horizon Manipulation via Interleaved VLA Generation** | Tsinghua, ByteDance | Feb 10 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2602.09849) |
+| 29 | **SAGE: Scalable Agentic 3D Scene Generation for Embodied AI** | NVIDIA, UIUC | Feb 10 | Robotics / Data & Pre-training | [Paper](https://arxiv.org/abs/2602.10116) |
+| 30 | **WorldArena: Unified Benchmark for Embodied World Models** | Tsinghua | Feb 9 | General / Cross-domain / Physical AI Benchmarks | [Paper](https://arxiv.org/abs/2602.08971) |
+| 31 | **DriveWorld-VLA: Unified Latent-Space World Modeling with VLA for AD** | — | Feb 6 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2602.06521) |
+| 32 | **World-VLA-Loop: Closed-Loop Learning of Video World Model and VLA Policy** | NUS | Feb 6 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2602.06508) |
+| 33 | **DreamDojo: Generalist Robot World Model from Human Videos** | NVIDIA | Feb 6 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2602.06949) |
+| 34 | **Alleviating Sparse Rewards in Flow-Based GRPO** | — | Feb 6 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2602.06422) |
+| 35 | **Action Hallucination in Generative VLA Models** | NUS | Feb 6 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2602.06339) |
+| 36 | **SwimBird: Switchable Reasoning Mode in Hybrid Autoregressive MLLMs** | HUST, Alibaba | Feb 5 | General / Cross-domain / Latent Reasoning & Chain-of-Thought | [Paper](https://arxiv.org/abs/2602.06040) |
+| 37 | **OAT: Ordered Action Tokenization** | Harvard, Stanford | Feb 4 | Robotics / Action Tokenization | [Paper](https://arxiv.org/abs/2602.04215) |
+| 38 | **Reliable and Responsible Foundation Models: A Comprehensive Survey** | CMU, Oxford, UMD | Feb 4 | General / Cross-domain / Surveys | [Paper](https://arxiv.org/abs/2602.08145) |
+| 39 | **RDT-2: Scaling UMI Data with RVQ** | Tsinghua | Feb 3 | Robotics / Action Tokenization | [Paper](https://arxiv.org/abs/2602.03310) |
+| 40 | **Modular Safety Guardrails for FM-Enabled Robots** | Purdue, UMich | Feb 3 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2602.04056) |
 
 ## Jan 2026 (7 papers)
 
@@ -176,11 +179,12 @@
 | 15 | **A Comprehensive Survey on World Models for Embodied AI** | A*STAR | Oct 19 | General / Cross-domain / Surveys | [Paper](https://arxiv.org/abs/2510.16732) |
 | 16 | **DriveCritic: Towards Context-Aware, Human-Aligned Evaluation for Autonomous Driving with Vision-Language Models** | NVIDIA, UMich, Fudan | Oct 15 | Autonomous Driving / Safety & Benchmarks | [Paper](https://arxiv.org/abs/2510.13108) |
 
-## Sep 2025 (1 papers)
+## Sep 2025 (2 papers)
 
 | # | Paper | Institution | Date | Category | Link |
 |:-:|:------|:-----------|:----:|:---------|:-----|
-| 1 | **F1: A VLA Bridging Understanding and Generation to Actions** | Shanghai AI Lab, HIT | Sep 8 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2509.06951) |
+| 1 | **DiffusionNFT: Online Diffusion Reinforcement with Forward Process** | Tsinghua, NVIDIA, Stanford | Sep 19 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2509.16117) |
+| 2 | **F1: A VLA Bridging Understanding and Generation to Actions** | Shanghai AI Lab, HIT | Sep 8 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2509.06951) |
 
 ## Jun 2025 (3 papers)
 

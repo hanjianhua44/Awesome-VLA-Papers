@@ -151,6 +151,15 @@
   subcategory: e2e
   summary: VLA自动驾驶模型通过显式失败学习突破RL优化性能瓶颈，引入失败案例辅助探索
   date: '2026-03-01'
+- title: Human and Algorithmic Visual Attention in Driving Tasks
+  arxiv: ''
+  url: https://www.nature.com/articles/s44387-026-00079-1
+  institution: Tsinghua (AIR)
+  venue: npj AI 2026
+  domain: ad
+  subcategory: e2e
+  summary: 对比人类与算法视觉注意力在驾驶任务中的三阶段分布，发现语义注意力能弥补AI的理解与定位缺口
+  date: '2026-02-12'
 - title: 'OmniNWM: Omniscient Driving Navigation World Models'
   arxiv: '2510.18313'
   url: https://arxiv.org/abs/2510.18313
@@ -808,6 +817,33 @@
   subcategory: rl-policy
   summary: 分析VLA动作幻觉（拓扑/精度/视野障碍），提出结构性解释
   date: '2026-02-06'
+- title: 'π-StepNFT: Wider Space Needs Finer Steps in Online RL for Flow-based VLAs'
+  arxiv: '2603.02083'
+  url: https://arxiv.org/abs/2603.02083
+  institution: GigaAI, CASIA, Tsinghua, Edinburgh, UCL
+  venue: arXiv 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: 无critic无似然在线RL框架，Flow-SDE扩展探索空间+逐步对比排序对齐flow-based VLA
+  date: '2026-03-02'
+- title: 'DiffusionNFT: Online Diffusion Reinforcement with Forward Process'
+  arxiv: '2509.16117'
+  url: https://arxiv.org/abs/2509.16117
+  institution: Tsinghua, NVIDIA, Stanford
+  venue: arXiv 2025
+  domain: robot
+  subcategory: rl-policy
+  summary: 在前向扩散过程上做在线RL新范式，对比正负样本定义隐式策略改进方向，比FlowGRPO快25x
+  date: '2025-09-19'
+- title: 'RARRL: Resource-Aware Reasoning via RL for Embodied Robotic Decision-Making'
+  arxiv: '2603.16673'
+  url: https://arxiv.org/abs/2603.16673
+  institution: CMU, Harvard, MIT, Cornell, Tsinghua, PKU
+  venue: arXiv 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: RL学习何时调用LLM推理的资源感知编排策略，自适应分配计算预算提升具身任务成功率
+  date: '2026-03-17'
 - title: 'IGen: Scalable Data Generation from Open-World Images'
   arxiv: '2512.01773'
   url: https://arxiv.org/abs/2512.01773

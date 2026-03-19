@@ -4,7 +4,7 @@
 
 > A curated collection of papers on **Vision-Language-Action (VLA)** models, covering autonomous driving, robotics, world models, spatial reasoning, and more.
 
-**154 papers** | **AD: 42 | Robotics: 57 | General: 55** | Last updated: 2026-03-13
+**158 papers** | **AD: 43 | Robotics: 60 | General: 55** | Last updated: 2026-03-17
 
 📡 **[Daily arXiv Feed →](daily/)** — auto-updated every morning with latest VLA papers from top institutions
 
@@ -15,7 +15,7 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 ## Table of Contents
 
 - [I. Autonomous Driving](#i-autonomous-driving)
-  - [End-to-End VLA Architecture (17)](#end-to-end-vla-architecture-17)
+  - [End-to-End VLA Architecture (18)](#end-to-end-vla-architecture-18)
   - [World Models (14)](#world-models-14)
   - [Simulation & Data (5)](#simulation--data-5)
   - [Planning & Control (2)](#planning--control-2)
@@ -24,7 +24,7 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
   - [VLA Architecture (22)](#vla-architecture-22)
   - [Action Tokenization (7)](#action-tokenization-7)
   - [World Models & Policy Co-learning (10)](#world-models--policy-co-learning-10)
-  - [RL & Policy Optimization (9)](#rl--policy-optimization-9)
+  - [RL & Policy Optimization (12)](#rl--policy-optimization-12)
   - [Data & Pre-training (9)](#data--pre-training-9)
 - [III. General / Cross-domain](#iii-general--cross-domain)
   - [Spatial Perception & 3D/4D (14)](#spatial-perception--3d4d-14)
@@ -38,7 +38,7 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 ## I. Autonomous Driving
 
-### End-to-End VLA Architecture (17)
+### End-to-End VLA Architecture (18)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
@@ -59,6 +59,7 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 | **ZTRS: Zero-Imitation E2E AD with Trajectory Scoring** | Fudan, NVIDIA, UMich | ![Oct 28, 2025](https://img.shields.io/badge/Oct_28,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2510.24108) |
 | **F1: A VLA Bridging Understanding and Generation to Actions** | Shanghai AI Lab, HIT | ![Sep 8, 2025](https://img.shields.io/badge/Sep_8,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2509.06951) |
 | **ReCogDrive: Reinforced Cognitive Framework for E2E AD** | HUST, Xiaomi | ![Jun 9, 2025](https://img.shields.io/badge/Jun_9,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2506.08052) |
+| **Human and Algorithmic Visual Attention in Driving Tasks** | Tsinghua (AIR) | ![Feb 12, 2026](https://img.shields.io/badge/Feb_12,_2026-red?style=flat-square) | [Paper](https://www.nature.com/articles/s44387-026-00079-1) |
 
 ### World Models (14)
 
@@ -163,10 +164,12 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 | **RoboScape-R: Unified Reward-Observation World Models for RL** | Tsinghua | ![Dec 3, 2025](https://img.shields.io/badge/Dec_3,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2512.03556) |
 | **NORA-1.5: VLA with World Model and Action-based Preference Rewards** | NTU | ![Nov 18, 2025](https://img.shields.io/badge/Nov_18,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2511.14659) |
 
-### RL & Policy Optimization (9)
+### RL & Policy Optimization (12)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **RARRL: Resource-Aware Reasoning via RL for Embodied Robotic Decision-Making** | CMU, Harvard, MIT, Cornell, Tsinghua, PKU | ![Mar 17, 2026](https://img.shields.io/badge/Mar_17,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.16673) |
+| **π-StepNFT: Wider Space Needs Finer Steps in Online RL for Flow-based VLAs** | GigaAI, CASIA, Tsinghua, Edinburgh, UCL | ![Mar 2, 2026](https://img.shields.io/badge/Mar_2,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.02083) |
 | **Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling** | HKUST, Huawei, Tsinghua | ![Feb 11, 2026](https://img.shields.io/badge/Feb_11,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.11146) |
 | **PhyCritic: Multimodal Critic Models for Physical AI** | UMD, NVIDIA | ![Feb 11, 2026](https://img.shields.io/badge/Feb_11,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.11124) |
 | **Alleviating Sparse Rewards in Flow-Based GRPO** | — | ![Feb 6, 2026](https://img.shields.io/badge/Feb_6,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.06422) |
@@ -176,6 +179,7 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 | **SRPO: Self-Referential Policy Optimization for VLA** | Fudan, Tongji | ![Nov 19, 2025](https://img.shields.io/badge/Nov_19,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2511.15605) |
 | **πRL: Online RL Fine-tuning for Flow-based VLA** | Tsinghua | ![Oct 29, 2025](https://img.shields.io/badge/Oct_29,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2510.25889) |
 | **Unified RL and Imitation Learning for VLMs** | NVIDIA, KAIST | ![Oct 22, 2025](https://img.shields.io/badge/Oct_22,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2510.19307) |
+| **DiffusionNFT: Online Diffusion Reinforcement with Forward Process** | Tsinghua, NVIDIA, Stanford | ![Sep 19, 2025](https://img.shields.io/badge/Sep_19,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2509.16117) |
 
 ### Data & Pre-training (9)
 
