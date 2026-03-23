@@ -151,6 +151,15 @@
   subcategory: e2e
   summary: VLA自动驾驶模型通过显式失败学习突破RL优化性能瓶颈，引入失败案例辅助探索
   date: '2026-03-01'
+- title: 'CausalVAD: De-confounding End-to-End Autonomous Driving via Causal Intervention'
+  arxiv: '2603.18561'
+  url: https://arxiv.org/abs/2603.18561
+  institution: Fudan, BIT, ECNU
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 通过稀疏因果干预消除自动驾驶决策中的混杂偏差，提升规划安全性与鲁棒性
+  date: '2026-03-19'
 - title: Human and Algorithmic Visual Attention in Driving Tasks
   arxiv: ''
   url: https://www.nature.com/articles/s44387-026-00079-1
@@ -160,6 +169,15 @@
   subcategory: e2e
   summary: 对比人类与算法视觉注意力在驾驶任务中的三阶段分布，发现语义注意力能弥补AI的理解与定位缺口
   date: '2026-02-12'
+- title: 'DriveTok: 3D Driving Scene Tokenization for Unified Multi-View Reconstruction and Understanding'
+  arxiv: '2603.19219'
+  url: https://arxiv.org/abs/2603.19219
+  institution: Tsinghua, Yinwang
+  venue: arXiv 2026
+  domain: ad
+  subcategory: world-model
+  summary: 面向多视角驾驶场景的3D token化框架，统一重建与理解并增强跨视角一致性
+  date: '2026-03-19'
 - title: 'OmniNWM: Omniscient Driving Navigation World Models'
   arxiv: '2510.18313'
   url: https://arxiv.org/abs/2510.18313
@@ -385,6 +403,15 @@
   subcategory: safety-benchmark
   summary: 上下文感知的自动驾驶评估框架，利用VLM实现人类对齐的驾驶评价
   date: '2025-10-15'
+- title: 'Action Draft and Verify: A Self-Verifying Framework for Vision-Language-Action Model'
+  arxiv: '2603.18091'
+  url: https://arxiv.org/abs/2603.18091
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 扩散动作草拟+VLM并行校验重排的自验证推理框架，兼顾精度与OOD鲁棒性
+  date: '2026-03-18'
 - title: 'π₀.₆: a VLA That Learns From Experience'
   arxiv: '2511.14759'
   url: https://arxiv.org/abs/2511.14759
@@ -1051,6 +1078,24 @@
   subcategory: spatial
   summary: Dynamic Point Maps扩展静态3D重建到4D视频场景，基于VGGT实现动态场景重建
   date: '2026-01-14'
+- title: 'Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding'
+  arxiv: '2603.19235'
+  url: https://arxiv.org/abs/2603.19235
+  institution: HUST, Baidu
+  venue: arXiv 2026
+  domain: general
+  subcategory: spatial
+  summary: 挖掘视频生成模型隐式3D先验，为场景理解与空间推理注入几何感知能力
+  date: '2026-03-19'
+- title: 'Insight-V++: Towards Advanced Long-Chain Visual Reasoning with Multimodal Large Language Models'
+  arxiv: '2603.18118'
+  url: https://arxiv.org/abs/2603.18118
+  institution: NTU, Tencent, Tsinghua
+  venue: arXiv 2026
+  domain: general
+  subcategory: latent-reasoning
+  summary: 多智能体长链视觉推理框架，引入ST-GRPO/J-GRPO并通过自进化闭环持续提升
+  date: '2026-03-18'
 - title: 'ThinkMorph: Emergent Properties in Multimodal Interleaved CoT'
   arxiv: '2510.27492'
   url: https://arxiv.org/abs/2510.27492
@@ -1222,6 +1267,15 @@
   subcategory: multimodal-arch
   summary: 超越语言建模，系统性探索原生多模态预训练的设计空间
   date: '2026-03-03'
+- title: 'FASTER: Rethinking Real-Time Flow VLAs'
+  arxiv: '2603.19199'
+  url: https://arxiv.org/abs/2603.19199
+  institution: HKU, ACE Robotics
+  venue: arXiv 2026
+  domain: general
+  subcategory: efficient
+  summary: 提出面向流式VLA的即时反应采样策略，将近端动作去噪显著加速以降低反应延迟
+  date: '2026-03-19'
 - title: 'VLA-Perf: Demystifying VLA Inference Performance'
   arxiv: '2602.18397'
   url: https://arxiv.org/abs/2602.18397

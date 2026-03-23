@@ -4,7 +4,7 @@
 
 > A curated collection of papers on **Vision-Language-Action (VLA)** models, covering autonomous driving, robotics, world models, spatial reasoning, and more.
 
-**158 papers** | **AD: 43 | Robotics: 60 | General: 55** | Last updated: 2026-03-17
+**164 papers** | **AD: 45 | Robotics: 61 | General: 58** | Last updated: 2026-03-19
 
 📡 **[Daily arXiv Feed →](daily/)** — auto-updated every morning with latest VLA papers from top institutions
 
@@ -15,22 +15,22 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 ## Table of Contents
 
 - [I. Autonomous Driving](#i-autonomous-driving)
-  - [End-to-End VLA Architecture (18)](#end-to-end-vla-architecture-18)
-  - [World Models (14)](#world-models-14)
+  - [End-to-End VLA Architecture (19)](#end-to-end-vla-architecture-19)
+  - [World Models (15)](#world-models-15)
   - [Simulation & Data (5)](#simulation--data-5)
   - [Planning & Control (2)](#planning--control-2)
   - [Safety & Benchmarks (4)](#safety--benchmarks-4)
 - [II. Robotics](#ii-robotics)
-  - [VLA Architecture (22)](#vla-architecture-22)
+  - [VLA Architecture (23)](#vla-architecture-23)
   - [Action Tokenization (7)](#action-tokenization-7)
   - [World Models & Policy Co-learning (10)](#world-models--policy-co-learning-10)
   - [RL & Policy Optimization (12)](#rl--policy-optimization-12)
   - [Data & Pre-training (9)](#data--pre-training-9)
 - [III. General / Cross-domain](#iii-general--cross-domain)
-  - [Spatial Perception & 3D/4D (14)](#spatial-perception--3d4d-14)
-  - [Latent Reasoning & Chain-of-Thought (8)](#latent-reasoning--chain-of-thought-8)
+  - [Spatial Perception & 3D/4D (15)](#spatial-perception--3d4d-15)
+  - [Latent Reasoning & Chain-of-Thought (9)](#latent-reasoning--chain-of-thought-9)
   - [Multimodal Architecture & Pre-training (11)](#multimodal-architecture--pre-training-11)
-  - [Efficient Inference (10)](#efficient-inference-10)
+  - [Efficient Inference (11)](#efficient-inference-11)
   - [Physical AI Benchmarks (6)](#physical-ai-benchmarks-6)
   - [Surveys (6)](#surveys-6)
 
@@ -38,10 +38,11 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 ## I. Autonomous Driving
 
-### End-to-End VLA Architecture (18)
+### End-to-End VLA Architecture (19)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **CausalVAD: De-confounding End-to-End Autonomous Driving via Causal Intervention** | Fudan, BIT, ECNU | ![Mar 19, 2026](https://img.shields.io/badge/Mar_19,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.18561) |
 | **Unleashing VLA Potentials in Autonomous Driving via Explicit Learning from Failures** | Tsinghua, Univ of Macau | ![Mar 1, 2026](https://img.shields.io/badge/Mar_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.01063) |
 | **Unleashing the Potential of Diffusion Models for E2E AD** | Tsinghua, Xiaomi | ![Feb 26, 2026](https://img.shields.io/badge/Feb_26,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.22801) |
 | **VGGDrive: Cross-View Geometric Grounding for AD** | Tianjin Univ, Xiaomi | ![Feb 24, 2026](https://img.shields.io/badge/Feb_24,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.20794) |
@@ -61,10 +62,11 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 | **ReCogDrive: Reinforced Cognitive Framework for E2E AD** | HUST, Xiaomi | ![Jun 9, 2025](https://img.shields.io/badge/Jun_9,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2506.08052) |
 | **Human and Algorithmic Visual Attention in Driving Tasks** | Tsinghua (AIR) | ![Feb 12, 2026](https://img.shields.io/badge/Feb_12,_2026-red?style=flat-square) | [Paper](https://www.nature.com/articles/s44387-026-00079-1) |
 
-### World Models (14)
+### World Models (15)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **DriveTok: 3D Driving Scene Tokenization for Unified Multi-View Reconstruction and Understanding** | Tsinghua, Yinwang | ![Mar 19, 2026](https://img.shields.io/badge/Mar_19,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.19219) |
 | **DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving** | Huawei, Fudan, CUHK | ![Mar 9, 2026](https://img.shields.io/badge/Mar_9,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.08254) |
 | **Risk-Aware World Model Predictive Control for E2E AD** | Univ of Trento, SYSU | ![Feb 26, 2026](https://img.shields.io/badge/Feb_26,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.23259) |
 | **World Guidance: World Modeling in Condition Space for Action Generation** | ByteDance, HKU | ![Feb 25, 2026](https://img.shields.io/badge/Feb_25,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.22010) |
@@ -110,10 +112,11 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 ## II. Robotics
 
-### VLA Architecture (22)
+### VLA Architecture (23)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **Action Draft and Verify: A Self-Verifying Framework for Vision-Language-Action Model** | — | ![Mar 18, 2026](https://img.shields.io/badge/Mar_18,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.18091) |
 | **PVI: Plug-in Visual Injection for Vision-Language-Action Models** | PKU, HKU | ![Mar 13, 2026](https://img.shields.io/badge/Mar_13,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.12772) |
 | **OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams** | Oxford, SJTU | ![Mar 12, 2026](https://img.shields.io/badge/Mar_12,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.12265) |
 | **MEM: Multi-Scale Embodied Memory for VLA** | Physical Intelligence | ![Mar 4, 2026](https://img.shields.io/badge/Mar_4,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.03596) |
@@ -199,10 +202,11 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 ## III. General / Cross-domain
 
-### Spatial Perception & 3D/4D (14)
+### Spatial Perception & 3D/4D (15)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding** | HUST, Baidu | ![Mar 19, 2026](https://img.shields.io/badge/Mar_19,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.19235) |
 | **V-DPM: 4D Video Reconstruction with Dynamic Point Maps** | Univ of Oxford | ![Jan 14, 2026](https://img.shields.io/badge/Jan_14,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2601.09499) |
 | **Forging Spatial Intelligence: Roadmap** | ZJU, NUS | ![Dec 30, 2025](https://img.shields.io/badge/Dec_30,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2512.24385) |
 | **SpatialTree: How Spatial Abilities Branch Out in MLLMs** | ZJU, ByteDance | ![Dec 23, 2025](https://img.shields.io/badge/Dec_23,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2512.20617) |
@@ -218,10 +222,11 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 | **PixelRefer: Unified Spatio-Temporal Object Referring** | ZJU, Alibaba DAMO | ![Oct 27, 2025](https://img.shields.io/badge/Oct_27,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2510.23603) |
 | **Revisiting Multimodal Positional Encoding in VLMs** | Alibaba | ![Oct 27, 2025](https://img.shields.io/badge/Oct_27,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2510.23095) |
 
-### Latent Reasoning & Chain-of-Thought (8)
+### Latent Reasoning & Chain-of-Thought (9)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **Insight-V++: Towards Advanced Long-Chain Visual Reasoning with Multimodal Large Language Models** | NTU, Tencent, Tsinghua | ![Mar 18, 2026](https://img.shields.io/badge/Mar_18,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.18118) |
 | **SwimBird: Switchable Reasoning Mode in Hybrid Autoregressive MLLMs** | HUST, Alibaba | ![Feb 5, 2026](https://img.shields.io/badge/Feb_5,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.06040) |
 | **LaST₀: Latent Spatio-Temporal CoT for Robotic VLA** | PKU, CUHK | ![Jan 8, 2026](https://img.shields.io/badge/Jan_8,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2601.05248) |
 | **VideoAuto-R1: Video Auto Reasoning (Thinking Once, Answering Twice)** | Meta, KAUST | ![Jan 8, 2026](https://img.shields.io/badge/Jan_8,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2601.05175) |
@@ -247,10 +252,11 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 | **LightFusion: Double Fusion for Unified Multimodal** | UCSC, ByteDance | ![Oct 27, 2025](https://img.shields.io/badge/Oct_27,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2510.22946) |
 | **BAGEL: Emerging Properties in Unified Multimodal Pretraining** | ByteDance | ![May 20, 2025](https://img.shields.io/badge/May_20,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2505.14683) |
 
-### Efficient Inference (10)
+### Efficient Inference (11)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **FASTER: Rethinking Real-Time Flow VLAs** | HKU, ACE Robotics | ![Mar 19, 2026](https://img.shields.io/badge/Mar_19,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.19199) |
 | **ApET: Approximation-Error Guided Token Compression** | SIAT, PCL | ![Feb 23, 2026](https://img.shields.io/badge/Feb_23,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.19870) |
 | **VLA-Perf: Demystifying VLA Inference Performance** | NVIDIA | ![Feb 20, 2026](https://img.shields.io/badge/Feb_20,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.18397) |
 | **AstraNav-Memory: Contexts Compression for Long Memory** | Alibaba, Tsinghua, PKU | ![Dec 25, 2025](https://img.shields.io/badge/Dec_25,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2512.21627) |

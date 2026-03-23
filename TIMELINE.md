@@ -1,25 +1,31 @@
 # VLA Papers Timeline
 
-> 158 papers sorted by date (newest first) | Updated: 2026-03-17
+> 164 papers sorted by date (newest first) | Updated: 2026-03-19
 
 [Back to Main](README.md)
 
-## Mar 2026 (12 papers)
+## Mar 2026 (18 papers)
 
 | # | Paper | Institution | Date | Category | Link |
 |:-:|:------|:-----------|:----:|:---------|:-----|
-| 1 | **RARRL: Resource-Aware Reasoning via RL for Embodied Robotic Decision-Making** | CMU, Harvard, MIT, Cornell, Tsinghua, PKU | Mar 17 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2603.16673) |
-| 2 | **PVI: Plug-in Visual Injection for Vision-Language-Action Models** | PKU, HKU | Mar 13 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.12772) |
-| 3 | **Beyond Dense Futures: World Models as Structured Planners for Robotic Manipulation** | USTC | Mar 13 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2603.12553) |
-| 4 | **RoboStereo: Dual-Tower 4D Embodied World Models for Unified Policy Optimization** | Tsinghua, HKUST | Mar 13 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2603.12639) |
-| 5 | **OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams** | Oxford, SJTU | Mar 12 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.12265) |
-| 6 | **DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving** | Huawei, Fudan, CUHK | Mar 9 | Autonomous Driving / World Models | [Paper](https://arxiv.org/abs/2603.08254) |
-| 7 | **MEM: Multi-Scale Embodied Memory for VLA** | Physical Intelligence | Mar 4 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.03596) |
-| 8 | **ACE-Brain-0: Spatial Intelligence as a Shared Scaffold for Universal Embodiments** | SJTU, Fudan, USTC, SYSU | Mar 3 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.03198) |
-| 9 | **Beyond Language Modeling: An Exploration of Multimodal Pretraining** | Meta AI, NYU | Mar 3 | General / Cross-domain / Multimodal Architecture & Pre-training | [Paper](https://arxiv.org/abs/2603.03276) |
-| 10 | **NIAF: Neural Implicit Action Fields** | — | Mar 2 | Robotics / Action Tokenization | [Paper](https://arxiv.org/abs/2603.01766) |
-| 11 | **π-StepNFT: Wider Space Needs Finer Steps in Online RL for Flow-based VLAs** | GigaAI, CASIA, Tsinghua, Edinburgh, UCL | Mar 2 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2603.02083) |
-| 12 | **Unleashing VLA Potentials in Autonomous Driving via Explicit Learning from Failures** | Tsinghua, Univ of Macau | Mar 1 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2603.01063) |
+| 1 | **CausalVAD: De-confounding End-to-End Autonomous Driving via Causal Intervention** | Fudan, BIT, ECNU | Mar 19 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2603.18561) |
+| 2 | **DriveTok: 3D Driving Scene Tokenization for Unified Multi-View Reconstruction and Understanding** | Tsinghua, Yinwang | Mar 19 | Autonomous Driving / World Models | [Paper](https://arxiv.org/abs/2603.19219) |
+| 3 | **Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding** | HUST, Baidu | Mar 19 | General / Cross-domain / Spatial Perception & 3D/4D | [Paper](https://arxiv.org/abs/2603.19235) |
+| 4 | **FASTER: Rethinking Real-Time Flow VLAs** | HKU, ACE Robotics | Mar 19 | General / Cross-domain / Efficient Inference | [Paper](https://arxiv.org/abs/2603.19199) |
+| 5 | **Action Draft and Verify: A Self-Verifying Framework for Vision-Language-Action Model** | — | Mar 18 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.18091) |
+| 6 | **Insight-V++: Towards Advanced Long-Chain Visual Reasoning with Multimodal Large Language Models** | NTU, Tencent, Tsinghua | Mar 18 | General / Cross-domain / Latent Reasoning & Chain-of-Thought | [Paper](https://arxiv.org/abs/2603.18118) |
+| 7 | **RARRL: Resource-Aware Reasoning via RL for Embodied Robotic Decision-Making** | CMU, Harvard, MIT, Cornell, Tsinghua, PKU | Mar 17 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2603.16673) |
+| 8 | **PVI: Plug-in Visual Injection for Vision-Language-Action Models** | PKU, HKU | Mar 13 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.12772) |
+| 9 | **Beyond Dense Futures: World Models as Structured Planners for Robotic Manipulation** | USTC | Mar 13 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2603.12553) |
+| 10 | **RoboStereo: Dual-Tower 4D Embodied World Models for Unified Policy Optimization** | Tsinghua, HKUST | Mar 13 | Robotics / World Models & Policy Co-learning | [Paper](https://arxiv.org/abs/2603.12639) |
+| 11 | **OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams** | Oxford, SJTU | Mar 12 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.12265) |
+| 12 | **DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving** | Huawei, Fudan, CUHK | Mar 9 | Autonomous Driving / World Models | [Paper](https://arxiv.org/abs/2603.08254) |
+| 13 | **MEM: Multi-Scale Embodied Memory for VLA** | Physical Intelligence | Mar 4 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.03596) |
+| 14 | **ACE-Brain-0: Spatial Intelligence as a Shared Scaffold for Universal Embodiments** | SJTU, Fudan, USTC, SYSU | Mar 3 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2603.03198) |
+| 15 | **Beyond Language Modeling: An Exploration of Multimodal Pretraining** | Meta AI, NYU | Mar 3 | General / Cross-domain / Multimodal Architecture & Pre-training | [Paper](https://arxiv.org/abs/2603.03276) |
+| 16 | **NIAF: Neural Implicit Action Fields** | — | Mar 2 | Robotics / Action Tokenization | [Paper](https://arxiv.org/abs/2603.01766) |
+| 17 | **π-StepNFT: Wider Space Needs Finer Steps in Online RL for Flow-based VLAs** | GigaAI, CASIA, Tsinghua, Edinburgh, UCL | Mar 2 | Robotics / RL & Policy Optimization | [Paper](https://arxiv.org/abs/2603.02083) |
+| 18 | **Unleashing VLA Potentials in Autonomous Driving via Explicit Learning from Failures** | Tsinghua, Univ of Macau | Mar 1 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2603.01063) |
 
 ## Feb 2026 (40 papers)
 
