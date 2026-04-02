@@ -160,6 +160,15 @@
   subcategory: e2e
   summary: 通过稀疏因果干预消除自动驾驶决策中的混杂偏差，提升规划安全性与鲁棒性
   date: '2026-03-19'
+- title: 'Vega: Learning to Drive with Natural Language Instructions'
+  arxiv: '2603.25741'
+  url: https://arxiv.org/abs/2603.25741
+  institution: Tsinghua, GigaAI
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 统一视觉-语言-世界-动作建模，支持自然语言指令驱动的个性化驾驶规划
+  date: '2026-03-30'
 - title: Human and Algorithmic Visual Attention in Driving Tasks
   arxiv: ''
   url: https://www.nature.com/articles/s44387-026-00079-1
@@ -178,6 +187,24 @@
   subcategory: world-model
   summary: 面向多视角驾驶场景的3D token化框架，统一重建与理解并增强跨视角一致性
   date: '2026-03-19'
+- title: 'StreetForward: Perceiving Dynamic Street with Feedforward Causal Attention'
+  arxiv: '2603.19552'
+  url: https://arxiv.org/abs/2603.19552
+  institution: Li Auto, ZJU
+  venue: arXiv 2026
+  domain: ad
+  subcategory: world-model
+  summary: 前馈式动态街景重建框架，无需位姿和跟踪即可实现高保真时空新视角生成
+  date: '2026-03-20'
+- title: Toward Physically Consistent Driving Video World Models under Challenging Trajectories
+  arxiv: '2603.24506'
+  url: https://arxiv.org/abs/2603.24506
+  institution: ZJU, Xiaomi EV, HK PolyU
+  venue: arXiv 2026
+  domain: ad
+  subcategory: world-model
+  summary: 在挑战轨迹条件下提升驾驶视频世界模型的物理一致性，联合轨迹修正与视频生成
+  date: '2026-03-25'
 - title: 'OmniNWM: Omniscient Driving Navigation World Models'
   arxiv: '2510.18313'
   url: https://arxiv.org/abs/2510.18313
@@ -403,6 +430,24 @@
   subcategory: safety-benchmark
   summary: 上下文感知的自动驾驶评估框架，利用VLM实现人类对齐的驾驶评价
   date: '2025-10-15'
+- title: 'Traffic Sign Recognition in Autonomous Driving: Dataset, Benchmark, and Field Experiment'
+  arxiv: '2603.23034'
+  url: https://arxiv.org/abs/2603.23034
+  institution: HKUST(GZ), Lingnan, HKUST
+  venue: arXiv 2026
+  domain: ad
+  subcategory: safety-benchmark
+  summary: 提出百万级交通标志数据集TS-1M与诊断基准，系统评估跨区域、长尾与语义理解能力
+  date: '2026-03-24'
+- title: 'Can Users Specify Driving Speed? Bench2Drive-Speed: Benchmark and Baselines for Desired-Speed Conditioned Autonomous Driving'
+  arxiv: '2603.25672'
+  url: https://arxiv.org/abs/2603.25672
+  institution: SJTU, Fudan, NVIDIA
+  venue: arXiv 2026
+  domain: ad
+  subcategory: safety-benchmark
+  summary: 首个目标速度条件自动驾驶基准，评估速度遵循与超车策略控制能力
+  date: '2026-03-26'
 - title: 'Action Draft and Verify: A Self-Verifying Framework for Vision-Language-Action Model'
   arxiv: '2603.18091'
   url: https://arxiv.org/abs/2603.18091
@@ -412,6 +457,51 @@
   subcategory: vla-arch
   summary: 扩散动作草拟+VLM并行校验重排的自验证推理框架，兼顾精度与OOD鲁棒性
   date: '2026-03-18'
+- title: 'StreamingVLA: Streaming Vision-Language-Action Model with Action Flow Matching and Adaptive Early Observation'
+  arxiv: '2603.28565'
+  url: https://arxiv.org/abs/2603.28565
+  institution: Tsinghua, Lenovo
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 流式并行化观察/生成/执行阶段，结合动作流匹配与早观测机制显著降低延迟
+  date: '2026-03-30'
+- title: 'DFM-VLA: Iterative Action Refinement for Robot Manipulation via Discrete Flow Matching'
+  arxiv: '2603.26320'
+  url: https://arxiv.org/abs/2603.26320
+  institution: HKUST(GZ), HIT, ShanghaiTech
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 基于离散流匹配迭代细化动作token，缓解早期token错误累积并提升操控成功率
+  date: '2026-03-27'
+- title: 'Fast-dVLA: Accelerating Discrete Diffusion VLA to Real-Time Performance'
+  arxiv: '2603.25661'
+  url: https://arxiv.org/abs/2603.25661
+  institution: HKUST(GZ), ShanghaiTech, Tsinghua
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 通过能力向量与轻量正则实现离散扩散VLA实时加速，同时保持任务性能
+  date: '2026-03-26'
+- title: 'MMaDA-VLA: Large Diffusion Vision-Language-Action Model with Unified Multi-Modal Instruction and Generation'
+  arxiv: '2603.25406'
+  url: https://arxiv.org/abs/2603.25406
+  institution: HKUST(GZ), ShanghaiTech, Tsinghua
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 将语言、图像与动作统一到离散扩散框架，联合未来观测与动作并行生成
+  date: '2026-03-26'
+- title: '3D-Mix for VLA: A Plug-and-Play Module for Integrating VGGT-based 3D Information into Vision-Language-Action Models'
+  arxiv: '2603.24393'
+  url: https://arxiv.org/abs/2603.24393
+  institution: HIT, HUST, HKUST(GZ), BUAA
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 即插即用3D融合模块，系统比较9种融合策略并提升VLA空间智能与OOD表现
+  date: '2026-03-25'
 - title: 'π₀.₆: a VLA That Learns From Experience'
   arxiv: '2511.14759'
   url: https://arxiv.org/abs/2511.14759
@@ -871,6 +961,15 @@
   subcategory: rl-policy
   summary: RL学习何时调用LLM推理的资源感知编排策略，自适应分配计算预算提升具身任务成功率
   date: '2026-03-17'
+- title: 'Towards Generalizable Robotic Data Flywheel: High-Dimensional Factorization and Composition'
+  arxiv: '2603.25583'
+  url: https://arxiv.org/abs/2603.25583
+  institution: ByteDance Seed
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: 提出因子感知组合式迭代学习框架F-ACIL，以更少示教实现更强机器人组合泛化
+  date: '2026-03-26'
 - title: 'IGen: Scalable Data Generation from Open-World Images'
   arxiv: '2512.01773'
   url: https://arxiv.org/abs/2512.01773
@@ -1276,6 +1375,15 @@
   subcategory: efficient
   summary: 提出面向流式VLA的即时反应采样策略，将近端动作去噪显著加速以降低反应延迟
   date: '2026-03-19'
+- title: 'Beyond Attention Magnitude: Leveraging Inter-layer Rank Consistency for Efficient Vision-Language-Action Models'
+  arxiv: '2603.24941'
+  url: https://arxiv.org/abs/2603.24941
+  institution: Fudan
+  venue: arXiv 2026
+  domain: general
+  subcategory: efficient
+  summary: 通过跨层排序一致性动态筛选视觉token，在降算力同时提升VLA推理成功率
+  date: '2026-03-26'
 - title: 'VLA-Perf: Demystifying VLA Inference Performance'
   arxiv: '2602.18397'
   url: https://arxiv.org/abs/2602.18397

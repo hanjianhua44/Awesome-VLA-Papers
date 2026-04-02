@@ -4,7 +4,7 @@
 
 > A curated collection of papers on **Vision-Language-Action (VLA)** models, covering autonomous driving, robotics, world models, spatial reasoning, and more.
 
-**164 papers** | **AD: 45 | Robotics: 61 | General: 58** | Last updated: 2026-03-19
+**176 papers** | **AD: 50 | Robotics: 67 | General: 59** | Last updated: 2026-03-30
 
 📡 **[Daily arXiv Feed →](daily/)** — auto-updated every morning with latest VLA papers from top institutions
 
@@ -15,22 +15,22 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 ## Table of Contents
 
 - [I. Autonomous Driving](#i-autonomous-driving)
-  - [End-to-End VLA Architecture (19)](#end-to-end-vla-architecture-19)
-  - [World Models (15)](#world-models-15)
+  - [End-to-End VLA Architecture (20)](#end-to-end-vla-architecture-20)
+  - [World Models (17)](#world-models-17)
   - [Simulation & Data (5)](#simulation--data-5)
   - [Planning & Control (2)](#planning--control-2)
-  - [Safety & Benchmarks (4)](#safety--benchmarks-4)
+  - [Safety & Benchmarks (6)](#safety--benchmarks-6)
 - [II. Robotics](#ii-robotics)
-  - [VLA Architecture (23)](#vla-architecture-23)
+  - [VLA Architecture (28)](#vla-architecture-28)
   - [Action Tokenization (7)](#action-tokenization-7)
   - [World Models & Policy Co-learning (10)](#world-models--policy-co-learning-10)
   - [RL & Policy Optimization (12)](#rl--policy-optimization-12)
-  - [Data & Pre-training (9)](#data--pre-training-9)
+  - [Data & Pre-training (10)](#data--pre-training-10)
 - [III. General / Cross-domain](#iii-general--cross-domain)
   - [Spatial Perception & 3D/4D (15)](#spatial-perception--3d4d-15)
   - [Latent Reasoning & Chain-of-Thought (9)](#latent-reasoning--chain-of-thought-9)
   - [Multimodal Architecture & Pre-training (11)](#multimodal-architecture--pre-training-11)
-  - [Efficient Inference (11)](#efficient-inference-11)
+  - [Efficient Inference (12)](#efficient-inference-12)
   - [Physical AI Benchmarks (6)](#physical-ai-benchmarks-6)
   - [Surveys (6)](#surveys-6)
 
@@ -38,10 +38,11 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 ## I. Autonomous Driving
 
-### End-to-End VLA Architecture (19)
+### End-to-End VLA Architecture (20)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **Vega: Learning to Drive with Natural Language Instructions** | Tsinghua, GigaAI | ![Mar 30, 2026](https://img.shields.io/badge/Mar_30,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.25741) |
 | **CausalVAD: De-confounding End-to-End Autonomous Driving via Causal Intervention** | Fudan, BIT, ECNU | ![Mar 19, 2026](https://img.shields.io/badge/Mar_19,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.18561) |
 | **Unleashing VLA Potentials in Autonomous Driving via Explicit Learning from Failures** | Tsinghua, Univ of Macau | ![Mar 1, 2026](https://img.shields.io/badge/Mar_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.01063) |
 | **Unleashing the Potential of Diffusion Models for E2E AD** | Tsinghua, Xiaomi | ![Feb 26, 2026](https://img.shields.io/badge/Feb_26,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.22801) |
@@ -62,10 +63,12 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 | **ReCogDrive: Reinforced Cognitive Framework for E2E AD** | HUST, Xiaomi | ![Jun 9, 2025](https://img.shields.io/badge/Jun_9,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2506.08052) |
 | **Human and Algorithmic Visual Attention in Driving Tasks** | Tsinghua (AIR) | ![Feb 12, 2026](https://img.shields.io/badge/Feb_12,_2026-red?style=flat-square) | [Paper](https://www.nature.com/articles/s44387-026-00079-1) |
 
-### World Models (15)
+### World Models (17)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **Toward Physically Consistent Driving Video World Models under Challenging Trajectories** | ZJU, Xiaomi EV, HK PolyU | ![Mar 25, 2026](https://img.shields.io/badge/Mar_25,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.24506) |
+| **StreetForward: Perceiving Dynamic Street with Feedforward Causal Attention** | Li Auto, ZJU | ![Mar 20, 2026](https://img.shields.io/badge/Mar_20,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.19552) |
 | **DriveTok: 3D Driving Scene Tokenization for Unified Multi-View Reconstruction and Understanding** | Tsinghua, Yinwang | ![Mar 19, 2026](https://img.shields.io/badge/Mar_19,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.19219) |
 | **DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving** | Huawei, Fudan, CUHK | ![Mar 9, 2026](https://img.shields.io/badge/Mar_9,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.08254) |
 | **Risk-Aware World Model Predictive Control for E2E AD** | Univ of Trento, SYSU | ![Feb 26, 2026](https://img.shields.io/badge/Feb_26,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.23259) |
@@ -99,10 +102,12 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 | **TrajMoE: Scene-Adaptive Trajectory Planning with MoE and RL** | CASIA, Xiaomi | ![Dec 8, 2025](https://img.shields.io/badge/Dec_8,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2512.07135) |
 | **WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching** | Fudan | ![Dec 5, 2025](https://img.shields.io/badge/Dec_5,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2512.06112) |
 
-### Safety & Benchmarks (4)
+### Safety & Benchmarks (6)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **Can Users Specify Driving Speed? Bench2Drive-Speed: Benchmark and Baselines for Desired-Speed Conditioned Autonomous Driving** | SJTU, Fudan, NVIDIA | ![Mar 26, 2026](https://img.shields.io/badge/Mar_26,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.25672) |
+| **Traffic Sign Recognition in Autonomous Driving: Dataset, Benchmark, and Field Experiment** | HKUST(GZ), Lingnan, HKUST | ![Mar 24, 2026](https://img.shields.io/badge/Mar_24,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.23034) |
 | **Safe-SDL: Safety Boundaries for AI-Driven Self-Driving Labs** | SJTU | ![Feb 13, 2026](https://img.shields.io/badge/Feb_13,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.15061) |
 | **WorldLens: Full-Spectrum Evaluations of Driving World Models** | NTU, S-Lab | ![Dec 11, 2025](https://img.shields.io/badge/Dec_11,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2512.10958) |
 | **DriveCritic: Towards Context-Aware, Human-Aligned Evaluation for Autonomous Driving with Vision-Language Models** | NVIDIA, UMich, Fudan | ![Oct 15, 2025](https://img.shields.io/badge/Oct_15,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2510.13108) |
@@ -112,10 +117,15 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 ## II. Robotics
 
-### VLA Architecture (23)
+### VLA Architecture (28)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **StreamingVLA: Streaming Vision-Language-Action Model with Action Flow Matching and Adaptive Early Observation** | Tsinghua, Lenovo | ![Mar 30, 2026](https://img.shields.io/badge/Mar_30,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.28565) |
+| **DFM-VLA: Iterative Action Refinement for Robot Manipulation via Discrete Flow Matching** | HKUST(GZ), HIT, ShanghaiTech | ![Mar 27, 2026](https://img.shields.io/badge/Mar_27,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.26320) |
+| **Fast-dVLA: Accelerating Discrete Diffusion VLA to Real-Time Performance** | HKUST(GZ), ShanghaiTech, Tsinghua | ![Mar 26, 2026](https://img.shields.io/badge/Mar_26,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.25661) |
+| **MMaDA-VLA: Large Diffusion Vision-Language-Action Model with Unified Multi-Modal Instruction and Generation** | HKUST(GZ), ShanghaiTech, Tsinghua | ![Mar 26, 2026](https://img.shields.io/badge/Mar_26,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.25406) |
+| **3D-Mix for VLA: A Plug-and-Play Module for Integrating VGGT-based 3D Information into Vision-Language-Action Models** | HIT, HUST, HKUST(GZ), BUAA | ![Mar 25, 2026](https://img.shields.io/badge/Mar_25,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.24393) |
 | **Action Draft and Verify: A Self-Verifying Framework for Vision-Language-Action Model** | — | ![Mar 18, 2026](https://img.shields.io/badge/Mar_18,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.18091) |
 | **PVI: Plug-in Visual Injection for Vision-Language-Action Models** | PKU, HKU | ![Mar 13, 2026](https://img.shields.io/badge/Mar_13,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.12772) |
 | **OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams** | Oxford, SJTU | ![Mar 12, 2026](https://img.shields.io/badge/Mar_12,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.12265) |
@@ -184,10 +194,11 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 | **Unified RL and Imitation Learning for VLMs** | NVIDIA, KAIST | ![Oct 22, 2025](https://img.shields.io/badge/Oct_22,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2510.19307) |
 | **DiffusionNFT: Online Diffusion Reinforcement with Forward Process** | Tsinghua, NVIDIA, Stanford | ![Sep 19, 2025](https://img.shields.io/badge/Sep_19,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2509.16117) |
 
-### Data & Pre-training (9)
+### Data & Pre-training (10)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **Towards Generalizable Robotic Data Flywheel: High-Dimensional Factorization and Composition** | ByteDance Seed | ![Mar 26, 2026](https://img.shields.io/badge/Mar_26,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.25583) |
 | **LAP: Language-Action Pre-Training for Zero-shot Cross-Embodiment** | Princeton, Physical Intelligence | ![Feb 11, 2026](https://img.shields.io/badge/Feb_11,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.10556) |
 | **SAGE: Scalable Agentic 3D Scene Generation for Embodied AI** | NVIDIA, UIUC | ![Feb 10, 2026](https://img.shields.io/badge/Feb_10,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.10116) |
 | **RoboWheel: Data Engine from Real-World Human Demonstrations** | Tsinghua | ![Dec 2, 2025](https://img.shields.io/badge/Dec_2,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2512.02729) |
@@ -252,10 +263,11 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 | **LightFusion: Double Fusion for Unified Multimodal** | UCSC, ByteDance | ![Oct 27, 2025](https://img.shields.io/badge/Oct_27,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2510.22946) |
 | **BAGEL: Emerging Properties in Unified Multimodal Pretraining** | ByteDance | ![May 20, 2025](https://img.shields.io/badge/May_20,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2505.14683) |
 
-### Efficient Inference (11)
+### Efficient Inference (12)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **Beyond Attention Magnitude: Leveraging Inter-layer Rank Consistency for Efficient Vision-Language-Action Models** | Fudan | ![Mar 26, 2026](https://img.shields.io/badge/Mar_26,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.24941) |
 | **FASTER: Rethinking Real-Time Flow VLAs** | HKU, ACE Robotics | ![Mar 19, 2026](https://img.shields.io/badge/Mar_19,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.19199) |
 | **ApET: Approximation-Error Guided Token Compression** | SIAT, PCL | ![Feb 23, 2026](https://img.shields.io/badge/Feb_23,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.19870) |
 | **VLA-Perf: Demystifying VLA Inference Performance** | NVIDIA | ![Feb 20, 2026](https://img.shields.io/badge/Feb_20,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.18397) |
