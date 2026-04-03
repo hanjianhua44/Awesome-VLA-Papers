@@ -5,9 +5,12 @@ Outputs a markdown report to daily/YYYY/MM/YYYY-MM-DD.md
 import functools
 import re
 import io
+import os
 import ssl
 import json
 import time
+import sys
+import subprocess
 import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
@@ -173,8 +176,8 @@ def compute_relevance(title: str, abstract: str, categories: str) -> tuple:
     return score, topics[:8]
 
 
-def fetch_arxiv_batch(query: str, start: int, max_results: int, retries: int = 3) -> str:
-    """Fetch a single batch from arXiv API with retry."""
+def fetch_arxiv_batch(query: str, start: int, max_results: int, retries: int = 8) -> str:
+    """Fetch a single batch from arXiv API with robust retry/fallback."""
     params = {
         "search_query": query,
         "start": start,
@@ -182,15 +185,23 @@ def fetch_arxiv_batch(query: str, start: int, max_results: int, retries: int = 3
         "sortBy": "submittedDate",
         "sortOrder": "descending",
     }
-    url = f"http://export.arxiv.org/api/query?{urllib.parse.urlencode(params)}"
+    qs = urllib.parse.urlencode(params)
+    urls = [
+        f"https://export.arxiv.org/api/query?{qs}",
+        f"http://export.arxiv.org/api/query?{qs}",
+    ]
     for attempt in range(retries):
         try:
+            url = urls[attempt % len(urls)]
             req = urllib.request.Request(url, headers={"User-Agent": "VLA-Paper-Agent/1.0"})
-            resp = urllib.request.urlopen(req, context=SSL_CTX, timeout=120)
+            if url.startswith("https://"):
+                resp = urllib.request.urlopen(req, context=SSL_CTX, timeout=120)
+            else:
+                resp = urllib.request.urlopen(req, timeout=120)
             return resp.read().decode("utf-8")
         except Exception as e:
             if attempt < retries - 1:
-                wait = 10 * (attempt + 1)
+                wait = min(60, 5 * (attempt + 1))
                 print(f"    Retry {attempt+1}/{retries} after {wait}s: {e}")
                 time.sleep(wait)
             else:
@@ -293,6 +304,29 @@ def _fetch_raw(target_dates: set, days_ago: int) -> list:
     return [p for p in all_raw if p["published"] in target_dates]
 
 
+def _extract_pdf_inst_isolated(arxiv_id: str, timeout_s: int) -> str:
+    """Extract institution in a subprocess with hard timeout."""
+    code = (
+        "import sys; "
+        "from inst_utils import extract_institutions_from_pdf; "
+        "sys.stdout.write((extract_institutions_from_pdf(sys.argv[1]) or '').strip())"
+    )
+    try:
+        r = subprocess.run(
+            [sys.executable, "-c", code, arxiv_id],
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=timeout_s,
+        )
+        if r.returncode != 0:
+            return ""
+        return (r.stdout or "").strip()
+    except Exception:
+        return ""
+
+
 def fetch_arxiv_papers(date_str: str = None):
     """Fetch ALL cs.CV + cs.RO papers, then filter locally by relevance + institution."""
     if date_str:
@@ -378,11 +412,14 @@ def fetch_arxiv_papers(date_str: str = None):
     print(f"  Candidates after keyword filter: {len(candidates)}/{len(date_filtered)}")
 
     # Phase 2: PDF enrichment — identify institutions before final filtering
-    if HAS_PDFPLUMBER:
+    skip_pdf_enrich = os.getenv("SKIP_PDF_ENRICH", "").strip().lower() in {"1", "true", "yes"}
+    if HAS_PDFPLUMBER and not skip_pdf_enrich:
         print(f"  Enriching institutions from PDF for {len(candidates)} papers...")
         enriched = 0
+        per_paper_timeout = int(os.getenv("PDF_INST_TIMEOUT", "25"))
         for i, p in enumerate(candidates):
-            pdf_inst = extract_institutions_from_pdf(p["arxiv_id"])
+            # subprocess.run(timeout=...) guarantees hard stop on parser hangs.
+            pdf_inst = _extract_pdf_inst_isolated(p["arxiv_id"], per_paper_timeout)
             if pdf_inst:
                 old_inst = p["institution"]
                 p["institution"] = pdf_inst
@@ -391,8 +428,10 @@ def fetch_arxiv_papers(date_str: str = None):
                 enriched += 1
             if (i + 1) % 10 == 0:
                 print(f"    Processed {i+1}/{len(candidates)}...")
-            time.sleep(1)
+            time.sleep(0.2)
         print(f"    PDF enrichment: {enriched}/{len(candidates)} institutions found")
+    elif skip_pdf_enrich:
+        print("  SKIP_PDF_ENRICH=1, skip PDF institution enrichment")
 
     # Phase 3: Keep only papers with at least one TIER1 institution
     results = [p for p in candidates if is_known_institution(p["institution"])]
