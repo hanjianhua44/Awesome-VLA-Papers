@@ -306,8 +306,9 @@ def _fetch_raw(target_dates: set, days_ago: int) -> list:
 
 def _extract_pdf_inst_isolated(arxiv_id: str, timeout_s: int) -> str:
     """Extract institution in a subprocess with hard timeout."""
+    script_dir = str(Path(__file__).parent)
     code = (
-        "import sys; "
+        f"import sys; sys.path.insert(0, r'{script_dir}'); "
         "from inst_utils import extract_institutions_from_pdf; "
         "sys.stdout.write((extract_institutions_from_pdf(sys.argv[1]) or '').strip())"
     )
