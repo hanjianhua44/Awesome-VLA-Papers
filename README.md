@@ -4,7 +4,7 @@
 
 > A curated collection of papers on **Vision-Language-Action (VLA)** models, covering autonomous driving, robotics, world models, spatial reasoning, and more.
 
-**176 papers** | **AD: 50 | Robotics: 67 | General: 59** | Last updated: 2026-03-30
+**182 papers** | **AD: 54 | Robotics: 69 | General: 59** | Last updated: 2026-04-09
 
 📡 **[Daily arXiv Feed →](daily/)** — auto-updated every morning with latest VLA papers from top institutions
 
@@ -15,13 +15,13 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 ## Table of Contents
 
 - [I. Autonomous Driving](#i-autonomous-driving)
-  - [End-to-End VLA Architecture (20)](#end-to-end-vla-architecture-20)
-  - [World Models (17)](#world-models-17)
+  - [End-to-End VLA Architecture (22)](#end-to-end-vla-architecture-22)
+  - [World Models (18)](#world-models-18)
   - [Simulation & Data (5)](#simulation--data-5)
   - [Planning & Control (2)](#planning--control-2)
-  - [Safety & Benchmarks (6)](#safety--benchmarks-6)
+  - [Safety & Benchmarks (7)](#safety--benchmarks-7)
 - [II. Robotics](#ii-robotics)
-  - [VLA Architecture (28)](#vla-architecture-28)
+  - [VLA Architecture (30)](#vla-architecture-30)
   - [Action Tokenization (7)](#action-tokenization-7)
   - [World Models & Policy Co-learning (10)](#world-models--policy-co-learning-10)
   - [RL & Policy Optimization (12)](#rl--policy-optimization-12)
@@ -38,10 +38,12 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 ## I. Autonomous Driving
 
-### End-to-End VLA Architecture (20)
+### End-to-End VLA Architecture (22)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving** | Xiaomi, HUST, Univ of Macau | ![Apr 2, 2026](https://img.shields.io/badge/Apr_2,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.02190) |
+| **DVGT-2: Vision-Geometry-Action Model for Autonomous Driving at Scale** | — | ![Apr 2, 2026](https://img.shields.io/badge/Apr_2,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.00813) |
 | **Vega: Learning to Drive with Natural Language Instructions** | Tsinghua, GigaAI | ![Mar 30, 2026](https://img.shields.io/badge/Mar_30,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.25741) |
 | **CausalVAD: De-confounding End-to-End Autonomous Driving via Causal Intervention** | Fudan, BIT, ECNU | ![Mar 19, 2026](https://img.shields.io/badge/Mar_19,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.18561) |
 | **Unleashing VLA Potentials in Autonomous Driving via Explicit Learning from Failures** | Tsinghua, Univ of Macau | ![Mar 1, 2026](https://img.shields.io/badge/Mar_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.01063) |
@@ -63,10 +65,11 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 | **ReCogDrive: Reinforced Cognitive Framework for E2E AD** | HUST, Xiaomi | ![Jun 9, 2025](https://img.shields.io/badge/Jun_9,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2506.08052) |
 | **Human and Algorithmic Visual Attention in Driving Tasks** | Tsinghua (AIR) | ![Feb 12, 2026](https://img.shields.io/badge/Feb_12,_2026-red?style=flat-square) | [Paper](https://www.nature.com/articles/s44387-026-00079-1) |
 
-### World Models (17)
+### World Models (18)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **DriveDreamer-Policy: A Geometry-Grounded World-Action Model for Unified Generation and Planning** | CUHK, Univ of Toronto | ![Apr 2, 2026](https://img.shields.io/badge/Apr_2,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.01765) |
 | **Toward Physically Consistent Driving Video World Models under Challenging Trajectories** | ZJU, Xiaomi EV, HK PolyU | ![Mar 25, 2026](https://img.shields.io/badge/Mar_25,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.24506) |
 | **StreetForward: Perceiving Dynamic Street with Feedforward Causal Attention** | Li Auto, ZJU | ![Mar 20, 2026](https://img.shields.io/badge/Mar_20,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.19552) |
 | **DriveTok: 3D Driving Scene Tokenization for Unified Multi-View Reconstruction and Understanding** | Tsinghua, Yinwang | ![Mar 19, 2026](https://img.shields.io/badge/Mar_19,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.19219) |
@@ -102,10 +105,11 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 | **TrajMoE: Scene-Adaptive Trajectory Planning with MoE and RL** | CASIA, Xiaomi | ![Dec 8, 2025](https://img.shields.io/badge/Dec_8,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2512.07135) |
 | **WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching** | Fudan | ![Dec 5, 2025](https://img.shields.io/badge/Dec_5,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2512.06112) |
 
-### Safety & Benchmarks (6)
+### Safety & Benchmarks (7)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **Bench2Drive-VL: Benchmarks for Closed-Loop Autonomous Driving with Vision-Language Models** | SJTU, Fudan | ![Apr 2, 2026](https://img.shields.io/badge/Apr_2,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.01259) |
 | **Can Users Specify Driving Speed? Bench2Drive-Speed: Benchmark and Baselines for Desired-Speed Conditioned Autonomous Driving** | SJTU, Fudan, NVIDIA | ![Mar 26, 2026](https://img.shields.io/badge/Mar_26,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.25672) |
 | **Traffic Sign Recognition in Autonomous Driving: Dataset, Benchmark, and Field Experiment** | HKUST(GZ), Lingnan, HKUST | ![Mar 24, 2026](https://img.shields.io/badge/Mar_24,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.23034) |
 | **Safe-SDL: Safety Boundaries for AI-Driven Self-Driving Labs** | SJTU | ![Feb 13, 2026](https://img.shields.io/badge/Feb_13,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.15061) |
@@ -117,10 +121,12 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 ## II. Robotics
 
-### VLA Architecture (28)
+### VLA Architecture (30)
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **A1: A Fully Transparent Open-Source, Adaptive and Efficient Truncated Vision-Language-Action Model** | — | ![Apr 8, 2026](https://img.shields.io/badge/Apr_8,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.05672) |
+| **StarVLA: A Lego-like Codebase for Vision-Language-Action Model Developing** | — | ![Apr 7, 2026](https://img.shields.io/badge/Apr_7,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.05014) |
 | **StreamingVLA: Streaming Vision-Language-Action Model with Action Flow Matching and Adaptive Early Observation** | Tsinghua, Lenovo | ![Mar 30, 2026](https://img.shields.io/badge/Mar_30,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.28565) |
 | **DFM-VLA: Iterative Action Refinement for Robot Manipulation via Discrete Flow Matching** | HKUST(GZ), HIT, ShanghaiTech | ![Mar 27, 2026](https://img.shields.io/badge/Mar_27,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.26320) |
 | **Fast-dVLA: Accelerating Discrete Diffusion VLA to Real-Time Performance** | HKUST(GZ), ShanghaiTech, Tsinghua | ![Mar 26, 2026](https://img.shields.io/badge/Mar_26,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.25661) |

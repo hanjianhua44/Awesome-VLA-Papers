@@ -178,6 +178,24 @@
   subcategory: e2e
   summary: 对比人类与算法视觉注意力在驾驶任务中的三阶段分布，发现语义注意力能弥补AI的理解与定位缺口
   date: '2026-02-12'
+- title: 'DVGT-2: Vision-Geometry-Action Model for Autonomous Driving at Scale'
+  arxiv: '2604.00813'
+  url: https://arxiv.org/abs/2604.00813
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 大规模视觉-几何-动作统一建模框架，联合几何感知与动作规划以提升自动驾驶闭环能力
+  date: '2026-04-02'
+- title: 'UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving'
+  arxiv: '2604.02190'
+  url: https://arxiv.org/abs/2604.02190
+  institution: Xiaomi, HUST, Univ of Macau
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 统一语义理解、空间感知与动作规划，缓解自动驾驶VLA在推理能力与几何表示之间的冲突
+  date: '2026-04-02'
 - title: 'DriveTok: 3D Driving Scene Tokenization for Unified Multi-View Reconstruction and Understanding'
   arxiv: '2603.19219'
   url: https://arxiv.org/abs/2603.19219
@@ -331,6 +349,15 @@
   subcategory: world-model
   summary: 动态点图用于自动驾驶4D场景重建，处理时序变化和运动物体
   date: '2026-03-09'
+- title: 'DriveDreamer-Policy: A Geometry-Grounded World-Action Model for Unified Generation and Planning'
+  arxiv: '2604.01765'
+  url: https://arxiv.org/abs/2604.01765
+  institution: CUHK, Univ of Toronto
+  venue: arXiv 2026
+  domain: ad
+  subcategory: world-model
+  summary: 几何先验驱动的世界-动作统一建模，同时支持未来生成与规划控制
+  date: '2026-04-02'
 - title: 'SimScale: Learning to Drive via Real-World Simulation at Scale'
   arxiv: '2511.23369'
   url: https://arxiv.org/abs/2511.23369
@@ -448,6 +475,15 @@
   subcategory: safety-benchmark
   summary: 首个目标速度条件自动驾驶基准，评估速度遵循与超车策略控制能力
   date: '2026-03-26'
+- title: 'Bench2Drive-VL: Benchmarks for Closed-Loop Autonomous Driving with Vision-Language Models'
+  arxiv: '2604.01259'
+  url: https://arxiv.org/abs/2604.01259
+  institution: SJTU, Fudan
+  venue: arXiv 2026
+  domain: ad
+  subcategory: safety-benchmark
+  summary: 面向VLM自动驾驶的闭环评测基准与统一接口，系统比较推理-控制一体化能力
+  date: '2026-04-02'
 - title: 'Action Draft and Verify: A Self-Verifying Framework for Vision-Language-Action Model'
   arxiv: '2603.18091'
   url: https://arxiv.org/abs/2603.18091
@@ -466,6 +502,24 @@
   subcategory: vla-arch
   summary: 流式并行化观察/生成/执行阶段，结合动作流匹配与早观测机制显著降低延迟
   date: '2026-03-30'
+- title: 'StarVLA: A Lego-like Codebase for Vision-Language-Action Model Developing'
+  arxiv: '2604.05014'
+  url: https://arxiv.org/abs/2604.05014
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 模块化VLA开发框架，像积木一样快速组合训练与推理组件，降低研发门槛
+  date: '2026-04-07'
+- title: 'A1: A Fully Transparent Open-Source, Adaptive and Efficient Truncated Vision-Language-Action Model'
+  arxiv: '2604.05672'
+  url: https://arxiv.org/abs/2604.05672
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 开源可解释的截断式VLA架构，强调透明性、自适应能力与推理效率
+  date: '2026-04-08'
 - title: 'DFM-VLA: Iterative Action Refinement for Robot Manipulation via Discrete Flow Matching'
   arxiv: '2603.26320'
   url: https://arxiv.org/abs/2603.26320
