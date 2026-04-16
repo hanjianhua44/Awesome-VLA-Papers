@@ -1,19 +1,22 @@
 # VLA Papers Timeline
 
-> 182 papers sorted by date (newest first) | Updated: 2026-04-08
+> 185 papers sorted by date (newest first) | Updated: 2026-04-16
 
 [Back to Main](README.md)
 
-## Apr 2026 (6 papers)
+## Apr 2026 (9 papers)
 
 | # | Paper | Institution | Date | Category | Link |
 |:-:|:------|:-----------|:----:|:---------|:-----|
-| 1 | **A1: A Fully Transparent Open-Source, Adaptive and Efficient Truncated Vision-Language-Action Model** | — | Apr 8 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2604.05672) |
-| 2 | **StarVLA: A Lego-like Codebase for Vision-Language-Action Model Developing** | — | Apr 7 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2604.05014) |
-| 3 | **DVGT-2: Vision-Geometry-Action Model for Autonomous Driving at Scale** | — | Apr 2 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2604.00813) |
-| 4 | **UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving** | Xiaomi, HUST, Univ of Macau | Apr 2 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2604.02190) |
-| 5 | **DriveDreamer-Policy: A Geometry-Grounded World-Action Model for Unified Generation and Planning** | CUHK, Univ of Toronto | Apr 2 | Autonomous Driving / World Models | [Paper](https://arxiv.org/abs/2604.01765) |
-| 6 | **Bench2Drive-VL: Benchmarks for Closed-Loop Autonomous Driving with Vision-Language Models** | SJTU, Fudan | Apr 2 | Autonomous Driving / Safety & Benchmarks | [Paper](https://arxiv.org/abs/2604.01259) |
+| 1 | **Goal2Skill: Long-Horizon Manipulation with Adaptive Planning and Reflection** | Tsinghua | Apr 16 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2604.13942) |
+| 2 | **Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems** | NVIDIA, NYU | Apr 10 | Autonomous Driving / Simulation & Data | [Paper](https://arxiv.org/abs/2604.08366) |
+| 3 | **SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations** | Meta AI, Oxford, SJTU | Apr 10 | General / Cross-domain / Spatial Perception & 3D/4D | [Paper](https://arxiv.org/abs/2604.07990) |
+| 4 | **A1: A Fully Transparent Open-Source, Adaptive and Efficient Truncated Vision-Language-Action Model** | — | Apr 8 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2604.05672) |
+| 5 | **StarVLA: A Lego-like Codebase for Vision-Language-Action Model Developing** | — | Apr 7 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2604.05014) |
+| 6 | **DVGT-2: Vision-Geometry-Action Model for Autonomous Driving at Scale** | — | Apr 2 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2604.00813) |
+| 7 | **UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving** | Xiaomi, HUST, Univ of Macau | Apr 2 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2604.02190) |
+| 8 | **DriveDreamer-Policy: A Geometry-Grounded World-Action Model for Unified Generation and Planning** | CUHK, Univ of Toronto | Apr 2 | Autonomous Driving / World Models | [Paper](https://arxiv.org/abs/2604.01765) |
+| 9 | **Bench2Drive-VL: Benchmarks for Closed-Loop Autonomous Driving with Vision-Language Models** | SJTU, Fudan | Apr 2 | Autonomous Driving / Safety & Benchmarks | [Paper](https://arxiv.org/abs/2604.01259) |
 
 ## Mar 2026 (30 papers)
 

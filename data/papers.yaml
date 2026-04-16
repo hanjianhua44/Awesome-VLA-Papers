@@ -403,6 +403,15 @@
   subcategory: simulation-data
   summary: 面向安全关键推理的多视角驾驶VQA数据集
   date: '2025-11-25'
+- title: 'Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems'
+  arxiv: '2604.08366'
+  url: https://arxiv.org/abs/2604.08366
+  institution: NVIDIA, NYU
+  venue: arXiv 2026
+  domain: ad
+  subcategory: simulation-data
+  summary: 面向端到端自动驾驶的规模感知数据选择策略，在不同模型规模下提升数据效率与泛化性能
+  date: '2026-04-10'
 - title: 'WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching'
   arxiv: '2512.06112'
   url: https://arxiv.org/abs/2512.06112
@@ -520,6 +529,15 @@
   subcategory: vla-arch
   summary: 开源可解释的截断式VLA架构，强调透明性、自适应能力与推理效率
   date: '2026-04-08'
+- title: 'Goal2Skill: Long-Horizon Manipulation with Adaptive Planning and Reflection'
+  arxiv: '2604.13942'
+  url: https://arxiv.org/abs/2604.13942
+  institution: Tsinghua
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 通过自适应规划与反思机制提升长时程操作鲁棒性，解耦高层任务规划与低层动作执行
+  date: '2026-04-16'
 - title: 'DFM-VLA: Iterative Action Refinement for Robot Manipulation via Discrete Flow Matching'
   arxiv: '2603.26320'
   url: https://arxiv.org/abs/2603.26320
@@ -1240,6 +1258,15 @@
   subcategory: spatial
   summary: 挖掘视频生成模型隐式3D先验，为场景理解与空间推理注入几何感知能力
   date: '2026-03-19'
+- title: 'SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations'
+  arxiv: '2604.07990'
+  url: https://arxiv.org/abs/2604.07990
+  institution: Meta AI, Oxford, SJTU
+  venue: arXiv 2026
+  domain: general
+  subcategory: spatial
+  summary: 百万级视频数据集，提供文本描述、相机参数、深度图与3D点轨迹等几何语义联合标注
+  date: '2026-04-10'
 - title: 'Insight-V++: Towards Advanced Long-Chain Visual Reasoning with Multimodal Large Language Models'
   arxiv: '2603.18118'
   url: https://arxiv.org/abs/2603.18118
