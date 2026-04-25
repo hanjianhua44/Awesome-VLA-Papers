@@ -551,21 +551,54 @@ def _extract_header_and_footnotes(text: str) -> str:
     header = re.sub(r"(\d)([A-Z])", r"\1 \2", header_raw)
 
     # --- Footer: only affiliation-bearing footnote lines from page bottom ---
-    footer_start = max(header_end, len(lines) - 20)
+    # If _HEADER_STOP_RE never fired (abstract got garbled by PDF extraction),
+    # header_end == len(lines) would otherwise skip the whole footer. Fall
+    # back to the last 20 lines so multi-column papers with footer-only
+    # affiliations still get processed.
+    if header_end >= len(lines):
+        footer_start = max(0, len(lines) - 20)
+    else:
+        footer_start = max(header_end, len(lines) - 20)
     footer_lines = []
-    for line in lines[footer_start:]:
+    # We iterate with index so we can merge multi-line affiliation blocks:
+    # a line matching _FOOTNOTE_RE is kept, and subsequent non-digit, non-
+    # empty continuation lines (up to 2) that contain affiliation keywords
+    # are appended to capture institution names wrapped across lines.
+    raw_tail = lines[footer_start:]
+    i = 0
+    while i < len(raw_tail):
+        line = raw_tail[i]
         stripped = line.strip()
-        if _ARXIV_NOISE_RE.match(stripped):
-            continue
-        if not _FOOTNOTE_RE.search(stripped):
+        if _ARXIV_NOISE_RE.match(stripped) or not _FOOTNOTE_RE.search(stripped):
+            i += 1
             continue
         # Numbered footnotes (e.g. "1Since CLIP...") must also contain
         # an affiliation keyword to avoid methodological footnotes.
         if re.match(r"^\d+\s*[A-Z]", stripped) and not _AFFIL_KW_RE.search(stripped):
+            i += 1
             continue
-        # Truncate long lines to avoid column-merged body text that
-        # may contain model names from comparisons (e.g. "CLIP").
-        footer_lines.append(line[:80])
+        merged = line[:200]
+        # Greedily merge up to 2 continuation lines that carry affiliation
+        # content but don't start with a new footnote marker. This catches
+        # affiliations wrapped across 2–3 physical lines (common in IEEE
+        # footnotes and two-column layouts).
+        for j in range(1, 3):
+            if i + j >= len(raw_tail):
+                break
+            cont = raw_tail[i + j].strip()
+            if not cont:
+                break
+            # Stop at new numbered footnote or arxiv noise.
+            if re.match(r"^\d+\s*[A-Z]", cont) or _ARXIV_NOISE_RE.match(cont):
+                break
+            # Only absorb continuations that actually contain affiliation
+            # keywords or email/URL tokens — avoid swallowing body text.
+            if _AFFIL_KW_RE.search(cont):
+                merged += " " + cont[:200]
+            else:
+                break
+        footer_lines.append(merged)
+        i += 1
     footer = "\n".join(footer_lines)
 
     return header + "\n" + footer

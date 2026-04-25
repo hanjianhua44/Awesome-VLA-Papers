@@ -121,9 +121,9 @@ def main():
 
     # Default to high-recall PDF enrichment for all future scheduled runs.
     os.environ.setdefault("PDF_INST_TIMEOUT", "60")
-    os.environ.setdefault("PDF_FETCH_TIMEOUT", "25")
+    os.environ.setdefault("PDF_FETCH_TIMEOUT", "30")
     os.environ.setdefault("PDF_FETCH_RETRIES", "6")
-    os.environ.setdefault("PDF_PARSE_MAX_MB", "30")
+    os.environ.setdefault("PDF_PARSE_MAX_MB", "80")
     print(
         "Using high-recall fetch profile: "
         f"PDF_INST_TIMEOUT={os.environ['PDF_INST_TIMEOUT']}, "
