@@ -7,6 +7,7 @@ import re
 import subprocess
 import sys
 import json
+import os
 from datetime import datetime
 from pathlib import Path
 
@@ -117,6 +118,19 @@ def main():
     cover_str = " ~ ".join([covers[0], covers[-1]]) if len(covers) > 1 else covers[0]
 
     print(f"=== Daily Job: {date_str} (covers {cover_str}) ===")
+
+    # Default to high-recall PDF enrichment for all future scheduled runs.
+    os.environ.setdefault("PDF_INST_TIMEOUT", "60")
+    os.environ.setdefault("PDF_FETCH_TIMEOUT", "25")
+    os.environ.setdefault("PDF_FETCH_RETRIES", "6")
+    os.environ.setdefault("PDF_PARSE_MAX_MB", "30")
+    print(
+        "Using high-recall fetch profile: "
+        f"PDF_INST_TIMEOUT={os.environ['PDF_INST_TIMEOUT']}, "
+        f"PDF_FETCH_TIMEOUT={os.environ['PDF_FETCH_TIMEOUT']}, "
+        f"PDF_FETCH_RETRIES={os.environ['PDF_FETCH_RETRIES']}, "
+        f"PDF_PARSE_MAX_MB={os.environ['PDF_PARSE_MAX_MB']}"
+    )
 
     # Step 1: Fetch
     print("\n[1/5] Fetching papers...")
