@@ -396,7 +396,7 @@ TIER1_INSTITUTIONS = {
 _CACHE_DIR = Path(__file__).parent.parent / ".pdf_cache"
 
 
-def _get_first_page_text(arxiv_id: str, max_retries: int = 3) -> str:
+def _get_first_page_text(arxiv_id: str, max_retries: int = None) -> str:
     """Get first-page text from PDF, caching the extracted text locally."""
     _CACHE_DIR.mkdir(exist_ok=True)
     safe_id = arxiv_id.replace("/", "_")
@@ -423,12 +423,20 @@ def _get_first_page_text(arxiv_id: str, max_retries: int = 3) -> str:
         except Exception:
             pass
 
+    if max_retries is None:
+        max_retries = int(os.getenv("PDF_FETCH_RETRIES", "2"))
+    timeout_s = int(os.getenv("PDF_FETCH_TIMEOUT", "12"))
+    max_pdf_mb = int(os.getenv("PDF_PARSE_MAX_MB", "12"))
     url = f"https://arxiv.org/pdf/{arxiv_id}"
     for attempt in range(max_retries):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-            resp = urllib.request.urlopen(req, context=SSL_CTX, timeout=30)
+            resp = urllib.request.urlopen(req, context=SSL_CTX, timeout=timeout_s)
             pdf_bytes = resp.read()
+            # Extremely large PDFs can stall parsing on some hosts; skip safely.
+            if len(pdf_bytes) > max_pdf_mb * 1024 * 1024:
+                text_cache.write_text("", encoding="utf-8")
+                return ""
             with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
                 if not pdf.pages:
                     text_cache.write_text("", encoding="utf-8")
@@ -529,7 +537,14 @@ def _extract_header_and_footnotes(text: str) -> str:
     max_header = min(header_end, author_start + 12)
     affil_end = author_start + 1
     for i in range(author_start, max_header):
+        line_stripped = lines[i].strip()
         if _AFFIL_LINE_RE.search(lines[i]):
+            affil_end = i + 1
+        # Short numbered affiliation lines (e.g. "2 NVIDIA", "3 Meta") that
+        # contain only a company/lab name and no keywords. Require the line
+        # to start with a digit-superscript marker and be under 40 chars to
+        # avoid matching body text that happens to start with a digit.
+        elif len(line_stripped) <= 40 and re.match(r"^\d+\s*[A-Z][A-Za-z&\.\s/-]{1,35}$", line_stripped):
             affil_end = i + 1
 
     header_raw = "\n".join(lines[author_start:affil_end])
@@ -583,7 +598,7 @@ def _normalize_pdf_text(text: str) -> str:
     return text
 
 
-def extract_institutions_from_pdf(arxiv_id: str, max_retries: int = 3) -> str:
+def extract_institutions_from_pdf(arxiv_id: str, max_retries: int = None) -> str:
     """Extract institution names from header + footnotes of page 1.
 
     Only searches the area above "Abstract" (title / authors / affiliations)
