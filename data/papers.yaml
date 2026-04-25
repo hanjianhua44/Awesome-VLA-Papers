@@ -196,6 +196,42 @@
   subcategory: e2e
   summary: 统一语义理解、空间感知与动作规划，缓解自动驾驶VLA在推理能力与几何表示之间的冲突
   date: '2026-04-02'
+- title: 'RAD-2: Scaling Reinforcement Learning in a Generator-Discriminator Framework'
+  arxiv: '2604.15308'
+  url: https://arxiv.org/abs/2604.15308
+  institution: Horizon Robotics, HUST
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 生成器-鉴别器RL框架扩展端到端驾驶规划，多模态轨迹分布建模兼顾闭环鲁棒性
+  date: '2026-04-16'
+- title: 'OneVL: One-Step Latent Reasoning and Planning with Vision-Language Explanation'
+  arxiv: '2604.18486'
+  url: https://arxiv.org/abs/2604.18486
+  institution: Xiaomi
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 单步潜在推理+轨迹规划+VLM语言解释一体化，自动驾驶VLA低延迟实时部署方案
+  date: '2026-04-20'
+- title: 'OneDrive: Unified Multi-Paradigm Driving with Vision-Language-Action Models'
+  arxiv: '2604.17915'
+  url: https://arxiv.org/abs/2604.17915
+  institution: SJTU, CASIA, CAS
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 统一自回归语言生成、并行检测与轨迹回归三种解码范式的VLA驾驶框架
+  date: '2026-04-20'
+- title: 'SpanVLA: Efficient Action Bridging and Learning from Negative-Recovery Samples for Vision-Language-Action Model'
+  arxiv: '2604.19710'
+  url: https://arxiv.org/abs/2604.19710
+  institution: Motional, UCLA, Northeastern
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 高效动作跨度桥接+负样本恢复学习，提升驾驶VLA长尾鲁棒性与生成效率
+  date: '2026-04-21'
 - title: 'DriveTok: 3D Driving Scene Tokenization for Unified Multi-View Reconstruction and Understanding'
   arxiv: '2603.19219'
   url: https://arxiv.org/abs/2603.19219
@@ -358,6 +394,15 @@
   subcategory: world-model
   summary: 几何先验驱动的世界-动作统一建模，同时支持未来生成与规划控制
   date: '2026-04-02'
+- title: 'DriveVA: Video Action Models are Zero-Shot Drivers'
+  arxiv: '2604.04198'
+  url: https://arxiv.org/abs/2604.04198
+  institution: Xiaomi, Cambridge
+  venue: arXiv 2026
+  domain: ad
+  subcategory: world-model
+  summary: 视频动作模型直接作为零样本驾驶员，跨场景与跨传感器域无需重训泛化
+  date: '2026-04-05'
 - title: 'SimScale: Learning to Drive via Real-World Simulation at Scale'
   arxiv: '2511.23369'
   url: https://arxiv.org/abs/2511.23369
@@ -430,6 +475,15 @@
   subcategory: planning
   summary: 场景自适应轨迹规划，MoE+RL专家路由
   date: '2025-12-08'
+- title: 'Toward Cooperative Driving in Mixed Traffic: An Adaptive Potential Game-Based Approach with Field Test Verification'
+  arxiv: '2604.20231'
+  url: https://arxiv.org/abs/2604.20231
+  institution: Tsinghua, BUAA, Tongji
+  venue: arXiv 2026
+  domain: ad
+  subcategory: planning
+  summary: 自适应势博弈协同驾驶决策框架，混合交通CAV协同决策并通过实车实验验证
+  date: '2026-04-22'
 - title: 'WorldLens: Full-Spectrum Evaluations of Driving World Models'
   arxiv: '2512.10958'
   url: https://arxiv.org/abs/2512.10958
@@ -772,6 +826,24 @@
   subcategory: vla-arch
   summary: 统一感知、重建与动作的连续流式处理框架，实现实时具身智能
   date: '2026-03-12'
+- title: 'π0.7: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities'
+  arxiv: '2604.15483'
+  url: https://arxiv.org/abs/2604.15483
+  institution: Physical Intelligence
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: PI下一代通用机器人基础模型，可控+涌现能力，支持多阶段任务、跨厨房零样本泛化与多工具操作
+  date: '2026-04-16'
+- title: Long-Horizon Manipulation via Trace-Conditioned VLA Planning
+  arxiv: '2604.21924'
+  url: https://arxiv.org/abs/2604.21924
+  institution: NVIDIA, UCSD
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: LoHo-Manip框架，VLM任务管理器+轨迹条件VLA执行器，长时操作的隐式闭环重规划
+  date: '2026-04-23'
 - title: 'OAT: Ordered Action Tokenization'
   arxiv: '2602.04215'
   url: https://arxiv.org/abs/2602.04215
@@ -925,6 +997,24 @@
   subcategory: world-model-policy
   summary: 双塔4D具身世界模型，统一策略优化实现跨任务机器人操作
   date: '2026-03-13'
+- title: 'Veo-Act: How Far Can Frontier Video Models Advance Generalizable Robot Manipulation?'
+  arxiv: '2604.04502'
+  url: https://arxiv.org/abs/2604.04502
+  institution: Tsinghua
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 系统研究Veo-3等前沿视频模型对通用机器人操作的赋能边界与零样本能力
+  date: '2026-04-06'
+- title: 'UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling'
+  arxiv: '2604.19734'
+  url: https://arxiv.org/abs/2604.19734
+  institution: XPeng, Tsinghua, HKU
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 统一潜在动作词元化器UniT，桥接人类视频与人形机器人，联合策略学习与世界建模
+  date: '2026-04-21'
 - title: 'SRPO: Self-Referential Policy Optimization for VLA'
   arxiv: '2511.15605'
   url: https://arxiv.org/abs/2511.15605
@@ -1123,6 +1213,15 @@
   subcategory: data-pretrain
   summary: 智能体式3D场景生成，为具身AI提供训练环境
   date: '2026-02-10'
+- title: 'EmbodiedMidtrain: Bridging the Gap between Vision-Language Models and Vision-Language-Action Models via Mid-training'
+  arxiv: '2604.20012'
+  url: https://arxiv.org/abs/2604.20012
+  institution: Bosch, CMU
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: 在VLM与VLA之间引入具身中段训练阶段，让VLM先适应具身领域再做VLA微调以提升下游性能
+  date: '2026-04-21'
 - title: 'VLM²: Vision-Language Memory for Spatial Reasoning'
   arxiv: '2511.20644'
   url: https://arxiv.org/abs/2511.20644
@@ -1447,6 +1546,24 @@
   subcategory: multimodal-arch
   summary: 超越语言建模，系统性探索原生多模态预训练的设计空间
   date: '2026-03-03'
+- title: 'Vero: An Open RL Recipe for General Visual Reasoning'
+  arxiv: '2604.04917'
+  url: https://arxiv.org/abs/2604.04917
+  institution: Princeton
+  venue: arXiv 2026
+  domain: general
+  subcategory: multimodal-arch
+  summary: 开源RL训练通用视觉推理模型的完整配方，覆盖图表、科学、空间与开放任务
+  date: '2026-04-06'
+- title: 'S-GRPO: Unified Post-Training for Large Vision-Language Models'
+  arxiv: '2604.16557'
+  url: https://arxiv.org/abs/2604.16557
+  institution: Tencent
+  venue: arXiv 2026
+  domain: general
+  subcategory: multimodal-arch
+  summary: 统一SFT与RL两种LVLM后训练范式，避免分阶段独立训练带来的低效问题
+  date: '2026-04-17'
 - title: 'FASTER: Rethinking Real-Time Flow VLAs'
   arxiv: '2603.19199'
   url: https://arxiv.org/abs/2603.19199
@@ -1555,6 +1672,15 @@
   subcategory: efficient
   summary: 焦点token获取与缩放Transformer，用于长时序LiDAR 3D目标检测的高效时序融合
   date: '2025-02-28'
+- title: 'A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens'
+  arxiv: '2604.04913'
+  url: https://arxiv.org/abs/2604.04913
+  institution: Amazon, JHU
+  venue: arXiv 2026
+  domain: general
+  subcategory: efficient
+  summary: 用Delta Token编码帧间增量，将每帧压缩到单token以高效生成多样化未来视频
+  date: '2026-04-06'
 - title: 'PAI-Bench: A Comprehensive Benchmark For Physical AI'
   arxiv: '2512.01989'
   url: https://arxiv.org/abs/2512.01989
@@ -1609,6 +1735,15 @@
   subcategory: physical-benchmark
   summary: 统一评估具身世界模型感知与功能效用
   date: '2026-02-09'
+- title: Unmasking the Illusion of Embodied Reasoning in Vision-Language-Action Models
+  arxiv: '2604.18000'
+  url: https://arxiv.org/abs/2604.18000
+  institution: Tsinghua, PKU
+  venue: arXiv 2026
+  domain: general
+  subcategory: physical-benchmark
+  summary: 揭示当前VLA基准成功率与真实具身推理能力存在系统性偏差，重新审视评测有效性
+  date: '2026-04-20'
 - title: A Comprehensive Survey on World Models for Embodied AI
   arxiv: '2510.16732'
   url: https://arxiv.org/abs/2510.16732
