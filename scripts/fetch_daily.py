@@ -40,6 +40,12 @@ SSL_CTX = ssl.create_default_context()
 SSL_CTX.check_hostname = False
 SSL_CTX.verify_mode = ssl.CERT_NONE
 
+# Install a global opener so HTTPSHandler uses SSL_CTX for follow-up requests
+# during 302 redirects (which is what arxiv does for http→https). Without this,
+# urllib reissues redirected requests with the default (strict) SSL context.
+_https_handler = urllib.request.HTTPSHandler(context=SSL_CTX)
+urllib.request.install_opener(urllib.request.build_opener(_https_handler))
+
 # ---------------------------------------------------------------------------
 # Research interest keywords (weighted)
 # ---------------------------------------------------------------------------
