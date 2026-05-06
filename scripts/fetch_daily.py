@@ -207,7 +207,13 @@ def fetch_arxiv_batch(query: str, start: int, max_results: int, retries: int = 8
             return resp.read().decode("utf-8")
         except Exception as e:
             if attempt < retries - 1:
-                wait = min(60, 5 * (attempt + 1))
+                # 429 (rate-limit) needs much longer backoff than transient SSL/IO errors:
+                # arxiv blocks for several minutes after a burst. Scale 60->300s for 429.
+                is_rate_limit = "429" in str(e)
+                if is_rate_limit:
+                    wait = min(300, 60 * (attempt + 1))
+                else:
+                    wait = min(60, 5 * (attempt + 1))
                 print(f"    Retry {attempt+1}/{retries} after {wait}s: {e}")
                 time.sleep(wait)
             else:
