@@ -1,6 +1,6 @@
 # VLA Papers by Institution
 
-> 200 papers across 113 institutions | Updated: 2026-04-25
+> 212 papers across 115 institutions | Updated: 2026-05-07
 
 [Back to Main](README.md)
 
@@ -8,63 +8,66 @@
 
 | Institution | Papers |
 |:-----------|:------:|
-| [Tsinghua](#tsinghua) | 40 |
+| [Tsinghua](#tsinghua) | 45 |
 | [NVIDIA](#nvidia) | 19 |
-| [Fudan](#fudan) | 16 |
-| [Xiaomi](#xiaomi) | 13 |
+| [Fudan](#fudan) | 18 |
+| [Xiaomi](#xiaomi) | 16 |
+| [PKU](#pku) | 14 |
 | [HUST](#hust) | 12 |
-| [PKU](#pku) | 11 |
+| [HKU](#hku) | 11 |
 | [SJTU](#sjtu) | 11 |
-| [HKU](#hku) | 10 |
+| [CUHK](#cuhk) | 10 |
 | [—](#) | 9 |
-| [CUHK](#cuhk) | 9 |
+| [Stanford](#stanford) | 9 |
+| [ByteDance](#bytedance) | 8 |
 | [ZJU](#zju) | 8 |
-| [ByteDance](#bytedance) | 7 |
-| [Stanford](#stanford) | 7 |
+| [CASIA](#casia) | 7 |
+| [NUS](#nus) | 7 |
+| [HKUST](#hkust) | 7 |
 | [Shanghai AI Lab](#shanghaiailab) | 6 |
-| [CASIA](#casia) | 6 |
-| [NUS](#nus) | 6 |
 | [ShanghaiTech](#shanghaitech) | 6 |
-| [HKUST](#hkust) | 6 |
+| [Oxford](#oxford) | 5 |
 | [UCSD](#ucsd) | 5 |
 | [HKUST(GZ)](#hkustgz) | 5 |
+| [Physical Intelligence](#physicalintelligence) | 5 |
 | [Alibaba](#alibaba) | 5 |
 | [Meta AI](#metaai) | 5 |
 | [Univ of Macau](#univofmacau) | 4 |
 | [SYSU](#sysu) | 4 |
-| [Oxford](#oxford) | 4 |
+| [BUAA](#buaa) | 4 |
 | [NYU](#nyu) | 4 |
 | [NTU](#ntu) | 4 |
-| [Physical Intelligence](#physicalintelligence) | 4 |
 | [MSRA](#msra) | 4 |
 | [CMU](#cmu) | 4 |
+| [Princeton](#princeton) | 4 |
 | [Horizon Robotics](#horizonrobotics) | 3 |
 | [UMich](#umich) | 3 |
 | [HIT](#hit) | 3 |
 | [GigaAI](#gigaai) | 3 |
 | [CAS](#cas) | 3 |
+| [Li Auto](#liauto) | 3 |
 | [XPeng](#xpeng) | 3 |
-| [BUAA](#buaa) | 3 |
 | [USTC](#ustc) | 3 |
 | [Tongji](#tongji) | 3 |
+| [UC Berkeley](#ucberkeley) | 3 |
 | [Alibaba DAMO](#alibabadamo) | 3 |
 | [UMD](#umd) | 3 |
-| [Princeton](#princeton) | 3 |
+| [Baidu](#baidu) | 3 |
 | [Tianjin Univ](#tianjinuniv) | 2 |
-| [Li Auto](#liauto) | 2 |
+| [BIT](#bit) | 2 |
+| [Bosch](#bosch) | 2 |
 | [Huawei](#huawei) | 2 |
 | [Cambridge](#cambridge) | 2 |
 | [Google DeepMind](#googledeepmind) | 2 |
 | [KAIST](#kaist) | 2 |
-| [UC Berkeley](#ucberkeley) | 2 |
 | [MIT](#mit) | 2 |
 | [Agibot](#agibot) | 2 |
 | [Harvard](#harvard) | 2 |
 | [Meta](#meta) | 2 |
-| [Baidu](#baidu) | 2 |
 | [Tencent](#tencent) | 2 |
 | [Google](#google) | 2 |
 | [Meta FAIR](#metafair) | 2 |
+| [Monash](#monash) | 2 |
 | [PCL](#pcl) | 2 |
 | [Georgia Tech](#georgiatech) | 2 |
 
@@ -72,6 +75,11 @@
 
 | Paper | Category | Date | Link |
 |:------|:---------|:----:|:-----|
+| **CRAFT: Counterfactual-to-Interactive Reinforcement Fine-Tuning for Driving Policies** | End-to-End VLA Architecture | May 6, 2026 | [Paper](https://arxiv.org/abs/2605.04470) |
+| **Thinking in Text and Images: Interleaved Vision-Language Reasoning Traces for Long-Horizon Robot Manipulation** | Latent Reasoning & Chain-of-Thought | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.00438) |
+| **Visual Generation in the New Era: An Evolution from Atomic Mapping to Agentic World Modeling** | Surveys | Apr 30, 2026 | [Paper](https://arxiv.org/abs/2604.28185) |
+| **Walk With Me: Long-Horizon Social Navigation for Human-Centric Outdoor Assistance** | VLA Architecture | Apr 29, 2026 | [Paper](https://arxiv.org/abs/2604.26839) |
+| **X-WAM: Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising** | World Models & Policy Co-learning | Apr 29, 2026 | [Paper](https://arxiv.org/abs/2604.26694) |
 | **Toward Cooperative Driving in Mixed Traffic: An Adaptive Potential Game-Based Approach with Field Test Verification** | Planning & Control | Apr 22, 2026 | [Paper](https://arxiv.org/abs/2604.20231) |
 | **UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling** | World Models & Policy Co-learning | Apr 21, 2026 | [Paper](https://arxiv.org/abs/2604.19734) |
 | **Unmasking the Illusion of Embodied Reasoning in Vision-Language-Action Models** | Physical AI Benchmarks | Apr 20, 2026 | [Paper](https://arxiv.org/abs/2604.18000) |
@@ -141,6 +149,8 @@
 
 | Paper | Category | Date | Link |
 |:------|:---------|:----:|:-----|
+| **Visual Generation in the New Era: An Evolution from Atomic Mapping to Agentic World Modeling** | Surveys | Apr 30, 2026 | [Paper](https://arxiv.org/abs/2604.28185) |
+| **Walk With Me: Long-Horizon Social Navigation for Human-Centric Outdoor Assistance** | VLA Architecture | Apr 29, 2026 | [Paper](https://arxiv.org/abs/2604.26839) |
 | **Bench2Drive-VL: Benchmarks for Closed-Loop Autonomous Driving with Vision-Language Models** | Safety & Benchmarks | Apr 2, 2026 | [Paper](https://arxiv.org/abs/2604.01259) |
 | **Can Users Specify Driving Speed? Bench2Drive-Speed: Benchmark and Baselines for Desired-Speed Conditioned Autonomous Driving** | Safety & Benchmarks | Mar 26, 2026 | [Paper](https://arxiv.org/abs/2603.25672) |
 | **Beyond Attention Magnitude: Leveraging Inter-layer Rank Consistency for Efficient Vision-Language-Action Models** | Efficient Inference | Mar 26, 2026 | [Paper](https://arxiv.org/abs/2603.24941) |
@@ -162,6 +172,9 @@
 
 | Paper | Category | Date | Link |
 |:------|:---------|:----:|:-----|
+| **Thinking in Text and Images: Interleaved Vision-Language Reasoning Traces for Long-Horizon Robot Manipulation** | Latent Reasoning & Chain-of-Thought | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.00438) |
+| **Walk With Me: Long-Horizon Social Navigation for Human-Centric Outdoor Assistance** | VLA Architecture | Apr 29, 2026 | [Paper](https://arxiv.org/abs/2604.26839) |
+| **X-WAM: Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising** | World Models & Policy Co-learning | Apr 29, 2026 | [Paper](https://arxiv.org/abs/2604.26694) |
 | **OneVL: One-Step Latent Reasoning and Planning with Vision-Language Explanation** | End-to-End VLA Architecture | Apr 20, 2026 | [Paper](https://arxiv.org/abs/2604.18486) |
 | **DriveVA: Video Action Models are Zero-Shot Drivers** | World Models | Apr 5, 2026 | [Paper](https://arxiv.org/abs/2604.04198) |
 | **UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving** | End-to-End VLA Architecture | Apr 2, 2026 | [Paper](https://arxiv.org/abs/2604.02190) |
@@ -175,6 +188,25 @@
 | **SimScale: Learning to Drive via Real-World Simulation at Scale** | Simulation & Data | Nov 28, 2025 | [Paper](https://arxiv.org/abs/2511.23369) |
 | **MiMo-Embodied: X-Embodied Foundation Model** | VLA Architecture | Nov 20, 2025 | [Paper](https://arxiv.org/abs/2511.16518) |
 | **ReCogDrive: Reinforced Cognitive Framework for E2E AD** | End-to-End VLA Architecture | Jun 9, 2025 | [Paper](https://arxiv.org/abs/2506.08052) |
+
+## PKU
+
+| Paper | Category | Date | Link |
+|:------|:---------|:----:|:-----|
+| **LaST-R1: Reinforcing Robotic Manipulation via Adaptive Physical Latent Reasoning** | RL & Policy Optimization | Apr 30, 2026 | [Paper](https://arxiv.org/abs/2604.28192) |
+| **X-WAM: Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising** | World Models & Policy Co-learning | Apr 29, 2026 | [Paper](https://arxiv.org/abs/2604.26694) |
+| **Vision-Language-Action Safety: Threats, Challenges, Evaluations, and Mechanisms** | Surveys | Apr 26, 2026 | [Paper](https://arxiv.org/abs/2604.23775) |
+| **Unmasking the Illusion of Embodied Reasoning in Vision-Language-Action Models** | Physical AI Benchmarks | Apr 20, 2026 | [Paper](https://arxiv.org/abs/2604.18000) |
+| **RARRL: Resource-Aware Reasoning via RL for Embodied Robotic Decision-Making** | RL & Policy Optimization | Mar 17, 2026 | [Paper](https://arxiv.org/abs/2603.16673) |
+| **PVI: Plug-in Visual Injection for Vision-Language-Action Models** | VLA Architecture | Mar 13, 2026 | [Paper](https://arxiv.org/abs/2603.12772) |
+| **LDA-1B: Scaling Latent Dynamics Action Model** | VLA Architecture | Feb 12, 2026 | [Paper](https://arxiv.org/abs/2602.12215) |
+| **LaST₀: Latent Spatio-Temporal CoT for Robotic VLA** | Latent Reasoning & Chain-of-Thought | Jan 8, 2026 | [Paper](https://arxiv.org/abs/2601.05248) |
+| **RoboMIND 2.0: Multimodal Bimanual Mobile Manipulation Dataset** | VLA Architecture | Dec 31, 2025 | [Paper](https://arxiv.org/abs/2512.24653) |
+| **AstraNav-Memory: Contexts Compression for Long Memory** | Efficient Inference | Dec 25, 2025 | [Paper](https://arxiv.org/abs/2512.21627) |
+| **KnowVal: Knowledge-Augmented and Value-Guided AD System** | End-to-End VLA Architecture | Dec 23, 2025 | [Paper](https://arxiv.org/abs/2512.20299) |
+| **ManualVLA: CoT Manual Generation and Robotic Manipulation** | VLA Architecture | Dec 1, 2025 | [Paper](https://arxiv.org/abs/2512.02013) |
+| **InternData-A1: High-Fidelity Synthetic Data for Generalist Policy** | Data & Pre-training | Nov 20, 2025 | [Paper](https://arxiv.org/abs/2511.16651) |
+| **Stag-1: Realistic 4D Driving Simulation with Video Generation** | World Models | Dec 6, 2024 | [Paper](https://arxiv.org/abs/2412.05280) |
 
 ## HUST
 
@@ -193,21 +225,21 @@
 | **ReCogDrive: Reinforced Cognitive Framework for E2E AD** | End-to-End VLA Architecture | Jun 9, 2025 | [Paper](https://arxiv.org/abs/2506.08052) |
 | **FASTer: Focal Token Acquiring-and-Scaling Transformer for Long-term 3D Object Detection** | Efficient Inference | Feb 28, 2025 | [Paper](https://arxiv.org/abs/2503.01899) |
 
-## PKU
+## HKU
 
 | Paper | Category | Date | Link |
 |:------|:---------|:----:|:-----|
-| **Unmasking the Illusion of Embodied Reasoning in Vision-Language-Action Models** | Physical AI Benchmarks | Apr 20, 2026 | [Paper](https://arxiv.org/abs/2604.18000) |
-| **RARRL: Resource-Aware Reasoning via RL for Embodied Robotic Decision-Making** | RL & Policy Optimization | Mar 17, 2026 | [Paper](https://arxiv.org/abs/2603.16673) |
+| **LaST-R1: Reinforcing Robotic Manipulation via Adaptive Physical Latent Reasoning** | RL & Policy Optimization | Apr 30, 2026 | [Paper](https://arxiv.org/abs/2604.28192) |
+| **UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling** | World Models & Policy Co-learning | Apr 21, 2026 | [Paper](https://arxiv.org/abs/2604.19734) |
+| **FASTER: Rethinking Real-Time Flow VLAs** | Efficient Inference | Mar 19, 2026 | [Paper](https://arxiv.org/abs/2603.19199) |
 | **PVI: Plug-in Visual Injection for Vision-Language-Action Models** | VLA Architecture | Mar 13, 2026 | [Paper](https://arxiv.org/abs/2603.12772) |
-| **LDA-1B: Scaling Latent Dynamics Action Model** | VLA Architecture | Feb 12, 2026 | [Paper](https://arxiv.org/abs/2602.12215) |
-| **LaST₀: Latent Spatio-Temporal CoT for Robotic VLA** | Latent Reasoning & Chain-of-Thought | Jan 8, 2026 | [Paper](https://arxiv.org/abs/2601.05248) |
-| **RoboMIND 2.0: Multimodal Bimanual Mobile Manipulation Dataset** | VLA Architecture | Dec 31, 2025 | [Paper](https://arxiv.org/abs/2512.24653) |
-| **AstraNav-Memory: Contexts Compression for Long Memory** | Efficient Inference | Dec 25, 2025 | [Paper](https://arxiv.org/abs/2512.21627) |
-| **KnowVal: Knowledge-Augmented and Value-Guided AD System** | End-to-End VLA Architecture | Dec 23, 2025 | [Paper](https://arxiv.org/abs/2512.20299) |
-| **ManualVLA: CoT Manual Generation and Robotic Manipulation** | VLA Architecture | Dec 1, 2025 | [Paper](https://arxiv.org/abs/2512.02013) |
-| **InternData-A1: High-Fidelity Synthetic Data for Generalist Policy** | Data & Pre-training | Nov 20, 2025 | [Paper](https://arxiv.org/abs/2511.16651) |
-| **Stag-1: Realistic 4D Driving Simulation with Video Generation** | World Models | Dec 6, 2024 | [Paper](https://arxiv.org/abs/2412.05280) |
+| **World Guidance: World Modeling in Condition Space for Action Generation** | World Models | Feb 25, 2026 | [Paper](https://arxiv.org/abs/2602.22010) |
+| **Driving with A Thousand Faces: Closed-Loop Personalized E2E AD Benchmark** | Simulation & Data | Feb 21, 2026 | [Paper](https://arxiv.org/abs/2602.18757) |
+| **RISE: Self-Improving Robot Policy with Compositional World Model** | World Models & Policy Co-learning | Feb 11, 2026 | [Paper](https://arxiv.org/abs/2602.11075) |
+| **DrivePI: Spatial-aware 4D MLLM for Unified AD** | End-to-End VLA Architecture | Dec 14, 2025 | [Paper](https://arxiv.org/abs/2512.12799) |
+| **WholeBodyVLA: Unified Latent VLA for Whole-Body Loco-Manipulation** | VLA Architecture | Dec 11, 2025 | [Paper](https://arxiv.org/abs/2512.11047) |
+| **IGen: Scalable Data Generation from Open-World Images** | Data & Pre-training | Dec 1, 2025 | [Paper](https://arxiv.org/abs/2512.01773) |
+| **SimScale: Learning to Drive via Real-World Simulation at Scale** | Simulation & Data | Nov 28, 2025 | [Paper](https://arxiv.org/abs/2511.23369) |
 
 ## SJTU
 
@@ -225,20 +257,20 @@
 | **OmniNWM: Omniscient Driving Navigation World Models** | World Models | Oct 21, 2025 | [Paper](https://arxiv.org/abs/2510.18313) |
 | **PICABench: How Far from Physically Realistic Image Editing?** | Physical AI Benchmarks | Oct 20, 2025 | [Paper](https://arxiv.org/abs/2510.17681) |
 
-## HKU
+## CUHK
 
 | Paper | Category | Date | Link |
 |:------|:---------|:----:|:-----|
-| **UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling** | World Models & Policy Co-learning | Apr 21, 2026 | [Paper](https://arxiv.org/abs/2604.19734) |
-| **FASTER: Rethinking Real-Time Flow VLAs** | Efficient Inference | Mar 19, 2026 | [Paper](https://arxiv.org/abs/2603.19199) |
-| **PVI: Plug-in Visual Injection for Vision-Language-Action Models** | VLA Architecture | Mar 13, 2026 | [Paper](https://arxiv.org/abs/2603.12772) |
-| **World Guidance: World Modeling in Condition Space for Action Generation** | World Models | Feb 25, 2026 | [Paper](https://arxiv.org/abs/2602.22010) |
+| **LaST-R1: Reinforcing Robotic Manipulation via Adaptive Physical Latent Reasoning** | RL & Policy Optimization | Apr 30, 2026 | [Paper](https://arxiv.org/abs/2604.28192) |
+| **DriveDreamer-Policy: A Geometry-Grounded World-Action Model for Unified Generation and Planning** | World Models | Apr 2, 2026 | [Paper](https://arxiv.org/abs/2604.01765) |
+| **DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving** | World Models | Mar 9, 2026 | [Paper](https://arxiv.org/abs/2603.08254) |
 | **Driving with A Thousand Faces: Closed-Loop Personalized E2E AD Benchmark** | Simulation & Data | Feb 21, 2026 | [Paper](https://arxiv.org/abs/2602.18757) |
 | **RISE: Self-Improving Robot Policy with Compositional World Model** | World Models & Policy Co-learning | Feb 11, 2026 | [Paper](https://arxiv.org/abs/2602.11075) |
-| **DrivePI: Spatial-aware 4D MLLM for Unified AD** | End-to-End VLA Architecture | Dec 14, 2025 | [Paper](https://arxiv.org/abs/2512.12799) |
-| **WholeBodyVLA: Unified Latent VLA for Whole-Body Loco-Manipulation** | VLA Architecture | Dec 11, 2025 | [Paper](https://arxiv.org/abs/2512.11047) |
-| **IGen: Scalable Data Generation from Open-World Images** | Data & Pre-training | Dec 1, 2025 | [Paper](https://arxiv.org/abs/2512.01773) |
-| **SimScale: Learning to Drive via Real-World Simulation at Scale** | Simulation & Data | Nov 28, 2025 | [Paper](https://arxiv.org/abs/2511.23369) |
+| **LaST₀: Latent Spatio-Temporal CoT for Robotic VLA** | Latent Reasoning & Chain-of-Thought | Jan 8, 2026 | [Paper](https://arxiv.org/abs/2601.05248) |
+| **DynamicVerse: Physically-Aware Multimodal 4D World Modeling** | Spatial Perception & 3D/4D | Dec 2, 2025 | [Paper](https://arxiv.org/abs/2512.03000) |
+| **ManualVLA: CoT Manual Generation and Robotic Manipulation** | VLA Architecture | Dec 1, 2025 | [Paper](https://arxiv.org/abs/2512.02013) |
+| **MoE3D: MoE meets Multi-Modal 3D Understanding** | Spatial Perception & 3D/4D | Nov 27, 2025 | [Paper](https://arxiv.org/abs/2511.22103) |
+| **PICABench: How Far from Physically Realistic Image Editing?** | Physical AI Benchmarks | Oct 20, 2025 | [Paper](https://arxiv.org/abs/2510.17681) |
 
 ## —
 
@@ -254,19 +286,32 @@
 | **DriveWorld-VLA: Unified Latent-Space World Modeling with VLA for AD** | End-to-End VLA Architecture | Feb 6, 2026 | [Paper](https://arxiv.org/abs/2602.06521) |
 | **Alleviating Sparse Rewards in Flow-Based GRPO** | RL & Policy Optimization | Feb 6, 2026 | [Paper](https://arxiv.org/abs/2602.06422) |
 
-## CUHK
+## Stanford
 
 | Paper | Category | Date | Link |
 |:------|:---------|:----:|:-----|
-| **DriveDreamer-Policy: A Geometry-Grounded World-Action Model for Unified Generation and Planning** | World Models | Apr 2, 2026 | [Paper](https://arxiv.org/abs/2604.01765) |
-| **DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving** | World Models | Mar 9, 2026 | [Paper](https://arxiv.org/abs/2603.08254) |
-| **Driving with A Thousand Faces: Closed-Loop Personalized E2E AD Benchmark** | Simulation & Data | Feb 21, 2026 | [Paper](https://arxiv.org/abs/2602.18757) |
-| **RISE: Self-Improving Robot Policy with Compositional World Model** | World Models & Policy Co-learning | Feb 11, 2026 | [Paper](https://arxiv.org/abs/2602.11075) |
-| **LaST₀: Latent Spatio-Temporal CoT for Robotic VLA** | Latent Reasoning & Chain-of-Thought | Jan 8, 2026 | [Paper](https://arxiv.org/abs/2601.05248) |
-| **DynamicVerse: Physically-Aware Multimodal 4D World Modeling** | Spatial Perception & 3D/4D | Dec 2, 2025 | [Paper](https://arxiv.org/abs/2512.03000) |
-| **ManualVLA: CoT Manual Generation and Robotic Manipulation** | VLA Architecture | Dec 1, 2025 | [Paper](https://arxiv.org/abs/2512.02013) |
-| **MoE3D: MoE meets Multi-Modal 3D Understanding** | Spatial Perception & 3D/4D | Nov 27, 2025 | [Paper](https://arxiv.org/abs/2511.22103) |
-| **PICABench: How Far from Physically Realistic Image Editing?** | Physical AI Benchmarks | Oct 20, 2025 | [Paper](https://arxiv.org/abs/2510.17681) |
+| **End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer** | Multimodal Architecture & Pre-training | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.00503) |
+| **World Model for Robot Learning: A Comprehensive Survey** | Surveys | Apr 30, 2026 | [Paper](https://arxiv.org/abs/2605.00080) |
+| **VLAW: Iterative Co-Improvement of VLA Policy and World Model** | World Models & Policy Co-learning | Feb 12, 2026 | [Paper](https://arxiv.org/abs/2602.12063) |
+| **OAT: Ordered Action Tokenization** | Action Tokenization | Feb 4, 2026 | [Paper](https://arxiv.org/abs/2602.04215) |
+| **Towards Efficient Multi-Camera Encoding for E2E Driving** | Efficient Inference | Dec 11, 2025 | [Paper](https://arxiv.org/abs/2512.10947) |
+| **Mull-Tokens: Modality-Agnostic Latent Thinking** | Latent Reasoning & Chain-of-Thought | Dec 11, 2025 | [Paper](https://arxiv.org/abs/2512.10941) |
+| **LCDrive: Latent CoT World Modeling for E2E Driving** | World Models | Dec 11, 2025 | [Paper](https://arxiv.org/abs/2512.10226) |
+| **DiffusionNFT: Online Diffusion Reinforcement with Forward Process** | RL & Policy Optimization | Sep 19, 2025 | [Paper](https://arxiv.org/abs/2509.16117) |
+| **Efficient Multi-Camera Tokenization with Triplanes** | Efficient Inference | Jun 13, 2025 | [Paper](https://arxiv.org/abs/2506.12251) |
+
+## ByteDance
+
+| Paper | Category | Date | Link |
+|:------|:---------|:----:|:-----|
+| **End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer** | Multimodal Architecture & Pre-training | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.00503) |
+| **World Guidance: World Modeling in Condition Space for Action Generation** | World Models | Feb 25, 2026 | [Paper](https://arxiv.org/abs/2602.22010) |
+| **BagelVLA: Long-Horizon Manipulation via Interleaved VLA Generation** | VLA Architecture | Feb 10, 2026 | [Paper](https://arxiv.org/abs/2602.09849) |
+| **SpatialTree: How Spatial Abilities Branch Out in MLLMs** | Spatial Perception & 3D/4D | Dec 23, 2025 | [Paper](https://arxiv.org/abs/2512.20617) |
+| **UniUGP: Unifying Understanding, Generation, and Planning for E2E AD** | End-to-End VLA Architecture | Dec 10, 2025 | [Paper](https://arxiv.org/abs/2512.09864) |
+| **Efficient Training of Diffusion MoE: A Practical Recipe** | Multimodal Architecture & Pre-training | Dec 1, 2025 | [Paper](https://arxiv.org/abs/2512.01252) |
+| **LightFusion: Double Fusion for Unified Multimodal** | Multimodal Architecture & Pre-training | Oct 27, 2025 | [Paper](https://arxiv.org/abs/2510.22946) |
+| **BAGEL: Emerging Properties in Unified Multimodal Pretraining** | Multimodal Architecture & Pre-training | May 20, 2025 | [Paper](https://arxiv.org/abs/2505.14683) |
 
 ## ZJU
 
@@ -281,29 +326,41 @@
 | **ThinkMorph: Emergent Properties in Multimodal Interleaved CoT** | Latent Reasoning & Chain-of-Thought | Oct 30, 2025 | [Paper](https://arxiv.org/abs/2510.27492) |
 | **PixelRefer: Unified Spatio-Temporal Object Referring** | Spatial Perception & 3D/4D | Oct 27, 2025 | [Paper](https://arxiv.org/abs/2510.23603) |
 
-## ByteDance
+## CASIA
 
 | Paper | Category | Date | Link |
 |:------|:---------|:----:|:-----|
-| **World Guidance: World Modeling in Condition Space for Action Generation** | World Models | Feb 25, 2026 | [Paper](https://arxiv.org/abs/2602.22010) |
-| **BagelVLA: Long-Horizon Manipulation via Interleaved VLA Generation** | VLA Architecture | Feb 10, 2026 | [Paper](https://arxiv.org/abs/2602.09849) |
-| **SpatialTree: How Spatial Abilities Branch Out in MLLMs** | Spatial Perception & 3D/4D | Dec 23, 2025 | [Paper](https://arxiv.org/abs/2512.20617) |
-| **UniUGP: Unifying Understanding, Generation, and Planning for E2E AD** | End-to-End VLA Architecture | Dec 10, 2025 | [Paper](https://arxiv.org/abs/2512.09864) |
-| **Efficient Training of Diffusion MoE: A Practical Recipe** | Multimodal Architecture & Pre-training | Dec 1, 2025 | [Paper](https://arxiv.org/abs/2512.01252) |
-| **LightFusion: Double Fusion for Unified Multimodal** | Multimodal Architecture & Pre-training | Oct 27, 2025 | [Paper](https://arxiv.org/abs/2510.22946) |
-| **BAGEL: Emerging Properties in Unified Multimodal Pretraining** | Multimodal Architecture & Pre-training | May 20, 2025 | [Paper](https://arxiv.org/abs/2505.14683) |
+| **X-WAM: Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising** | World Models & Policy Co-learning | Apr 29, 2026 | [Paper](https://arxiv.org/abs/2604.26694) |
+| **OneDrive: Unified Multi-Paradigm Driving with Vision-Language-Action Models** | End-to-End VLA Architecture | Apr 20, 2026 | [Paper](https://arxiv.org/abs/2604.17915) |
+| **π-StepNFT: Wider Space Needs Finer Steps in Online RL for Flow-based VLAs** | RL & Policy Optimization | Mar 2, 2026 | [Paper](https://arxiv.org/abs/2603.02083) |
+| **WoVR: World Models as Reliable Simulators for Post-Training VLA with RL** | World Models & Policy Co-learning | Feb 15, 2026 | [Paper](https://arxiv.org/abs/2602.13977) |
+| **LDA-1B: Scaling Latent Dynamics Action Model** | VLA Architecture | Feb 12, 2026 | [Paper](https://arxiv.org/abs/2602.12215) |
+| **TrajMoE: Scene-Adaptive Trajectory Planning with MoE and RL** | Planning & Control | Dec 8, 2025 | [Paper](https://arxiv.org/abs/2512.07135) |
+| **SimScale: Learning to Drive via Real-World Simulation at Scale** | Simulation & Data | Nov 28, 2025 | [Paper](https://arxiv.org/abs/2511.23369) |
 
-## Stanford
+## NUS
 
 | Paper | Category | Date | Link |
 |:------|:---------|:----:|:-----|
-| **VLAW: Iterative Co-Improvement of VLA Policy and World Model** | World Models & Policy Co-learning | Feb 12, 2026 | [Paper](https://arxiv.org/abs/2602.12063) |
-| **OAT: Ordered Action Tokenization** | Action Tokenization | Feb 4, 2026 | [Paper](https://arxiv.org/abs/2602.04215) |
-| **Towards Efficient Multi-Camera Encoding for E2E Driving** | Efficient Inference | Dec 11, 2025 | [Paper](https://arxiv.org/abs/2512.10947) |
-| **Mull-Tokens: Modality-Agnostic Latent Thinking** | Latent Reasoning & Chain-of-Thought | Dec 11, 2025 | [Paper](https://arxiv.org/abs/2512.10941) |
-| **LCDrive: Latent CoT World Modeling for E2E Driving** | World Models | Dec 11, 2025 | [Paper](https://arxiv.org/abs/2512.10226) |
-| **DiffusionNFT: Online Diffusion Reinforcement with Forward Process** | RL & Policy Optimization | Sep 19, 2025 | [Paper](https://arxiv.org/abs/2509.16117) |
-| **Efficient Multi-Camera Tokenization with Triplanes** | Efficient Inference | Jun 13, 2025 | [Paper](https://arxiv.org/abs/2506.12251) |
+| **Vision-Language-Action Safety: Threats, Challenges, Evaluations, and Mechanisms** | Surveys | Apr 26, 2026 | [Paper](https://arxiv.org/abs/2604.23775) |
+| **World-VLA-Loop: Closed-Loop Learning of Video World Model and VLA Policy** | World Models & Policy Co-learning | Feb 6, 2026 | [Paper](https://arxiv.org/abs/2602.06508) |
+| **Action Hallucination in Generative VLA Models** | RL & Policy Optimization | Feb 6, 2026 | [Paper](https://arxiv.org/abs/2602.06339) |
+| **Forging Spatial Intelligence: Roadmap** | Spatial Perception & 3D/4D | Dec 30, 2025 | [Paper](https://arxiv.org/abs/2512.24385) |
+| **Motion4D: 3D-Consistent Motion and Semantics for 4D Scene Understanding** | Spatial Perception & 3D/4D | Dec 3, 2025 | [Paper](https://arxiv.org/abs/2512.03601) |
+| **ThinkMorph: Emergent Properties in Multimodal Interleaved CoT** | Latent Reasoning & Chain-of-Thought | Oct 30, 2025 | [Paper](https://arxiv.org/abs/2510.27492) |
+| **OmniNWM: Omniscient Driving Navigation World Models** | World Models | Oct 21, 2025 | [Paper](https://arxiv.org/abs/2510.18313) |
+
+## HKUST
+
+| Paper | Category | Date | Link |
+|:------|:---------|:----:|:-----|
+| **Visual Generation in the New Era: An Evolution from Atomic Mapping to Agentic World Modeling** | Surveys | Apr 30, 2026 | [Paper](https://arxiv.org/abs/2604.28185) |
+| **Traffic Sign Recognition in Autonomous Driving: Dataset, Benchmark, and Field Experiment** | Safety & Benchmarks | Mar 24, 2026 | [Paper](https://arxiv.org/abs/2603.23034) |
+| **RoboStereo: Dual-Tower 4D Embodied World Models for Unified Policy Optimization** | World Models & Policy Co-learning | Mar 13, 2026 | [Paper](https://arxiv.org/abs/2603.12639) |
+| **HALO: Unified VLA for Embodied Multimodal CoT Reasoning** | VLA Architecture | Feb 24, 2026 | [Paper](https://arxiv.org/abs/2602.21157) |
+| **Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling** | RL & Policy Optimization | Feb 11, 2026 | [Paper](https://arxiv.org/abs/2602.11146) |
+| **VL-JEPA: Joint Embedding Predictive Architecture for Vision-language** | Multimodal Architecture & Pre-training | Dec 11, 2025 | [Paper](https://arxiv.org/abs/2512.10942) |
+| **Multimodal Spatial Reasoning in the Large Model Era: Survey** | Surveys | Oct 29, 2025 | [Paper](https://arxiv.org/abs/2510.25760) |
 
 ## Shanghai AI Lab
 
@@ -316,28 +373,6 @@
 | **PICABench: How Far from Physically Realistic Image Editing?** | Physical AI Benchmarks | Oct 20, 2025 | [Paper](https://arxiv.org/abs/2510.17681) |
 | **F1: A VLA Bridging Understanding and Generation to Actions** | End-to-End VLA Architecture | Sep 8, 2025 | [Paper](https://arxiv.org/abs/2509.06951) |
 
-## CASIA
-
-| Paper | Category | Date | Link |
-|:------|:---------|:----:|:-----|
-| **OneDrive: Unified Multi-Paradigm Driving with Vision-Language-Action Models** | End-to-End VLA Architecture | Apr 20, 2026 | [Paper](https://arxiv.org/abs/2604.17915) |
-| **π-StepNFT: Wider Space Needs Finer Steps in Online RL for Flow-based VLAs** | RL & Policy Optimization | Mar 2, 2026 | [Paper](https://arxiv.org/abs/2603.02083) |
-| **WoVR: World Models as Reliable Simulators for Post-Training VLA with RL** | World Models & Policy Co-learning | Feb 15, 2026 | [Paper](https://arxiv.org/abs/2602.13977) |
-| **LDA-1B: Scaling Latent Dynamics Action Model** | VLA Architecture | Feb 12, 2026 | [Paper](https://arxiv.org/abs/2602.12215) |
-| **TrajMoE: Scene-Adaptive Trajectory Planning with MoE and RL** | Planning & Control | Dec 8, 2025 | [Paper](https://arxiv.org/abs/2512.07135) |
-| **SimScale: Learning to Drive via Real-World Simulation at Scale** | Simulation & Data | Nov 28, 2025 | [Paper](https://arxiv.org/abs/2511.23369) |
-
-## NUS
-
-| Paper | Category | Date | Link |
-|:------|:---------|:----:|:-----|
-| **World-VLA-Loop: Closed-Loop Learning of Video World Model and VLA Policy** | World Models & Policy Co-learning | Feb 6, 2026 | [Paper](https://arxiv.org/abs/2602.06508) |
-| **Action Hallucination in Generative VLA Models** | RL & Policy Optimization | Feb 6, 2026 | [Paper](https://arxiv.org/abs/2602.06339) |
-| **Forging Spatial Intelligence: Roadmap** | Spatial Perception & 3D/4D | Dec 30, 2025 | [Paper](https://arxiv.org/abs/2512.24385) |
-| **Motion4D: 3D-Consistent Motion and Semantics for 4D Scene Understanding** | Spatial Perception & 3D/4D | Dec 3, 2025 | [Paper](https://arxiv.org/abs/2512.03601) |
-| **ThinkMorph: Emergent Properties in Multimodal Interleaved CoT** | Latent Reasoning & Chain-of-Thought | Oct 30, 2025 | [Paper](https://arxiv.org/abs/2510.27492) |
-| **OmniNWM: Omniscient Driving Navigation World Models** | World Models | Oct 21, 2025 | [Paper](https://arxiv.org/abs/2510.18313) |
-
 ## ShanghaiTech
 
 | Paper | Category | Date | Link |
@@ -349,16 +384,15 @@
 | **HybridWorldSim: Scalable High-fidelity Simulator for AD** | World Models | Nov 27, 2025 | [Paper](https://arxiv.org/abs/2511.22187) |
 | **MoE3D: MoE meets Multi-Modal 3D Understanding** | Spatial Perception & 3D/4D | Nov 27, 2025 | [Paper](https://arxiv.org/abs/2511.22103) |
 
-## HKUST
+## Oxford
 
 | Paper | Category | Date | Link |
 |:------|:---------|:----:|:-----|
-| **Traffic Sign Recognition in Autonomous Driving: Dataset, Benchmark, and Field Experiment** | Safety & Benchmarks | Mar 24, 2026 | [Paper](https://arxiv.org/abs/2603.23034) |
-| **RoboStereo: Dual-Tower 4D Embodied World Models for Unified Policy Optimization** | World Models & Policy Co-learning | Mar 13, 2026 | [Paper](https://arxiv.org/abs/2603.12639) |
-| **HALO: Unified VLA for Embodied Multimodal CoT Reasoning** | VLA Architecture | Feb 24, 2026 | [Paper](https://arxiv.org/abs/2602.21157) |
-| **Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling** | RL & Policy Optimization | Feb 11, 2026 | [Paper](https://arxiv.org/abs/2602.11146) |
-| **VL-JEPA: Joint Embedding Predictive Architecture for Vision-language** | Multimodal Architecture & Pre-training | Dec 11, 2025 | [Paper](https://arxiv.org/abs/2512.10942) |
-| **Multimodal Spatial Reasoning in the Large Model Era: Survey** | Surveys | Oct 29, 2025 | [Paper](https://arxiv.org/abs/2510.25760) |
+| **World Model for Robot Learning: A Comprehensive Survey** | Surveys | Apr 30, 2026 | [Paper](https://arxiv.org/abs/2605.00080) |
+| **SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations** | Spatial Perception & 3D/4D | Apr 10, 2026 | [Paper](https://arxiv.org/abs/2604.07990) |
+| **OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams** | VLA Architecture | Mar 12, 2026 | [Paper](https://arxiv.org/abs/2603.12265) |
+| **Reliable and Responsible Foundation Models: A Comprehensive Survey** | Surveys | Feb 4, 2026 | [Paper](https://arxiv.org/abs/2602.08145) |
+| **VFMF: World Modeling by Forecasting Vision Foundation Model Features** | World Models | Dec 12, 2025 | [Paper](https://arxiv.org/abs/2512.11225) |
 
 ## UCSD
 
@@ -379,6 +413,16 @@
 | **MMaDA-VLA: Large Diffusion Vision-Language-Action Model with Unified Multi-Modal Instruction and Generation** | VLA Architecture | Mar 26, 2026 | [Paper](https://arxiv.org/abs/2603.25406) |
 | **3D-Mix for VLA: A Plug-and-Play Module for Integrating VGGT-based 3D Information into Vision-Language-Action Models** | VLA Architecture | Mar 25, 2026 | [Paper](https://arxiv.org/abs/2603.24393) |
 | **Traffic Sign Recognition in Autonomous Driving: Dataset, Benchmark, and Field Experiment** | Safety & Benchmarks | Mar 24, 2026 | [Paper](https://arxiv.org/abs/2603.23034) |
+
+## Physical Intelligence
+
+| Paper | Category | Date | Link |
+|:------|:---------|:----:|:-----|
+| **RL Token: Bootstrapping Online RL with Vision-Language-Action Models** | RL & Policy Optimization | Apr 24, 2026 | [Paper](https://arxiv.org/abs/2604.23073) |
+| **π0.7: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities** | VLA Architecture | Apr 16, 2026 | [Paper](https://arxiv.org/abs/2604.15483) |
+| **MEM: Multi-Scale Embodied Memory for VLA** | VLA Architecture | Mar 4, 2026 | [Paper](https://arxiv.org/abs/2603.03596) |
+| **LAP: Language-Action Pre-Training for Zero-shot Cross-Embodiment** | Data & Pre-training | Feb 11, 2026 | [Paper](https://arxiv.org/abs/2602.10556) |
+| **π₀.₆: a VLA That Learns From Experience** | VLA Architecture | Nov 18, 2025 | [Paper](https://arxiv.org/abs/2511.14759) |
 
 ## Alibaba
 
@@ -418,14 +462,14 @@
 | **ProPhy: Progressive Physical Alignment for Dynamic World Simulation** | Physical AI Benchmarks | Dec 5, 2025 | [Paper](https://arxiv.org/abs/2512.05564) |
 | **PhyBlock: Physical Understanding via 3D Block Assembly** | Physical AI Benchmarks | Jun 10, 2025 | [Paper](https://arxiv.org/abs/2506.08708) |
 
-## Oxford
+## BUAA
 
 | Paper | Category | Date | Link |
 |:------|:---------|:----:|:-----|
-| **SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations** | Spatial Perception & 3D/4D | Apr 10, 2026 | [Paper](https://arxiv.org/abs/2604.07990) |
-| **OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams** | VLA Architecture | Mar 12, 2026 | [Paper](https://arxiv.org/abs/2603.12265) |
-| **Reliable and Responsible Foundation Models: A Comprehensive Survey** | Surveys | Feb 4, 2026 | [Paper](https://arxiv.org/abs/2602.08145) |
-| **VFMF: World Modeling by Forecasting Vision Foundation Model Features** | World Models | Dec 12, 2025 | [Paper](https://arxiv.org/abs/2512.11225) |
+| **Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System** | VLA Architecture | Apr 27, 2026 | [Paper](https://arxiv.org/abs/2604.24921) |
+| **Toward Cooperative Driving in Mixed Traffic: An Adaptive Potential Game-Based Approach with Field Test Verification** | Planning & Control | Apr 22, 2026 | [Paper](https://arxiv.org/abs/2604.20231) |
+| **3D-Mix for VLA: A Plug-and-Play Module for Integrating VGGT-based 3D Information into Vision-Language-Action Models** | VLA Architecture | Mar 25, 2026 | [Paper](https://arxiv.org/abs/2603.24393) |
+| **Stag-1: Realistic 4D Driving Simulation with Video Generation** | World Models | Dec 6, 2024 | [Paper](https://arxiv.org/abs/2412.05280) |
 
 ## NYU
 
@@ -445,15 +489,6 @@
 | **NORA-1.5: VLA with World Model and Action-based Preference Rewards** | World Models & Policy Co-learning | Nov 18, 2025 | [Paper](https://arxiv.org/abs/2511.14659) |
 | **Scaling Spatial Intelligence with Multimodal Foundation Models** | Spatial Perception & 3D/4D | Nov 17, 2025 | [Paper](https://arxiv.org/abs/2511.13719) |
 
-## Physical Intelligence
-
-| Paper | Category | Date | Link |
-|:------|:---------|:----:|:-----|
-| **π0.7: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities** | VLA Architecture | Apr 16, 2026 | [Paper](https://arxiv.org/abs/2604.15483) |
-| **MEM: Multi-Scale Embodied Memory for VLA** | VLA Architecture | Mar 4, 2026 | [Paper](https://arxiv.org/abs/2603.03596) |
-| **LAP: Language-Action Pre-Training for Zero-shot Cross-Embodiment** | Data & Pre-training | Feb 11, 2026 | [Paper](https://arxiv.org/abs/2602.10556) |
-| **π₀.₆: a VLA That Learns From Experience** | VLA Architecture | Nov 18, 2025 | [Paper](https://arxiv.org/abs/2511.14759) |
-
 ## MSRA
 
 | Paper | Category | Date | Link |
@@ -471,6 +506,15 @@
 | **RARRL: Resource-Aware Reasoning via RL for Embodied Robotic Decision-Making** | RL & Policy Optimization | Mar 17, 2026 | [Paper](https://arxiv.org/abs/2603.16673) |
 | **Reliable and Responsible Foundation Models: A Comprehensive Survey** | Surveys | Feb 4, 2026 | [Paper](https://arxiv.org/abs/2602.08145) |
 | **PAI-Bench: A Comprehensive Benchmark For Physical AI** | Physical AI Benchmarks | Dec 1, 2025 | [Paper](https://arxiv.org/abs/2512.01989) |
+
+## Princeton
+
+| Paper | Category | Date | Link |
+|:------|:---------|:----:|:-----|
+| **World Model for Robot Learning: A Comprehensive Survey** | Surveys | Apr 30, 2026 | [Paper](https://arxiv.org/abs/2605.00080) |
+| **Vero: An Open RL Recipe for General Visual Reasoning** | Multimodal Architecture & Pre-training | Apr 6, 2026 | [Paper](https://arxiv.org/abs/2604.04917) |
+| **LAP: Language-Action Pre-Training for Zero-shot Cross-Embodiment** | Data & Pre-training | Feb 11, 2026 | [Paper](https://arxiv.org/abs/2602.10556) |
+| **Video Generation Models in Robotics** | Surveys | Jan 12, 2026 | [Paper](https://arxiv.org/abs/2601.07823) |
 
 ## Horizon Robotics
 
@@ -512,6 +556,14 @@
 | **Blink: Dynamic Visual Token Resolution** | Efficient Inference | Dec 11, 2025 | [Paper](https://arxiv.org/abs/2512.10548) |
 | **LatBot: Distilling Universal Latent Actions for VLA** | Action Tokenization | Nov 28, 2025 | [Paper](https://arxiv.org/abs/2511.23034) |
 
+## Li Auto
+
+| Paper | Category | Date | Link |
+|:------|:---------|:----:|:-----|
+| **CRAFT: Counterfactual-to-Interactive Reinforcement Fine-Tuning for Driving Policies** | End-to-End VLA Architecture | May 6, 2026 | [Paper](https://arxiv.org/abs/2605.04470) |
+| **StreetForward: Perceiving Dynamic Street with Feedforward Causal Attention** | World Models | Mar 20, 2026 | [Paper](https://arxiv.org/abs/2603.19552) |
+| **MindGPT-4ov: Enhanced MLLM via Multi-Stage Post-Training** | Multimodal Architecture & Pre-training | Dec 2, 2025 | [Paper](https://arxiv.org/abs/2512.02895) |
+
 ## XPeng
 
 | Paper | Category | Date | Link |
@@ -519,14 +571,6 @@
 | **UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling** | World Models & Policy Co-learning | Apr 21, 2026 | [Paper](https://arxiv.org/abs/2604.19734) |
 | **FutureX: Latent CoT World Model for E2E AD** | World Models | Dec 12, 2025 | [Paper](https://arxiv.org/abs/2512.11226) |
 | **HybridWorldSim: Scalable High-fidelity Simulator for AD** | World Models | Nov 27, 2025 | [Paper](https://arxiv.org/abs/2511.22187) |
-
-## BUAA
-
-| Paper | Category | Date | Link |
-|:------|:---------|:----:|:-----|
-| **Toward Cooperative Driving in Mixed Traffic: An Adaptive Potential Game-Based Approach with Field Test Verification** | Planning & Control | Apr 22, 2026 | [Paper](https://arxiv.org/abs/2604.20231) |
-| **3D-Mix for VLA: A Plug-and-Play Module for Integrating VGGT-based 3D Information into Vision-Language-Action Models** | VLA Architecture | Mar 25, 2026 | [Paper](https://arxiv.org/abs/2603.24393) |
-| **Stag-1: Realistic 4D Driving Simulation with Video Generation** | World Models | Dec 6, 2024 | [Paper](https://arxiv.org/abs/2412.05280) |
 
 ## USTC
 
@@ -544,6 +588,14 @@
 | **CLI: Dynamic Cross-Layer Injection for Deep VL Fusion** | Multimodal Architecture & Pre-training | Jan 15, 2026 | [Paper](https://arxiv.org/abs/2601.10710) |
 | **SRPO: Self-Referential Policy Optimization for VLA** | RL & Policy Optimization | Nov 19, 2025 | [Paper](https://arxiv.org/abs/2511.15605) |
 
+## UC Berkeley
+
+| Paper | Category | Date | Link |
+|:------|:---------|:----:|:-----|
+| **World Model for Robot Learning: A Comprehensive Survey** | Surveys | Apr 30, 2026 | [Paper](https://arxiv.org/abs/2605.00080) |
+| **Chain-of-Visual-Thought: Teaching VLMs with Continuous Visual Tokens** | Latent Reasoning & Chain-of-Thought | Nov 24, 2025 | [Paper](https://arxiv.org/abs/2511.19418) |
+| **WorldModelBench: Judging Video Generation Models As World Models** | Safety & Benchmarks | Feb 28, 2025 | [Paper](https://arxiv.org/abs/2502.20694) |
+
 ## Alibaba DAMO
 
 | Paper | Category | Date | Link |
@@ -560,13 +612,13 @@
 | **Reliable and Responsible Foundation Models: A Comprehensive Survey** | Surveys | Feb 4, 2026 | [Paper](https://arxiv.org/abs/2602.08145) |
 | **TraceGen: World Modeling in 3D Trace Space** | Data & Pre-training | Nov 26, 2025 | [Paper](https://arxiv.org/abs/2511.21690) |
 
-## Princeton
+## Baidu
 
 | Paper | Category | Date | Link |
 |:------|:---------|:----:|:-----|
-| **Vero: An Open RL Recipe for General Visual Reasoning** | Multimodal Architecture & Pre-training | Apr 6, 2026 | [Paper](https://arxiv.org/abs/2604.04917) |
-| **LAP: Language-Action Pre-Training for Zero-shot Cross-Embodiment** | Data & Pre-training | Feb 11, 2026 | [Paper](https://arxiv.org/abs/2602.10556) |
-| **Video Generation Models in Robotics** | Surveys | Jan 12, 2026 | [Paper](https://arxiv.org/abs/2601.07823) |
+| **Visual Generation in the New Era: An Evolution from Atomic Mapping to Agentic World Modeling** | Surveys | Apr 30, 2026 | [Paper](https://arxiv.org/abs/2604.28185) |
+| **Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding** | Spatial Perception & 3D/4D | Mar 19, 2026 | [Paper](https://arxiv.org/abs/2603.19235) |
+| **Blink: Dynamic Visual Token Resolution** | Efficient Inference | Dec 11, 2025 | [Paper](https://arxiv.org/abs/2512.10548) |
 
 ## Tianjin Univ
 
@@ -575,12 +627,19 @@
 | **VGGDrive: Cross-View Geometric Grounding for AD** | End-to-End VLA Architecture | Feb 24, 2026 | [Paper](https://arxiv.org/abs/2602.20794) |
 | **DrivePI: Spatial-aware 4D MLLM for Unified AD** | End-to-End VLA Architecture | Dec 14, 2025 | [Paper](https://arxiv.org/abs/2512.12799) |
 
-## Li Auto
+## BIT
 
 | Paper | Category | Date | Link |
 |:------|:---------|:----:|:-----|
-| **StreetForward: Perceiving Dynamic Street with Feedforward Causal Attention** | World Models | Mar 20, 2026 | [Paper](https://arxiv.org/abs/2603.19552) |
-| **MindGPT-4ov: Enhanced MLLM via Multi-Stage Post-Training** | Multimodal Architecture & Pre-training | Dec 2, 2025 | [Paper](https://arxiv.org/abs/2512.02895) |
+| **Thinking in Text and Images: Interleaved Vision-Language Reasoning Traces for Long-Horizon Robot Manipulation** | Latent Reasoning & Chain-of-Thought | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.00438) |
+| **CausalVAD: De-confounding End-to-End Autonomous Driving via Causal Intervention** | End-to-End VLA Architecture | Mar 19, 2026 | [Paper](https://arxiv.org/abs/2603.18561) |
+
+## Bosch
+
+| Paper | Category | Date | Link |
+|:------|:---------|:----:|:-----|
+| **Judge, Then Drive: A Critic-Centric Vision Language Action Framework for Autonomous Driving** | End-to-End VLA Architecture | Apr 30, 2026 | [Paper](https://arxiv.org/abs/2604.27366) |
+| **EmbodiedMidtrain: Bridging the Gap between Vision-Language Models and Vision-Language-Action Models via Mid-training** | Data & Pre-training | Apr 21, 2026 | [Paper](https://arxiv.org/abs/2604.20012) |
 
 ## Huawei
 
@@ -610,13 +669,6 @@
 | **WaymoQA: Multi-View VQA for Safety-Critical Reasoning in AD** | Simulation & Data | Nov 25, 2025 | [Paper](https://arxiv.org/abs/2511.20022) |
 | **Unified RL and Imitation Learning for VLMs** | RL & Policy Optimization | Oct 22, 2025 | [Paper](https://arxiv.org/abs/2510.19307) |
 
-## UC Berkeley
-
-| Paper | Category | Date | Link |
-|:------|:---------|:----:|:-----|
-| **Chain-of-Visual-Thought: Teaching VLMs with Continuous Visual Tokens** | Latent Reasoning & Chain-of-Thought | Nov 24, 2025 | [Paper](https://arxiv.org/abs/2511.19418) |
-| **WorldModelBench: Judging Video Generation Models As World Models** | Safety & Benchmarks | Feb 28, 2025 | [Paper](https://arxiv.org/abs/2502.20694) |
-
 ## MIT
 
 | Paper | Category | Date | Link |
@@ -645,13 +697,6 @@
 | **VideoAuto-R1: Video Auto Reasoning (Thinking Once, Answering Twice)** | Latent Reasoning & Chain-of-Thought | Jan 8, 2026 | [Paper](https://arxiv.org/abs/2601.05175) |
 | **DynamicVerse: Physically-Aware Multimodal 4D World Modeling** | Spatial Perception & 3D/4D | Dec 2, 2025 | [Paper](https://arxiv.org/abs/2512.03000) |
 
-## Baidu
-
-| Paper | Category | Date | Link |
-|:------|:---------|:----:|:-----|
-| **Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding** | Spatial Perception & 3D/4D | Mar 19, 2026 | [Paper](https://arxiv.org/abs/2603.19235) |
-| **Blink: Dynamic Visual Token Resolution** | Efficient Inference | Dec 11, 2025 | [Paper](https://arxiv.org/abs/2512.10548) |
-
 ## Tencent
 
 | Paper | Category | Date | Link |
@@ -672,6 +717,13 @@
 |:------|:---------|:----:|:-----|
 | **VL-JEPA: Joint Embedding Predictive Architecture for Vision-language** | Multimodal Architecture & Pre-training | Dec 11, 2025 | [Paper](https://arxiv.org/abs/2512.10942) |
 | **COCONUT: Training LLMs to Reason in Continuous Latent Space** | Latent Reasoning & Chain-of-Thought | Dec 9, 2024 | [Paper](https://arxiv.org/abs/2412.06769) |
+
+## Monash
+
+| Paper | Category | Date | Link |
+|:------|:---------|:----:|:-----|
+| **Vision-Language-Action Safety: Threats, Challenges, Evaluations, and Mechanisms** | Surveys | Apr 26, 2026 | [Paper](https://arxiv.org/abs/2604.23775) |
+| **PSA: Pyramid Sparse Attention for Efficient Video** | Efficient Inference | Dec 3, 2025 | [Paper](https://arxiv.org/abs/2512.04025) |
 
 ## PCL
 
@@ -694,7 +746,6 @@
 | McGill | **E3AD: Emotion-Aware VLA for Human-Centric E2E AD** | [Paper](https://arxiv.org/abs/2512.04733) |
 | XJTU | **AlignDrive: Aligned Lateral-Longitudinal Planning for E2E AD** | [Paper](https://arxiv.org/abs/2601.01762) |
 | UC Merced | **KnowVal: Knowledge-Augmented and Value-Guided AD System** | [Paper](https://arxiv.org/abs/2512.20299) |
-| BIT | **CausalVAD: De-confounding End-to-End Autonomous Driving via Causal Intervention** | [Paper](https://arxiv.org/abs/2603.18561) |
 | ECNU | **CausalVAD: De-confounding End-to-End Autonomous Driving via Causal Intervention** | [Paper](https://arxiv.org/abs/2603.18561) |
 | Tsinghua (AIR) | **Human and Algorithmic Visual Attention in Driving Tasks** | [Paper](https://www.nature.com/articles/s44387-026-00079-1) |
 | Motional | **SpanVLA: Efficient Action Bridging and Learning from Negative-Recovery Samples for Vision-Language-Action Model** | [Paper](https://arxiv.org/abs/2604.19710) |
@@ -714,6 +765,7 @@
 | Dexmal | **DM0: Embodied-Native VLA towards Physical AI** | [Paper](https://arxiv.org/abs/2602.14974) |
 | StepFun | **DM0: Embodied-Native VLA towards Physical AI** | [Paper](https://arxiv.org/abs/2602.14974) |
 | Galbot | **LDA-1B: Scaling Latent Dynamics Action Model** | [Paper](https://arxiv.org/abs/2602.12215) |
+| WHU | **Walk With Me: Long-Horizon Social Navigation for Human-Centric Outdoor Assistance** | [Paper](https://arxiv.org/abs/2604.26839) |
 | Galaxea AI | **FASTer: Efficient Autoregressive VLA via Neural Action Tokenization** | [Paper](https://arxiv.org/abs/2512.04952) |
 | Purdue | **Modular Safety Guardrails for FM-Enabled Robots** | [Paper](https://arxiv.org/abs/2602.04056) |
 | Edinburgh | **π-StepNFT: Wider Space Needs Finer Steps in Online RL for Flow-based VLAs** | [Paper](https://arxiv.org/abs/2603.02083) |
@@ -721,7 +773,6 @@
 | Cornell | **RARRL: Resource-Aware Reasoning via RL for Embodied Robotic Decision-Making** | [Paper](https://arxiv.org/abs/2603.16673) |
 | ByteDance Seed | **Towards Generalizable Robotic Data Flywheel: High-Dimensional Factorization and Composition** | [Paper](https://arxiv.org/abs/2603.25583) |
 | UIUC | **SAGE: Scalable Agentic 3D Scene Generation for Embodied AI** | [Paper](https://arxiv.org/abs/2602.10116) |
-| Bosch | **EmbodiedMidtrain: Bridging the Gap between Vision-Language Models and Vision-Language-Action Models via Mid-training** | [Paper](https://arxiv.org/abs/2604.20012) |
 | SUNY Buffalo | **VLM²: Vision-Language Memory for Spatial Reasoning** | [Paper](https://arxiv.org/abs/2511.20644) |
 | NUDT | **MoE3D: MoE meets Multi-Modal 3D Understanding** | [Paper](https://arxiv.org/abs/2511.22103) |
 | XMU | **DynamicVerse: Physically-Aware Multimodal 4D World Modeling** | [Paper](https://arxiv.org/abs/2512.03000) |
@@ -734,8 +785,8 @@
 | Ant Group | **CLI: Dynamic Cross-Layer Injection for Deep VL Fusion** | [Paper](https://arxiv.org/abs/2601.10710) |
 | UCSC | **LightFusion: Double Fusion for Unified Multimodal** | [Paper](https://arxiv.org/abs/2510.22946) |
 | DeepSeek AI | **DeepSeek-OCR 2: Visual Causal Flow** | [Paper](https://arxiv.org/abs/2601.20552) |
+| Caltech | **End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer** | [Paper](https://arxiv.org/abs/2605.00503) |
 | ACE Robotics | **FASTER: Rethinking Real-Time Flow VLAs** | [Paper](https://arxiv.org/abs/2603.19199) |
-| Monash | **PSA: Pyramid Sparse Attention for Efficient Video** | [Paper](https://arxiv.org/abs/2512.04025) |
 | SIAT | **ApET: Approximation-Error Guided Token Compression** | [Paper](https://arxiv.org/abs/2602.19870) |
 | USC | **Towards Efficient Multi-Camera Encoding for E2E Driving** | [Paper](https://arxiv.org/abs/2512.10947) |
 | DFKI | **How Many Tokens Do 3D Point Cloud Transformer Architectures Really Need?** | [Paper](https://arxiv.org/abs/2511.05449) |

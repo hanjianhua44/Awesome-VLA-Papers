@@ -232,6 +232,24 @@
   subcategory: e2e
   summary: 高效动作跨度桥接+负样本恢复学习，提升驾驶VLA长尾鲁棒性与生成效率
   date: '2026-04-21'
+- title: 'Judge, Then Drive: A Critic-Centric Vision Language Action Framework for Autonomous Driving'
+  arxiv: '2604.27366'
+  url: https://arxiv.org/abs/2604.27366
+  institution: Bosch
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 显式利用VLA的评论员能力对驾驶动作打分细化，先评估再决策的端到端驾驶框架
+  date: '2026-04-30'
+- title: 'CRAFT: Counterfactual-to-Interactive Reinforcement Fine-Tuning for Driving Policies'
+  arxiv: '2605.04470'
+  url: https://arxiv.org/abs/2605.04470
+  institution: Li Auto, Tsinghua
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 反事实到交互式RL微调，缓解开环模仿在闭环部署时的策略诱发分布偏移
+  date: '2026-05-06'
 - title: 'DriveTok: 3D Driving Scene Tokenization for Unified Multi-View Reconstruction and Understanding'
   arxiv: '2603.19219'
   url: https://arxiv.org/abs/2603.19219
@@ -844,6 +862,24 @@
   subcategory: vla-arch
   summary: LoHo-Manip框架，VLM任务管理器+轨迹条件VLA执行器，长时操作的隐式闭环重规划
   date: '2026-04-23'
+- title: 'Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System'
+  arxiv: '2604.24921'
+  url: https://arxiv.org/abs/2604.24921
+  institution: BUAA
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 异步粗到细双系统VLA，将宏观方向决策与连续微观位姿对齐解耦，平衡语义与执行
+  date: '2026-04-27'
+- title: 'Walk With Me: Long-Horizon Social Navigation for Human-Centric Outdoor Assistance'
+  arxiv: '2604.26839'
+  url: https://arxiv.org/abs/2604.26839
+  institution: Xiaomi, Tsinghua, Fudan, WHU
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 户外人机协同长时社交导航，将自然语言意图翻译为安全合规的长时程导航行为
+  date: '2026-04-29'
 - title: 'OAT: Ordered Action Tokenization'
   arxiv: '2602.04215'
   url: https://arxiv.org/abs/2602.04215
@@ -1015,6 +1051,15 @@
   subcategory: world-model-policy
   summary: 统一潜在动作词元化器UniT，桥接人类视频与人形机器人，联合策略学习与世界建模
   date: '2026-04-21'
+- title: 'X-WAM: Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising'
+  arxiv: '2604.26694'
+  url: https://arxiv.org/abs/2604.26694
+  institution: Xiaomi, Tsinghua, PKU, CASIA
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 统一4D世界模型X-WAM，单框架内联合实时机器人动作执行与高保真视频+3D重建合成
+  date: '2026-04-29'
 - title: 'SRPO: Self-Referential Policy Optimization for VLA'
   arxiv: '2511.15605'
   url: https://arxiv.org/abs/2511.15605
@@ -1123,6 +1168,24 @@
   subcategory: rl-policy
   summary: RL学习何时调用LLM推理的资源感知编排策略，自适应分配计算预算提升具身任务成功率
   date: '2026-03-17'
+- title: 'RL Token: Bootstrapping Online RL with Vision-Language-Action Models'
+  arxiv: '2604.23073'
+  url: https://arxiv.org/abs/2604.23073
+  institution: Physical Intelligence
+  venue: arXiv 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: PI推出的轻量级RL Token方法，用VLA预训练知识引导在线RL，显著提升真实任务成功率与速度
+  date: '2026-04-24'
+- title: 'LaST-R1: Reinforcing Robotic Manipulation via Adaptive Physical Latent Reasoning'
+  arxiv: '2604.28192'
+  url: https://arxiv.org/abs/2604.28192
+  institution: PKU, CUHK, HKU
+  venue: arXiv 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: 自适应物理潜在推理强化VLA，让模型按需进行细粒度物理推理以提升操作成功率
+  date: '2026-04-30'
 - title: 'Towards Generalizable Robotic Data Flywheel: High-Dimensional Factorization and Composition'
   arxiv: '2603.25583'
   url: https://arxiv.org/abs/2603.25583
@@ -1447,6 +1510,15 @@
   subcategory: latent-reasoning
   summary: 按需推理，低置信才激活，响应长度减少3.3x
   date: '2026-01-08'
+- title: 'Thinking in Text and Images: Interleaved Vision-Language Reasoning Traces for Long-Horizon Robot Manipulation'
+  arxiv: '2605.00438'
+  url: https://arxiv.org/abs/2605.00438
+  institution: Xiaomi, Tsinghua, BIT
+  venue: arXiv 2026
+  domain: general
+  subcategory: latent-reasoning
+  summary: 交错文图推理轨迹，将语言因果链与图像几何信息显式联合，支持长时操作规划
+  date: '2026-05-01'
 - title: 'VL-JEPA: Joint Embedding Predictive Architecture for Vision-language'
   arxiv: '2512.10942'
   url: https://arxiv.org/abs/2512.10942
@@ -1564,6 +1636,15 @@
   subcategory: multimodal-arch
   summary: 统一SFT与RL两种LVLM后训练范式，避免分阶段独立训练带来的低效问题
   date: '2026-04-17'
+- title: End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer
+  arxiv: '2605.00503'
+  url: https://arxiv.org/abs/2605.00503
+  institution: ByteDance, Stanford, Caltech
+  venue: arXiv 2026
+  domain: general
+  subcategory: multimodal-arch
+  summary: 端到端联合优化重建与生成的1D语义tokenizer，让生成结果直接监督词元化
+  date: '2026-05-01'
 - title: 'FASTER: Rethinking Real-Time Flow VLAs'
   arxiv: '2603.19199'
   url: https://arxiv.org/abs/2603.19199
@@ -1798,3 +1879,30 @@
   subcategory: survey
   summary: ''
   date: '2025-10-23'
+- title: 'Vision-Language-Action Safety: Threats, Challenges, Evaluations, and Mechanisms'
+  arxiv: '2604.23775'
+  url: https://arxiv.org/abs/2604.23775
+  institution: PKU, NUS, Monash
+  venue: arXiv 2026
+  domain: general
+  subcategory: survey
+  summary: VLA安全综述，系统梳理具身智能威胁面、多模态攻击向量与不可逆物理后果
+  date: '2026-04-26'
+- title: 'Visual Generation in the New Era: An Evolution from Atomic Mapping to Agentic World Modeling'
+  arxiv: '2604.28185'
+  url: https://arxiv.org/abs/2604.28185
+  institution: Baidu, Tsinghua, Fudan, HKUST
+  venue: arXiv 2026
+  domain: general
+  subcategory: survey
+  summary: 视觉生成范式综述，从原子映射演化到具备时空状态、因果推理的Agentic世界建模
+  date: '2026-04-30'
+- title: 'World Model for Robot Learning: A Comprehensive Survey'
+  arxiv: '2605.00080'
+  url: https://arxiv.org/abs/2605.00080
+  institution: Stanford, UC Berkeley, Princeton, Oxford
+  venue: arXiv 2026
+  domain: general
+  subcategory: survey
+  summary: 机器人学习世界模型综述，覆盖策略学习、规划、仿真、评估与数据生成全场景
+  date: '2026-04-30'
