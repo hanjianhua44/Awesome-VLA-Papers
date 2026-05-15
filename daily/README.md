@@ -22,6 +22,7 @@ Papers from the daily feed can be promoted to the [curated main list](../README.
 
 | Date | Day | Covers | Papers | Link |
 |:-----|:----|:-------|-------:|:-----|
+| 05-15 | Fri | 05-13 ~ 05-14 | 44 | [Report](2026/05/2026-05-15.md) |
 | 05-14 | Thu | 05-12 ~ 05-13 | 51 | [Report](2026/05/2026-05-14.md) |
 | 05-13 | Wed | 05-11 ~ 05-12 | 83 | [Report](2026/05/2026-05-13.md) |
 | 05-09 | Sat | 05-07 ~ 05-08 | 29 | [Report](2026/05/2026-05-09.md) |
