@@ -80,33 +80,50 @@ def run_fetch(date_str: str) -> int:
 
 def upsert_month_rows(rows: dict[str, tuple[str, str, int]]) -> None:
     content = DAILY_INDEX.read_text(encoding="utf-8")
-    start = content.index("## 2026-05")
-    next_section = content.find("\n## ", start + 1)
-    end = next_section if next_section != -1 else len(content)
-    section = content[start:end]
 
-    existing_rows: dict[str, str] = {}
-    for line in section.splitlines():
-        match = re.match(r"\| (05-\d{2}) \|", line)
-        if match:
-            existing_rows[match.group(1)] = line
+    by_month: dict[str, dict[str, tuple[str, str, int]]] = {}
+    for date_str, row in rows.items():
+        by_month.setdefault(date_str[:7], {})[date_str] = row
 
-    for date_str, (day_name, cover, count) in rows.items():
-        short = date_str[5:]
-        existing_rows[short] = (
-            f"| {short} | {day_name} | {cover} | {count} | "
-            f"[Report](2026/05/{date_str}.md) |"
+    for month_key in sorted(by_month.keys(), reverse=True):
+        year, month = month_key.split("-")
+        month_section = f"## {month_key}"
+        if month_section in content:
+            start = content.index(month_section)
+            next_section = content.find("\n## ", start + 1)
+            end = next_section if next_section != -1 else len(content)
+            section = content[start:end]
+        else:
+            first_section = re.search(r"\n## \d{4}-\d{2}\n", content)
+            start = first_section.start() + 1 if first_section else len(content)
+            end = start
+            section = ""
+
+        existing_rows: dict[str, str] = {}
+        row_pattern = re.compile(rf"\| ({re.escape(month)}-\d{{2}}) \|")
+        for line in section.splitlines():
+            match = row_pattern.match(line)
+            if match:
+                existing_rows[match.group(1)] = line
+
+        for date_str, (day_name, cover, count) in by_month[month_key].items():
+            short = date_str[5:]
+            existing_rows[short] = (
+                f"| {short} | {day_name} | {cover} | {count} | "
+                f"[Report]({year}/{month}/{date_str}.md) |"
+            )
+
+        sorted_rows = [existing_rows[k] for k in sorted(existing_rows, reverse=True)]
+        new_section = (
+            f"{month_section}\n\n"
+            "| Date | Day | Covers | Papers | Link |\n"
+            "|:-----|:----|:-------|-------:|:-----|\n"
+            + "\n".join(sorted_rows)
+            + "\n"
         )
+        content = content[:start] + new_section + content[end:]
 
-    sorted_rows = [existing_rows[k] for k in sorted(existing_rows, reverse=True)]
-    new_section = (
-        "## 2026-05\n\n"
-        "| Date | Day | Covers | Papers | Link |\n"
-        "|:-----|:----|:-------|-------:|:-----|\n"
-        + "\n".join(sorted_rows)
-        + "\n"
-    )
-    DAILY_INDEX.write_text(content[:start] + new_section + content[end:], encoding="utf-8")
+    DAILY_INDEX.write_text(content, encoding="utf-8")
 
 
 def main() -> None:
