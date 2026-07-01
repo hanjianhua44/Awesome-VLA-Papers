@@ -18,6 +18,12 @@ Papers from the daily feed can be promoted to the [curated main list](../README.
 
 ---
 
+## 2026-07
+
+| Date | Day | Covers | Papers | Link |
+|:-----|:----|:-------|-------:|:-----|
+| 07-01 | Wed | 06-29 ~ 06-30 | 33 | [Report](2026/07/2026-07-01.md) |
+
 ## 2026-06
 
 | Date | Day | Covers | Papers | Link |
