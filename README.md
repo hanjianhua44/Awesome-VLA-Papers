@@ -42,9 +42,9 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
-| **LiAuto-GeoX: Efficient Grounded Driving Transformer** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.05774) |
-| **DriveMA: Driving Vision-Language-Action Models with verifiable Meta-Actions** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.31271) |
-| **DriveMA: Rethinking Language Interfaces in Driving VLAs with One-Step Meta-Actions** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.21273v1) |
+| **LiAuto-GeoX: Efficient Grounded Driving Transformer** | Li Auto, Nanjing Univ, NWPU, PolyU | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.05774) |
+| **DriveMA: Driving Vision-Language-Action Models with verifiable Meta-Actions** | Tsinghua, Tongji | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.31271) |
+| **DriveMA: Rethinking Language Interfaces in Driving VLAs with One-Step Meta-Actions** | Tsinghua | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.21273v1) |
 | **CRAFT: Counterfactual-to-Interactive Reinforcement Fine-Tuning for Driving Policies** | Li Auto, Tsinghua | ![May 6, 2026](https://img.shields.io/badge/May_6,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.04470) |
 | **Judge, Then Drive: A Critic-Centric Vision Language Action Framework for Autonomous Driving** | Bosch | ![Apr 30, 2026](https://img.shields.io/badge/Apr_30,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.27366) |
 | **SpanVLA: Efficient Action Bridging and Learning from Negative-Recovery Samples for Vision-Language-Action Model** | Motional, UCLA, Northeastern | ![Apr 21, 2026](https://img.shields.io/badge/Apr_21,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.19710) |
@@ -55,7 +55,7 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 | **DVGT-2: Vision-Geometry-Action Model for Autonomous Driving at Scale** | — | ![Apr 2, 2026](https://img.shields.io/badge/Apr_2,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.00813) |
 | **Vega: Learning to Drive with Natural Language Instructions** | Tsinghua, GigaAI | ![Mar 30, 2026](https://img.shields.io/badge/Mar_30,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.25741) |
 | **CausalVAD: De-confounding End-to-End Autonomous Driving via Causal Intervention** | Fudan, BIT, ECNU | ![Mar 19, 2026](https://img.shields.io/badge/Mar_19,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.18561) |
-| **AutoMoT: An Asynchronous VLA Model for E2E Autonomous Driving** | — | ![Mar 1, 2026](https://img.shields.io/badge/Mar_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.14851) |
+| **AutoMoT: An Asynchronous VLA Model for E2E Autonomous Driving** | NTU, Harvard | ![Mar 1, 2026](https://img.shields.io/badge/Mar_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.14851) |
 | **Unleashing VLA Potentials in Autonomous Driving via Explicit Learning from Failures** | Tsinghua, Univ of Macau | ![Mar 1, 2026](https://img.shields.io/badge/Mar_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.01063) |
 | **Unleashing the Potential of Diffusion Models for E2E AD** | Tsinghua, Xiaomi | ![Feb 26, 2026](https://img.shields.io/badge/Feb_26,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.22801) |
 | **VGGDrive: Cross-View Geometric Grounding for AD** | Tianjin Univ, Xiaomi | ![Feb 24, 2026](https://img.shields.io/badge/Feb_24,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.20794) |
@@ -79,12 +79,12 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
-| **Metis: A Generalizable and Efficient World-Action Model for Autonomous Driving and Urban Navigation** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.15869) |
-| **CausalDrive: Real-time Causal World Models for Autonomous Driving** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.15341) |
-| **NVIDIA OmniDreams: Real-Time Generative World Model for Closed-Loop Autonomous Vehicle Simulation** | — | ![Jun 2, 2026](https://img.shields.io/badge/Jun_2,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.03159) |
-| **X-Foresight: A Joint Vision-Action Causal Forecasting Network via Predictive World Modeling** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.24892) |
-| **Xiaomi Auto World Model: A Joint World Model Integrating Reconstruction and Generation for Autonomous Driving** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.18137) |
-| **CoWorld-VLA: Thinking in a Multi-Expert World Model for Autonomous Driving** | — | ![May 11, 2026](https://img.shields.io/badge/May_11,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.10426) |
+| **Metis: A Generalizable and Efficient World-Action Model for Autonomous Driving and Urban Navigation** | Li Auto, Imperial, Fudan, HUST | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.15869) |
+| **CausalDrive: Real-time Causal World Models for Autonomous Driving** | Xiaomi, CASIA, Univ of Macau | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.15341) |
+| **NVIDIA OmniDreams: Real-Time Generative World Model for Closed-Loop Autonomous Vehicle Simulation** | NVIDIA | ![Jun 2, 2026](https://img.shields.io/badge/Jun_2,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.03159) |
+| **X-Foresight: A Joint Vision-Action Causal Forecasting Network via Predictive World Modeling** | XPeng | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.24892) |
+| **Xiaomi Auto World Model: A Joint World Model Integrating Reconstruction and Generation for Autonomous Driving** | Xiaomi | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.18137) |
+| **CoWorld-VLA: Thinking in a Multi-Expert World Model for Autonomous Driving** | SJTU, UESTC | ![May 11, 2026](https://img.shields.io/badge/May_11,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.10426) |
 | **DriveVA: Video Action Models are Zero-Shot Drivers** | Xiaomi, Cambridge | ![Apr 5, 2026](https://img.shields.io/badge/Apr_5,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.04198) |
 | **DriveDreamer-Policy: A Geometry-Grounded World-Action Model for Unified Generation and Planning** | CUHK, Univ of Toronto | ![Apr 2, 2026](https://img.shields.io/badge/Apr_2,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.01765) |
 | **Toward Physically Consistent Driving Video World Models under Challenging Trajectories** | ZJU, Xiaomi EV, HK PolyU | ![Mar 25, 2026](https://img.shields.io/badge/Mar_25,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.24506) |
@@ -109,8 +109,8 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
-| **AnyScene: Towards Highly Controllable Driving Scene Generation at Anywhere and Beyond** | — | ![May 25, 2026](https://img.shields.io/badge/May_25,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.26113) |
-| **123D: Unifying Multi-Modal Autonomous Driving Data at Scale** | — | ![May 8, 2026](https://img.shields.io/badge/May_8,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.08084) |
+| **AnyScene: Towards Highly Controllable Driving Scene Generation at Anywhere and Beyond** | Li Auto, Tsinghua | ![May 25, 2026](https://img.shields.io/badge/May_25,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.26113) |
+| **123D: Unifying Multi-Modal Autonomous Driving Data at Scale** | NVIDIA, Valeo, ZJU, TU Delft | ![May 8, 2026](https://img.shields.io/badge/May_8,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.08084) |
 | **Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems** | NVIDIA, NYU | ![Apr 10, 2026](https://img.shields.io/badge/Apr_10,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.08366) |
 | **Driving with A Thousand Faces: Closed-Loop Personalized E2E AD Benchmark** | HKU, ShanghaiTech, CUHK | ![Feb 21, 2026](https://img.shields.io/badge/Feb_21,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.18757) |
 | **Are All Data Necessary? Efficient Data Pruning for AD Dataset** | Tsinghua | ![Dec 22, 2025](https://img.shields.io/badge/Dec_22,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2512.19270) |
@@ -122,9 +122,9 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
-| **Planning-aligned Token Compression for Long-Context Autonomous Driving** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.07464) |
-| **CLOVER: Closed-Loop Value Estimation & Ranking for End-to-End Autonomous Driving Planning** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.15120) |
-| **Driving Intents Amplify Planning-Oriented Reinforcement Learning** | — | ![May 12, 2026](https://img.shields.io/badge/May_12,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.12625) |
+| **Planning-aligned Token Compression for Long-Context Autonomous Driving** | NVIDIA, HKU | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.07464) |
+| **CLOVER: Closed-Loop Value Estimation & Ranking for End-to-End Autonomous Driving Planning** | Tsinghua, USTC, BUAA | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.15120) |
+| **Driving Intents Amplify Planning-Oriented Reinforcement Learning** | Li Auto, Tsinghua | ![May 12, 2026](https://img.shields.io/badge/May_12,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.12625) |
 | **Toward Cooperative Driving in Mixed Traffic: An Adaptive Potential Game-Based Approach with Field Test Verification** | Tsinghua, BUAA, Tongji | ![Apr 22, 2026](https://img.shields.io/badge/Apr_22,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.20231) |
 | **TrajMoE: Scene-Adaptive Trajectory Planning with MoE and RL** | CASIA, Xiaomi | ![Dec 8, 2025](https://img.shields.io/badge/Dec_8,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2512.07135) |
 | **WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching** | Fudan | ![Dec 5, 2025](https://img.shields.io/badge/Dec_5,_2025-blue?style=flat-square) | [Paper](https://arxiv.org/abs/2512.06112) |
@@ -133,15 +133,15 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
-| **DriveJudge: Rethinking Autonomous Driving Evaluation with Vision-Language Models** | — | ![Jun 15, 2026](https://img.shields.io/badge/Jun_15,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.17362) |
-| **ReactSim-Bench: Benchmarking Reactive Behavior World Model Simulation in Autonomous Driving** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.14058) |
-| **From Attacks to Curricula: Learnability-Guided Adversarial Training for Safe Autonomous Driving** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.14032) |
-| **DriveReward: A Comprehensive Dataset and Generative Vision-Language Reward Model for Autonomous Driving** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.08525) |
-| **nuReasoning: A Reasoning-Centric Dataset and Benchmark for Long-Tail Autonomous Driving** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.31572) |
-| **Learning A Unified Risk Map for Autonomous Driving in Partially Observable Environments** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.22189) |
-| **Beyond Imitation: Learning Safe End-to-End Autonomous Driving from Hard Negatives** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.19771) |
-| **SafeAlign-VLA: A Negative-Enhanced Safe Alignment Framework for Risk-Aware Autonomous Driving** | — | ![May 19, 2026](https://img.shields.io/badge/May_19,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.19524) |
-| **Bench2Drive-Robust: Benchmarking Closed-Loop Autonomous Driving under Deployment Perturbations** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.18059) |
+| **DriveJudge: Rethinking Autonomous Driving Evaluation with Vision-Language Models** | NVIDIA | ![Jun 15, 2026](https://img.shields.io/badge/Jun_15,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.17362) |
+| **ReactSim-Bench: Benchmarking Reactive Behavior World Model Simulation in Autonomous Driving** | SJTU, Fudan, USTC, WHU | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.14058) |
+| **From Attacks to Curricula: Learnability-Guided Adversarial Training for Safe Autonomous Driving** | HKU, PolyU, Tongji | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.14032) |
+| **DriveReward: A Comprehensive Dataset and Generative Vision-Language Reward Model for Autonomous Driving** | Xiaomi, Tsinghua | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.08525) |
+| **nuReasoning: A Reasoning-Centric Dataset and Benchmark for Long-Tail Autonomous Driving** | Motional | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.31572) |
+| **Learning A Unified Risk Map for Autonomous Driving in Partially Observable Environments** | Waymo, Fudan, Tongji | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.22189) |
+| **Beyond Imitation: Learning Safe End-to-End Autonomous Driving from Hard Negatives** | Xiaomi, Fudan, CASIA, CAS | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.19771) |
+| **SafeAlign-VLA: A Negative-Enhanced Safe Alignment Framework for Risk-Aware Autonomous Driving** | Tsinghua, NUS, Tongji | ![May 19, 2026](https://img.shields.io/badge/May_19,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.19524) |
+| **Bench2Drive-Robust: Benchmarking Closed-Loop Autonomous Driving under Deployment Perturbations** | SJTU, Fudan, USTC, WHU | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.18059) |
 | **Bench2Drive-VL: Benchmarks for Closed-Loop Autonomous Driving with Vision-Language Models** | SJTU, Fudan | ![Apr 2, 2026](https://img.shields.io/badge/Apr_2,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.01259) |
 | **Can Users Specify Driving Speed? Bench2Drive-Speed: Benchmark and Baselines for Desired-Speed Conditioned Autonomous Driving** | SJTU, Fudan, NVIDIA | ![Mar 26, 2026](https://img.shields.io/badge/Mar_26,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.25672) |
 | **Traffic Sign Recognition in Autonomous Driving: Dataset, Benchmark, and Field Experiment** | HKUST(GZ), Lingnan, HKUST | ![Mar 24, 2026](https://img.shields.io/badge/Mar_24,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.23034) |
@@ -158,14 +158,14 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
-| **From Foundation to Application: Improving VLA Models in Practice** | — | ![Jul 7, 2026](https://img.shields.io/badge/Jul_7,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2607.06403) |
-| **Embodied-R1.5: Evolving Physical Intelligence via Embodied Foundation Models** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.11324) |
-| **OneVLA: A Unified Framework for Embodied Tasks** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.01241) |
-| **Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.30280) |
-| **Rethinking VLM Representation for VLA Initialization** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.25802) |
-| **Robo-Cortex: A Self-Evolving Embodied Agent via Dual-Grain Cognitive Memory and Autonomous Knowledge Induction** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.18729) |
-| **Towards Long-horizon Embodied Agents with Tool-Aligned Vision-Language-Action Models** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.13119) |
-| **Action Emergence from Streaming Intent** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.12622) |
+| **From Foundation to Application: Improving VLA Models in Practice** | Ant Digital Technologies, Genrobot.ai | ![Jul 7, 2026](https://img.shields.io/badge/Jul_7,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2607.06403) |
+| **Embodied-R1.5: Evolving Physical Intelligence via Embodied Foundation Models** | Tencent | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.11324) |
+| **OneVLA: A Unified Framework for Embodied Tasks** | Xiaomi, Tsinghua, PKU, CASIA | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.01241) |
+| **Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments** | Alibaba | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.30280) |
+| **Rethinking VLM Representation for VLA Initialization** | PKU, CUHK | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.25802) |
+| **Robo-Cortex: A Self-Evolving Embodied Agent via Dual-Grain Cognitive Memory and Autonomous Knowledge Induction** | CASIA, HKUST | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.18729) |
+| **Towards Long-horizon Embodied Agents with Tool-Aligned Vision-Language-Action Models** | SJTU, BUAA | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.13119) |
+| **Action Emergence from Streaming Intent** | Li Auto, Tsinghua, CUHK | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.12622) |
 | **Walk With Me: Long-Horizon Social Navigation for Human-Centric Outdoor Assistance** | Xiaomi, Tsinghua, Fudan, WHU | ![Apr 29, 2026](https://img.shields.io/badge/Apr_29,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.26839) |
 | **Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System** | BUAA | ![Apr 27, 2026](https://img.shields.io/badge/Apr_27,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.24921) |
 | **Long-Horizon Manipulation via Trace-Conditioned VLA Planning** | NVIDIA, UCSD | ![Apr 23, 2026](https://img.shields.io/badge/Apr_23,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.21924) |
@@ -206,10 +206,10 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
-| **X-Tokenizer: A Multimodal Action Tokenizer for Vision-Language-Action Pretraining** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.14752) |
-| **LARA: Latent Action Representation Alignment for Vision-Language-Action Models** | — | ![Jun 5, 2026](https://img.shields.io/badge/Jun_5,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.07100) |
-| **RotVLA: Rotational Latent Action for Vision-Language-Action Model** | — | ![May 13, 2026](https://img.shields.io/badge/May_13,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.13403) |
-| **BlockVLA: Accelerating Autoregressive VLA via Block Diffusion Finetuning** | — | ![May 13, 2026](https://img.shields.io/badge/May_13,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.13382) |
+| **X-Tokenizer: A Multimodal Action Tokenizer for Vision-Language-Action Pretraining** | Tsinghua, HKU, CityU HK | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.14752) |
+| **LARA: Latent Action Representation Alignment for Vision-Language-Action Models** | UCLA, PKU | ![Jun 5, 2026](https://img.shields.io/badge/Jun_5,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.07100) |
+| **RotVLA: Rotational Latent Action for Vision-Language-Action Model** | Xiaomi, PKU, CASIA | ![May 13, 2026](https://img.shields.io/badge/May_13,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.13403) |
+| **BlockVLA: Accelerating Autoregressive VLA via Block Diffusion Finetuning** | XJTU | ![May 13, 2026](https://img.shields.io/badge/May_13,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.13382) |
 | **NIAF: Neural Implicit Action Fields** | — | ![Mar 2, 2026](https://img.shields.io/badge/Mar_2,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.01766) |
 | **ActionCodec: What Makes for Good Action Tokenizers** | Tsinghua, Fudan | ![Feb 17, 2026](https://img.shields.io/badge/Feb_17,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.15397) |
 | **OAT: Ordered Action Tokenization** | Harvard, Stanford | ![Feb 4, 2026](https://img.shields.io/badge/Feb_4,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.04215) |
@@ -222,17 +222,17 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
-| **RynnWorld-4D: 4D Embodied World Models for Robotic Manipulation** | — | ![Jul 7, 2026](https://img.shields.io/badge/Jul_7,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2607.06559) |
-| **MemoryWAM: Efficient World Action Modeling with Persistent Memory** | — | ![Jun 18, 2026](https://img.shields.io/badge/Jun_18,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.20562) |
-| **ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?** | — | ![Jun 17, 2026](https://img.shields.io/badge/Jun_17,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.19531) |
-| **ActWorld: From Explorable to Interactive World Model via Action-Aware Memory** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.17730) |
-| **WAM4D: Fast 4D World Action Model via Spatial Register Tokens** | — | ![Jun 12, 2026](https://img.shields.io/badge/Jun_12,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.14048) |
-| **Making Foresight Actionable: Repurposing Representation Alignment in World Action Models** | — | ![Jun 10, 2026](https://img.shields.io/badge/Jun_10,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.12217) |
-| **MemoryVLA++: Temporal Modeling via Memory and Imagination in Vision-Language-Action Models** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.09827) |
-| **Dreaming when Necessary: Advancing World Action Models with Adaptive Multi-Modal Reasoning** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.07089) |
-| **Discrete-WAM: Unified Discrete Vision-Action Token Editing for World-Policy Learning** | — | ![Jun 4, 2026](https://img.shields.io/badge/Jun_4,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.05645) |
-| **HarmoWAM: Harmonizing Generalizable and Precise Manipulation via Adaptive World Action Model** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.10942) |
-| **When to Trust Imagination: Adaptive Action Execution for World Action Models** | — | ![May 7, 2026](https://img.shields.io/badge/May_7,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.06222) |
+| **RynnWorld-4D: 4D Embodied World Models for Robotic Manipulation** | Alibaba, CUHK, HKU | ![Jul 7, 2026](https://img.shields.io/badge/Jul_7,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2607.06559) |
+| **MemoryWAM: Efficient World Action Modeling with Persistent Memory** | Tsinghua, ZJU, CUHK, HKU | ![Jun 18, 2026](https://img.shields.io/badge/Jun_18,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.20562) |
+| **ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?** | Tencent, Tsinghua, SJTU | ![Jun 17, 2026](https://img.shields.io/badge/Jun_17,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.19531) |
+| **ActWorld: From Explorable to Interactive World Model via Action-Aware Memory** | ByteDance | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.17730) |
+| **WAM4D: Fast 4D World Action Model via Spatial Register Tokens** | PKU, HKUST | ![Jun 12, 2026](https://img.shields.io/badge/Jun_12,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.14048) |
+| **Making Foresight Actionable: Repurposing Representation Alignment in World Action Models** | XPeng, HKU | ![Jun 10, 2026](https://img.shields.io/badge/Jun_10,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.12217) |
+| **MemoryVLA++: Temporal Modeling via Memory and Imagination in Vision-Language-Action Models** | Tsinghua | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.09827) |
+| **Dreaming when Necessary: Advancing World Action Models with Adaptive Multi-Modal Reasoning** | Tsinghua | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.07089) |
+| **Discrete-WAM: Unified Discrete Vision-Action Token Editing for World-Policy Learning** | Xiaomi | ![Jun 4, 2026](https://img.shields.io/badge/Jun_4,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.05645) |
+| **HarmoWAM: Harmonizing Generalizable and Precise Manipulation via Adaptive World Action Model** | PKU, CUHK, HKU | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.10942) |
+| **When to Trust Imagination: Adaptive Action Execution for World Action Models** | HKU, SUSTech | ![May 7, 2026](https://img.shields.io/badge/May_7,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.06222) |
 | **X-WAM: Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising** | Xiaomi, Tsinghua, PKU, CASIA | ![Apr 29, 2026](https://img.shields.io/badge/Apr_29,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.26694) |
 | **UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling** | XPeng, Tsinghua, HKU | ![Apr 21, 2026](https://img.shields.io/badge/Apr_21,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.19734) |
 | **Veo-Act: How Far Can Frontier Video Models Advance Generalizable Robot Manipulation?** | Tsinghua | ![Apr 6, 2026](https://img.shields.io/badge/Apr_6,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.04502) |
@@ -251,9 +251,9 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
-| **RoboEvolve: Co-Evolving Planner-Simulator for Robotic Manipulation with Limited Data** | — | ![May 13, 2026](https://img.shields.io/badge/May_13,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.13775) |
-| **RePO-VLA: Recovery-Driven Policy Optimization for Vision-Language-Action Model** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.09410) |
-| **RewardHarness: Self-Evolving Agentic Post-Training** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.08703) |
+| **RoboEvolve: Co-Evolving Planner-Simulator for Robotic Manipulation with Limited Data** | HKUST | ![May 13, 2026](https://img.shields.io/badge/May_13,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.13775) |
+| **RePO-VLA: Recovery-Driven Policy Optimization for Vision-Language-Action Model** | Huawei, SCUT, SYSU, CASIA | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.09410) |
+| **RewardHarness: Self-Evolving Agentic Post-Training** | Kuaishou, CMU, Georgia Tech, Columbia | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.08703) |
 | **LaST-R1: Reinforcing Robotic Manipulation via Adaptive Physical Latent Reasoning** | PKU, CUHK, HKU | ![Apr 30, 2026](https://img.shields.io/badge/Apr_30,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.28192) |
 | **RL Token: Bootstrapping Online RL with Vision-Language-Action Models** | Physical Intelligence | ![Apr 24, 2026](https://img.shields.io/badge/Apr_24,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.23073) |
 | **RARRL: Resource-Aware Reasoning via RL for Embodied Robotic Decision-Making** | CMU, Harvard, MIT, Cornell, Tsinghua, PKU | ![Mar 17, 2026](https://img.shields.io/badge/Mar_17,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.16673) |
@@ -273,12 +273,12 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
-| **Native Video-Action Pretraining for Generalizable Robot Control** | — | ![Jul 1, 2026](https://img.shields.io/badge/Jul_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2607.08639) |
-| **Two Bridges, One Pathway: From VLMs to Generalizable VLAs with Embodied Trajectory-Coupled Data** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.08520) |
-| **EvoMemNav: Efficient Self-Evolving Fine-Grained Memory for Zero-Shot Embodied Navigation** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.03509) |
-| **How to Instruct Your Robot: Dense Language Annotations Power Robot Policy Learning** | — | ![May 16, 2026](https://img.shields.io/badge/May_16,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.17077) |
-| **UAM: A Dual-Stream Perspective on Forgetting in VLA Training** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.15735) |
-| **RoboMemArena: A Comprehensive and Challenging Robotic Memory Benchmark** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.10921) |
+| **Native Video-Action Pretraining for Generalizable Robot Control** | Robbyant, Ant Group | ![Jul 1, 2026](https://img.shields.io/badge/Jul_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2607.08639) |
+| **Two Bridges, One Pathway: From VLMs to Generalizable VLAs with Embodied Trajectory-Coupled Data** | Fudan | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.08520) |
+| **EvoMemNav: Efficient Self-Evolving Fine-Grained Memory for Zero-Shot Embodied Navigation** | Fudan | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.03509) |
+| **How to Instruct Your Robot: Dense Language Annotations Power Robot Policy Learning** | NVIDIA | ![May 16, 2026](https://img.shields.io/badge/May_16,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.17077) |
+| **UAM: A Dual-Stream Perspective on Forgetting in VLA Training** | ByteDance, Tsinghua | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.15735) |
+| **RoboMemArena: A Comprehensive and Challenging Robotic Memory Benchmark** | Tsinghua, SJTU, ZJU, HKUST | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.10921) |
 | **EmbodiedMidtrain: Bridging the Gap between Vision-Language Models and Vision-Language-Action Models via Mid-training** | Bosch, CMU | ![Apr 21, 2026](https://img.shields.io/badge/Apr_21,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.20012) |
 | **Towards Generalizable Robotic Data Flywheel: High-Dimensional Factorization and Composition** | ByteDance Seed | ![Mar 26, 2026](https://img.shields.io/badge/Mar_26,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.25583) |
 | **LAP: Language-Action Pre-Training for Zero-shot Cross-Embodiment** | Princeton, Physical Intelligence | ![Feb 11, 2026](https://img.shields.io/badge/Feb_11,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.10556) |
@@ -299,7 +299,7 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
-| **VGGT-Ω** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.15195) |
+| **VGGT-Ω** | Meta AI, Oxford | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.15195) |
 | **SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations** | Meta AI, Oxford, SJTU | ![Apr 10, 2026](https://img.shields.io/badge/Apr_10,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.07990) |
 | **Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding** | HUST, Baidu | ![Mar 19, 2026](https://img.shields.io/badge/Mar_19,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.19235) |
 | **V-DPM: 4D Video Reconstruction with Dynamic Point Maps** | Univ of Oxford | ![Jan 14, 2026](https://img.shields.io/badge/Jan_14,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2601.09499) |
@@ -321,10 +321,10 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
-| **MAI-Thinking-1: Building a Hill-Climbing Machine** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://microsoft.ai/pdf/mai-thinking-1.pdf) |
-| **DUEL: Adversarial Self-Play for Multimodal Reasoning** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.24794) |
-| **RISE: Reliable Improvement in Self-Evolving Vision-Language Models** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.20914) |
-| **Think, then Score: Decoupled Reasoning and Scoring for Video Reward Modeling** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.05922) |
+| **MAI-Thinking-1: Building a Hill-Climbing Machine** | Microsoft AI | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://microsoft.ai/pdf/mai-thinking-1.pdf) |
+| **DUEL: Adversarial Self-Play for Multimodal Reasoning** | Meta AI | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.24794) |
+| **RISE: Reliable Improvement in Self-Evolving Vision-Language Models** | Alibaba | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.20914) |
+| **Think, then Score: Decoupled Reasoning and Scoring for Video Reward Modeling** | Kuaishou, USTC, CAS | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.05922) |
 | **Thinking in Text and Images: Interleaved Vision-Language Reasoning Traces for Long-Horizon Robot Manipulation** | Xiaomi, Tsinghua, BIT | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.00438) |
 | **Insight-V++: Towards Advanced Long-Chain Visual Reasoning with Multimodal Large Language Models** | NTU, Tencent, Tsinghua | ![Mar 18, 2026](https://img.shields.io/badge/Mar_18,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.18118) |
 | **SwimBird: Switchable Reasoning Mode in Hybrid Autoregressive MLLMs** | HUST, Alibaba | ![Feb 5, 2026](https://img.shields.io/badge/Feb_5,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2602.06040) |
@@ -340,7 +340,7 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
-| **Kwai Keye-VL-2.0 Technical Report** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.10651) |
+| **Kwai Keye-VL-2.0 Technical Report** | Kuaishou | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.10651) |
 | **End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer** | ByteDance, Stanford, Caltech | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.00503) |
 | **S-GRPO: Unified Post-Training for Large Vision-Language Models** | Tencent | ![Apr 17, 2026](https://img.shields.io/badge/Apr_17,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.16557) |
 | **Vero: An Open RL Recipe for General Visual Reasoning** | Princeton | ![Apr 6, 2026](https://img.shields.io/badge/Apr_6,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.04917) |
@@ -360,7 +360,7 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
-| **One Token Per Frame: Reconsidering Visual Bandwidth in World Models for VLA Policy** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.07931) |
+| **One Token Per Frame: Reconsidering Visual Bandwidth in World Models for VLA Policy** | ZJU, SUSTech | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.07931) |
 | **A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens** | Amazon, JHU | ![Apr 6, 2026](https://img.shields.io/badge/Apr_6,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.04913) |
 | **Beyond Attention Magnitude: Leveraging Inter-layer Rank Consistency for Efficient Vision-Language-Action Models** | Fudan | ![Mar 26, 2026](https://img.shields.io/badge/Mar_26,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.24941) |
 | **FASTER: Rethinking Real-Time Flow VLAs** | HKU, ACE Robotics | ![Mar 19, 2026](https://img.shields.io/badge/Mar_19,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2603.19199) |
@@ -391,9 +391,9 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
-| **World Action Models: A Survey** | — | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.20781) |
-| **Toward Native Multimodal Modeling: A Roadmap** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.25343) |
-| **World Action Models: The Next Frontier in Embodied AI** | — | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.12090) |
+| **World Action Models: A Survey** | NUS | ![Jun 1, 2026](https://img.shields.io/badge/Jun_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.20781) |
+| **Toward Native Multimodal Modeling: A Roadmap** | Tencent, Tsinghua, HKU, PolyU | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.25343) |
+| **World Action Models: The Next Frontier in Embodied AI** | Fudan, NUS | ![May 1, 2026](https://img.shields.io/badge/May_1,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.12090) |
 | **World Model for Robot Learning: A Comprehensive Survey** | Stanford, UC Berkeley, Princeton, Oxford | ![Apr 30, 2026](https://img.shields.io/badge/Apr_30,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2605.00080) |
 | **Visual Generation in the New Era: An Evolution from Atomic Mapping to Agentic World Modeling** | Baidu, Tsinghua, Fudan, HKUST | ![Apr 30, 2026](https://img.shields.io/badge/Apr_30,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.28185) |
 | **Vision-Language-Action Safety: Threats, Challenges, Evaluations, and Mechanisms** | PKU, NUS, Monash | ![Apr 26, 2026](https://img.shields.io/badge/Apr_26,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2604.23775) |
