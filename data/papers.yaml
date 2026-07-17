@@ -1906,3 +1906,598 @@
   subcategory: survey
   summary: 机器人学习世界模型综述，覆盖策略学习、规划、仿真、评估与数据生成全场景
   date: '2026-04-30'
+
+- title: 'When to Trust Imagination: Adaptive Action Execution for World Action Models'
+  arxiv: '2605.06222'
+  url: https://arxiv.org/abs/2605.06222
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-07'
+- title: 'Think, then Score: Decoupled Reasoning and Scoring for Video Reward Modeling'
+  arxiv: '2605.05922'
+  url: https://arxiv.org/abs/2605.05922
+  institution: —
+  venue: arXiv 2026
+  domain: general
+  subcategory: latent-reasoning
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'One Token Per Frame: Reconsidering Visual Bandwidth in World Models for VLA Policy'
+  arxiv: '2605.07931'
+  url: https://arxiv.org/abs/2605.07931
+  institution: —
+  venue: arXiv 2026
+  domain: general
+  subcategory: efficient
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'CoWorld-VLA: Thinking in a Multi-Expert World Model for Autonomous Driving'
+  arxiv: '2605.10426'
+  url: https://arxiv.org/abs/2605.10426
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: world-model
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-11'
+- title: 'HarmoWAM: Harmonizing Generalizable and Precise Manipulation via Adaptive World Action Model'
+  arxiv: '2605.10942'
+  url: https://arxiv.org/abs/2605.10942
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'RoboMemArena: A Comprehensive and Challenging Robotic Memory Benchmark'
+  arxiv: '2605.10921'
+  url: https://arxiv.org/abs/2605.10921
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'RewardHarness: Self-Evolving Agentic Post-Training'
+  arxiv: '2605.08703'
+  url: https://arxiv.org/abs/2605.08703
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: Action Emergence from Streaming Intent
+  arxiv: '2605.12622'
+  url: https://arxiv.org/abs/2605.12622
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'X-Foresight: A Joint Vision-Action Causal Forecasting Network via Predictive World Modeling'
+  arxiv: '2605.24892'
+  url: https://arxiv.org/abs/2605.24892
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: world-model
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: '123D: Unifying Multi-Modal Autonomous Driving Data at Scale'
+  arxiv: '2605.08084'
+  url: https://arxiv.org/abs/2605.08084
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: simulation-data
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-08'
+- title: 'RePO-VLA: Recovery-Driven Policy Optimization for Vision-Language-Action Model'
+  arxiv: '2605.09410'
+  url: https://arxiv.org/abs/2605.09410
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments'
+  arxiv: '2605.30280'
+  url: https://arxiv.org/abs/2605.30280
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'World Action Models: The Next Frontier in Embodied AI'
+  arxiv: '2605.12090'
+  url: https://arxiv.org/abs/2605.12090
+  institution: —
+  venue: arXiv 2026
+  domain: general
+  subcategory: survey
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: Driving Intents Amplify Planning-Oriented Reinforcement Learning
+  arxiv: '2605.12625'
+  url: https://arxiv.org/abs/2605.12625
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: planning
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-12'
+- title: 'RotVLA: Rotational Latent Action for Vision-Language-Action Model'
+  arxiv: '2605.13403'
+  url: https://arxiv.org/abs/2605.13403
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: action-token
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-13'
+- title: 'BlockVLA: Accelerating Autoregressive VLA via Block Diffusion Finetuning'
+  arxiv: '2605.13382'
+  url: https://arxiv.org/abs/2605.13382
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: action-token
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-13'
+- title: 'CLOVER: Closed-Loop Value Estimation & Ranking for End-to-End Autonomous Driving Planning'
+  arxiv: '2605.15120'
+  url: https://arxiv.org/abs/2605.15120
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: planning
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: Towards Long-horizon Embodied Agents with Tool-Aligned Vision-Language-Action Models
+  arxiv: '2605.13119'
+  url: https://arxiv.org/abs/2605.13119
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'AutoMoT: An Asynchronous VLA Model for E2E Autonomous Driving'
+  arxiv: '2603.14851'
+  url: https://arxiv.org/abs/2603.14851
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: Curated update from the main VLA paper list.
+  date: '2026-03-01'
+- title: 'RoboEvolve: Co-Evolving Planner-Simulator for Robotic Manipulation with Limited Data'
+  arxiv: '2605.13775'
+  url: https://arxiv.org/abs/2605.13775
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-13'
+- title: VGGT-Ω
+  arxiv: '2605.15195'
+  url: https://arxiv.org/abs/2605.15195
+  institution: —
+  venue: arXiv 2026
+  domain: general
+  subcategory: spatial
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'DriveReward: A Comprehensive Dataset and Generative Vision-Language Reward Model for Autonomous Driving'
+  arxiv: '2606.08525'
+  url: https://arxiv.org/abs/2606.08525
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: safety-benchmark
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: 'UAM: A Dual-Stream Perspective on Forgetting in VLA Training'
+  arxiv: '2605.15735'
+  url: https://arxiv.org/abs/2605.15735
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'How to Instruct Your Robot: Dense Language Annotations Power Robot Policy Learning'
+  arxiv: '2605.17077'
+  url: https://arxiv.org/abs/2605.17077
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-16'
+- title: 'Xiaomi Auto World Model: A Joint World Model Integrating Reconstruction and Generation for Autonomous Driving'
+  arxiv: '2605.18137'
+  url: https://arxiv.org/abs/2605.18137
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: world-model
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'Bench2Drive-Robust: Benchmarking Closed-Loop Autonomous Driving under Deployment Perturbations'
+  arxiv: '2605.18059'
+  url: https://arxiv.org/abs/2605.18059
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: safety-benchmark
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'SafeAlign-VLA: A Negative-Enhanced Safe Alignment Framework for Risk-Aware Autonomous Driving'
+  arxiv: '2605.19524'
+  url: https://arxiv.org/abs/2605.19524
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: safety-benchmark
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-19'
+- title: 'Robo-Cortex: A Self-Evolving Embodied Agent via Dual-Grain Cognitive Memory and Autonomous Knowledge Induction'
+  arxiv: '2605.18729'
+  url: https://arxiv.org/abs/2605.18729
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'Beyond Imitation: Learning Safe End-to-End Autonomous Driving from Hard Negatives'
+  arxiv: '2605.19771'
+  url: https://arxiv.org/abs/2605.19771
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: safety-benchmark
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'DriveMA: Rethinking Language Interfaces in Driving VLAs with One-Step Meta-Actions'
+  arxiv: '2605.21273'
+  url: https://arxiv.org/abs/2605.21273v1
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'MAI-Thinking-1: Building a Hill-Climbing Machine'
+  arxiv: mai-thinking-1
+  url: https://microsoft.ai/pdf/mai-thinking-1.pdf
+  institution: —
+  venue: Technical Report 2026
+  domain: general
+  subcategory: latent-reasoning
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'RISE: Reliable Improvement in Self-Evolving Vision-Language Models'
+  arxiv: '2605.20914'
+  url: https://arxiv.org/abs/2605.20914
+  institution: —
+  venue: arXiv 2026
+  domain: general
+  subcategory: latent-reasoning
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: Learning A Unified Risk Map for Autonomous Driving in Partially Observable Environments
+  arxiv: '2605.22189'
+  url: https://arxiv.org/abs/2605.22189
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: safety-benchmark
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: Rethinking VLM Representation for VLA Initialization
+  arxiv: '2605.25802'
+  url: https://arxiv.org/abs/2605.25802
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'AnyScene: Towards Highly Controllable Driving Scene Generation at Anywhere and Beyond'
+  arxiv: '2605.26113'
+  url: https://arxiv.org/abs/2605.26113
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: simulation-data
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-25'
+- title: 'Toward Native Multimodal Modeling: A Roadmap'
+  arxiv: '2605.25343'
+  url: https://arxiv.org/abs/2605.25343
+  institution: —
+  venue: arXiv 2026
+  domain: general
+  subcategory: survey
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'DUEL: Adversarial Self-Play for Multimodal Reasoning'
+  arxiv: '2605.24794'
+  url: https://arxiv.org/abs/2605.24794
+  institution: —
+  venue: arXiv 2026
+  domain: general
+  subcategory: latent-reasoning
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'DriveMA: Driving Vision-Language-Action Models with verifiable Meta-Actions'
+  arxiv: '2605.31271'
+  url: https://arxiv.org/abs/2605.31271
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'nuReasoning: A Reasoning-Centric Dataset and Benchmark for Long-Tail Autonomous Driving'
+  arxiv: '2605.31572'
+  url: https://arxiv.org/abs/2605.31572
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: safety-benchmark
+  summary: Curated update from the main VLA paper list.
+  date: '2026-05-01'
+- title: 'OneVLA: A Unified Framework for Embodied Tasks'
+  arxiv: '2606.01241'
+  url: https://arxiv.org/abs/2606.01241
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: 'LiAuto-GeoX: Efficient Grounded Driving Transformer'
+  arxiv: '2606.05774'
+  url: https://arxiv.org/abs/2606.05774
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: 'Discrete-WAM: Unified Discrete Vision-Action Token Editing for World-Policy Learning'
+  arxiv: '2606.05645'
+  url: https://arxiv.org/abs/2606.05645
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-04'
+- title: 'NVIDIA OmniDreams: Real-Time Generative World Model for Closed-Loop Autonomous Vehicle Simulation'
+  arxiv: '2606.03159'
+  url: https://arxiv.org/abs/2606.03159
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: world-model
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-02'
+- title: 'EvoMemNav: Efficient Self-Evolving Fine-Grained Memory for Zero-Shot Embodied Navigation'
+  arxiv: '2606.03509'
+  url: https://arxiv.org/abs/2606.03509
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: 'LARA: Latent Action Representation Alignment for Vision-Language-Action Models'
+  arxiv: '2606.07100'
+  url: https://arxiv.org/abs/2606.07100
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: action-token
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-05'
+- title: Planning-aligned Token Compression for Long-Context Autonomous Driving
+  arxiv: '2606.07464'
+  url: https://arxiv.org/abs/2606.07464
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: planning
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: 'Dreaming when Necessary: Advancing World Action Models with Adaptive Multi-Modal Reasoning'
+  arxiv: '2606.07089'
+  url: https://arxiv.org/abs/2606.07089
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: 'DriveJudge: Rethinking Autonomous Driving Evaluation with Vision-Language Models'
+  arxiv: '2606.17362'
+  url: https://arxiv.org/abs/2606.17362
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: safety-benchmark
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-15'
+- title: 'MemoryVLA++: Temporal Modeling via Memory and Imagination in Vision-Language-Action Models'
+  arxiv: '2606.09827'
+  url: https://arxiv.org/abs/2606.09827
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: 'X-Tokenizer: A Multimodal Action Tokenizer for Vision-Language-Action Pretraining'
+  arxiv: '2606.14752'
+  url: https://arxiv.org/abs/2606.14752
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: action-token
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: 'Two Bridges, One Pathway: From VLMs to Generalizable VLAs with Embodied Trajectory-Coupled Data'
+  arxiv: '2606.08520'
+  url: https://arxiv.org/abs/2606.08520
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: 'Embodied-R1.5: Evolving Physical Intelligence via Embodied Foundation Models'
+  arxiv: '2606.11324'
+  url: https://arxiv.org/abs/2606.11324
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: Kwai Keye-VL-2.0 Technical Report
+  arxiv: '2606.10651'
+  url: https://arxiv.org/abs/2606.10651
+  institution: —
+  venue: arXiv 2026
+  domain: general
+  subcategory: multimodal-arch
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: 'Making Foresight Actionable: Repurposing Representation Alignment in World Action Models'
+  arxiv: '2606.12217'
+  url: https://arxiv.org/abs/2606.12217
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-10'
+- title: Native Video-Action Pretraining for Generalizable Robot Control
+  arxiv: '2607.08639'
+  url: https://arxiv.org/abs/2607.08639
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: Curated update from the main VLA paper list.
+  date: '2026-07-01'
+- title: 'From Foundation to Application: Improving VLA Models in Practice'
+  arxiv: '2607.06403'
+  url: https://arxiv.org/abs/2607.06403
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: Curated update from the main VLA paper list.
+  date: '2026-07-07'
+- title: 'RynnWorld-4D: 4D Embodied World Models for Robotic Manipulation'
+  arxiv: '2607.06559'
+  url: https://arxiv.org/abs/2607.06559
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: Curated update from the main VLA paper list.
+  date: '2026-07-07'
+- title: 'ReactSim-Bench: Benchmarking Reactive Behavior World Model Simulation in Autonomous Driving'
+  arxiv: '2606.14058'
+  url: https://arxiv.org/abs/2606.14058
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: safety-benchmark
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: 'From Attacks to Curricula: Learnability-Guided Adversarial Training for Safe Autonomous Driving'
+  arxiv: '2606.14032'
+  url: https://arxiv.org/abs/2606.14032
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: safety-benchmark
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: 'WAM4D: Fast 4D World Action Model via Spatial Register Tokens'
+  arxiv: '2606.14048'
+  url: https://arxiv.org/abs/2606.14048
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-12'
+- title: 'Metis: A Generalizable and Efficient World-Action Model for Autonomous Driving and Urban Navigation'
+  arxiv: '2606.15869'
+  url: https://arxiv.org/abs/2606.15869
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: world-model
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: 'CausalDrive: Real-time Causal World Models for Autonomous Driving'
+  arxiv: '2606.15341'
+  url: https://arxiv.org/abs/2606.15341
+  institution: —
+  venue: arXiv 2026
+  domain: ad
+  subcategory: world-model
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: 'ActWorld: From Explorable to Interactive World Model via Action-Aware Memory'
+  arxiv: '2606.17730'
+  url: https://arxiv.org/abs/2606.17730
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: 'ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?'
+  arxiv: '2606.19531'
+  url: https://arxiv.org/abs/2606.19531
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-17'
+- title: 'World Action Models: A Survey'
+  arxiv: '2606.20781'
+  url: https://arxiv.org/abs/2606.20781
+  institution: —
+  venue: arXiv 2026
+  domain: general
+  subcategory: survey
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-01'
+- title: 'MemoryWAM: Efficient World Action Modeling with Persistent Memory'
+  arxiv: '2606.20562'
+  url: https://arxiv.org/abs/2606.20562
+  institution: —
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: Curated update from the main VLA paper list.
+  date: '2026-06-18'

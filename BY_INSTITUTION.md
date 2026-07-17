@@ -1,6 +1,6 @@
 # VLA Papers by Institution
 
-> 212 papers across 115 institutions | Updated: 2026-05-07
+> 278 papers across 115 institutions | Updated: 2026-06-19
 
 [Back to Main](README.md)
 
@@ -8,6 +8,7 @@
 
 | Institution | Papers |
 |:-----------|:------:|
+| [—](#) | 75 |
 | [Tsinghua](#tsinghua) | 45 |
 | [NVIDIA](#nvidia) | 19 |
 | [Fudan](#fudan) | 18 |
@@ -17,7 +18,6 @@
 | [HKU](#hku) | 11 |
 | [SJTU](#sjtu) | 11 |
 | [CUHK](#cuhk) | 10 |
-| [—](#) | 9 |
 | [Stanford](#stanford) | 9 |
 | [ByteDance](#bytedance) | 8 |
 | [ZJU](#zju) | 8 |
@@ -70,6 +70,86 @@
 | [Monash](#monash) | 2 |
 | [PCL](#pcl) | 2 |
 | [Georgia Tech](#georgiatech) | 2 |
+
+## —
+
+| Paper | Category | Date | Link |
+|:------|:---------|:----:|:-----|
+| **MAI-Thinking-1: Building a Hill-Climbing Machine** | Latent Reasoning & Chain-of-Thought | May 1, 2026 | [Paper](https://microsoft.ai/pdf/mai-thinking-1.pdf) |
+| **Native Video-Action Pretraining for Generalizable Robot Control** | Data & Pre-training | Jul 1, 2026 | [Paper](https://arxiv.org/abs/2607.08639) |
+| **RynnWorld-4D: 4D Embodied World Models for Robotic Manipulation** | World Models & Policy Co-learning | Jul 7, 2026 | [Paper](https://arxiv.org/abs/2607.06559) |
+| **From Foundation to Application: Improving VLA Models in Practice** | VLA Architecture | Jul 7, 2026 | [Paper](https://arxiv.org/abs/2607.06403) |
+| **World Action Models: A Survey** | Surveys | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.20781) |
+| **MemoryWAM: Efficient World Action Modeling with Persistent Memory** | World Models & Policy Co-learning | Jun 18, 2026 | [Paper](https://arxiv.org/abs/2606.20562) |
+| **ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?** | World Models & Policy Co-learning | Jun 17, 2026 | [Paper](https://arxiv.org/abs/2606.19531) |
+| **ActWorld: From Explorable to Interactive World Model via Action-Aware Memory** | World Models & Policy Co-learning | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.17730) |
+| **DriveJudge: Rethinking Autonomous Driving Evaluation with Vision-Language Models** | Safety & Benchmarks | Jun 15, 2026 | [Paper](https://arxiv.org/abs/2606.17362) |
+| **Metis: A Generalizable and Efficient World-Action Model for Autonomous Driving and Urban Navigation** | World Models | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.15869) |
+| **CausalDrive: Real-time Causal World Models for Autonomous Driving** | World Models | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.15341) |
+| **X-Tokenizer: A Multimodal Action Tokenizer for Vision-Language-Action Pretraining** | Action Tokenization | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.14752) |
+| **ReactSim-Bench: Benchmarking Reactive Behavior World Model Simulation in Autonomous Driving** | Safety & Benchmarks | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.14058) |
+| **WAM4D: Fast 4D World Action Model via Spatial Register Tokens** | World Models & Policy Co-learning | Jun 12, 2026 | [Paper](https://arxiv.org/abs/2606.14048) |
+| **From Attacks to Curricula: Learnability-Guided Adversarial Training for Safe Autonomous Driving** | Safety & Benchmarks | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.14032) |
+| **Making Foresight Actionable: Repurposing Representation Alignment in World Action Models** | World Models & Policy Co-learning | Jun 10, 2026 | [Paper](https://arxiv.org/abs/2606.12217) |
+| **Embodied-R1.5: Evolving Physical Intelligence via Embodied Foundation Models** | VLA Architecture | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.11324) |
+| **Kwai Keye-VL-2.0 Technical Report** | Multimodal Architecture & Pre-training | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.10651) |
+| **MemoryVLA++: Temporal Modeling via Memory and Imagination in Vision-Language-Action Models** | World Models & Policy Co-learning | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.09827) |
+| **DriveReward: A Comprehensive Dataset and Generative Vision-Language Reward Model for Autonomous Driving** | Safety & Benchmarks | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.08525) |
+| **Two Bridges, One Pathway: From VLMs to Generalizable VLAs with Embodied Trajectory-Coupled Data** | Data & Pre-training | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.08520) |
+| **Planning-aligned Token Compression for Long-Context Autonomous Driving** | Planning & Control | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.07464) |
+| **LARA: Latent Action Representation Alignment for Vision-Language-Action Models** | Action Tokenization | Jun 5, 2026 | [Paper](https://arxiv.org/abs/2606.07100) |
+| **Dreaming when Necessary: Advancing World Action Models with Adaptive Multi-Modal Reasoning** | World Models & Policy Co-learning | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.07089) |
+| **LiAuto-GeoX: Efficient Grounded Driving Transformer** | End-to-End VLA Architecture | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.05774) |
+| **Discrete-WAM: Unified Discrete Vision-Action Token Editing for World-Policy Learning** | World Models & Policy Co-learning | Jun 4, 2026 | [Paper](https://arxiv.org/abs/2606.05645) |
+| **EvoMemNav: Efficient Self-Evolving Fine-Grained Memory for Zero-Shot Embodied Navigation** | Data & Pre-training | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.03509) |
+| **NVIDIA OmniDreams: Real-Time Generative World Model for Closed-Loop Autonomous Vehicle Simulation** | World Models | Jun 2, 2026 | [Paper](https://arxiv.org/abs/2606.03159) |
+| **OneVLA: A Unified Framework for Embodied Tasks** | VLA Architecture | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.01241) |
+| **nuReasoning: A Reasoning-Centric Dataset and Benchmark for Long-Tail Autonomous Driving** | Safety & Benchmarks | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.31572) |
+| **DriveMA: Driving Vision-Language-Action Models with verifiable Meta-Actions** | End-to-End VLA Architecture | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.31271) |
+| **Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments** | VLA Architecture | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.30280) |
+| **AnyScene: Towards Highly Controllable Driving Scene Generation at Anywhere and Beyond** | Simulation & Data | May 25, 2026 | [Paper](https://arxiv.org/abs/2605.26113) |
+| **Rethinking VLM Representation for VLA Initialization** | VLA Architecture | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.25802) |
+| **Toward Native Multimodal Modeling: A Roadmap** | Surveys | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.25343) |
+| **X-Foresight: A Joint Vision-Action Causal Forecasting Network via Predictive World Modeling** | World Models | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.24892) |
+| **DUEL: Adversarial Self-Play for Multimodal Reasoning** | Latent Reasoning & Chain-of-Thought | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.24794) |
+| **Learning A Unified Risk Map for Autonomous Driving in Partially Observable Environments** | Safety & Benchmarks | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.22189) |
+| **DriveMA: Rethinking Language Interfaces in Driving VLAs with One-Step Meta-Actions** | End-to-End VLA Architecture | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.21273v1) |
+| **RISE: Reliable Improvement in Self-Evolving Vision-Language Models** | Latent Reasoning & Chain-of-Thought | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.20914) |
+| **Beyond Imitation: Learning Safe End-to-End Autonomous Driving from Hard Negatives** | Safety & Benchmarks | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.19771) |
+| **SafeAlign-VLA: A Negative-Enhanced Safe Alignment Framework for Risk-Aware Autonomous Driving** | Safety & Benchmarks | May 19, 2026 | [Paper](https://arxiv.org/abs/2605.19524) |
+| **Robo-Cortex: A Self-Evolving Embodied Agent via Dual-Grain Cognitive Memory and Autonomous Knowledge Induction** | VLA Architecture | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.18729) |
+| **Xiaomi Auto World Model: A Joint World Model Integrating Reconstruction and Generation for Autonomous Driving** | World Models | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.18137) |
+| **Bench2Drive-Robust: Benchmarking Closed-Loop Autonomous Driving under Deployment Perturbations** | Safety & Benchmarks | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.18059) |
+| **How to Instruct Your Robot: Dense Language Annotations Power Robot Policy Learning** | Data & Pre-training | May 16, 2026 | [Paper](https://arxiv.org/abs/2605.17077) |
+| **UAM: A Dual-Stream Perspective on Forgetting in VLA Training** | Data & Pre-training | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.15735) |
+| **VGGT-Ω** | Spatial Perception & 3D/4D | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.15195) |
+| **CLOVER: Closed-Loop Value Estimation & Ranking for End-to-End Autonomous Driving Planning** | Planning & Control | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.15120) |
+| **RoboEvolve: Co-Evolving Planner-Simulator for Robotic Manipulation with Limited Data** | RL & Policy Optimization | May 13, 2026 | [Paper](https://arxiv.org/abs/2605.13775) |
+| **RotVLA: Rotational Latent Action for Vision-Language-Action Model** | Action Tokenization | May 13, 2026 | [Paper](https://arxiv.org/abs/2605.13403) |
+| **BlockVLA: Accelerating Autoregressive VLA via Block Diffusion Finetuning** | Action Tokenization | May 13, 2026 | [Paper](https://arxiv.org/abs/2605.13382) |
+| **Towards Long-horizon Embodied Agents with Tool-Aligned Vision-Language-Action Models** | VLA Architecture | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.13119) |
+| **Driving Intents Amplify Planning-Oriented Reinforcement Learning** | Planning & Control | May 12, 2026 | [Paper](https://arxiv.org/abs/2605.12625) |
+| **Action Emergence from Streaming Intent** | VLA Architecture | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.12622) |
+| **World Action Models: The Next Frontier in Embodied AI** | Surveys | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.12090) |
+| **HarmoWAM: Harmonizing Generalizable and Precise Manipulation via Adaptive World Action Model** | World Models & Policy Co-learning | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.10942) |
+| **RoboMemArena: A Comprehensive and Challenging Robotic Memory Benchmark** | Data & Pre-training | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.10921) |
+| **CoWorld-VLA: Thinking in a Multi-Expert World Model for Autonomous Driving** | World Models | May 11, 2026 | [Paper](https://arxiv.org/abs/2605.10426) |
+| **RePO-VLA: Recovery-Driven Policy Optimization for Vision-Language-Action Model** | RL & Policy Optimization | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.09410) |
+| **RewardHarness: Self-Evolving Agentic Post-Training** | RL & Policy Optimization | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.08703) |
+| **123D: Unifying Multi-Modal Autonomous Driving Data at Scale** | Simulation & Data | May 8, 2026 | [Paper](https://arxiv.org/abs/2605.08084) |
+| **One Token Per Frame: Reconsidering Visual Bandwidth in World Models for VLA Policy** | Efficient Inference | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.07931) |
+| **When to Trust Imagination: Adaptive Action Execution for World Action Models** | World Models & Policy Co-learning | May 7, 2026 | [Paper](https://arxiv.org/abs/2605.06222) |
+| **Think, then Score: Decoupled Reasoning and Scoring for Video Reward Modeling** | Latent Reasoning & Chain-of-Thought | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.05922) |
+| **A1: A Fully Transparent Open-Source, Adaptive and Efficient Truncated Vision-Language-Action Model** | VLA Architecture | Apr 8, 2026 | [Paper](https://arxiv.org/abs/2604.05672) |
+| **StarVLA: A Lego-like Codebase for Vision-Language-Action Model Developing** | VLA Architecture | Apr 7, 2026 | [Paper](https://arxiv.org/abs/2604.05014) |
+| **DVGT-2: Vision-Geometry-Action Model for Autonomous Driving at Scale** | End-to-End VLA Architecture | Apr 2, 2026 | [Paper](https://arxiv.org/abs/2604.00813) |
+| **Action Draft and Verify: A Self-Verifying Framework for Vision-Language-Action Model** | VLA Architecture | Mar 18, 2026 | [Paper](https://arxiv.org/abs/2603.18091) |
+| **AutoMoT: An Asynchronous VLA Model for E2E Autonomous Driving** | End-to-End VLA Architecture | Mar 1, 2026 | [Paper](https://arxiv.org/abs/2603.14851) |
+| **NIAF: Neural Implicit Action Fields** | Action Tokenization | Mar 2, 2026 | [Paper](https://arxiv.org/abs/2603.01766) |
+| **HiST-VLA: Hierarchical Spatio-Temporal VLA for E2E AD** | End-to-End VLA Architecture | Feb 11, 2026 | [Paper](https://arxiv.org/abs/2602.13329) |
+| **From Representational Complementarity to Dual Systems (HybridDriveVLA)** | End-to-End VLA Architecture | Feb 11, 2026 | [Paper](https://arxiv.org/abs/2602.10719) |
+| **DriveWorld-VLA: Unified Latent-Space World Modeling with VLA for AD** | End-to-End VLA Architecture | Feb 6, 2026 | [Paper](https://arxiv.org/abs/2602.06521) |
+| **Alleviating Sparse Rewards in Flow-Based GRPO** | RL & Policy Optimization | Feb 6, 2026 | [Paper](https://arxiv.org/abs/2602.06422) |
 
 ## Tsinghua
 
@@ -271,20 +351,6 @@
 | **ManualVLA: CoT Manual Generation and Robotic Manipulation** | VLA Architecture | Dec 1, 2025 | [Paper](https://arxiv.org/abs/2512.02013) |
 | **MoE3D: MoE meets Multi-Modal 3D Understanding** | Spatial Perception & 3D/4D | Nov 27, 2025 | [Paper](https://arxiv.org/abs/2511.22103) |
 | **PICABench: How Far from Physically Realistic Image Editing?** | Physical AI Benchmarks | Oct 20, 2025 | [Paper](https://arxiv.org/abs/2510.17681) |
-
-## —
-
-| Paper | Category | Date | Link |
-|:------|:---------|:----:|:-----|
-| **A1: A Fully Transparent Open-Source, Adaptive and Efficient Truncated Vision-Language-Action Model** | VLA Architecture | Apr 8, 2026 | [Paper](https://arxiv.org/abs/2604.05672) |
-| **StarVLA: A Lego-like Codebase for Vision-Language-Action Model Developing** | VLA Architecture | Apr 7, 2026 | [Paper](https://arxiv.org/abs/2604.05014) |
-| **DVGT-2: Vision-Geometry-Action Model for Autonomous Driving at Scale** | End-to-End VLA Architecture | Apr 2, 2026 | [Paper](https://arxiv.org/abs/2604.00813) |
-| **Action Draft and Verify: A Self-Verifying Framework for Vision-Language-Action Model** | VLA Architecture | Mar 18, 2026 | [Paper](https://arxiv.org/abs/2603.18091) |
-| **NIAF: Neural Implicit Action Fields** | Action Tokenization | Mar 2, 2026 | [Paper](https://arxiv.org/abs/2603.01766) |
-| **HiST-VLA: Hierarchical Spatio-Temporal VLA for E2E AD** | End-to-End VLA Architecture | Feb 11, 2026 | [Paper](https://arxiv.org/abs/2602.13329) |
-| **From Representational Complementarity to Dual Systems (HybridDriveVLA)** | End-to-End VLA Architecture | Feb 11, 2026 | [Paper](https://arxiv.org/abs/2602.10719) |
-| **DriveWorld-VLA: Unified Latent-Space World Modeling with VLA for AD** | End-to-End VLA Architecture | Feb 6, 2026 | [Paper](https://arxiv.org/abs/2602.06521) |
-| **Alleviating Sparse Rewards in Flow-Based GRPO** | RL & Policy Optimization | Feb 6, 2026 | [Paper](https://arxiv.org/abs/2602.06422) |
 
 ## Stanford
 
