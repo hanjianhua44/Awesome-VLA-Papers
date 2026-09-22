@@ -222,6 +222,7 @@ Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Wo
 
 | Paper | Institution | Date | Links |
 |:------|:-----------|:----:|:------|
+| **ST-WAM: Semantic-Temporal World Action Model for Robust Manipulation under Visual Distribution Shifts** | Tsinghua, Alibaba | ![Jul 30, 2026](https://img.shields.io/badge/Jul_30,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2607.28993) · [Project](https://thu-wangmx.github.io/st-wam/) · [Code](https://github.com/Thu-WangMX/ST-WAM-Semantic-Temporal-World-Action-Model) |
 | **RynnWorld-4D: 4D Embodied World Models for Robotic Manipulation** | Alibaba, CUHK, HKU | ![Jul 7, 2026](https://img.shields.io/badge/Jul_7,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2607.06559) |
 | **MemoryWAM: Efficient World Action Modeling with Persistent Memory** | Tsinghua, ZJU, CUHK, HKU | ![Jun 18, 2026](https://img.shields.io/badge/Jun_18,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.20562) |
 | **ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?** | Tencent, Tsinghua, SJTU | ![Jun 17, 2026](https://img.shields.io/badge/Jun_17,_2026-red?style=flat-square) | [Paper](https://arxiv.org/abs/2606.19531) |
