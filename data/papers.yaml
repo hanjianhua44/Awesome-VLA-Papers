@@ -2500,3 +2500,471 @@
   subcategory: world-model-policy
   summary: Curated update from the main VLA paper list.
   date: '2026-06-18'
+- title: 'World Engine: Towards the Era of Post-Training for Autonomous Driving'
+  arxiv: '2606.19836'
+  url: https://arxiv.org/abs/2606.19836
+  institution: NVIDIA, Huawei, Tsinghua, HKU
+  venue: arXiv 2026
+  domain: ad
+  subcategory: world-model
+  summary: 面向自动驾驶世界模型的系统化后训练框架，以强化学习和反馈优化提升生成、推理与规划能力
+  date: '2026-06-18'
+- title: 'BadDreamer: Transferable Backdoor Attacks against Video World Models for Autonomous Driving'
+  arxiv: '2606.21172'
+  url: https://arxiv.org/abs/2606.21172
+  institution: SJTU
+  venue: arXiv 2026
+  domain: ad
+  subcategory: safety-benchmark
+  summary: 研究自动驾驶视频世界模型中的可迁移后门攻击，揭示跨模型与跨场景安全风险
+  date: '2026-06-19'
+- title: 'dVLA-RL: Reinforcement Learning over Denoising Trajectories for Discrete Diffusion Vision-Language-Action Models'
+  arxiv: '2606.23623'
+  url: https://arxiv.org/abs/2606.23623
+  institution: Tsinghua, SJTU, Shanghai AI Lab, Tsinghua Shenzhen
+  venue: arXiv 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: 在离散扩散VLA的去噪轨迹上开展强化学习，直接优化多步动作生成质量
+  date: '2026-06-22'
+- title: 'LA4VLA: Learning to Act without Seeing via Language-Action Pretraining'
+  arxiv: '2606.27295'
+  url: https://arxiv.org/abs/2606.27295
+  institution: Alibaba, SJTU, NTU
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: 通过语言—动作预训练学习无需视觉输入的动作先验，再迁移到视觉条件下的机器人控制
+  date: '2026-06-25'
+- title: 'MVPruner: Dynamic Token Pruning for Accelerating Multi-view Vision-Language Models in Autonomous Driving'
+  arxiv: '2606.27660'
+  url: https://arxiv.org/abs/2606.27660
+  institution: SJTU
+  venue: arXiv 2026
+  domain: general
+  subcategory: efficient
+  summary: 按输入动态裁剪多视角视觉语言模型的冗余Token，在保持精度的同时加速推理
+  date: '2026-06-26'
+- title: 'PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation'
+  arxiv: '2606.28128'
+  url: https://arxiv.org/abs/2606.28128
+  institution: NVIDIA, PKU
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 将物理约束注入机器人世界模拟器，提高接触丰富操作中的预测真实性与策略学习效果
+  date: '2026-06-26'
+- title: Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision
+  arxiv: '2606.30552'
+  url: https://arxiv.org/abs/2606.30552
+  institution: Zhipu AI
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: 以密集具身思维链监督训练VLA，联合学习中间推理过程与连续动作
+  date: '2026-06-29'
+- title: 'X-Mind: Efficient Visual Chain-of-Thought via Predictive World Model for End-to-End Driving'
+  arxiv: '2606.28758'
+  url: https://arxiv.org/abs/2606.28758
+  institution: XPeng
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 以预测式世界模型生成高效视觉思维链，增强端到端自动驾驶的场景推理与规划
+  date: '2026-06-27'
+- title: 'Trust Your Instincts: Confidence-Driven Test-Time RL for Vision-Language-Action Models'
+  arxiv: '2606.29892'
+  url: https://arxiv.org/abs/2606.29892
+  institution: Fudan
+  venue: arXiv 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: 依据模型置信度触发测试时强化学习，使VLA在部署阶段自适应改进动作策略
+  date: '2026-06-29'
+- title: 'Orca: The World is in Your Mind'
+  arxiv: '2606.30534'
+  url: https://arxiv.org/abs/2606.30534
+  institution: MSRA, BAAI
+  venue: arXiv 2026
+  domain: general
+  subcategory: multimodal-arch
+  summary: 构建内隐世界表征驱动的通用智能体，在统一模型中连接感知、想象、推理与行动
+  date: '2026-06-29'
+- title: 'Cosmos 3: Omnimodal World Models for Physical AI'
+  arxiv: '2606.02800'
+  url: https://arxiv.org/abs/2606.02800
+  institution: NVIDIA
+  venue: arXiv 2026
+  domain: general
+  subcategory: multimodal-arch
+  summary: 统一语言、图像、视频、音频与动作生成的全模态世界模型，为Physical AI提供通用骨干
+  date: '2026-06-01'
+- title: 'ABot-M0.5: Unified Mobility-and-Manipulation World Action Model'
+  arxiv: '2607.00678'
+  url: https://arxiv.org/abs/2607.00678
+  institution: Alibaba
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 统一移动与操作能力的世界动作模型，让单一具身模型覆盖导航和操控任务
+  date: '2026-07-01'
+- title: 'DriveVer: Lightweight Trajectory Evaluator as Test-Time Verifier for Autonomous Driving'
+  arxiv: '2607.00399'
+  url: https://arxiv.org/abs/2607.00399
+  institution: Tsinghua, Univ of Macau
+  venue: arXiv 2026
+  domain: ad
+  subcategory: safety-benchmark
+  summary: 以轻量轨迹评估器作为测试时验证器，筛选并修正自动驾驶规划候选
+  date: '2026-07-01'
+- title: 'PriorEye: Geospatial Visual Priors for End-to-End Autonomous Driving'
+  arxiv: '2606.31830'
+  url: https://arxiv.org/abs/2606.31830
+  institution: Oxford
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 引入地理空间视觉先验，增强端到端自动驾驶对道路结构与场景布局的理解
+  date: '2026-06-30'
+- title: Information-Regularized Attention for Visual-Centric Reasoning
+  arxiv: '2607.00434'
+  url: https://arxiv.org/abs/2607.00434
+  institution: Meta AI
+  venue: arXiv 2026
+  domain: general
+  subcategory: latent-reasoning
+  summary: 以信息正则化约束视觉注意力，提升视觉中心推理的有效性与可解释性
+  date: '2026-07-01'
+- title: 'HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control'
+  arxiv: '2607.03449'
+  url: https://arxiv.org/abs/2607.03449
+  institution: Fudan
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 构建分层具身记忆，支持VLA在长时程任务中进行多粒度信息存取与控制
+  date: '2026-07-03'
+- title: 'AnchorVLA: Bridging Discrete Decisions and Continuous Trajectories for Vision-Language-Action Planning'
+  arxiv: '2607.03182'
+  url: https://arxiv.org/abs/2607.03182
+  institution: Meituan, Tsinghua, Southeast Univ
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 以锚点连接离散高层决策和连续运动轨迹，实现统一的VLA规划
+  date: '2026-07-03'
+- title: 'TACO: TActile World Model as a Self-COrrector for Scalable Robot Policy Post-Training'
+  arxiv: '2607.02840'
+  url: https://arxiv.org/abs/2607.02840
+  institution: PKU, BUAA, SYSU, Allen AI
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 利用触觉世界模型作为自纠错器，为VLA后训练提供可扩展的闭环反馈
+  date: '2026-07-03'
+- title: 'CAC-VLA: Context-Gated Action Conditioning for Vision-Language-Action Models'
+  arxiv: '2607.04816'
+  url: https://arxiv.org/abs/2607.04816
+  institution: USTC
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 通过上下文门控动作条件化机制，让VLA按场景动态调节动作生成
+  date: '2026-07-06'
+- title: Do Vision-Language-Action Models Mean What They Say? On the Role of Faithfulness in Embodied Reasoning
+  arxiv: '2607.04681'
+  url: https://arxiv.org/abs/2607.04681
+  institution: NVIDIA, Stanford, KTH
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 系统评估VLA语言推理与实际动作之间的忠实性，揭示具身解释可能存在的偏差
+  date: '2026-07-06'
+- title: 'InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization'
+  arxiv: '2607.04988'
+  url: https://arxiv.org/abs/2607.04988
+  institution: Physical Intelligence, Shanghai AI Lab
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 统一场景理解、潜在前瞻与动作生成，提升VLA在组合任务上的泛化能力
+  date: '2026-07-06'
+- title: Vision as Unified Multimodal Generation
+  arxiv: '2607.06560'
+  url: https://arxiv.org/abs/2607.06560
+  institution: PKU, SJTU, ZJU, CUHK
+  venue: arXiv 2026
+  domain: general
+  subcategory: multimodal-arch
+  summary: 将理解、编辑和生成统一为视觉空间中的多模态生成范式
+  date: '2026-07-07'
+- title: Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation
+  arxiv: '2607.07608'
+  url: https://arxiv.org/abs/2607.07608
+  institution: ZJU, Nanjing Univ, NUS
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 引入双潜变量记忆，同时保留短期动作上下文与长期任务信息以改进机器人操作
+  date: '2026-07-08'
+- title: 'NativeMEM: Native Memory Compression for Long-Horizon Robotic Manipulation'
+  arxiv: '2607.06678'
+  url: https://arxiv.org/abs/2607.06678
+  institution: Horizon Robotics, PKU, BUAA, CUHK
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 原生压缩长时程交互记忆，在降低上下文成本的同时保持机器人任务关键状态
+  date: '2026-07-07'
+- title: 'WCog-VLA: A Dual-Level World-Cognitive Vision-Language-Action Model for End-to-End Autonomous Driving'
+  arxiv: '2607.08375'
+  url: https://arxiv.org/abs/2607.08375
+  institution: NTU, Tongji
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 融合世界级预测与认知级推理的双层VLA，用于端到端自动驾驶决策
+  date: '2026-07-09'
+- title: 'Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents'
+  arxiv: '2607.08448'
+  url: https://arxiv.org/abs/2607.08448
+  institution: Purdue, Tsinghua, CASIA, CAS
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 以记忆引导智能体调度冻结VLA，将通用模型约束为可靠的操作原语
+  date: '2026-07-09'
+- title: Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing
+  arxiv: '2607.08497'
+  url: https://arxiv.org/abs/2607.08497
+  institution: Tencent, PKU
+  venue: arXiv 2026
+  domain: general
+  subcategory: multimodal-arch
+  summary: 以认知结构组织多模态理解、生成和编辑能力，构建统一多模态智能体
+  date: '2026-07-09'
+- title: Artificial Foveated Perception for Mitigating Shortcut Learning in Robotic Foundation Models
+  arxiv: '2607.10655'
+  url: https://arxiv.org/abs/2607.10655
+  institution: Imperial, PKU, Yale
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 引入人工中央凹感知，抑制机器人基础模型对视觉捷径的依赖
+  date: '2026-07-12'
+- title: 'ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory'
+  arxiv: '2607.10350'
+  url: https://arxiv.org/abs/2607.10350
+  institution: Alibaba
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 面向通用机器人的智能体操作系统，以终身多模态记忆支持持续学习与任务执行
+  date: '2026-07-11'
+- title: 'From World Action Models to Embodied Brains: A Roadmap for Open-World Physical Intelligence'
+  arxiv: '2607.11689'
+  url: https://arxiv.org/abs/2607.11689
+  institution: Physical Intelligence
+  venue: arXiv 2026
+  domain: general
+  subcategory: survey
+  summary: 梳理从世界动作模型到具身大脑的发展路线，讨论开放世界Physical AI的关键挑战
+  date: '2026-07-13'
+- title: 'ABot-N1: Toward a General Visual Language Navigation Foundation Model'
+  arxiv: '2607.10383'
+  url: https://arxiv.org/abs/2607.10383
+  institution: Alibaba
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: 面向通用视觉语言导航的基础模型，统一多环境感知、推理与导航策略
+  date: '2026-07-11'
+- title: 'Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model'
+  arxiv: '2607.11643'
+  url: https://arxiv.org/abs/2607.11643
+  institution: Xiaomi
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 以世界基础模型统一具身数据与场景合成，为机器人训练生成可控经验
+  date: '2026-07-13'
+- title: 'UniVR: Thinking in Visual Space for Unified Visual Reasoning'
+  arxiv: '2607.12800'
+  url: https://arxiv.org/abs/2607.12800
+  institution: ByteDance, BJTU
+  venue: arXiv 2026
+  domain: general
+  subcategory: latent-reasoning
+  summary: 在视觉空间中显式思考，统一多类视觉推理任务并减少对纯文本思维链的依赖
+  date: '2026-07-14'
+- title: 'ReflectVLN: Training Vision-Language Navigation Agents with Reflective Reasoning'
+  arxiv: '2607.12680'
+  url: https://arxiv.org/abs/2607.12680
+  institution: Alibaba, BUAA
+  venue: arXiv 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: 通过反思式推理训练视觉语言导航智能体，使其能够复盘并修正导航决策
+  date: '2026-07-14'
+- title: 'VisCo: Leveraging Large Language Models as Intrinsic Encoders for Visual Token Compression'
+  arxiv: '2607.12756'
+  url: https://arxiv.org/abs/2607.12756
+  institution: USTC
+  venue: arXiv 2026
+  domain: general
+  subcategory: efficient
+  summary: 用大语言模型作为内在编码器压缩视觉Token，在保留语义的同时降低多模态推理成本
+  date: '2026-07-14'
+- title: 'M4World: A Multi-view Multimodal Driving World Model for Interactive Object Manipulation and Minute-long Streaming'
+  arxiv: '2607.14005'
+  url: https://arxiv.org/abs/2607.14005
+  institution: Meituan, CASIA, CAS, BIT
+  venue: arXiv 2026
+  domain: ad
+  subcategory: world-model
+  summary: 支持交互对象操作和分钟级流式生成的多视角多模态自动驾驶世界模型
+  date: '2026-07-15'
+- title: 'Zero2Skill: Bootstrapping Robot Skills through Autonomous Data Collection, Training, and Deployment'
+  arxiv: '2607.14047'
+  url: https://arxiv.org/abs/2607.14047
+  institution: Cornell, Tsinghua, Nanjing Univ, CAS
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: 打通自主数据采集、技能训练和部署闭环，从零启动机器人技能学习
+  date: '2026-07-15'
+- title: 'GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch'
+  arxiv: '2607.13960'
+  url: https://arxiv.org/abs/2607.13960
+  institution: Tsinghua
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 以自动化研究流程增强世界动作模型，在更高速度下获得更强策略性能
+  date: '2026-07-15'
+- title: 'RxBrain: Embodied Cognition Foundation Model with Joint Language-Visual Reasoning and Imagination'
+  arxiv: '2607.14187'
+  url: https://arxiv.org/abs/2607.14187
+  institution: Tencent
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 联合语言—视觉推理与世界想象的具身认知基础模型，提升复杂任务规划能力
+  date: '2026-07-15'
+- title: 'On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability'
+  arxiv: '2608.30320'
+  url: https://arxiv.org/abs/2608.30320
+  institution: Alibaba Group
+  venue: arXiv 2026
+  domain: general
+  subcategory: efficient
+  summary: 系统评估Qwen3.8-Next的稀疏架构、效率与训练稳定性，联合优化GDN、稀疏注意力和MoE设计
+  date: '2026-08-31'
+- title: 'Action QFormer: Structured Representation Shaping under Action Supervision in Vision-Language-Action Models'
+  arxiv: '2607.14635'
+  url: https://arxiv.org/abs/2607.14635
+  institution: UC Berkeley, Tsinghua, CUHK, HKU
+  venue: arXiv 2026
+  domain: robot
+  subcategory: action-token
+  summary: 在动作监督下用Q-Former塑造结构化视觉表征，使VLA特征更贴近控制需求
+  date: '2026-07-16'
+- title: 'FoMoVLA: Bridging Visual Foresight and Motion Guidance for Vision-Language-Action Models'
+  arxiv: '2607.14739'
+  url: https://arxiv.org/abs/2607.14739
+  institution: Li Auto, Tsinghua, CAS
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 结合视觉前瞻与运动引导，让VLA在预测未来状态的同时生成可执行动作
+  date: '2026-07-16'
+- title: Scaling Behavior Foundation Model for Humanoid Robots
+  arxiv: '2607.15163'
+  url: https://arxiv.org/abs/2607.15163
+  institution: Galbot, Tsinghua, PKU, SJTU
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: 扩展人形机器人行为基础模型的数据和模型规模，提升全身技能泛化能力
+  date: '2026-07-16'
+- title: 'Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories'
+  arxiv: '2607.15330'
+  url: https://arxiv.org/abs/2607.15330
+  institution: Xiaomi
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: 以超过十万小时真实轨迹扩展VLA训练，构建大规模通用机器人策略
+  date: '2026-07-16'
+- title: 'RynnBrain 1.1: Towards More Capable and Generalizable Embodied Foundation Model'
+  arxiv: '2607.17977'
+  url: https://arxiv.org/abs/2607.17977
+  institution: Alibaba
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 增强具身基础模型的感知、推理与行动能力，提高跨任务和跨场景泛化
+  date: '2026-07-20'
+- title: 'PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution'
+  arxiv: '2607.16636'
+  url: https://arxiv.org/abs/2607.16636
+  institution: SYSU, PCL
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 以认知规划和物理执行解耦的自进化操作系统，支持具身智能体持续优化
+  date: '2026-07-18'
+- title: 'IGGT4D: Streaming 4D Instance-Grounded Geometry Transformer'
+  arxiv: '2607.19228'
+  url: https://arxiv.org/abs/2607.19228
+  institution: Horizon Robotics, NTU
+  venue: arXiv 2026
+  domain: general
+  subcategory: spatial
+  summary: 流式预测带实例锚定的4D几何，在动态场景中持续恢复对象级空间结构
+  date: '2026-07-21'
+- title: 'RoboInter1.5: A Holistic Intermediate Representation Suite for Embodied World Modeling and Robotic Manipulation'
+  arxiv: '2607.18709'
+  url: https://arxiv.org/abs/2607.18709
+  institution: Shanghai AI Lab
+  venue: arXiv 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 提供覆盖感知、预测与动作的中间表征套件，连接具身世界建模和机器人操作
+  date: '2026-07-21'
+- title: 'PerceptDrive: Perception Prior World-Action Modeling with Adaptive Expert Routing for End-to-End Autonomous Driving'
+  arxiv: '2607.20175'
+  url: https://arxiv.org/abs/2607.20175
+  institution: Alibaba, Tsinghua
+  venue: arXiv 2026
+  domain: ad
+  subcategory: e2e
+  summary: 以感知先验和自适应专家路由构建世界—动作模型，提升端到端驾驶规划
+  date: '2026-07-22'
+- title: 'Capek 0.5: An Execution-Centric Vision-Language Model for Embodied Intelligence'
+  arxiv: '2608.06756'
+  url: https://arxiv.org/abs/2608.06756
+  institution: XPeng Robotics
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 围绕空间推理、时序理解、动作引导和状态验证构建执行中心的具身视觉语言模型
+  date: '2026-08-07'
+- title: 'PhysBrain 1.5: From Vision-Language Models to Physical Foundation Models'
+  arxiv: '2609.14973'
+  url: https://arxiv.org/abs/2609.14973
+  institution: DeepCybo
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 统一具身理解、动作生成和未来状态预测，将物理交互建模为共享自回归Token序列
+  date: '2026-09-14'
+- title: 'Progress Reward Modeling for Robotic Learning: A Comprehensive Survey'
+  arxiv: '2607.21655'
+  url: https://arxiv.org/abs/2607.21655
+  institution: CMU, UIUC, UW-Madison, Northwestern
+  venue: arXiv 2026
+  domain: general
+  subcategory: survey
+  summary: 系统综述机器人学习中的进度奖励建模方法、数据、评测与开放问题
+  date: '2026-07-22'
