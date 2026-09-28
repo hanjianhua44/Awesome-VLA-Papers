@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Awesome VLA Papers</title>
+  <desc id="desc">A cheerful robot connects vision, language, and action with a camera, speech bubble, robot arm, and tiny autonomous car.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff7fc"/>
+      <stop offset=".55" stop-color="#f2f0ff"/>
+      <stop offset="1" stop-color="#eaf8ff"/>
+    </linearGradient>
+    <linearGradient id="bot" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffb8dc"/>
+      <stop offset="1" stop-color="#a99cff"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#7d72b8" flood-opacity=".18"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="360" rx="30" fill="url(#bg)"/>
+  <circle cx="85" cy="62" r="24" fill="#ffe17d" opacity=".8"/>
+  <circle cx="1115" cy="286" r="42" fill="#bcecff" opacity=".55"/>
+  <circle cx="1050" cy="75" r="18" fill="#ffc9e6" opacity=".7"/>
+  <path d="M0 304 Q190 270 370 308 T760 302 T1200 296 V360 H0Z" fill="#dff5ee"/>
+
+  <g fill="#fff" opacity=".9">
+    <path d="M70 126c8-22 40-24 51-4 19-12 43 2 40 24H49c-2-13 8-20 21-20z"/>
+    <path d="M1003 147c8-21 38-23 50-5 18-10 39 3 37 23h-105c-2-11 7-18 18-18z"/>
+  </g>
+
+  <g transform="translate(720 34)" filter="url(#shadow)">
+    <path d="M154 58V30" stroke="#786aa8" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="154" cy="20" r="11" fill="#ffcf5a"/>
+    <rect x="62" y="54" width="184" height="132" rx="42" fill="url(#bot)" stroke="#756ba4" stroke-width="6"/>
+    <rect x="82" y="76" width="144" height="88" rx="30" fill="#fff" opacity=".93"/>
+    <ellipse cx="125" cy="117" rx="11" ry="15" fill="#544b78"/>
+    <ellipse cx="183" cy="117" rx="11" ry="15" fill="#544b78"/>
+    <path d="M129 143q25 20 50 0" fill="none" stroke="#ff79ad" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="98" cy="139" r="10" fill="#ffb5cf" opacity=".8"/>
+    <circle cx="210" cy="139" r="10" fill="#ffb5cf" opacity=".8"/>
+    <rect x="83" y="190" width="142" height="105" rx="35" fill="#b7e7ff" stroke="#756ba4" stroke-width="6"/>
+    <rect x="116" y="216" width="76" height="48" rx="16" fill="#fff"/>
+    <path d="M137 239h34M154 222v34" stroke="#8a7ce4" stroke-width="7" stroke-linecap="round"/>
+    <path d="M82 212Q31 211 25 258" fill="none" stroke="#756ba4" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="24" cy="265" r="18" fill="#ffb8dc" stroke="#756ba4" stroke-width="6"/>
+    <path d="M226 214q55 3 64-45" fill="none" stroke="#756ba4" stroke-width="18" stroke-linecap="round"/>
+    <path d="M282 164l23-18M282 164l30 8" stroke="#756ba4" stroke-width="9" stroke-linecap="round"/>
+    <ellipse cx="116" cy="305" rx="34" ry="14" fill="#756ba4"/>
+    <ellipse cx="194" cy="305" rx="34" ry="14" fill="#756ba4"/>
+  </g>
+
+  <g transform="translate(948 246)" filter="url(#shadow)">
+    <path d="M18 32h108l24 35H0z" fill="#ffd36e" stroke="#756ba4" stroke-width="5" stroke-linejoin="round"/>
+    <rect x="48" y="5" width="54" height="32" rx="12" fill="#9ee4ff" stroke="#756ba4" stroke-width="5"/>
+    <circle cx="35" cy="72" r="16" fill="#756ba4"/>
+    <circle cx="118" cy="72" r="16" fill="#756ba4"/>
+  </g>
+
+  <g transform="translate(55 54)">
+    <text x="0" y="80" fill="#4d456c" font-family="Verdana,Segoe UI,sans-serif" font-size="58" font-weight="700">Awesome VLA Papers</text>
+    <text x="2" y="128" fill="#746b93" font-family="Verdana,Segoe UI,sans-serif" font-size="23">A friendly map of Vision + Language + Action research</text>
+
+    <g transform="translate(0 166)" font-family="Verdana,Segoe UI,sans-serif" font-weight="700">
+      <rect width="154" height="52" rx="26" fill="#ffd6e9"/>
+      <circle cx="28" cy="26" r="15" fill="#fff"/>
+      <circle cx="28" cy="26" r="8" fill="#ff79ad"/>
+      <text x="54" y="34" fill="#654f72" font-size="20">VISION</text>
+
+      <path d="M168 26h34" stroke="#8c82b9" stroke-width="5" stroke-linecap="round"/>
+      <path d="M194 18l10 8-10 8" fill="none" stroke="#8c82b9" stroke-width="5" stroke-linecap="round"/>
+
+      <rect x="218" width="184" height="52" rx="26" fill="#ddd7ff"/>
+      <path d="M245 15h34v23h-17l-8 8v-8h-9z" fill="#fff"/>
+      <text x="291" y="34" fill="#584f82" font-size="20">LANGUAGE</text>
+
+      <path d="M416 26h34" stroke="#8c82b9" stroke-width="5" stroke-linecap="round"/>
+      <path d="M442 18l10 8-10 8" fill="none" stroke="#8c82b9" stroke-width="5" stroke-linecap="round"/>
+
+      <rect x="466" width="150" height="52" rx="26" fill="#ccefe6"/>
+      <path d="M489 35V19l17-8 17 8v16l-17 8z" fill="#fff"/>
+      <text x="535" y="34" fill="#436d68" font-size="20">ACTION</text>
+    </g>
+
+    <text x="2" y="270" fill="#82799d" font-family="Verdana,Segoe UI,sans-serif" font-size="18">Curated papers + Daily arXiv feed + Clear learning paths</text>
+  </g>
+
+  <g fill="#ff9cc5">
+    <path d="M654 55l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
+    <path d="M1124 103l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+  </g>
+  <g fill="#9a8ce0">
+    <path d="M661 270l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+    <circle cx="1154" cy="60" r="6"/>
+  </g>
+</svg>

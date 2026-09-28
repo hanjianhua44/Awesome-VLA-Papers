@@ -14,7 +14,7 @@ A curated, continuously updated collection of **Vision-Language-Action (VLA)** r
 
 | Feature | Description |
 |:--------|:------------|
-| **Curated Paper List** | 149+ hand-picked VLA papers organized by topic, with institution, date, and arXiv links |
+| **Curated Paper List** | Hundreds of hand-picked VLA papers organized by topic, with institutions, dates, summaries, and links |
 | **Multi-View Browsing** | Main list (by topic), [Timeline](TIMELINE.md) (by date), [By Institution](BY_INSTITUTION.md) |
 | **Daily arXiv Feed** | Automated daily digest of new papers from cs.CV + cs.RO, filtered for VLA relevance and top institutions |
 | **Institution Identification** | Automatic extraction of author affiliations from PDF first pages (~200 institution patterns) |
@@ -178,15 +178,15 @@ All paper metadata lives in `data/papers.yaml`:
 ```yaml
 - title: "Paper Title Here"
   arxiv: "2603.09121"
-  authors: ["Author A", "Author B"]
+  url: https://arxiv.org/abs/2603.09121
   institution: "Stanford, Google DeepMind"
-  venue: "arXiv"
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: "One concise sentence explaining the paper's main idea."
   date: "2026-03-10"
-  category: "Robotics"
-  subcategory: "VLA Architecture"
-  links:
-    paper: "https://arxiv.org/abs/2603.09121"
-    code: "https://github.com/..."
+  code: https://github.com/example/repo  # optional
+  project: https://example.github.io/    # optional
 ```
 
 ### Generated Outputs
@@ -195,14 +195,16 @@ Running `python scripts/generate_readme.py` produces three files:
 
 | File | Content |
 |:-----|:--------|
-| `README.md` | Main paper list organized by category/subcategory with collapsible sections, badge dates, and institution info |
+| `README.md` | Friendly landing page with learning paths, editor picks, recent additions, category map, and a collapsible full catalog |
 | `TIMELINE.md` | All papers sorted by date (newest first), grouped by year-month |
 | `BY_INSTITUTION.md` | Papers grouped by institution, sorted by paper count |
 
 Features of the generated README:
-- **Automatic statistics** — paper count, category breakdown, last-updated date (from latest paper)
-- **Date badges** — color-coded by year (red for 2026, blue for 2025, etc.)
-- **Collapsible sections** — each subcategory in a `<details>` block
+- **Friendly hero** — project mascot, focused badges, and direct links to every browsing view
+- **Start Here paths** — guided routes for newcomers, robotics researchers, and autonomous-driving researchers
+- **Editorial discovery** — curated picks and recent additions with one-line explanations
+- **Category map** — stable topic anchors with counts, icons, and short descriptions
+- **Collapsible catalog** — each subcategory in a `<details>` block with plain dates and paper summaries
 - **Daily Feed link** — prominent entry point to the daily arXiv digest
 
 ---
@@ -256,10 +258,11 @@ Papers can be added from multiple sources:
 After editing `papers.yaml`, run:
 
 ```bash
-python scripts/generate_readme.py
+python scripts/generate_readme.py 2026-07-23
 ```
 
 This regenerates all three view files (`README.md`, `TIMELINE.md`, `BY_INSTITUTION.md`).
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete schema, category list, and review checklist.
 
 ---
 
@@ -281,9 +284,12 @@ This regenerates all three view files (`README.md`, `TIMELINE.md`, `BY_INSTITUTI
 
 ```
 awesome-vla-papers/
+├── assets/
+│   └── vla-buddy-banner.svg   # Cute, lightweight README hero
 ├── README.md                  # ← generated: curated main paper list
 ├── TIMELINE.md                # ← generated: papers sorted by date
 ├── BY_INSTITUTION.md          # ← generated: papers grouped by institution
+├── CONTRIBUTING.md            # Friendly contribution guide and schema
 ├── WORKFLOW.md                # This document
 ├── data/
 │   └── papers.yaml            # Canonical paper data (single source of truth)

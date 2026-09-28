@@ -853,6 +853,7 @@
   subcategory: vla-arch
   summary: PI下一代通用机器人基础模型，可控+涌现能力，支持多阶段任务、跨厨房零样本泛化与多工具操作
   date: '2026-04-16'
+  featured: true
 - title: Long-Horizon Manipulation via Trace-Conditioned VLA Planning
   arxiv: '2604.21924'
   url: https://arxiv.org/abs/2604.21924
@@ -2509,6 +2510,7 @@
   subcategory: world-model
   summary: 面向自动驾驶世界模型的系统化后训练框架，以强化学习和反馈优化提升生成、推理与规划能力
   date: '2026-06-18'
+  featured: true
 - title: 'BadDreamer: Transferable Backdoor Attacks against Video World Models for Autonomous Driving'
   arxiv: '2606.21172'
   url: https://arxiv.org/abs/2606.21172
@@ -2599,6 +2601,7 @@
   subcategory: multimodal-arch
   summary: 统一语言、图像、视频、音频与动作生成的全模态世界模型，为Physical AI提供通用骨干
   date: '2026-06-01'
+  featured: true
 - title: 'ABot-M0.5: Unified Mobility-and-Manipulation World Action Model'
   arxiv: '2607.00678'
   url: https://arxiv.org/abs/2607.00678
@@ -2689,6 +2692,7 @@
   subcategory: vla-arch
   summary: 统一场景理解、潜在前瞻与动作生成，提升VLA在组合任务上的泛化能力
   date: '2026-07-06'
+  featured: true
 - title: Vision as Unified Multimodal Generation
   arxiv: '2607.06560'
   url: https://arxiv.org/abs/2607.06560
@@ -2833,6 +2837,7 @@
   subcategory: data-pretrain
   summary: 打通自主数据采集、技能训练和部署闭环，从零启动机器人技能学习
   date: '2026-07-15'
+  featured: true
 - title: 'GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch'
   arxiv: '2607.13960'
   url: https://arxiv.org/abs/2607.13960
@@ -2896,6 +2901,7 @@
   subcategory: data-pretrain
   summary: 以超过十万小时真实轨迹扩展VLA训练，构建大规模通用机器人策略
   date: '2026-07-16'
+  featured: true
 - title: 'RynnBrain 1.1: Towards More Capable and Generalizable Embodied Foundation Model'
   arxiv: '2607.17977'
   url: https://arxiv.org/abs/2607.17977
@@ -2941,6 +2947,7 @@
   subcategory: e2e
   summary: 以感知先验和自适应专家路由构建世界—动作模型，提升端到端驾驶规划
   date: '2026-07-22'
+  featured: true
 - title: 'Capek 0.5: An Execution-Centric Vision-Language Model for Embodied Intelligence'
   arxiv: '2608.06756'
   url: https://arxiv.org/abs/2608.06756
@@ -2968,3 +2975,4 @@
   subcategory: survey
   summary: 系统综述机器人学习中的进度奖励建模方法、数据、评测与开放问题
   date: '2026-07-22'
+  featured: true

@@ -7,12 +7,25 @@ from collections import defaultdict
 
 ROOT = Path(__file__).parent.parent
 YAML_PATH = ROOT / "data" / "papers.yaml"
+REPO_URL = "https://github.com/hanjianhua44/Awesome-VLA-Papers"
+README_LAST_UPDATED = "2026-07-23"
 
 DOMAIN_ORDER = ["ad", "robot", "general"]
 DOMAIN_LABELS = {
     "ad": "I. Autonomous Driving",
     "robot": "II. Robotics",
     "general": "III. General / Cross-domain",
+}
+DOMAIN_NAMES = {
+    "ad": "Autonomous Driving",
+    "robot": "Robotics",
+    "general": "General / Cross-domain",
+}
+DOMAIN_ICONS = {"ad": "🚗", "robot": "🤖", "general": "🧠"}
+DOMAIN_DESCRIPTIONS = {
+    "ad": "End-to-end driving, world models, planning, simulation, safety, and evaluation.",
+    "robot": "Generalist policies, action representations, robot learning, memory, and manipulation.",
+    "general": "Spatial intelligence, multimodal reasoning, efficient inference, benchmarks, and surveys.",
 }
 
 SUB_ORDER = {
@@ -38,6 +51,42 @@ SUB_LABELS = {
     "efficient": "Efficient Inference",
     "physical-benchmark": "Physical AI Benchmarks",
     "survey": "Surveys",
+}
+SUB_ICONS = {
+    "e2e": "🛣️",
+    "world-model": "🌍",
+    "simulation-data": "🎮",
+    "planning": "🧭",
+    "safety-benchmark": "🛡️",
+    "vla-arch": "🦾",
+    "action-token": "🧩",
+    "world-model-policy": "🔮",
+    "rl-policy": "🎯",
+    "data-pretrain": "📚",
+    "spatial": "🧊",
+    "latent-reasoning": "💭",
+    "multimodal-arch": "🌈",
+    "efficient": "⚡",
+    "physical-benchmark": "🧪",
+    "survey": "🗺️",
+}
+SUB_DESCRIPTIONS = {
+    "e2e": "Models that connect visual understanding directly to driving decisions.",
+    "world-model": "Predictive models that simulate future scenes, dynamics, and actions.",
+    "simulation-data": "Datasets, simulators, synthetic data, and scalable data engines.",
+    "planning": "Trajectory generation, control, value estimation, and decision making.",
+    "safety-benchmark": "Robustness, safety alignment, attacks, evaluation, and benchmarks.",
+    "vla-arch": "Core architectures that connect perception, language, memory, and control.",
+    "action-token": "Action representations, tokenizers, diffusion, and flow-based decoding.",
+    "world-model-policy": "Policies that learn with prediction, imagination, or world models.",
+    "rl-policy": "Reinforcement learning, post-training, alignment, and policy optimization.",
+    "data-pretrain": "Robot datasets, pre-training recipes, scaling, and transfer learning.",
+    "spatial": "3D/4D perception, geometry, grounding, reconstruction, and spatial intelligence.",
+    "latent-reasoning": "Visual reasoning, chain-of-thought, memory, and latent deliberation.",
+    "multimodal-arch": "Unified multimodal understanding, generation, and foundation models.",
+    "efficient": "Token compression, pruning, acceleration, and efficient architectures.",
+    "physical-benchmark": "Evaluation suites for embodied intelligence and physical reasoning.",
+    "survey": "Roadmaps and surveys for getting oriented in the field.",
 }
 
 
@@ -74,14 +123,6 @@ def format_date(year: int, month: int, day: int) -> str:
     return f"{MONTH_NAMES[month]} {day}, {year}"
 
 
-def date_badge(year: int, month: int, day: int) -> str:
-    colors = {2024: "gray", 2025: "blue", 2026: "red"}
-    c = colors.get(year, "lightgrey")
-    label = f"{MONTH_NAMES[month]}_{day},_{year}"
-    display = f"{MONTH_NAMES[month]} {day}, {year}"
-    return f"![{display}](https://img.shields.io/badge/{label}-{c}?style=flat-square)"
-
-
 def make_anchor(text: str) -> str:
     """GitHub-compatible anchor: lowercase, spaces→hyphens, strip non-alnum.
     GitHub keeps consecutive hyphens (e.g. 'A & B' → 'a--b'), so we must too."""
@@ -94,17 +135,67 @@ def domain_short(dom: str) -> str:
     return DOMAIN_LABELS[dom].split(". ", 1)[-1]
 
 
-def paper_row(p: dict) -> str:
-    year, month, day = extract_date(p)
-    title = p["title"]
-    if p.get("star"):
-        title += " ⭐"
+def markdown_cell(value: str, fallback: str = "Details coming soon.") -> str:
+    """Keep YAML text safe inside Markdown tables."""
+    text = " ".join(str(value or "").split()).strip()
+    if not text:
+        text = fallback
+    return text.replace("|", "\\|")
 
+
+def paper_links(p: dict) -> str:
     links = f"[Paper]({p['url']})"
     if p.get("code"):
-        links += f" [Code]({p['code']})"
+        links += f" · [Code]({p['code']})"
+    if p.get("project"):
+        links += f" · [Project]({p['project']})"
+    return links
 
-    return f"| **{title}** | {p['institution']} | {date_badge(year, month, day)} | {links} |"
+
+def paper_summary(p: dict) -> str:
+    """Return a useful one-line description, replacing legacy placeholders."""
+    summary = " ".join(str(p.get("summary") or "").split()).strip()
+    legacy = {
+        "Curated update from the main VLA paper list.",
+        "Curated paper from the main VLA list.",
+    }
+    if summary and summary not in legacy:
+        return summary
+
+    fallbacks = {
+        "e2e": "Explores end-to-end perception, reasoning, and action design for autonomous driving.",
+        "world-model": "Studies predictive world modeling for driving simulation, forecasting, or decision making.",
+        "simulation-data": "Contributes data, simulation, or scalable training infrastructure for driving systems.",
+        "planning": "Develops planning or control methods for safer and more capable autonomous agents.",
+        "safety-benchmark": "Evaluates robustness, safety, or reliability with a dedicated method or benchmark.",
+        "vla-arch": "Explores how perception, language, memory, and action can be unified in a VLA model.",
+        "action-token": "Studies action representations and decoding strategies for robot control.",
+        "world-model-policy": "Connects predictive world models with policy learning or action generation.",
+        "rl-policy": "Improves embodied policies through reinforcement learning, alignment, or post-training.",
+        "data-pretrain": "Studies data, pre-training, scaling, or transfer for general-purpose robot policies.",
+        "spatial": "Advances spatial perception, grounding, geometry, or 3D/4D scene understanding.",
+        "latent-reasoning": "Explores visual or latent reasoning for stronger multimodal decision making.",
+        "multimodal-arch": "Develops a unified architecture for multimodal understanding and generation.",
+        "efficient": "Reduces multimodal inference cost through compression, pruning, or efficient design.",
+        "physical-benchmark": "Introduces an evaluation resource for embodied or physical intelligence.",
+        "survey": "Organizes the literature and open problems in this research direction.",
+    }
+    return fallbacks[p["subcategory"]]
+
+
+def paper_row(p: dict) -> str:
+    year, month, day = extract_date(p)
+    title = markdown_cell(p["title"])
+    summary = markdown_cell(paper_summary(p))
+    institution = markdown_cell(p.get("institution"), "Unknown")
+    return (
+        f"| **{title}** | {summary} | {institution} | "
+        f"{format_date(year, month, day)} | {paper_links(p)} |"
+    )
+
+
+def category_anchor(domain: str, subcategory: str) -> str:
+    return f"{domain}-{subcategory}"
 
 
 _DATE_OVERRIDE = None
@@ -117,7 +208,7 @@ def _latest_paper_date(papers: list) -> str:
 
 
 def generate_readme(papers: list) -> str:
-    last_updated = _latest_paper_date(papers)
+    last_updated = _DATE_OVERRIDE or README_LAST_UPDATED
     total = len(papers)
 
     grouped = defaultdict(lambda: defaultdict(list))
@@ -125,85 +216,153 @@ def generate_readme(papers: list) -> str:
         grouped[p["domain"]][p["subcategory"]].append(p)
 
     domain_counts = {dom: sum(len(v) for v in grouped[dom].values()) for dom in DOMAIN_ORDER}
-    ad_c, rob_c, gen_c = domain_counts.get("ad", 0), domain_counts.get("robot", 0), domain_counts.get("general", 0)
+    featured = [p for p in papers if p.get("featured")]
+    if not featured:
+        featured = sorted(papers, key=extract_date, reverse=True)[:8]
+    recent = sorted(papers, key=extract_date, reverse=True)[:8]
 
     lines = []
-    lines.append("# Awesome VLA Papers")
+    lines.append('<p align="center">')
+    lines.append('  <img src="assets/vla-buddy-banner.svg" alt="Awesome VLA Papers — Vision, Language, Action" width="100%">')
+    lines.append("</p>")
     lines.append("")
-    lines.append("[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)")
+    lines.append('<h1 align="center">Awesome VLA Papers</h1>')
     lines.append("")
-    lines.append("> A curated collection of papers on **Vision-Language-Action (VLA)** models, covering autonomous driving, robotics, world models, spatial reasoning, and more.")
+    lines.append('<p align="center">')
+    lines.append("  A friendly, curated map of Vision-Language-Action research for robotics, autonomous driving, and Physical AI.")
+    lines.append("</p>")
     lines.append("")
-    lines.append(f"**{total} papers** | **AD: {ad_c} | Robotics: {rob_c} | General: {gen_c}** | Last updated: {last_updated}")
+    lines.append('<p align="center">')
+    lines.append('  <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>')
+    lines.append(f'  <img src="https://img.shields.io/badge/papers-{total}-ff8fbd?style=flat-square" alt="{total} papers">')
+    lines.append('  <a href="daily/"><img src="https://img.shields.io/badge/arXiv_feed-auto--updated-8b7de3?style=flat-square" alt="Daily arXiv feed"></a>')
+    lines.append('  <a href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="https://img.shields.io/badge/license-CC0-64b6ac?style=flat-square" alt="CC0 license"></a>')
+    lines.append("</p>")
     lines.append("")
-    lines.append("📡 **[Daily arXiv Feed →](daily/)** — auto-updated every morning with latest VLA papers from top institutions")
+    lines.append('<p align="center">')
+    lines.append("  <a href=\"daily/\"><strong>Daily Feed</strong></a> ·")
+    lines.append("  <a href=\"TIMELINE.md\"><strong>Timeline</strong></a> ·")
+    lines.append("  <a href=\"BY_INSTITUTION.md\"><strong>By Institution</strong></a> ·")
+    lines.append("  <a href=\"WORKFLOW.md\"><strong>How It Works</strong></a> ·")
+    lines.append("  <a href=\"CONTRIBUTING.md\"><strong>Contribute</strong></a>")
+    lines.append("</p>")
     lines.append("")
-    lines.append("Other views: [Timeline](TIMELINE.md) | [By Institution](BY_INSTITUTION.md) | [Workflow & Methodology](WORKFLOW.md)")
+    lines.append(f"<p align=\"center\"><sub><strong>{total} curated papers</strong> · Last updated: {last_updated}</sub></p>")
     lines.append("")
-
-    # --- Table of Contents ---
     lines.append("---")
     lines.append("")
-    lines.append("## Table of Contents")
+    lines.append("## 👋 Welcome, human!")
     lines.append("")
+    lines.append("A **Vision-Language-Action (VLA)** model turns what an agent *sees* and what a human *asks* into what the agent *does*. This repository organizes the fast-moving literature into approachable paths, short explanations, and a complete searchable catalog.")
+    lines.append("")
+    lines.append("> 📡 **Want the newest papers?** Visit the [Daily arXiv Feed](daily/) for an automatically generated digest from `cs.CV` and `cs.RO`.")
+    lines.append("")
+    lines.append("## 🚀 Start Here")
+    lines.append("")
+    lines.append("- **New to VLA?** Begin with [Surveys](#general-survey), then explore [VLA Architectures](#robot-vla-arch) and [Action Tokenization](#robot-action-token).")
+    lines.append("- **Building robot policies?** Follow [World Models & Policy Co-learning](#robot-world-model-policy), [RL & Policy Optimization](#robot-rl-policy), and [Data & Pre-training](#robot-data-pretrain).")
+    lines.append("- **Working on autonomous driving?** Jump to [End-to-End VLA](#ad-e2e), [Driving World Models](#ad-world-model), and [Safety & Benchmarks](#ad-safety-benchmark).")
+    lines.append("")
+    lines.append("## ⭐ Editor's Picks")
+    lines.append("")
+    lines.append("> A small, opinionated selection for discovering the field — not a benchmark ranking.")
+    lines.append("")
+    lines.append("| Paper | Why it matters | Area | Links |")
+    lines.append("|:------|:---------------|:-----|:------|")
+    for p in featured:
+        area = f"{DOMAIN_ICONS[p['domain']]} {SUB_LABELS[p['subcategory']]}"
+        lines.append(
+            f"| **{markdown_cell(p['title'])}** | {markdown_cell(paper_summary(p))} | "
+            f"{area} | {paper_links(p)} |"
+        )
+    lines.append("")
+    lines.append("## 🌱 Recently Added")
+    lines.append("")
+    lines.append("| Paper | Tiny takeaway | Area | Date |")
+    lines.append("|:------|:--------------|:-----|:----:|")
+    for p in recent:
+        year, month, day = extract_date(p)
+        area = f"{DOMAIN_ICONS[p['domain']]} {DOMAIN_NAMES[p['domain']]}"
+        lines.append(
+            f"| [**{markdown_cell(p['title'])}**]({p['url']}) | {markdown_cell(paper_summary(p))} | "
+            f"{area} | {format_date(year, month, day)} |"
+        )
+    lines.append("")
+    lines.append('<a id="paper-map"></a>')
+    lines.append("## 🧭 Explore the Map")
+    lines.append("")
+    lines.append("| Area | Topics | What lives here |")
+    lines.append("|:-----|:-------|:----------------|")
     for dom in DOMAIN_ORDER:
-        label = DOMAIN_LABELS[dom]
-        anchor = make_anchor(label)
-        lines.append(f"- [{label}](#{anchor})")
+        topic_links = []
         for sub in SUB_ORDER[dom]:
             sub_label = SUB_LABELS[sub]
             cnt = len(grouped[dom][sub])
-            a = make_anchor(f"{sub_label} ({cnt})")
-            lines.append(f"  - [{sub_label} ({cnt})](#{a})")
+            topic_links.append(
+                f"[{SUB_ICONS[sub]} {sub_label} ({cnt})](#{category_anchor(dom, sub)})"
+            )
+        lines.append(
+            f"| {DOMAIN_ICONS[dom]} **[{DOMAIN_NAMES[dom]}](#{dom}-papers)** ({domain_counts[dom]}) "
+            f"| {'<br>'.join(topic_links)} | {DOMAIN_DESCRIPTIONS[dom]} |"
+        )
     lines.append("")
-
-    # --- Sections ---
+    lines.append("---")
+    lines.append("")
+    lines.append("## 📚 Complete Paper Library")
+    lines.append("")
+    lines.append("> Open a topic to browse its papers. Every entry includes a one-line explanation of why it may be useful.")
+    lines.append("")
     for dom in DOMAIN_ORDER:
-        label = DOMAIN_LABELS[dom]
-        lines.append("---")
+        lines.append(f'<a id="{dom}-papers"></a>')
+        lines.append(f"## {DOMAIN_ICONS[dom]} {DOMAIN_LABELS[dom]}")
         lines.append("")
-        lines.append(f"## {label}")
+        lines.append(DOMAIN_DESCRIPTIONS[dom])
+        lines.append("")
+        lines.append("[Back to the map](#paper-map)")
+        lines.append("")
+
+        lines.append("---")
         lines.append("")
         for sub in SUB_ORDER[dom]:
             sub_label = SUB_LABELS[sub]
             sub_papers = grouped[dom][sub]
             if not sub_papers:
                 continue
-            sub_papers_sorted = sorted(sub_papers, key=lambda p: p.get("arxiv", "0000"), reverse=True)
+            sub_papers_sorted = sorted(sub_papers, key=extract_date, reverse=True)
             cnt = len(sub_papers_sorted)
 
-            lines.append(f"### {sub_label} ({cnt})")
+            lines.append(f'<a id="{category_anchor(dom, sub)}"></a>')
+            lines.append("<details>")
+            lines.append(
+                f"<summary><strong>{SUB_ICONS[sub]} {sub_label}</strong> "
+                f"<sub>({cnt} papers)</sub></summary>"
+            )
             lines.append("")
-            lines.append("| Paper | Institution | Date | Links |")
-            lines.append("|:------|:-----------|:----:|:------|")
+            lines.append(SUB_DESCRIPTIONS[sub])
+            lines.append("")
+            lines.append("| Paper | Why it matters | Institution | Date | Links |")
+            lines.append("|:------|:---------------|:------------|:----:|:------|")
             for p in sub_papers_sorted:
                 lines.append(paper_row(p))
             lines.append("")
+            lines.append("</details>")
+            lines.append("")
 
-    # --- Contributing ---
     lines.append("---")
     lines.append("")
-    lines.append("## Contributing")
+    lines.append("## 🤝 Help This List Grow")
     lines.append("")
-    lines.append("PRs welcome! Just add an entry to `data/papers.yaml`:")
+    lines.append("Missing an important paper, code release, or institution correction? Contributions are warmly welcome.")
     lines.append("")
-    lines.append("```yaml")
-    lines.append('- title: "Your Paper Title"')
-    lines.append('  arxiv: "2603.XXXXX"')
-    lines.append('  url: https://arxiv.org/abs/2603.XXXXX')
-    lines.append('  institution: "Institution"')
-    lines.append('  venue: arXiv 2026')
-    lines.append('  domain: robot            # ad / robot / general')
-    lines.append('  subcategory: vla-arch    # see categories above')
-    lines.append('  summary: "One-line summary"')
-    lines.append('  code: "https://github.com/xxx"  # optional')
-    lines.append("```")
+    lines.append("1. Read the friendly [contribution guide](CONTRIBUTING.md).")
+    lines.append("2. Add or improve an entry in `data/papers.yaml`.")
+    lines.append("3. Run `python scripts/generate_readme.py 2026-07-23` and open a pull request.")
     lines.append("")
-    lines.append("Then run `python scripts/generate_readme.py` to regenerate the README.")
+    lines.append(f"If this map saves you time, consider [starring the repository]({REPO_URL}) so more researchers can find it.")
     lines.append("")
-    lines.append("## License")
+    lines.append("## 📜 License")
     lines.append("")
-    lines.append("[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)")
+    lines.append("Released under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Paper copyrights remain with their respective authors.")
     lines.append("")
 
     return "\n".join(lines)
