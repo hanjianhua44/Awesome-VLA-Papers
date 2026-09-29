@@ -237,6 +237,10 @@ def generate_readme(papers: list) -> str:
         (p for p in papers if p.get("rsi")),
         key=lambda p: (int(p.get("rsi_order", 999)), tuple(-v for v in extract_date(p))),
     )
+    rsi_track_counts = {
+        track: sum(1 for p in rsi_papers if p.get("rsi_track") == track)
+        for track in RSI_TRACK_LABELS
+    }
 
     lines = []
     lines.append('<p align="center">')
@@ -311,10 +315,13 @@ def generate_readme(papers: list) -> str:
     lines.append("")
     lines.append("| Area | Topics | What lives here |")
     lines.append("|:-----|:-------|:----------------|")
+    rsi_topic_links = [
+        f"[{label} ({rsi_track_counts[track]})](#rsi-harness)"
+        for track, label in RSI_TRACK_LABELS.items()
+    ]
     lines.append(
         f"| ♻️ **[RSI & Agent Harness](#rsi-harness)** ({len(rsi_papers)}) "
-        "| 🧭 Open-ended learning<br>🧪 Data & skill discovery<br>🧠 Memory & experience"
-        "<br>🛠️ Harness evolution<br>🔁 Policy updates<br>🛡️ Safety & evaluation "
+        f"| {'<br>'.join(rsi_topic_links)} "
         "| Systems that turn deployment experience into verified, persistent improvements. |"
     )
     for dom in DOMAIN_ORDER:
