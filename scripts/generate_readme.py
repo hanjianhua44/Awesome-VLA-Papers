@@ -240,7 +240,7 @@ def generate_readme(papers: list) -> str:
 
     lines = []
     lines.append('<p align="center">')
-    lines.append('  <img src="assets/vla-buddy-banner.svg" alt="Awesome VLA Papers — Vision, Language, Action" width="100%">')
+    lines.append('  <img src="assets/vla-buddy-banner.svg?v=2" alt="Awesome VLA Papers — Vision, Language, Action" width="100%">')
     lines.append("</p>")
     lines.append("")
     lines.append('<h1 align="center">Awesome VLA Papers</h1>')
