@@ -257,7 +257,6 @@ def generate_readme(papers: list) -> str:
     lines.append("</p>")
     lines.append("")
     lines.append('<p align="center">')
-    lines.append("  <a href=\"#rsi-focus\"><strong>RSI Focus</strong></a> ·")
     lines.append("  <a href=\"daily/\"><strong>Daily Feed</strong></a> ·")
     lines.append("  <a href=\"TIMELINE.md\"><strong>Timeline</strong></a> ·")
     lines.append("  <a href=\"BY_INSTITUTION.md\"><strong>By Institution</strong></a> ·")
@@ -279,34 +278,8 @@ def generate_readme(papers: list) -> str:
     lines.append("")
     lines.append("- **New to VLA?** Begin with [Surveys](#general-survey), then explore [VLA Architectures](#robot-vla-arch) and [Action Tokenization](#robot-action-token).")
     lines.append("- **Building robot policies?** Follow [World Models & Policy Co-learning](#robot-world-model-policy), [RL & Policy Optimization](#robot-rl-policy), and [Data & Pre-training](#robot-data-pretrain).")
-    lines.append("- **Interested in models that keep improving after deployment?** Follow the [RSI & Self-Improving Embodied AI](#rsi-focus) reading path.")
+    lines.append("- **Interested in models that keep improving after deployment?** Open [RSI & Agent Harness](#rsi-harness) in the paper map.")
     lines.append("- **Working on autonomous driving?** Jump to [End-to-End VLA](#ad-e2e), [Driving World Models](#ad-world-model), and [Safety & Benchmarks](#ad-safety-benchmark).")
-    lines.append("")
-    lines.append('<a id="rsi-focus"></a>')
-    lines.append("## ♻️ RSI & Self-Improving Embodied AI")
-    lines.append("")
-    lines.append("Most VLAs leave the factory as frozen policies. **Physical RSI** asks a harder question: can an embodied system turn deployment experience into verified, persistent improvements to its data, memory, skills, harness, policy, or even its next research cycle?")
-    lines.append("")
-    lines.append("> **Scope note:** We use RSI as a research lens, not a performance label. A retry, one-off test-time adaptation, or ordinary fine-tuning only belongs here when it closes an experience → verification → persistent update → better future behavior loop.")
-    lines.append("")
-    lines.append("`act in the world` → `collect evidence` → `diagnose / propose` → `verify safely` → `retain the improvement` → `repeat`")
-    lines.append("")
-    lines.append("### 🔬 Featured System")
-    lines.append("")
-    lines.append("| System | Team | Why it matters | Links |")
-    lines.append("|:-------|:-----|:---------------|:------|")
-    lines.append("| **PhysicalRSI** | HKU MMLab | A self-evolving embodied-intelligence baseline that connects physical interaction, evaluation, and iterative system improvement on RoboDojo. | [Project](https://mmlab.hk/research/PhysicalRSI) |")
-    lines.append("")
-    lines.append("### 📚 Reading List")
-    lines.append("")
-    lines.append("| Paper | Improvement loop | Why it matters | Institution | Links |")
-    lines.append("|:------|:-----------------|:---------------|:------------|:------|")
-    for p in rsi_papers:
-        lines.append(
-            f"| **{markdown_cell(p['title'])}** | {rsi_track(p)} | "
-            f"{markdown_cell(paper_summary(p))} | {markdown_cell(p.get('institution'), 'Unknown')} | "
-            f"{paper_links(p)} |"
-        )
     lines.append("")
     lines.append("## ⭐ Editor's Picks")
     lines.append("")
@@ -338,6 +311,12 @@ def generate_readme(papers: list) -> str:
     lines.append("")
     lines.append("| Area | Topics | What lives here |")
     lines.append("|:-----|:-------|:----------------|")
+    lines.append(
+        f"| ♻️ **[RSI & Agent Harness](#rsi-harness)** ({len(rsi_papers)}) "
+        "| 🧭 Open-ended learning<br>🧪 Data & skill discovery<br>🧠 Memory & experience"
+        "<br>🛠️ Harness evolution<br>🔁 Policy updates<br>🛡️ Safety & evaluation "
+        "| Systems that turn deployment experience into verified, persistent improvements. |"
+    )
     for dom in DOMAIN_ORDER:
         topic_links = []
         for sub in SUB_ORDER[dom]:
@@ -356,6 +335,32 @@ def generate_readme(papers: list) -> str:
     lines.append("## 📚 Complete Paper Library")
     lines.append("")
     lines.append("> Open a topic to browse its papers. Every entry includes a one-line explanation of why it may be useful.")
+    lines.append("")
+    lines.append('<a id="rsi-harness"></a>')
+    lines.append("<details>")
+    lines.append(
+        f"<summary><strong>♻️ RSI & Agent Harness</strong> "
+        f"<sub>({len(rsi_papers)} papers + 1 featured system)</sub></summary>"
+    )
+    lines.append("")
+    lines.append("Cross-cutting work on open-ended learning, persistent memory, skill and harness evolution, policy updates, and safe post-deployment improvement.")
+    lines.append("")
+    lines.append("> **Scope:** A retry or one-off adaptation only belongs here when experience is verified and retained to improve future behavior.")
+    lines.append("")
+    lines.append("| System | Team | Why it matters | Links |")
+    lines.append("|:-------|:-----|:---------------|:------|")
+    lines.append("| **PhysicalRSI** | HKU MMLab | Connects physical interaction, RoboDojo evaluation, and iterative embodied-system improvement. | [Project](https://mmlab.hk/research/PhysicalRSI) |")
+    lines.append("")
+    lines.append("| Paper | Improvement loop | Why it matters | Institution | Links |")
+    lines.append("|:------|:-----------------|:---------------|:------------|:------|")
+    for p in rsi_papers:
+        lines.append(
+            f"| **{markdown_cell(p['title'])}** | {rsi_track(p)} | "
+            f"{markdown_cell(paper_summary(p))} | {markdown_cell(p.get('institution'), 'Unknown')} | "
+            f"{paper_links(p)} |"
+        )
+    lines.append("")
+    lines.append("</details>")
     lines.append("")
     for dom in DOMAIN_ORDER:
         lines.append(f'<a id="{dom}-papers"></a>')

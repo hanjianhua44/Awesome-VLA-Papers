@@ -16,7 +16,6 @@
 </p>
 
 <p align="center">
-  <a href="#rsi-focus"><strong>RSI Focus</strong></a> ·
   <a href="daily/"><strong>Daily Feed</strong></a> ·
   <a href="TIMELINE.md"><strong>Timeline</strong></a> ·
   <a href="BY_INSTITUTION.md"><strong>By Institution</strong></a> ·
@@ -38,47 +37,8 @@ A **Vision-Language-Action (VLA)** model turns what an agent *sees* and what a h
 
 - **New to VLA?** Begin with [Surveys](#general-survey), then explore [VLA Architectures](#robot-vla-arch) and [Action Tokenization](#robot-action-token).
 - **Building robot policies?** Follow [World Models & Policy Co-learning](#robot-world-model-policy), [RL & Policy Optimization](#robot-rl-policy), and [Data & Pre-training](#robot-data-pretrain).
-- **Interested in models that keep improving after deployment?** Follow the [RSI & Self-Improving Embodied AI](#rsi-focus) reading path.
+- **Interested in models that keep improving after deployment?** Open [RSI & Agent Harness](#rsi-harness) in the paper map.
 - **Working on autonomous driving?** Jump to [End-to-End VLA](#ad-e2e), [Driving World Models](#ad-world-model), and [Safety & Benchmarks](#ad-safety-benchmark).
-
-<a id="rsi-focus"></a>
-## ♻️ RSI & Self-Improving Embodied AI
-
-Most VLAs leave the factory as frozen policies. **Physical RSI** asks a harder question: can an embodied system turn deployment experience into verified, persistent improvements to its data, memory, skills, harness, policy, or even its next research cycle?
-
-> **Scope note:** We use RSI as a research lens, not a performance label. A retry, one-off test-time adaptation, or ordinary fine-tuning only belongs here when it closes an experience → verification → persistent update → better future behavior loop.
-
-`act in the world` → `collect evidence` → `diagnose / propose` → `verify safely` → `retain the improvement` → `repeat`
-
-### 🔬 Featured System
-
-| System | Team | Why it matters | Links |
-|:-------|:-----|:---------------|:------|
-| **PhysicalRSI** | HKU MMLab | A self-evolving embodied-intelligence baseline that connects physical interaction, evaluation, and iterative system improvement on RoboDojo. | [Project](https://mmlab.hk/research/PhysicalRSI) |
-
-### 📚 Reading List
-
-| Paper | Improvement loop | Why it matters | Institution | Links |
-|:------|:-----------------|:---------------|:------------|:------|
-| **Voyager: An Open-Ended Embodied Agent with Large Language Models** | 🧭 Open-ended foundation | 以自动课程、可增长代码技能库和环境反馈自纠错，奠定开放世界具身终身学习的经典范式 | NVIDIA, Caltech, UT Austin, Stanford, UW-Madison | [Paper](https://arxiv.org/abs/2305.16291) · [Code](https://github.com/MineDojo/Voyager) · [Project](https://voyager.minedojo.org/) |
-| **RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation** | 🔁 Policy & model update | 通过少量示范适配新任务与新机械臂，再自主生成训练数据回灌通用策略，是机器人策略权重自改进的代表作 | Google DeepMind | [Paper](https://arxiv.org/abs/2306.11706) · [Project](https://deepmind.google/discover/blog/robocat-a-self-improving-robotic-agent/) |
-| **Eureka: Human-Level Reward Design via Coding Large Language Models** | 🧪 Data & skill discovery | 让大语言模型进化搜索奖励代码，以环境反馈自动改进机器人技能学习与课程设计 | NVIDIA, UPenn, Caltech, UT Austin | [Paper](https://arxiv.org/abs/2310.12931) · [Project](https://eureka-research.github.io/) |
-| **AutoRT: Embodied Foundation Models for Large Scale Orchestration of Robotic Agents** | 🧪 Data & skill discovery | 用基础模型编排机器人集群自主提出目标并收集大规模真实轨迹，构建持续改进所需的数据飞轮 | Google DeepMind | [Paper](https://arxiv.org/abs/2401.12963) · [Project](https://auto-rt.github.io/) |
-| **A Self-Correcting Vision-Language-Action Model for Fast and Slow System Manipulation** | 🧠 Memory & experience | 将快速动作策略与慢速失败反思结合，生成纠正动作并从修复样本中持续学习 | PKU | [Paper](https://arxiv.org/abs/2405.17418) |
-| **Autonomous Improvement of Instruction Following Skills via Foundation Models** | 🧪 Data & skill discovery | 由视觉语言模型自主生成任务、评估结果并采集三万余条轨迹，闭环提升机器人指令跟随能力 | UC Berkeley | [Paper](https://arxiv.org/abs/2407.20635) · [Project](https://auto-improvement.github.io/) |
-| **Self-Improving Loops for Visual Robotic Planning** | 🔁 Policy & model update | 视频规划器反复利用视觉语言模型筛选成功的自生成轨迹训练自身，形成无需手工奖励的改进循环 | Brown, Harvard | [Paper](https://arxiv.org/abs/2506.06658) · [Project](https://diffusion-supervision.github.io/silvr/) |
-| **Self-Improving Embodied Foundation Models** | 🔁 Policy & model update | 以学习到的任务进度奖励驱动机器人集群自主练习，获得超越原始模仿数据的部署后能力 | Google DeepMind | [Paper](https://arxiv.org/abs/2509.15155) · [Project](https://self-improving-efms.github.io/) |
-| **Self-Improving Vision-Language-Action Models with Data Generation via Residual RL** | 🔁 Policy & model update | 用残差强化学习探索 VLA 失败区域、采集恢复轨迹，再将部署对齐经验蒸馏回通用策略 | NVIDIA, CMU, UC Berkeley, UT Austin | [Paper](https://arxiv.org/abs/2511.00091) · [Project](https://wenlixiao.com/self-improve-VLA-PLD) |
-| **RISE: Self-Improving Robot Policy with Compositional World Model** | 🔁 Policy & model update | 组合式世界模型驱动机器人策略自我进化 | CUHK, Kinetix AI, HKU, Shanghai Innovation Institute, Horizon Robotics, Tsinghua | [Paper](https://arxiv.org/abs/2602.11075) · [Code](https://github.com/OpenDriveLab/RISE) · [Project](https://opendrivelab.com/RISE/) |
-| **ENPIRE: Agentic Robot Policy Self-Improvement in the Real World** | 🔁 Policy & model update | 让编程智能体自主执行真实机器人重置、 rollout、验证与代码改进，形成可扩展的物理自动研究闭环 | NVIDIA, CMU, UC Berkeley | [Paper](https://arxiv.org/abs/2606.19980) · [Project](https://research.nvidia.com/labs/gear/enpire/) |
-| **ASPIRE: Agentic /Skills Discovery for Robotics** | 🧪 Data & skill discovery | 通过迭代机器人探索诊断失败、修复代码策略并沉淀可复用技能库，实现开放式持续技能发现 | NVIDIA, UMich, UIUC, UC Berkeley, CMU | [Paper](https://arxiv.org/abs/2607.00272) · [Code](https://github.com/NVlabs/ASPIRE) · [Project](https://research.nvidia.com/labs/gear/aspire/) |
-| **Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents** | 🛠️ Harness & scaffold | 以记忆引导智能体调度冻结VLA，将通用模型约束为可靠的操作原语 | Tsinghua, Striding AI, Purdue, CASIA, Infinigence AI, Zhongguancun Academy, HKUST | [Paper](https://arxiv.org/abs/2607.08448) · [Code](https://github.com/RLinf/RPent) · [Project](https://harnessvla.github.io/) |
-| **Zero2Skill: Bootstrapping Robot Skills through Autonomous Data Collection, Training, and Deployment** | 🧪 Data & skill discovery | 打通自主数据采集、技能训练和部署闭环，从零启动机器人技能学习 | Cornell, Tsinghua, Nanjing Univ, CAS | [Paper](https://arxiv.org/abs/2607.14047) |
-| **Self-Evolving Embodied Agents via Skill-Harness Evolution** | 🛠️ Harness & scaffold | 冻结基础模型参数，通过环境 rollout 持续进化可复用技能与上下文代码 Harness | Northeastern Univ, Microsoft Research | [Paper](https://arxiv.org/abs/2608.11350) |
-| **Self-Evolving AI for Humanoids: Mechanisms, Safety, and Evaluation of Post-Deployment Self-Improvement** | 🛡️ Safety & evaluation | 系统定义人形机器人部署后自进化，梳理自学习、自适应、自优化和自生成机制及安全验证边界 | Kyung Hee Univ, NTU | [Paper](https://arxiv.org/abs/2609.13236) |
-| **ME-Brain-1.0: Memory, Cognition and Action for Evolving Embodied Intelligence** | 🧠 Memory & experience | 将执行、经验采集、经验进化和再执行闭环统一到可进化记忆、认知核心与动作模型中 | Li Auto | [Paper](https://arxiv.org/abs/2609.24271) |
-| **Know Your Body: A Harness for Direct and Self-Improving Robot Control with VLMs** | 🛠️ Harness & scaffold | 在冻结 VLM 外维护可查询、可修订的机器人身体模型，让真实交互证据持续减少后续规划成本 | Nanjing Univ, Ant Group, ZJU | [Paper](https://arxiv.org/abs/2609.28530) · [Project](https://loule0-0.github.io/KnowBody/) |
-| **RegenHarness: A Robot Agent Harness with Evidence-Gated Recursive Self-Improvement** | 🛡️ Safety & evaluation | 用证据门控、版本化记忆、回归检查和回滚机制约束跨任务 Harness 改进，强调可验证的 RSI | Country Garden Services, HUST, Omni AI | [Paper](https://arxiv.org/abs/2609.27612) |
 
 ## ⭐ Editor's Picks
 
@@ -113,6 +73,7 @@ Most VLAs leave the factory as frozen policies. **Physical RSI** asks a harder q
 
 | Area | Topics | What lives here |
 |:-----|:-------|:----------------|
+| ♻️ **[RSI & Agent Harness](#rsi-harness)** (19) | 🧭 Open-ended learning<br>🧪 Data & skill discovery<br>🧠 Memory & experience<br>🛠️ Harness evolution<br>🔁 Policy updates<br>🛡️ Safety & evaluation | Systems that turn deployment experience into verified, persistent improvements. |
 | 🚗 **[Autonomous Driving](#ad-papers)** (95) | [🛣️ End-to-End VLA Architecture (36)](#ad-e2e)<br>[🌍 World Models (27)](#ad-world-model)<br>[🎮 Simulation & Data (8)](#ad-simulation-data)<br>[🧭 Planning & Control (6)](#ad-planning)<br>[🛡️ Safety & Benchmarks (18)](#ad-safety-benchmark) | End-to-end driving, world models, planning, simulation, safety, and evaluation. |
 | 🤖 **[Robotics](#robot-papers)** (159) | [🦾 VLA Architecture (63)](#robot-vla-arch)<br>[🧩 Action Tokenization (12)](#robot-action-token)<br>[🔮 World Models & Policy Co-learning (32)](#robot-world-model-policy)<br>[🎯 RL & Policy Optimization (24)](#robot-rl-policy)<br>[📚 Data & Pre-training (28)](#robot-data-pretrain) | Generalist policies, action representations, robot learning, memory, and manipulation. |
 | 🧠 **[General / Cross-domain](#general-papers)** (92) | [🧊 Spatial Perception & 3D/4D (18)](#general-spatial)<br>[💭 Latent Reasoning & Chain-of-Thought (16)](#general-latent-reasoning)<br>[🌈 Multimodal Architecture & Pre-training (19)](#general-multimodal-arch)<br>[⚡ Efficient Inference (17)](#general-efficient)<br>[🧪 Physical AI Benchmarks (7)](#general-physical-benchmark)<br>[🗺️ Surveys (15)](#general-survey) | Spatial intelligence, multimodal reasoning, efficient inference, benchmarks, and surveys. |
@@ -122,6 +83,42 @@ Most VLAs leave the factory as frozen policies. **Physical RSI** asks a harder q
 ## 📚 Complete Paper Library
 
 > Open a topic to browse its papers. Every entry includes a one-line explanation of why it may be useful.
+
+<a id="rsi-harness"></a>
+<details>
+<summary><strong>♻️ RSI & Agent Harness</strong> <sub>(19 papers + 1 featured system)</sub></summary>
+
+Cross-cutting work on open-ended learning, persistent memory, skill and harness evolution, policy updates, and safe post-deployment improvement.
+
+> **Scope:** A retry or one-off adaptation only belongs here when experience is verified and retained to improve future behavior.
+
+| System | Team | Why it matters | Links |
+|:-------|:-----|:---------------|:------|
+| **PhysicalRSI** | HKU MMLab | Connects physical interaction, RoboDojo evaluation, and iterative embodied-system improvement. | [Project](https://mmlab.hk/research/PhysicalRSI) |
+
+| Paper | Improvement loop | Why it matters | Institution | Links |
+|:------|:-----------------|:---------------|:------------|:------|
+| **Voyager: An Open-Ended Embodied Agent with Large Language Models** | 🧭 Open-ended foundation | 以自动课程、可增长代码技能库和环境反馈自纠错，奠定开放世界具身终身学习的经典范式 | NVIDIA, Caltech, UT Austin, Stanford, UW-Madison | [Paper](https://arxiv.org/abs/2305.16291) · [Code](https://github.com/MineDojo/Voyager) · [Project](https://voyager.minedojo.org/) |
+| **RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation** | 🔁 Policy & model update | 通过少量示范适配新任务与新机械臂，再自主生成训练数据回灌通用策略，是机器人策略权重自改进的代表作 | Google DeepMind | [Paper](https://arxiv.org/abs/2306.11706) · [Project](https://deepmind.google/discover/blog/robocat-a-self-improving-robotic-agent/) |
+| **Eureka: Human-Level Reward Design via Coding Large Language Models** | 🧪 Data & skill discovery | 让大语言模型进化搜索奖励代码，以环境反馈自动改进机器人技能学习与课程设计 | NVIDIA, UPenn, Caltech, UT Austin | [Paper](https://arxiv.org/abs/2310.12931) · [Project](https://eureka-research.github.io/) |
+| **AutoRT: Embodied Foundation Models for Large Scale Orchestration of Robotic Agents** | 🧪 Data & skill discovery | 用基础模型编排机器人集群自主提出目标并收集大规模真实轨迹，构建持续改进所需的数据飞轮 | Google DeepMind | [Paper](https://arxiv.org/abs/2401.12963) · [Project](https://auto-rt.github.io/) |
+| **A Self-Correcting Vision-Language-Action Model for Fast and Slow System Manipulation** | 🧠 Memory & experience | 将快速动作策略与慢速失败反思结合，生成纠正动作并从修复样本中持续学习 | PKU | [Paper](https://arxiv.org/abs/2405.17418) |
+| **Autonomous Improvement of Instruction Following Skills via Foundation Models** | 🧪 Data & skill discovery | 由视觉语言模型自主生成任务、评估结果并采集三万余条轨迹，闭环提升机器人指令跟随能力 | UC Berkeley | [Paper](https://arxiv.org/abs/2407.20635) · [Project](https://auto-improvement.github.io/) |
+| **Self-Improving Loops for Visual Robotic Planning** | 🔁 Policy & model update | 视频规划器反复利用视觉语言模型筛选成功的自生成轨迹训练自身，形成无需手工奖励的改进循环 | Brown, Harvard | [Paper](https://arxiv.org/abs/2506.06658) · [Project](https://diffusion-supervision.github.io/silvr/) |
+| **Self-Improving Embodied Foundation Models** | 🔁 Policy & model update | 以学习到的任务进度奖励驱动机器人集群自主练习，获得超越原始模仿数据的部署后能力 | Google DeepMind | [Paper](https://arxiv.org/abs/2509.15155) · [Project](https://self-improving-efms.github.io/) |
+| **Self-Improving Vision-Language-Action Models with Data Generation via Residual RL** | 🔁 Policy & model update | 用残差强化学习探索 VLA 失败区域、采集恢复轨迹，再将部署对齐经验蒸馏回通用策略 | NVIDIA, CMU, UC Berkeley, UT Austin | [Paper](https://arxiv.org/abs/2511.00091) · [Project](https://wenlixiao.com/self-improve-VLA-PLD) |
+| **RISE: Self-Improving Robot Policy with Compositional World Model** | 🔁 Policy & model update | 组合式世界模型驱动机器人策略自我进化 | CUHK, Kinetix AI, HKU, Shanghai Innovation Institute, Horizon Robotics, Tsinghua | [Paper](https://arxiv.org/abs/2602.11075) · [Code](https://github.com/OpenDriveLab/RISE) · [Project](https://opendrivelab.com/RISE/) |
+| **ENPIRE: Agentic Robot Policy Self-Improvement in the Real World** | 🔁 Policy & model update | 让编程智能体自主执行真实机器人重置、 rollout、验证与代码改进，形成可扩展的物理自动研究闭环 | NVIDIA, CMU, UC Berkeley | [Paper](https://arxiv.org/abs/2606.19980) · [Project](https://research.nvidia.com/labs/gear/enpire/) |
+| **ASPIRE: Agentic /Skills Discovery for Robotics** | 🧪 Data & skill discovery | 通过迭代机器人探索诊断失败、修复代码策略并沉淀可复用技能库，实现开放式持续技能发现 | NVIDIA, UMich, UIUC, UC Berkeley, CMU | [Paper](https://arxiv.org/abs/2607.00272) · [Code](https://github.com/NVlabs/ASPIRE) · [Project](https://research.nvidia.com/labs/gear/aspire/) |
+| **Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents** | 🛠️ Harness & scaffold | 以记忆引导智能体调度冻结VLA，将通用模型约束为可靠的操作原语 | Tsinghua, Striding AI, Purdue, CASIA, Infinigence AI, Zhongguancun Academy, HKUST | [Paper](https://arxiv.org/abs/2607.08448) · [Code](https://github.com/RLinf/RPent) · [Project](https://harnessvla.github.io/) |
+| **Zero2Skill: Bootstrapping Robot Skills through Autonomous Data Collection, Training, and Deployment** | 🧪 Data & skill discovery | 打通自主数据采集、技能训练和部署闭环，从零启动机器人技能学习 | Cornell, Tsinghua, Nanjing Univ, CAS | [Paper](https://arxiv.org/abs/2607.14047) |
+| **Self-Evolving Embodied Agents via Skill-Harness Evolution** | 🛠️ Harness & scaffold | 冻结基础模型参数，通过环境 rollout 持续进化可复用技能与上下文代码 Harness | Northeastern Univ, Microsoft Research | [Paper](https://arxiv.org/abs/2608.11350) |
+| **Self-Evolving AI for Humanoids: Mechanisms, Safety, and Evaluation of Post-Deployment Self-Improvement** | 🛡️ Safety & evaluation | 系统定义人形机器人部署后自进化，梳理自学习、自适应、自优化和自生成机制及安全验证边界 | Kyung Hee Univ, NTU | [Paper](https://arxiv.org/abs/2609.13236) |
+| **ME-Brain-1.0: Memory, Cognition and Action for Evolving Embodied Intelligence** | 🧠 Memory & experience | 将执行、经验采集、经验进化和再执行闭环统一到可进化记忆、认知核心与动作模型中 | Li Auto | [Paper](https://arxiv.org/abs/2609.24271) |
+| **Know Your Body: A Harness for Direct and Self-Improving Robot Control with VLMs** | 🛠️ Harness & scaffold | 在冻结 VLM 外维护可查询、可修订的机器人身体模型，让真实交互证据持续减少后续规划成本 | Nanjing Univ, Ant Group, ZJU | [Paper](https://arxiv.org/abs/2609.28530) · [Project](https://loule0-0.github.io/KnowBody/) |
+| **RegenHarness: A Robot Agent Harness with Evidence-Gated Recursive Self-Improvement** | 🛡️ Safety & evaluation | 用证据门控、版本化记忆、回归检查和回滚机制约束跨任务 Harness 改进，强调可验证的 RSI | Country Garden Services, HUST, Omni AI | [Paper](https://arxiv.org/abs/2609.27612) |
+
+</details>
 
 <a id="ad-papers"></a>
 ## 🚗 I. Autonomous Driving

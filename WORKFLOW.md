@@ -201,7 +201,7 @@ All paper metadata lives in `data/papers.yaml`:
   date: "2026-03-10"
   code: https://github.com/example/repo  # optional
   project: https://example.github.io/    # optional
-  rsi: true                              # optional: include in RSI reading path
+  rsi: true                              # optional: include in RSI map category
   rsi_track: harness                     # foundation/data/memory/harness/policy/safety
 ```
 
@@ -218,7 +218,7 @@ Running `python scripts/generate_readme.py` produces three files:
 Features of the generated README:
 - **Friendly hero** — project mascot, focused badges, and direct links to every browsing view
 - **Start Here paths** — guided routes for newcomers, robotics researchers, and autonomous-driving researchers
-- **RSI focus** — a curated path through open-ended, lifelong, and post-deployment embodied self-improvement
+- **RSI map category** — a cross-cutting, collapsible index for open-ended, lifelong, and post-deployment embodied self-improvement
 - **Editorial discovery** — curated picks and recent additions with one-line explanations
 - **Category map** — stable topic anchors with counts, icons, and short descriptions
 - **Collapsible catalog** — each subcategory in a `<details>` block with plain dates and paper summaries
