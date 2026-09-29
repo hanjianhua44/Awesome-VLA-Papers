@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/vla-buddy-banner.svg?v=2" alt="Awesome VLA Papers — Vision, Language, Action" width="100%">
+  <img src="assets/vla-buddy-banner.svg" alt="Awesome VLA Papers — Vision, Language, Action" width="100%">
 </p>
 
 <h1 align="center">Awesome VLA Papers</h1>
