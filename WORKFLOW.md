@@ -104,8 +104,8 @@ Each paper is scored based on title + abstract matching:
 
 | Tier | Score | Example Keywords |
 |:-----|------:|:-----------------|
-| HIGH | +3 | `VLA`, `vision-language-action`, `autonomous driving`, `robot manipulation`, `embodied agent` |
-| MID | +2 | `grasping`, `humanoid`, `BEV`, `policy learning`, `sim-to-real`, `trajectory planning` |
+| HIGH | +3 | `VLA`, `vision-language-action`, `Physical RSI`, `recursive self-improvement`, `self-evolving robot`, `robot manipulation` |
+| MID | +2 | `lifelong robot learning`, `open-ended embodied agent`, `skill library`, `humanoid`, `sim-to-real`, `trajectory planning` |
 | LOW | +1 | `object detection`, `point cloud`, `3D reconstruction`, `MoE` |
 | Category bonus | +1 | `cs.CV` or `cs.RO` |
 
@@ -152,18 +152,32 @@ Extracted PDF text is **cached locally** (`.pdf_cache/*.txt`) so repeated runs s
 
 ### Step 4: TIER1 Institution Filter
 
-Only papers with at least one **TIER1 institution** are kept. Papers from unrecognized or non-TIER1 institutions are discarded. This ensures daily reports contain only high-signal papers.
+Normally, only papers with at least one **TIER1 institution** are kept. Papers from unrecognized or non-TIER1 institutions are discarded. This ensures daily reports contain only high-signal papers.
+
+One narrow watch-list exception prevents new Physical RSI groups from being missed: a paper may pass without a recognized institution only when it is in `cs.RO`, scores at least 6, and matches the strict Embodied RSI classifier. Its institution remains visibly unknown until verified.
 
 ### Step 5: Report Generation
 
 Surviving papers are:
-1. **Categorized** into sections (VLA, Autonomous Driving, Robotics, World Models, RL, etc.)
+1. **Categorized** into sections (Embodied RSI, VLA, Autonomous Driving, Robotics, World Models, RL, etc.)
 2. **Formatted** into a styled Markdown report with Chinese editorial summaries, emoji markers, and bold highlights
 3. **Saved** to `daily/YYYY/MM/YYYY-MM-DD.md`
 
 The report title shows **paper dates** (not report date) for clarity:
 - Wednesday–Saturday: `arXiv VLA 速递 | 03-10 论文` (single-day range)
 - Tuesday: `arXiv VLA 速递 | 03-06 ~ 03-09 论文` (weekend batch)
+
+### Embodied RSI Watch
+
+The daily pipeline treats **Physical RSI / embodied self-improvement** as a first-class interest area. It looks for persistent improvement loops involving:
+
+- recursive or post-deployment self-improvement
+- self-evolving robot, embodied-agent, VLA, or policy systems
+- autonomous skill/data discovery and continually growing skill libraries
+- memory-, harness-, or scaffold-level evolution around frozen models
+- lifelong/open-ended robot learning grounded in environment feedback
+
+The dedicated `♻️ 具身 RSI / 自进化` section is intentionally narrower than generic adaptation: retries or one-off fine-tuning alone do not qualify unless the system verifies and retains an improvement for future behavior.
 
 ---
 
@@ -187,6 +201,8 @@ All paper metadata lives in `data/papers.yaml`:
   date: "2026-03-10"
   code: https://github.com/example/repo  # optional
   project: https://example.github.io/    # optional
+  rsi: true                              # optional: include in RSI reading path
+  rsi_track: harness                     # foundation/data/memory/harness/policy/safety
 ```
 
 ### Generated Outputs
@@ -202,6 +218,7 @@ Running `python scripts/generate_readme.py` produces three files:
 Features of the generated README:
 - **Friendly hero** — project mascot, focused badges, and direct links to every browsing view
 - **Start Here paths** — guided routes for newcomers, robotics researchers, and autonomous-driving researchers
+- **RSI focus** — a curated path through open-ended, lifelong, and post-deployment embodied self-improvement
 - **Editorial discovery** — curated picks and recent additions with one-line explanations
 - **Category map** — stable topic anchors with counts, icons, and short descriptions
 - **Collapsible catalog** — each subcategory in a `<details>` block with plain dates and paper summaries

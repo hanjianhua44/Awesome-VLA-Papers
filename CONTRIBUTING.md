@@ -29,6 +29,8 @@ Search `data/papers.yaml` by arXiv ID and title before adding a new entry.
   date: "2026-03-10"
   code: https://github.com/example/repo  # optional
   project: https://example.github.io/    # optional
+  rsi: true                              # optional: verified self-improvement loop
+  rsi_track: harness                     # foundation/data/memory/harness/policy/safety
 ```
 
 Valid domains and subcategories:

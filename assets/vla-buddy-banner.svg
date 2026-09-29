@@ -70,14 +70,14 @@
 
       <rect x="218" width="184" height="52" rx="26" fill="#ddd7ff"/>
       <path d="M245 15h34v23h-17l-8 8v-8h-9z" fill="#fff"/>
-      <text x="291" y="34" fill="#584f82" font-size="20">LANGUAGE</text>
+      <text x="340" y="33" fill="#584f82" font-size="16" text-anchor="middle">LANGUAGE</text>
 
       <path d="M416 26h34" stroke="#8c82b9" stroke-width="5" stroke-linecap="round"/>
       <path d="M442 18l10 8-10 8" fill="none" stroke="#8c82b9" stroke-width="5" stroke-linecap="round"/>
 
       <rect x="466" width="150" height="52" rx="26" fill="#ccefe6"/>
       <path d="M489 35V19l17-8 17 8v16l-17 8z" fill="#fff"/>
-      <text x="535" y="34" fill="#436d68" font-size="20">ACTION</text>
+      <text x="570" y="33" fill="#436d68" font-size="16" text-anchor="middle">ACTION</text>
     </g>
 
     <text x="2" y="270" fill="#82799d" font-family="Verdana,Segoe UI,sans-serif" font-size="18">Curated papers + Daily arXiv feed + Clear learning paths</text>

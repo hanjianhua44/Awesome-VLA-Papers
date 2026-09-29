@@ -965,12 +965,17 @@
 - title: 'RISE: Self-Improving Robot Policy with Compositional World Model'
   arxiv: '2602.11075'
   url: https://arxiv.org/abs/2602.11075
-  institution: CUHK, HKU, Horizon Robotics, Tsinghua
+  institution: CUHK, Kinetix AI, HKU, Shanghai Innovation Institute, Horizon Robotics, Tsinghua
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
   summary: 组合式世界模型驱动机器人策略自我进化
   date: '2026-02-11'
+  rsi: true
+  rsi_track: policy
+  rsi_order: 10
+  code: https://github.com/OpenDriveLab/RISE
+  project: https://opendrivelab.com/RISE/
 - title: 'VLAW: Iterative Co-Improvement of VLA Policy and World Model'
   arxiv: '2602.12063'
   url: https://arxiv.org/abs/2602.12063
@@ -2732,12 +2737,17 @@
 - title: 'Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents'
   arxiv: '2607.08448'
   url: https://arxiv.org/abs/2607.08448
-  institution: Purdue, Tsinghua, CASIA, CAS
+  institution: Tsinghua, Striding AI, Purdue, CASIA, Infinigence AI, Zhongguancun Academy, HKUST
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
   summary: 以记忆引导智能体调度冻结VLA，将通用模型约束为可靠的操作原语
   date: '2026-07-09'
+  rsi: true
+  rsi_track: harness
+  rsi_order: 13
+  code: https://github.com/RLinf/RPent
+  project: https://harnessvla.github.io/
 - title: Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing
   arxiv: '2607.08497'
   url: https://arxiv.org/abs/2607.08497
@@ -2838,6 +2848,9 @@
   summary: 打通自主数据采集、技能训练和部署闭环，从零启动机器人技能学习
   date: '2026-07-15'
   featured: true
+  rsi: true
+  rsi_track: data
+  rsi_order: 14
 - title: 'GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch'
   arxiv: '2607.13960'
   url: https://arxiv.org/abs/2607.13960
@@ -2976,3 +2989,208 @@
   summary: 系统综述机器人学习中的进度奖励建模方法、数据、评测与开放问题
   date: '2026-07-22'
   featured: true
+- title: 'Voyager: An Open-Ended Embodied Agent with Large Language Models'
+  arxiv: '2305.16291'
+  url: https://arxiv.org/abs/2305.16291
+  institution: NVIDIA, Caltech, UT Austin, Stanford, UW-Madison
+  venue: NeurIPS 2023 Workshop
+  domain: robot
+  subcategory: data-pretrain
+  summary: 以自动课程、可增长代码技能库和环境反馈自纠错，奠定开放世界具身终身学习的经典范式
+  date: '2023-05-25'
+  rsi: true
+  rsi_track: foundation
+  rsi_order: 1
+  code: https://github.com/MineDojo/Voyager
+  project: https://voyager.minedojo.org/
+- title: 'ENPIRE: Agentic Robot Policy Self-Improvement in the Real World'
+  arxiv: '2606.19980'
+  url: https://arxiv.org/abs/2606.19980
+  institution: NVIDIA, CMU, UC Berkeley
+  venue: arXiv 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: 让编程智能体自主执行真实机器人重置、 rollout、验证与代码改进，形成可扩展的物理自动研究闭环
+  date: '2026-06-18'
+  rsi: true
+  rsi_track: policy
+  rsi_order: 11
+  project: https://research.nvidia.com/labs/gear/enpire/
+- title: 'ASPIRE: Agentic /Skills Discovery for Robotics'
+  arxiv: '2607.00272'
+  url: https://arxiv.org/abs/2607.00272
+  institution: NVIDIA, UMich, UIUC, UC Berkeley, CMU
+  venue: arXiv 2026
+  domain: robot
+  subcategory: data-pretrain
+  summary: 通过迭代机器人探索诊断失败、修复代码策略并沉淀可复用技能库，实现开放式持续技能发现
+  date: '2026-06-30'
+  rsi: true
+  rsi_track: data
+  rsi_order: 12
+  code: https://github.com/NVlabs/ASPIRE
+  project: https://research.nvidia.com/labs/gear/aspire/
+- title: 'Self-Evolving Embodied Agents via Skill-Harness Evolution'
+  arxiv: '2608.11350'
+  url: https://arxiv.org/abs/2608.11350
+  institution: Northeastern Univ, Microsoft Research
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 冻结基础模型参数，通过环境 rollout 持续进化可复用技能与上下文代码 Harness
+  date: '2026-08-11'
+  rsi: true
+  rsi_track: harness
+  rsi_order: 15
+- title: 'Self-Evolving AI for Humanoids: Mechanisms, Safety, and Evaluation of Post-Deployment Self-Improvement'
+  arxiv: '2609.13236'
+  url: https://arxiv.org/abs/2609.13236
+  institution: Kyung Hee Univ, NTU
+  venue: arXiv 2026
+  domain: general
+  subcategory: survey
+  summary: 系统定义人形机器人部署后自进化，梳理自学习、自适应、自优化和自生成机制及安全验证边界
+  date: '2026-09-02'
+  rsi: true
+  rsi_track: safety
+  rsi_order: 16
+- title: 'ME-Brain-1.0: Memory, Cognition and Action for Evolving Embodied Intelligence'
+  arxiv: '2609.24271'
+  url: https://arxiv.org/abs/2609.24271
+  institution: Li Auto
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 将执行、经验采集、经验进化和再执行闭环统一到可进化记忆、认知核心与动作模型中
+  date: '2026-09-21'
+  rsi: true
+  rsi_track: memory
+  rsi_order: 17
+- title: 'Know Your Body: A Harness for Direct and Self-Improving Robot Control with VLMs'
+  arxiv: '2609.28530'
+  url: https://arxiv.org/abs/2609.28530
+  institution: Nanjing Univ, Ant Group, ZJU
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 在冻结 VLM 外维护可查询、可修订的机器人身体模型，让真实交互证据持续减少后续规划成本
+  date: '2026-09-22'
+  rsi: true
+  rsi_track: harness
+  rsi_order: 18
+  project: https://loule0-0.github.io/KnowBody/
+- title: 'RegenHarness: A Robot Agent Harness with Evidence-Gated Recursive Self-Improvement'
+  arxiv: '2609.27612'
+  url: https://arxiv.org/abs/2609.27612
+  institution: Country Garden Services, HUST, Omni AI
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: 用证据门控、版本化记忆、回归检查和回滚机制约束跨任务 Harness 改进，强调可验证的 RSI
+  date: '2026-09-23'
+  rsi: true
+  rsi_track: safety
+  rsi_order: 19
+- title: 'RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation'
+  arxiv: '2306.11706'
+  url: https://arxiv.org/abs/2306.11706
+  institution: Google DeepMind
+  venue: arXiv 2023
+  domain: robot
+  subcategory: data-pretrain
+  summary: 通过少量示范适配新任务与新机械臂，再自主生成训练数据回灌通用策略，是机器人策略权重自改进的代表作
+  date: '2023-06-20'
+  rsi: true
+  rsi_track: policy
+  rsi_order: 2
+  project: https://deepmind.google/discover/blog/robocat-a-self-improving-robotic-agent/
+- title: 'Eureka: Human-Level Reward Design via Coding Large Language Models'
+  arxiv: '2310.12931'
+  url: https://arxiv.org/abs/2310.12931
+  institution: NVIDIA, UPenn, Caltech, UT Austin
+  venue: ICLR 2024
+  domain: robot
+  subcategory: rl-policy
+  summary: 让大语言模型进化搜索奖励代码，以环境反馈自动改进机器人技能学习与课程设计
+  date: '2023-10-20'
+  rsi: true
+  rsi_track: data
+  rsi_order: 3
+  project: https://eureka-research.github.io/
+- title: 'AutoRT: Embodied Foundation Models for Large Scale Orchestration of Robotic Agents'
+  arxiv: '2401.12963'
+  url: https://arxiv.org/abs/2401.12963
+  institution: Google DeepMind
+  venue: arXiv 2024
+  domain: robot
+  subcategory: data-pretrain
+  summary: 用基础模型编排机器人集群自主提出目标并收集大规模真实轨迹，构建持续改进所需的数据飞轮
+  date: '2024-01-23'
+  rsi: true
+  rsi_track: data
+  rsi_order: 4
+  project: https://auto-rt.github.io/
+- title: 'A Self-Correcting Vision-Language-Action Model for Fast and Slow System Manipulation'
+  arxiv: '2405.17418'
+  url: https://arxiv.org/abs/2405.17418
+  institution: PKU
+  venue: arXiv 2024
+  domain: robot
+  subcategory: vla-arch
+  summary: 将快速动作策略与慢速失败反思结合，生成纠正动作并从修复样本中持续学习
+  date: '2024-05-27'
+  rsi: true
+  rsi_track: memory
+  rsi_order: 5
+- title: 'Autonomous Improvement of Instruction Following Skills via Foundation Models'
+  arxiv: '2407.20635'
+  url: https://arxiv.org/abs/2407.20635
+  institution: UC Berkeley
+  venue: CoRL 2024
+  domain: robot
+  subcategory: data-pretrain
+  summary: 由视觉语言模型自主生成任务、评估结果并采集三万余条轨迹，闭环提升机器人指令跟随能力
+  date: '2024-07-30'
+  rsi: true
+  rsi_track: data
+  rsi_order: 6
+  project: https://auto-improvement.github.io/
+- title: 'Self-Improving Loops for Visual Robotic Planning'
+  arxiv: '2506.06658'
+  url: https://arxiv.org/abs/2506.06658
+  institution: Brown, Harvard
+  venue: ICLR 2026
+  domain: robot
+  subcategory: world-model-policy
+  summary: 视频规划器反复利用视觉语言模型筛选成功的自生成轨迹训练自身，形成无需手工奖励的改进循环
+  date: '2025-06-07'
+  rsi: true
+  rsi_track: policy
+  rsi_order: 7
+  project: https://diffusion-supervision.github.io/silvr/
+- title: 'Self-Improving Embodied Foundation Models'
+  arxiv: '2509.15155'
+  url: https://arxiv.org/abs/2509.15155
+  institution: Google DeepMind
+  venue: NeurIPS 2025
+  domain: robot
+  subcategory: rl-policy
+  summary: 以学习到的任务进度奖励驱动机器人集群自主练习，获得超越原始模仿数据的部署后能力
+  date: '2025-09-18'
+  rsi: true
+  rsi_track: policy
+  rsi_order: 8
+  project: https://self-improving-efms.github.io/
+- title: 'Self-Improving Vision-Language-Action Models with Data Generation via Residual RL'
+  arxiv: '2511.00091'
+  url: https://arxiv.org/abs/2511.00091
+  institution: NVIDIA, CMU, UC Berkeley, UT Austin
+  venue: ICLR 2026
+  domain: robot
+  subcategory: rl-policy
+  summary: 用残差强化学习探索 VLA 失败区域、采集恢复轨迹，再将部署对齐经验蒸馏回通用策略
+  date: '2025-11-01'
+  rsi: true
+  rsi_track: policy
+  rsi_order: 9
+  project: https://wenlixiao.com/self-improve-VLA-PLD

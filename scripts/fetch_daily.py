@@ -50,6 +50,14 @@ urllib.request.install_opener(urllib.request.build_opener(_https_handler))
 # Research interest keywords (weighted)
 # ---------------------------------------------------------------------------
 HIGH_KEYWORDS = [
+    # === Embodied RSI / Persistent Self-Improvement ===
+    r"\bphysical.{0,5}RSI\b", r"recursive self.improvement",
+    r"self.(evolving|improving).{0,25}(robot|embodied|humanoid|VLA|policy|agent)",
+    r"(robot|embodied|humanoid|VLA|policy|agent).{0,25}self.(evolv|improv)",
+    r"post.deployment.{0,10}self.improvement",
+    r"agentic.{0,12}(robot|policy).{0,20}(improv|evolv)",
+    r"(skill|agent).{0,8}harness.{0,20}(evolv|improv)",
+    r"memory.guided.{0,12}(agent|harness)",
     # === Core VLA ===
     r"vision.language.action", r"\bVLA\b", r"visuomotor policy",
     r"generalist.{0,10}(policy|robot|agent)", r"language.conditioned.{0,10}(policy|control|manipulation)",
@@ -70,6 +78,13 @@ HIGH_KEYWORDS = [
 ]
 
 MID_KEYWORDS = [
+    # === Open-ended / Lifelong Robot Learning ===
+    r"lifelong.{0,15}(robot|embodied|skill|policy|agent)",
+    r"open.ended.{0,15}(robot|embodied|skill|learning|agent)",
+    r"continual.{0,15}(robot|embodied|skill|policy|learning)",
+    r"(ever.growing|expanding).{0,10}skill library",
+    r"autonomous.{0,12}(skill|data).{0,12}(collect|discover|acqui)",
+    r"(failure|experience).{0,12}(diagnos|reflect|repair|consolidat)",
     # === VLM / Multimodal for Robotics ===
     r"vision.language model", r"\bVLM\b",
     r"multimodal.{0,10}(agent|robot|driving|embodied)",
@@ -446,11 +461,32 @@ def fetch_arxiv_papers(date_str: str = None):
     elif skip_pdf_enrich:
         print("  SKIP_PDF_ENRICH=1, skip PDF institution enrichment")
 
-    # Phase 3: Keep only papers with at least one TIER1 institution
-    results = [p for p in candidates if is_known_institution(p["institution"])]
+    # Phase 3: Keep papers from TIER1 institutions. Embodied RSI is an emerging
+    # niche where important work may come from new labs, so retain only
+    # high-confidence cs.RO RSI matches as a narrow watch-list exception.
+    def is_rsi_watch_candidate(p: dict) -> bool:
+        return (
+            "cs.RO" in p["categories"]
+            and p["score"] >= 6
+            and categorize_paper(
+                p["topics"], p["categories"], p["title"], p["abstract"]
+            ) == "Embodied RSI"
+        )
+
+    rsi_watch = [
+        p for p in candidates
+        if not is_known_institution(p["institution"]) and is_rsi_watch_candidate(p)
+    ]
+    results = [
+        p for p in candidates
+        if is_known_institution(p["institution"]) or is_rsi_watch_candidate(p)
+    ]
     results.sort(key=lambda p: p["score"], reverse=True)
     dropped = len(candidates) - len(results)
-    print(f"  Final results: {len(results)} (dropped {dropped} without TIER1 institution)")
+    print(
+        f"  Final results: {len(results)} "
+        f"(dropped {dropped} without TIER1 institution; RSI watch exceptions: {len(rsi_watch)})"
+    )
 
     return results, len(date_filtered), sorted(target_dates)
 
@@ -460,6 +496,24 @@ def categorize_paper(topics: list, categories: str, title: str = "", abstract: s
     topic_text = " ".join(topics).lower()
     full_text = (topic_text + " " + title + " " + abstract).lower()
     cats = categories.lower()
+
+    # Embodied RSI first: papers must describe a persistent improvement loop,
+    # not merely retries, generic adaptation, or unrelated self-improving software.
+    rsi_signal = re.search(
+        r"\bphysical.{0,5}rsi\b|recursive self.improvement"
+        r"|self.(evolving|improving).{0,25}(robot|embodied|humanoid|vla|policy|agent)"
+        r"|(robot|embodied|humanoid|vla|policy|agent).{0,25}self.(evolv|improv)"
+        r"|post.deployment.{0,10}self.improvement"
+        r"|agentic.{0,12}(robot|policy).{0,20}(improv|evolv)"
+        r"|(skill|agent).{0,8}harness.{0,20}(evolv|improv)",
+        full_text,
+    )
+    open_ended_skill_loop = (
+        re.search(r"open.ended.{0,30}(embodied|agent|robot|learning)", full_text)
+        and re.search(r"(skill library|automatic curriculum|persistent memory)", full_text)
+    )
+    if rsi_signal or open_ended_skill_loop:
+        return "Embodied RSI"
 
     # VLA first (most specific)
     if re.search(r"vision.language.action|\bvla\b|visuomotor.{0,5}policy|generalist.{0,10}(policy|robot)", full_text):
@@ -533,6 +587,7 @@ def categorize_paper(topics: list, categories: str, title: str = "", abstract: s
 
 
 CAT_CN = {
+    "Embodied RSI": ("♻️ 具身 RSI / 自进化", "从部署经验中持续改进数据、记忆、技能、Harness 或策略"),
     "VLA": ("🤖 VLA 模型", "视觉-语言-动作模型，连接感知、理解与控制的核心架构"),
     "Autonomous Driving": ("🚗 自动驾驶", "端到端驾驶、规划、仿真与安全"),
     "Robotics": ("🦾 机器人操作", "灵巧操作、双臂协同、移动操控与具身智能"),
@@ -559,6 +614,8 @@ def _make_summary_cn(title: str, abstract: str) -> str:
         domain = "多模态AI"
 
     method_keywords = {
+        "recursive self-improvement": "递归自我改进 (RSI)", "self-evolving": "自进化",
+        "lifelong": "终身学习", "skill library": "技能库",
         "diffusion": "扩散模型", "flow matching": "流匹配", "reinforcement learning": "强化学习",
         "mixture of experts": "混合专家 (MoE)", "moe": "混合专家 (MoE)",
         "world model": "世界模型", "chain-of-thought": "思维链 (CoT)",
@@ -631,7 +688,7 @@ def generate_daily_report(papers: list, date_str: str, total_scanned: int = 0,
         cat = categorize_paper(p["topics"], p["categories"], p.get("title", ""), p.get("abstract", ""))
         by_cat.setdefault(cat, []).append(p)
 
-    cat_order = ["VLA", "Autonomous Driving", "Robotics", "Agent", "World Models",
+    cat_order = ["Embodied RSI", "VLA", "Autonomous Driving", "Robotics", "Agent", "World Models",
                  "RL & Policy Optimization", "Spatial & Perception",
                  "Efficient & Architecture", "Related"]
 
