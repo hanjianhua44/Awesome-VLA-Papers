@@ -90,12 +90,20 @@ SUB_DESCRIPTIONS = {
 }
 
 RSI_TRACK_LABELS = {
-    "foundation": "🧭 Open-ended foundation",
+    "foundation": "🧭 Open-ended Foundations",
     "data": "🧪 Data & skill discovery",
     "memory": "🧠 Memory & experience",
-    "harness": "🛠️ Harness & scaffold",
-    "policy": "🔁 Policy & model update",
+    "harness": "🛠️ Harness & scaffold evolution",
+    "policy": "🔁 Policy & model updates",
     "safety": "🛡️ Safety & evaluation",
+}
+RSI_TRACK_DESCRIPTIONS = {
+    "foundation": "Foundational systems for open-ended embodied learning and continuously expanding capabilities.",
+    "data": "Autonomous data collection, curriculum generation, skill discovery, and reusable experience.",
+    "memory": "Reflection, self-correction, and persistent memory that improve future behavior.",
+    "harness": "Skills, tools, context, and execution scaffolds that evolve around frozen foundation models.",
+    "policy": "Deployment experience or imagined practice used to update policy or model parameters.",
+    "safety": "Verification, regression testing, rollback, and evaluation for bounded self-improvement.",
 }
 
 
@@ -207,10 +215,6 @@ def category_anchor(domain: str, subcategory: str) -> str:
     return f"{domain}-{subcategory}"
 
 
-def rsi_track(p: dict) -> str:
-    return RSI_TRACK_LABELS.get(p.get("rsi_track"), "♻️ Self-improvement loop")
-
-
 _DATE_OVERRIDE = None
 
 def _latest_paper_date(papers: list) -> str:
@@ -282,7 +286,7 @@ def generate_readme(papers: list) -> str:
     lines.append("")
     lines.append("- **New to VLA?** Begin with [Surveys](#general-survey), then explore [VLA Architectures](#robot-vla-arch) and [Action Tokenization](#robot-action-token).")
     lines.append("- **Building robot policies?** Follow [World Models & Policy Co-learning](#robot-world-model-policy), [RL & Policy Optimization](#robot-rl-policy), and [Data & Pre-training](#robot-data-pretrain).")
-    lines.append("- **Interested in models that keep improving after deployment?** Open [RSI & Agent Harness](#rsi-harness) in the paper map.")
+    lines.append("- **Interested in models that keep improving after deployment?** Open [RSI & Agent Harness](#rsi-papers) in the paper map.")
     lines.append("- **Working on autonomous driving?** Jump to [End-to-End VLA](#ad-e2e), [Driving World Models](#ad-world-model), and [Safety & Benchmarks](#ad-safety-benchmark).")
     lines.append("")
     lines.append("## ⭐ Editor's Picks")
@@ -316,11 +320,11 @@ def generate_readme(papers: list) -> str:
     lines.append("| Area | Topics | What lives here |")
     lines.append("|:-----|:-------|:----------------|")
     rsi_topic_links = [
-        f"[{label} ({rsi_track_counts[track]})](#rsi-harness)"
+        f"[{label} ({rsi_track_counts[track]})](#rsi-{track})"
         for track, label in RSI_TRACK_LABELS.items()
     ]
     lines.append(
-        f"| ♻️ **[RSI & Agent Harness](#rsi-harness)** ({len(rsi_papers)}) "
+        f"| ♻️ **[RSI & Agent Harness](#rsi-papers)** ({len(rsi_papers)}) "
         f"| {'<br>'.join(rsi_topic_links)} "
         "| Systems that turn deployment experience into verified, persistent improvements. |"
     )
@@ -343,32 +347,45 @@ def generate_readme(papers: list) -> str:
     lines.append("")
     lines.append("> Open a topic to browse its papers. Every entry includes a one-line explanation of why it may be useful.")
     lines.append("")
-    lines.append('<a id="rsi-harness"></a>')
-    lines.append("<details>")
-    lines.append(
-        f"<summary><strong>♻️ RSI & Agent Harness</strong> "
-        f"<sub>({len(rsi_papers)} papers + 1 featured system)</sub></summary>"
-    )
+    lines.append('<a id="rsi-papers"></a>')
+    lines.append("## ♻️ 0. RSI & Agent Harness")
     lines.append("")
     lines.append("Cross-cutting work on open-ended learning, persistent memory, skill and harness evolution, policy updates, and safe post-deployment improvement.")
     lines.append("")
     lines.append("> **Scope:** A retry or one-off adaptation only belongs here when experience is verified and retained to improve future behavior.")
     lines.append("")
-    lines.append("| System | Team | Why it matters | Links |")
-    lines.append("|:-------|:-----|:---------------|:------|")
-    lines.append("| **PhysicalRSI** | HKU MMLab | Connects physical interaction, RoboDojo evaluation, and iterative embodied-system improvement. | [Project](https://mmlab.hk/research/PhysicalRSI) |")
+    lines.append("[Back to the map](#paper-map)")
     lines.append("")
-    lines.append("| Paper | Improvement loop | Why it matters | Institution | Links |")
-    lines.append("|:------|:-----------------|:---------------|:------------|:------|")
-    for p in rsi_papers:
+    lines.append("---")
+    lines.append("")
+    for track, track_label in RSI_TRACK_LABELS.items():
+        track_papers = [p for p in rsi_papers if p.get("rsi_track") == track]
+        paper_word = "paper" if len(track_papers) == 1 else "papers"
+        count_label = f"{len(track_papers)} {paper_word}"
+        if track == "foundation":
+            count_label += " + PhysicalRSI"
+
+        lines.append(f'<a id="rsi-{track}"></a>')
+        lines.append("<details>")
         lines.append(
-            f"| **{markdown_cell(p['title'])}** | {rsi_track(p)} | "
-            f"{markdown_cell(paper_summary(p))} | {markdown_cell(p.get('institution'), 'Unknown')} | "
-            f"{paper_links(p)} |"
+            f"<summary><strong>{track_label}</strong> "
+            f"<sub>({count_label})</sub></summary>"
         )
-    lines.append("")
-    lines.append("</details>")
-    lines.append("")
+        lines.append("")
+        lines.append(RSI_TRACK_DESCRIPTIONS[track])
+        lines.append("")
+        if track == "foundation":
+            lines.append("| System | Team | Why it matters | Links |")
+            lines.append("|:-------|:-----|:---------------|:------|")
+            lines.append("| **PhysicalRSI** | HKU MMLab | Connects physical interaction, RoboDojo evaluation, and iterative embodied-system improvement. | [Project](https://mmlab.hk/research/PhysicalRSI) |")
+            lines.append("")
+        lines.append("| Paper | Why it matters | Institution | Date | Links |")
+        lines.append("|:------|:---------------|:------------|:----:|:------|")
+        for p in track_papers:
+            lines.append(paper_row(p))
+        lines.append("")
+        lines.append("</details>")
+        lines.append("")
     for dom in DOMAIN_ORDER:
         lines.append(f'<a id="{dom}-papers"></a>')
         lines.append(f"## {DOMAIN_ICONS[dom]} {DOMAIN_LABELS[dom]}")
