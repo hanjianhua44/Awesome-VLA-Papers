@@ -29,8 +29,13 @@ Search `data/papers.yaml` by arXiv ID and title before adding a new entry.
   date: "2026-03-10"
   code: https://github.com/example/repo  # optional
   project: https://example.github.io/    # optional
+  classic: true                          # optional: canonical foundation paper
+  classic_order: 10                      # required with classic; globally unique
+  featured: true                         # optional: curated newer spotlight
+  featured_order: 10                     # optional deterministic spotlight order
   rsi: true                              # optional: verified self-improvement loop
   rsi_track: harness                     # foundation/data/memory/harness/policy/safety
+  rsi_order: 10                          # required with rsi; deterministic order
 ```
 
 Valid domains and subcategories:
@@ -42,7 +47,9 @@ Valid domains and subcategories:
 ### 3. Regenerate the views
 
 ```bash
-python scripts/generate_readme.py 2026-07-23
+python scripts/validate_papers.py
+python scripts/generate_readme.py
+python scripts/verify_links.py
 ```
 
 Commit the updated `data/papers.yaml`, `README.md`, `TIMELINE.md`, and `BY_INSTITUTION.md`.
@@ -54,9 +61,17 @@ A good entry should:
 - Be clearly relevant to VLA, embodied intelligence, robot learning, autonomous driving, or a closely related enabling technology
 - Link to a stable paper page, preferably arXiv rather than a direct PDF
 - Use affiliations from the paper itself or an official project page
-- Include a specific one-line summary, not a generic phrase such as “a new framework”
+- Include a specific English one-line summary, not a generic phrase such as “a new framework”
 - Use the closest existing category instead of creating a near-duplicate category
 - Avoid unsupported “SOTA” or “first” claims
+
+## Canonical Foundations
+
+Use `classic: true` only for field-shaping work with lasting methodological, dataset, benchmark, or systems influence. A paper should have a stable primary source and verified affiliations. Product announcements and blog-only releases are not canonical papers unless they provide a stable, citable technical report.
+
+`classic_order` is global and controls the reading order in the homepage foundation section. Leave gaps (10, 20, 30, ...) so future classics can be inserted without renumbering the full list.
+
+Non-paper resources such as public research systems belong in `data/resources.yaml`; they must not be disguised as paper records.
 
 ## Quick Fixes
 

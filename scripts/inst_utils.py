@@ -27,8 +27,11 @@ SSL_CTX.verify_mode = ssl.CERT_NONE
 INST_PATTERNS = {
     # === Big Tech (US/Global) ===
     r"\bNVIDIA\b|\bCosmos\b|\bNemotron\b|\bNeMo\b": "NVIDIA",
-    r"\bGoogle\s+(DeepMind|Brain|Research)\b": "Google DeepMind",
+    r"\bGoogle\s+(DeepMind|Brain)\b": "Google DeepMind",
     r"\bDeepMind\b|\bGemini\b|\bGemma\b|\bPaLM\b": "Google DeepMind",
+    r"\bRobotics at Google\b": "Robotics at Google",
+    r"\bEveryday Robots\b": "Everyday Robots",
+    r"\bGoogle Research\b": "Google Research",
     r"\bMeta\s+(FAIR|AI|Research)\b": "Meta AI",
     r"\bFAIR\b|\bLLaMA\b|\bLlama\b": "Meta AI",
     r"\bMicrosoft\s+Research": "Microsoft Research",
@@ -44,6 +47,7 @@ INST_PATTERNS = {
     r"\bSony\b": "Sony",
     # === Autonomous Driving Companies ===
     r"\bWaabi\b": "Waabi",
+    r"\bWayve\b": "Wayve",
     r"\bWaymo\b": "Waymo",
     r"\bCruise\b": "Cruise",
     r"\bAurora\b.*?(?:Innovation|Driv)": "Aurora",
@@ -138,6 +142,7 @@ INST_PATTERNS = {
     r"\bEPFL\b": "EPFL",
     r"\bImperial\b.*?College": "Imperial",
     r"\bTU Munich\b|\bTUM\b": "TUM",
+    r"\bTU Berlin\b|Technische Universit[aä]t Berlin": "TU Berlin",
     r"\bFreiburg\b": "Univ of Freiburg",
     r"\bMax Planck\b|\bMPI\b": "Max Planck",
     r"\bDFKI\b": "DFKI",
@@ -145,6 +150,8 @@ INST_PATTERNS = {
     r"\bIIT\b.*?(?:Italian|Genova|Istituto)": "IIT",
     r"Univ.*?Trento": "Univ of Trento",
     r"Univ.*?Edinburgh": "Univ of Edinburgh",
+    r"Univ.*?T[üu]bingen": "Univ of Tübingen",
+    r"T[üu]bingen AI Center": "Tübingen AI Center",
     r"UCL\b|University College London": "UCL",
     r"KTH\b": "KTH",
     r"Sorbonne\b": "Sorbonne",
@@ -180,6 +187,7 @@ INST_PATTERNS = {
     r"Peng\s*Cheng\s*Lab|\bPCL\b": "PCL",
     r"\bShanghaiTech\b": "ShanghaiTech",
     r"\bBAAI\b|Beijing Academy": "BAAI",
+    r"\bIDEA Research\b": "IDEA Research",
     r"\bSIAT\b|Shenzhen Inst.*?Adv": "SIAT",
     r"\bAllen Institute\b|\bAI2\b|Allen\s+Institute\s+for\s+AI": "Allen AI",
     # === HK / SG / KR / JP / AU / CA ===
@@ -201,6 +209,7 @@ INST_PATTERNS = {
     r"Univ.*?Toronto": "Univ of Toronto",
     r"Univ.*?Alberta": "Univ of Alberta",
     r"Univ.*?Waterloo": "Univ of Waterloo",
+    r"Univ.*?Montr[eé]al|Universit[eé] de Montr[eé]al": "Univ of Montreal",
     # === More US Universities ===
     r"Texas A.?M": "Texas A&M",
     r"Ohio State": "Ohio State",
@@ -351,13 +360,14 @@ RESEARCHER_INST = {
 TIER1_INSTITUTIONS = {
     # --- Big Tech / AI Labs ---
     "nvidia", "nvidia/uw", "nvidia/ut austin",
-    "google deepmind", "google", "meta ai", "meta", "meta fair", "openai",
+    "google deepmind", "google research", "robotics at google", "everyday robots", "google",
+    "meta ai", "meta", "meta fair", "openai",
     "apple", "tesla", "amazon", "microsoft research", "msra",
     "deepseek", "deepseek ai",
     "anthropic", "mistral", "cohere", "xai", "stability ai",
     # --- Autonomous Driving ---
     "waymo", "cruise", "aurora", "nuro", "zoox", "motional", "mobileye",
-    "pony.ai", "momenta", "tusimple", "waabi",
+    "pony.ai", "momenta", "tusimple", "waabi", "wayve",
     "bosch", "valeo", "continental",
     # --- Robotics Companies ---
     "physical intelligence", "boston dynamics", "tri", "mit/tri",

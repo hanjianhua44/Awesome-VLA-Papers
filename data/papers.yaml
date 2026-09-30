@@ -1,11 +1,11 @@
 - title: 'DriveWorld-VLA: Unified Latent-Space World Modeling with VLA for AD'
   arxiv: '2602.06521'
   url: https://arxiv.org/abs/2602.06521
-  institution: —
+  institution: Xiaomi, BJTU
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 在潜空间统一世界模型与VLA规划，用世界模型潜在状态作为VLA决策状态，NAVSIM SOTA
+  summary: DriveWorld-VLA unifies latent-space world modeling with VLA planning by using world-model latent states as decision states.
   date: '2026-02-06'
 - title: 'DriveFine: Refining-Augmented Masked Diffusion VLA'
   arxiv: '2602.14577'
@@ -14,16 +14,16 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 掩码扩散VLA + 可插拔Block-MoE，生成/修正专家解耦，结合混合RL自纠错
+  summary: DriveFine combines a masked-diffusion VLA with a plug-in Block-MoE that separates generation and refinement experts and uses hybrid reinforcement learning for self-correction.
   date: '2026-02-16'
 - title: 'HiST-VLA: Hierarchical Spatio-Temporal VLA for E2E AD'
   arxiv: '2602.13329'
   url: https://arxiv.org/abs/2602.13329
-  institution: —
+  institution: Bosch
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 层次化时空VLA，融合多尺度时空特征用于端到端驾驶感知预测规划
+  summary: HiST-VLA integrates multi-scale spatiotemporal features for perception, prediction, and planning in end-to-end autonomous driving.
   date: '2026-02-11'
 - title: 'UniUGP: Unifying Understanding, Generation, and Planning for E2E AD'
   arxiv: '2512.09864'
@@ -32,7 +32,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: e2e
-  summary: 统一场景理解、视频生成与轨迹规划，端到端多任务联合训练
+  summary: UniUGP jointly trains scene understanding, video generation, and trajectory planning in a unified end-to-end multitask framework.
   date: '2025-12-10'
 - title: 'MindDrive: VLA for AD via Online RL'
   arxiv: '2512.13636'
@@ -41,7 +41,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: e2e
-  summary: 将在线RL引入自动驾驶VLA训练，提升闭环场景鲁棒性
+  summary: MindDrive introduces online reinforcement learning for autonomous-driving VLA training to improve robustness in closed-loop scenarios.
   date: '2025-12-15'
 - title: 'E3AD: Emotion-Aware VLA for Human-Centric E2E AD'
   arxiv: '2512.04733'
@@ -50,7 +50,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: e2e
-  summary: 首个情感感知自动驾驶VLA，VAD情绪模型+双路径空间推理
+  summary: E3AD combines a valence-arousal-dominance emotion model with dual-path spatial reasoning for human-centric end-to-end autonomous driving.
   date: '2025-12-04'
 - title: Unleashing the Potential of Diffusion Models for E2E AD
   arxiv: '2602.22801'
@@ -59,7 +59,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 系统性探索扩散模型在端到端自动驾驶规划中的范式
+  summary: This work systematically explores diffusion-model paradigms for planning in end-to-end autonomous driving.
   date: '2026-02-26'
 - title: 'AlignDrive: Aligned Lateral-Longitudinal Planning for E2E AD'
   arxiv: '2601.01762'
@@ -68,7 +68,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 横纵向对齐规划，解耦横向和纵向决策提升端到端规划精度
+  summary: AlignDrive decouples and aligns lateral and longitudinal decisions to improve end-to-end driving planning.
   date: '2026-01-05'
 - title: 'VGGDrive: Cross-View Geometric Grounding for AD'
   arxiv: '2602.20794'
@@ -77,16 +77,16 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 将3D基础模型的跨视图几何特征注入VLM，层次自适应注入赋予3D感知
+  summary: VGGDrive injects cross-view geometric features from a 3D foundation model into a VLM through hierarchical adaptive integration to provide 3D perception.
   date: '2026-02-24'
 - title: From Representational Complementarity to Dual Systems (HybridDriveVLA)
   arxiv: '2602.10719'
   url: https://arxiv.org/abs/2602.10719
-  institution: —
+  institution: Tsinghua, USTC, BUAA, HUST, BAAI, Lenovo
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: VLM与纯视觉backbone互补，快慢双系统策略，VLM仅低置信时介入，吞吐量提升3.2x
+  summary: HybridDriveVLA combines complementary VLM and vision-backbone representations in a fast-slow system that invokes the VLM only under low confidence, increasing throughput by 3.2 times.
   date: '2026-02-11'
 - title: 'ReCogDrive: Reinforced Cognitive Framework for E2E AD'
   arxiv: '2506.08052'
@@ -95,7 +95,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: e2e
-  summary: 强化认知框架，增强端到端驾驶场景理解与推理决策
+  summary: ReCogDrive uses a reinforced cognitive framework to improve scene understanding, reasoning, and decision-making for end-to-end autonomous driving.
   date: '2025-06-09'
 - title: 'Alpamayo-R1: Reasoning and Action Prediction for AD in the Long Tail'
   arxiv: '2511.00088'
@@ -104,7 +104,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: e2e
-  summary: 面向长尾场景的推理-动作桥接方案，增强自动驾驶泛化能力
+  summary: Alpamayo-R1 bridges reasoning and action prediction to improve autonomous-driving generalization in long-tail scenarios.
   date: '2025-10-30'
 - title: 'KnowVal: Knowledge-Augmented and Value-Guided AD System'
   arxiv: '2512.20299'
@@ -113,7 +113,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: e2e
-  summary: 驾驶知识图谱（交规+防御驾驶+伦理）+ 价值模型，知识增强可解释规划
+  summary: KnowVal combines a driving knowledge graph covering traffic rules, defensive driving, and ethics with a value model for knowledge-augmented, interpretable planning.
   date: '2025-12-23'
 - title: 'ZTRS: Zero-Imitation E2E AD with Trajectory Scoring'
   arxiv: '2510.24108'
@@ -122,7 +122,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: e2e
-  summary: 零模仿学习，通过轨迹评分替代传统模仿实现端到端驾驶
+  summary: ZTRS replaces conventional imitation learning with trajectory scoring for zero-imitation end-to-end autonomous driving.
   date: '2025-10-28'
 - title: 'F1: A VLA Bridging Understanding and Generation to Actions'
   arxiv: '2509.06951'
@@ -131,7 +131,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: e2e
-  summary: 统一视觉理解与生成能力的VLA，克服反应式策略的局限
+  summary: F1 unifies visual understanding and generation in a VLA model to address limitations of reactive driving policies.
   date: '2025-09-08'
 - title: 'DrivePI: Spatial-aware 4D MLLM for Unified AD'
   arxiv: '2512.12799'
@@ -140,7 +140,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: e2e
-  summary: 空间感知的4D多模态大模型，统一感知、预测和规划
+  summary: DrivePI is a spatially aware 4D multimodal large language model that unifies perception, prediction, and planning.
   date: '2025-12-14'
 - title: Unleashing VLA Potentials in Autonomous Driving via Explicit Learning from Failures
   arxiv: '2603.01063'
@@ -149,7 +149,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: VLA自动驾驶模型通过显式失败学习突破RL优化性能瓶颈，引入失败案例辅助探索
+  summary: This work improves reinforcement-learning optimization for autonomous-driving VLA models by explicitly learning from failures and using failed cases to support exploration.
   date: '2026-03-01'
 - title: 'CausalVAD: De-confounding End-to-End Autonomous Driving via Causal Intervention'
   arxiv: '2603.18561'
@@ -158,7 +158,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 通过稀疏因果干预消除自动驾驶决策中的混杂偏差，提升规划安全性与鲁棒性
+  summary: CausalVAD uses sparse causal interventions to reduce confounding bias in autonomous-driving decisions and improve planning safety and robustness.
   date: '2026-03-19'
 - title: 'Vega: Learning to Drive with Natural Language Instructions'
   arxiv: '2603.25741'
@@ -167,7 +167,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 统一视觉-语言-世界-动作建模，支持自然语言指令驱动的个性化驾驶规划
+  summary: Vega unifies vision, language, world, and action modeling to support personalized driving plans specified through natural-language instructions.
   date: '2026-03-30'
 - title: Human and Algorithmic Visual Attention in Driving Tasks
   arxiv: ''
@@ -176,16 +176,16 @@
   venue: npj AI 2026
   domain: ad
   subcategory: e2e
-  summary: 对比人类与算法视觉注意力在驾驶任务中的三阶段分布，发现语义注意力能弥补AI的理解与定位缺口
+  summary: This study compares the three-stage distribution of human and algorithmic visual attention in driving tasks and finds that semantic attention can help address gaps in AI understanding and localization.
   date: '2026-02-12'
 - title: 'DVGT-2: Vision-Geometry-Action Model for Autonomous Driving at Scale'
   arxiv: '2604.00813'
   url: https://arxiv.org/abs/2604.00813
-  institution: —
+  institution: Xiaomi, Tsinghua, PKU, Univ of Macau
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 大规模视觉-几何-动作统一建模框架，联合几何感知与动作规划以提升自动驾驶闭环能力
+  summary: DVGT-2 jointly models vision, geometry, and action at scale to combine geometric perception with action planning for closed-loop autonomous driving.
   date: '2026-04-02'
 - title: 'UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving'
   arxiv: '2604.02190'
@@ -194,7 +194,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 统一语义理解、空间感知与动作规划，缓解自动驾驶VLA在推理能力与几何表示之间的冲突
+  summary: UniDriveVLA unifies semantic understanding, spatial perception, and action planning to reduce the tension between reasoning and geometric representation in autonomous-driving VLA models.
   date: '2026-04-02'
 - title: 'RAD-2: Scaling Reinforcement Learning in a Generator-Discriminator Framework'
   arxiv: '2604.15308'
@@ -203,7 +203,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 生成器-鉴别器RL框架扩展端到端驾驶规划，多模态轨迹分布建模兼顾闭环鲁棒性
+  summary: RAD-2 scales end-to-end driving planning with a generator-discriminator reinforcement-learning framework that models multimodal trajectory distributions for closed-loop robustness.
   date: '2026-04-16'
 - title: 'OneVL: One-Step Latent Reasoning and Planning with Vision-Language Explanation'
   arxiv: '2604.18486'
@@ -212,7 +212,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 单步潜在推理+轨迹规划+VLM语言解释一体化，自动驾驶VLA低延迟实时部署方案
+  summary: OneVL integrates one-step latent reasoning, trajectory planning, and VLM-based language explanations for low-latency autonomous-driving deployment.
   date: '2026-04-20'
 - title: 'OneDrive: Unified Multi-Paradigm Driving with Vision-Language-Action Models'
   arxiv: '2604.17915'
@@ -221,7 +221,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 统一自回归语言生成、并行检测与轨迹回归三种解码范式的VLA驾驶框架
+  summary: OneDrive unifies autoregressive language generation, parallel detection, and trajectory regression within a VLA driving framework.
   date: '2026-04-20'
 - title: 'SpanVLA: Efficient Action Bridging and Learning from Negative-Recovery Samples for Vision-Language-Action Model'
   arxiv: '2604.19710'
@@ -230,7 +230,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 高效动作跨度桥接+负样本恢复学习，提升驾驶VLA长尾鲁棒性与生成效率
+  summary: SpanVLA combines efficient action-span bridging with learning from negative-recovery samples to improve long-tail robustness and generation efficiency.
   date: '2026-04-21'
 - title: 'Judge, Then Drive: A Critic-Centric Vision Language Action Framework for Autonomous Driving'
   arxiv: '2604.27366'
@@ -239,7 +239,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 显式利用VLA的评论员能力对驾驶动作打分细化，先评估再决策的端到端驾驶框架
+  summary: This critic-centric VLA framework scores and refines driving actions before making end-to-end driving decisions.
   date: '2026-04-30'
 - title: 'CRAFT: Counterfactual-to-Interactive Reinforcement Fine-Tuning for Driving Policies'
   arxiv: '2605.04470'
@@ -248,7 +248,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 反事实到交互式RL微调，缓解开环模仿在闭环部署时的策略诱发分布偏移
+  summary: CRAFT applies counterfactual-to-interactive reinforcement fine-tuning to mitigate policy-induced distribution shift when open-loop imitation policies are deployed in closed loop.
   date: '2026-05-06'
 - title: 'DriveTok: 3D Driving Scene Tokenization for Unified Multi-View Reconstruction and Understanding'
   arxiv: '2603.19219'
@@ -257,7 +257,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
-  summary: 面向多视角驾驶场景的3D token化框架，统一重建与理解并增强跨视角一致性
+  summary: DriveTok tokenizes multi-view driving scenes in 3D to unify reconstruction and understanding while improving cross-view consistency.
   date: '2026-03-19'
 - title: 'StreetForward: Perceiving Dynamic Street with Feedforward Causal Attention'
   arxiv: '2603.19552'
@@ -266,7 +266,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
-  summary: 前馈式动态街景重建框架，无需位姿和跟踪即可实现高保真时空新视角生成
+  summary: StreetForward uses feedforward causal attention to reconstruct dynamic street scenes and generate high-fidelity spatiotemporal novel views without poses or tracking.
   date: '2026-03-20'
 - title: Toward Physically Consistent Driving Video World Models under Challenging Trajectories
   arxiv: '2603.24506'
@@ -275,7 +275,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
-  summary: 在挑战轨迹条件下提升驾驶视频世界模型的物理一致性，联合轨迹修正与视频生成
+  summary: This work jointly performs trajectory correction and video generation to improve the physical consistency of driving video world models under challenging trajectories.
   date: '2026-03-25'
 - title: 'OmniNWM: Omniscient Driving Navigation World Models'
   arxiv: '2510.18313'
@@ -284,7 +284,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
-  summary: 全景导航世界模型，联合生成RGB/语义/深度/3D占据，支持精确动作控制
+  summary: OmniNWM jointly generates RGB, semantic, depth, and 3D occupancy representations in a panoramic navigation world model that supports precise action control.
   date: '2025-10-21'
 - title: 'LCDrive: Latent CoT World Modeling for E2E Driving'
   arxiv: '2512.10226'
@@ -293,7 +293,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
-  summary: 潜空间交替生成动作提议token和世界模型token，统一推理与决策
+  summary: LCDrive alternates the generation of action-proposal tokens and world-model tokens in latent space to unify reasoning and decision-making.
   date: '2025-12-11'
 - title: 'FutureX: Latent CoT World Model for E2E AD'
   arxiv: '2512.11226'
@@ -302,7 +302,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
-  summary: Auto-think Switch自适应启用潜在世界模型CoT rollout
+  summary: FutureX uses an Auto-think Switch to adaptively activate latent world-model chain-of-thought rollouts.
   date: '2025-12-12'
 - title: Risk-Aware World Model Predictive Control for E2E AD
   arxiv: '2602.23259'
@@ -311,7 +311,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
-  summary: 风险感知的世界模型预测控制，提升不确定环境泛化
+  summary: This approach uses risk-aware world-model predictive control to improve generalization in uncertain driving environments.
   date: '2026-02-26'
 - title: 'DriveLaW: Unifying Planning and Video Generation in a Latent Driving World'
   arxiv: '2512.23421'
@@ -320,7 +320,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
-  summary: 潜空间统一规划与视频生成
+  summary: DriveLaW unifies planning and video generation in a latent driving world.
   date: '2025-12-29'
 - title: 'Map-World: Masked Action Planning and Path-Integral World Model for AD'
   arxiv: '2511.20156'
@@ -329,7 +329,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
-  summary: 掩码动作规划+路径积分世界模型，高效处理多模态未来
+  summary: Map-World combines masked action planning with a path-integral world model to efficiently handle multimodal futures.
   date: '2025-11-25'
 - title: 'Stag-1: Realistic 4D Driving Simulation with Video Generation'
   arxiv: '2412.05280'
@@ -338,7 +338,7 @@
   venue: arXiv 2024
   domain: ad
   subcategory: world-model
-  summary: 视频生成模型构建逼真4D驾驶仿真
+  summary: Stag-1 uses video generation to build realistic 4D driving simulations.
   date: '2024-12-06'
 - title: 'VFMF: World Modeling by Forecasting Vision Foundation Model Features'
   arxiv: '2512.11225'
@@ -347,7 +347,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
-  summary: 在视觉基础模型特征空间中预测未来而非像素
+  summary: VFMF models the future by forecasting features from a vision foundation model rather than pixels.
   date: '2025-12-12'
 - title: 'DiST-4D: Disentangled Spatiotemporal Diffusion for 4D Driving Scene Generation'
   arxiv: '2503.15208'
@@ -356,7 +356,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
-  summary: 解耦空间时间的扩散+度量深度，4D驾驶场景生成
+  summary: DiST-4D combines disentangled spatial and temporal diffusion with metric depth for 4D driving-scene generation.
   date: '2025-03-19'
 - title: 'HybridWorldSim: Scalable High-fidelity Simulator for AD'
   arxiv: '2511.22187'
@@ -365,7 +365,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
-  summary: 混合式高保真自动驾驶仿真器
+  summary: HybridWorldSim is a scalable, high-fidelity hybrid simulator for autonomous driving.
   date: '2025-11-27'
 - title: 'World Guidance: World Modeling in Condition Space for Action Generation'
   arxiv: '2602.22010'
@@ -374,7 +374,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
-  summary: 条件空间世界建模指导动作生成
+  summary: World Guidance models the world in condition space to guide action generation.
   date: '2026-02-25'
 - title: 'Motus: A Unified Latent Action World Model'
   arxiv: '2512.13030'
@@ -383,7 +383,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
-  summary: 统一潜在动作世界模型，联合建模动作与环境动态
+  summary: Motus jointly models actions and environment dynamics in a unified latent-action world model.
   date: '2025-12-15'
 - title: 'DriveVGGT: Visual Geometry Transformer for Autonomous Driving'
   arxiv: '2511.22264'
@@ -392,7 +392,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: world-model
-  summary: 将视觉几何基础模型VGGT适配到自动驾驶场景的前馈3D重建
+  summary: DriveVGGT adapts the VGGT visual-geometry foundation model for feedforward 3D reconstruction in autonomous-driving scenes.
   date: '2025-11-27'
 - title: 'DynamicVGGT: Learning Dynamic Point Maps for 4D Scene Reconstruction in Autonomous Driving'
   arxiv: '2603.08254'
@@ -401,7 +401,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
-  summary: 动态点图用于自动驾驶4D场景重建，处理时序变化和运动物体
+  summary: DynamicVGGT learns dynamic point maps for 4D autonomous-driving scene reconstruction, accounting for temporal changes and moving objects.
   date: '2026-03-09'
 - title: 'DriveDreamer-Policy: A Geometry-Grounded World-Action Model for Unified Generation and Planning'
   arxiv: '2604.01765'
@@ -410,7 +410,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
-  summary: 几何先验驱动的世界-动作统一建模，同时支持未来生成与规划控制
+  summary: DriveDreamer-Policy uses geometric priors in unified world-action modeling to support both future generation and planning control.
   date: '2026-04-02'
 - title: 'DriveVA: Video Action Models are Zero-Shot Drivers'
   arxiv: '2604.04198'
@@ -419,7 +419,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
-  summary: 视频动作模型直接作为零样本驾驶员，跨场景与跨传感器域无需重训泛化
+  summary: DriveVA uses video-action models directly as zero-shot drivers that generalize across scenes and sensor domains without retraining.
   date: '2026-04-05'
 - title: 'SimScale: Learning to Drive via Real-World Simulation at Scale'
   arxiv: '2511.23369'
@@ -428,7 +428,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: simulation-data
-  summary: 真实数据大规模仿真框架，3D渲染+轨迹扰动覆盖安全关键状态
+  summary: SimScale builds large-scale simulations from real-world data using 3D rendering and trajectory perturbations to cover safety-critical states.
   date: '2025-11-28'
 - title: Are All Data Necessary? Efficient Data Pruning for AD Dataset
   arxiv: '2512.19270'
@@ -437,7 +437,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: simulation-data
-  summary: 轨迹熵最大化高效裁剪大规模自动驾驶数据集
+  summary: This work efficiently prunes large autonomous-driving datasets by maximizing trajectory entropy.
   date: '2025-12-22'
 - title: 'Driving with A Thousand Faces: Closed-Loop Personalized E2E AD Benchmark'
   arxiv: '2602.18757'
@@ -446,7 +446,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: simulation-data
-  summary: 首个闭环个性化端到端驾驶评估基准
+  summary: This work introduces a closed-loop benchmark for evaluating personalized end-to-end autonomous driving.
   date: '2026-02-21'
 - title: Evaluating Gemini Robotics Policies in a Veo World Simulator
   arxiv: '2512.10675'
@@ -455,7 +455,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: simulation-data
-  summary: Veo视频基础模型构建策略评估系统，覆盖OOD泛化与安全测试
+  summary: This work uses the Veo video foundation model to build a policy-evaluation system covering out-of-distribution generalization and safety testing.
   date: '2025-12-11'
 - title: 'WaymoQA: Multi-View VQA for Safety-Critical Reasoning in AD'
   arxiv: '2511.20022'
@@ -464,7 +464,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: simulation-data
-  summary: 面向安全关键推理的多视角驾驶VQA数据集
+  summary: WaymoQA is a multi-view driving visual-question-answering dataset for safety-critical reasoning.
   date: '2025-11-25'
 - title: Scaling-Aware Data Selection for End-to-End Autonomous Driving Systems
   arxiv: '2604.08366'
@@ -473,7 +473,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: simulation-data
-  summary: 面向端到端自动驾驶的规模感知数据选择策略，在不同模型规模下提升数据效率与泛化性能
+  summary: This work proposes model-scale-aware data selection for end-to-end autonomous driving to improve data efficiency and generalization across model sizes.
   date: '2026-04-10'
 - title: 'WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching'
   arxiv: '2512.06112'
@@ -482,7 +482,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: planning
-  summary: 并行粗到细运动规划，离散流匹配高效轨迹生成
+  summary: WAM-Flow uses discrete flow matching for efficient parallel coarse-to-fine trajectory generation.
   date: '2025-12-05'
 - title: 'TrajMoE: Scene-Adaptive Trajectory Planning with MoE and RL'
   arxiv: '2512.07135'
@@ -491,7 +491,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: planning
-  summary: 场景自适应轨迹规划，MoE+RL专家路由
+  summary: TrajMoE combines a mixture of experts with reinforcement-learned expert routing for scene-adaptive trajectory planning.
   date: '2025-12-08'
 - title: 'Toward Cooperative Driving in Mixed Traffic: An Adaptive Potential Game-Based Approach with Field Test Verification'
   arxiv: '2604.20231'
@@ -500,7 +500,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: planning
-  summary: 自适应势博弈协同驾驶决策框架，混合交通CAV协同决策并通过实车实验验证
+  summary: This work presents an adaptive potential-game framework for cooperative decision-making among connected autonomous vehicles in mixed traffic and validates it through field tests.
   date: '2026-04-22'
 - title: 'WorldLens: Full-Spectrum Evaluations of Driving World Models'
   arxiv: '2512.10958'
@@ -509,7 +509,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: safety-benchmark
-  summary: 五维度全谱系驾驶世界模型评估（生成/重建/动作跟随/下游任务/人类偏好）
+  summary: WorldLens evaluates driving world models across generation, reconstruction, action following, downstream tasks, and human preference.
   date: '2025-12-11'
 - title: 'WorldModelBench: Judging Video Generation Models As World Models'
   arxiv: '2502.20694'
@@ -518,7 +518,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: safety-benchmark
-  summary: 世界建模能力评估，67K人工标注，含物理遵循维度
+  summary: WorldModelBench evaluates video generators as world models using 67,000 human annotations, including a dimension for physical adherence.
   date: '2025-02-28'
 - title: 'Safe-SDL: Safety Boundaries for AI-Driven Self-Driving Labs'
   arxiv: '2602.15061'
@@ -527,7 +527,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: safety-benchmark
-  summary: AI自动实验室安全框架（ODD + CBF + 事务安全协议）
+  summary: Safe-SDL defines safety boundaries for AI-driven self-driving laboratories through operational design domains, control barrier functions, and transactional safety protocols.
   date: '2026-02-13'
 - title: 'DriveCritic: Towards Context-Aware, Human-Aligned Evaluation for Autonomous Driving with Vision-Language Models'
   arxiv: '2510.13108'
@@ -536,7 +536,7 @@
   venue: arXiv 2025
   domain: ad
   subcategory: safety-benchmark
-  summary: 上下文感知的自动驾驶评估框架，利用VLM实现人类对齐的驾驶评价
+  summary: DriveCritic uses vision-language models for context-aware autonomous-driving evaluation aligned with human judgments.
   date: '2025-10-15'
 - title: 'Traffic Sign Recognition in Autonomous Driving: Dataset, Benchmark, and Field Experiment'
   arxiv: '2603.23034'
@@ -545,7 +545,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: safety-benchmark
-  summary: 提出百万级交通标志数据集TS-1M与诊断基准，系统评估跨区域、长尾与语义理解能力
+  summary: This work introduces the million-scale TS-1M traffic-sign dataset and a diagnostic benchmark for cross-region, long-tail, and semantic understanding.
   date: '2026-03-24'
 - title: 'Can Users Specify Driving Speed? Bench2Drive-Speed: Benchmark and Baselines for Desired-Speed Conditioned Autonomous Driving'
   arxiv: '2603.25672'
@@ -554,7 +554,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: safety-benchmark
-  summary: 首个目标速度条件自动驾驶基准，评估速度遵循与超车策略控制能力
+  summary: Bench2Drive-Speed evaluates desired-speed-conditioned autonomous driving, including speed compliance and control of overtaking strategies.
   date: '2026-03-26'
 - title: 'Bench2Drive-VL: Benchmarks for Closed-Loop Autonomous Driving with Vision-Language Models'
   arxiv: '2604.01259'
@@ -563,16 +563,16 @@
   venue: arXiv 2026
   domain: ad
   subcategory: safety-benchmark
-  summary: 面向VLM自动驾驶的闭环评测基准与统一接口，系统比较推理-控制一体化能力
+  summary: Bench2Drive-VL provides a closed-loop benchmark and unified interface for comparing integrated reasoning and control in VLM-based autonomous driving.
   date: '2026-04-02'
 - title: 'Action Draft and Verify: A Self-Verifying Framework for Vision-Language-Action Model'
   arxiv: '2603.18091'
   url: https://arxiv.org/abs/2603.18091
-  institution: —
+  institution: Zhipu AI, RUC
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 扩散动作草拟+VLM并行校验重排的自验证推理框架，兼顾精度与OOD鲁棒性
+  summary: Action Draft and Verify combines diffusion-based action drafting with parallel VLM verification and reranking for self-verifying inference and out-of-distribution robustness.
   date: '2026-03-18'
 - title: 'StreamingVLA: Streaming Vision-Language-Action Model with Action Flow Matching and Adaptive Early Observation'
   arxiv: '2603.28565'
@@ -581,25 +581,25 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 流式并行化观察/生成/执行阶段，结合动作流匹配与早观测机制显著降低延迟
+  summary: StreamingVLA pipelines observation, generation, and execution while combining action flow matching with adaptive early observation to reduce latency.
   date: '2026-03-30'
 - title: 'StarVLA: A Lego-like Codebase for Vision-Language-Action Model Developing'
   arxiv: '2604.05014'
   url: https://arxiv.org/abs/2604.05014
-  institution: —
+  institution: HKUST
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 模块化VLA开发框架，像积木一样快速组合训练与推理组件，降低研发门槛
+  summary: StarVLA is a modular codebase for rapidly composing VLA training and inference components.
   date: '2026-04-07'
 - title: 'A1: A Fully Transparent Open-Source, Adaptive and Efficient Truncated Vision-Language-Action Model'
   arxiv: '2604.05672'
   url: https://arxiv.org/abs/2604.05672
-  institution: —
+  institution: SYSU
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 开源可解释的截断式VLA架构，强调透明性、自适应能力与推理效率
+  summary: A1 is an open-source truncated VLA architecture designed for transparency, adaptation, and efficient inference.
   date: '2026-04-08'
 - title: 'Goal2Skill: Long-Horizon Manipulation with Adaptive Planning and Reflection'
   arxiv: '2604.13942'
@@ -608,7 +608,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 通过自适应规划与反思机制提升长时程操作鲁棒性，解耦高层任务规划与低层动作执行
+  summary: Goal2Skill separates high-level task planning from low-level action execution and uses adaptive planning and reflection for robust long-horizon manipulation.
   date: '2026-04-16'
 - title: 'DFM-VLA: Iterative Action Refinement for Robot Manipulation via Discrete Flow Matching'
   arxiv: '2603.26320'
@@ -617,7 +617,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 基于离散流匹配迭代细化动作token，缓解早期token错误累积并提升操控成功率
+  summary: DFM-VLA iteratively refines action tokens through discrete flow matching to reduce error accumulation from early tokens and improve manipulation success.
   date: '2026-03-27'
 - title: 'Fast-dVLA: Accelerating Discrete Diffusion VLA to Real-Time Performance'
   arxiv: '2603.25661'
@@ -626,7 +626,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 通过能力向量与轻量正则实现离散扩散VLA实时加速，同时保持任务性能
+  summary: Fast-dVLA uses capability vectors and lightweight regularization to accelerate discrete-diffusion VLA inference to real-time rates while preserving task performance.
   date: '2026-03-26'
 - title: 'MMaDA-VLA: Large Diffusion Vision-Language-Action Model with Unified Multi-Modal Instruction and Generation'
   arxiv: '2603.25406'
@@ -635,7 +635,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 将语言、图像与动作统一到离散扩散框架，联合未来观测与动作并行生成
+  summary: MMaDA-VLA unifies language, images, and actions in a discrete-diffusion framework that jointly generates future observations and actions in parallel.
   date: '2026-03-26'
 - title: '3D-Mix for VLA: A Plug-and-Play Module for Integrating VGGT-based 3D Information into Vision-Language-Action Models'
   arxiv: '2603.24393'
@@ -644,7 +644,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 即插即用3D融合模块，系统比较9种融合策略并提升VLA空间智能与OOD表现
+  summary: 3D-Mix is a plug-in module that evaluates nine strategies for integrating VGGT-based 3D information into VLA models to improve spatial reasoning and out-of-distribution performance.
   date: '2026-03-25'
 - title: 'π₀.₆: a VLA That Learns From Experience'
   arxiv: '2511.14759'
@@ -653,7 +653,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
-  summary: PI公司VLA，通过自主经验积累提升策略
+  summary: π₀.₆ is a VLA model that improves its policy by accumulating autonomous experience.
   date: '2025-11-18'
 - title: 'MiMo-Embodied: X-Embodied Foundation Model'
   arxiv: '2511.16518'
@@ -662,7 +662,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
-  summary: 小米跨具身基础模型，支持多机器人形态统一策略
+  summary: MiMo-Embodied is a cross-embodiment foundation model that supports unified policies across multiple robot forms.
   date: '2025-11-20'
 - title: 'Xiaomi-Robotics-0: Open-Sourced VLA with Real-Time Execution'
   arxiv: '2602.12684'
@@ -671,7 +671,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 小米开源VLA，强调实时推理
+  summary: Xiaomi-Robotics-0 is an open-source VLA model designed for real-time execution.
   date: '2026-02-13'
 - title: 'DM0: Embodied-Native VLA towards Physical AI'
   arxiv: '2602.14974'
@@ -680,7 +680,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 具身原生VLA，面向Physical AI的端到端设计
+  summary: DM0 is an embodied-native VLA model designed end to end for physical AI.
   date: '2026-02-16'
 - title: 'RynnBrain: Open Embodied Foundation Models'
   arxiv: '2602.14979'
@@ -689,7 +689,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 开放具身基础模型，统一多任务多模态
+  summary: RynnBrain provides open embodied foundation models that unify multiple tasks and modalities.
   date: '2026-02-13'
 - title: 'RynnVLA-002: A Unified VLA and World Model'
   arxiv: '2511.17502'
@@ -698,7 +698,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
-  summary: 统一VLA与世界模型的双能力架构
+  summary: RynnVLA-002 uses a unified architecture combining VLA policy and world-model capabilities.
   date: '2025-11-21'
 - title: 'ABot-M0: VLA Foundation Model with Action Manifold Learning'
   arxiv: '2602.11236'
@@ -707,7 +707,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 动作流形学习构建机器人操作VLA
+  summary: ABot-M0 applies action-manifold learning to build a VLA foundation model for robotic manipulation.
   date: '2026-02-11'
 - title: 'WholeBodyVLA: Unified Latent VLA for Whole-Body Loco-Manipulation'
   arxiv: '2512.11047'
@@ -716,7 +716,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
-  summary: 全身运动操作VLA，从无标注自我中心视频学习+定制运动RL控制器
+  summary: WholeBodyVLA learns whole-body loco-manipulation from unlabeled egocentric video and uses a customized motion reinforcement-learning controller.
   date: '2025-12-11'
 - title: 'HiMoE-VLA: Hierarchical MoE for Generalist VLA'
   arxiv: '2512.05693'
@@ -725,7 +725,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
-  summary: 层次MoE处理跨具身/动作空间异构数据，逐层抽象共享知识
+  summary: HiMoE-VLA uses a hierarchical mixture of experts to handle heterogeneous cross-embodiment data and action spaces while progressively abstracting shared knowledge.
   date: '2025-12-05'
 - title: 'BagelVLA: Long-Horizon Manipulation via Interleaved VLA Generation'
   arxiv: '2602.09849'
@@ -734,7 +734,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 交错式VLA生成，增强长时域操作能力
+  summary: BagelVLA uses interleaved VLA generation to support long-horizon manipulation.
   date: '2026-02-10'
 - title: 'Stellar VLA: Continually Evolving Skill Knowledge'
   arxiv: '2511.18085'
@@ -743,7 +743,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
-  summary: 知识驱动持续学习VLA，知识空间建模+专家路由实现技能进化
+  summary: Stellar VLA combines knowledge-space modeling with expert routing for continual learning and skill evolution.
   date: '2025-11-22'
 - title: 'ManualVLA: CoT Manual Generation and Robotic Manipulation'
   arxiv: '2512.02013'
@@ -752,7 +752,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
-  summary: 同时生成思维链操作手册和执行机器人操作
+  summary: ManualVLA jointly generates chain-of-thought operation manuals and executes robotic manipulation.
   date: '2025-12-01'
 - title: 'HALO: Unified VLA for Embodied Multimodal CoT Reasoning'
   arxiv: '2602.21157'
@@ -761,7 +761,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: VLA + 多模态CoT推理，增强长时域和OOD场景
+  summary: HALO combines VLA modeling with multimodal chain-of-thought reasoning for long-horizon and out-of-distribution scenarios.
   date: '2026-02-24'
 - title: 'AsyncVLA: Asynchronous Flow Matching for VLA'
   arxiv: '2511.14148'
@@ -770,7 +770,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
-  summary: 异步流匹配，解耦视觉语言理解与动作生成频率
+  summary: AsyncVLA uses asynchronous flow matching to decouple the operating frequencies of vision-language understanding and action generation.
   date: '2025-11-18'
 - title: 'LDA-1B: Scaling Latent Dynamics Action Model'
   arxiv: '2602.12215'
@@ -779,7 +779,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 10亿参数潜在动力学动作模型，通用具身数据摄取
+  summary: LDA-1B is a one-billion-parameter latent-dynamics action model designed to ingest general embodied data.
   date: '2026-02-12'
 - title: 'MEM: Multi-Scale Embodied Memory for VLA'
   arxiv: '2603.03596'
@@ -788,7 +788,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 多尺度记忆（视频短时+文本长时），支持15分钟复杂多阶段任务
+  summary: MEM combines short-term video memory with long-term textual memory to support complex multi-stage tasks lasting up to 15 minutes.
   date: '2026-03-04'
 - title: 'SIMA 2: Generalist Embodied Agent for Virtual Worlds'
   arxiv: '2512.04797'
@@ -797,7 +797,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
-  summary: 通用虚拟世界具身智能体，跨游戏环境泛化
+  summary: SIMA 2 is a generalist embodied agent designed to generalize across virtual-world game environments.
   date: '2025-12-04'
 - title: 'RoboMIND 2.0: Multimodal Bimanual Mobile Manipulation Dataset'
   arxiv: '2512.24653'
@@ -806,7 +806,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: vla-arch
-  summary: 多模态双臂移动操作数据集
+  summary: RoboMIND 2.0 provides a multimodal dataset for bimanual mobile manipulation.
   date: '2025-12-31'
 - title: 'GigaBrain-0.5M: VLA from World Model-Based RL'
   arxiv: '2602.12099'
@@ -815,7 +815,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 基于世界模型RL训练的VLA
+  summary: GigaBrain-0.5M is a vision-language-action model trained with world-model-based reinforcement learning.
   date: '2026-02-12'
 - title: 'ACE-Brain-0: Spatial Intelligence as a Shared Scaffold for Universal Embodiments'
   arxiv: '2603.03198'
@@ -824,7 +824,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 以空间智能为统一支架，构建跨自动驾驶/机器人/无人机的通用具身智能
+  summary: ACE-Brain-0 uses spatial intelligence as a shared scaffold for embodied systems spanning autonomous vehicles, robots, and drones.
   date: '2026-03-03'
 - title: 'PVI: Plug-in Visual Injection for Vision-Language-Action Models'
   arxiv: '2603.12772'
@@ -833,7 +833,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 即插即用视觉注入模块，为VLA模型引入高分辨率视觉特征提升操作精度
+  summary: PVI is a plug-in visual injection module that adds high-resolution visual features to vision-language-action models to improve manipulation precision.
   date: '2026-03-13'
 - title: 'OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams'
   arxiv: '2603.12265'
@@ -842,7 +842,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 统一感知、重建与动作的连续流式处理框架，实现实时具身智能
+  summary: OmniStream unifies perception, reconstruction, and action processing over continuous streams for real-time embodied intelligence.
   date: '2026-03-12'
 - title: 'π0.7: a Steerable Generalist Robotic Foundation Model with Emergent Capabilities'
   arxiv: '2604.15483'
@@ -851,7 +851,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: PI下一代通用机器人基础模型，可控+涌现能力，支持多阶段任务、跨厨房零样本泛化与多工具操作
+  summary: π0.7 is a steerable generalist robotic foundation model that supports multi-stage tasks, zero-shot transfer across kitchens, and multi-tool manipulation.
   date: '2026-04-16'
   featured: true
 - title: Long-Horizon Manipulation via Trace-Conditioned VLA Planning
@@ -861,7 +861,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: LoHo-Manip框架，VLM任务管理器+轨迹条件VLA执行器，长时操作的隐式闭环重规划
+  summary: LoHo-Manip combines a VLM task manager with a trace-conditioned VLA executor for implicit closed-loop replanning in long-horizon manipulation.
   date: '2026-04-23'
 - title: 'Libra-VLA: Achieving Learning Equilibrium via Asynchronous Coarse-to-Fine Dual-System'
   arxiv: '2604.24921'
@@ -870,7 +870,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 异步粗到细双系统VLA，将宏观方向决策与连续微观位姿对齐解耦，平衡语义与执行
+  summary: Libra-VLA uses an asynchronous coarse-to-fine dual system that decouples high-level directional decisions from continuous fine-grained pose alignment.
   date: '2026-04-27'
 - title: 'Walk With Me: Long-Horizon Social Navigation for Human-Centric Outdoor Assistance'
   arxiv: '2604.26839'
@@ -879,7 +879,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 户外人机协同长时社交导航，将自然语言意图翻译为安全合规的长时程导航行为
+  summary: Walk With Me translates natural-language intent into safe, socially compliant long-horizon navigation behavior for human-centered outdoor assistance.
   date: '2026-04-29'
 - title: 'OAT: Ordered Action Tokenization'
   arxiv: '2602.04215'
@@ -888,7 +888,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: action-token
-  summary: 有序动作词元化，高压缩+因果有序+前缀可解码，推理时精度-速度任意权衡
+  summary: OAT tokenizes actions with high compression, causal ordering, and prefix decodability to enable inference-time accuracy-speed trade-offs.
   date: '2026-02-04'
 - title: 'ActionCodec: What Makes for Good Action Tokenizers'
   arxiv: '2602.15397'
@@ -897,7 +897,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: action-token
-  summary: 从VLA优化角度建立动作词元化设计原则，SmolVLM-2.2B LIBERO 95.5%
+  summary: ActionCodec develops action-tokenizer design principles for VLA optimization and reports 95.5% performance on LIBERO with SmolVLM-2.2B.
   date: '2026-02-17'
 - title: 'VQ-BeT: Behavior Generation with Latent Actions'
   arxiv: '2403.03181'
@@ -906,7 +906,7 @@
   venue: arXiv 2024
   domain: robot
   subcategory: action-token
-  summary: 层次化VQ增强行为Transformer，推理5x快于扩散策略
+  summary: VQ-BeT is a hierarchical vector-quantized behavior transformer reported to run inference five times faster than diffusion policies.
   date: '2024-03-05'
 - title: 'RDT-2: Scaling UMI Data with RVQ'
   arxiv: '2602.03310'
@@ -915,16 +915,16 @@
   venue: arXiv 2026
   domain: robot
   subcategory: action-token
-  summary: 7B VLM + RVQ对齐语言与连续控制，首次跨具身零样本泛化
+  summary: RDT-2 combines a 7B vision-language model with residual vector quantization to align language and continuous control for zero-shot cross-embodiment generalization.
   date: '2026-02-03'
 - title: 'NIAF: Neural Implicit Action Fields'
   arxiv: '2603.01766'
   url: https://arxiv.org/abs/2603.01766
-  institution: —
+  institution: Alibaba, Nanjing Univ, XJTU
   venue: arXiv 2026
   domain: robot
   subcategory: action-token
-  summary: 动作预测重构为连续函数回归，MLLM层次频谱调制器生成无限分辨率轨迹
+  summary: NIAF reformulates action prediction as continuous function regression, using a hierarchical spectral modulator in an MLLM to generate trajectories at arbitrary resolution.
   date: '2026-03-02'
 - title: 'FASTer: Efficient Autoregressive VLA via Neural Action Tokenization'
   arxiv: '2512.04952'
@@ -933,7 +933,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: action-token
-  summary: 神经动作词元化加速自回归VLA
+  summary: FASTer accelerates autoregressive vision-language-action models through neural action tokenization.
   date: '2025-12-04'
 - title: 'LatBot: Distilling Universal Latent Actions for VLA'
   arxiv: '2511.23034'
@@ -942,7 +942,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: action-token
-  summary: 大规模操作视频蒸馏通用潜在动作表征
+  summary: LatBot distills universal latent action representations from large-scale manipulation videos for vision-language-action learning.
   date: '2025-11-28'
 - title: 'World-VLA-Loop: Closed-Loop Learning of Video World Model and VLA Policy'
   arxiv: '2602.06508'
@@ -951,7 +951,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 视频世界模型与VLA策略闭环协同学习
+  summary: World-VLA-Loop jointly improves a video world model and a vision-language-action policy through closed-loop learning.
   date: '2026-02-06'
 - title: 'DreamDojo: Generalist Robot World Model from Human Videos'
   arxiv: '2602.06949'
@@ -960,7 +960,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 从大规模人类视频学习通用机器人世界模型
+  summary: DreamDojo learns a generalist robot world model from large-scale human video data.
   date: '2026-02-06'
 - title: 'RISE: Self-Improving Robot Policy with Compositional World Model'
   arxiv: '2602.11075'
@@ -969,7 +969,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 组合式世界模型驱动机器人策略自我进化
+  summary: RISE uses a compositional world model to drive iterative self-improvement of a robot policy.
   date: '2026-02-11'
   rsi: true
   rsi_track: policy
@@ -983,7 +983,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: VLA策略与世界模型迭代协同提升
+  summary: VLAW iteratively co-improves a vision-language-action policy and its world model.
   date: '2026-02-12'
 - title: 'WoVR: World Models as Reliable Simulators for Post-Training VLA with RL'
   arxiv: '2602.13977'
@@ -992,7 +992,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 世界模型作为可靠模拟器用于VLA后训练RL
+  summary: WoVR uses world models as simulators for reinforcement-learning post-training of vision-language-action policies.
   date: '2026-02-15'
 - title: 'NORA-1.5: VLA with World Model and Action-based Preference Rewards'
   arxiv: '2511.14659'
@@ -1001,7 +1001,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: world-model-policy
-  summary: 世界模型+动作偏好奖励训练VLA
+  summary: NORA-1.5 trains a vision-language-action model with a world model and action-based preference rewards.
   date: '2025-11-18'
 - title: World Action Models are Zero-shot Policies (DreamZero)
   arxiv: '2602.15922'
@@ -1010,7 +1010,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 世界动作模型直接作为零样本策略，无需额外训练
+  summary: DreamZero uses a world action model directly as a zero-shot policy without additional policy training.
   date: '2026-02-17'
 - title: 'RoboScape-R: Unified Reward-Observation World Models for RL'
   arxiv: '2512.03556'
@@ -1019,7 +1019,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: world-model-policy
-  summary: 统一奖励-观测世界模型，面向泛化机器人RL
+  summary: RoboScape-R unifies reward and observation prediction in a world model for generalizable robot reinforcement learning.
   date: '2025-12-03'
 - title: 'Beyond Dense Futures: World Models as Structured Planners for Robotic Manipulation'
   arxiv: '2603.12553'
@@ -1028,7 +1028,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 世界模型作为结构化规划器，将密集未来预测转化为关键子目标引导机器人操作
+  summary: This work treats world models as structured planners that convert dense future predictions into key subgoals for robotic manipulation.
   date: '2026-03-13'
 - title: 'RoboStereo: Dual-Tower 4D Embodied World Models for Unified Policy Optimization'
   arxiv: '2603.12639'
@@ -1037,7 +1037,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 双塔4D具身世界模型，统一策略优化实现跨任务机器人操作
+  summary: RoboStereo uses a dual-tower 4D embodied world model to unify policy optimization across robotic tasks.
   date: '2026-03-13'
 - title: 'Veo-Act: How Far Can Frontier Video Models Advance Generalizable Robot Manipulation?'
   arxiv: '2604.04502'
@@ -1046,7 +1046,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 系统研究Veo-3等前沿视频模型对通用机器人操作的赋能边界与零样本能力
+  summary: Veo-Act systematically studies how frontier video models such as Veo 3 support generalizable and zero-shot robotic manipulation.
   date: '2026-04-06'
 - title: 'UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling'
   arxiv: '2604.19734'
@@ -1055,7 +1055,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 统一潜在动作词元化器UniT，桥接人类视频与人形机器人，联合策略学习与世界建模
+  summary: UniT is a unified latent action tokenizer that connects human videos with humanoid robots for joint policy learning and world modeling.
   date: '2026-04-21'
 - title: 'X-WAM: Unified 4D World Action Modeling from Video Priors with Asynchronous Denoising'
   arxiv: '2604.26694'
@@ -1064,7 +1064,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 统一4D世界模型X-WAM，单框架内联合实时机器人动作执行与高保真视频+3D重建合成
+  summary: X-WAM jointly supports real-time robot action execution and high-fidelity video and 3D reconstruction synthesis within a unified 4D world-action model.
   date: '2026-04-29'
 - title: 'SRPO: Self-Referential Policy Optimization for VLA'
   arxiv: '2511.15605'
@@ -1073,7 +1073,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: rl-policy
-  summary: 自参照策略优化，用自身预测做参考信号
+  summary: SRPO optimizes a vision-language-action policy using its own predictions as reference signals.
   date: '2025-11-19'
 - title: 'πRL: Online RL Fine-tuning for Flow-based VLA'
   arxiv: '2510.25889'
@@ -1082,7 +1082,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: rl-policy
-  summary: 面向流匹配VLA的在线RL微调
+  summary: πRL applies online reinforcement-learning fine-tuning to flow-based vision-language-action models.
   date: '2025-10-29'
 - title: Reinforcing Action Policies by Prophesying
   arxiv: '2511.20633'
@@ -1091,16 +1091,16 @@
   venue: arXiv 2025
   domain: robot
   subcategory: rl-policy
-  summary: 通过预言（预测未来状态）强化动作策略
+  summary: This work reinforces action policies by predicting future states.
   date: '2025-11-25'
 - title: Alleviating Sparse Rewards in Flow-Based GRPO
   arxiv: '2602.06422'
   url: https://arxiv.org/abs/2602.06422
-  institution: —
+  institution: ZJU
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
-  summary: 建模逐步和长期采样效应，缓解流式GRPO稀疏奖励
+  summary: This work models stepwise and long-horizon sampling effects to alleviate sparse rewards in flow-based GRPO.
   date: '2026-02-06'
 - title: 'PhyCritic: Multimodal Critic Models for Physical AI'
   arxiv: '2602.11124'
@@ -1109,7 +1109,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
-  summary: 多模态物理Critic，评估动作物理合理性
+  summary: PhyCritic is a multimodal critic that evaluates the physical plausibility of actions.
   date: '2026-02-11'
 - title: 'Beyond VLM-Based Rewards: Diffusion-Native Latent Reward Modeling'
   arxiv: '2602.11146'
@@ -1118,7 +1118,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
-  summary: 扩散原生潜在奖励建模
+  summary: This work introduces diffusion-native latent reward modeling as an alternative to VLM-based rewards.
   date: '2026-02-11'
 - title: Unified RL and Imitation Learning for VLMs
   arxiv: '2510.19307'
@@ -1127,7 +1127,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: rl-policy
-  summary: 统一RL与模仿学习的VLM训练范式
+  summary: This work presents a unified training paradigm that combines reinforcement learning and imitation learning for vision-language models.
   date: '2025-10-22'
 - title: Modular Safety Guardrails for FM-Enabled Robots
   arxiv: '2602.04056'
@@ -1136,7 +1136,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
-  summary: 模块化安全护栏：动作安全+决策安全+以人为中心安全
+  summary: This work proposes modular guardrails covering action safety, decision safety, and human-centered safety for foundation-model-enabled robots.
   date: '2026-02-03'
 - title: Action Hallucination in Generative VLA Models
   arxiv: '2602.06339'
@@ -1145,7 +1145,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
-  summary: 分析VLA动作幻觉（拓扑/精度/视野障碍），提出结构性解释
+  summary: This work analyzes topological, precision-related, and field-of-view action hallucinations in generative VLA models and proposes a structural explanation.
   date: '2026-02-06'
 - title: 'π-StepNFT: Wider Space Needs Finer Steps in Online RL for Flow-based VLAs'
   arxiv: '2603.02083'
@@ -1154,7 +1154,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
-  summary: 无critic无似然在线RL框架，Flow-SDE扩展探索空间+逐步对比排序对齐flow-based VLA
+  summary: π-StepNFT is a critic-free, likelihood-free online reinforcement-learning framework that expands exploration with Flow-SDE and aligns flow-based VLAs through stepwise contrastive ranking.
   date: '2026-03-02'
 - title: 'DiffusionNFT: Online Diffusion Reinforcement with Forward Process'
   arxiv: '2509.16117'
@@ -1163,7 +1163,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: rl-policy
-  summary: 在前向扩散过程上做在线RL新范式，对比正负样本定义隐式策略改进方向，比FlowGRPO快25x
+  summary: DiffusionNFT performs online reinforcement learning over the forward diffusion process, using positive-negative sample comparisons to define an implicit policy-improvement direction and reporting a 25-fold speedup over FlowGRPO.
   date: '2025-09-19'
 - title: 'RARRL: Resource-Aware Reasoning via RL for Embodied Robotic Decision-Making'
   arxiv: '2603.16673'
@@ -1172,7 +1172,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
-  summary: RL学习何时调用LLM推理的资源感知编排策略，自适应分配计算预算提升具身任务成功率
+  summary: RARRL learns when to invoke LLM reasoning and adaptively allocates compute budgets for embodied robotic decision-making.
   date: '2026-03-17'
 - title: 'RL Token: Bootstrapping Online RL with Vision-Language-Action Models'
   arxiv: '2604.23073'
@@ -1181,7 +1181,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
-  summary: PI推出的轻量级RL Token方法，用VLA预训练知识引导在线RL，显著提升真实任务成功率与速度
+  summary: RL Token uses pretrained VLA knowledge to guide lightweight online reinforcement learning for real-world robotic tasks.
   date: '2026-04-24'
 - title: 'LaST-R1: Reinforcing Robotic Manipulation via Adaptive Physical Latent Reasoning'
   arxiv: '2604.28192'
@@ -1190,7 +1190,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
-  summary: 自适应物理潜在推理强化VLA，让模型按需进行细粒度物理推理以提升操作成功率
+  summary: LaST-R1 reinforces vision-language-action models with adaptive, fine-grained physical latent reasoning for robotic manipulation.
   date: '2026-04-30'
 - title: 'Towards Generalizable Robotic Data Flywheel: High-Dimensional Factorization and Composition'
   arxiv: '2603.25583'
@@ -1199,7 +1199,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: 提出因子感知组合式迭代学习框架F-ACIL，以更少示教实现更强机器人组合泛化
+  summary: F-ACIL is a factor-aware compositional iterative-learning framework designed to improve compositional robot generalization with fewer demonstrations.
   date: '2026-03-26'
 - title: 'IGen: Scalable Data Generation from Open-World Images'
   arxiv: '2512.01773'
@@ -1208,7 +1208,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: data-pretrain
-  summary: 开放世界图像→逼真视觉观测+可执行动作，合成数据媲美真实
+  summary: IGen converts open-world images into realistic visual observations paired with executable actions for synthetic robot-training data.
   date: '2025-12-01'
 - title: 'RoboWheel: Data Engine from Real-World Human Demonstrations'
   arxiv: '2512.02729'
@@ -1217,7 +1217,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: data-pretrain
-  summary: HOI视频→跨具身训练数据，首次量化证明HOI可监督机器人学习
+  summary: RoboWheel converts human-object-interaction videos into cross-embodiment training data and evaluates their value for supervised robot learning.
   date: '2025-12-02'
 - title: 'In-N-On: Scaling Egocentric Manipulation with Wild+On-task Data'
   arxiv: '2511.15704'
@@ -1226,7 +1226,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: data-pretrain
-  summary: 1000+小时自我中心数据配方，训练大规模流匹配策略Human0
+  summary: In-N-On uses more than 1,000 hours of egocentric wild and on-task data to train the large-scale flow-matching policy Human0.
   date: '2025-11-19'
 - title: Scalable VLA Pretraining with Real-Life Human Activity Videos
   arxiv: '2510.21571'
@@ -1235,7 +1235,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: data-pretrain
-  summary: 人类活动视频预训练VLA，扩展数据规模
+  summary: This work scales vision-language-action pretraining with videos of real-life human activities.
   date: '2025-10-24'
 - title: 'TraceGen: World Modeling in 3D Trace Space'
   arxiv: '2511.21690'
@@ -1244,7 +1244,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: data-pretrain
-  summary: 3D轨迹空间建模，跨具身视频学习操作
+  summary: TraceGen models 3D trace space to learn manipulation across embodiments from video.
   date: '2025-11-26'
 - title: How Do VLAs Effectively Inherit from VLMs?
   arxiv: '2511.06619'
@@ -1253,7 +1253,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: data-pretrain
-  summary: 系统研究VLA继承VLM预训练知识的机制
+  summary: This work systematically studies how vision-language-action models inherit pretrained knowledge from vision-language models.
   date: '2025-11-10'
 - title: 'LAP: Language-Action Pre-Training for Zero-shot Cross-Embodiment'
   arxiv: '2602.10556'
@@ -1262,7 +1262,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: 动作直接用自然语言表示，无需词元化器即可跨具身零样本迁移
+  summary: LAP represents actions directly in natural language to enable zero-shot cross-embodiment transfer without an action tokenizer.
   date: '2026-02-11'
 - title: 'InternData-A1: High-Fidelity Synthetic Data for Generalist Policy'
   arxiv: '2511.16651'
@@ -1271,7 +1271,7 @@
   venue: arXiv 2025
   domain: robot
   subcategory: data-pretrain
-  summary: 高保真合成数据管线，面向通用策略预训练
+  summary: InternData-A1 is a high-fidelity synthetic-data pipeline for pretraining generalist policies.
   date: '2025-11-20'
 - title: 'SAGE: Scalable Agentic 3D Scene Generation for Embodied AI'
   arxiv: '2602.10116'
@@ -1280,7 +1280,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: 智能体式3D场景生成，为具身AI提供训练环境
+  summary: SAGE uses agentic 3D scene generation to create training environments for embodied AI.
   date: '2026-02-10'
 - title: 'EmbodiedMidtrain: Bridging the Gap between Vision-Language Models and Vision-Language-Action Models via Mid-training'
   arxiv: '2604.20012'
@@ -1289,7 +1289,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: 在VLM与VLA之间引入具身中段训练阶段，让VLM先适应具身领域再做VLA微调以提升下游性能
+  summary: EmbodiedMidtrain inserts an embodied mid-training stage between VLM pretraining and VLA fine-tuning so the model can adapt to embodied domains before downstream training.
   date: '2026-04-21'
 - title: 'VLM²: Vision-Language Memory for Spatial Reasoning'
   arxiv: '2511.20644'
@@ -1298,7 +1298,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: spatial
-  summary: 双记忆模块（工作记忆+情景记忆），视图一致3D空间推理
+  summary: VLM² combines working and episodic memory modules for view-consistent 3D spatial reasoning.
   date: '2025-11-25'
 - title: 'MoE3D: MoE meets Multi-Modal 3D Understanding'
   arxiv: '2511.22103'
@@ -1307,7 +1307,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: spatial
-  summary: MoE引入多模态3D理解，专家分别处理不同模态
+  summary: MoE3D applies a mixture-of-experts architecture to multimodal 3D understanding, with experts handling different modalities.
   date: '2025-11-27'
 - title: 'DynamicVerse: Physically-Aware Multimodal 4D World Modeling'
   arxiv: '2512.03000'
@@ -1316,7 +1316,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: spatial
-  summary: 100K+视频物理尺度多模态4D标注框架
+  summary: DynamicVerse provides a physically aware multimodal 4D annotation framework covering more than 100,000 videos.
   date: '2025-12-02'
 - title: '4DLangVGGT: 4D Language-Visual Geometry Grounded Transformer'
   arxiv: '2512.05060'
@@ -1325,7 +1325,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: spatial
-  summary: 首个Transformer前馈式4D语言接地框架
+  summary: 4DLangVGGT is a feed-forward transformer framework for language grounding in 4D scenes.
   date: '2025-12-04'
 - title: 'G²VLM: Geometry Grounded VLM'
   arxiv: '2511.21688'
@@ -1334,7 +1334,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: spatial
-  summary: 统一3D重建与空间推理的几何VLM
+  summary: G²VLM is a geometry-grounded vision-language model that unifies 3D reconstruction and spatial reasoning.
   date: '2025-11-26'
 - title: Scaling Spatial Intelligence with Multimodal Foundation Models
   arxiv: '2511.13719'
@@ -1343,7 +1343,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: spatial
-  summary: 规模化多模态基础模型培养空间智能
+  summary: This work studies how multimodal foundation-model scaling can develop spatial intelligence.
   date: '2025-11-17'
 - title: 'Forging Spatial Intelligence: Roadmap'
   arxiv: '2512.24385'
@@ -1352,7 +1352,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: spatial
-  summary: 面向自主系统的多模态数据预训练空间智能路线图
+  summary: This work presents a roadmap for pretraining spatial intelligence for autonomous systems with multimodal data.
   date: '2025-12-30'
 - title: 'SpatialTree: How Spatial Abilities Branch Out in MLLMs'
   arxiv: '2512.20617'
@@ -1361,7 +1361,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: spatial
-  summary: 空间能力层次评估：感知→推理→交互
+  summary: SpatialTree evaluates spatial abilities hierarchically across perception, reasoning, and interaction.
   date: '2025-12-23'
 - title: '4D-RGPT: Region-level 4D Understanding'
   arxiv: '2512.17012'
@@ -1370,7 +1370,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: spatial
-  summary: 感知蒸馏实现区域级4D时空推理
+  summary: 4D-RGPT uses perception distillation for region-level 4D spatiotemporal reasoning.
   date: '2025-12-18'
 - title: 'Motion4D: 3D-Consistent Motion and Semantics for 4D Scene Understanding'
   arxiv: '2512.03601'
@@ -1379,7 +1379,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: spatial
-  summary: 3D一致运动+语义，4D场景理解
+  summary: Motion4D combines 3D-consistent motion and semantics for 4D scene understanding.
   date: '2025-12-03'
 - title: 'SAM 3D: 3Dfy Anything in Images'
   arxiv: '2511.16624'
@@ -1388,7 +1388,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: spatial
-  summary: 单图像3D物体重建（几何+纹理+布局）
+  summary: SAM 3D reconstructs object geometry, texture, and layout in 3D from a single image.
   date: '2025-11-20'
 - title: 'PixelRefer: Unified Spatio-Temporal Object Referring'
   arxiv: '2510.23603'
@@ -1397,7 +1397,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: spatial
-  summary: 任意粒度时空对象引用框架
+  summary: PixelRefer provides a unified framework for referring to spatiotemporal objects at arbitrary granularity.
   date: '2025-10-27'
 - title: Revisiting Multimodal Positional Encoding in VLMs
   arxiv: '2510.23095'
@@ -1406,7 +1406,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: spatial
-  summary: 系统分析VLM多模态位置编码设计
+  summary: This work systematically analyzes multimodal positional-encoding designs in vision-language models.
   date: '2025-10-27'
 - title: 'V-DPM: 4D Video Reconstruction with Dynamic Point Maps'
   arxiv: '2601.09499'
@@ -1415,7 +1415,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: spatial
-  summary: Dynamic Point Maps扩展静态3D重建到4D视频场景，基于VGGT实现动态场景重建
+  summary: V-DPM extends VGGT-based static 3D reconstruction to dynamic 4D video scenes using dynamic point maps.
   date: '2026-01-14'
 - title: 'Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding'
   arxiv: '2603.19235'
@@ -1424,7 +1424,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: spatial
-  summary: 挖掘视频生成模型隐式3D先验，为场景理解与空间推理注入几何感知能力
+  summary: This work extracts implicit 3D priors from video-generation models to add geometric awareness to scene understanding and spatial reasoning.
   date: '2026-03-19'
 - title: 'SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations'
   arxiv: '2604.07990'
@@ -1433,7 +1433,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: spatial
-  summary: 百万级视频数据集，提供文本描述、相机参数、深度图与3D点轨迹等几何语义联合标注
+  summary: SceneScribe-1M is a million-scale video dataset with joint geometric and semantic annotations, including captions, camera parameters, depth maps, and 3D point trajectories.
   date: '2026-04-10'
 - title: 'Insight-V++: Towards Advanced Long-Chain Visual Reasoning with Multimodal Large Language Models'
   arxiv: '2603.18118'
@@ -1442,7 +1442,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: latent-reasoning
-  summary: 多智能体长链视觉推理框架，引入ST-GRPO/J-GRPO并通过自进化闭环持续提升
+  summary: Insight-V++ is a multi-agent long-chain visual-reasoning framework that uses ST-GRPO and J-GRPO with a self-improvement loop.
   date: '2026-03-18'
 - title: 'ThinkMorph: Emergent Properties in Multimodal Interleaved CoT'
   arxiv: '2510.27492'
@@ -1451,7 +1451,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: latent-reasoning
-  summary: 交错文本-图像推理链，涌现多模态智能
+  summary: ThinkMorph uses interleaved text-image chains of thought to study emergent multimodal reasoning capabilities.
   date: '2025-10-30'
 - title: 'LaST₀: Latent Spatio-Temporal CoT for Robotic VLA'
   arxiv: '2601.05248'
@@ -1460,7 +1460,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: latent-reasoning
-  summary: 潜在时空CoT + 双系统MoT（低频推理+高频动作），实机提升13-14%
+  summary: LaST₀ combines latent spatiotemporal chain-of-thought reasoning with a dual-system mixture of thought for low-frequency reasoning and high-frequency action, reporting 13–14% gains on real robots.
   date: '2026-01-08'
 - title: 'Mull-Tokens: Modality-Agnostic Latent Thinking'
   arxiv: '2512.10941'
@@ -1469,7 +1469,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: latent-reasoning
-  summary: 模态无关潜在token，自由在图像/文本空间思考
+  summary: Mull-Tokens introduces modality-agnostic latent tokens that support reasoning across image and text spaces.
   date: '2025-12-11'
 - title: 'Chain-of-Visual-Thought: Teaching VLMs with Continuous Visual Tokens'
   arxiv: '2511.19418'
@@ -1478,7 +1478,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: latent-reasoning
-  summary: 连续视觉token视觉思维链，增强密集视觉感知
+  summary: Chain-of-Visual-Thought teaches vision-language models to reason with continuous visual tokens for denser visual perception.
   date: '2025-11-24'
 - title: 'SwimBird: Switchable Reasoning Mode in Hybrid Autoregressive MLLMs'
   arxiv: '2602.06040'
@@ -1487,7 +1487,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: latent-reasoning
-  summary: 按需切换语言/视觉推理模式
+  summary: SwimBird switches between language and visual reasoning modes on demand.
   date: '2026-02-05'
 - title: 'COCONUT: Training LLMs to Reason in Continuous Latent Space'
   arxiv: '2412.06769'
@@ -1496,7 +1496,7 @@
   venue: arXiv 2024
   domain: general
   subcategory: latent-reasoning
-  summary: LLM连续潜空间推理，突破语言推理表征瓶颈
+  summary: COCONUT trains language models to reason in continuous latent space rather than relying only on language representations.
   date: '2024-12-09'
 - title: 'Unifying Perception and Action: Implicit Visual CoT'
   arxiv: '2511.19859'
@@ -1505,7 +1505,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: latent-reasoning
-  summary: 混合模态管线+隐式视觉CoT统一感知与动作
+  summary: This work combines a hybrid-modal pipeline with implicit visual chain-of-thought reasoning to unify perception and action.
   date: '2025-11-25'
 - title: 'VideoAuto-R1: Video Auto Reasoning (Thinking Once, Answering Twice)'
   arxiv: '2601.05175'
@@ -1514,7 +1514,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: latent-reasoning
-  summary: 按需推理，低置信才激活，响应长度减少3.3x
+  summary: VideoAuto-R1 activates reasoning only for low-confidence cases and reports a 3.3-fold reduction in response length.
   date: '2026-01-08'
 - title: 'Thinking in Text and Images: Interleaved Vision-Language Reasoning Traces for Long-Horizon Robot Manipulation'
   arxiv: '2605.00438'
@@ -1523,7 +1523,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: latent-reasoning
-  summary: 交错文图推理轨迹，将语言因果链与图像几何信息显式联合，支持长时操作规划
+  summary: This work interleaves textual and visual reasoning traces to combine linguistic causal structure with image geometry for long-horizon robot manipulation planning.
   date: '2026-05-01'
 - title: 'VL-JEPA: Joint Embedding Predictive Architecture for Vision-language'
   arxiv: '2512.10942'
@@ -1532,7 +1532,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: multimodal-arch
-  summary: JEPA范式VLM，嵌入空间预测，参数少50%性能更强
+  summary: VL-JEPA applies joint-embedding predictive learning to vision-language modeling and reports stronger performance with 50% fewer parameters.
   date: '2025-12-11'
 - title: 'BAGEL: Emerging Properties in Unified Multimodal Pretraining'
   arxiv: '2505.14683'
@@ -1541,7 +1541,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: multimodal-arch
-  summary: 统一多模态理解和生成的开源基础模型
+  summary: BAGEL is an open foundation model that unifies multimodal understanding and generation.
   date: '2025-05-20'
 - title: 'CLI: Dynamic Cross-Layer Injection for Deep VL Fusion'
   arxiv: '2601.10710'
@@ -1550,7 +1550,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: multimodal-arch
-  summary: 动态多对多跨层注入，LLM按需访问完整视觉层次
+  summary: CLI uses dynamic many-to-many cross-layer injection to let a language model access the full visual hierarchy on demand.
   date: '2026-01-15'
 - title: 'LightFusion: Double Fusion for Unified Multimodal'
   arxiv: '2510.22946'
@@ -1559,7 +1559,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: multimodal-arch
-  summary: 轻量双融合框架统一理解与生成
+  summary: LightFusion uses a lightweight dual-fusion framework to unify multimodal understanding and generation.
   date: '2025-10-27'
 - title: Qwen3-VL Technical Report
   arxiv: '2511.21631'
@@ -1568,7 +1568,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: multimodal-arch
-  summary: Qwen系列最强VLM，原生交错多模态+agentic能力
+  summary: The Qwen3-VL technical report describes a vision-language model with native interleaved multimodal processing and agentic capabilities.
   date: '2025-11-26'
 - title: 'SAM 3: Segment Anything with Concepts'
   arxiv: '2511.16719'
@@ -1577,7 +1577,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: multimodal-arch
-  summary: SAM第三代，概念提示驱动的统一检测分割跟踪
+  summary: SAM 3 uses concept prompts to unify object detection, segmentation, and tracking.
   date: '2025-11-20'
 - title: 'Rethinking Generative Image Pretraining: Scaling Next-Pixel Prediction'
   arxiv: '2511.08704'
@@ -1586,7 +1586,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: multimodal-arch
-  summary: 自回归逐像素预测缩放特性研究
+  summary: This work studies the scaling behavior of autoregressive next-pixel prediction for generative image pretraining.
   date: '2025-11-11'
 - title: 'DeepSeek-OCR 2: Visual Causal Flow'
   arxiv: '2601.20552'
@@ -1595,7 +1595,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: multimodal-arch
-  summary: 视觉因果流模型
+  summary: DeepSeek-OCR 2 introduces a visual causal flow model for optical character recognition.
   date: '2026-01-28'
 - title: 'Efficient Training of Diffusion MoE: A Practical Recipe'
   arxiv: '2512.01252'
@@ -1604,7 +1604,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: multimodal-arch
-  summary: 扩散MoE高效训练配方
+  summary: This work presents a practical recipe for efficiently training diffusion mixture-of-experts models.
   date: '2025-12-01'
 - title: 'MindGPT-4ov: Enhanced MLLM via Multi-Stage Post-Training'
   arxiv: '2512.02895'
@@ -1613,7 +1613,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: multimodal-arch
-  summary: 多阶段后训练增强多模态大模型
+  summary: MindGPT-4ov enhances a multimodal large language model through multi-stage post-training.
   date: '2025-12-02'
 - title: 'Beyond Language Modeling: An Exploration of Multimodal Pretraining'
   arxiv: '2603.03276'
@@ -1622,7 +1622,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: multimodal-arch
-  summary: 超越语言建模，系统性探索原生多模态预训练的设计空间
+  summary: This work systematically explores the design space of native multimodal pretraining beyond language modeling.
   date: '2026-03-03'
 - title: 'Vero: An Open RL Recipe for General Visual Reasoning'
   arxiv: '2604.04917'
@@ -1631,7 +1631,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: multimodal-arch
-  summary: 开源RL训练通用视觉推理模型的完整配方，覆盖图表、科学、空间与开放任务
+  summary: Vero provides an open reinforcement-learning recipe for training general visual reasoning models across chart, scientific, spatial, and open-ended tasks.
   date: '2026-04-06'
 - title: 'S-GRPO: Unified Post-Training for Large Vision-Language Models'
   arxiv: '2604.16557'
@@ -1640,7 +1640,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: multimodal-arch
-  summary: 统一SFT与RL两种LVLM后训练范式，避免分阶段独立训练带来的低效问题
+  summary: S-GRPO unifies supervised fine-tuning and reinforcement learning for LVLM post-training to avoid inefficiencies from training them in separate stages.
   date: '2026-04-17'
 - title: End-to-End Autoregressive Image Generation with 1D Semantic Tokenizer
   arxiv: '2605.00503'
@@ -1649,7 +1649,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: multimodal-arch
-  summary: 端到端联合优化重建与生成的1D语义tokenizer，让生成结果直接监督词元化
+  summary: This work jointly optimizes reconstruction and generation with a one-dimensional semantic tokenizer, allowing generated outputs to directly supervise tokenization.
   date: '2026-05-01'
 - title: 'FASTER: Rethinking Real-Time Flow VLAs'
   arxiv: '2603.19199'
@@ -1658,7 +1658,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: efficient
-  summary: 提出面向流式VLA的即时反应采样策略，将近端动作去噪显著加速以降低反应延迟
+  summary: FASTER proposes an immediate-response sampling strategy for streaming VLAs that accelerates denoising of near-term actions to reduce response latency.
   date: '2026-03-19'
 - title: 'Beyond Attention Magnitude: Leveraging Inter-layer Rank Consistency for Efficient Vision-Language-Action Models'
   arxiv: '2603.24941'
@@ -1667,7 +1667,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: efficient
-  summary: 通过跨层排序一致性动态筛选视觉token，在降算力同时提升VLA推理成功率
+  summary: This work dynamically selects visual tokens using inter-layer rank consistency to reduce computation while improving VLA inference success rates.
   date: '2026-03-26'
 - title: 'VLA-Perf: Demystifying VLA Inference Performance'
   arxiv: '2602.18397'
@@ -1676,7 +1676,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: efficient
-  summary: 首个VLA推理性能分析基准工具
+  summary: VLA-Perf is a benchmark tool for analyzing the inference performance of vision-language-action models.
   date: '2026-02-20'
 - title: 'PSA: Pyramid Sparse Attention for Efficient Video'
   arxiv: '2512.04025'
@@ -1685,7 +1685,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: efficient
-  summary: 金字塔稀疏注意力，高效视频理解/生成
+  summary: PSA uses pyramid sparse attention for efficient video understanding and generation.
   date: '2025-12-03'
 - title: 'Blink: Dynamic Visual Token Resolution'
   arxiv: '2512.10548'
@@ -1694,7 +1694,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: efficient
-  summary: 动态视觉token分辨率
+  summary: Blink dynamically adjusts visual-token resolution for efficient processing.
   date: '2025-12-11'
 - title: 'ApET: Approximation-Error Guided Token Compression'
   arxiv: '2602.19870'
@@ -1703,7 +1703,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: efficient
-  summary: 近似误差引导token压缩
+  summary: ApET guides token compression using approximation error.
   date: '2026-02-23'
 - title: 'AstraNav-Memory: Contexts Compression for Long Memory'
   arxiv: '2512.21627'
@@ -1712,7 +1712,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: efficient
-  summary: 长程记忆上下文压缩
+  summary: AstraNav-Memory compresses long-range memory contexts for more efficient use.
   date: '2025-12-25'
 - title: Efficient Multi-Camera Tokenization with Triplanes
   arxiv: '2506.12251'
@@ -1721,7 +1721,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: efficient
-  summary: 三平面高效多相机词元化
+  summary: This work uses triplanes to tokenize multi-camera inputs efficiently.
   date: '2025-06-13'
 - title: Towards Efficient Multi-Camera Encoding for E2E Driving
   arxiv: '2512.10947'
@@ -1730,7 +1730,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: efficient
-  summary: 高效多相机编码方案
+  summary: This work presents an efficient multi-camera encoding approach for end-to-end driving.
   date: '2025-12-11'
 - title: How Many Tokens Do 3D Point Cloud Transformer Architectures Really Need?
   arxiv: '2511.05449'
@@ -1739,7 +1739,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: efficient
-  summary: 探索3D点云Transformer中token数量与性能的关系，提出高效token减少策略
+  summary: This work examines how token count affects 3D point-cloud Transformer performance and proposes an efficient token-reduction strategy.
   date: '2025-11-07'
 - title: 'Token Merging: Your ViT But Faster'
   arxiv: '2210.09461'
@@ -1748,7 +1748,7 @@
   venue: ICLR 2023
   domain: general
   subcategory: efficient
-  summary: Token Merging (ToMe)，无需训练即可通过渐进合并相似token加速ViT推理
+  summary: Token Merging accelerates ViT inference without additional training by progressively merging similar tokens.
   date: '2022-10-17'
 - title: 'FASTer: Focal Token Acquiring-and-Scaling Transformer for Long-term 3D Object Detection'
   arxiv: '2503.01899'
@@ -1757,7 +1757,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: efficient
-  summary: 焦点token获取与缩放Transformer，用于长时序LiDAR 3D目标检测的高效时序融合
+  summary: FASTer uses focal token acquisition and scaling for efficient temporal fusion in long-term LiDAR-based 3D object detection.
   date: '2025-02-28'
 - title: 'A Frame is Worth One Token: Efficient Generative World Modeling with Delta Tokens'
   arxiv: '2604.04913'
@@ -1766,7 +1766,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: efficient
-  summary: 用Delta Token编码帧间增量，将每帧压缩到单token以高效生成多样化未来视频
+  summary: This work encodes inter-frame changes as Delta Tokens, compressing each frame into one token for efficient generation of diverse future videos.
   date: '2026-04-06'
 - title: 'PAI-Bench: A Comprehensive Benchmark For Physical AI'
   arxiv: '2512.01989'
@@ -1775,7 +1775,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: physical-benchmark
-  summary: 物理AI统一基准，2808真实案例评估感知与预测
+  summary: PAI-Bench is a unified physical-AI benchmark with 2,808 real-world cases for evaluating perception and prediction.
   date: '2025-12-01'
 - title: 'ProPhy: Progressive Physical Alignment for Dynamic World Simulation'
   arxiv: '2512.05564'
@@ -1784,7 +1784,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: physical-benchmark
-  summary: 渐进式物理对齐，MoE物理专家+VLM推理迁移
+  summary: ProPhy progressively aligns dynamic world simulations with physics using mixture-of-experts physics specialists and transferred VLM reasoning.
   date: '2025-12-05'
 - title: 'PICABench: How Far from Physically Realistic Image Editing?'
   arxiv: '2510.17681'
@@ -1793,7 +1793,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: physical-benchmark
-  summary: 系统评估T2I编辑物理真实性（光学/力学/状态转换）
+  summary: PICABench systematically evaluates the physical realism of text-to-image editing across optics, mechanics, and state transitions.
   date: '2025-10-20'
 - title: 'Beyond Words and Pixels: Implicit World Knowledge Reasoning'
   arxiv: '2511.18271'
@@ -1802,7 +1802,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: physical-benchmark
-  summary: T2I模型隐含世界知识与物理因果推理评估
+  summary: This work evaluates implicit world knowledge and physical causal reasoning in text-to-image models.
   date: '2025-11-23'
 - title: 'PhyBlock: Physical Understanding via 3D Block Assembly'
   arxiv: '2506.08708'
@@ -1811,7 +1811,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: physical-benchmark
-  summary: 3D积木组装的渐进式物理理解基准
+  summary: PhyBlock is a progressive benchmark for physical understanding through 3D block assembly.
   date: '2025-06-10'
 - title: 'WorldArena: Unified Benchmark for Embodied World Models'
   arxiv: '2602.08971'
@@ -1820,7 +1820,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: physical-benchmark
-  summary: 统一评估具身世界模型感知与功能效用
+  summary: WorldArena provides a unified evaluation of the perceptual and functional utility of embodied world models.
   date: '2026-02-09'
 - title: Unmasking the Illusion of Embodied Reasoning in Vision-Language-Action Models
   arxiv: '2604.18000'
@@ -1829,7 +1829,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: physical-benchmark
-  summary: 揭示当前VLA基准成功率与真实具身推理能力存在系统性偏差，重新审视评测有效性
+  summary: This work identifies systematic discrepancies between VLA benchmark success rates and genuine embodied reasoning ability, calling current evaluation validity into question.
   date: '2026-04-20'
 - title: A Comprehensive Survey on World Models for Embodied AI
   arxiv: '2510.16732'
@@ -1838,7 +1838,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: survey
-  summary: ''
+  summary: This survey reviews world models for embodied AI.
   date: '2025-10-19'
 - title: A Survey on Efficient Vision-Language-Action Models
   arxiv: '2510.24795'
@@ -1847,7 +1847,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: survey
-  summary: ''
+  summary: This survey reviews methods for efficient vision-language-action models.
   date: '2025-10-27'
 - title: 'Reliable and Responsible Foundation Models: A Comprehensive Survey'
   arxiv: '2602.08145'
@@ -1856,7 +1856,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: survey
-  summary: ''
+  summary: This survey reviews reliability and responsibility in foundation models.
   date: '2026-02-04'
 - title: Video Generation Models in Robotics
   arxiv: '2601.07823'
@@ -1865,7 +1865,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: survey
-  summary: ''
+  summary: This work surveys video generation models in robotics.
   date: '2026-01-12'
 - title: 'Multimodal Spatial Reasoning in the Large Model Era: Survey'
   arxiv: '2510.25760'
@@ -1874,7 +1874,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: survey
-  summary: ''
+  summary: This survey reviews multimodal spatial reasoning in the era of large models.
   date: '2025-10-29'
 - title: Real Deep Research for AI, Robotics and Beyond
   arxiv: '2510.20809'
@@ -1883,7 +1883,7 @@
   venue: arXiv 2025
   domain: general
   subcategory: survey
-  summary: ''
+  summary: This work examines deep-research methods for AI, robotics, and related fields.
   date: '2025-10-23'
 - title: 'Vision-Language-Action Safety: Threats, Challenges, Evaluations, and Mechanisms'
   arxiv: '2604.23775'
@@ -1892,7 +1892,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: survey
-  summary: VLA安全综述，系统梳理具身智能威胁面、多模态攻击向量与不可逆物理后果
+  summary: This survey organizes VLA safety research around embodied-agent threat surfaces, multimodal attack vectors, and irreversible physical consequences.
   date: '2026-04-26'
 - title: 'Visual Generation in the New Era: An Evolution from Atomic Mapping to Agentic World Modeling'
   arxiv: '2604.28185'
@@ -1901,7 +1901,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: survey
-  summary: 视觉生成范式综述，从原子映射演化到具备时空状态、因果推理的Agentic世界建模
+  summary: This survey traces visual generation from atomic mappings to agentic world models with spatiotemporal state and causal reasoning.
   date: '2026-04-30'
 - title: 'World Model for Robot Learning: A Comprehensive Survey'
   arxiv: '2605.00080'
@@ -1910,7 +1910,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: survey
-  summary: 机器人学习世界模型综述，覆盖策略学习、规划、仿真、评估与数据生成全场景
+  summary: This survey covers world models for robot learning across policy learning, planning, simulation, evaluation, and data generation.
   date: '2026-04-30'
 - title: 'When to Trust Imagination: Adaptive Action Execution for World Action Models'
   arxiv: '2605.06222'
@@ -1919,7 +1919,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: Curated update from the main VLA paper list.
+  summary: When to Trust Imagination introduces FFDC, a future-reality verifier that lets world action models continue reliable action chunks and replan when predicted visual dynamics diverge from observations.
   date: '2026-05-07'
 - title: 'Think, then Score: Decoupled Reasoning and Scoring for Video Reward Modeling'
   arxiv: '2605.05922'
@@ -1928,7 +1928,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: latent-reasoning
-  summary: Curated update from the main VLA paper list.
+  summary: Think, then Score presents DeScore, a video reward model that decouples chain-of-thought generation from discriminative scoring and trains the two components with separate reinforcement-learning objectives.
   date: '2026-05-01'
 - title: 'One Token Per Frame: Reconsidering Visual Bandwidth in World Models for VLA Policy'
   arxiv: '2605.07931'
@@ -1937,7 +1937,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: efficient
-  summary: Curated update from the main VLA paper list.
+  summary: One Token Per Frame proposes OneWM-VLA, which compresses each future camera view into a single predictive token and jointly generates compact visual latents and robot actions through flow matching.
   date: '2026-05-01'
 - title: 'CoWorld-VLA: Thinking in a Multi-Expert World Model for Autonomous Driving'
   arxiv: '2605.10426'
@@ -1946,7 +1946,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
-  summary: Curated update from the main VLA paper list.
+  summary: CoWorld-VLA conditions autonomous-driving trajectory generation on complementary expert tokens encoding semantic interactions, geometry, scene dynamics, and ego behavior within a hierarchical diffusion planner.
   date: '2026-05-11'
 - title: 'HarmoWAM: Harmonizing Generalizable and Precise Manipulation via Adaptive World Action Model'
   arxiv: '2605.10942'
@@ -1955,7 +1955,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: Curated update from the main VLA paper list.
+  summary: HarmoWAM combines predictive and reactive action experts under an adaptive gate so a world action model can switch between generalizable transit and precise manipulation.
   date: '2026-05-01'
 - title: 'RoboMemArena: A Comprehensive and Challenging Robotic Memory Benchmark'
   arxiv: '2605.10921'
@@ -1964,7 +1964,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: Curated update from the main VLA paper list.
+  summary: RoboMemArena benchmarks long-horizon robotic memory with multimodal memory annotations, complex simulation tasks, and paired real-world evaluations, alongside a predictive-memory VLA baseline.
   date: '2026-05-01'
 - title: 'RewardHarness: Self-Evolving Agentic Post-Training'
   arxiv: '2605.08703'
@@ -1973,7 +1973,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
-  summary: Curated update from the main VLA paper list.
+  summary: RewardHarness evaluates instruction-guided image edits by evolving a reusable library of tools and reasoning skills from a small preference set while keeping the underlying sub-agent frozen.
   date: '2026-05-01'
 - title: Action Emergence from Streaming Intent
   arxiv: '2605.12622'
@@ -1982,7 +1982,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: Curated update from the main VLA paper list.
+  summary: Action Emergence from Streaming Intent introduces a driving VLA that derives temporally coherent intent through streamed reasoning and uses that intent to guide flow-matched trajectory generation.
   date: '2026-05-01'
 - title: 'X-Foresight: A Joint Vision-Action Causal Forecasting Network via Predictive World Modeling'
   arxiv: '2605.24892'
@@ -1991,7 +1991,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
-  summary: Curated update from the main VLA paper list.
+  summary: X-Foresight integrates chunk-wise long-horizon video forecasting with real-time action control, using curriculum learning and safety-focused temporal sampling to capture driving dynamics and causality.
   date: '2026-05-01'
 - title: '123D: Unifying Multi-Modal Autonomous Driving Data at Scale'
   arxiv: '2605.08084'
@@ -2000,7 +2000,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: simulation-data
-  summary: Curated update from the main VLA paper list.
+  summary: 123D provides a unified event-stream API for heterogeneous multimodal autonomous-driving datasets and demonstrates its use for cross-dataset perception and reinforcement-learning-based planning.
   date: '2026-05-08'
 - title: 'RePO-VLA: Recovery-Driven Policy Optimization for Vision-Language-Action Model'
   arxiv: '2605.09410'
@@ -2009,7 +2009,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
-  summary: Curated update from the main VLA paper list.
+  summary: RePO-VLA learns manipulation recovery from successful, corrective, and failed trajectories by combining recovery-aware data construction, semantic progress values, and value-conditioned policy refinement.
   date: '2026-05-01'
 - title: 'Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments'
   arxiv: '2605.30280'
@@ -2018,7 +2018,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: Curated update from the main VLA paper list.
+  summary: Qwen-VLA unifies manipulation, navigation, and trajectory prediction across robot embodiments through joint multimodal pretraining, embodiment-aware prompts, and a diffusion-transformer action decoder.
   date: '2026-05-01'
 - title: 'World Action Models: The Next Frontier in Embodied AI'
   arxiv: '2605.12090'
@@ -2027,7 +2027,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: survey
-  summary: Curated update from the main VLA paper list.
+  summary: World Action Models surveys embodied models that jointly predict future states and actions, organizing their architectures, data sources, evaluation protocols, and open research challenges.
   date: '2026-05-01'
 - title: Driving Intents Amplify Planning-Oriented Reinforcement Learning
   arxiv: '2605.12625'
@@ -2036,7 +2036,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: planning
-  summary: Curated update from the main VLA paper list.
+  summary: Driving Intents Amplify Planning-Oriented Reinforcement Learning uses intent-conditioned flow matching and multi-intent preference optimization to preserve diverse maneuver modes in end-to-end driving policies.
   date: '2026-05-12'
 - title: 'RotVLA: Rotational Latent Action for Vision-Language-Action Model'
   arxiv: '2605.13403'
@@ -2045,7 +2045,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: action-token
-  summary: Curated update from the main VLA paper list.
+  summary: RotVLA represents cross-embodiment latent actions as continuous rotations and uses them as a structured latent planner that conditions flow-matched robot action generation.
   date: '2026-05-13'
 - title: 'BlockVLA: Accelerating Autoregressive VLA via Block Diffusion Finetuning'
   arxiv: '2605.13382'
@@ -2054,7 +2054,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: action-token
-  summary: Curated update from the main VLA paper list.
+  summary: BlockVLA converts an autoregressive VLA into a block-diffusion policy that denoises tokens in parallel within each causal block while reusing prefix key-value caches.
   date: '2026-05-13'
 - title: 'CLOVER: Closed-Loop Value Estimation & Ranking for End-to-End Autonomous Driving Planning'
   arxiv: '2605.15120'
@@ -2063,7 +2063,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: planning
-  summary: Curated update from the main VLA paper list.
+  summary: CLOVER trains an autonomous-driving proposal generator for set-level trajectory coverage and a scorer to rank candidates by predicted closed-loop planning metrics.
   date: '2026-05-01'
 - title: Towards Long-horizon Embodied Agents with Tool-Aligned Vision-Language-Action Models
   arxiv: '2605.13119'
@@ -2072,7 +2072,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: Curated update from the main VLA paper list.
+  summary: Towards Long-horizon Embodied Agents with Tool-Aligned Vision-Language-Action Models decomposes tasks between a high-level VLM planner and specialized VLA tools connected through explicit invocation and progress feedback.
   date: '2026-05-01'
 - title: 'AutoMoT: An Asynchronous VLA Model for E2E Autonomous Driving'
   arxiv: '2603.14851'
@@ -2081,7 +2081,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: Curated update from the main VLA paper list.
+  summary: AutoMoT unifies driving reasoning and action generation with an asynchronous mixture-of-transformers architecture that runs slow semantic reasoning and fast control at different frequencies.
   date: '2026-03-01'
 - title: 'RoboEvolve: Co-Evolving Planner-Simulator for Robotic Manipulation with Limited Data'
   arxiv: '2605.13775'
@@ -2090,7 +2090,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
-  summary: Curated update from the main VLA paper list.
+  summary: RoboEvolve co-trains a VLM planner and video simulator from unlabeled seed images through staged exploration, failure consolidation, and an automatically progressing manipulation curriculum.
   date: '2026-05-13'
 - title: VGGT-Ω
   arxiv: '2605.15195'
@@ -2099,7 +2099,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: spatial
-  summary: Curated update from the main VLA paper list.
+  summary: VGGT-Ω scales feed-forward static and dynamic scene reconstruction with register attention, a unified dense prediction head, self-supervision, and substantially larger training data.
   date: '2026-05-01'
 - title: 'DriveReward: A Comprehensive Dataset and Generative Vision-Language Reward Model for Autonomous Driving'
   arxiv: '2606.08525'
@@ -2108,7 +2108,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: safety-benchmark
-  summary: Curated update from the main VLA paper list.
+  summary: DriveReward introduces a counterfactually augmented driving-trajectory evaluation dataset and a compact generative vision-language reward model for policy optimization and trajectory ranking.
   date: '2026-06-01'
 - title: 'UAM: A Dual-Stream Perspective on Forgetting in VLA Training'
   arxiv: '2605.15735'
@@ -2117,7 +2117,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: Curated update from the main VLA paper list.
+  summary: UAM mitigates multimodal forgetting during VLA training by adding a generatively initialized dorsal expert that learns control-relevant visual dynamics alongside the semantic VLM pathway.
   date: '2026-05-01'
 - title: 'How to Instruct Your Robot: Dense Language Annotations Power Robot Policy Learning'
   arxiv: '2605.17077'
@@ -2126,7 +2126,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: Curated update from the main VLA paper list.
+  summary: How to Instruct Your Robot introduces DeMiAn, which densely relabels demonstrations along motion, scene, pose, and reasoning dimensions and learns to select task-appropriate annotations for policy execution.
   date: '2026-05-16'
 - title: 'Xiaomi Auto World Model: A Joint World Model Integrating Reconstruction and Generation for Autonomous Driving'
   arxiv: '2605.18137'
@@ -2135,7 +2135,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
-  summary: Curated update from the main VLA paper list.
+  summary: Xiaomi Auto World Model combines query-based 3D scene reconstruction with efficient causal video generation to support consistent simulation, data synthesis, and autonomous-driving training.
   date: '2026-05-01'
 - title: 'Bench2Drive-Robust: Benchmarking Closed-Loop Autonomous Driving under Deployment Perturbations'
   arxiv: '2605.18059'
@@ -2144,7 +2144,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: safety-benchmark
-  summary: Curated update from the main VLA paper list.
+  summary: Bench2Drive-Robust evaluates closed-loop end-to-end driving under deployment perturbations including camera failures, ego-state errors, and inference-induced control delays.
   date: '2026-05-01'
 - title: 'SafeAlign-VLA: A Negative-Enhanced Safe Alignment Framework for Risk-Aware Autonomous Driving'
   arxiv: '2605.19524'
@@ -2153,7 +2153,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: safety-benchmark
-  summary: Curated update from the main VLA paper list.
+  summary: SafeAlign-VLA learns risk-aware driving from counterfactual positive and negative trajectory pairs through negative-enhanced supervised fine-tuning followed by anchor-based policy optimization.
   date: '2026-05-19'
 - title: 'Robo-Cortex: A Self-Evolving Embodied Agent via Dual-Grain Cognitive Memory and Autonomous Knowledge Induction'
   arxiv: '2605.18729'
@@ -2162,7 +2162,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: Curated update from the main VLA paper list.
+  summary: Robo-Cortex improves embodied navigation by distilling trajectories into reusable heuristics, maintaining short- and long-term cognitive memories, and verifying imagined action outcomes.
   date: '2026-05-01'
 - title: 'Beyond Imitation: Learning Safe End-to-End Autonomous Driving from Hard Negatives'
   arxiv: '2605.19771'
@@ -2171,7 +2171,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: safety-benchmark
-  summary: Curated update from the main VLA paper list.
+  summary: Beyond Imitation trains safer end-to-end driving policies by generating diverse expert-proximate failure trajectories and repelling predictions from these hard negatives while retaining attraction to demonstrations.
   date: '2026-05-01'
 - title: 'DriveMA: Rethinking Language Interfaces in Driving VLAs with One-Step Meta-Actions'
   arxiv: '2605.21273'
@@ -2180,16 +2180,16 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: Curated update from the main VLA paper list.
+  summary: DriveMA replaces verbose driving reasoning with trajectory-derived one-step meta-actions and jointly optimizes meta-action correctness, trajectory quality, and their consistency.
   date: '2026-05-01'
 - title: 'MAI-Thinking-1: Building a Hill-Climbing Machine'
-  arxiv: mai-thinking-1
+  arxiv: ''
   url: https://microsoft.ai/pdf/mai-thinking-1.pdf
   institution: Microsoft AI
   venue: Technical Report 2026
   domain: general
   subcategory: latent-reasoning
-  summary: Curated update from the main VLA paper list.
+  summary: 'MAI-Thinking-1: Building a Hill-Climbing Machine describes a 35B-active, 1T-parameter mixture-of-experts reasoning model and the scaling, data, infrastructure, and reinforcement-learning process used to improve it iteratively.'
   date: '2026-05-01'
 - title: 'RISE: Reliable Improvement in Self-Evolving Vision-Language Models'
   arxiv: '2605.20914'
@@ -2198,7 +2198,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: latent-reasoning
-  summary: Curated update from the main VLA paper list.
+  summary: RISE improves vision-language models from unlabeled images through rapid questioner-solver alternation, supervised question quality, and dynamic balancing of generated skill types.
   date: '2026-05-01'
 - title: Learning A Unified Risk Map for Autonomous Driving in Partially Observable Environments
   arxiv: '2605.22189'
@@ -2207,7 +2207,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: safety-benchmark
-  summary: Curated update from the main VLA paper list.
+  summary: Learning A Unified Risk Map models traffic-flow and collision risk jointly over space and time and uses diffusion-generated occlusion scenarios to train risk-aware autonomous-driving planning.
   date: '2026-05-01'
 - title: Rethinking VLM Representation for VLA Initialization
   arxiv: '2605.25802'
@@ -2216,7 +2216,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: Curated update from the main VLA paper list.
+  summary: This study shows that effective VLA initialization should add action-relevant embodied and robot-trajectory signals while preserving useful pretrained VLM representations through restrained update strategies such as staged LoRA.
   date: '2026-05-01'
 - title: 'AnyScene: Towards Highly Controllable Driving Scene Generation at Anywhere and Beyond'
   arxiv: '2605.26113'
@@ -2225,7 +2225,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: simulation-data
-  summary: Curated update from the main VLA paper list.
+  summary: AnyScene generates controllable long-horizon semantic occupancy from arbitrary BEV layouts and expands it into temporally consistent, reference-free multi-view driving videos with flexible camera configurations.
   date: '2026-05-25'
 - title: 'Toward Native Multimodal Modeling: A Roadmap'
   arxiv: '2605.25343'
@@ -2234,7 +2234,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: survey
-  summary: Curated update from the main VLA paper list.
+  summary: This roadmap defines native multimodal modeling architectures and organizes unified understanding and generation systems into Multi-to-Text, Multi-to-Target, and Multi-to-Multi paradigms.
   date: '2026-05-01'
 - title: 'DUEL: Adversarial Self-Play for Multimodal Reasoning'
   arxiv: '2605.24794'
@@ -2243,7 +2243,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: latent-reasoning
-  summary: Curated update from the main VLA paper list.
+  summary: DUEL improves multimodal reasoning without external labels by training a Challenger to create image-grounded claim pairs and a Solver to distinguish true claims from minimally perturbed hard negatives.
   date: '2026-05-01'
 - title: 'DriveMA: Driving Vision-Language-Action Models with verifiable Meta-Actions'
   arxiv: '2605.31271'
@@ -2252,7 +2252,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: Curated update from the main VLA paper list.
+  summary: DriveMA aligns high-level driving decisions with trajectory planning by deriving verifiable meta-actions from expert trajectories and optimizing them with action-centric supervision and turn-level reinforcement learning.
   date: '2026-05-01'
 - title: 'nuReasoning: A Reasoning-Centric Dataset and Benchmark for Long-Tail Autonomous Driving'
   arxiv: '2605.31572'
@@ -2261,7 +2261,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: safety-benchmark
-  summary: Curated update from the main VLA paper list.
+  summary: nuReasoning provides 20,000 real-world long-tail driving clips with human-verified spatial, decision, and counterfactual reasoning annotations for jointly evaluating reasoning and planning.
   date: '2026-05-01'
 - title: 'OneVLA: A Unified Framework for Embodied Tasks'
   arxiv: '2606.01241'
@@ -2270,7 +2270,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: Curated update from the main VLA paper list.
+  summary: OneVLA uses a unified action head and progressive multi-stage training to perform both navigation and manipulation within one model without task-specific variants.
   date: '2026-06-01'
 - title: 'LiAuto-GeoX: Efficient Grounded Driving Transformer'
   arxiv: '2606.05774'
@@ -2279,7 +2279,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: Curated update from the main VLA paper list.
+  summary: LiAuto-GeoX distills a large surround-view geometry model into a compact real-time transformer while preserving metric depth and cross-view spatial consistency for reconstruction and downstream driving tasks.
   date: '2026-06-01'
 - title: 'Discrete-WAM: Unified Discrete Vision-Action Token Editing for World-Policy Learning'
   arxiv: '2606.05645'
@@ -2288,7 +2288,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: Curated update from the main VLA paper list.
+  summary: Discrete-WAM jointly represents observations, future states, high-level decisions, and ego actions as discrete tokens, coupling world prediction with hierarchical decision-conditioned action editing for autonomous driving.
   date: '2026-06-04'
 - title: 'NVIDIA OmniDreams: Real-Time Generative World Model for Closed-Loop Autonomous Vehicle Simulation'
   arxiv: '2606.03159'
@@ -2297,7 +2297,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
-  summary: Curated update from the main VLA paper list.
+  summary: OmniDreams adapts the Cosmos diffusion model into a real-time autoregressive, action-conditioned video world model for reactive closed-loop autonomous-vehicle simulation.
   date: '2026-06-02'
 - title: 'EvoMemNav: Efficient Self-Evolving Fine-Grained Memory for Zero-Shot Embodied Navigation'
   arxiv: '2606.03509'
@@ -2306,7 +2306,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: Curated update from the main VLA paper list.
+  summary: EvoMemNav combines an image-grounded room-view-object memory graph, budgeted coarse-to-fine VLM reasoning, and reflection-driven memory updates for efficient zero-shot embodied navigation.
   date: '2026-06-01'
 - title: 'LARA: Latent Action Representation Alignment for Vision-Language-Action Models'
   arxiv: '2606.07100'
@@ -2315,7 +2315,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: action-token
-  summary: Curated update from the main VLA paper list.
+  summary: LARA jointly aligns latent action and VLA representations so unlabeled visual dynamics are grounded by robot trajectories while forward-dynamics regularization discourages ineffective action predictions.
   date: '2026-06-05'
 - title: Planning-aligned Token Compression for Long-Context Autonomous Driving
   arxiv: '2606.07464'
@@ -2324,7 +2324,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: planning
-  summary: Curated update from the main VLA paper list.
+  summary: COMPACT-VA compresses long driving histories into bounded working memory conditioned on learned planning intent, retaining decision-critical context while reducing inference time and memory.
   date: '2026-06-01'
 - title: 'Dreaming when Necessary: Advancing World Action Models with Adaptive Multi-Modal Reasoning'
   arxiv: '2606.07089'
@@ -2333,7 +2333,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: Curated update from the main VLA paper list.
+  summary: AdaWAM uses a dynamic router to invoke textual reasoning at task transitions and visual reasoning during fine-grained manipulation, enabling adaptive multimodal control in a world-action model.
   date: '2026-06-01'
 - title: 'DriveJudge: Rethinking Autonomous Driving Evaluation with Vision-Language Models'
   arxiv: '2606.17362'
@@ -2342,7 +2342,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: safety-benchmark
-  summary: Curated update from the main VLA paper list.
+  summary: DriveJudge combines VLM-based contextual interpretation with selectively invoked deterministic driving rules to provide physically grounded, interpretable evaluations of trajectory quality and preference.
   date: '2026-06-15'
 - title: 'MemoryVLA++: Temporal Modeling via Memory and Imagination in Vision-Language-Action Models'
   arxiv: '2606.09827'
@@ -2351,7 +2351,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: Curated update from the main VLA paper list.
+  summary: MemoryVLA++ integrates working and episodic memory with latent future-state imagination to condition a diffusion action expert on both past interactions and anticipated scene evolution.
   date: '2026-06-01'
 - title: 'X-Tokenizer: A Multimodal Action Tokenizer for Vision-Language-Action Pretraining'
   arxiv: '2606.14752'
@@ -2360,7 +2360,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: action-token
-  summary: Curated update from the main VLA paper list.
+  summary: X-Tokenizer learns a cross-embodiment action interface whose first quantization level captures semantic motion intent while deeper residual levels preserve fine-grained control details.
   date: '2026-06-01'
 - title: 'Two Bridges, One Pathway: From VLMs to Generalizable VLAs with Embodied Trajectory-Coupled Data'
   arxiv: '2606.08520'
@@ -2369,7 +2369,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: Curated update from the main VLA paper list.
+  summary: This work introduces embodied trajectory-coupled vision-language data and a three-stage adaptation recipe that gradually bridges visual-domain and action-objective gaps when converting VLMs into generalizable robot policies.
   date: '2026-06-01'
 - title: 'Embodied-R1.5: Evolving Physical Intelligence via Embodied Foundation Models'
   arxiv: '2606.11324'
@@ -2378,7 +2378,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: Curated update from the main VLA paper list.
+  summary: Embodied-R1.5 unifies embodied cognition, planning, correction, and pointing in one foundation model and uses a Planner-Grounder-Corrector loop for autonomous long-horizon task execution and self-correction.
   date: '2026-06-01'
 - title: Kwai Keye-VL-2.0 Technical Report
   arxiv: '2606.10651'
@@ -2387,7 +2387,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: multimodal-arch
-  summary: Curated update from the main VLA paper list.
+  summary: Kwai Keye-VL-2.0 is a sparse-attention mixture-of-experts multimodal model that supports 256K-context long-video understanding and multimodal agent collaboration through multi-teacher on-policy distillation and reinforcement learning.
   date: '2026-06-01'
 - title: 'Making Foresight Actionable: Repurposing Representation Alignment in World Action Models'
   arxiv: '2606.12217'
@@ -2396,7 +2396,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: Curated update from the main VLA paper list.
+  summary: AGRA aligns intermediate video-diffusion features with spatially coherent foundation-encoder representations so world-action policies attend to task-relevant interaction regions rather than visually plausible but control-irrelevant detail.
   date: '2026-06-10'
 - title: Native Video-Action Pretraining for Generalizable Robot Control
   arxiv: '2607.08639'
@@ -2405,7 +2405,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: Curated update from the main VLA paper list.
+  summary: LingBot-VA 2.0 pretrains a causal sparse-MoE video-action foundation model with semantic visual-action tokenization and asynchronous future prediction for high-frequency closed-loop robot control.
   date: '2026-07-01'
 - title: 'From Foundation to Application: Improving VLA Models in Practice'
   arxiv: '2607.06403'
@@ -2414,7 +2414,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: Curated update from the main VLA paper list.
+  summary: LingBot-VLA 2.0 improves practical robot control through large-scale cross-embodiment pretraining, whole-body action support, and future prediction guided by semantic video and geometric depth representations.
   date: '2026-07-07'
 - title: 'RynnWorld-4D: 4D Embodied World Models for Robotic Manipulation'
   arxiv: '2607.06559'
@@ -2423,7 +2423,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: Curated update from the main VLA paper list.
+  summary: RynnWorld-4D jointly predicts future RGB, depth, and optical flow and uses the resulting geometry-aware representations to produce closed-loop manipulation actions without multi-step denoising.
   date: '2026-07-07'
 - title: 'ReactSim-Bench: Benchmarking Reactive Behavior World Model Simulation in Autonomous Driving'
   arxiv: '2606.14058'
@@ -2432,7 +2432,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: safety-benchmark
-  summary: Curated update from the main VLA paper list.
+  summary: ReactSim-Bench evaluates whether driving behavior world models produce safe, rule-compliant, and kinematically feasible agent reactions when an independently controlled autonomous vehicle deviates from logged behavior.
   date: '2026-06-01'
 - title: 'From Attacks to Curricula: Learnability-Guided Adversarial Training for Safe Autonomous Driving'
   arxiv: '2606.14032'
@@ -2441,7 +2441,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: safety-benchmark
-  summary: Curated update from the main VLA paper list.
+  summary: AlignADV turns adversarial driving scenarios into a dynamic curriculum by aligning generation toward critical but resolvable cases and sampling scenarios matched to the evolving policy's predicted weaknesses.
   date: '2026-06-01'
 - title: 'WAM4D: Fast 4D World Action Model via Spatial Register Tokens'
   arxiv: '2606.14048'
@@ -2450,7 +2450,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: Curated update from the main VLA paper list.
+  summary: WAM4D transfers pretrained geometric priors into a causal video-action transformer through training-time spatial register tokens that supervise future depth and are removed for efficient action inference.
   date: '2026-06-12'
 - title: 'Metis: A Generalizable and Efficient World-Action Model for Autonomous Driving and Urban Navigation'
   arxiv: '2606.15869'
@@ -2459,7 +2459,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
-  summary: Curated update from the main VLA paper list.
+  summary: Metis decouples video generation and action prediction into dedicated transformer experts and uses asymmetric attention to learn jointly while bypassing video generation during driving and navigation inference.
   date: '2026-06-01'
 - title: 'CausalDrive: Real-time Causal World Models for Autonomous Driving'
   arxiv: '2606.15341'
@@ -2468,7 +2468,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
-  summary: Curated update from the main VLA paper list.
+  summary: CausalDrive generates reactive driving video from an initial frame, ego trajectory, and text prompt, using context-forced distillation to support controllable real-time closed-loop simulation without future NPC layouts.
   date: '2026-06-01'
 - title: 'ActWorld: From Explorable to Interactive World Model via Action-Aware Memory'
   arxiv: '2606.17730'
@@ -2477,7 +2477,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: Curated update from the main VLA paper list.
+  summary: ActWorld extends navigation-centric world models to mid-rollout object interaction using densely captioned interaction videos and hierarchical action-aware memory that preserves causal event transitions and object identity.
   date: '2026-06-01'
 - title: 'ImageWAM: Do World Action Models Really Need Video Generation, or Just Image Editing?'
   arxiv: '2606.19531'
@@ -2486,7 +2486,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: Curated update from the main VLA paper list.
+  summary: ImageWAM replaces costly future-video generation with an image-editing backbone whose denoising caches encode instruction-grounded visual changes for efficient robot action prediction.
   date: '2026-06-17'
 - title: 'World Action Models: A Survey'
   arxiv: '2606.20781'
@@ -2495,7 +2495,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: survey
-  summary: Curated update from the main VLA paper list.
+  summary: This survey defines world-action models and organizes them by generated future representation, predictive substrate, backbone, action coupling, and deployment regime while analyzing their control-relevant trade-offs.
   date: '2026-06-01'
 - title: 'MemoryWAM: Efficient World Action Modeling with Persistent Memory'
   arxiv: '2606.20562'
@@ -2504,7 +2504,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: Curated update from the main VLA paper list.
+  summary: MemoryWAM combines recent frames, event-boundary anchors, and compressed gist tokens with tailored retrieval attention to preserve long-range manipulation context at reduced inference cost.
   date: '2026-06-18'
 - title: 'World Engine: Towards the Era of Post-Training for Autonomous Driving'
   arxiv: '2606.19836'
@@ -2513,7 +2513,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
-  summary: 面向自动驾驶世界模型的系统化后训练框架，以强化学习和反馈优化提升生成、推理与规划能力
+  summary: This work presents a systematic post-training framework for autonomous-driving world models that uses reinforcement learning and feedback optimization to improve generation, reasoning, and planning.
   date: '2026-06-18'
   featured: true
 - title: 'BadDreamer: Transferable Backdoor Attacks against Video World Models for Autonomous Driving'
@@ -2523,7 +2523,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: safety-benchmark
-  summary: 研究自动驾驶视频世界模型中的可迁移后门攻击，揭示跨模型与跨场景安全风险
+  summary: This work studies transferable backdoor attacks against video world models for autonomous driving and identifies security risks across models and scenarios.
   date: '2026-06-19'
 - title: 'dVLA-RL: Reinforcement Learning over Denoising Trajectories for Discrete Diffusion Vision-Language-Action Models'
   arxiv: '2606.23623'
@@ -2532,7 +2532,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
-  summary: 在离散扩散VLA的去噪轨迹上开展强化学习，直接优化多步动作生成质量
+  summary: dVLA-RL applies reinforcement learning over the denoising trajectories of discrete-diffusion VLA models to directly optimize multi-step action generation.
   date: '2026-06-22'
 - title: 'LA4VLA: Learning to Act without Seeing via Language-Action Pretraining'
   arxiv: '2606.27295'
@@ -2541,7 +2541,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: 通过语言—动作预训练学习无需视觉输入的动作先验，再迁移到视觉条件下的机器人控制
+  summary: LA4VLA learns action priors without visual input through language-action pretraining and transfers them to vision-conditioned robot control.
   date: '2026-06-25'
 - title: 'MVPruner: Dynamic Token Pruning for Accelerating Multi-view Vision-Language Models in Autonomous Driving'
   arxiv: '2606.27660'
@@ -2550,7 +2550,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: efficient
-  summary: 按输入动态裁剪多视角视觉语言模型的冗余Token，在保持精度的同时加速推理
+  summary: MVPruner dynamically removes redundant tokens from multi-view vision-language models based on the input to accelerate inference while preserving accuracy.
   date: '2026-06-26'
 - title: 'PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation'
   arxiv: '2606.28128'
@@ -2559,7 +2559,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 将物理约束注入机器人世界模拟器，提高接触丰富操作中的预测真实性与策略学习效果
+  summary: PhysisForcing injects physical constraints into a robotic world simulator to improve predictive realism and policy learning for contact-rich manipulation.
   date: '2026-06-26'
 - title: Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision
   arxiv: '2606.30552'
@@ -2568,7 +2568,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: 以密集具身思维链监督训练VLA，联合学习中间推理过程与连续动作
+  summary: This work trains VLA models with dense embodied chain-of-thought supervision to jointly learn intermediate reasoning processes and continuous actions.
   date: '2026-06-29'
 - title: 'X-Mind: Efficient Visual Chain-of-Thought via Predictive World Model for End-to-End Driving'
   arxiv: '2606.28758'
@@ -2577,7 +2577,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 以预测式世界模型生成高效视觉思维链，增强端到端自动驾驶的场景推理与规划
+  summary: X-Mind uses a predictive world model to generate efficient visual chains of thought for scene reasoning and planning in end-to-end autonomous driving.
   date: '2026-06-27'
 - title: 'Trust Your Instincts: Confidence-Driven Test-Time RL for Vision-Language-Action Models'
   arxiv: '2606.29892'
@@ -2586,7 +2586,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
-  summary: 依据模型置信度触发测试时强化学习，使VLA在部署阶段自适应改进动作策略
+  summary: This work uses model confidence to trigger test-time reinforcement learning, enabling a VLA model to adapt its action policy during deployment.
   date: '2026-06-29'
 - title: 'Orca: The World is in Your Mind'
   arxiv: '2606.30534'
@@ -2595,7 +2595,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: multimodal-arch
-  summary: 构建内隐世界表征驱动的通用智能体，在统一模型中连接感知、想象、推理与行动
+  summary: Orca builds a general agent driven by implicit world representations that connects perception, imagination, reasoning, and action in a unified model.
   date: '2026-06-29'
 - title: 'Cosmos 3: Omnimodal World Models for Physical AI'
   arxiv: '2606.02800'
@@ -2604,7 +2604,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: multimodal-arch
-  summary: 统一语言、图像、视频、音频与动作生成的全模态世界模型，为Physical AI提供通用骨干
+  summary: Cosmos 3 is an omnimodal world model that unifies language, image, video, audio, and action generation as a general backbone for physical AI.
   date: '2026-06-01'
   featured: true
 - title: 'ABot-M0.5: Unified Mobility-and-Manipulation World Action Model'
@@ -2614,7 +2614,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 统一移动与操作能力的世界动作模型，让单一具身模型覆盖导航和操控任务
+  summary: ABot-M0.5 unifies mobility and manipulation in a world-action model so that one embodied model can handle navigation and manipulation tasks.
   date: '2026-07-01'
 - title: 'DriveVer: Lightweight Trajectory Evaluator as Test-Time Verifier for Autonomous Driving'
   arxiv: '2607.00399'
@@ -2623,7 +2623,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: safety-benchmark
-  summary: 以轻量轨迹评估器作为测试时验证器，筛选并修正自动驾驶规划候选
+  summary: DriveVer uses a lightweight trajectory evaluator as a test-time verifier to select and refine candidate plans for autonomous driving.
   date: '2026-07-01'
 - title: 'PriorEye: Geospatial Visual Priors for End-to-End Autonomous Driving'
   arxiv: '2606.31830'
@@ -2632,7 +2632,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 引入地理空间视觉先验，增强端到端自动驾驶对道路结构与场景布局的理解
+  summary: PriorEye introduces geospatial visual priors to improve an end-to-end driving model's understanding of road structure and scene layout.
   date: '2026-06-30'
 - title: Information-Regularized Attention for Visual-Centric Reasoning
   arxiv: '2607.00434'
@@ -2641,7 +2641,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: latent-reasoning
-  summary: 以信息正则化约束视觉注意力，提升视觉中心推理的有效性与可解释性
+  summary: This work regularizes visual attention with information-theoretic constraints to improve visual-centric reasoning and its interpretability.
   date: '2026-07-01'
 - title: 'HiMe: Hierarchical Embodied Memory for Long-Horizon Vision-Language-Action Control'
   arxiv: '2607.03449'
@@ -2650,7 +2650,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 构建分层具身记忆，支持VLA在长时程任务中进行多粒度信息存取与控制
+  summary: HiMe builds hierarchical embodied memory that supports multi-granularity information storage, retrieval, and control for long-horizon VLA tasks.
   date: '2026-07-03'
 - title: 'AnchorVLA: Bridging Discrete Decisions and Continuous Trajectories for Vision-Language-Action Planning'
   arxiv: '2607.03182'
@@ -2659,7 +2659,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 以锚点连接离散高层决策和连续运动轨迹，实现统一的VLA规划
+  summary: AnchorVLA uses anchors to connect discrete high-level decisions with continuous motion trajectories in a unified VLA planning framework.
   date: '2026-07-03'
 - title: 'TACO: TActile World Model as a Self-COrrector for Scalable Robot Policy Post-Training'
   arxiv: '2607.02840'
@@ -2668,7 +2668,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 利用触觉世界模型作为自纠错器，为VLA后训练提供可扩展的闭环反馈
+  summary: TACO uses a tactile world model as a self-corrector that supplies scalable closed-loop feedback for robot-policy post-training.
   date: '2026-07-03'
 - title: 'CAC-VLA: Context-Gated Action Conditioning for Vision-Language-Action Models'
   arxiv: '2607.04816'
@@ -2677,7 +2677,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 通过上下文门控动作条件化机制，让VLA按场景动态调节动作生成
+  summary: CAC-VLA uses context-gated action conditioning to dynamically adjust action generation according to the current scene.
   date: '2026-07-06'
 - title: Do Vision-Language-Action Models Mean What They Say? On the Role of Faithfulness in Embodied Reasoning
   arxiv: '2607.04681'
@@ -2686,7 +2686,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 系统评估VLA语言推理与实际动作之间的忠实性，揭示具身解释可能存在的偏差
+  summary: This work systematically evaluates whether VLA language reasoning faithfully reflects executed actions and identifies potential mismatches in embodied explanations.
   date: '2026-07-06'
 - title: 'InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional Generalization'
   arxiv: '2607.04988'
@@ -2695,7 +2695,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 统一场景理解、潜在前瞻与动作生成，提升VLA在组合任务上的泛化能力
+  summary: InternVLA-A1.5 unifies scene understanding, latent foresight, and action generation to improve compositional generalization in VLA models.
   date: '2026-07-06'
   featured: true
 - title: Vision as Unified Multimodal Generation
@@ -2705,7 +2705,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: multimodal-arch
-  summary: 将理解、编辑和生成统一为视觉空间中的多模态生成范式
+  summary: This work formulates understanding, editing, and generation as a unified multimodal generation paradigm in visual space.
   date: '2026-07-07'
 - title: Dual Latent Memory in Vision-Language-Action Models for Robotic Manipulation
   arxiv: '2607.07608'
@@ -2714,7 +2714,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 引入双潜变量记忆，同时保留短期动作上下文与长期任务信息以改进机器人操作
+  summary: This work introduces dual latent memory that retains both short-term action context and long-term task information for robotic manipulation.
   date: '2026-07-08'
 - title: 'NativeMEM: Native Memory Compression for Long-Horizon Robotic Manipulation'
   arxiv: '2607.06678'
@@ -2723,7 +2723,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 原生压缩长时程交互记忆，在降低上下文成本的同时保持机器人任务关键状态
+  summary: NativeMEM natively compresses long-horizon interaction memory to reduce context cost while preserving task-critical robot states.
   date: '2026-07-07'
 - title: 'WCog-VLA: A Dual-Level World-Cognitive Vision-Language-Action Model for End-to-End Autonomous Driving'
   arxiv: '2607.08375'
@@ -2732,7 +2732,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 融合世界级预测与认知级推理的双层VLA，用于端到端自动驾驶决策
+  summary: WCog-VLA combines world-level prediction with cognitive-level reasoning in a dual-level VLA model for end-to-end autonomous-driving decisions.
   date: '2026-07-09'
 - title: 'Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents'
   arxiv: '2607.08448'
@@ -2741,7 +2741,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 以记忆引导智能体调度冻结VLA，将通用模型约束为可靠的操作原语
+  summary: Harness VLA uses memory-guided agents to orchestrate a frozen VLA model and constrain it into reliable manipulation primitives.
   date: '2026-07-09'
   rsi: true
   rsi_track: harness
@@ -2755,7 +2755,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: multimodal-arch
-  summary: 以认知结构组织多模态理解、生成和编辑能力，构建统一多模态智能体
+  summary: This work organizes multimodal understanding, generation, and editing through a cognitive structure to build a unified multimodal agent.
   date: '2026-07-09'
 - title: Artificial Foveated Perception for Mitigating Shortcut Learning in Robotic Foundation Models
   arxiv: '2607.10655'
@@ -2764,7 +2764,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 引入人工中央凹感知，抑制机器人基础模型对视觉捷径的依赖
+  summary: This work introduces artificial foveated perception to reduce robotic foundation models' reliance on visual shortcuts.
   date: '2026-07-12'
 - title: 'ABot-AgentOS: A General Robotic Agent OS with Lifelong Multi-modal Memory'
   arxiv: '2607.10350'
@@ -2773,7 +2773,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 面向通用机器人的智能体操作系统，以终身多模态记忆支持持续学习与任务执行
+  summary: ABot-AgentOS is a general robotic agent operating system that uses lifelong multimodal memory to support continual learning and task execution.
   date: '2026-07-11'
 - title: 'From World Action Models to Embodied Brains: A Roadmap for Open-World Physical Intelligence'
   arxiv: '2607.11689'
@@ -2782,7 +2782,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: survey
-  summary: 梳理从世界动作模型到具身大脑的发展路线，讨论开放世界Physical AI的关键挑战
+  summary: This survey maps the path from world-action models to embodied brains and discusses key challenges for open-world physical intelligence.
   date: '2026-07-13'
 - title: 'ABot-N1: Toward a General Visual Language Navigation Foundation Model'
   arxiv: '2607.10383'
@@ -2791,7 +2791,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: 面向通用视觉语言导航的基础模型，统一多环境感知、推理与导航策略
+  summary: ABot-N1 is a foundation model for general vision-language navigation that unifies perception, reasoning, and navigation policies across environments.
   date: '2026-07-11'
 - title: 'Xiaomi-Robotics-U0: Unified Embodied Synthesis with World Foundation Model'
   arxiv: '2607.11643'
@@ -2800,7 +2800,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 以世界基础模型统一具身数据与场景合成，为机器人训练生成可控经验
+  summary: Xiaomi-Robotics-U0 uses a world foundation model to unify embodied data and scene synthesis for generating controllable robot-training experiences.
   date: '2026-07-13'
 - title: 'UniVR: Thinking in Visual Space for Unified Visual Reasoning'
   arxiv: '2607.12800'
@@ -2809,7 +2809,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: latent-reasoning
-  summary: 在视觉空间中显式思考，统一多类视觉推理任务并减少对纯文本思维链的依赖
+  summary: UniVR reasons explicitly in visual space to unify diverse visual reasoning tasks and reduce dependence on purely textual chains of thought.
   date: '2026-07-14'
 - title: 'ReflectVLN: Training Vision-Language Navigation Agents with Reflective Reasoning'
   arxiv: '2607.12680'
@@ -2818,7 +2818,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
-  summary: 通过反思式推理训练视觉语言导航智能体，使其能够复盘并修正导航决策
+  summary: ReflectVLN trains vision-language navigation agents with reflective reasoning so they can review and correct navigation decisions.
   date: '2026-07-14'
 - title: 'VisCo: Leveraging Large Language Models as Intrinsic Encoders for Visual Token Compression'
   arxiv: '2607.12756'
@@ -2827,7 +2827,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: efficient
-  summary: 用大语言模型作为内在编码器压缩视觉Token，在保留语义的同时降低多模态推理成本
+  summary: VisCo uses a large language model as an intrinsic encoder to compress visual tokens while preserving semantics and reducing multimodal inference cost.
   date: '2026-07-14'
 - title: 'M4World: A Multi-view Multimodal Driving World Model for Interactive Object Manipulation and Minute-long Streaming'
   arxiv: '2607.14005'
@@ -2836,7 +2836,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: world-model
-  summary: 支持交互对象操作和分钟级流式生成的多视角多模态自动驾驶世界模型
+  summary: M4World is a multi-view multimodal driving world model that supports interactive object manipulation and minute-long streaming generation.
   date: '2026-07-15'
 - title: 'Zero2Skill: Bootstrapping Robot Skills through Autonomous Data Collection, Training, and Deployment'
   arxiv: '2607.14047'
@@ -2845,7 +2845,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: 打通自主数据采集、技能训练和部署闭环，从零启动机器人技能学习
+  summary: Zero2Skill closes the loop among autonomous data collection, skill training, and deployment to bootstrap robot skills from scratch.
   date: '2026-07-15'
   featured: true
   rsi: true
@@ -2858,7 +2858,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 以自动化研究流程增强世界动作模型，在更高速度下获得更强策略性能
+  summary: GigaWorld-Policy-0.5 uses an automated research workflow to improve a world-action model's policy performance and execution speed.
   date: '2026-07-15'
 - title: 'RxBrain: Embodied Cognition Foundation Model with Joint Language-Visual Reasoning and Imagination'
   arxiv: '2607.14187'
@@ -2867,7 +2867,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 联合语言—视觉推理与世界想象的具身认知基础模型，提升复杂任务规划能力
+  summary: RxBrain is an embodied cognition foundation model that jointly performs language-visual reasoning and world imagination for complex task planning.
   date: '2026-07-15'
 - title: 'On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability'
   arxiv: '2608.30320'
@@ -2876,7 +2876,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: efficient
-  summary: 系统评估Qwen3.8-Next的稀疏架构、效率与训练稳定性，联合优化GDN、稀疏注意力和MoE设计
+  summary: This work evaluates the sparse architecture, efficiency, and training stability of Qwen3.8-Next while jointly optimizing GDN, sparse attention, and mixture-of-experts design.
   date: '2026-08-31'
 - title: 'Action QFormer: Structured Representation Shaping under Action Supervision in Vision-Language-Action Models'
   arxiv: '2607.14635'
@@ -2885,7 +2885,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: action-token
-  summary: 在动作监督下用Q-Former塑造结构化视觉表征，使VLA特征更贴近控制需求
+  summary: Action QFormer uses action supervision to shape structured visual representations that better align VLA features with control requirements.
   date: '2026-07-16'
 - title: 'FoMoVLA: Bridging Visual Foresight and Motion Guidance for Vision-Language-Action Models'
   arxiv: '2607.14739'
@@ -2894,7 +2894,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 结合视觉前瞻与运动引导，让VLA在预测未来状态的同时生成可执行动作
+  summary: FoMoVLA combines visual foresight with motion guidance so a VLA model can predict future states while generating executable actions.
   date: '2026-07-16'
 - title: Scaling Behavior Foundation Model for Humanoid Robots
   arxiv: '2607.15163'
@@ -2903,7 +2903,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: 扩展人形机器人行为基础模型的数据和模型规模，提升全身技能泛化能力
+  summary: This work scales the data and model size of a behavior foundation model for humanoid robots to improve generalization of whole-body skills.
   date: '2026-07-16'
 - title: 'Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories'
   arxiv: '2607.15330'
@@ -2912,7 +2912,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: 以超过十万小时真实轨迹扩展VLA训练，构建大规模通用机器人策略
+  summary: Xiaomi-Robotics-1 scales VLA training with more than 100,000 hours of real-world trajectories to build a large-scale general robot policy.
   date: '2026-07-16'
   featured: true
 - title: 'RynnBrain 1.1: Towards More Capable and Generalizable Embodied Foundation Model'
@@ -2922,7 +2922,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 增强具身基础模型的感知、推理与行动能力，提高跨任务和跨场景泛化
+  summary: RynnBrain 1.1 strengthens perception, reasoning, and action in an embodied foundation model to improve generalization across tasks and scenes.
   date: '2026-07-20'
 - title: 'PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution'
   arxiv: '2607.16636'
@@ -2931,7 +2931,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 以认知规划和物理执行解耦的自进化操作系统，支持具身智能体持续优化
+  summary: PhyAgentOS decouples cognitive planning from physical execution in a self-evolving operating system for continual embodied-agent improvement.
   date: '2026-07-18'
 - title: 'IGGT4D: Streaming 4D Instance-Grounded Geometry Transformer'
   arxiv: '2607.19228'
@@ -2940,7 +2940,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: spatial
-  summary: 流式预测带实例锚定的4D几何，在动态场景中持续恢复对象级空间结构
+  summary: IGGT4D streams instance-grounded 4D geometry predictions to continuously recover object-level spatial structure in dynamic scenes.
   date: '2026-07-21'
 - title: 'RoboInter1.5: A Holistic Intermediate Representation Suite for Embodied World Modeling and Robotic Manipulation'
   arxiv: '2607.18709'
@@ -2949,7 +2949,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 提供覆盖感知、预测与动作的中间表征套件，连接具身世界建模和机器人操作
+  summary: RoboInter1.5 provides intermediate representations spanning perception, prediction, and action to connect embodied world modeling with robotic manipulation.
   date: '2026-07-21'
 - title: 'PerceptDrive: Perception Prior World-Action Modeling with Adaptive Expert Routing for End-to-End Autonomous Driving'
   arxiv: '2607.20175'
@@ -2958,7 +2958,7 @@
   venue: arXiv 2026
   domain: ad
   subcategory: e2e
-  summary: 以感知先验和自适应专家路由构建世界—动作模型，提升端到端驾驶规划
+  summary: PerceptDrive combines perception priors with adaptive expert routing in a world-action model for end-to-end driving planning.
   date: '2026-07-22'
   featured: true
 - title: 'Capek 0.5: An Execution-Centric Vision-Language Model for Embodied Intelligence'
@@ -2968,7 +2968,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 围绕空间推理、时序理解、动作引导和状态验证构建执行中心的具身视觉语言模型
+  summary: Capek 0.5 is an execution-centric embodied vision-language model organized around spatial reasoning, temporal understanding, action guidance, and state verification.
   date: '2026-08-07'
 - title: 'PhysBrain 1.5: From Vision-Language Models to Physical Foundation Models'
   arxiv: '2609.14973'
@@ -2977,7 +2977,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 统一具身理解、动作生成和未来状态预测，将物理交互建模为共享自回归Token序列
+  summary: PhysBrain 1.5 unifies embodied understanding, action generation, and future-state prediction by representing physical interaction as a shared autoregressive token sequence.
   date: '2026-09-14'
 - title: 'Progress Reward Modeling for Robotic Learning: A Comprehensive Survey'
   arxiv: '2607.21655'
@@ -2986,7 +2986,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: survey
-  summary: 系统综述机器人学习中的进度奖励建模方法、数据、评测与开放问题
+  summary: This survey reviews methods, data, evaluation practices, and open problems in progress reward modeling for robotic learning.
   date: '2026-07-22'
   featured: true
 - title: 'Voyager: An Open-Ended Embodied Agent with Large Language Models'
@@ -2996,7 +2996,7 @@
   venue: NeurIPS 2023 Workshop
   domain: robot
   subcategory: data-pretrain
-  summary: 以自动课程、可增长代码技能库和环境反馈自纠错，奠定开放世界具身终身学习的经典范式
+  summary: Voyager combines an automatic curriculum, a growing library of code-based skills, and environment-feedback-driven self-correction for open-world lifelong embodied learning.
   date: '2023-05-25'
   rsi: true
   rsi_track: foundation
@@ -3010,7 +3010,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: rl-policy
-  summary: 让编程智能体自主执行真实机器人重置、 rollout、验证与代码改进，形成可扩展的物理自动研究闭环
+  summary: ENPIRE lets a coding agent autonomously reset real robots, run rollouts, validate results, and improve policy code in a scalable physical auto-research loop.
   date: '2026-06-18'
   rsi: true
   rsi_track: policy
@@ -3023,7 +3023,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: data-pretrain
-  summary: 通过迭代机器人探索诊断失败、修复代码策略并沉淀可复用技能库，实现开放式持续技能发现
+  summary: ASPIRE iteratively explores with robots, diagnoses failures, repairs code-based policies, and accumulates reusable skills for open-ended continual skill discovery.
   date: '2026-06-30'
   rsi: true
   rsi_track: data
@@ -3037,7 +3037,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 冻结基础模型参数，通过环境 rollout 持续进化可复用技能与上下文代码 Harness
+  summary: This work keeps foundation-model parameters frozen while continually evolving reusable skills and contextual code harnesses through environment rollouts.
   date: '2026-08-11'
   rsi: true
   rsi_track: harness
@@ -3049,7 +3049,7 @@
   venue: arXiv 2026
   domain: general
   subcategory: survey
-  summary: 系统定义人形机器人部署后自进化，梳理自学习、自适应、自优化和自生成机制及安全验证边界
+  summary: This survey defines post-deployment self-evolution for humanoid robots and reviews self-learning, self-adaptation, self-optimization, self-generation, and their safety and validation boundaries.
   date: '2026-09-02'
   rsi: true
   rsi_track: safety
@@ -3061,7 +3061,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 将执行、经验采集、经验进化和再执行闭环统一到可进化记忆、认知核心与动作模型中
+  summary: ME-Brain-1.0 unifies execution, experience collection, experience evolution, and re-execution through evolvable memory, a cognitive core, and an action model.
   date: '2026-09-21'
   rsi: true
   rsi_track: memory
@@ -3073,7 +3073,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 在冻结 VLM 外维护可查询、可修订的机器人身体模型，让真实交互证据持续减少后续规划成本
+  summary: Know Your Body maintains a queryable and revisable robot body model around a frozen VLM, using evidence from real interactions to reduce subsequent planning costs.
   date: '2026-09-22'
   rsi: true
   rsi_track: harness
@@ -3086,7 +3086,7 @@
   venue: arXiv 2026
   domain: robot
   subcategory: vla-arch
-  summary: 用证据门控、版本化记忆、回归检查和回滚机制约束跨任务 Harness 改进，强调可验证的 RSI
+  summary: RegenHarness constrains cross-task harness improvement with evidence gating, versioned memory, regression checks, and rollback mechanisms to support verifiable recursive self-improvement.
   date: '2026-09-23'
   rsi: true
   rsi_track: safety
@@ -3098,7 +3098,7 @@
   venue: arXiv 2023
   domain: robot
   subcategory: data-pretrain
-  summary: 通过少量示范适配新任务与新机械臂，再自主生成训练数据回灌通用策略，是机器人策略权重自改进的代表作
+  summary: RoboCat adapts to new tasks and robot arms from a small number of demonstrations, then generates additional training data to improve its generalist policy.
   date: '2023-06-20'
   rsi: true
   rsi_track: policy
@@ -3111,7 +3111,7 @@
   venue: ICLR 2024
   domain: robot
   subcategory: rl-policy
-  summary: 让大语言模型进化搜索奖励代码，以环境反馈自动改进机器人技能学习与课程设计
+  summary: Eureka uses large language models to evolve reward code through search and environment feedback, automating improvements to robot skill learning and curriculum design.
   date: '2023-10-20'
   rsi: true
   rsi_track: data
@@ -3124,7 +3124,7 @@
   venue: arXiv 2024
   domain: robot
   subcategory: data-pretrain
-  summary: 用基础模型编排机器人集群自主提出目标并收集大规模真实轨迹，构建持续改进所需的数据飞轮
+  summary: AutoRT uses foundation models to orchestrate robot fleets that autonomously propose goals and collect large-scale real-world trajectories for a continual data flywheel.
   date: '2024-01-23'
   rsi: true
   rsi_track: data
@@ -3137,7 +3137,7 @@
   venue: arXiv 2024
   domain: robot
   subcategory: vla-arch
-  summary: 将快速动作策略与慢速失败反思结合，生成纠正动作并从修复样本中持续学习
+  summary: This work combines a fast action policy with slow failure reflection to generate corrective actions and continue learning from recovery examples.
   date: '2024-05-27'
   rsi: true
   rsi_track: memory
@@ -3149,7 +3149,7 @@
   venue: CoRL 2024
   domain: robot
   subcategory: data-pretrain
-  summary: 由视觉语言模型自主生成任务、评估结果并采集三万余条轨迹，闭环提升机器人指令跟随能力
+  summary: This work uses a vision-language model to autonomously generate tasks, evaluate outcomes, and collect more than 30,000 trajectories in a closed loop that improves robot instruction following.
   date: '2024-07-30'
   rsi: true
   rsi_track: data
@@ -3162,7 +3162,7 @@
   venue: ICLR 2026
   domain: robot
   subcategory: world-model-policy
-  summary: 视频规划器反复利用视觉语言模型筛选成功的自生成轨迹训练自身，形成无需手工奖励的改进循环
+  summary: This work repeatedly trains a video planner on successful self-generated trajectories selected by a vision-language model, forming a self-improvement loop without manually designed rewards.
   date: '2025-06-07'
   rsi: true
   rsi_track: policy
@@ -3175,7 +3175,7 @@
   venue: NeurIPS 2025
   domain: robot
   subcategory: rl-policy
-  summary: 以学习到的任务进度奖励驱动机器人集群自主练习，获得超越原始模仿数据的部署后能力
+  summary: This work uses learned task-progress rewards to drive autonomous practice by robot fleets, improving post-deployment capabilities beyond those in the original imitation data.
   date: '2025-09-18'
   rsi: true
   rsi_track: policy
@@ -3188,9 +3188,452 @@
   venue: ICLR 2026
   domain: robot
   subcategory: rl-policy
-  summary: 用残差强化学习探索 VLA 失败区域、采集恢复轨迹，再将部署对齐经验蒸馏回通用策略
+  summary: This work uses residual reinforcement learning to explore VLA failure regions and collect recovery trajectories, then distills deployment-aligned experience back into a general policy.
   date: '2025-11-01'
   rsi: true
   rsi_track: policy
   rsi_order: 9
   project: https://wenlixiao.com/self-improve-VLA-PLD
+- title: 'ChauffeurNet: Learning to Drive by Imitating the Best and Synthesizing the Worst'
+  arxiv: '1812.03079'
+  url: https://arxiv.org/abs/1812.03079
+  institution: Waymo
+  venue: arXiv Technical Report 2018
+  domain: ad
+  subcategory: planning
+  summary: Introduces robust imitation learning for autonomous driving by perturbing expert trajectories and explicitly penalizing unsafe outcomes.
+  date: '2018-12-07'
+  project: https://sites.google.com/view/waymo-learn-to-drive
+  classic: true
+  classic_order: 10
+- title: 'Wayformer: Motion Forecasting via Simple & Efficient Attention Networks'
+  arxiv: '2207.05844'
+  url: https://arxiv.org/abs/2207.05844
+  institution: Waymo
+  venue: CoRL 2022
+  domain: ad
+  subcategory: planning
+  summary: Uses a homogeneous attention architecture to fuse heterogeneous road and agent inputs for scalable multimodal motion forecasting.
+  date: '2022-07-12'
+  classic: true
+  classic_order: 20
+- title: 'MotionLM: Multi-Agent Motion Forecasting as Language Modeling'
+  arxiv: '2309.16534'
+  url: https://arxiv.org/abs/2309.16534
+  institution: Waymo
+  venue: ICCV 2023
+  domain: ad
+  subcategory: planning
+  summary: Represents continuous trajectories as discrete motion tokens and autoregressively models joint futures for interacting road agents.
+  date: '2023-09-28'
+  classic: true
+  classic_order: 30
+- title: 'GAIA-1: A Generative World Model for Autonomous Driving'
+  arxiv: '2309.17080'
+  url: https://arxiv.org/abs/2309.17080
+  institution: Wayve
+  venue: arXiv Technical Report 2023
+  domain: ad
+  subcategory: world-model
+  summary: Learns a generative driving world model conditioned on video, text, and actions to synthesize realistic future scenarios.
+  date: '2023-09-29'
+  project: https://wayve.ai/thinking/scaling-gaia-1/
+  classic: true
+  classic_order: 40
+- title: 'EMMA: End-to-End Multimodal Model for Autonomous Driving'
+  arxiv: '2410.23262'
+  url: https://arxiv.org/abs/2410.23262
+  institution: Waymo
+  venue: TMLR 2025
+  domain: ad
+  subcategory: e2e
+  summary: Uses a multimodal language-model backbone to map camera observations and text directly to trajectories, objects, and road structure.
+  date: '2024-10-30'
+  project: https://waymo.com/blog/2024/10/introducing-emma/
+  classic: true
+  classic_order: 50
+- title: 'CLIPort: What and Where Pathways for Robotic Manipulation'
+  arxiv: '2109.12098'
+  url: https://arxiv.org/abs/2109.12098
+  institution: NVIDIA, UW
+  venue: CoRL 2021
+  domain: robot
+  subcategory: vla-arch
+  summary: Combines CLIP's semantic representations with Transporter's spatial precision for language-conditioned tabletop manipulation.
+  date: '2021-09-24'
+  code: https://github.com/cliport/cliport
+  project: https://cliport.github.io/
+  classic: true
+  classic_order: 110
+- title: 'Do As I Can, Not As I Say: Grounding Language in Robotic Affordances'
+  arxiv: '2204.01691'
+  url: https://arxiv.org/abs/2204.01691
+  institution: Robotics at Google, Everyday Robots, Google Research
+  venue: CoRL 2022
+  domain: robot
+  subcategory: vla-arch
+  summary: Grounds language-model plans with learned skill value functions so a robot selects actions that are both useful and executable.
+  date: '2022-04-04'
+  project: https://say-can.github.io/
+  classic: true
+  classic_order: 120
+- title: 'Inner Monologue: Embodied Reasoning through Planning with Language Models'
+  arxiv: '2207.05608'
+  url: https://arxiv.org/abs/2207.05608
+  institution: Robotics at Google
+  venue: CoRL 2022
+  domain: robot
+  subcategory: vla-arch
+  summary: Feeds environment feedback into an ongoing language-model dialogue to support closed-loop planning and replanning for robots.
+  date: '2022-07-12'
+  project: https://innermonologue.github.io/
+  classic: true
+  classic_order: 130
+- title: 'Code as Policies: Language Model Programs for Embodied Control'
+  arxiv: '2209.07753'
+  url: https://arxiv.org/abs/2209.07753
+  institution: Robotics at Google
+  venue: ICRA 2023
+  domain: robot
+  subcategory: vla-arch
+  summary: Uses language models to generate executable policy code that composes perception, control, and reusable robot skills.
+  date: '2022-09-16'
+  project: https://code-as-policies.github.io/
+  classic: true
+  classic_order: 140
+- title: 'RT-1: Robotics Transformer for Real-World Control at Scale'
+  arxiv: '2212.06817'
+  url: https://arxiv.org/abs/2212.06817
+  institution: Robotics at Google, Everyday Robots, Google Research
+  venue: RSS 2023
+  domain: robot
+  subcategory: vla-arch
+  summary: Scales a token-based robotics transformer across 130,000 real-world episodes and hundreds of language-conditioned tasks.
+  date: '2022-12-13'
+  code: https://github.com/google-research/robotics_transformer
+  project: https://robotics-transformer1.github.io/
+  classic: true
+  classic_order: 150
+- title: 'PaLM-E: An Embodied Multimodal Language Model'
+  arxiv: '2303.03378'
+  url: https://arxiv.org/abs/2303.03378
+  institution: Robotics at Google, TU Berlin, Google Research
+  venue: ICML 2023
+  domain: robot
+  subcategory: vla-arch
+  summary: Injects continuous sensor and state representations into a large language model for embodied planning and visual-language tasks.
+  date: '2023-03-06'
+  project: https://palm-e.github.io/
+  classic: true
+  classic_order: 160
+- title: 'RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control'
+  arxiv: '2307.15818'
+  url: https://arxiv.org/abs/2307.15818
+  institution: Google DeepMind
+  venue: arXiv 2023
+  domain: robot
+  subcategory: vla-arch
+  summary: Co-fine-tunes web-scale vision-language data and robot trajectories to express actions as tokens and transfer semantic knowledge to control.
+  date: '2023-07-28'
+  project: https://robotics-transformer2.github.io/
+  classic: true
+  classic_order: 170
+- title: 'VIMA: General Robot Manipulation with Multimodal Prompts'
+  arxiv: '2210.03094'
+  url: https://arxiv.org/abs/2210.03094
+  institution: NVIDIA, Stanford, Caltech, UT Austin
+  venue: ICML 2023
+  domain: robot
+  subcategory: vla-arch
+  summary: Frames diverse manipulation tasks as interleaved text-and-visual prompts and predicts motor actions autoregressively.
+  date: '2022-10-06'
+  code: https://github.com/vimalabs/VIMA
+  project: https://vimalabs.github.io/
+  classic: true
+  classic_order: 180
+- title: 'Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation'
+  arxiv: '2209.05451'
+  url: https://arxiv.org/abs/2209.05451
+  institution: NVIDIA, UW
+  venue: CoRL 2022
+  domain: robot
+  subcategory: vla-arch
+  summary: Uses a language-conditioned Perceiver over voxelized RGB-D observations to predict discretized 6-DoF manipulation actions.
+  date: '2022-09-12'
+  code: https://github.com/peract/peract
+  project: https://peract.github.io/
+  classic: true
+  classic_order: 190
+- title: 'Open X-Embodiment: Robotic Learning Datasets and RT-X Models'
+  arxiv: '2310.08864'
+  url: https://arxiv.org/abs/2310.08864
+  institution: Google DeepMind, UC Berkeley, Stanford
+  venue: ICRA 2024
+  domain: robot
+  subcategory: data-pretrain
+  summary: Standardizes data from many robot embodiments and demonstrates cross-embodiment transfer with the RT-X family of policies.
+  date: '2023-10-13'
+  project: https://robotics-transformer-x.github.io/
+  classic: true
+  classic_order: 200
+- title: 'Diffusion Policy: Visuomotor Policy Learning via Action Diffusion'
+  arxiv: '2303.04137'
+  url: https://arxiv.org/abs/2303.04137
+  institution: Columbia, MIT, TRI
+  venue: RSS 2023
+  domain: robot
+  subcategory: action-token
+  summary: Models visuomotor control as conditional action-sequence diffusion, capturing multimodal behavior with stable receding-horizon execution.
+  date: '2023-03-07'
+  code: https://github.com/real-stanford/diffusion_policy
+  project: https://diffusion-policy.cs.columbia.edu/
+  classic: true
+  classic_order: 210
+- title: Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware
+  arxiv: '2304.13705'
+  url: https://arxiv.org/abs/2304.13705
+  institution: Stanford, UC Berkeley
+  venue: RSS 2023
+  domain: robot
+  subcategory: action-token
+  summary: Introduces ALOHA and Action Chunking with Transformers for precise bimanual imitation learning from low-cost teleoperation.
+  date: '2023-04-23'
+  code: https://github.com/tonyzhaozh/aloha
+  project: https://tonyzhaozh.github.io/aloha/
+  classic: true
+  classic_order: 220
+- title: 'BridgeData V2: A Dataset for Robot Learning at Scale'
+  arxiv: '2308.12952'
+  url: https://arxiv.org/abs/2308.12952
+  institution: UC Berkeley
+  venue: CoRL 2023
+  domain: robot
+  subcategory: data-pretrain
+  summary: Provides more than 60,000 diverse manipulation trajectories across 24 environments for scalable language- and goal-conditioned robot learning.
+  date: '2023-08-24'
+  project: https://rail-berkeley.github.io/bridgedata/
+  classic: true
+  classic_order: 230
+- title: 'Octo: An Open-Source Generalist Robot Policy'
+  arxiv: '2405.12213'
+  url: https://arxiv.org/abs/2405.12213
+  institution: UC Berkeley, Stanford, CMU, Google DeepMind
+  venue: RSS 2024
+  domain: robot
+  subcategory: vla-arch
+  summary: Pretrains an open transformer policy on heterogeneous robot datasets and adapts it to new embodiments and tasks.
+  date: '2024-05-20'
+  code: https://github.com/octo-models/octo
+  project: https://octo-models.github.io/
+  classic: true
+  classic_order: 240
+- title: 'DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset'
+  arxiv: '2403.12945'
+  url: https://arxiv.org/abs/2403.12945
+  institution: Stanford, UC Berkeley, TRI, CMU, UT Austin, Univ of Montreal, Univ of Edinburgh, Princeton, UW, KAIST, UCSD, Google DeepMind, UC Davis, UPenn, Columbia, Yonsei Univ
+  venue: RSS 2024
+  domain: robot
+  subcategory: data-pretrain
+  summary: Aggregates 76,000 language-annotated manipulation trajectories across hundreds of real-world scenes using a standardized collection setup.
+  date: '2024-03-19'
+  project: https://droid-dataset.github.io/
+  classic: true
+  classic_order: 250
+- title: 'OpenVLA: An Open-Source Vision-Language-Action Model'
+  arxiv: '2406.09246'
+  url: https://arxiv.org/abs/2406.09246
+  institution: Stanford, UC Berkeley, Google DeepMind, MIT, TRI
+  venue: CoRL 2024
+  domain: robot
+  subcategory: vla-arch
+  summary: Releases a 7B-parameter open VLA trained on 970,000 robot demonstrations with practical fine-tuning and deployment tools.
+  date: '2024-06-13'
+  code: https://github.com/openvla/openvla
+  project: https://openvla.github.io/
+  classic: true
+  classic_order: 260
+- title: 'Mobile ALOHA: Learning Bimanual Mobile Manipulation with Low-Cost Whole-Body Teleoperation'
+  arxiv: '2401.02117'
+  url: https://arxiv.org/abs/2401.02117
+  institution: Stanford
+  venue: CoRL 2024
+  domain: robot
+  subcategory: data-pretrain
+  summary: Extends low-cost bimanual teleoperation to whole-body mobile manipulation and co-trains policies with static ALOHA data.
+  date: '2024-01-04'
+  code: https://github.com/MarkFzp/mobile-aloha
+  project: https://mobile-aloha.github.io/
+  classic: true
+  classic_order: 270
+- title: 'π0: A Vision-Language-Action Flow Model for General Robot Control'
+  arxiv: '2410.24164'
+  url: https://arxiv.org/abs/2410.24164
+  institution: Physical Intelligence
+  venue: RSS 2025
+  domain: robot
+  subcategory: action-token
+  summary: Couples a pretrained vision-language backbone with flow matching to generate continuous actions for diverse robot embodiments.
+  date: '2024-10-31'
+  code: https://github.com/Physical-Intelligence/openpi
+  project: https://www.pi.website/research/pi0
+  classic: true
+  classic_order: 280
+- title: 'FAST: Efficient Action Tokenization for Vision-Language-Action Models'
+  arxiv: '2501.09747'
+  url: https://arxiv.org/abs/2501.09747
+  institution: Physical Intelligence, UC Berkeley, Stanford
+  venue: arXiv 2025
+  domain: robot
+  subcategory: action-token
+  summary: Compresses continuous robot action chunks into discrete tokens that autoregressive VLA models can learn and decode efficiently.
+  date: '2025-01-16'
+  code: https://github.com/Physical-Intelligence/openpi
+  project: https://www.pi.website/research/fast
+  classic: true
+  classic_order: 290
+- title: 'π0.5: a Vision-Language-Action Model with Open-World Generalization'
+  arxiv: '2504.16054'
+  url: https://arxiv.org/abs/2504.16054
+  institution: Physical Intelligence
+  venue: arXiv 2025
+  domain: robot
+  subcategory: vla-arch
+  summary: Co-trains heterogeneous robot data, high-level semantic tasks, and web knowledge to generalize manipulation to unseen environments.
+  date: '2025-04-22'
+  code: https://github.com/Physical-Intelligence/openpi
+  project: https://www.pi.website/blog/pi05
+  classic: true
+  classic_order: 300
+- title: 'Grounded Language-Image Pre-training'
+  arxiv: '2112.03857'
+  url: https://arxiv.org/abs/2112.03857
+  institution: Microsoft Research, UCLA, UW, UW-Madison
+  venue: CVPR 2022
+  domain: general
+  subcategory: spatial
+  summary: Unifies object detection and phrase grounding to learn transferable object-level visual-language representations.
+  date: '2021-12-07'
+  code: https://github.com/microsoft/GLIP
+  classic: true
+  classic_order: 410
+- title: Simple Open-Vocabulary Object Detection with Vision Transformers
+  arxiv: '2205.06230'
+  url: https://arxiv.org/abs/2205.06230
+  institution: Google Research
+  venue: ECCV 2022
+  domain: general
+  subcategory: spatial
+  summary: Introduces OWL-ViT, which transfers image-text pretraining to open-vocabulary detection using text-conditioned classification.
+  date: '2022-05-12'
+  code: https://github.com/google-research/scenic/tree/main/scenic/projects/owl_vit
+  classic: true
+  classic_order: 420
+- title: 'DetCLIP: Dictionary-Enriched Visual-Concept Paralleled Pre-training for Open-world Detection'
+  arxiv: '2209.09407'
+  url: https://arxiv.org/abs/2209.09407
+  institution: Huawei, SYSU, HKUST
+  venue: NeurIPS 2022
+  domain: general
+  subcategory: spatial
+  summary: Enriches open-world detector pretraining with a concept dictionary and efficient parallel visual-concept alignment.
+  date: '2022-09-20'
+  classic: true
+  classic_order: 430
+- title: 'Grounding DINO: Marrying DINO with Grounded Pre-Training for Open-Set Object Detection'
+  arxiv: '2303.05499'
+  url: https://arxiv.org/abs/2303.05499
+  institution: IDEA Research, HKUST, Tsinghua, CUHK-SZ, Microsoft Research, SCUT
+  venue: ECCV 2024
+  domain: general
+  subcategory: spatial
+  summary: Combines a transformer detector with grounded language pretraining for open-set detection from category names or referring expressions.
+  date: '2023-03-09'
+  code: https://github.com/IDEA-Research/GroundingDINO
+  classic: true
+  classic_order: 440
+- title: 'DetCLIPv2: Scalable Open-Vocabulary Object Detection Pre-training via Word-Region Alignment'
+  arxiv: '2304.04514'
+  url: https://arxiv.org/abs/2304.04514
+  institution: Huawei, SYSU, HKUST
+  venue: CVPR 2023
+  domain: general
+  subcategory: spatial
+  summary: Scales open-vocabulary detector pretraining by learning fine-grained word-region alignment directly from image-text pairs.
+  date: '2023-04-10'
+  classic: true
+  classic_order: 450
+- title: Scaling Open-Vocabulary Object Detection
+  arxiv: '2306.09683'
+  url: https://arxiv.org/abs/2306.09683
+  institution: Google DeepMind
+  venue: CVPR 2024
+  domain: general
+  subcategory: spatial
+  summary: Introduces OWLv2 and a scalable self-training recipe that learns open-vocabulary detection from web-scale image-text data.
+  date: '2023-06-16'
+  code: https://github.com/google-research/scenic/tree/main/scenic/projects/owl_vit
+  classic: true
+  classic_order: 460
+- title: 'MineDojo: Building Open-Ended Embodied Agents with Internet-Scale Knowledge'
+  arxiv: '2206.08853'
+  url: https://arxiv.org/abs/2206.08853
+  institution: NVIDIA, Caltech, Stanford, Columbia, SJTU, UT Austin
+  venue: NeurIPS 2022
+  domain: general
+  subcategory: physical-benchmark
+  summary: Provides an open-ended Minecraft environment, internet-scale multimodal knowledge, and learned rewards for language-specified embodied tasks.
+  date: '2022-06-17'
+  code: https://github.com/MineDojo/MineDojo
+  project: https://minedojo.org/
+  classic: true
+  classic_order: 470
+- title: 'Genie: Generative Interactive Environments'
+  arxiv: '2402.15391'
+  url: https://arxiv.org/abs/2402.15391
+  institution: Google DeepMind
+  venue: ICML 2024
+  domain: general
+  subcategory: multimodal-arch
+  summary: Learns action-controllable interactive environments from unlabeled video through latent actions and autoregressive world modeling.
+  date: '2024-02-23'
+  project: https://sites.google.com/view/genie-2024/
+  classic: true
+  classic_order: 480
+- title: Planning-oriented Autonomous Driving
+  arxiv: '2212.10156'
+  url: https://arxiv.org/abs/2212.10156
+  institution: Shanghai AI Lab, WHU, SenseTime
+  venue: CVPR 2023
+  domain: ad
+  subcategory: e2e
+  summary: UniAD unifies perception, tracking, motion forecasting, occupancy prediction, and planning through planning-oriented task coordination.
+  date: '2022-12-20'
+  code: https://github.com/OpenDriveLab/UniAD
+  project: https://opendrivelab.com/AutonomousDriving
+  classic: true
+  classic_order: 25
+- title: 'DriveLM: Driving with Graph Visual Question Answering'
+  arxiv: '2312.14150'
+  url: https://arxiv.org/abs/2312.14150
+  institution: Shanghai AI Lab, Univ of Tübingen, Tübingen AI Center, HKU
+  venue: ECCV 2024
+  domain: ad
+  subcategory: e2e
+  summary: Introduces graph-structured visual question answering across perception, prediction, and planning for explainable end-to-end driving.
+  date: '2023-12-21'
+  code: https://github.com/OpenDriveLab/DriveLM
+  project: https://opendrivelab.com/DriveLM/
+  classic: true
+  classic_order: 42
+- title: 'DriveVLM: The Convergence of Autonomous Driving and Large Vision-Language Models'
+  arxiv: '2402.12289'
+  url: https://arxiv.org/abs/2402.12289
+  institution: Tsinghua, Li Auto
+  venue: CoRL 2024
+  domain: ad
+  subcategory: e2e
+  summary: Combines scene description, analysis, and hierarchical planning in a VLM-based driving system, with a dual architecture for real-world deployment.
+  date: '2024-02-19'
+  project: https://tsinghua-mars-lab.github.io/DriveVLM/
+  classic: true
+  classic_order: 44

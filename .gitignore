@@ -1,6 +1,7 @@
 daily/**/*.json
 .pdf_cache/
 scripts/__pycache__/
+tests/__pycache__/
 scripts/verify_output.json
 scripts/verify_result.txt
 scripts/test_*.py

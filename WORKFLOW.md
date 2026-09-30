@@ -201,8 +201,13 @@ All paper metadata lives in `data/papers.yaml`:
   date: "2026-03-10"
   code: https://github.com/example/repo  # optional
   project: https://example.github.io/    # optional
+  classic: true                          # optional: canonical foundation paper
+  classic_order: 10                      # required with classic
+  featured: true                         # optional: curated newer spotlight
+  featured_order: 10                     # optional: deterministic order
   rsi: true                              # optional: include in RSI map category
   rsi_track: harness                     # foundation/data/memory/harness/policy/safety
+  rsi_order: 10                          # required with rsi
 ```
 
 ### Generated Outputs
@@ -216,13 +221,16 @@ Running `python scripts/generate_readme.py` produces three files:
 | `BY_INSTITUTION.md` | Papers grouped by institution, sorted by paper count |
 
 Features of the generated README:
-- **Friendly hero** — project mascot, focused badges, and direct links to every browsing view
-- **Start Here paths** — guided routes for newcomers, robotics researchers, and autonomous-driving researchers
-- **RSI map category** — a cross-cutting, collapsible index for open-ended, lifelong, and post-deployment embodied self-improvement
-- **Editorial discovery** — curated picks and recent additions with one-line explanations
+- **Focused hero** — project identity, live paper count, and direct links to every browsing view
+- **Learning paths** — guided routes for newcomers, robotics researchers, autonomous-driving researchers, and embodied self-improvement
+- **Canonical foundations** — a deliberately small, ordered reading list of field-shaping papers
+- **RSI map category** — a cross-cutting index that links to each paper's single full catalog entry
+- **Editorial discovery** — deterministic curated spotlights and recent additions with one-line explanations
 - **Category map** — stable topic anchors with counts, icons, and short descriptions
-- **Collapsible catalog** — each subcategory in a `<details>` block with plain dates and paper summaries
+- **Mobile-aware catalog** — four-column collapsible topic tables with dates grouped alongside institutions
 - **Daily Feed link** — prominent entry point to the daily arXiv digest
+
+Before generation, `validate_papers.py` enforces the schema, taxonomy, normalized title/arXiv deduplication, date and URL formats, verified institutions, English summaries, and deterministic curation order. Institution aliases are normalized in generated views, and institution pages sort papers by the explicit `date` field rather than by arXiv ID.
 
 ---
 
@@ -275,7 +283,9 @@ Papers can be added from multiple sources:
 After editing `papers.yaml`, run:
 
 ```bash
-python scripts/generate_readme.py 2026-07-23
+python scripts/validate_papers.py
+python scripts/generate_readme.py
+python scripts/verify_links.py
 ```
 
 This regenerates all three view files (`README.md`, `TIMELINE.md`, `BY_INSTITUTION.md`).
@@ -290,6 +300,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete schema, category list, a
 | `fetch_daily.py` | Fetch arXiv papers, filter, generate daily report | Called by `daily_job.py` automatically |
 | `daily_job.py` | Orchestrate daily workflow: fetch → commit → push → notify | Runs via Task Scheduler at 09:30 (Tue–Sat) |
 | `generate_readme.py` | Generate README + Timeline + By-Institution from `papers.yaml` | After adding/editing papers in YAML |
+| `validate_papers.py` | Validate schema, taxonomy, duplicates, metadata, and English summaries | Before every main-list generation |
+| `verify_links.py` | Check canonical paper, code, project, and resource links | Before publishing a large curation update |
 | `regen_daily.py <date>` | Regenerate a daily report from cached JSON data | After updating institution logic |
 | `inst_utils.py` | Shared institution patterns, PDF extraction, TIER1 list | Imported by other scripts (not run directly) |
 | `verify_institutions.py` | Compare YAML institutions against PDF extraction | Audit institution accuracy |
@@ -309,7 +321,8 @@ awesome-vla-papers/
 ├── CONTRIBUTING.md            # Friendly contribution guide and schema
 ├── WORKFLOW.md                # This document
 ├── data/
-│   └── papers.yaml            # Canonical paper data (single source of truth)
+│   ├── papers.yaml            # Canonical paper data (single source of truth)
+│   └── resources.yaml         # Curated non-paper research systems
 ├── daily/
 │   ├── README.md              # Daily report index with table overview
 │   └── YYYY/MM/
@@ -320,6 +333,8 @@ awesome-vla-papers/
 │   ├── daily_job.py           # Scheduled wrapper (fetch → commit → push → notify)
 │   ├── regen_daily.py         # Regenerate daily report from cached JSON
 │   ├── generate_readme.py     # Generate main README from papers.yaml
+│   ├── validate_papers.py     # Fail-fast canonical data validation
+│   ├── verify_links.py        # Concurrent live-link verification
 │   ├── inst_utils.py          # Shared institution identification logic
 │   ├── verify_institutions.py # Audit YAML vs PDF institutions
 │   └── fetch_dates.py         # Backfill paper dates from arXiv

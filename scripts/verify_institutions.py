@@ -1,4 +1,5 @@
 """Verify institutions in papers.yaml against PDF extraction."""
+import argparse
 import json
 import sys
 import time
@@ -13,8 +14,33 @@ YAML_PATH = ROOT / "data" / "papers.yaml"
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--ids",
+        nargs="*",
+        default=[],
+        help="Only verify these arXiv IDs (space-separated).",
+    )
+    parser.add_argument(
+        "--no-write",
+        action="store_true",
+        help="Print results without replacing scripts/verify_output.json.",
+    )
+    args = parser.parse_args()
+
     with open(YAML_PATH, "r", encoding="utf-8") as f:
         papers = yaml.safe_load(f)
+    if args.ids:
+        requested = {aid.removeprefix("arXiv:").split("v", 1)[0] for aid in args.ids}
+        papers = [
+            paper
+            for paper in papers
+            if str(paper.get("arxiv", "")).split("v", 1)[0] in requested
+        ]
+        found = {str(paper.get("arxiv", "")).split("v", 1)[0] for paper in papers}
+        missing = sorted(requested - found)
+        if missing:
+            print(f"IDs not found in YAML: {', '.join(missing)}", file=sys.stderr)
 
     sys.stdout.reconfigure(encoding='utf-8')
 
@@ -46,10 +72,11 @@ def main():
         results.append({"idx": i, "title": title, "old": old_inst, "new": pdf_inst, "status": status})
         time.sleep(1)
 
-    out_path = ROOT / "scripts" / "verify_output.json"
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(results, f, ensure_ascii=False, indent=2)
-    print(f"\nResults saved to {out_path}")
+    if not args.no_write:
+        out_path = ROOT / "scripts" / "verify_output.json"
+        with open(out_path, "w", encoding="utf-8") as f:
+            json.dump(results, f, ensure_ascii=False, indent=2)
+        print(f"\nResults saved to {out_path}")
     print(f"Total: {len(papers)}, Mismatches: {sum(1 for r in results if r['status']=='MISMATCH')}")
 
 

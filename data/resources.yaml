@@ -1,0 +1,5 @@
+- title: PhysicalRSI 1.0
+  url: https://mmlab.hk/research/PhysicalRSI
+  institution: HKU MMLab
+  summary: Connects physical interaction, RoboDojo evaluation, and iterative embodied-system improvement in a public system baseline.
+  rsi_track: foundation

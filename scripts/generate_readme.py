@@ -7,8 +7,8 @@ from collections import defaultdict
 
 ROOT = Path(__file__).parent.parent
 YAML_PATH = ROOT / "data" / "papers.yaml"
+RESOURCES_PATH = ROOT / "data" / "resources.yaml"
 REPO_URL = "https://github.com/hanjianhua44/Awesome-VLA-Papers"
-README_LAST_UPDATED = "2026-07-23"
 
 DOMAIN_ORDER = ["ad", "robot", "general"]
 DOMAIN_LABELS = {
@@ -106,10 +106,36 @@ RSI_TRACK_DESCRIPTIONS = {
     "safety": "Verification, regression testing, rollback, and evaluation for bounded self-improvement.",
 }
 
+INSTITUTION_ALIASES = {
+    "Alibaba DAMO": "Alibaba",
+    "Alibaba Group": "Alibaba",
+    "Ant Digital Technologies": "Ant Group",
+    "ByteDance Seed": "ByteDance",
+    "DeepSeek AI": "DeepSeek",
+    "Edinburgh": "Univ of Edinburgh",
+    "HK PolyU": "PolyU",
+    "Meta": "Meta AI",
+    "Meta FAIR": "Meta AI",
+    "Microsoft AI": "Microsoft Research",
+    "MSRA": "Microsoft Research",
+    "Northeastern": "Northeastern Univ",
+    "Tsinghua (AIR)": "Tsinghua",
+    "Univ of Oxford": "Oxford",
+    "Xiaomi EV": "Xiaomi",
+    "XPeng Robotics": "XPeng",
+}
+
 
 def load_papers():
     with open(YAML_PATH, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
+
+
+def load_resources():
+    if not RESOURCES_PATH.exists():
+        return []
+    with open(RESOURCES_PATH, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f) or []
 
 
 MONTH_NAMES = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -169,6 +195,19 @@ def paper_links(p: dict) -> str:
     return links
 
 
+def canonical_institution(name: str) -> str:
+    return INSTITUTION_ALIASES.get(name.strip(), name.strip())
+
+
+def paper_institutions(p: dict) -> list[str]:
+    institutions = []
+    for raw_name in str(p.get("institution", "")).split(","):
+        name = canonical_institution(raw_name)
+        if name and name not in institutions:
+            institutions.append(name)
+    return institutions
+
+
 def paper_summary(p: dict) -> str:
     """Return a useful one-line description, replacing legacy placeholders."""
     summary = " ".join(str(p.get("summary") or "").split()).strip()
@@ -204,10 +243,10 @@ def paper_row(p: dict) -> str:
     year, month, day = extract_date(p)
     title = markdown_cell(p["title"])
     summary = markdown_cell(paper_summary(p))
-    institution = markdown_cell(p.get("institution"), "Unknown")
+    institution = markdown_cell(", ".join(paper_institutions(p)), "Unknown")
     return (
-        f"| **{title}** | {summary} | {institution} | "
-        f"{format_date(year, month, day)} | {paper_links(p)} |"
+        f"| **{title}** | {summary} | {institution}<br><sub>{format_date(year, month, day)}</sub> | "
+        f"{paper_links(p)} |"
     )
 
 
@@ -225,15 +264,23 @@ def _latest_paper_date(papers: list) -> str:
 
 
 def generate_readme(papers: list) -> str:
-    last_updated = _DATE_OVERRIDE or README_LAST_UPDATED
+    last_updated = _latest_paper_date(papers)
     total = len(papers)
+    resources = load_resources()
 
     grouped = defaultdict(lambda: defaultdict(list))
     for p in papers:
         grouped[p["domain"]][p["subcategory"]].append(p)
 
     domain_counts = {dom: sum(len(v) for v in grouped[dom].values()) for dom in DOMAIN_ORDER}
-    featured = [p for p in papers if p.get("featured")]
+    classics = sorted(
+        (p for p in papers if p.get("classic")),
+        key=lambda p: (int(p.get("classic_order", 999)), tuple(-v for v in extract_date(p))),
+    )
+    featured = sorted(
+        (p for p in papers if p.get("featured")),
+        key=lambda p: (int(p.get("featured_order", 999)), tuple(-v for v in extract_date(p))),
+    )
     if not featured:
         featured = sorted(papers, key=extract_date, reverse=True)[:8]
     recent = sorted(papers, key=extract_date, reverse=True)[:8]
@@ -243,8 +290,10 @@ def generate_readme(papers: list) -> str:
     )
     rsi_track_counts = {
         track: sum(1 for p in rsi_papers if p.get("rsi_track") == track)
+        + sum(1 for resource in resources if resource.get("rsi_track") == track)
         for track in RSI_TRACK_LABELS
     }
+    rsi_total = len(rsi_papers) + len(resources)
 
     lines = []
     lines.append('<p align="center">')
@@ -276,33 +325,53 @@ def generate_readme(papers: list) -> str:
     lines.append("")
     lines.append("---")
     lines.append("")
-    lines.append("## 👋 Welcome, human!")
+    lines.append("## Why this list")
     lines.append("")
-    lines.append("A **Vision-Language-Action (VLA)** model turns what an agent *sees* and what a human *asks* into what the agent *does*. This repository organizes the fast-moving literature into approachable paths, short explanations, and a complete searchable catalog.")
+    lines.append("A **Vision-Language-Action (VLA)** model connects what an agent *sees*, what a human *asks*, and what the agent *does*. This repository combines a carefully checked foundation set with a continuously updated frontier catalog, so newcomers can learn the field and experienced researchers can track it.")
     lines.append("")
-    lines.append("> 📡 **Want the newest papers?** Visit the [Daily arXiv Feed](daily/) for an automatically generated digest from `cs.CV` and `cs.RO`.")
+    lines.append("> **Follow the frontier:** the [Daily arXiv Feed](daily/) scans `cs.CV` and `cs.RO`; this main list only promotes papers after curation.")
     lines.append("")
-    lines.append("## 🚀 Start Here")
+    lines.append("## Learning paths")
     lines.append("")
-    lines.append("- **New to VLA?** Begin with [Surveys](#general-survey), then explore [VLA Architectures](#robot-vla-arch) and [Action Tokenization](#robot-action-token).")
-    lines.append("- **Building robot policies?** Follow [World Models & Policy Co-learning](#robot-world-model-policy), [RL & Policy Optimization](#robot-rl-policy), and [Data & Pre-training](#robot-data-pretrain).")
-    lines.append("- **Interested in models that keep improving after deployment?** Open [RSI & Agent Harness](#rsi-papers) in the paper map.")
-    lines.append("- **Working on autonomous driving?** Jump to [End-to-End VLA](#ad-e2e), [Driving World Models](#ad-world-model), and [Safety & Benchmarks](#ad-safety-benchmark).")
+    lines.append("- **Learn the basics:** [Surveys](#general-survey) → [Multimodal foundations](#general-multimodal-arch) → [VLA architectures](#robot-vla-arch) → [Action tokenization](#robot-action-token)")
+    lines.append("- **Build robot policies:** [Data & pre-training](#robot-data-pretrain) → [World models & policy co-learning](#robot-world-model-policy) → [RL & policy optimization](#robot-rl-policy)")
+    lines.append("- **Study continual improvement:** [RSI & agent harness](#rsi-papers) → memory, skill discovery, harness evolution, policy updates, and safety")
+    lines.append("- **Explore autonomous driving:** [End-to-end VLA](#ad-e2e) → [World models](#ad-world-model) → [Planning & control](#ad-planning) → [Safety & benchmarks](#ad-safety-benchmark)")
     lines.append("")
-    lines.append("## ⭐ Editor's Picks")
+    if classics:
+        lines.append("## Canonical foundations")
+        lines.append("")
+        lines.append("> A compact reading list of field-shaping work. “Canonical” means historically or technically influential, not a ranking.")
+        lines.append("")
+        for dom in DOMAIN_ORDER:
+            domain_classics = [p for p in classics if p["domain"] == dom]
+            if not domain_classics:
+                continue
+            lines.append(f"### {DOMAIN_ICONS[dom]} {DOMAIN_NAMES[dom]}")
+            lines.append("")
+            lines.append("| Paper | Why it matters | Topic | Links |")
+            lines.append("|:------|:---------------|:------|:------|")
+            for p in domain_classics:
+                lines.append(
+                    f"| **{markdown_cell(p['title'])}** | {markdown_cell(paper_summary(p))} | "
+                    f"[{SUB_LABELS[p['subcategory']]}](#{category_anchor(p['domain'], p['subcategory'])}) | "
+                    f"{paper_links(p)} |"
+                )
+            lines.append("")
+    lines.append("## Curated spotlights")
     lines.append("")
-    lines.append("> A small, opinionated selection for discovering the field — not a benchmark ranking.")
+    lines.append("> A small, opinionated selection of noteworthy newer work — not a benchmark ranking.")
     lines.append("")
-    lines.append("| Paper | Why it matters | Area | Links |")
-    lines.append("|:------|:---------------|:-----|:------|")
+    lines.append("| Paper | Why it matters | Topic | Links |")
+    lines.append("|:------|:---------------|:------|:------|")
     for p in featured:
-        area = f"{DOMAIN_ICONS[p['domain']]} {SUB_LABELS[p['subcategory']]}"
         lines.append(
             f"| **{markdown_cell(p['title'])}** | {markdown_cell(paper_summary(p))} | "
-            f"{area} | {paper_links(p)} |"
+            f"[{SUB_LABELS[p['subcategory']]}](#{category_anchor(p['domain'], p['subcategory'])}) | "
+            f"{paper_links(p)} |"
         )
     lines.append("")
-    lines.append("## 🌱 Recently Added")
+    lines.append("## Recently added")
     lines.append("")
     lines.append("| Paper | Tiny takeaway | Area | Date |")
     lines.append("|:------|:--------------|:-----|:----:|")
@@ -315,7 +384,7 @@ def generate_readme(papers: list) -> str:
         )
     lines.append("")
     lines.append('<a id="paper-map"></a>')
-    lines.append("## 🧭 Explore the Map")
+    lines.append("## Explore the map")
     lines.append("")
     lines.append("| Area | Topics | What lives here |")
     lines.append("|:-----|:-------|:----------------|")
@@ -324,7 +393,7 @@ def generate_readme(papers: list) -> str:
         for track, label in RSI_TRACK_LABELS.items()
     ]
     lines.append(
-        f"| ♻️ **[RSI & Agent Harness](#rsi-papers)** ({len(rsi_papers)}) "
+        f"| ♻️ **[RSI & Agent Harness](#rsi-papers)** ({rsi_total}) "
         f"| {'<br>'.join(rsi_topic_links)} "
         "| Systems that turn deployment experience into verified, persistent improvements. |"
     )
@@ -343,7 +412,7 @@ def generate_readme(papers: list) -> str:
     lines.append("")
     lines.append("---")
     lines.append("")
-    lines.append("## 📚 Complete Paper Library")
+    lines.append("## Complete paper library")
     lines.append("")
     lines.append("> Open a topic to browse its papers. Every entry includes a one-line explanation of why it may be useful.")
     lines.append("")
@@ -352,7 +421,7 @@ def generate_readme(papers: list) -> str:
     lines.append("")
     lines.append("Cross-cutting work on open-ended learning, persistent memory, skill and harness evolution, policy updates, and safe post-deployment improvement.")
     lines.append("")
-    lines.append("> **Scope:** A retry or one-off adaptation only belongs here when experience is verified and retained to improve future behavior.")
+    lines.append("> **Scope:** a retry or one-off adaptation only belongs here when experience is verified and retained to improve future behavior. Entries below are topic shortcuts; each paper appears in full only once in the domain catalog.")
     lines.append("")
     lines.append("[Back to the map](#paper-map)")
     lines.append("")
@@ -360,29 +429,31 @@ def generate_readme(papers: list) -> str:
     lines.append("")
     for track, track_label in RSI_TRACK_LABELS.items():
         track_papers = [p for p in rsi_papers if p.get("rsi_track") == track]
-        paper_word = "paper" if len(track_papers) == 1 else "papers"
-        count_label = f"{len(track_papers)} {paper_word}"
-        if track == "foundation":
-            count_label += " + PhysicalRSI"
+        track_resources = [r for r in resources if r.get("rsi_track") == track]
+        entry_count = len(track_papers) + len(track_resources)
+        entry_word = "entry" if entry_count == 1 else "entries"
 
         lines.append(f'<a id="rsi-{track}"></a>')
         lines.append("<details>")
         lines.append(
             f"<summary><strong>{track_label}</strong> "
-            f"<sub>({count_label})</sub></summary>"
+            f"<sub>({entry_count} {entry_word})</sub></summary>"
         )
         lines.append("")
         lines.append(RSI_TRACK_DESCRIPTIONS[track])
         lines.append("")
-        if track == "foundation":
-            lines.append("| System | Team | Why it matters | Links |")
-            lines.append("|:-------|:-----|:---------------|:------|")
-            lines.append("| **PhysicalRSI** | HKU MMLab | Connects physical interaction, RoboDojo evaluation, and iterative embodied-system improvement. | [Project](https://mmlab.hk/research/PhysicalRSI) |")
-            lines.append("")
-        lines.append("| Paper | Why it matters | Institution | Date | Links |")
-        lines.append("|:------|:---------------|:------------|:----:|:------|")
+        for resource in track_resources:
+            lines.append(
+                f"- **[{markdown_cell(resource['title'])}]({resource['url']})** "
+                f"({markdown_cell(resource.get('institution'), 'Independent resource')}) — "
+                f"{markdown_cell(resource.get('summary'))}"
+            )
         for p in track_papers:
-            lines.append(paper_row(p))
+            lines.append(
+                f"- **[{markdown_cell(p['title'])}]({p['url']})** — "
+                f"{markdown_cell(paper_summary(p))} "
+                f"([browse {SUB_LABELS[p['subcategory']]}](#{category_anchor(p['domain'], p['subcategory'])}))"
+            )
         lines.append("")
         lines.append("</details>")
         lines.append("")
@@ -414,8 +485,8 @@ def generate_readme(papers: list) -> str:
             lines.append("")
             lines.append(SUB_DESCRIPTIONS[sub])
             lines.append("")
-            lines.append("| Paper | Why it matters | Institution | Date | Links |")
-            lines.append("|:------|:---------------|:------------|:----:|:------|")
+            lines.append("| Paper | Why it matters | Institution & date | Links |")
+            lines.append("|:------|:---------------|:-------------------|:------|")
             for p in sub_papers_sorted:
                 lines.append(paper_row(p))
             lines.append("")
@@ -424,17 +495,17 @@ def generate_readme(papers: list) -> str:
 
     lines.append("---")
     lines.append("")
-    lines.append("## 🤝 Help This List Grow")
+    lines.append("## Help this list grow")
     lines.append("")
     lines.append("Missing an important paper, code release, or institution correction? Contributions are warmly welcome.")
     lines.append("")
     lines.append("1. Read the friendly [contribution guide](CONTRIBUTING.md).")
     lines.append("2. Add or improve an entry in `data/papers.yaml`.")
-    lines.append("3. Run `python scripts/generate_readme.py 2026-07-23` and open a pull request.")
+    lines.append("3. Run `python scripts/validate_papers.py`, `python scripts/generate_readme.py`, and `python scripts/verify_links.py`, then open a pull request.")
     lines.append("")
     lines.append(f"If this map saves you time, consider [starring the repository]({REPO_URL}) so more researchers can find it.")
     lines.append("")
-    lines.append("## 📜 License")
+    lines.append("## License")
     lines.append("")
     lines.append("Released under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Paper copyrights remain with their respective authors.")
     lines.append("")
@@ -471,7 +542,8 @@ def generate_timeline(papers: list) -> str:
         for i, p in enumerate(ym_papers, 1):
             y, m, d = p["_date_tuple"]
             cat = f"{domain_short(p['domain'])} / {SUB_LABELS[p['subcategory']]}"
-            lines.append(f"| {i} | **{p['title']}** | {p['institution']} | {MONTH_NAMES[m]} {d} | {cat} | [Paper]({p['url']}) |")
+            institutions = ", ".join(paper_institutions(p))
+            lines.append(f"| {i} | **{p['title']}** | {institutions} | {MONTH_NAMES[m]} {d} | {cat} | [Paper]({p['url']}) |")
         lines.append("")
 
     for p in papers:
@@ -484,7 +556,7 @@ def generate_by_institution(papers: list) -> str:
     today = _latest_paper_date(papers)
     inst_papers = defaultdict(list)
     for p in papers:
-        for inst in [s.strip() for s in p["institution"].split(",")]:
+        for inst in paper_institutions(p):
             inst_papers[inst].append(p)
 
     sorted_insts = sorted(inst_papers.items(), key=lambda x: -len(x[1]))
@@ -514,7 +586,7 @@ def generate_by_institution(papers: list) -> str:
         lines.append("")
         lines.append("| Paper | Category | Date | Link |")
         lines.append("|:------|:---------|:----:|:-----|")
-        for p in sorted(plist, key=lambda x: x.get("arxiv", "0000"), reverse=True):
+        for p in sorted(plist, key=extract_date, reverse=True):
             y, m, d = extract_date(p)
             lines.append(f"| **{p['title']}** | {SUB_LABELS[p['subcategory']]} | {format_date(y, m, d)} | [Paper]({p['url']}) |")
         lines.append("")
@@ -540,6 +612,14 @@ def main():
         _DATE_OVERRIDE = sys.argv[1]
 
     papers = load_papers()
+    from validate_papers import validate_papers, validate_resources
+
+    errors = validate_papers(papers)
+    errors.extend(validate_resources(load_resources()))
+    if errors:
+        for error in errors:
+            print(f"ERROR: {error}", file=sys.stderr)
+        raise SystemExit(f"Validation failed with {len(errors)} error(s).")
 
     readme = generate_readme(papers)
     (ROOT / "README.md").write_text(readme, encoding="utf-8")
