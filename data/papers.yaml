@@ -3637,3 +3637,17 @@
   project: https://tsinghua-mars-lab.github.io/DriveVLM/
   classic: true
   classic_order: 44
+
+- title: Recursive Harness Distillation across Agents for Robot Manipulation
+  arxiv: '2609.33378'
+  url: https://arxiv.org/abs/2609.33378
+  institution: Seoul National University, KAIST
+  venue: arXiv 2026
+  domain: robot
+  subcategory: vla-arch
+  summary: "Astra distills robot-intervention experience into a playbook for Luna and recursively refines it from Luna's execution feedback without updating agent or VLA weights."
+  date: '2026-09-27'
+  project: https://seungyeon.me/RHD/
+  rsi: true
+  rsi_track: harness
+  rsi_order: 20

@@ -1,6 +1,6 @@
 # VLA Papers by Institution
 
-> 382 papers across 153 institutions | Updated: 2026-09-23
+> 383 papers across 154 institutions | Updated: 2026-09-27
 
 [Back to Main](README.md)
 
@@ -56,6 +56,7 @@
 | [Robotics at Google](#roboticsatgoogle) | 5 |
 | [UMich](#umich) | 4 |
 | [PolyU](#polyu) | 4 |
+| [KAIST](#kaist) | 4 |
 | [NYU](#nyu) | 4 |
 | [MIT](#mit) | 4 |
 | [WHU](#whu) | 4 |
@@ -69,7 +70,6 @@
 | [BIT](#bit) | 3 |
 | [GigaAI](#gigaai) | 3 |
 | [UCLA](#ucla) | 3 |
-| [KAIST](#kaist) | 3 |
 | [UMD](#umd) | 3 |
 | [UIUC](#uiuc) | 3 |
 | [Baidu](#baidu) | 3 |
@@ -982,6 +982,15 @@
 | **Toward Native Multimodal Modeling: A Roadmap** | Surveys | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.25343) |
 | **Toward Physically Consistent Driving Video World Models under Challenging Trajectories** | World Models | Mar 25, 2026 | [Paper](https://arxiv.org/abs/2603.24506) |
 
+## KAIST
+
+| Paper | Category | Date | Link |
+|:------|:---------|:----:|:-----|
+| **Recursive Harness Distillation across Agents for Robot Manipulation** | VLA Architecture | Sep 27, 2026 | [Paper](https://arxiv.org/abs/2609.33378) |
+| **WaymoQA: Multi-View VQA for Safety-Critical Reasoning in AD** | Simulation & Data | Nov 25, 2025 | [Paper](https://arxiv.org/abs/2511.20022) |
+| **Unified RL and Imitation Learning for VLMs** | RL & Policy Optimization | Oct 22, 2025 | [Paper](https://arxiv.org/abs/2510.19307) |
+| **DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset** | Data & Pre-training | Mar 19, 2024 | [Paper](https://arxiv.org/abs/2403.12945) |
+
 ## NYU
 
 | Paper | Category | Date | Link |
@@ -1092,14 +1101,6 @@
 | **LARA: Latent Action Representation Alignment for Vision-Language-Action Models** | Action Tokenization | Jun 5, 2026 | [Paper](https://arxiv.org/abs/2606.07100) |
 | **SpanVLA: Efficient Action Bridging and Learning from Negative-Recovery Samples for Vision-Language-Action Model** | End-to-End VLA Architecture | Apr 21, 2026 | [Paper](https://arxiv.org/abs/2604.19710) |
 | **Grounded Language-Image Pre-training** | Spatial Perception & 3D/4D | Dec 7, 2021 | [Paper](https://arxiv.org/abs/2112.03857) |
-
-## KAIST
-
-| Paper | Category | Date | Link |
-|:------|:---------|:----:|:-----|
-| **WaymoQA: Multi-View VQA for Safety-Critical Reasoning in AD** | Simulation & Data | Nov 25, 2025 | [Paper](https://arxiv.org/abs/2511.20022) |
-| **Unified RL and Imitation Learning for VLMs** | RL & Policy Optimization | Oct 22, 2025 | [Paper](https://arxiv.org/abs/2510.19307) |
-| **DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset** | Data & Pre-training | Mar 19, 2024 | [Paper](https://arxiv.org/abs/2403.12945) |
 
 ## UMD
 
@@ -1397,3 +1398,4 @@
 | IDEA Research | **Grounding DINO: Marrying DINO with Grounded Pre-Training for Open-Set Object Detection** | [Paper](https://arxiv.org/abs/2303.05499) |
 | Univ of Tübingen | **DriveLM: Driving with Graph Visual Question Answering** | [Paper](https://arxiv.org/abs/2312.14150) |
 | Tübingen AI Center | **DriveLM: Driving with Graph Visual Question Answering** | [Paper](https://arxiv.org/abs/2312.14150) |
+| Seoul National University | **Recursive Harness Distillation across Agents for Robot Manipulation** | [Paper](https://arxiv.org/abs/2609.33378) |

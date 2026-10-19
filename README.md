@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/papers-382-ff8fbd?style=flat-square" alt="382 papers">
+  <img src="https://img.shields.io/badge/papers-383-ff8fbd?style=flat-square" alt="383 papers">
   <a href="daily/"><img src="https://img.shields.io/badge/arXiv_feed-auto--updated-8b7de3?style=flat-square" alt="Daily arXiv feed"></a>
   <a href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="https://img.shields.io/badge/license-CC0-64b6ac?style=flat-square" alt="CC0 license"></a>
 </p>
@@ -23,7 +23,7 @@
   <a href="CONTRIBUTING.md"><strong>Contribute</strong></a>
 </p>
 
-<p align="center"><sub><strong>382 curated papers</strong> · Last updated: 2026-09-23</sub></p>
+<p align="center"><sub><strong>383 curated papers</strong> · Last updated: 2026-09-27</sub></p>
 
 ---
 
@@ -114,6 +114,7 @@ A **Vision-Language-Action (VLA)** model connects what an agent *sees*, what a h
 
 | Paper | Tiny takeaway | Area | Date |
 |:------|:--------------|:-----|:----:|
+| [**Recursive Harness Distillation across Agents for Robot Manipulation**](https://arxiv.org/abs/2609.33378) | Astra distills robot-intervention experience into a playbook for Luna and recursively refines it from Luna's execution feedback without updating agent or VLA weights. | 🤖 Robotics | Sep 27, 2026 |
 | [**RegenHarness: A Robot Agent Harness with Evidence-Gated Recursive Self-Improvement**](https://arxiv.org/abs/2609.27612) | RegenHarness constrains cross-task harness improvement with evidence gating, versioned memory, regression checks, and rollback mechanisms to support verifiable recursive self-improvement. | 🤖 Robotics | Sep 23, 2026 |
 | [**Know Your Body: A Harness for Direct and Self-Improving Robot Control with VLMs**](https://arxiv.org/abs/2609.28530) | Know Your Body maintains a queryable and revisable robot body model around a frozen VLM, using evidence from real interactions to reduce subsequent planning costs. | 🤖 Robotics | Sep 22, 2026 |
 | [**ME-Brain-1.0: Memory, Cognition and Action for Evolving Embodied Intelligence**](https://arxiv.org/abs/2609.24271) | ME-Brain-1.0 unifies execution, experience collection, experience evolution, and re-execution through evolvable memory, a cognitive core, and an action model. | 🤖 Robotics | Sep 21, 2026 |
@@ -121,16 +122,15 @@ A **Vision-Language-Action (VLA)** model connects what an agent *sees*, what a h
 | [**Self-Evolving AI for Humanoids: Mechanisms, Safety, and Evaluation of Post-Deployment Self-Improvement**](https://arxiv.org/abs/2609.13236) | This survey defines post-deployment self-evolution for humanoid robots and reviews self-learning, self-adaptation, self-optimization, self-generation, and their safety and validation boundaries. | 🧠 General / Cross-domain | Sep 2, 2026 |
 | [**On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability**](https://arxiv.org/abs/2608.30320) | This work evaluates the sparse architecture, efficiency, and training stability of Qwen3.8-Next while jointly optimizing GDN, sparse attention, and mixture-of-experts design. | 🧠 General / Cross-domain | Aug 31, 2026 |
 | [**Self-Evolving Embodied Agents via Skill-Harness Evolution**](https://arxiv.org/abs/2608.11350) | This work keeps foundation-model parameters frozen while continually evolving reusable skills and contextual code harnesses through environment rollouts. | 🤖 Robotics | Aug 11, 2026 |
-| [**Capek 0.5: An Execution-Centric Vision-Language Model for Embodied Intelligence**](https://arxiv.org/abs/2608.06756) | Capek 0.5 is an execution-centric embodied vision-language model organized around spatial reasoning, temporal understanding, action guidance, and state verification. | 🤖 Robotics | Aug 7, 2026 |
 
 <a id="paper-map"></a>
 ## Explore the map
 
 | Area | Topics | What lives here |
 |:-----|:-------|:----------------|
-| ♻️ **[RSI & Agent Harness](#rsi-papers)** (20) | [🧭 Open-ended Foundations (2)](#rsi-foundation)<br>[🧪 Data & skill discovery (5)](#rsi-data)<br>[🧠 Memory & experience (2)](#rsi-memory)<br>[🛠️ Harness & scaffold evolution (3)](#rsi-harness)<br>[🔁 Policy & model updates (6)](#rsi-policy)<br>[🛡️ Safety & evaluation (2)](#rsi-safety) | Systems that turn deployment experience into verified, persistent improvements. |
+| ♻️ **[RSI & Agent Harness](#rsi-papers)** (21) | [🧭 Open-ended Foundations (2)](#rsi-foundation)<br>[🧪 Data & skill discovery (5)](#rsi-data)<br>[🧠 Memory & experience (2)](#rsi-memory)<br>[🛠️ Harness & scaffold evolution (4)](#rsi-harness)<br>[🔁 Policy & model updates (6)](#rsi-policy)<br>[🛡️ Safety & evaluation (2)](#rsi-safety) | Systems that turn deployment experience into verified, persistent improvements. |
 | 🚗 **[Autonomous Driving](#ad-papers)** (103) | [🛣️ End-to-End VLA Architecture (40)](#ad-e2e)<br>[🌍 World Models (28)](#ad-world-model)<br>[🎮 Simulation & Data (8)](#ad-simulation-data)<br>[🧭 Planning & Control (9)](#ad-planning)<br>[🛡️ Safety & Benchmarks (18)](#ad-safety-benchmark) | End-to-end driving, world models, planning, simulation, safety, and evaluation. |
-| 🤖 **[Robotics](#robot-papers)** (179) | [🦾 VLA Architecture (75)](#robot-vla-arch)<br>[🧩 Action Tokenization (16)](#robot-action-token)<br>[🔮 World Models & Policy Co-learning (32)](#robot-world-model-policy)<br>[🎯 RL & Policy Optimization (24)](#robot-rl-policy)<br>[📚 Data & Pre-training (32)](#robot-data-pretrain) | Generalist policies, action representations, robot learning, memory, and manipulation. |
+| 🤖 **[Robotics](#robot-papers)** (180) | [🦾 VLA Architecture (76)](#robot-vla-arch)<br>[🧩 Action Tokenization (16)](#robot-action-token)<br>[🔮 World Models & Policy Co-learning (32)](#robot-world-model-policy)<br>[🎯 RL & Policy Optimization (24)](#robot-rl-policy)<br>[📚 Data & Pre-training (32)](#robot-data-pretrain) | Generalist policies, action representations, robot learning, memory, and manipulation. |
 | 🧠 **[General / Cross-domain](#general-papers)** (100) | [🧊 Spatial Perception & 3D/4D (24)](#general-spatial)<br>[💭 Latent Reasoning & Chain-of-Thought (16)](#general-latent-reasoning)<br>[🌈 Multimodal Architecture & Pre-training (20)](#general-multimodal-arch)<br>[⚡ Efficient Inference (17)](#general-efficient)<br>[🧪 Physical AI Benchmarks (8)](#general-physical-benchmark)<br>[🗺️ Surveys (15)](#general-survey) | Spatial intelligence, multimodal reasoning, efficient inference, benchmarks, and surveys. |
 
 ---
@@ -188,13 +188,14 @@ Reflection, self-correction, and persistent memory that improve future behavior.
 
 <a id="rsi-harness"></a>
 <details>
-<summary><strong>🛠️ Harness & scaffold evolution</strong> <sub>(3 entries)</sub></summary>
+<summary><strong>🛠️ Harness & scaffold evolution</strong> <sub>(4 entries)</sub></summary>
 
 Skills, tools, context, and execution scaffolds that evolve around frozen foundation models.
 
 - **[Harness VLA: Steering Frozen VLAs into Reliable Manipulation Primitives via Memory-Guided Agents](https://arxiv.org/abs/2607.08448)** — Harness VLA uses memory-guided agents to orchestrate a frozen VLA model and constrain it into reliable manipulation primitives. ([browse VLA Architecture](#robot-vla-arch))
 - **[Self-Evolving Embodied Agents via Skill-Harness Evolution](https://arxiv.org/abs/2608.11350)** — This work keeps foundation-model parameters frozen while continually evolving reusable skills and contextual code harnesses through environment rollouts. ([browse VLA Architecture](#robot-vla-arch))
 - **[Know Your Body: A Harness for Direct and Self-Improving Robot Control with VLMs](https://arxiv.org/abs/2609.28530)** — Know Your Body maintains a queryable and revisable robot body model around a frozen VLM, using evidence from real interactions to reduce subsequent planning costs. ([browse VLA Architecture](#robot-vla-arch))
+- **[Recursive Harness Distillation across Agents for Robot Manipulation](https://arxiv.org/abs/2609.33378)** — Astra distills robot-intervention experience into a playbook for Luna and recursively refines it from Luna's execution feedback without updating agent or VLA weights. ([browse VLA Architecture](#robot-vla-arch))
 
 </details>
 
@@ -402,12 +403,13 @@ Generalist policies, action representations, robot learning, memory, and manipul
 
 <a id="robot-vla-arch"></a>
 <details>
-<summary><strong>🦾 VLA Architecture</strong> <sub>(75 papers)</sub></summary>
+<summary><strong>🦾 VLA Architecture</strong> <sub>(76 papers)</sub></summary>
 
 Core architectures that connect perception, language, memory, and control.
 
 | Paper | Why it matters | Institution & date | Links |
 |:------|:---------------|:-------------------|:------|
+| **Recursive Harness Distillation across Agents for Robot Manipulation** | Astra distills robot-intervention experience into a playbook for Luna and recursively refines it from Luna's execution feedback without updating agent or VLA weights. | Seoul National University, KAIST<br><sub>Sep 27, 2026</sub> | [Paper](https://arxiv.org/abs/2609.33378) · [Project](https://seungyeon.me/RHD/) |
 | **RegenHarness: A Robot Agent Harness with Evidence-Gated Recursive Self-Improvement** | RegenHarness constrains cross-task harness improvement with evidence gating, versioned memory, regression checks, and rollback mechanisms to support verifiable recursive self-improvement. | Country Garden Services, HUST, Omni AI<br><sub>Sep 23, 2026</sub> | [Paper](https://arxiv.org/abs/2609.27612) |
 | **Know Your Body: A Harness for Direct and Self-Improving Robot Control with VLMs** | Know Your Body maintains a queryable and revisable robot body model around a frozen VLM, using evidence from real interactions to reduce subsequent planning costs. | Nanjing Univ, Ant Group, ZJU<br><sub>Sep 22, 2026</sub> | [Paper](https://arxiv.org/abs/2609.28530) · [Project](https://loule0-0.github.io/KnowBody/) |
 | **ME-Brain-1.0: Memory, Cognition and Action for Evolving Embodied Intelligence** | ME-Brain-1.0 unifies execution, experience collection, experience evolution, and re-execution through evolvable memory, a cognitive core, and an action model. | Li Auto<br><sub>Sep 21, 2026</sub> | [Paper](https://arxiv.org/abs/2609.24271) |
