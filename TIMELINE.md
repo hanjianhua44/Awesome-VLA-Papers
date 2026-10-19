@@ -1,18 +1,19 @@
 # VLA Papers Timeline
 
-> 382 papers sorted by date (newest first) | Updated: 2026-09-23
+> 383 papers sorted by date (newest first) | Updated: 2026-09-27
 
 [Back to Main](README.md)
 
-## Sep 2026 (5 papers)
+## Sep 2026 (6 papers)
 
 | # | Paper | Institution | Date | Category | Link |
 |:-:|:------|:-----------|:----:|:---------|:-----|
-| 1 | **RegenHarness: A Robot Agent Harness with Evidence-Gated Recursive Self-Improvement** | Country Garden Services, HUST, Omni AI | Sep 23 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2609.27612) |
-| 2 | **Know Your Body: A Harness for Direct and Self-Improving Robot Control with VLMs** | Nanjing Univ, Ant Group, ZJU | Sep 22 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2609.28530) |
-| 3 | **ME-Brain-1.0: Memory, Cognition and Action for Evolving Embodied Intelligence** | Li Auto | Sep 21 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2609.24271) |
-| 4 | **PhysBrain 1.5: From Vision-Language Models to Physical Foundation Models** | DeepCybo | Sep 14 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2609.14973) |
-| 5 | **Self-Evolving AI for Humanoids: Mechanisms, Safety, and Evaluation of Post-Deployment Self-Improvement** | Kyung Hee Univ, NTU | Sep 2 | General / Cross-domain / Surveys | [Paper](https://arxiv.org/abs/2609.13236) |
+| 1 | **Recursive Harness Distillation across Agents for Robot Manipulation** | Seoul National University, KAIST | Sep 27 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2609.33378) |
+| 2 | **RegenHarness: A Robot Agent Harness with Evidence-Gated Recursive Self-Improvement** | Country Garden Services, HUST, Omni AI | Sep 23 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2609.27612) |
+| 3 | **Know Your Body: A Harness for Direct and Self-Improving Robot Control with VLMs** | Nanjing Univ, Ant Group, ZJU | Sep 22 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2609.28530) |
+| 4 | **ME-Brain-1.0: Memory, Cognition and Action for Evolving Embodied Intelligence** | Li Auto | Sep 21 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2609.24271) |
+| 5 | **PhysBrain 1.5: From Vision-Language Models to Physical Foundation Models** | DeepCybo | Sep 14 | Robotics / VLA Architecture | [Paper](https://arxiv.org/abs/2609.14973) |
+| 6 | **Self-Evolving AI for Humanoids: Mechanisms, Safety, and Evaluation of Post-Deployment Self-Improvement** | Kyung Hee Univ, NTU | Sep 2 | General / Cross-domain / Surveys | [Paper](https://arxiv.org/abs/2609.13236) |
 
 ## Aug 2026 (3 papers)
 
