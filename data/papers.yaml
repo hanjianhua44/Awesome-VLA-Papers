@@ -3637,3 +3637,13 @@
   project: https://tsinghua-mars-lab.github.io/DriveVLM/
   classic: true
   classic_order: 44
+- title: 'VLM-MPC: Model predictive controller augmented vision language model for autonomous driving'
+  arxiv: '2408.04821'
+  url: https://www.sciencedirect.com/science/article/pii/S0968090X25004917
+  institution: UW-Madison, Tongji
+  venue: Transportation Research Part C 2026
+  domain: ad
+  subcategory: planning
+  summary: VLM-MPC (Transportation Research Part C, 2026) couples VLM-generated driving parameters with asynchronous model predictive control that accounts for engine lag in closed-loop autonomous driving.
+  date: '2024-08-09'
+  code: https://github.com/Keke-Long/VLM-MPC

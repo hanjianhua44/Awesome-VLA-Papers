@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/papers-382-ff8fbd?style=flat-square" alt="382 papers">
+  <img src="https://img.shields.io/badge/papers-383-ff8fbd?style=flat-square" alt="383 papers">
   <a href="daily/"><img src="https://img.shields.io/badge/arXiv_feed-auto--updated-8b7de3?style=flat-square" alt="Daily arXiv feed"></a>
   <a href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="https://img.shields.io/badge/license-CC0-64b6ac?style=flat-square" alt="CC0 license"></a>
 </p>
@@ -23,7 +23,7 @@
   <a href="CONTRIBUTING.md"><strong>Contribute</strong></a>
 </p>
 
-<p align="center"><sub><strong>382 curated papers</strong> · Last updated: 2026-09-23</sub></p>
+<p align="center"><sub><strong>383 curated papers</strong> · Last updated: 2026-09-23</sub></p>
 
 ---
 
@@ -129,7 +129,7 @@ A **Vision-Language-Action (VLA)** model connects what an agent *sees*, what a h
 | Area | Topics | What lives here |
 |:-----|:-------|:----------------|
 | ♻️ **[RSI & Agent Harness](#rsi-papers)** (20) | [🧭 Open-ended Foundations (2)](#rsi-foundation)<br>[🧪 Data & skill discovery (5)](#rsi-data)<br>[🧠 Memory & experience (2)](#rsi-memory)<br>[🛠️ Harness & scaffold evolution (3)](#rsi-harness)<br>[🔁 Policy & model updates (6)](#rsi-policy)<br>[🛡️ Safety & evaluation (2)](#rsi-safety) | Systems that turn deployment experience into verified, persistent improvements. |
-| 🚗 **[Autonomous Driving](#ad-papers)** (103) | [🛣️ End-to-End VLA Architecture (40)](#ad-e2e)<br>[🌍 World Models (28)](#ad-world-model)<br>[🎮 Simulation & Data (8)](#ad-simulation-data)<br>[🧭 Planning & Control (9)](#ad-planning)<br>[🛡️ Safety & Benchmarks (18)](#ad-safety-benchmark) | End-to-end driving, world models, planning, simulation, safety, and evaluation. |
+| 🚗 **[Autonomous Driving](#ad-papers)** (104) | [🛣️ End-to-End VLA Architecture (40)](#ad-e2e)<br>[🌍 World Models (28)](#ad-world-model)<br>[🎮 Simulation & Data (8)](#ad-simulation-data)<br>[🧭 Planning & Control (10)](#ad-planning)<br>[🛡️ Safety & Benchmarks (18)](#ad-safety-benchmark) | End-to-end driving, world models, planning, simulation, safety, and evaluation. |
 | 🤖 **[Robotics](#robot-papers)** (179) | [🦾 VLA Architecture (75)](#robot-vla-arch)<br>[🧩 Action Tokenization (16)](#robot-action-token)<br>[🔮 World Models & Policy Co-learning (32)](#robot-world-model-policy)<br>[🎯 RL & Policy Optimization (24)](#robot-rl-policy)<br>[📚 Data & Pre-training (32)](#robot-data-pretrain) | Generalist policies, action representations, robot learning, memory, and manipulation. |
 | 🧠 **[General / Cross-domain](#general-papers)** (100) | [🧊 Spatial Perception & 3D/4D (24)](#general-spatial)<br>[💭 Latent Reasoning & Chain-of-Thought (16)](#general-latent-reasoning)<br>[🌈 Multimodal Architecture & Pre-training (20)](#general-multimodal-arch)<br>[⚡ Efficient Inference (17)](#general-efficient)<br>[🧪 Physical AI Benchmarks (8)](#general-physical-benchmark)<br>[🗺️ Surveys (15)](#general-survey) | Spatial intelligence, multimodal reasoning, efficient inference, benchmarks, and surveys. |
 
@@ -344,7 +344,7 @@ Datasets, simulators, synthetic data, and scalable data engines.
 
 <a id="ad-planning"></a>
 <details>
-<summary><strong>🧭 Planning & Control</strong> <sub>(9 papers)</sub></summary>
+<summary><strong>🧭 Planning & Control</strong> <sub>(10 papers)</sub></summary>
 
 Trajectory generation, control, value estimation, and decision making.
 
@@ -356,6 +356,7 @@ Trajectory generation, control, value estimation, and decision making.
 | **Toward Cooperative Driving in Mixed Traffic: An Adaptive Potential Game-Based Approach with Field Test Verification** | This work presents an adaptive potential-game framework for cooperative decision-making among connected autonomous vehicles in mixed traffic and validates it through field tests. | Tsinghua, BUAA, Tongji<br><sub>Apr 22, 2026</sub> | [Paper](https://arxiv.org/abs/2604.20231) |
 | **TrajMoE: Scene-Adaptive Trajectory Planning with MoE and RL** | TrajMoE combines a mixture of experts with reinforcement-learned expert routing for scene-adaptive trajectory planning. | CASIA, Xiaomi<br><sub>Dec 8, 2025</sub> | [Paper](https://arxiv.org/abs/2512.07135) |
 | **WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching** | WAM-Flow uses discrete flow matching for efficient parallel coarse-to-fine trajectory generation. | Fudan<br><sub>Dec 5, 2025</sub> | [Paper](https://arxiv.org/abs/2512.06112) |
+| **VLM-MPC: Model predictive controller augmented vision language model for autonomous driving** | VLM-MPC (Transportation Research Part C, 2026) couples VLM-generated driving parameters with asynchronous model predictive control that accounts for engine lag in closed-loop autonomous driving. | UW-Madison, Tongji<br><sub>Aug 9, 2024</sub> | [Paper](https://www.sciencedirect.com/science/article/pii/S0968090X25004917) · [Code](https://github.com/Keke-Long/VLM-MPC) |
 | **MotionLM: Multi-Agent Motion Forecasting as Language Modeling** | Represents continuous trajectories as discrete motion tokens and autoregressively models joint futures for interacting road agents. | Waymo<br><sub>Sep 28, 2023</sub> | [Paper](https://arxiv.org/abs/2309.16534) |
 | **Wayformer: Motion Forecasting via Simple & Efficient Attention Networks** | Uses a homogeneous attention architecture to fuse heterogeneous road and agent inputs for scalable multimodal motion forecasting. | Waymo<br><sub>Jul 12, 2022</sub> | [Paper](https://arxiv.org/abs/2207.05844) |
 | **ChauffeurNet: Learning to Drive by Imitating the Best and Synthesizing the Worst** | Introduces robust imitation learning for autonomous driving by perturbing expert trajectories and explicitly penalizing unsafe outcomes. | Waymo<br><sub>Dec 7, 2018</sub> | [Paper](https://arxiv.org/abs/1812.03079) · [Project](https://sites.google.com/view/waymo-learn-to-drive) |

@@ -1,6 +1,6 @@
 # VLA Papers Timeline
 
-> 382 papers sorted by date (newest first) | Updated: 2026-09-23
+> 383 papers sorted by date (newest first) | Updated: 2026-09-23
 
 [Back to Main](README.md)
 
@@ -450,6 +450,12 @@
 |:-:|:------|:-----------|:----:|:---------|:-----|
 | 1 | **π0: A Vision-Language-Action Flow Model for General Robot Control** | Physical Intelligence | Oct 31 | Robotics / Action Tokenization | [Paper](https://arxiv.org/abs/2410.24164) |
 | 2 | **EMMA: End-to-End Multimodal Model for Autonomous Driving** | Waymo | Oct 30 | Autonomous Driving / End-to-End VLA Architecture | [Paper](https://arxiv.org/abs/2410.23262) |
+
+## Aug 2024 (1 papers)
+
+| # | Paper | Institution | Date | Category | Link |
+|:-:|:------|:-----------|:----:|:---------|:-----|
+| 1 | **VLM-MPC: Model predictive controller augmented vision language model for autonomous driving** | UW-Madison, Tongji | Aug 9 | Autonomous Driving / Planning & Control | [Paper](https://www.sciencedirect.com/science/article/pii/S0968090X25004917) |
 
 ## Jul 2024 (1 papers)
 

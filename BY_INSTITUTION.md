@@ -1,6 +1,6 @@
 # VLA Papers by Institution
 
-> 382 papers across 153 institutions | Updated: 2026-09-23
+> 383 papers across 153 institutions | Updated: 2026-09-23
 
 [Back to Main](README.md)
 
@@ -34,11 +34,11 @@
 | [BUAA](#buaa) | 10 |
 | [SYSU](#sysu) | 10 |
 | [Physical Intelligence](#physicalintelligence) | 10 |
+| [Tongji](#tongji) | 9 |
 | [NTU](#ntu) | 9 |
 | [Microsoft Research](#microsoftresearch) | 9 |
 | [CAS](#cas) | 8 |
 | [Oxford](#oxford) | 8 |
-| [Tongji](#tongji) | 8 |
 | [Univ of Macau](#univofmacau) | 7 |
 | [UT Austin](#utaustin) | 7 |
 | [XPeng](#xpeng) | 7 |
@@ -62,6 +62,7 @@
 | [Harvard](#harvard) | 4 |
 | [Ant Group](#antgroup) | 4 |
 | [Columbia](#columbia) | 4 |
+| [UW-Madison](#uwmadison) | 4 |
 | [Google Research](#googleresearch) | 4 |
 | [Bosch](#bosch) | 3 |
 | [XJTU](#xjtu) | 3 |
@@ -77,7 +78,6 @@
 | [Georgia Tech](#georgiatech) | 3 |
 | [Meituan](#meituan) | 3 |
 | [Kuaishou](#kuaishou) | 3 |
-| [UW-Madison](#uwmadison) | 3 |
 | [TRI](#tri) | 3 |
 | [BJTU](#bjtu) | 2 |
 | [Tianjin Univ](#tianjinuniv) | 2 |
@@ -735,6 +735,20 @@
 | **FAST: Efficient Action Tokenization for Vision-Language-Action Models** | Action Tokenization | Jan 16, 2025 | [Paper](https://arxiv.org/abs/2501.09747) |
 | **π0: A Vision-Language-Action Flow Model for General Robot Control** | Action Tokenization | Oct 31, 2024 | [Paper](https://arxiv.org/abs/2410.24164) |
 
+## Tongji
+
+| Paper | Category | Date | Link |
+|:------|:---------|:----:|:-----|
+| **WCog-VLA: A Dual-Level World-Cognitive Vision-Language-Action Model for End-to-End Autonomous Driving** | End-to-End VLA Architecture | Jul 9, 2026 | [Paper](https://arxiv.org/abs/2607.08375) |
+| **From Attacks to Curricula: Learnability-Guided Adversarial Training for Safe Autonomous Driving** | Safety & Benchmarks | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.14032) |
+| **SafeAlign-VLA: A Negative-Enhanced Safe Alignment Framework for Risk-Aware Autonomous Driving** | Safety & Benchmarks | May 19, 2026 | [Paper](https://arxiv.org/abs/2605.19524) |
+| **Learning A Unified Risk Map for Autonomous Driving in Partially Observable Environments** | Safety & Benchmarks | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.22189) |
+| **DriveMA: Driving Vision-Language-Action Models with verifiable Meta-Actions** | End-to-End VLA Architecture | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.31271) |
+| **Toward Cooperative Driving in Mixed Traffic: An Adaptive Potential Game-Based Approach with Field Test Verification** | Planning & Control | Apr 22, 2026 | [Paper](https://arxiv.org/abs/2604.20231) |
+| **CLI: Dynamic Cross-Layer Injection for Deep VL Fusion** | Multimodal Architecture & Pre-training | Jan 15, 2026 | [Paper](https://arxiv.org/abs/2601.10710) |
+| **SRPO: Self-Referential Policy Optimization for VLA** | RL & Policy Optimization | Nov 19, 2025 | [Paper](https://arxiv.org/abs/2511.15605) |
+| **VLM-MPC: Model predictive controller augmented vision language model for autonomous driving** | Planning & Control | Aug 9, 2024 | [Paper](https://www.sciencedirect.com/science/article/pii/S0968090X25004917) |
+
 ## NTU
 
 | Paper | Category | Date | Link |
@@ -788,19 +802,6 @@
 | **Reliable and Responsible Foundation Models: A Comprehensive Survey** | Surveys | Feb 4, 2026 | [Paper](https://arxiv.org/abs/2602.08145) |
 | **V-DPM: 4D Video Reconstruction with Dynamic Point Maps** | Spatial Perception & 3D/4D | Jan 14, 2026 | [Paper](https://arxiv.org/abs/2601.09499) |
 | **VFMF: World Modeling by Forecasting Vision Foundation Model Features** | World Models | Dec 12, 2025 | [Paper](https://arxiv.org/abs/2512.11225) |
-
-## Tongji
-
-| Paper | Category | Date | Link |
-|:------|:---------|:----:|:-----|
-| **WCog-VLA: A Dual-Level World-Cognitive Vision-Language-Action Model for End-to-End Autonomous Driving** | End-to-End VLA Architecture | Jul 9, 2026 | [Paper](https://arxiv.org/abs/2607.08375) |
-| **From Attacks to Curricula: Learnability-Guided Adversarial Training for Safe Autonomous Driving** | Safety & Benchmarks | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.14032) |
-| **SafeAlign-VLA: A Negative-Enhanced Safe Alignment Framework for Risk-Aware Autonomous Driving** | Safety & Benchmarks | May 19, 2026 | [Paper](https://arxiv.org/abs/2605.19524) |
-| **Learning A Unified Risk Map for Autonomous Driving in Partially Observable Environments** | Safety & Benchmarks | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.22189) |
-| **DriveMA: Driving Vision-Language-Action Models with verifiable Meta-Actions** | End-to-End VLA Architecture | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.31271) |
-| **Toward Cooperative Driving in Mixed Traffic: An Adaptive Potential Game-Based Approach with Field Test Verification** | Planning & Control | Apr 22, 2026 | [Paper](https://arxiv.org/abs/2604.20231) |
-| **CLI: Dynamic Cross-Layer Injection for Deep VL Fusion** | Multimodal Architecture & Pre-training | Jan 15, 2026 | [Paper](https://arxiv.org/abs/2601.10710) |
-| **SRPO: Self-Referential Policy Optimization for VLA** | RL & Policy Optimization | Nov 19, 2025 | [Paper](https://arxiv.org/abs/2511.15605) |
 
 ## Univ of Macau
 
@@ -1036,6 +1037,15 @@
 | **Diffusion Policy: Visuomotor Policy Learning via Action Diffusion** | Action Tokenization | Mar 7, 2023 | [Paper](https://arxiv.org/abs/2303.04137) |
 | **MineDojo: Building Open-Ended Embodied Agents with Internet-Scale Knowledge** | Physical AI Benchmarks | Jun 17, 2022 | [Paper](https://arxiv.org/abs/2206.08853) |
 
+## UW-Madison
+
+| Paper | Category | Date | Link |
+|:------|:---------|:----:|:-----|
+| **Progress Reward Modeling for Robotic Learning: A Comprehensive Survey** | Surveys | Jul 22, 2026 | [Paper](https://arxiv.org/abs/2607.21655) |
+| **VLM-MPC: Model predictive controller augmented vision language model for autonomous driving** | Planning & Control | Aug 9, 2024 | [Paper](https://www.sciencedirect.com/science/article/pii/S0968090X25004917) |
+| **Voyager: An Open-Ended Embodied Agent with Large Language Models** | Data & Pre-training | May 25, 2023 | [Paper](https://arxiv.org/abs/2305.16291) |
+| **Grounded Language-Image Pre-training** | Spatial Perception & 3D/4D | Dec 7, 2021 | [Paper](https://arxiv.org/abs/2112.03857) |
+
 ## Google Research
 
 | Paper | Category | Date | Link |
@@ -1156,14 +1166,6 @@
 | **Kwai Keye-VL-2.0 Technical Report** | Multimodal Architecture & Pre-training | Jun 1, 2026 | [Paper](https://arxiv.org/abs/2606.10651) |
 | **Think, then Score: Decoupled Reasoning and Scoring for Video Reward Modeling** | Latent Reasoning & Chain-of-Thought | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.05922) |
 | **RewardHarness: Self-Evolving Agentic Post-Training** | RL & Policy Optimization | May 1, 2026 | [Paper](https://arxiv.org/abs/2605.08703) |
-
-## UW-Madison
-
-| Paper | Category | Date | Link |
-|:------|:---------|:----:|:-----|
-| **Progress Reward Modeling for Robotic Learning: A Comprehensive Survey** | Surveys | Jul 22, 2026 | [Paper](https://arxiv.org/abs/2607.21655) |
-| **Voyager: An Open-Ended Embodied Agent with Large Language Models** | Data & Pre-training | May 25, 2023 | [Paper](https://arxiv.org/abs/2305.16291) |
-| **Grounded Language-Image Pre-training** | Spatial Perception & 3D/4D | Dec 7, 2021 | [Paper](https://arxiv.org/abs/2112.03857) |
 
 ## TRI
 
