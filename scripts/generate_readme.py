@@ -254,7 +254,9 @@ def category_anchor(domain: str, subcategory: str) -> str:
     return f"{domain}-{subcategory}"
 
 
-_DATE_OVERRIDE = None
+# Date when the curated main catalog was last reviewed. This may be newer than
+# the newest paper's submission date (for example, after promoting a batch).
+_DATE_OVERRIDE = "2026-10-17"
 
 def _latest_paper_date(papers: list) -> str:
     if _DATE_OVERRIDE:

@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://awesome.re"><img src="https://awesome.re/badge.svg" alt="Awesome"></a>
-  <img src="https://img.shields.io/badge/papers-382-ff8fbd?style=flat-square" alt="382 papers">
+  <img src="https://img.shields.io/badge/papers-437-ff8fbd?style=flat-square" alt="437 papers">
   <a href="daily/"><img src="https://img.shields.io/badge/arXiv_feed-auto--updated-8b7de3?style=flat-square" alt="Daily arXiv feed"></a>
   <a href="https://creativecommons.org/publicdomain/zero/1.0/"><img src="https://img.shields.io/badge/license-CC0-64b6ac?style=flat-square" alt="CC0 license"></a>
 </p>
@@ -23,7 +23,7 @@
   <a href="CONTRIBUTING.md"><strong>Contribute</strong></a>
 </p>
 
-<p align="center"><sub><strong>382 curated papers</strong> · Last updated: 2026-09-23</sub></p>
+<p align="center"><sub><strong>437 curated papers</strong> · Last updated: 2026-10-17</sub></p>
 
 ---
 
@@ -114,14 +114,14 @@ A **Vision-Language-Action (VLA)** model connects what an agent *sees*, what a h
 
 | Paper | Tiny takeaway | Area | Date |
 |:------|:--------------|:-----|:----:|
-| [**RegenHarness: A Robot Agent Harness with Evidence-Gated Recursive Self-Improvement**](https://arxiv.org/abs/2609.27612) | RegenHarness constrains cross-task harness improvement with evidence gating, versioned memory, regression checks, and rollback mechanisms to support verifiable recursive self-improvement. | 🤖 Robotics | Sep 23, 2026 |
-| [**Know Your Body: A Harness for Direct and Self-Improving Robot Control with VLMs**](https://arxiv.org/abs/2609.28530) | Know Your Body maintains a queryable and revisable robot body model around a frozen VLM, using evidence from real interactions to reduce subsequent planning costs. | 🤖 Robotics | Sep 22, 2026 |
-| [**ME-Brain-1.0: Memory, Cognition and Action for Evolving Embodied Intelligence**](https://arxiv.org/abs/2609.24271) | ME-Brain-1.0 unifies execution, experience collection, experience evolution, and re-execution through evolvable memory, a cognitive core, and an action model. | 🤖 Robotics | Sep 21, 2026 |
-| [**PhysBrain 1.5: From Vision-Language Models to Physical Foundation Models**](https://arxiv.org/abs/2609.14973) | PhysBrain 1.5 unifies embodied understanding, action generation, and future-state prediction by representing physical interaction as a shared autoregressive token sequence. | 🤖 Robotics | Sep 14, 2026 |
-| [**Self-Evolving AI for Humanoids: Mechanisms, Safety, and Evaluation of Post-Deployment Self-Improvement**](https://arxiv.org/abs/2609.13236) | This survey defines post-deployment self-evolution for humanoid robots and reviews self-learning, self-adaptation, self-optimization, self-generation, and their safety and validation boundaries. | 🧠 General / Cross-domain | Sep 2, 2026 |
-| [**On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability**](https://arxiv.org/abs/2608.30320) | This work evaluates the sparse architecture, efficiency, and training stability of Qwen3.8-Next while jointly optimizing GDN, sparse attention, and mixture-of-experts design. | 🧠 General / Cross-domain | Aug 31, 2026 |
-| [**Self-Evolving Embodied Agents via Skill-Harness Evolution**](https://arxiv.org/abs/2608.11350) | This work keeps foundation-model parameters frozen while continually evolving reusable skills and contextual code harnesses through environment rollouts. | 🤖 Robotics | Aug 11, 2026 |
-| [**Capek 0.5: An Execution-Centric Vision-Language Model for Embodied Intelligence**](https://arxiv.org/abs/2608.06756) | Capek 0.5 is an execution-centric embodied vision-language model organized around spatial reasoning, temporal understanding, action guidance, and state verification. | 🤖 Robotics | Aug 7, 2026 |
+| [**What Matters for World Modeling in Vision-Language-Action Models?**](https://arxiv.org/abs/2610.19825) | This study disentangles world representation, integration strategy, and policy backbone to identify effective world-model integration choices for VLAs. | 🤖 Robotics | Oct 14, 2026 |
+| [**Towards Agentic Robots: Model, Data, Environment, and Harness**](https://arxiv.org/abs/2610.20442) | This survey organizes agentic robotics around models, data, environments, and execution harnesses for autonomous reasoning and adaptation. | 🧠 General / Cross-domain | Oct 14, 2026 |
+| [**When Do Discrete Actions Make Good Continuous Controllers?**](https://arxiv.org/abs/2610.20429) | This study shows that factorization error rather than action precision is the main limitation of discrete-token continuous controllers. | 🤖 Robotics | Oct 14, 2026 |
+| [**AutoAgent0: An Agentic Runtime for Safe Closed-Loop Driving**](https://arxiv.org/abs/2610.18866) | AutoAgent0 wraps driving experts with detection, rule-based verification, and feedback-driven recovery for safer closed-loop execution. | 🚗 Autonomous Driving | Oct 13, 2026 |
+| [**TacitVLA: Reasoning Vision-Language-Action Models Without Reasoning Latency**](https://arxiv.org/abs/2610.17540) | TacitVLA trains with textual reasoning while allowing its action expert to act without waiting for or attending to current-call reasoning text. | 🤖 Robotics | Oct 13, 2026 |
+| [**EmbodiedEvo: Self-Evolving Coding Agent For Physical Intelligence**](https://arxiv.org/abs/2610.18867) | EmbodiedEvo iteratively writes, executes, evaluates, and revises control code using physical feedback to improve embodied task solving. | 🤖 Robotics | Oct 13, 2026 |
+| [**VLMs are Native Action Models: Unleashing the Manipulation Capabilities of VLMs with Explicit Action-Space Grounding**](https://arxiv.org/abs/2610.12832) | This work grounds continuous robot actions directly in pretrained VLM representations to preserve their native spatial and reasoning capabilities. | 🤖 Robotics | Oct 9, 2026 |
+| [**Reflect-VLA: Internalizing Reflective Guidance via Dual-Path On-Policy Self-Distillation for Autonomous Driving**](https://arxiv.org/abs/2610.13453) | Reflect-VLA distills structured reflective guidance into a driving policy through dual-path on-policy self-distillation. | 🚗 Autonomous Driving | Oct 9, 2026 |
 
 <a id="paper-map"></a>
 ## Explore the map
@@ -129,9 +129,9 @@ A **Vision-Language-Action (VLA)** model connects what an agent *sees*, what a h
 | Area | Topics | What lives here |
 |:-----|:-------|:----------------|
 | ♻️ **[RSI & Agent Harness](#rsi-papers)** (20) | [🧭 Open-ended Foundations (2)](#rsi-foundation)<br>[🧪 Data & skill discovery (5)](#rsi-data)<br>[🧠 Memory & experience (2)](#rsi-memory)<br>[🛠️ Harness & scaffold evolution (3)](#rsi-harness)<br>[🔁 Policy & model updates (6)](#rsi-policy)<br>[🛡️ Safety & evaluation (2)](#rsi-safety) | Systems that turn deployment experience into verified, persistent improvements. |
-| 🚗 **[Autonomous Driving](#ad-papers)** (103) | [🛣️ End-to-End VLA Architecture (40)](#ad-e2e)<br>[🌍 World Models (28)](#ad-world-model)<br>[🎮 Simulation & Data (8)](#ad-simulation-data)<br>[🧭 Planning & Control (9)](#ad-planning)<br>[🛡️ Safety & Benchmarks (18)](#ad-safety-benchmark) | End-to-end driving, world models, planning, simulation, safety, and evaluation. |
-| 🤖 **[Robotics](#robot-papers)** (179) | [🦾 VLA Architecture (75)](#robot-vla-arch)<br>[🧩 Action Tokenization (16)](#robot-action-token)<br>[🔮 World Models & Policy Co-learning (32)](#robot-world-model-policy)<br>[🎯 RL & Policy Optimization (24)](#robot-rl-policy)<br>[📚 Data & Pre-training (32)](#robot-data-pretrain) | Generalist policies, action representations, robot learning, memory, and manipulation. |
-| 🧠 **[General / Cross-domain](#general-papers)** (100) | [🧊 Spatial Perception & 3D/4D (24)](#general-spatial)<br>[💭 Latent Reasoning & Chain-of-Thought (16)](#general-latent-reasoning)<br>[🌈 Multimodal Architecture & Pre-training (20)](#general-multimodal-arch)<br>[⚡ Efficient Inference (17)](#general-efficient)<br>[🧪 Physical AI Benchmarks (8)](#general-physical-benchmark)<br>[🗺️ Surveys (15)](#general-survey) | Spatial intelligence, multimodal reasoning, efficient inference, benchmarks, and surveys. |
+| 🚗 **[Autonomous Driving](#ad-papers)** (117) | [🛣️ End-to-End VLA Architecture (45)](#ad-e2e)<br>[🌍 World Models (32)](#ad-world-model)<br>[🎮 Simulation & Data (8)](#ad-simulation-data)<br>[🧭 Planning & Control (12)](#ad-planning)<br>[🛡️ Safety & Benchmarks (20)](#ad-safety-benchmark) | End-to-end driving, world models, planning, simulation, safety, and evaluation. |
+| 🤖 **[Robotics](#robot-papers)** (210) | [🦾 VLA Architecture (86)](#robot-vla-arch)<br>[🧩 Action Tokenization (21)](#robot-action-token)<br>[🔮 World Models & Policy Co-learning (39)](#robot-world-model-policy)<br>[🎯 RL & Policy Optimization (28)](#robot-rl-policy)<br>[📚 Data & Pre-training (36)](#robot-data-pretrain) | Generalist policies, action representations, robot learning, memory, and manipulation. |
+| 🧠 **[General / Cross-domain](#general-papers)** (110) | [🧊 Spatial Perception & 3D/4D (26)](#general-spatial)<br>[💭 Latent Reasoning & Chain-of-Thought (17)](#general-latent-reasoning)<br>[🌈 Multimodal Architecture & Pre-training (20)](#general-multimodal-arch)<br>[⚡ Efficient Inference (18)](#general-efficient)<br>[🧪 Physical AI Benchmarks (8)](#general-physical-benchmark)<br>[🗺️ Surveys (21)](#general-survey) | Spatial intelligence, multimodal reasoning, efficient inference, benchmarks, and surveys. |
 
 ---
 
@@ -235,12 +235,17 @@ End-to-end driving, world models, planning, simulation, safety, and evaluation.
 
 <a id="ad-e2e"></a>
 <details>
-<summary><strong>🛣️ End-to-End VLA Architecture</strong> <sub>(40 papers)</sub></summary>
+<summary><strong>🛣️ End-to-End VLA Architecture</strong> <sub>(45 papers)</sub></summary>
 
 Models that connect visual understanding directly to driving decisions.
 
 | Paper | Why it matters | Institution & date | Links |
 |:------|:---------------|:-------------------|:------|
+| **Reflect-VLA: Internalizing Reflective Guidance via Dual-Path On-Policy Self-Distillation for Autonomous Driving** | Reflect-VLA distills structured reflective guidance into a driving policy through dual-path on-policy self-distillation. | Tsinghua, USTC, BJTU, NTU<br><sub>Oct 9, 2026</sub> | [Paper](https://arxiv.org/abs/2610.13453) |
+| **Vision-Language-Action Autonomous Driving Agent with Language-based Memory** | AD-Memo equips a driving VLA with interpretable and portable language memory for long-horizon, memory-dependent decisions. | NVIDIA, UIUC<br><sub>Sep 29, 2026</sub> | [Paper](https://arxiv.org/abs/2609.38641) |
+| **Roadside-Cooperative Autonomous Driving: From Data Platform to Vision-Language End-to-End Reasoning** | AURORA aligns ego and roadside views and uses a LoRA-adapted VLM for cooperative semantic reasoning and trajectory generation. | Tsinghua<br><sub>Aug 21, 2026</sub> | [Paper](https://arxiv.org/abs/2608.21032) |
+| **DH-VLM: Dual-Horizon Cooperative Latent Reasoning for Autonomous Driving** | DH-VLM uses asymmetric infrastructure-vehicle semantic cooperation to support efficient short- and long-horizon driving reasoning. | Tsinghua<br><sub>Aug 10, 2026</sub> | [Paper](https://arxiv.org/abs/2608.09333) |
+| **MOJITO: Modal Joint Learning for Unified End-to-End Autonomous Driving** | MOJITO jointly learns multimodal sensor representations and trajectory planning to preserve fine-grained information for end-to-end driving. | Li Auto, USTC<br><sub>Jul 26, 2026</sub> | [Paper](https://arxiv.org/abs/2607.23511) |
 | **PerceptDrive: Perception Prior World-Action Modeling with Adaptive Expert Routing for End-to-End Autonomous Driving** | PerceptDrive combines perception priors with adaptive expert routing in a world-action model for end-to-end driving planning. | Alibaba, Tsinghua<br><sub>Jul 22, 2026</sub> | [Paper](https://arxiv.org/abs/2607.20175) |
 | **WCog-VLA: A Dual-Level World-Cognitive Vision-Language-Action Model for End-to-End Autonomous Driving** | WCog-VLA combines world-level prediction with cognitive-level reasoning in a dual-level VLA model for end-to-end autonomous-driving decisions. | NTU, Tongji<br><sub>Jul 9, 2026</sub> | [Paper](https://arxiv.org/abs/2607.08375) |
 | **PriorEye: Geospatial Visual Priors for End-to-End Autonomous Driving** | PriorEye introduces geospatial visual priors to improve an end-to-end driving model's understanding of road structure and scene layout. | Oxford<br><sub>Jun 30, 2026</sub> | [Paper](https://arxiv.org/abs/2606.31830) |
@@ -286,12 +291,16 @@ Models that connect visual understanding directly to driving decisions.
 
 <a id="ad-world-model"></a>
 <details>
-<summary><strong>🌍 World Models</strong> <sub>(28 papers)</sub></summary>
+<summary><strong>🌍 World Models</strong> <sub>(32 papers)</sub></summary>
 
 Predictive models that simulate future scenes, dynamics, and actions.
 
 | Paper | Why it matters | Institution & date | Links |
 |:------|:---------------|:-------------------|:------|
+| **VGGTWorld-VLA: Intent-Conditioned 3D World Evolution for Autonomous Driving** | VGGTWorld-VLA conditions future 3D geometry evolution on driving semantics and ego motion to model action-dependent futures. | Tsinghua, NTU<br><sub>Oct 8, 2026</sub> | [Paper](https://arxiv.org/abs/2610.11161) |
+| **RoXDrive: Closed-Loop Reinforcement Learning for End-to-End Autonomous Driving via Action-Faithful Rollouts** | RoXDrive performs closed-loop driving reinforcement learning with video-world-model rollouts designed to remain faithful to commanded actions. | XPeng, CUHK, HKU<br><sub>Sep 29, 2026</sub> | [Paper](https://arxiv.org/abs/2609.36851) |
+| **BrainWAM: Action-Space Coordination of Semantic Priors and Predictive Dynamics for Autonomous Driving** | BrainWAM coordinates VLA semantic priors and world-model predictive dynamics in action space to avoid attention-allocation conflicts. | Li Auto, CASIA, CAS<br><sub>Aug 13, 2026</sub> | [Paper](https://arxiv.org/abs/2608.12854) |
+| **HyWorldVLA: A Vision-Language-Action Model with Hybrid World Modeling for Autonomous Driving** | HyWorldVLA combines pixel-level supervision with latent future prediction to improve robust and interpretable end-to-end driving. | BYD<br><sub>Jul 23, 2026</sub> | [Paper](https://arxiv.org/abs/2607.20988) |
 | **M4World: A Multi-view Multimodal Driving World Model for Interactive Object Manipulation and Minute-long Streaming** | M4World is a multi-view multimodal driving world model that supports interactive object manipulation and minute-long streaming generation. | Meituan, CASIA, CAS, BIT<br><sub>Jul 15, 2026</sub> | [Paper](https://arxiv.org/abs/2607.14005) |
 | **World Engine: Towards the Era of Post-Training for Autonomous Driving** | This work presents a systematic post-training framework for autonomous-driving world models that uses reinforcement learning and feedback optimization to improve generation, reasoning, and planning. | NVIDIA, Huawei, Tsinghua, HKU<br><sub>Jun 18, 2026</sub> | [Paper](https://arxiv.org/abs/2606.19836) |
 | **NVIDIA OmniDreams: Real-Time Generative World Model for Closed-Loop Autonomous Vehicle Simulation** | OmniDreams adapts the Cosmos diffusion model into a real-time autoregressive, action-conditioned video world model for reactive closed-loop autonomous-vehicle simulation. | NVIDIA<br><sub>Jun 2, 2026</sub> | [Paper](https://arxiv.org/abs/2606.03159) |
@@ -344,12 +353,15 @@ Datasets, simulators, synthetic data, and scalable data engines.
 
 <a id="ad-planning"></a>
 <details>
-<summary><strong>🧭 Planning & Control</strong> <sub>(9 papers)</sub></summary>
+<summary><strong>🧭 Planning & Control</strong> <sub>(12 papers)</sub></summary>
 
 Trajectory generation, control, value estimation, and decision making.
 
 | Paper | Why it matters | Institution & date | Links |
 |:------|:---------------|:-------------------|:------|
+| **Evaluation Is All You Need for Multi-Modal Autonomous Driving** | This work progressively trains multimodal driving candidates through imitation, candidate-space refinement, and oracle-aligned semantic ranking. | Tsinghua<br><sub>Sep 25, 2026</sub> | [Paper](https://arxiv.org/abs/2609.30818) |
+| **WALT: Learning World-Model-Aligned Latent Trajectories for Autonomous Driving** | WALT distills action-relevant semantics from a frozen driving world model into a compact generative trajectory latent space. | Nanjing Univ, CUHK, HKUST, HKU<br><sub>Sep 24, 2026</sub> | [Paper](https://arxiv.org/abs/2609.30436) |
+| **READ: Learning Risk-Informed Fields for End-to-End Autonomous Driving** | READ learns scene-adaptive risk fields that make environmental influences on candidate driving trajectories explicit and inspectable. | Tsinghua<br><sub>Sep 11, 2026</sub> | [Paper](https://arxiv.org/abs/2609.12371) |
 | **Planning-aligned Token Compression for Long-Context Autonomous Driving** | COMPACT-VA compresses long driving histories into bounded working memory conditioned on learned planning intent, retaining decision-critical context while reducing inference time and memory. | NVIDIA, HKU<br><sub>Jun 1, 2026</sub> | [Paper](https://arxiv.org/abs/2606.07464) |
 | **Driving Intents Amplify Planning-Oriented Reinforcement Learning** | Driving Intents Amplify Planning-Oriented Reinforcement Learning uses intent-conditioned flow matching and multi-intent preference optimization to preserve diverse maneuver modes in end-to-end driving policies. | Li Auto, Tsinghua<br><sub>May 12, 2026</sub> | [Paper](https://arxiv.org/abs/2605.12625) |
 | **CLOVER: Closed-Loop Value Estimation & Ranking for End-to-End Autonomous Driving Planning** | CLOVER trains an autonomous-driving proposal generator for set-level trajectory coverage and a scorer to rank candidates by predicted closed-loop planning metrics. | Tsinghua, USTC, BUAA<br><sub>May 1, 2026</sub> | [Paper](https://arxiv.org/abs/2605.15120) |
@@ -364,12 +376,14 @@ Trajectory generation, control, value estimation, and decision making.
 
 <a id="ad-safety-benchmark"></a>
 <details>
-<summary><strong>🛡️ Safety & Benchmarks</strong> <sub>(18 papers)</sub></summary>
+<summary><strong>🛡️ Safety & Benchmarks</strong> <sub>(20 papers)</sub></summary>
 
 Robustness, safety alignment, attacks, evaluation, and benchmarks.
 
 | Paper | Why it matters | Institution & date | Links |
 |:------|:---------------|:-------------------|:------|
+| **AutoAgent0: An Agentic Runtime for Safe Closed-Loop Driving** | AutoAgent0 wraps driving experts with detection, rule-based verification, and feedback-driven recovery for safer closed-loop execution. | Stanford, CMU, UCLA<br><sub>Oct 13, 2026</sub> | [Paper](https://arxiv.org/abs/2610.18866) |
+| **ExceptionDrive: A Planning-Oriented Counterfactual Corner-Case Benchmark for Autonomous Driving** | ExceptionDrive evaluates driving planners on 21 counterfactual corner cases spanning six safety families with explicit hazard constraints. | ZJU<br><sub>Sep 29, 2026</sub> | [Paper](https://arxiv.org/abs/2609.37871) |
 | **DriveVer: Lightweight Trajectory Evaluator as Test-Time Verifier for Autonomous Driving** | DriveVer uses a lightweight trajectory evaluator as a test-time verifier to select and refine candidate plans for autonomous driving. | Tsinghua, Univ of Macau<br><sub>Jul 1, 2026</sub> | [Paper](https://arxiv.org/abs/2607.00399) |
 | **BadDreamer: Transferable Backdoor Attacks against Video World Models for Autonomous Driving** | This work studies transferable backdoor attacks against video world models for autonomous driving and identifies security risks across models and scenarios. | SJTU<br><sub>Jun 19, 2026</sub> | [Paper](https://arxiv.org/abs/2606.21172) |
 | **DriveJudge: Rethinking Autonomous Driving Evaluation with Vision-Language Models** | DriveJudge combines VLM-based contextual interpretation with selectively invoked deterministic driving rules to provide physically grounded, interpretable evaluations of trajectory quality and preference. | NVIDIA<br><sub>Jun 15, 2026</sub> | [Paper](https://arxiv.org/abs/2606.17362) |
@@ -402,18 +416,29 @@ Generalist policies, action representations, robot learning, memory, and manipul
 
 <a id="robot-vla-arch"></a>
 <details>
-<summary><strong>🦾 VLA Architecture</strong> <sub>(75 papers)</sub></summary>
+<summary><strong>🦾 VLA Architecture</strong> <sub>(86 papers)</sub></summary>
 
 Core architectures that connect perception, language, memory, and control.
 
 | Paper | Why it matters | Institution & date | Links |
 |:------|:---------------|:-------------------|:------|
+| **TacitVLA: Reasoning Vision-Language-Action Models Without Reasoning Latency** | TacitVLA trains with textual reasoning while allowing its action expert to act without waiting for or attending to current-call reasoning text. | NVIDIA, Stanford, UC Berkeley, NYU<br><sub>Oct 13, 2026</sub> | [Paper](https://arxiv.org/abs/2610.17540) |
+| **VLMs are Native Action Models: Unleashing the Manipulation Capabilities of VLMs with Explicit Action-Space Grounding** | This work grounds continuous robot actions directly in pretrained VLM representations to preserve their native spatial and reasoning capabilities. | Tsinghua, ZJU<br><sub>Oct 9, 2026</sub> | [Paper](https://arxiv.org/abs/2610.12832) |
+| **Rho: A Foundation for Efficiently Adaptable VLA Models** | Rho provides open-weight bimanual VLA models that adapt to downstream tasks and distribution fringes with few corrected demonstrations. | Microsoft Research<br><sub>Sep 29, 2026</sub> | [Paper](https://arxiv.org/abs/2609.38164) |
+| **Self-Evolving Coding Agents: From Digital Programs to Physical-World Intelligence** | HexaAnything represents physical state and policy execution as revisable code whose verified traces support tool, harness, and model evolution. | HexaFuture<br><sub>Sep 28, 2026</sub> | [Paper](https://arxiv.org/abs/2609.35432) |
 | **RegenHarness: A Robot Agent Harness with Evidence-Gated Recursive Self-Improvement** | RegenHarness constrains cross-task harness improvement with evidence gating, versioned memory, regression checks, and rollback mechanisms to support verifiable recursive self-improvement. | Country Garden Services, HUST, Omni AI<br><sub>Sep 23, 2026</sub> | [Paper](https://arxiv.org/abs/2609.27612) |
 | **Know Your Body: A Harness for Direct and Self-Improving Robot Control with VLMs** | Know Your Body maintains a queryable and revisable robot body model around a frozen VLM, using evidence from real interactions to reduce subsequent planning costs. | Nanjing Univ, Ant Group, ZJU<br><sub>Sep 22, 2026</sub> | [Paper](https://arxiv.org/abs/2609.28530) · [Project](https://loule0-0.github.io/KnowBody/) |
 | **ME-Brain-1.0: Memory, Cognition and Action for Evolving Embodied Intelligence** | ME-Brain-1.0 unifies execution, experience collection, experience evolution, and re-execution through evolvable memory, a cognitive core, and an action model. | Li Auto<br><sub>Sep 21, 2026</sub> | [Paper](https://arxiv.org/abs/2609.24271) |
 | **PhysBrain 1.5: From Vision-Language Models to Physical Foundation Models** | PhysBrain 1.5 unifies embodied understanding, action generation, and future-state prediction by representing physical interaction as a shared autoregressive token sequence. | DeepCybo<br><sub>Sep 14, 2026</sub> | [Paper](https://arxiv.org/abs/2609.14973) |
+| **Show-Harness: Just a VLM Agent Can Play Robots** | Show-Harness exposes semantic action units that let a foundation VLM control different robots through deterministic embodiment-specific interpreters. | NUS<br><sub>Sep 9, 2026</sub> | [Paper](https://arxiv.org/abs/2609.10522) |
+| **SimpleMemVLA: A Simple but Effective Native-Video Memory for Vision-Language-Action Models** | SimpleMemVLA directly processes long native-video histories instead of committing past observations to a separate memory module. | Tsinghua, PKU, HUST, RUC<br><sub>Sep 2, 2026</sub> | [Paper](https://arxiv.org/abs/2609.05533) |
+| **Knowing When to Stop: Adaptive Action Chunking via Internal Cross-Attention Dynamics in VLAs** | This method adapts action-chunk execution length online using action-to-observation cross-attention entropy as a confidence signal. | Tsinghua<br><sub>Sep 1, 2026</sub> | [Paper](https://arxiv.org/abs/2609.00908) |
+| **Evolve Vision-Language-Action Model into an Agent with On-the-fly Tool-use** | ART trains VLA policies to invoke perception, affordance, and embodiment tools during long-horizon robotic execution. | Tsinghua, SJTU, CUHK, HKU<br><sub>Aug 14, 2026</sub> | [Paper](https://arxiv.org/abs/2608.14047) |
 | **Self-Evolving Embodied Agents via Skill-Harness Evolution** | This work keeps foundation-model parameters frozen while continually evolving reusable skills and contextual code harnesses through environment rollouts. | Northeastern Univ, Microsoft Research<br><sub>Aug 11, 2026</sub> | [Paper](https://arxiv.org/abs/2608.11350) |
 | **Capek 0.5: An Execution-Centric Vision-Language Model for Embodied Intelligence** | Capek 0.5 is an execution-centric embodied vision-language model organized around spatial reasoning, temporal understanding, action guidance, and state verification. | XPeng<br><sub>Aug 7, 2026</sub> | [Paper](https://arxiv.org/abs/2608.06756) |
+| **How Should Vision-Language-Action Models Use Proprioceptive State?** | This study systematically identifies when proprioceptive state and state history help VLAs and where they should enter the architecture. | Allen AI, CUHK, HKUST, HKU<br><sub>Aug 4, 2026</sub> | [Paper](https://arxiv.org/abs/2608.03052) |
+| **Look Where It Matters: Adaptive Visual Refinement for Vision-Language-Action Models** | AtVLA adds learnable visual register tokens that adaptively refine spatial features for precise robotic manipulation. | XJTU<br><sub>Aug 3, 2026</sub> | [Paper](https://arxiv.org/abs/2608.02197) |
+| **ChainVLA: Chaining Vision-Language-Action Queries through a Unified Execution State for Long-Horizon Manipulation** | ChainVLA links successive policy queries through a revisable execution state that preserves long-term evidence and short-term motion. | Tsinghua, Tsinghua Shenzhen<br><sub>Aug 3, 2026</sub> | [Paper](https://arxiv.org/abs/2608.02326) |
 | **RynnBrain 1.1: Towards More Capable and Generalizable Embodied Foundation Model** | RynnBrain 1.1 strengthens perception, reasoning, and action in an embodied foundation model to improve generalization across tasks and scenes. | Alibaba<br><sub>Jul 20, 2026</sub> | [Paper](https://arxiv.org/abs/2607.17977) |
 | **PhyAgentOS: A Self-Evolving Operating System for Embodied Agents with Decoupled Cognitive Planning and Physical Execution** | PhyAgentOS decouples cognitive planning from physical execution in a self-evolving operating system for continual embodied-agent improvement. | SYSU, PCL<br><sub>Jul 18, 2026</sub> | [Paper](https://arxiv.org/abs/2607.16636) |
 | **RxBrain: Embodied Cognition Foundation Model with Joint Language-Visual Reasoning and Imagination** | RxBrain is an embodied cognition foundation model that jointly performs language-visual reasoning and world imagination for complex task planning. | Tencent<br><sub>Jul 15, 2026</sub> | [Paper](https://arxiv.org/abs/2607.14187) |
@@ -488,12 +513,17 @@ Core architectures that connect perception, language, memory, and control.
 
 <a id="robot-action-token"></a>
 <details>
-<summary><strong>🧩 Action Tokenization</strong> <sub>(16 papers)</sub></summary>
+<summary><strong>🧩 Action Tokenization</strong> <sub>(21 papers)</sub></summary>
 
 Action representations, tokenizers, diffusion, and flow-based decoding.
 
 | Paper | Why it matters | Institution & date | Links |
 |:------|:---------------|:-------------------|:------|
+| **When Do Discrete Actions Make Good Continuous Controllers?** | This study shows that factorization error rather than action precision is the main limitation of discrete-token continuous controllers. | Amazon, CMU<br><sub>Oct 14, 2026</sub> | [Paper](https://arxiv.org/abs/2610.20429) |
+| **Rethinking Causal Action Tokenization with Conditional Annealing in Flow Matching** | CATok extracts coarse-to-fine causal action tokens by conditionally annealing a flow-matching process aligned with autoregressive generation. | UMD, Tsinghua<br><sub>Sep 28, 2026</sub> | [Paper](https://arxiv.org/abs/2609.35469) |
+| **ActionPiece: Rethinking Action Tokenization for Autoregressive Vision-Language-Action Models** | ActionPiece jointly supervises representation learning and quantization to preserve local physical action rankings after reconstruction. | HUST, BUAA, HKUST<br><sub>Sep 16, 2026</sub> | [Paper](https://arxiv.org/abs/2609.18487) |
+| **Lost in Reconstruction: Aligning Action Representations with Language in Vision-Language-Action Models** | SALT adds language-aligned supervision to action tokenization so quantized trajectories preserve semantically meaningful action distinctions. | CMU<br><sub>Aug 11, 2026</sub> | [Paper](https://arxiv.org/abs/2608.10484) |
+| **Ordered Action Tokens for Visuomotor Policy Learning** | OAT learns compact, fully decodable, and ordered discrete action tokens for visuomotor policy learning. | Stanford, Harvard<br><sub>Jul 23, 2026</sub> | [Paper](https://arxiv.org/abs/2607.21670) |
 | **Action QFormer: Structured Representation Shaping under Action Supervision in Vision-Language-Action Models** | Action QFormer uses action supervision to shape structured visual representations that better align VLA features with control requirements. | UC Berkeley, Tsinghua, CUHK, HKU<br><sub>Jul 16, 2026</sub> | [Paper](https://arxiv.org/abs/2607.14635) |
 | **LARA: Latent Action Representation Alignment for Vision-Language-Action Models** | LARA jointly aligns latent action and VLA representations so unlabeled visual dynamics are grounded by robot trajectories while forward-dynamics regularization discourages ineffective action predictions. | UCLA, PKU<br><sub>Jun 5, 2026</sub> | [Paper](https://arxiv.org/abs/2606.07100) |
 | **X-Tokenizer: A Multimodal Action Tokenizer for Vision-Language-Action Pretraining** | X-Tokenizer learns a cross-embodiment action interface whose first quantization level captures semantic motion intent while deeper residual levels preserve fine-grained control details. | Tsinghua, HKU, CityU HK<br><sub>Jun 1, 2026</sub> | [Paper](https://arxiv.org/abs/2606.14752) |
@@ -515,12 +545,19 @@ Action representations, tokenizers, diffusion, and flow-based decoding.
 
 <a id="robot-world-model-policy"></a>
 <details>
-<summary><strong>🔮 World Models & Policy Co-learning</strong> <sub>(32 papers)</sub></summary>
+<summary><strong>🔮 World Models & Policy Co-learning</strong> <sub>(39 papers)</sub></summary>
 
 Policies that learn with prediction, imagination, or world models.
 
 | Paper | Why it matters | Institution & date | Links |
 |:------|:---------------|:-------------------|:------|
+| **What Matters for World Modeling in Vision-Language-Action Models?** | This study disentangles world representation, integration strategy, and policy backbone to identify effective world-model integration choices for VLAs. | CASIA, CAS<br><sub>Oct 14, 2026</sub> | [Paper](https://arxiv.org/abs/2610.19825) |
+| **InternW0-$Δ$: A World Action Model Bridging Predictive Dynamics and Actions with 20K+ Hours of Open Data** | InternW0-Delta integrates pretrained video, semantic, 4D geometry, motion, and action experts through a mixture-of-transformers architecture. | Physical Intelligence, Shanghai AI Lab<br><sub>Sep 25, 2026</sub> | [Paper](https://arxiv.org/abs/2609.31394) |
+| **InternW0: A Foundational Physical World Model for Efficient Real-World Interactions** | InternW0 jointly learns future visual dynamics and continuous control with asynchronous video and action experts operating at different frequencies. | Physical Intelligence, Shanghai AI Lab<br><sub>Sep 23, 2026</sub> | [Paper](https://arxiv.org/abs/2609.27656) |
+| **MachEmbodied-U0: Unified Understanding and Generation Model for Embodied Intelligence** | MachEmbodied-U0 connects understanding and generation experts to jointly ground affordances, predict visual dynamics, and generate robot actions. | Li Auto<br><sub>Sep 22, 2026</sub> | [Paper](https://arxiv.org/abs/2609.25627) |
+| **OpenWAM: An Open, Modular Exploration Towards Systematic World-Action Model Pretraining** | OpenWAM provides a modular framework for isolating and evaluating the design choices involved in world-action model pretraining. | Tsinghua, PKU, SJTU, ZJU<br><sub>Sep 7, 2026</sub> | [Paper](https://arxiv.org/abs/2609.07398) |
+| **$τ_0$-VLA: a Hierarchical Robot Foundation Model with World-Model-Guided Test-Time Computation** | Tau-0-VLA uses world-model-guided test-time search for high-level subtasks and a cross-embodiment low-level policy for execution. | Agibot, CUHK, HKU<br><sub>Aug 17, 2026</sub> | [Paper](https://arxiv.org/abs/2608.16885) |
+| **HarnessWAM: Bridging Prediction and Deliberation in World Action Models** | HarnessWAM augments world-action models with a task manager that maintains scene beliefs, plans tasks, verifies execution, and recovers from failures. | CASIA, CAS, BIT<br><sub>Aug 10, 2026</sub> | [Paper](https://arxiv.org/abs/2608.09516) |
 | **RoboInter1.5: A Holistic Intermediate Representation Suite for Embodied World Modeling and Robotic Manipulation** | RoboInter1.5 provides intermediate representations spanning perception, prediction, and action to connect embodied world modeling with robotic manipulation. | Shanghai AI Lab<br><sub>Jul 21, 2026</sub> | [Paper](https://arxiv.org/abs/2607.18709) |
 | **FoMoVLA: Bridging Visual Foresight and Motion Guidance for Vision-Language-Action Models** | FoMoVLA combines visual foresight with motion guidance so a VLA model can predict future states while generating executable actions. | Li Auto, Tsinghua, CAS<br><sub>Jul 16, 2026</sub> | [Paper](https://arxiv.org/abs/2607.14739) |
 | **GigaWorld-Policy-0.5: A Faster and Stronger WAM Empowered by AutoResearch** | GigaWorld-Policy-0.5 uses an automated research workflow to improve a world-action model's policy performance and execution speed. | Tsinghua<br><sub>Jul 15, 2026</sub> | [Paper](https://arxiv.org/abs/2607.13960) |
@@ -558,12 +595,16 @@ Policies that learn with prediction, imagination, or world models.
 
 <a id="robot-rl-policy"></a>
 <details>
-<summary><strong>🎯 RL & Policy Optimization</strong> <sub>(24 papers)</sub></summary>
+<summary><strong>🎯 RL & Policy Optimization</strong> <sub>(28 papers)</sub></summary>
 
 Reinforcement learning, post-training, alignment, and policy optimization.
 
 | Paper | Why it matters | Institution & date | Links |
 |:------|:---------------|:-------------------|:------|
+| **EmbodiedEvo: Self-Evolving Coding Agent For Physical Intelligence** | EmbodiedEvo iteratively writes, executes, evaluates, and revises control code using physical feedback to improve embodied task solving. | Tsinghua<br><sub>Oct 13, 2026</sub> | [Paper](https://arxiv.org/abs/2610.18867) |
+| **Co-Evolving Robot Orchestrators and Policies through Deployment** | This framework jointly improves a VLM orchestrator and its VLA policy from deployment experience so each remains aligned with the other's capabilities. | NVIDIA, Stanford<br><sub>Oct 6, 2026</sub> | [Paper](https://arxiv.org/abs/2610.09228) |
+| **EmbodiRSI: Recursive Self-Improvement for Data-Efficient Robot Adaptation** | EmbodiRSI uses real-to-sim-to-real execution feedback to iteratively acquire targeted experience and improve manipulation policies. | ShanghaiTech<br><sub>Sep 30, 2026</sub> | [Paper](https://arxiv.org/abs/2609.38905) |
+| **Robo-Dopamine 2.0: History-Conditioned and OOD-Aware Process Reward Modeling for Robotic Manipulation** | Robo-Dopamine 2.0 learns history-aware process rewards that distinguish robust progress from task-invalid failures during VLA reinforcement learning. | Tencent, PKU, SYSU<br><sub>Aug 16, 2026</sub> | [Paper](https://arxiv.org/abs/2608.15680) |
 | **ReflectVLN: Training Vision-Language Navigation Agents with Reflective Reasoning** | ReflectVLN trains vision-language navigation agents with reflective reasoning so they can review and correct navigation decisions. | Alibaba, BUAA<br><sub>Jul 14, 2026</sub> | [Paper](https://arxiv.org/abs/2607.12680) |
 | **Trust Your Instincts: Confidence-Driven Test-Time RL for Vision-Language-Action Models** | This work uses model confidence to trigger test-time reinforcement learning, enabling a VLA model to adapt its action policy during deployment. | Fudan<br><sub>Jun 29, 2026</sub> | [Paper](https://arxiv.org/abs/2606.29892) |
 | **dVLA-RL: Reinforcement Learning over Denoising Trajectories for Discrete Diffusion Vision-Language-Action Models** | dVLA-RL applies reinforcement learning over the denoising trajectories of discrete-diffusion VLA models to directly optimize multi-step action generation. | Tsinghua, SJTU, Shanghai AI Lab, Tsinghua Shenzhen<br><sub>Jun 22, 2026</sub> | [Paper](https://arxiv.org/abs/2606.23623) |
@@ -593,12 +634,16 @@ Reinforcement learning, post-training, alignment, and policy optimization.
 
 <a id="robot-data-pretrain"></a>
 <details>
-<summary><strong>📚 Data & Pre-training</strong> <sub>(32 papers)</sub></summary>
+<summary><strong>📚 Data & Pre-training</strong> <sub>(36 papers)</sub></summary>
 
 Robot datasets, pre-training recipes, scaling, and transfer learning.
 
 | Paper | Why it matters | Institution & date | Links |
 |:------|:---------------|:-------------------|:------|
+| **EmbodiedSmith: Scaling Embodied Data through Recursive Self-Improvement Flywheel in Simulation** | EmbodiedSmith recursively co-refines assets, scenes, and tasks to scale customizable embodied training data in simulation. | Xiaomi, Tsinghua, PKU, ZJU<br><sub>Oct 6, 2026</sub> | [Paper](https://arxiv.org/abs/2610.07969) |
+| **CometVLA: Co-Training on an Embodied Data Pyramid towards Physical Understanding** | CometVLA co-trains across robot, simulation, egocentric, and VQA data while using global action-prior tokens to transfer physical commonsense. | JD, SCUT, SYSU, CUHK<br><sub>Aug 31, 2026</sub> | [Paper](https://arxiv.org/abs/2608.30289) |
+| **What Matters for Latent Actions in Robot Learning** | This empirical study compares 41 latent-action design choices across modeling, objectives, regularization, and downstream policy integration. | Xiaomi, NUS<br><sub>Aug 20, 2026</sub> | [Paper](https://arxiv.org/abs/2608.19613) |
+| **ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine** | ACE-Data-0 captures synchronized multimodal human activity at table and room scales to provide spatially calibrated embodied training data. | NTU<br><sub>Jul 30, 2026</sub> | [Paper](https://arxiv.org/abs/2607.28625) |
 | **Scaling Behavior Foundation Model for Humanoid Robots** | This work scales the data and model size of a behavior foundation model for humanoid robots to improve generalization of whole-body skills. | Galbot, Tsinghua, PKU, SJTU<br><sub>Jul 16, 2026</sub> | [Paper](https://arxiv.org/abs/2607.15163) |
 | **Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories** | Xiaomi-Robotics-1 scales VLA training with more than 100,000 hours of real-world trajectories to build a large-scale general robot policy. | Xiaomi<br><sub>Jul 16, 2026</sub> | [Paper](https://arxiv.org/abs/2607.15330) |
 | **Zero2Skill: Bootstrapping Robot Skills through Autonomous Data Collection, Training, and Deployment** | Zero2Skill closes the loop among autonomous data collection, skill training, and deployment to bootstrap robot skills from scratch. | Cornell, Tsinghua, Nanjing Univ, CAS<br><sub>Jul 15, 2026</sub> | [Paper](https://arxiv.org/abs/2607.14047) |
@@ -645,12 +690,14 @@ Spatial intelligence, multimodal reasoning, efficient inference, benchmarks, and
 
 <a id="general-spatial"></a>
 <details>
-<summary><strong>🧊 Spatial Perception & 3D/4D</strong> <sub>(24 papers)</sub></summary>
+<summary><strong>🧊 Spatial Perception & 3D/4D</strong> <sub>(26 papers)</sub></summary>
 
 3D/4D perception, geometry, grounding, reconstruction, and spatial intelligence.
 
 | Paper | Why it matters | Institution & date | Links |
 |:------|:---------------|:-------------------|:------|
+| **GroundingPI: A Grounding Foundation Model towards Physical Intelligence with Visual Primitives** | GroundingPI generates quantized point and box primitives as a shared vocabulary for fast, precise physical-world visual grounding. | XPeng, UC Berkeley, Princeton, Tsinghua<br><sub>Sep 30, 2026</sub> | [Paper](https://arxiv.org/abs/2609.39601) |
+| **Qwen-3D: A Generalist 3D Vision-Language Model for Spatial Understanding** | Qwen-3D compresses long visual streams into persistent world-aligned 3D representations for spatial understanding and grounding. | Alibaba, CMU<br><sub>Aug 4, 2026</sub> | [Paper](https://arxiv.org/abs/2608.02980) |
 | **IGGT4D: Streaming 4D Instance-Grounded Geometry Transformer** | IGGT4D streams instance-grounded 4D geometry predictions to continuously recover object-level spatial structure in dynamic scenes. | Horizon Robotics, NTU<br><sub>Jul 21, 2026</sub> | [Paper](https://arxiv.org/abs/2607.19228) |
 | **VGGT-Ω** | VGGT-Ω scales feed-forward static and dynamic scene reconstruction with register attention, a unified dense prediction head, self-supervision, and substantially larger training data. | Meta AI, Oxford<br><sub>May 1, 2026</sub> | [Paper](https://arxiv.org/abs/2605.15195) |
 | **SceneScribe-1M: A Large-Scale Video Dataset with Comprehensive Geometric and Semantic Annotations** | SceneScribe-1M is a million-scale video dataset with joint geometric and semantic annotations, including captions, camera parameters, depth maps, and 3D point trajectories. | Meta AI, Oxford, SJTU<br><sub>Apr 10, 2026</sub> | [Paper](https://arxiv.org/abs/2604.07990) |
@@ -680,7 +727,7 @@ Spatial intelligence, multimodal reasoning, efficient inference, benchmarks, and
 
 <a id="general-latent-reasoning"></a>
 <details>
-<summary><strong>💭 Latent Reasoning & Chain-of-Thought</strong> <sub>(16 papers)</sub></summary>
+<summary><strong>💭 Latent Reasoning & Chain-of-Thought</strong> <sub>(17 papers)</sub></summary>
 
 Visual reasoning, chain-of-thought, memory, and latent deliberation.
 
@@ -701,6 +748,7 @@ Visual reasoning, chain-of-thought, memory, and latent deliberation.
 | **Unifying Perception and Action: Implicit Visual CoT** | This work combines a hybrid-modal pipeline with implicit visual chain-of-thought reasoning to unify perception and action. | Nanjing Univ<br><sub>Nov 25, 2025</sub> | [Paper](https://arxiv.org/abs/2511.19859) |
 | **Chain-of-Visual-Thought: Teaching VLMs with Continuous Visual Tokens** | Chain-of-Visual-Thought teaches vision-language models to reason with continuous visual tokens for denser visual perception. | UC Berkeley<br><sub>Nov 24, 2025</sub> | [Paper](https://arxiv.org/abs/2511.19418) |
 | **ThinkMorph: Emergent Properties in Multimodal Interleaved CoT** | ThinkMorph uses interleaved text-image chains of thought to study emergent multimodal reasoning capabilities. | NUS, ZJU, UW<br><sub>Oct 30, 2025</sub> | [Paper](https://arxiv.org/abs/2510.27492) |
+| **Hierarchical Reasoning Model** | HRM uses coupled slow and fast recurrent modules to achieve deep hierarchical reasoning without chain-of-thought supervision. | Sapient Intelligence, Tsinghua<br><sub>Jun 26, 2025</sub> | [Paper](https://arxiv.org/abs/2506.21734) |
 | **COCONUT: Training LLMs to Reason in Continuous Latent Space** | COCONUT trains language models to reason in continuous latent space rather than relying only on language representations. | Meta AI, UCSD<br><sub>Dec 9, 2024</sub> | [Paper](https://arxiv.org/abs/2412.06769) |
 
 </details>
@@ -738,12 +786,13 @@ Unified multimodal understanding, generation, and foundation models.
 
 <a id="general-efficient"></a>
 <details>
-<summary><strong>⚡ Efficient Inference</strong> <sub>(17 papers)</sub></summary>
+<summary><strong>⚡ Efficient Inference</strong> <sub>(18 papers)</sub></summary>
 
 Token compression, pruning, acceleration, and efficient architectures.
 
 | Paper | Why it matters | Institution & date | Links |
 |:------|:---------------|:-------------------|:------|
+| **Fewer Tokens, Better Action: GPT-6 Astra Robot Agents with 14% Higher Success Rate but 65% Fewer Tokens** | PyRUA-Lean composes robot primitives and VLA policies in executable code while selectively returning observations to reduce replanning tokens. | NVIDIA, OpenAI, PKU, NUS<br><sub>Oct 1, 2026</sub> | [Paper](https://arxiv.org/abs/2610.01939) |
 | **On the Design of Qwen3.8-Next Architecture: Evaluation, Efficiency, and Training Stability** | This work evaluates the sparse architecture, efficiency, and training stability of Qwen3.8-Next while jointly optimizing GDN, sparse attention, and mixture-of-experts design. | Alibaba<br><sub>Aug 31, 2026</sub> | [Paper](https://arxiv.org/abs/2608.30320) |
 | **VisCo: Leveraging Large Language Models as Intrinsic Encoders for Visual Token Compression** | VisCo uses a large language model as an intrinsic encoder to compress visual tokens while preserving semantics and reducing multimodal inference cost. | USTC<br><sub>Jul 14, 2026</sub> | [Paper](https://arxiv.org/abs/2607.12756) |
 | **MVPruner: Dynamic Token Pruning for Accelerating Multi-view Vision-Language Models in Autonomous Driving** | MVPruner dynamically removes redundant tokens from multi-view vision-language models based on the input to accelerate inference while preserving accuracy. | SJTU<br><sub>Jun 26, 2026</sub> | [Paper](https://arxiv.org/abs/2606.27660) |
@@ -785,13 +834,19 @@ Evaluation suites for embodied intelligence and physical reasoning.
 
 <a id="general-survey"></a>
 <details>
-<summary><strong>🗺️ Surveys</strong> <sub>(15 papers)</sub></summary>
+<summary><strong>🗺️ Surveys</strong> <sub>(21 papers)</sub></summary>
 
 Roadmaps and surveys for getting oriented in the field.
 
 | Paper | Why it matters | Institution & date | Links |
 |:------|:---------------|:-------------------|:------|
+| **Towards Agentic Robots: Model, Data, Environment, and Harness** | This survey organizes agentic robotics around models, data, environments, and execution harnesses for autonomous reasoning and adaptation. | Tsinghua, ZJU, Fudan, SYSU<br><sub>Oct 14, 2026</sub> | [Paper](https://arxiv.org/abs/2610.20442) |
+| **In-Context Learning for Robots: Methods and Applications** | This survey compares robot in-context learning interfaces and analyzes how demonstrations, correspondence, and memory support task transfer. | Tsinghua, CUHK, HKUST, HKU<br><sub>Sep 28, 2026</sub> | [Paper](https://arxiv.org/abs/2609.36012) |
+| **No Free Checker: A Survey of Verifiers for Robot Policies** | This survey organizes robot-policy verifiers by judgment source and characterizes the trade-off between verdict availability and credibility. | ZJU, HKU, CityU HK<br><sub>Sep 8, 2026</sub> | [Paper](https://arxiv.org/abs/2609.09250) |
 | **Self-Evolving AI for Humanoids: Mechanisms, Safety, and Evaluation of Post-Deployment Self-Improvement** | This survey defines post-deployment self-evolution for humanoid robots and reviews self-learning, self-adaptation, self-optimization, self-generation, and their safety and validation boundaries. | Kyung Hee Univ, NTU<br><sub>Sep 2, 2026</sub> | [Paper](https://arxiv.org/abs/2609.13236) |
+| **Weights or Skills? A Survey of Robot-Learning Techniques: from Action-Predicting Weights to Robots that Write their Own Skills** | This survey organizes robot learning along a spectrum from fixed action-predicting policies to self-improving code-based skill agents. | UC Berkeley<br><sub>Aug 3, 2026</sub> | [Paper](https://arxiv.org/abs/2608.01851) |
+| **Towards Trustworthy Embodied Intelligence: A Systems Framework and Graded Trustworthiness Levels** | This work defines sustained safe success and presents a layered systems framework for evaluating trustworthy embodied intelligence. | Tsinghua, PKU, HKUST, HKU<br><sub>Jul 28, 2026</sub> | [Paper](https://arxiv.org/abs/2607.26121) |
+| **Data Pyramid for Embodied Manipulation: A Survey** | This survey organizes embodied manipulation data into a pyramid spanning robot, UMI, human video, simulation, and vision-language sources. | PKU, SJTU, Nanjing Univ, CUHK<br><sub>Jul 27, 2026</sub> | [Paper](https://arxiv.org/abs/2607.24744) |
 | **Progress Reward Modeling for Robotic Learning: A Comprehensive Survey** | This survey reviews methods, data, evaluation practices, and open problems in progress reward modeling for robotic learning. | CMU, UIUC, UW-Madison, Northwestern<br><sub>Jul 22, 2026</sub> | [Paper](https://arxiv.org/abs/2607.21655) |
 | **From World Action Models to Embodied Brains: A Roadmap for Open-World Physical Intelligence** | This survey maps the path from world-action models to embodied brains and discusses key challenges for open-world physical intelligence. | Physical Intelligence<br><sub>Jul 13, 2026</sub> | [Paper](https://arxiv.org/abs/2607.11689) |
 | **World Action Models: A Survey** | This survey defines world-action models and organizes them by generated future representation, predictive substrate, backbone, action coupling, and deployment regime while analyzing their control-relevant trade-offs. | NUS<br><sub>Jun 1, 2026</sub> | [Paper](https://arxiv.org/abs/2606.20781) |
