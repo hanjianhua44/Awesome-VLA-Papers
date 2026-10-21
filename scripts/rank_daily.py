@@ -187,7 +187,7 @@ def _selection_domain(paper: dict) -> str:
     text = f"{paper.get('title', '')} {paper.get('abstract', '')}"
     if paper.get("daily_category") == "Autonomous Driving":
         return "ad"
-    if topic.startswith("ad/") or re.search(
+    if re.search(
         r"autonomous driving|self.driving|end.to.end.{0,12}driv"
         r"|driving.{0,12}(policy|planning|world model|agent)"
         r"|\bBEV\b|trajectory.{0,8}(driving|vehicle)",
@@ -213,9 +213,17 @@ def rank_and_select(
         score_candidate(paper, profile, config)
         for paper in candidates
     ]
-    ranked = [paper for paper in ranked if paper["final_score"] >= minimum]
     for paper in ranked:
         paper["selection_domain"] = _selection_domain(paper)
+    domain_floors = {
+        domain: float(score)
+        for domain, score in config.get("minimum_domain_score", {}).items()
+    }
+    ranked = [
+        paper for paper in ranked
+        if paper["final_score"] >= minimum
+        or paper["final_score"] >= domain_floors.get(paper["selection_domain"], minimum)
+    ]
     ranked.sort(
         key=lambda paper: (
             paper["final_score"],

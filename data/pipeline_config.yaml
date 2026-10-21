@@ -5,6 +5,8 @@ max_per_topic: 6
 max_per_primary_institution: 5
 minimum_per_domain:
   ad: 3
+minimum_domain_score:
+  ad: 3.5
 
 weights:
   keyword: 4.0

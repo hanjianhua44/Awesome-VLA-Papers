@@ -691,7 +691,12 @@ def generate_daily_report(papers: list, date_str: str, total_scanned: int = 0,
 
     by_cat = {}
     for p in papers:
-        cat = categorize_paper(p["topics"], p["categories"], p.get("title", ""), p.get("abstract", ""))
+        cat = p.get("daily_category") or categorize_paper(
+            p["topics"],
+            p["categories"],
+            p.get("title", ""),
+            p.get("abstract", ""),
+        )
         by_cat.setdefault(cat, []).append(p)
 
     cat_order = ["Embodied RSI", "VLA", "Autonomous Driving", "Robotics", "Agent", "World Models",
