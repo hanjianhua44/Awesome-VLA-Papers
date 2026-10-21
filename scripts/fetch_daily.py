@@ -480,6 +480,13 @@ def fetch_arxiv_papers(date_str: str = None):
 
     # Phase 3: rank against the curated homepage. Institutions are a quality
     # signal rather than a hard gate so important work from new labs survives.
+    for paper in candidates:
+        paper["daily_category"] = categorize_paper(
+            paper["topics"],
+            paper["categories"],
+            paper["title"],
+            paper["abstract"],
+        )
     results = rank_and_select(candidates)
     dropped = len(candidates) - len(results)
     print(

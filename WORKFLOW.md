@@ -160,7 +160,7 @@ The curated main list in `data/papers.yaml` is the interest profile. A lightweig
 - priority signals for VLA, RSI, world-action models, action tokenization, and end-to-end driving
 - a penalty for generic CV work without an embodied or action signal
 
-The ranker selects at most 20 papers above the quality floor, caps over-represented Topics and primary institutions, and then backfills only with candidates that already passed the quality threshold. This lets important papers from new labs survive while preventing a single prolific institution or topic from dominating the digest. Weights and caps live in `data/pipeline_config.yaml`.
+The ranker selects at most 20 papers above the quality floor. It first reserves at least three autonomous-driving slots when three qualifying candidates are available, reflecting the maintainer's primary research area. It then caps over-represented Topics and primary institutions and backfills only with candidates that already passed the quality threshold. This lets important papers from new labs survive while preventing a single prolific institution or topic from dominating the digest. Weights, quotas, and caps live in `data/pipeline_config.yaml`.
 
 ### Step 5: Report and Email
 

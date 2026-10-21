@@ -181,6 +181,25 @@ def _primary_institution(paper: dict) -> str:
     return institution.split(",", 1)[0].strip().lower()
 
 
+def _selection_domain(paper: dict) -> str:
+    """Map a candidate to the user's high-level digest domain."""
+    topic = paper.get("curated_topic", "")
+    text = f"{paper.get('title', '')} {paper.get('abstract', '')}"
+    if paper.get("daily_category") == "Autonomous Driving":
+        return "ad"
+    if topic.startswith("ad/") or re.search(
+        r"autonomous driving|self.driving|end.to.end.{0,12}driv"
+        r"|driving.{0,12}(policy|planning|world model|agent)"
+        r"|\bBEV\b|trajectory.{0,8}(driving|vehicle)",
+        text,
+        re.I,
+    ):
+        return "ad"
+    if topic.startswith("robot/"):
+        return "robot"
+    return "general"
+
+
 def rank_and_select(
     candidates: list[dict],
     config_path: Path = DEFAULT_CONFIG,
@@ -195,6 +214,8 @@ def rank_and_select(
         for paper in candidates
     ]
     ranked = [paper for paper in ranked if paper["final_score"] >= minimum]
+    for paper in ranked:
+        paper["selection_domain"] = _selection_domain(paper)
     ranked.sort(
         key=lambda paper: (
             paper["final_score"],
@@ -213,6 +234,24 @@ def rank_and_select(
     topic_counts = Counter()
     institution_counts = Counter()
     seen_ids = set()
+
+    def add(paper: dict) -> None:
+        selected.append(paper)
+        seen_ids.add(paper.get("arxiv_id"))
+        topic_counts[paper["curated_topic"]] += 1
+        institution_counts[_primary_institution(paper)] += 1
+
+    # Reserve domain slots before normal diversity caps. The default profile
+    # protects autonomous-driving coverage for the repository owner's primary
+    # research area, while still requiring candidates to pass the quality floor.
+    for domain, requested in config.get("minimum_per_domain", {}).items():
+        for paper in (item for item in ranked if item["selection_domain"] == domain):
+            if sum(1 for item in selected if item["selection_domain"] == domain) >= int(requested):
+                break
+            if len(selected) >= target or paper.get("arxiv_id") in seen_ids:
+                continue
+            add(paper)
+
     for paper in ranked:
         arxiv_id = paper.get("arxiv_id")
         if arxiv_id in seen_ids:
@@ -222,10 +261,7 @@ def rank_and_select(
         if topic_counts[topic] >= topic_cap or institution_counts[institution] >= institution_cap:
             deferred.append(paper)
             continue
-        selected.append(paper)
-        seen_ids.add(arxiv_id)
-        topic_counts[topic] += 1
-        institution_counts[institution] += 1
+        add(paper)
         if len(selected) >= target:
             return selected
 
@@ -234,7 +270,6 @@ def rank_and_select(
             break
         if paper.get("arxiv_id") in seen_ids:
             continue
-        selected.append(paper)
-        seen_ids.add(paper.get("arxiv_id"))
+        add(paper)
     return selected
 

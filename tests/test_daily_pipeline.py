@@ -45,6 +45,25 @@ class DailyRankingTests(unittest.TestCase):
         self.assertTrue(all("final_score" in paper for paper in selected))
         self.assertTrue(all("curated_topic_label" in paper for paper in selected))
 
+    def test_autonomous_driving_reserves_three_slots_when_available(self):
+        driving = []
+        for index in range(4):
+            paper = candidate(100 + index, "Waymo")
+            paper["title"] = f"End-to-End Vision-Language-Action Autonomous Driving {index}"
+            paper["abstract"] = (
+                "An autonomous driving VLA performs scene understanding, "
+                "trajectory planning, and closed-loop driving control."
+            )
+            driving.append(paper)
+        selected = rank_and_select(
+            [candidate(index) for index in range(30)] + driving
+        )
+        self.assertEqual(len(selected), 20)
+        self.assertGreaterEqual(
+            sum(paper["selection_domain"] == "ad" for paper in selected),
+            3,
+        )
+
     def test_homepage_relevance_beats_broad_cv(self):
         strong = score_candidate(candidate(1), self.profile, self.config)
         weak = candidate(2, "—")

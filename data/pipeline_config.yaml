@@ -3,6 +3,8 @@ minimum_score: 4.5
 candidate_keyword_floor: 3
 max_per_topic: 6
 max_per_primary_institution: 5
+minimum_per_domain:
+  ad: 3
 
 weights:
   keyword: 4.0
