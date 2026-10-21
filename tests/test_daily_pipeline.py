@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from fetch_daily import target_dates_for
 from daily_job import should_send_email
 from rank_daily import CuratedTopicProfile, rank_and_select, score_candidate, load_config
+from render_digest_pdf import build_digest_pdf
 from send_digest_email import render_digest_html, render_digest_text, send_digest
 
 
@@ -101,6 +102,24 @@ class DailyRankingTests(unittest.TestCase):
 
 
 class DigestEmailTests(unittest.TestCase):
+    def test_pdf_digest_is_rendered_with_academic_content(self):
+        paper = candidate(1)
+        paper["curated_topic_label"] = "Robotics / VLA Architecture"
+        paper["selection_domain"] = "robot"
+        paper["final_score"] = 8.25
+        with TemporaryDirectory() as directory:
+            path = Path(directory) / "digest.pdf"
+            build_digest_pdf(
+                [paper],
+                "2026-10-21",
+                "10-16 ~ 10-19",
+                "https://example.com/report",
+                path,
+            )
+            content = path.read_bytes()
+        self.assertTrue(content.startswith(b"%PDF"))
+        self.assertGreater(len(content), 5000)
+
     def test_html_contains_topic_links_and_escapes_content(self):
         paper = candidate(1)
         paper["title"] = "VLA <Safety> & Control"
@@ -115,6 +134,21 @@ class DigestEmailTests(unittest.TestCase):
         self.assertIn("VLA &lt;Safety&gt; &amp; Control", result)
         self.assertIn("Robotics / VLA Architecture", result)
         self.assertIn("https://example.com/report", result)
+
+    def test_html_lite_keeps_layout_without_per_paper_links(self):
+        paper = candidate(1)
+        paper["curated_topic_label"] = "Robotics / VLA Architecture"
+        report_url = "https://example.com/report"
+        result = render_digest_html(
+            [paper],
+            "2026-10-21",
+            "10-16 ~ 10-19",
+            report_url,
+            include_paper_links=False,
+        )
+        self.assertIn(paper["title"], result)
+        self.assertIn(report_url, result)
+        self.assertNotIn(f'href="{paper["url"]}"', result)
 
     def test_plain_digest_keeps_one_report_link_only(self):
         paper = candidate(1)

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 
 from rank_daily import rank_and_select
@@ -16,8 +17,15 @@ def main() -> None:
     parser.add_argument("--covers", required=True)
     parser.add_argument("--report-url", default="")
     parser.add_argument("--subject-prefix", default="")
+    parser.add_argument(
+        "--email-mode",
+        choices=["pdf", "plain", "html-lite", "html"],
+        help="Override DIGEST_EMAIL_MODE for this delivery.",
+    )
     args = parser.parse_args()
 
+    if args.email_mode:
+        os.environ["DIGEST_EMAIL_MODE"] = args.email_mode
     candidates = json.loads(args.json_path.read_text(encoding="utf-8"))
     papers = rank_and_select(candidates)
     send_digest(

@@ -168,9 +168,9 @@ Surviving papers are:
 1. **Categorized** into sections (Embodied RSI, VLA, Autonomous Driving, Robotics, World Models, RL, etc.)
 2. **Formatted** into a styled Markdown report with Chinese editorial summaries, emoji markers, and bold highlights
 3. **Saved** to `daily/YYYY/MM/YYYY-MM-DD.md`
-4. **Emailed** in enterprise-safe plain text with Topic, institution, and arXiv ID
+4. **Emailed** with a polished, link-enabled PDF research brief attached
 
-The work mailbox filters link-heavy HTML, so the default is a structured plain-text research brief grouped by autonomous driving, robotics, and cross-domain work. Each paper includes institution, Topic, relevance score, arXiv ID, and a concise introduction; only one GitHub Daily link is retained for the full abstracts and paper URLs. Set `DIGEST_EMAIL_MODE=html` only for mailboxes that accept link-rich cards. The JSON cache stores `final_score`, `curated_topic`, and `selection_reasons` for transparent tuning. SMTP credentials are read only from local environment variables and are never committed.
+The work mailbox filters HTML message bodies, so the default email contains only a two-line plain-text note plus a white, academic-style PDF attachment. The PDF groups autonomous driving first, followed by robotics and cross-domain work; every paper includes institution, Topic, relevance score, arXiv ID, a concise introduction, and a clickable paper link, plus one GitHub Daily link. Set `DIGEST_EMAIL_MODE=plain`, `html-lite`, or `html` only when a different mailbox policy requires it. The JSON cache stores `final_score`, `curated_topic`, and `selection_reasons` for transparent tuning. SMTP credentials are read only from local environment variables and are never committed.
 
 The report title shows **paper dates** (not report date) for clarity:
 - Wednesday–Friday: normally a two-day overlap window for late indexing
@@ -186,7 +186,7 @@ python -m pip install -r requirements.txt
 [Environment]::SetEnvironmentVariable("SMTP_AUTH_CODE", "<163 authorization code>", "User")
 ```
 
-Optional variables are `SMTP_USER`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_DISPLAY_NAME`, `DIGEST_TO`, and `DIGEST_EMAIL_MODE`; repository-safe defaults already point to the configured sender, work mailbox, and enterprise-safe plain-text mode.
+Optional variables are `SMTP_USER`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_DISPLAY_NAME`, `DIGEST_TO`, and `DIGEST_EMAIL_MODE`; repository-safe defaults already point to the configured sender, work mailbox, and PDF-attachment mode.
 
 Useful safe-run commands:
 

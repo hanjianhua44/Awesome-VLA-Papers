@@ -5,8 +5,11 @@ import html
 import os
 import smtplib
 import ssl
+import tempfile
 import time
+from pathlib import Path
 from email.header import Header
+from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.utils import formataddr
@@ -45,6 +48,7 @@ def render_digest_html(
     cover_str: str,
     report_url: str = "",
     sync_ok: bool = True,
+    include_paper_links: bool = True,
 ) -> str:
     """Build an email-client-friendly digest with inline CSS only."""
     cards = []
@@ -59,6 +63,16 @@ def render_digest_html(
         )
         summary = html.escape(_short_summary(paper.get("abstract", "")))
         score = float(paper.get("final_score", paper.get("score", 0)))
+        if include_paper_links:
+            title_html = (
+                f'<a href="{url}" style="font-size:16px;font-weight:700;'
+                f'color:#175cd3;text-decoration:none">{title}</a>'
+            )
+        else:
+            title_html = (
+                f'<div style="font-size:16px;font-weight:700;color:#101828">'
+                f"{title}</div>"
+            )
         cards.append(
             f"""
             <tr><td style="padding:0 0 14px">
@@ -66,7 +80,7 @@ def render_digest_html(
                 <div style="font-size:12px;color:#667085;margin-bottom:5px">
                   #{index} · {topic} · score {score:.2f}
                 </div>
-                <a href="{url}" style="font-size:16px;font-weight:700;color:#175cd3;text-decoration:none">{title}</a>
+                {title_html}
                 <div style="font-size:13px;color:#475467;margin:7px 0">{institution}</div>
                 <div style="font-size:14px;line-height:1.65;color:#344054">{summary}</div>
               </div>
@@ -194,13 +208,43 @@ def send_digest(
     if not smtp_password:
         raise RuntimeError("SMTP_AUTH_CODE is not configured")
 
-    body = render_digest_html(papers, date_str, cover_str, report_url, sync_ok)
-    email_mode = _environment_value("DIGEST_EMAIL_MODE", "plain").strip().lower()
+    email_mode = _environment_value("DIGEST_EMAIL_MODE", "pdf").strip().lower()
     include_links = email_mode == "html"
+    body = render_digest_html(
+        papers,
+        date_str,
+        cover_str,
+        report_url,
+        sync_ok,
+        include_paper_links=include_links,
+    )
     text_body = render_digest_text(
         papers, date_str, cover_str, report_url, include_links=include_links
     )
-    if email_mode == "html":
+    if email_mode == "pdf":
+        from render_digest_pdf import build_digest_pdf
+
+        message = MIMEMultipart("mixed")
+        message.attach(MIMEText(
+            f"Today's Awesome VLA Research Brief is attached as a PDF.\n"
+            f"{len(papers)} selected papers covering {cover_str}.",
+            "plain",
+            "utf-8",
+        ))
+        with tempfile.TemporaryDirectory() as directory:
+            pdf_path = Path(directory) / f"awesome-vla-digest-{date_str}.pdf"
+            build_digest_pdf(papers, date_str, cover_str, report_url, pdf_path)
+            attachment = MIMEApplication(
+                pdf_path.read_bytes(),
+                _subtype="pdf",
+            )
+        attachment.add_header(
+            "Content-Disposition",
+            "attachment",
+            filename=f"awesome-vla-digest-{date_str}.pdf",
+        )
+        message.attach(attachment)
+    elif email_mode in {"html", "html-lite"}:
         message = MIMEMultipart("alternative")
         message.attach(MIMEText(text_body, "plain", "utf-8"))
         message.attach(MIMEText(body, "html", "utf-8"))
