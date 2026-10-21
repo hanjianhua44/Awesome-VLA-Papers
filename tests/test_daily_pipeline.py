@@ -12,7 +12,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from fetch_daily import target_dates_for
 from daily_job import should_send_email
 from rank_daily import CuratedTopicProfile, rank_and_select, score_candidate, load_config
-from send_digest_email import render_digest_html, send_digest
+from send_digest_email import render_digest_html, render_digest_text, send_digest
 
 
 def candidate(index: int, institution: str = "Stanford") -> dict:
@@ -115,6 +115,18 @@ class DigestEmailTests(unittest.TestCase):
         self.assertIn("VLA &lt;Safety&gt; &amp; Control", result)
         self.assertIn("Robotics / VLA Architecture", result)
         self.assertIn("https://example.com/report", result)
+
+    def test_plain_digest_omits_links_for_enterprise_delivery(self):
+        paper = candidate(1)
+        paper["curated_topic_label"] = "Robotics / VLA Architecture"
+        result = render_digest_text(
+            [paper],
+            "2026-10-21",
+            "10-16 ~ 10-19",
+            "https://example.com/report",
+        )
+        self.assertIn(f"arXiv: {paper['arxiv_id']}", result)
+        self.assertNotIn("https://", result)
 
     @patch(
         "send_digest_email._environment_value",

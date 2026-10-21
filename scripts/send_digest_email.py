@@ -111,6 +111,7 @@ def render_digest_text(
     date_str: str,
     cover_str: str,
     report_url: str = "",
+    include_links: bool = False,
 ) -> str:
     lines = [
         f"Awesome VLA 日报｜{date_str}",
@@ -122,11 +123,18 @@ def render_digest_text(
             f"{index}. {paper.get('title', 'Untitled')}",
             f"   Topic: {paper.get('curated_topic_label', paper.get('curated_topic', 'VLA / Embodied AI'))}",
             f"   Institution: {paper.get('institution', '—')}",
-            f"   {paper.get('url', '')}",
+            f"   arXiv: {paper.get('arxiv_id', '')}",
             "",
         ])
-    if report_url:
+        if include_links and paper.get("url"):
+            lines.insert(-1, f"   {paper['url']}")
+    if report_url and include_links:
         lines.extend(["GitHub 日报：", report_url, ""])
+    elif report_url:
+        lines.extend([
+            "完整摘要和链接请在 GitHub 的 Awesome-VLA-Papers / daily 页面查看。",
+            "",
+        ])
     lines.extend(["——", "波士顿大龙虾主管"])
     return "\n".join(lines)
 
@@ -151,10 +159,17 @@ def send_digest(
         raise RuntimeError("SMTP_AUTH_CODE is not configured")
 
     body = render_digest_html(papers, date_str, cover_str, report_url, sync_ok)
-    text_body = render_digest_text(papers, date_str, cover_str, report_url)
-    message = MIMEMultipart("alternative")
-    message.attach(MIMEText(text_body, "plain", "utf-8"))
-    message.attach(MIMEText(body, "html", "utf-8"))
+    email_mode = _environment_value("DIGEST_EMAIL_MODE", "plain").strip().lower()
+    include_links = email_mode == "html"
+    text_body = render_digest_text(
+        papers, date_str, cover_str, report_url, include_links=include_links
+    )
+    if email_mode == "html":
+        message = MIMEMultipart("alternative")
+        message.attach(MIMEText(text_body, "plain", "utf-8"))
+        message.attach(MIMEText(body, "html", "utf-8"))
+    else:
+        message = MIMEText(text_body, "plain", "utf-8")
     message["From"] = formataddr((str(Header(display_name, "utf-8")), smtp_user))
     message["To"] = recipient
     prefix = f"{subject_prefix.strip()} " if subject_prefix.strip() else ""

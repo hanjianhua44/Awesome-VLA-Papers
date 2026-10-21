@@ -168,9 +168,9 @@ Surviving papers are:
 1. **Categorized** into sections (Embodied RSI, VLA, Autonomous Driving, Robotics, World Models, RL, etc.)
 2. **Formatted** into a styled Markdown report with Chinese editorial summaries, emoji markers, and bold highlights
 3. **Saved** to `daily/YYYY/MM/YYYY-MM-DD.md`
-4. **Emailed** as an HTML digest with Topic, institution, concise abstract, score, and links
+4. **Emailed** in enterprise-safe plain text with Topic, institution, and arXiv ID
 
-The JSON cache also stores `final_score`, `curated_topic`, and `selection_reasons` for transparent tuning. SMTP credentials are read only from local environment variables and are never committed.
+The work mailbox filters link-heavy HTML, so plain text without external URLs is the default. Set `DIGEST_EMAIL_MODE=html` only for mailboxes that accept the richer Topic, summary, score, and link cards. The JSON cache stores `final_score`, `curated_topic`, and `selection_reasons` for transparent tuning. SMTP credentials are read only from local environment variables and are never committed.
 
 The report title shows **paper dates** (not report date) for clarity:
 - Wednesday–Friday: normally a two-day overlap window for late indexing
@@ -186,7 +186,7 @@ python -m pip install -r requirements.txt
 [Environment]::SetEnvironmentVariable("SMTP_AUTH_CODE", "<163 authorization code>", "User")
 ```
 
-Optional variables are `SMTP_USER`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_DISPLAY_NAME`, and `DIGEST_TO`; repository-safe defaults already point to the configured sender and work mailbox.
+Optional variables are `SMTP_USER`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_DISPLAY_NAME`, `DIGEST_TO`, and `DIGEST_EMAIL_MODE`; repository-safe defaults already point to the configured sender, work mailbox, and enterprise-safe plain-text mode.
 
 Useful safe-run commands:
 
