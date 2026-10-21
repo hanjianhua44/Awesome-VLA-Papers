@@ -15,6 +15,7 @@ def main() -> None:
     parser.add_argument("--date", required=True)
     parser.add_argument("--covers", required=True)
     parser.add_argument("--report-url", default="")
+    parser.add_argument("--subject-prefix", default="")
     args = parser.parse_args()
 
     candidates = json.loads(args.json_path.read_text(encoding="utf-8"))
@@ -25,6 +26,7 @@ def main() -> None:
         args.covers,
         args.report_url,
         sync_ok=bool(args.report_url),
+        subject_prefix=args.subject_prefix,
     )
     print(f"Sent {len(papers)} ranked papers.")
 

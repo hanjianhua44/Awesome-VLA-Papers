@@ -7,6 +7,7 @@ import smtplib
 import ssl
 import time
 from email.header import Header
+from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.utils import formataddr
 
@@ -105,6 +106,31 @@ def render_digest_html(
 </body></html>"""
 
 
+def render_digest_text(
+    papers: list[dict],
+    date_str: str,
+    cover_str: str,
+    report_url: str = "",
+) -> str:
+    lines = [
+        f"Awesome VLA 日报｜{date_str}",
+        f"覆盖 {cover_str}｜精选 {len(papers)} 篇",
+        "",
+    ]
+    for index, paper in enumerate(papers, 1):
+        lines.extend([
+            f"{index}. {paper.get('title', 'Untitled')}",
+            f"   Topic: {paper.get('curated_topic_label', paper.get('curated_topic', 'VLA / Embodied AI'))}",
+            f"   Institution: {paper.get('institution', '—')}",
+            f"   {paper.get('url', '')}",
+            "",
+        ])
+    if report_url:
+        lines.extend(["GitHub 日报：", report_url, ""])
+    lines.extend(["——", "波士顿大龙虾主管"])
+    return "\n".join(lines)
+
+
 def send_digest(
     papers: list[dict],
     date_str: str,
@@ -112,6 +138,7 @@ def send_digest(
     report_url: str = "",
     sync_ok: bool = True,
     retries: int = 3,
+    subject_prefix: str = "",
 ) -> None:
     """Send the digest using SMTP credentials from environment variables."""
     smtp_host = _environment_value("SMTP_HOST", "smtp.163.com")
@@ -124,11 +151,15 @@ def send_digest(
         raise RuntimeError("SMTP_AUTH_CODE is not configured")
 
     body = render_digest_html(papers, date_str, cover_str, report_url, sync_ok)
-    message = MIMEText(body, "html", "utf-8")
+    text_body = render_digest_text(papers, date_str, cover_str, report_url)
+    message = MIMEMultipart("alternative")
+    message.attach(MIMEText(text_body, "plain", "utf-8"))
+    message.attach(MIMEText(body, "html", "utf-8"))
     message["From"] = formataddr((str(Header(display_name, "utf-8")), smtp_user))
     message["To"] = recipient
+    prefix = f"{subject_prefix.strip()} " if subject_prefix.strip() else ""
     message["Subject"] = Header(
-        f"Awesome VLA 日报｜{date_str}｜精选 {len(papers)} 篇",
+        f"{prefix}Awesome VLA 日报｜{date_str}｜精选 {len(papers)} 篇",
         "utf-8",
     )
 
@@ -139,7 +170,11 @@ def send_digest(
                 smtp_host, smtp_port, context=context, timeout=30
             ) as server:
                 server.login(smtp_user, smtp_password)
-                server.sendmail(smtp_user, [recipient], message.as_string())
+                refused = server.sendmail(
+                    smtp_user, [recipient], message.as_string()
+                )
+                if refused:
+                    raise RuntimeError(f"SMTP refused recipients: {list(refused)}")
             return
         except Exception:
             if attempt >= retries:
