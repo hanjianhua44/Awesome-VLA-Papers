@@ -31,7 +31,7 @@
 
 A **Vision-Language-Action (VLA)** model connects what an agent *sees*, what a human *asks*, and what the agent *does*. This repository combines a carefully checked foundation set with a continuously updated frontier catalog, so newcomers can learn the field and experienced researchers can track it.
 
-> **Follow the frontier:** the [Daily arXiv Feed](daily/) scans `cs.CV` and `cs.RO`; this main list only promotes papers after curation.
+> **Follow the frontier:** the [Daily arXiv Feed](daily/) ranks `cs.CV` and `cs.RO` against this catalog's Topics, institutions, and research priorities, then publishes a diverse shortlist of about 20 papers.
 
 ## Learning paths
 

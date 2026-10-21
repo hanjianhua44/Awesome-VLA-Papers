@@ -16,11 +16,11 @@ A curated, continuously updated collection of **Vision-Language-Action (VLA)** r
 |:--------|:------------|
 | **Curated Paper List** | Hundreds of hand-picked VLA papers organized by topic, with institutions, dates, summaries, and links |
 | **Multi-View Browsing** | Main list (by topic), [Timeline](TIMELINE.md) (by date), [By Institution](BY_INSTITUTION.md) |
-| **Daily arXiv Feed** | Automated daily digest of new papers from cs.CV + cs.RO, filtered for VLA relevance and top institutions |
+| **Daily arXiv Feed** | Homepage-profiled digest of about 20 new cs.CV + cs.RO papers, ranked by topic relevance, institution, and diversity |
 | **Institution Identification** | Automatic extraction of author affiliations from PDF first pages (~200 institution patterns) |
 | **TIER1 Filtering** | Only papers from top labs, companies, and universities are included in daily reports |
 | **Auto-Generated README** | All views (README, Timeline, By-Institution) are generated from a single YAML data source |
-| **Scheduled Automation** | Daily fetch → filter → report → git commit → push → dashboard notification, fully unattended |
+| **Scheduled Automation** | Weekday fetch → rank → report → git push → HTML email → dashboard notification |
 
 ---
 
@@ -56,7 +56,7 @@ A curated, continuously updated collection of **Vision-Language-Action (VLA)** r
 
 ## Daily Fetch Pipeline
 
-Runs at **09:30 AM** (Tue–Sat) via Windows Task Scheduler (`daily_job.py`).
+Runs at **09:30 AM** (Mon–Fri) via Windows Task Scheduler (`daily_job.py`). The batch that formerly ran on Saturday is held and included in Monday's digest.
 
 ### End-to-End Flow
 
@@ -64,19 +64,19 @@ Runs at **09:30 AM** (Tue–Sat) via Windows Task Scheduler (`daily_job.py`).
 09:30 AM  Task Scheduler triggers daily_job.py
               │
               ▼
-         fetch_daily.py
+         fetch_daily.py + rank_daily.py
               │
               ├─ [1] Query arXiv API (cs.CV + cs.RO)
-              ├─ [2] Keyword relevance scoring
+              ├─ [2] Broad keyword candidate recall
               ├─ [3] PDF institution extraction
-              ├─ [4] TIER1 institution filter
-              └─ [5] Generate Markdown report
+              ├─ [4] Homepage Topic similarity + quality ranking
+              └─ [5] Select a diverse top ~20 and generate report
               │
               ▼
          daily_job.py
               │
-              ├─ git add + commit
-              ├─ git push origin main
+              ├─ git add + commit + push
+              ├─ send HTML digest to work email
               └─ notify local dashboard ✓
 ```
 
@@ -88,9 +88,9 @@ Runs at **09:30 AM** (Tue–Sat) via Windows Task Scheduler (`daily_job.py`).
 
   | Report Day | Target `published` dates | Notes |
   |:-----------|:-------------------------|:------|
-  | Saturday | Thursday + Friday | Fri papers + Thu stragglers |
-  | Sunday | Skip | No new arXiv listings |
-  | Monday | Skip | No new arXiv listings |
+  | Saturday | Skip | Held for Monday |
+  | Sunday | Skip | Held for Monday |
+  | Monday | Thursday + Friday + Saturday + Sunday | Includes the former Saturday batch |
   | Tuesday | Friday + Saturday + Sunday + Monday | Weekend batch + Fri stragglers |
   | Wednesday | Monday + Tuesday | Tue papers + Mon stragglers |
   | Thursday | Tuesday + Wednesday | |
@@ -98,7 +98,7 @@ Runs at **09:30 AM** (Tue–Sat) via Windows Task Scheduler (`daily_job.py`).
 
   > arXiv API `published` = submission date. Each job fetches one extra day back to catch papers that were submitted late but not yet indexed when the previous job ran. Duplicates with existing reports are automatically removed.
 
-### Step 2: Keyword Relevance Scoring
+### Step 2: Broad Candidate Recall
 
 Each paper is scored based on title + abstract matching:
 
@@ -109,7 +109,7 @@ Each paper is scored based on title + abstract matching:
 | LOW | +1 | `object detection`, `point cloud`, `3D reconstruction`, `MoE` |
 | Category bonus | +1 | `cs.CV` or `cs.RO` |
 
-Papers with **score < 3** are discarded immediately.
+Papers with **score < 3** are discarded immediately. This stage deliberately favors recall; it is no longer the final selection rule.
 
 ### Step 3: Institution Identification
 
@@ -150,22 +150,59 @@ Abstract, body text, figure captions, and methodology footnotes are excluded —
 
 Extracted PDF text is **cached locally** (`.pdf_cache/*.txt`) so repeated runs skip both download and parsing.
 
-### Step 4: TIER1 Institution Filter
+### Step 4: Homepage-Driven Ranking
 
-Normally, only papers with at least one **TIER1 institution** are kept. Papers from unrecognized or non-TIER1 institutions are discarded. This ensures daily reports contain only high-signal papers.
+The curated main list in `data/papers.yaml` is the interest profile. A lightweight TF-IDF profile is built from every paper title and English summary, grouped by the same 16 homepage subtopics. Each daily candidate receives:
 
-One narrow watch-list exception prevents new Physical RSI groups from being missed: a paper may pass without a recognized institution only when it is in `cs.RO`, scores at least 6, and matches the strict Embodied RSI classifier. Its institution remains visibly unknown until verified.
+- keyword relevance (broad recall score)
+- similarity to the closest curated homepage Topic
+- institution quality (TIER1 is a bonus, not a hard gate)
+- priority signals for VLA, RSI, world-action models, action tokenization, and end-to-end driving
+- a penalty for generic CV work without an embodied or action signal
 
-### Step 5: Report Generation
+The ranker selects at most 20 papers above the quality floor, caps over-represented Topics and primary institutions, and then backfills only with candidates that already passed the quality threshold. This lets important papers from new labs survive while preventing a single prolific institution or topic from dominating the digest. Weights and caps live in `data/pipeline_config.yaml`.
+
+### Step 5: Report and Email
 
 Surviving papers are:
 1. **Categorized** into sections (Embodied RSI, VLA, Autonomous Driving, Robotics, World Models, RL, etc.)
 2. **Formatted** into a styled Markdown report with Chinese editorial summaries, emoji markers, and bold highlights
 3. **Saved** to `daily/YYYY/MM/YYYY-MM-DD.md`
+4. **Emailed** as an HTML digest with Topic, institution, concise abstract, score, and links
+
+The JSON cache also stores `final_score`, `curated_topic`, and `selection_reasons` for transparent tuning. SMTP credentials are read only from local environment variables and are never committed.
 
 The report title shows **paper dates** (not report date) for clarity:
-- Wednesday–Saturday: `arXiv VLA 速递 | 03-10 论文` (single-day range)
-- Tuesday: `arXiv VLA 速递 | 03-06 ~ 03-09 论文` (weekend batch)
+- Wednesday–Friday: normally a two-day overlap window for late indexing
+- Monday: Thursday–Sunday, including the former Saturday batch
+- Tuesday: Friday–Monday, catching late-indexed weekend and Monday papers
+
+### Local Automation Setup
+
+Install dependencies and configure the SMTP secret for the Windows user that runs the task:
+
+```powershell
+python -m pip install -r requirements.txt
+[Environment]::SetEnvironmentVariable("SMTP_AUTH_CODE", "<163 authorization code>", "User")
+```
+
+Optional variables are `SMTP_USER`, `SMTP_HOST`, `SMTP_PORT`, `SMTP_DISPLAY_NAME`, and `DIGEST_TO`; repository-safe defaults already point to the configured sender and work mailbox.
+
+Useful safe-run commands:
+
+```powershell
+# Fetch, rank, and render without git or email side effects
+python scripts/daily_job.py 2026-10-20 --dry-run
+
+# Publish without email, or render locally without publishing
+python scripts/daily_job.py --no-email
+python scripts/daily_job.py --no-push --no-email
+
+# Install/update the Mon–Fri 09:30 task
+powershell -ExecutionPolicy Bypass -File scripts/install_daily_task.ps1
+```
+
+Successful deliveries create ignored `.runtime/email/YYYY-MM-DD.sent` markers, so Task Scheduler retries do not send duplicate messages. Use `--force-email` only for an intentional resend.
 
 ### Embodied RSI Watch
 
@@ -297,8 +334,14 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete schema, category list, a
 
 | Script | Purpose | When to Use |
 |:-------|:--------|:------------|
-| `fetch_daily.py` | Fetch arXiv papers, filter, generate daily report | Called by `daily_job.py` automatically |
-| `daily_job.py` | Orchestrate daily workflow: fetch → commit → push → notify | Runs via Task Scheduler at 09:30 (Tue–Sat) |
+| `fetch_daily.py` | Fetch arXiv papers, build candidates, and generate the ranked report | Called by `daily_job.py` automatically |
+| `rank_daily.py` | Build the homepage Topic profile and select a diverse top ~20 | Imported by `fetch_daily.py` |
+| `send_digest_email.py` | Render and send the HTML work-email digest | Called after report generation/publish |
+| `send_cached_digest.py` | Rank and resend a cached JSON digest | Manual delivery or SMTP smoke testing |
+| `replay_ranking.py` | Replay ranking against cached daily JSON reports | Use when tuning weights and caps |
+| `daily_job.py` | Orchestrate fetch → rank → publish → email → notify | Runs via Task Scheduler at 09:30 (Mon–Fri) |
+| `run_daily_job.py` | Capture scheduled-job stdout/stderr in `.runtime/daily-job.log` | Task Scheduler entry point |
+| `install_daily_task.ps1` | Install/update the local weekday scheduled task | Run after cloning or schedule changes |
 | `generate_readme.py` | Generate README + Timeline + By-Institution from `papers.yaml` | After adding/editing papers in YAML |
 | `validate_papers.py` | Validate schema, taxonomy, duplicates, metadata, and English summaries | Before every main-list generation |
 | `verify_links.py` | Check canonical paper, code, project, and resource links | Before publishing a large curation update |
@@ -322,7 +365,8 @@ awesome-vla-papers/
 ├── WORKFLOW.md                # This document
 ├── data/
 │   ├── papers.yaml            # Canonical paper data (single source of truth)
-│   └── resources.yaml         # Curated non-paper research systems
+│   ├── resources.yaml         # Curated non-paper research systems
+│   └── pipeline_config.yaml   # Daily target, score weights, and diversity caps
 ├── daily/
 │   ├── README.md              # Daily report index with table overview
 │   └── YYYY/MM/
@@ -330,7 +374,13 @@ awesome-vla-papers/
 │       └── YYYY-MM-DD.json    # Raw data (gitignored)
 ├── scripts/
 │   ├── fetch_daily.py         # arXiv fetch + filter + report generation
-│   ├── daily_job.py           # Scheduled wrapper (fetch → commit → push → notify)
+│   ├── rank_daily.py          # Homepage-profile ranking and diverse top-20 selection
+│   ├── send_digest_email.py   # HTML email renderer and SMTP sender
+│   ├── send_cached_digest.py  # Manual cached-digest sender
+│   ├── replay_ranking.py      # Historical score calibration
+│   ├── daily_job.py           # Scheduled wrapper (fetch → publish → email → notify)
+│   ├── run_daily_job.py       # Task Scheduler logging wrapper
+│   ├── install_daily_task.ps1 # Mon–Fri Windows Task Scheduler installer
 │   ├── regen_daily.py         # Regenerate daily report from cached JSON
 │   ├── generate_readme.py     # Generate main README from papers.yaml
 │   ├── validate_papers.py     # Fail-fast canonical data validation

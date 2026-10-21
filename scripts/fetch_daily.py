@@ -165,6 +165,7 @@ LOW_KEYWORDS = [
 from inst_utils import (
     extract_institutions_from_pdf, identify_institutions, is_known_institution,
 )
+from rank_daily import load_config, rank_and_select
 
 
 
@@ -331,6 +332,24 @@ def _fetch_raw(target_dates: set, days_ago: int) -> list:
     return [p for p in all_raw if p["published"] in target_dates]
 
 
+def target_dates_for(dt: datetime) -> set[str]:
+    """Return submission dates covered by a weekday digest.
+
+    Monday absorbs the batch that used to be sent on Saturday. Tuesday keeps
+    the wider lookback so late-indexed Friday/weekend papers are not missed;
+    report-level arXiv-ID deduplication removes overlap.
+    """
+    if dt.weekday() in (0, 1):  # Mon: Thu-Sun; Tue: Fri-Mon
+        return {
+            (dt - timedelta(days=offset)).strftime("%Y-%m-%d")
+            for offset in range(1, 5)
+        }
+    return {
+        (dt - timedelta(days=offset)).strftime("%Y-%m-%d")
+        for offset in range(1, 3)
+    }
+
+
 def _extract_pdf_inst_isolated(arxiv_id: str, timeout_s: int) -> str:
     """Extract institution in a subprocess with hard timeout."""
     script_dir = str(Path(__file__).parent)
@@ -356,7 +375,7 @@ def _extract_pdf_inst_isolated(arxiv_id: str, timeout_s: int) -> str:
 
 
 def fetch_arxiv_papers(date_str: str = None):
-    """Fetch ALL cs.CV + cs.RO papers, then filter locally by relevance + institution."""
+    """Fetch cs.CV/cs.RO papers and select a curated, diverse daily shortlist."""
     if date_str:
         dt = datetime.strptime(date_str, "%Y-%m-%d")
     else:
@@ -368,17 +387,12 @@ def fetch_arxiv_papers(date_str: str = None):
     # are removed after fetching.
     #
     # Job schedule (CST):
-    #   Sat: fetch Thu+Fri       (Fri papers + Thu stragglers)
-    #   Sun/Mon: skip
-    #   Tue: fetch Fri–Mon       (weekend batch + Fri stragglers)
+    #   Mon: fetch Thu–Sun       (the former Saturday batch)
+    #   Tue: fetch Fri–Mon       (late-indexed papers + Monday)
     #   Wed: fetch Mon+Tue       (Tue papers + Mon stragglers)
     #   Thu: fetch Tue+Wed
     #   Fri: fetch Wed+Thu
-    weekday = dt.weekday()  # 0=Mon
-    if weekday == 1:  # Tuesday → Fri+Sat+Sun+Mon
-        target_dates = {(dt - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(1, 5)}
-    else:  # Wed–Sat → yesterday + day before
-        target_dates = {(dt - timedelta(days=i)).strftime("%Y-%m-%d") for i in range(1, 3)}
+    target_dates = target_dates_for(dt)
 
     # Load arxiv_ids from existing recent reports for dedup
     existing_ids = set()
@@ -420,7 +434,10 @@ def fetch_arxiv_papers(date_str: str = None):
 
     print(f"  Date-filtered ({', '.join(sorted(target_dates))}): {len(date_filtered)}")
 
-    # Phase 1: Score and broad filter (score >= 5) to build candidate pool
+    # Phase 1: broad keyword filter. Final ranking is driven by the curated
+    # homepage profile, institution quality, and topic diversity.
+    ranking_config = load_config()
+    keyword_floor = int(ranking_config["candidate_keyword_floor"])
     candidates = []
     for p in date_filtered:
         score, topics = compute_relevance(p["title"], p["abstract"], p["categories"])
@@ -434,7 +451,7 @@ def fetch_arxiv_papers(date_str: str = None):
         if is_known_institution(institution):
             p["score"] += 3
 
-        if score >= 3:
+        if score >= keyword_floor:
             candidates.append(p)
 
     print(f"  Candidates after keyword filter: {len(candidates)}/{len(date_filtered)}")
@@ -461,31 +478,13 @@ def fetch_arxiv_papers(date_str: str = None):
     elif skip_pdf_enrich:
         print("  SKIP_PDF_ENRICH=1, skip PDF institution enrichment")
 
-    # Phase 3: Keep papers from TIER1 institutions. Embodied RSI is an emerging
-    # niche where important work may come from new labs, so retain only
-    # high-confidence cs.RO RSI matches as a narrow watch-list exception.
-    def is_rsi_watch_candidate(p: dict) -> bool:
-        return (
-            "cs.RO" in p["categories"]
-            and p["score"] >= 6
-            and categorize_paper(
-                p["topics"], p["categories"], p["title"], p["abstract"]
-            ) == "Embodied RSI"
-        )
-
-    rsi_watch = [
-        p for p in candidates
-        if not is_known_institution(p["institution"]) and is_rsi_watch_candidate(p)
-    ]
-    results = [
-        p for p in candidates
-        if is_known_institution(p["institution"]) or is_rsi_watch_candidate(p)
-    ]
-    results.sort(key=lambda p: p["score"], reverse=True)
+    # Phase 3: rank against the curated homepage. Institutions are a quality
+    # signal rather than a hard gate so important work from new labs survives.
+    results = rank_and_select(candidates)
     dropped = len(candidates) - len(results)
     print(
-        f"  Final results: {len(results)} "
-        f"(dropped {dropped} without TIER1 institution; RSI watch exceptions: {len(rsi_watch)})"
+        f"  Final selected: {len(results)}/{len(candidates)} candidates "
+        f"(target {ranking_config['target_count']}; {dropped} below rank/diversity cutoff)"
     )
 
     return results, len(date_filtered), sorted(target_dates)
@@ -752,6 +751,12 @@ def generate_daily_report(papers: list, date_str: str, total_scanned: int = 0,
             lines.append("")
             lines.append(f"📎 [{p['arxiv_id']}]({p['url']}) | `{p['categories']}`")
             lines.append("")
+            if p.get("curated_topic_label"):
+                lines.append(
+                    f"🎯 **{p['curated_topic_label']}** · "
+                    f"综合分 `{p.get('final_score', 0):.2f}`"
+                )
+                lines.append("")
 
             summary = _make_summary_cn(p["title"], p["abstract"])
             lines.append(f"> {summary}")

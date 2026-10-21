@@ -1,8 +1,9 @@
 """
-Daily scheduled job: fetch arXiv papers → commit → push → notify dashboard.
+Daily scheduled job: fetch → rank → publish → email → notify dashboard.
 
-Designed to run via Windows Task Scheduler at 8:30 AM daily.
+Designed to run via Windows Task Scheduler at 09:30, Monday through Friday.
 """
+import argparse
 import re
 import subprocess
 import sys
@@ -14,11 +15,17 @@ from pathlib import Path
 ROOT = Path(__file__).parent.parent
 DAILY_INDEX = ROOT / "daily" / "README.md"
 DASHBOARD_PUSH = Path(r"D:\projects\test\personal-dashboard\scripts\push-message.cjs")
+EMAIL_STATE_DIR = ROOT / ".runtime" / "email"
+REPO_WEB = "https://github.com/hanjianhua44/Awesome-VLA-Papers"
 
 
 def run(cmd, cwd=None, check=True):
     """Run a command and return stdout."""
-    env = {**__import__('os').environ, "PYTHONIOENCODING": "utf-8"}
+    env = {
+        **__import__('os').environ,
+        "PYTHONIOENCODING": "utf-8",
+        "GIT_SSH_COMMAND": "ssh -o StrictHostKeyChecking=no",
+    }
     result = subprocess.run(
         cmd, cwd=cwd or ROOT, capture_output=True, text=True,
         encoding="utf-8", errors="replace", env=env,
@@ -97,24 +104,36 @@ def _update_daily_index(date_str: str, paper_count: str, cover_str: str, dt: dat
     print(f"  Updated daily/README.md with {date_str} entry")
 
 
+def should_send_email(marker: Path, force: bool = False) -> bool:
+    """Return false for an already delivered date unless resend is explicit."""
+    return force or not marker.exists()
+
+
 def main():
     sys.stdout.reconfigure(encoding='utf-8')
-    date_str = sys.argv[1] if len(sys.argv) > 1 else datetime.now().strftime("%Y-%m-%d")
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("date", nargs="?", help="Digest date (YYYY-MM-DD)")
+    parser.add_argument("--dry-run", action="store_true", help="Fetch and render only; do not publish or email")
+    parser.add_argument("--no-email", action="store_true", help="Skip SMTP delivery")
+    parser.add_argument("--no-push", action="store_true", help="Skip git commit and push")
+    parser.add_argument("--force-email", action="store_true", help="Send even when this date has a sent marker")
+    args = parser.parse_args()
+
+    date_str = args.date or datetime.now().strftime("%Y-%m-%d")
     dt = datetime.strptime(date_str, "%Y-%m-%d")
     weekday = dt.weekday()
 
-    # Sun(6) and Mon(0): no new arXiv listings, skip
-    if weekday in (0, 6):
-        print(f"{date_str} is {'Sunday' if weekday == 6 else 'Monday'}, no new arXiv listings, skipping")
+    # Saturday's former batch is deliberately held for Monday.
+    if weekday in (5, 6):
+        day = "Saturday" if weekday == 5 else "Sunday"
+        print(f"{date_str} is {day}; weekend delivery is held for Monday")
         notify_dashboard(f"{date_str} no arXiv listing, skip", "info")
         return
 
     # Determine coverage dates for display (matches fetch_daily overlap window)
-    from datetime import timedelta
-    if weekday == 1:  # Tuesday → Fri+Sat+Sun+Mon
-        covers = sorted((dt - timedelta(days=i)).strftime('%m-%d') for i in range(1, 5))
-    else:  # Wed–Sat → yesterday + day before
-        covers = sorted((dt - timedelta(days=i)).strftime('%m-%d') for i in range(1, 3))
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from fetch_daily import target_dates_for
+    covers = [date[5:] for date in sorted(target_dates_for(dt))]
     cover_str = " ~ ".join([covers[0], covers[-1]]) if len(covers) > 1 else covers[0]
 
     print(f"=== Daily Job: {date_str} (covers {cover_str}) ===")
@@ -137,44 +156,69 @@ def main():
     fetch_output = run([sys.executable, str(ROOT / "scripts" / "fetch_daily.py"), date_str])
     print(fetch_output)
 
-    # Extract paper count from output
-    paper_count = "?"
-    for line in fetch_output.splitlines():
-        if "passed relevance" in line:
-            parts = line.split(",")
-            for p in parts:
-                if "passed" in p:
-                    paper_count = p.strip().split()[0]
+    year, month = date_str[:4], date_str[5:7]
+    json_path = ROOT / "daily" / year / month / f"{date_str}.json"
+    papers = json.loads(json_path.read_text(encoding="utf-8")) if json_path.exists() else []
+    paper_count = str(len(papers))
+
+    if args.dry_run:
+        print(f"Dry run complete: selected {paper_count} papers; no index, git, or email side effects")
+        return
 
     # Step 2: Update daily/README.md index
     print("\n[2/5] Updating daily index...")
     _update_daily_index(date_str, paper_count, cover_str, dt)
 
-    # Step 3: Git add + commit
-    print("\n[3/5] Staging and committing...")
-    year, month = date_str[:4], date_str[5:7]
-    daily_dir = f"daily/{year}/{month}"
-    run(["git", "add", f"{daily_dir}/{date_str}.md", "daily/README.md"])
-    try:
-        run([
-            "git", "-c", "user.name=hanjianhua44",
-            "-c", "user.email=hanjianhua2012@gmail.com",
-            "commit", "-m", f"daily: {date_str} ({paper_count} papers, covers {cover_str})",
-        ])
-    except RuntimeError:
-        print("Nothing to commit or commit failed")
+    sync_ok = False
+    if not args.no_push:
+        # Step 3: Git add + commit
+        print("\n[3/5] Staging and committing...")
+        daily_dir = f"daily/{year}/{month}"
+        run(["git", "add", f"{daily_dir}/{date_str}.md", "daily/README.md"])
+        try:
+            run([
+                "git", "-c", "user.name=hanjianhua44",
+                "-c", "user.email=hanjianhua2012@gmail.com",
+                "commit", "-m", f"daily: {date_str} ({paper_count} papers, covers {cover_str})",
+            ])
+        except RuntimeError:
+            print("Nothing new to commit")
 
-    # Step 4: Git pull + push (pull first to avoid push rejection)
-    print("\n[4/5] Syncing with remote...")
-    try:
-        run(["git", "pull", "--rebase", "origin", "main"], check=False)
-        run(["git", "push", "origin", "main"])
-    except RuntimeError as e:
-        notify_dashboard(f"{date_str} 日报推送失败: {e}", "error")
-        return
+        # Step 4: Git pull + push
+        print("\n[4/5] Syncing with remote...")
+        try:
+            run(["git", "pull", "--rebase", "--autostash", "origin", "main"])
+            run(["git", "push", "origin", "main"])
+            sync_ok = True
+        except RuntimeError as exc:
+            notify_dashboard(f"{date_str} 日报推送失败: {exc}", "error")
+    else:
+        print("\n[3/5] --no-push: skipping git commit and push")
 
-    # Step 5: Notify dashboard
-    notify_dashboard(f"arXiv 日报已更新: 覆盖 {cover_str}, 共 {paper_count} 篇论文")
+    # Step 5: Email and dashboard. A local marker prevents duplicate delivery
+    # when Task Scheduler retries an already completed date.
+    marker = EMAIL_STATE_DIR / f"{date_str}.sent"
+    report_url = f"{REPO_WEB}/blob/main/daily/{year}/{month}/{date_str}.md"
+    if args.no_email:
+        print("\n[5/5] --no-email: skipping delivery")
+    elif not should_send_email(marker, args.force_email):
+        print(f"\n[5/5] Email already sent for {date_str}; use --force-email to resend")
+    else:
+        print("\n[5/5] Sending HTML digest...")
+        try:
+            from send_digest_email import send_digest
+            send_digest(papers, date_str, cover_str, report_url, sync_ok)
+            EMAIL_STATE_DIR.mkdir(parents=True, exist_ok=True)
+            marker.write_text(datetime.now().isoformat(), encoding="utf-8")
+            print("Email sent")
+        except Exception as exc:
+            notify_dashboard(f"{date_str} 邮件发送失败: {exc}", "error")
+            raise
+
+    notify_dashboard(
+        f"arXiv 日报已更新: 覆盖 {cover_str}, 精选 {paper_count} 篇论文",
+        "success" if sync_ok else "info",
+    )
     print(f"\n=== Done! {paper_count} papers for {date_str} ===")
 
 
