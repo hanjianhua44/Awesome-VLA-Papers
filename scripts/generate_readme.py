@@ -275,17 +275,6 @@ def generate_readme(papers: list) -> str:
         grouped[p["domain"]][p["subcategory"]].append(p)
 
     domain_counts = {dom: sum(len(v) for v in grouped[dom].values()) for dom in DOMAIN_ORDER}
-    classics = sorted(
-        (p for p in papers if p.get("classic")),
-        key=lambda p: (int(p.get("classic_order", 999)), tuple(-v for v in extract_date(p))),
-    )
-    featured = sorted(
-        (p for p in papers if p.get("featured")),
-        key=lambda p: (int(p.get("featured_order", 999)), tuple(-v for v in extract_date(p))),
-    )
-    if not featured:
-        featured = sorted(papers, key=extract_date, reverse=True)[:8]
-    recent = sorted(papers, key=extract_date, reverse=True)[:8]
     rsi_papers = sorted(
         (p for p in papers if p.get("rsi")),
         key=lambda p: (int(p.get("rsi_order", 999)), tuple(-v for v in extract_date(p))),
@@ -339,51 +328,6 @@ def generate_readme(papers: list) -> str:
     lines.append("- **Build robot policies:** [Data & pre-training](#robot-data-pretrain) → [World models & policy co-learning](#robot-world-model-policy) → [RL & policy optimization](#robot-rl-policy)")
     lines.append("- **Study continual improvement:** [RSI & agent harness](#rsi-papers) → memory, skill discovery, harness evolution, policy updates, and safety")
     lines.append("- **Explore autonomous driving:** [End-to-end VLA](#ad-e2e) → [World models](#ad-world-model) → [Planning & control](#ad-planning) → [Safety & benchmarks](#ad-safety-benchmark)")
-    lines.append("")
-    if classics:
-        lines.append("## Canonical foundations")
-        lines.append("")
-        lines.append("> A compact reading list of field-shaping work. “Canonical” means historically or technically influential, not a ranking.")
-        lines.append("")
-        for dom in DOMAIN_ORDER:
-            domain_classics = [p for p in classics if p["domain"] == dom]
-            if not domain_classics:
-                continue
-            lines.append(f"### {DOMAIN_ICONS[dom]} {DOMAIN_NAMES[dom]}")
-            lines.append("")
-            lines.append("| Paper | Why it matters | Topic | Links |")
-            lines.append("|:------|:---------------|:------|:------|")
-            for p in domain_classics:
-                lines.append(
-                    f"| **{markdown_cell(p['title'])}** | {markdown_cell(paper_summary(p))} | "
-                    f"[{SUB_LABELS[p['subcategory']]}](#{category_anchor(p['domain'], p['subcategory'])}) | "
-                    f"{paper_links(p)} |"
-                )
-            lines.append("")
-    lines.append("## Curated spotlights")
-    lines.append("")
-    lines.append("> A small, opinionated selection of noteworthy newer work — not a benchmark ranking.")
-    lines.append("")
-    lines.append("| Paper | Why it matters | Topic | Links |")
-    lines.append("|:------|:---------------|:------|:------|")
-    for p in featured:
-        lines.append(
-            f"| **{markdown_cell(p['title'])}** | {markdown_cell(paper_summary(p))} | "
-            f"[{SUB_LABELS[p['subcategory']]}](#{category_anchor(p['domain'], p['subcategory'])}) | "
-            f"{paper_links(p)} |"
-        )
-    lines.append("")
-    lines.append("## Recently added")
-    lines.append("")
-    lines.append("| Paper | Tiny takeaway | Area | Date |")
-    lines.append("|:------|:--------------|:-----|:----:|")
-    for p in recent:
-        year, month, day = extract_date(p)
-        area = f"{DOMAIN_ICONS[p['domain']]} {DOMAIN_NAMES[p['domain']]}"
-        lines.append(
-            f"| [**{markdown_cell(p['title'])}**]({p['url']}) | {markdown_cell(paper_summary(p))} | "
-            f"{area} | {format_date(year, month, day)} |"
-        )
     lines.append("")
     lines.append('<a id="paper-map"></a>')
     lines.append("## Explore the map")

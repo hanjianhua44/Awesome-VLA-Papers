@@ -39,7 +39,9 @@ class PaperDataTests(unittest.TestCase):
 
     def test_readme_is_data_driven(self):
         readme = generate_readme(self.papers)
-        self.assertIn("## Canonical foundations", readme)
+        self.assertNotIn("## Canonical foundations", readme)
+        self.assertNotIn("## Curated spotlights", readme)
+        self.assertNotIn("## Recently added", readme)
         self.assertIn("PhysicalRSI 1.0", readme)
         self.assertEqual(readme.count("PhysicalRSI 1.0"), 1)
         self.assertNotIn("python scripts/generate_readme.py 2026-07-23", readme)
