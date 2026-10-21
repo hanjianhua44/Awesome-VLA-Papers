@@ -116,17 +116,23 @@ class DigestEmailTests(unittest.TestCase):
         self.assertIn("Robotics / VLA Architecture", result)
         self.assertIn("https://example.com/report", result)
 
-    def test_plain_digest_omits_links_for_enterprise_delivery(self):
+    def test_plain_digest_keeps_one_report_link_only(self):
         paper = candidate(1)
         paper["curated_topic_label"] = "Robotics / VLA Architecture"
+        paper["selection_domain"] = "robot"
+        report_url = "https://example.com/report"
         result = render_digest_text(
             [paper],
             "2026-10-21",
             "10-16 ~ 10-19",
-            "https://example.com/report",
+            report_url,
         )
-        self.assertIn(f"arXiv: {paper['arxiv_id']}", result)
-        self.assertNotIn("https://", result)
+        self.assertIn(paper["arxiv_id"], result)
+        self.assertIn("ROBOTICS & EMBODIED AI", result)
+        self.assertIn("Brief", result)
+        self.assertEqual(result.count("https://"), 1)
+        self.assertIn(report_url, result)
+        self.assertNotIn(paper["url"], result)
 
     @patch(
         "send_digest_email._environment_value",

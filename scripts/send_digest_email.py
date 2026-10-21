@@ -113,29 +113,65 @@ def render_digest_text(
     report_url: str = "",
     include_links: bool = False,
 ) -> str:
+    domain_labels = {
+        "ad": "AUTONOMOUS DRIVING",
+        "robot": "ROBOTICS & EMBODIED AI",
+        "general": "GENERAL / CROSS-DOMAIN",
+    }
+    grouped = {domain: [] for domain in domain_labels}
+    for paper in papers:
+        grouped.setdefault(paper.get("selection_domain", "general"), []).append(paper)
+
     lines = [
-        f"Awesome VLA 日报｜{date_str}",
-        f"覆盖 {cover_str}｜精选 {len(papers)} 篇",
+        "AWESOME VLA PAPERS",
+        f"Daily Research Brief  |  {date_str}",
+        "=" * 68,
+        f"Coverage: {cover_str}",
+        f"Selection: {len(papers)} papers ranked by topic relevance, institution, and diversity",
         "",
     ]
-    for index, paper in enumerate(papers, 1):
+    if report_url:
         lines.extend([
-            f"{index}. {paper.get('title', 'Untitled')}",
-            f"   Topic: {paper.get('curated_topic_label', paper.get('curated_topic', 'VLA / Embodied AI'))}",
-            f"   Institution: {paper.get('institution', '—')}",
-            f"   arXiv: {paper.get('arxiv_id', '')}",
+            "Full report, abstracts, and paper links:",
+            report_url,
             "",
         ])
-        if include_links and paper.get("url"):
-            lines.insert(-1, f"   {paper['url']}")
-    if report_url and include_links:
-        lines.extend(["GitHub 日报：", report_url, ""])
-    elif report_url:
+
+    number = 1
+    for domain in ("ad", "robot", "general"):
+        domain_papers = grouped.get(domain, [])
+        if not domain_papers:
+            continue
         lines.extend([
-            "完整摘要和链接请在 GitHub 的 Awesome-VLA-Papers / daily 页面查看。",
-            "",
+            f"[{domain_labels[domain]}]  {len(domain_papers)} papers",
+            "-" * 68,
         ])
-    lines.extend(["——", "波士顿大龙虾主管"])
+        for paper in domain_papers:
+            topic = paper.get(
+                "curated_topic_label",
+                paper.get("curated_topic", "VLA / Embodied AI"),
+            )
+            score = float(paper.get("final_score", paper.get("score", 0)))
+            lines.extend([
+                f"{number:02d}. {paper.get('title', 'Untitled')}",
+                f"    Institution : {paper.get('institution', '—')}",
+                f"    Topic       : {topic}",
+                f"    arXiv       : {paper.get('arxiv_id', '')}    Relevance: {score:.2f}",
+                f"    Brief       : {_short_summary(paper.get('abstract', ''), 260)}",
+            ])
+            if include_links and paper.get("url"):
+                lines.append(f"    Paper       : {paper['url']}")
+            lines.append("")
+            number += 1
+
+    lines.extend([
+        "=" * 68,
+        "Method: homepage Topic similarity + research relevance + institution",
+        "quality + diversity constraints. Autonomous driving reserves at least",
+        "three slots when enough qualifying candidates are available.",
+        "",
+        "Awesome VLA Papers Research Digest",
+    ])
     return "\n".join(lines)
 
 
@@ -174,7 +210,7 @@ def send_digest(
     message["To"] = recipient
     prefix = f"{subject_prefix.strip()} " if subject_prefix.strip() else ""
     message["Subject"] = Header(
-        f"{prefix}Awesome VLA 日报｜{date_str}｜精选 {len(papers)} 篇",
+        f"{prefix}Awesome VLA Research Brief｜{date_str}｜{len(papers)} papers",
         "utf-8",
     )
 

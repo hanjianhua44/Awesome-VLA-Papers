@@ -170,7 +170,7 @@ Surviving papers are:
 3. **Saved** to `daily/YYYY/MM/YYYY-MM-DD.md`
 4. **Emailed** in enterprise-safe plain text with Topic, institution, and arXiv ID
 
-The work mailbox filters link-heavy HTML, so plain text without external URLs is the default. Set `DIGEST_EMAIL_MODE=html` only for mailboxes that accept the richer Topic, summary, score, and link cards. The JSON cache stores `final_score`, `curated_topic`, and `selection_reasons` for transparent tuning. SMTP credentials are read only from local environment variables and are never committed.
+The work mailbox filters link-heavy HTML, so the default is a structured plain-text research brief grouped by autonomous driving, robotics, and cross-domain work. Each paper includes institution, Topic, relevance score, arXiv ID, and a concise introduction; only one GitHub Daily link is retained for the full abstracts and paper URLs. Set `DIGEST_EMAIL_MODE=html` only for mailboxes that accept link-rich cards. The JSON cache stores `final_score`, `curated_topic`, and `selection_reasons` for transparent tuning. SMTP credentials are read only from local environment variables and are never committed.
 
 The report title shows **paper dates** (not report date) for clarity:
 - Wednesday–Friday: normally a two-day overlap window for late indexing
