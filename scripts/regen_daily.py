@@ -3,16 +3,19 @@
 Re-identifies institutions using the shared inst_utils module,
 so stale/wrong institution data in the JSON gets corrected.
 """
+import argparse
 import json
+import re
 import sys
-import time
+from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 sys.stdout.reconfigure(encoding='utf-8')
 
 from inst_utils import identify_institutions, extract_institutions_from_pdf, is_known_institution
-from fetch_daily import generate_daily_report, _cover_str
+from fetch_daily import generate_daily_report, target_dates_for
+from rank_daily import rank_and_select
 
 DAILY_BASE = Path(__file__).parent.parent / "daily"
 
@@ -56,8 +59,17 @@ def re_identify_institutions(papers: list, use_pdf: bool = True) -> int:
 
 
 def main():
-    date_str = sys.argv[1] if len(sys.argv) > 1 else "2026-03-09"
-    use_pdf = "--no-pdf" not in sys.argv
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("date", nargs="?", default="2026-03-09")
+    parser.add_argument("--no-pdf", action="store_true")
+    parser.add_argument(
+        "--rank-only",
+        action="store_true",
+        help="Keep cached metadata and apply the current top-20 ranker only.",
+    )
+    args = parser.parse_args()
+    date_str = args.date
+    use_pdf = not args.no_pdf
 
     daily_dir = _daily_dir(date_str)
 
@@ -74,12 +86,14 @@ def main():
     papers = json.loads(json_path.read_text(encoding="utf-8"))
     _flush(f"Loaded {len(papers)} papers from {json_path}")
 
-    changes = re_identify_institutions(papers, use_pdf=use_pdf)
-
-    # Keep only papers with at least one TIER1 institution
     before = len(papers)
-    papers = [p for p in papers if is_known_institution(p.get("institution", "—"))]
-    _flush(f"Filtered: {before} -> {len(papers)} (dropped {before - len(papers)} without TIER1 institution)")
+    if args.rank_only:
+        papers = rank_and_select(papers)
+        _flush(f"Ranked: {before} -> {len(papers)}")
+    else:
+        re_identify_institutions(papers, use_pdf=use_pdf)
+        papers = [p for p in papers if is_known_institution(p.get("institution", "—"))]
+        _flush(f"Filtered: {before} -> {len(papers)} (dropped {before - len(papers)} without TIER1 institution)")
 
     # Save to new directory structure
     out_json = daily_dir / f"{date_str}.json"
@@ -93,11 +107,28 @@ def main():
     if count_info_path.exists():
         meta = json.loads(count_info_path.read_text(encoding="utf-8"))
         total_scanned = meta.get("total_scanned", 599)
+    else:
+        existing_report = daily_dir / f"{date_str}.md"
+        if existing_report.exists():
+            match = re.search(
+                r"扫描 cs\.CV \+ cs\.RO 共 \*\*(\d+)\*\* 篇",
+                existing_report.read_text(encoding="utf-8"),
+            )
+            if match:
+                total_scanned = int(match.group(1))
 
-    report = generate_daily_report(papers, date_str, total_scanned, cover_dates=None)
+    dt = datetime.strptime(date_str, "%Y-%m-%d")
+    cover_dates = sorted(target_dates_for(dt))
+    report = generate_daily_report(papers, date_str, total_scanned, cover_dates=cover_dates)
     out_path = daily_dir / f"{date_str}.md"
     out_path.write_text(report, encoding="utf-8")
     _flush(f"Regenerated {out_path} ({len(papers)} papers)")
+
+    if args.rank_only:
+        from daily_job import _update_daily_index
+        covers = [date[5:] for date in cover_dates]
+        cover_str = f"{covers[0]} ~ {covers[-1]}"
+        _update_daily_index(date_str, str(len(papers)), cover_str, dt)
 
 
 if __name__ == "__main__":
