@@ -21,6 +21,8 @@ $Trigger = New-ScheduledTaskTrigger `
     -At $At
 $Settings = New-ScheduledTaskSettingsSet `
     -StartWhenAvailable `
+    -RestartCount 3 `
+    -RestartInterval (New-TimeSpan -Minutes 15) `
     -ExecutionTimeLimit (New-TimeSpan -Hours 3)
 
 Register-ScheduledTask `

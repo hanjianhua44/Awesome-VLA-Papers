@@ -203,6 +203,7 @@ powershell -ExecutionPolicy Bypass -File scripts/install_daily_task.ps1
 ```
 
 Successful deliveries create ignored `.runtime/email/YYYY-MM-DD.sent` markers, so Task Scheduler retries do not send duplicate messages. Use `--force-email` only for an intentional resend.
+The installed task retries a failed run up to three times at 15-minute intervals, which covers transient arXiv 502, SSL, and proxy failures without requiring manual intervention.
 
 ### Embodied RSI Watch
 
