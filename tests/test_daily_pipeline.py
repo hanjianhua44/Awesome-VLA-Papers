@@ -10,6 +10,8 @@ ROOT = Path(__file__).parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from fetch_daily import target_dates_for
+from backfill_daily_api_range import cover_for
+import daily_job
 from daily_job import should_send_email
 from rank_daily import (
     CuratedTopicProfile,
@@ -101,6 +103,7 @@ class DailyRankingTests(unittest.TestCase):
             dates,
             {"2026-10-15", "2026-10-16", "2026-10-17", "2026-10-18"},
         )
+        self.assertEqual(cover_for("2026-10-19"), "10-15 ~ 10-18")
 
     def test_tuesday_keeps_late_index_lookback(self):
         dates = target_dates_for(datetime(2026, 10, 20))
@@ -116,6 +119,25 @@ class DailyRankingTests(unittest.TestCase):
             marker.write_text("sent", encoding="utf-8")
             self.assertFalse(should_send_email(marker))
             self.assertTrue(should_send_email(marker, force=True))
+
+    def test_index_update_matches_date_column_not_cover_text(self):
+        with TemporaryDirectory() as directory:
+            index = Path(directory) / "README.md"
+            index.write_text(
+                "## 2026-10\n\n"
+                "| Date | Day | Covers | Papers | Link |\n"
+                "|:-----|:----|:-------|-------:|:-----|\n"
+                "| 10-29 | Thu | 10-27 ~ 10-28 | 20 | [Report](old.md) |\n",
+                encoding="utf-8",
+            )
+            with patch.object(daily_job, "DAILY_INDEX", index):
+                daily_job._update_daily_index(
+                    "2026-10-27", "20", "10-23 ~ 10-26",
+                    datetime(2026, 10, 27),
+                )
+            content = index.read_text(encoding="utf-8")
+            self.assertIn("| 10-29 | Thu | 10-27 ~ 10-28 |", content)
+            self.assertEqual(content.count("| 10-27 | Tue |"), 1)
 
 
 class DigestEmailTests(unittest.TestCase):

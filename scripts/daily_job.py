@@ -80,8 +80,11 @@ def _update_daily_index(date_str: str, paper_count: str, cover_str: str, dt: dat
 
     new_row = f"| {short_date} | {day_name} | {cover_str} | {paper_count} | [Report]({year}/{month}/{date_str}.md) |"
 
-    if short_date in content:
-        old_pattern = re.compile(rf"^\|.*?{re.escape(short_date)}.*?\|.*$", re.MULTILINE)
+    old_pattern = re.compile(
+        rf"^\| {re.escape(short_date)} \|.*$",
+        re.MULTILINE,
+    )
+    if old_pattern.search(content):
         content = old_pattern.sub(new_row, content, count=1)
     elif month_section in content:
         # Month section exists — insert after its table separator row

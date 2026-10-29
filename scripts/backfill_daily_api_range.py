@@ -22,7 +22,7 @@ import fetch_daily  # noqa: E402
 
 def cover_for(date_str: str) -> str:
     dt = datetime.strptime(date_str, "%Y-%m-%d")
-    if dt.weekday() == 1:
+    if dt.weekday() in (0, 1):
         covers = sorted((dt - timedelta(days=i)).strftime("%m-%d") for i in range(1, 5))
     else:
         covers = sorted((dt - timedelta(days=i)).strftime("%m-%d") for i in range(1, 3))
