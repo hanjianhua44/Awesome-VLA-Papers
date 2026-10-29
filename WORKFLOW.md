@@ -20,7 +20,7 @@ A curated, continuously updated collection of **Vision-Language-Action (VLA)** r
 | **Institution Identification** | Automatic extraction of author affiliations from PDF first pages (~200 institution patterns) |
 | **TIER1 Filtering** | Only papers from top labs, companies, and universities are included in daily reports |
 | **Auto-Generated README** | All views (README, Timeline, By-Institution) are generated from a single YAML data source |
-| **Scheduled Automation** | Weekday fetch → rank → report → git push → HTML email → dashboard notification |
+| **Scheduled Automation** | Weekday fetch → rank → report → git push → PDF digest email → dashboard notification |
 
 ---
 
@@ -66,9 +66,9 @@ Runs at **09:30 AM** (Mon–Fri) via Windows Task Scheduler (`daily_job.py`). Th
               ▼
          fetch_daily.py + rank_daily.py
               │
-              ├─ [1] Query arXiv API (cs.CV + cs.RO)
+              ├─ [1] Query arXiv API (cs.CV + cs.RO; curl fallback)
               ├─ [2] Broad keyword candidate recall
-              ├─ [3] PDF institution extraction
+              ├─ [3] PDF institution extraction for top-ranked candidates
               ├─ [4] Homepage Topic similarity + quality ranking
               └─ [5] Select a diverse top ~20 and generate report
               │
@@ -76,7 +76,7 @@ Runs at **09:30 AM** (Mon–Fri) via Windows Task Scheduler (`daily_job.py`). Th
          daily_job.py
               │
               ├─ git add + commit + push
-              ├─ send HTML digest to work email
+              ├─ send PDF digest to work email
               └─ notify local dashboard ✓
 ```
 
@@ -84,6 +84,8 @@ Runs at **09:30 AM** (Mon–Fri) via Windows Task Scheduler (`daily_job.py`). Th
 
 - Query `cs.CV` and `cs.RO` categories, sorted by submission date
 - Pagination with early stopping to handle large result sets
+- Retry transient API failures, then fall back to `curl` with the explicit
+  `ARXIV_PROXY` value (or the system-discovered proxy)
 - Coverage schedule (each job looks back +1 extra day for safety, with dedup against prior reports):
 
   | Report Day | Target `published` dates | Notes |
@@ -113,7 +115,8 @@ Papers with **score < 3** are discarded immediately. This stage deliberately fav
 
 ### Step 3: Institution Identification
 
-For each candidate paper, institutions are identified via two methods:
+Institutions are identified via two methods. To keep daily recovery runs bounded,
+PDF enrichment is applied to the top 80 keyword-ranked candidates by default:
 
 1. **Author name matching** — known researcher → institution mapping (~50 entries)
 2. **PDF header + footnotes extraction** — download PDF, extract author/affiliation lines (above "Abstract") and page-bottom footnotes, match against ~200 institution regex patterns
@@ -197,6 +200,9 @@ python scripts/daily_job.py 2026-10-20 --dry-run
 # Publish without email, or render locally without publishing
 python scripts/daily_job.py --no-email
 python scripts/daily_job.py --no-push --no-email
+
+# Consolidate a missed date range into one recovery report
+python scripts/backfill_daily_api_range.py --consolidate 2026-10-23 2026-10-28 --report-date 2026-10-29
 
 # Install/update the Mon–Fri 09:30 task
 powershell -ExecutionPolicy Bypass -File scripts/install_daily_task.ps1

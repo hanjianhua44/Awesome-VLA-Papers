@@ -11,6 +11,7 @@ import json
 import time
 import sys
 import subprocess
+import shutil
 import urllib.request
 import urllib.parse
 import xml.etree.ElementTree as ET
@@ -212,6 +213,7 @@ def fetch_arxiv_batch(query: str, start: int, max_results: int, retries: int = 8
         f"https://export.arxiv.org/api/query?{qs}",
         f"http://export.arxiv.org/api/query?{qs}",
     ]
+    last_error = None
     for attempt in range(retries):
         try:
             url = urls[attempt % len(urls)]
@@ -222,6 +224,7 @@ def fetch_arxiv_batch(query: str, start: int, max_results: int, retries: int = 8
                 resp = urllib.request.urlopen(req, timeout=120)
             return resp.read().decode("utf-8")
         except Exception as e:
+            last_error = e
             if attempt < retries - 1:
                 # 429 (rate-limit) needs much longer backoff than transient SSL/IO errors:
                 # arxiv blocks for several minutes after a burst. Scale 60->300s for 429.
@@ -233,7 +236,49 @@ def fetch_arxiv_batch(query: str, start: int, max_results: int, retries: int = 8
                 print(f"    Retry {attempt+1}/{retries} after {wait}s: {e}")
                 time.sleep(wait)
             else:
-                raise
+                break
+
+    # urllib intermittently fails TLS negotiation through local desktop
+    # proxies even when the proxy itself is healthy. curl uses a different
+    # network stack and has proven reliable with the same explicit endpoint.
+    curl = shutil.which("curl.exe") or shutil.which("curl")
+    proxy = (
+        os.getenv("ARXIV_PROXY", "").strip()
+        or urllib.request.getproxies().get("https", "")
+        or urllib.request.getproxies().get("http", "")
+    )
+    if curl:
+        command = [
+            curl,
+            "--silent",
+            "--show-error",
+            "--fail",
+            "--location",
+            "--max-time",
+            "120",
+            "--retry",
+            "3",
+            "--user-agent",
+            "VLA-Paper-Agent/1.0",
+        ]
+        if proxy:
+            command.extend(["--proxy", proxy])
+        command.append(urls[0])
+        print(f"    urllib exhausted; trying curl fallback via {proxy or 'direct'}...")
+        result = subprocess.run(
+            command,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=150,
+        )
+        if result.returncode == 0 and "<feed" in result.stdout:
+            return result.stdout
+        last_error = RuntimeError(
+            f"curl fallback failed ({result.returncode}): {result.stderr.strip()}"
+        )
+    raise last_error or RuntimeError("arXiv API request failed")
 
 
 def parse_entries(xml_data: str) -> list:
@@ -459,10 +504,24 @@ def fetch_arxiv_papers(date_str: str = None):
     # Phase 2: PDF enrichment — identify institutions before final filtering
     skip_pdf_enrich = os.getenv("SKIP_PDF_ENRICH", "").strip().lower() in {"1", "true", "yes"}
     if HAS_PDFPLUMBER and not skip_pdf_enrich:
-        print(f"  Enriching institutions from PDF for {len(candidates)} papers...")
+        enrichment_limit = int(os.getenv("PDF_ENRICH_LIMIT", "80"))
+        enrichment_pool = sorted(
+            candidates,
+            key=lambda paper: (
+                paper.get("score", 0),
+                "cs.RO" in paper.get("categories", ""),
+            ),
+            reverse=True,
+        )
+        if enrichment_limit > 0:
+            enrichment_pool = enrichment_pool[:enrichment_limit]
+        print(
+            f"  Enriching institutions from PDF for {len(enrichment_pool)}/"
+            f"{len(candidates)} top candidates..."
+        )
         enriched = 0
         per_paper_timeout = int(os.getenv("PDF_INST_TIMEOUT", "25"))
-        for i, p in enumerate(candidates):
+        for i, p in enumerate(enrichment_pool):
             # subprocess.run(timeout=...) guarantees hard stop on parser hangs.
             pdf_inst = _extract_pdf_inst_isolated(p["arxiv_id"], per_paper_timeout)
             if pdf_inst:
@@ -472,9 +531,9 @@ def fetch_arxiv_papers(date_str: str = None):
                     p["score"] += 3
                 enriched += 1
             if (i + 1) % 10 == 0:
-                print(f"    Processed {i+1}/{len(candidates)}...")
+                print(f"    Processed {i+1}/{len(enrichment_pool)}...")
             time.sleep(0.2)
-        print(f"    PDF enrichment: {enriched}/{len(candidates)} institutions found")
+        print(f"    PDF enrichment: {enriched}/{len(enrichment_pool)} institutions found")
     elif skip_pdf_enrich:
         print("  SKIP_PDF_ENRICH=1, skip PDF institution enrichment")
 

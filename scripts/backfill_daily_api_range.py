@@ -5,6 +5,7 @@ historical backfills do not walk backward from the latest API results.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
@@ -62,9 +63,16 @@ def _targeted_fetch_raw(target_dates: set[str], days_ago: int) -> list[dict]:
     return [paper for paper in all_raw if paper["published"] in target_dates]
 
 
-def run_fetch(date_str: str) -> int:
-    print(f"\n=== Backfill {date_str} (covers {cover_for(date_str)}) ===", flush=True)
+def run_fetch(date_str: str, target_dates: set[str] | None = None) -> tuple[int, str]:
+    cover = (
+        f"{min(target_dates)[5:]} ~ {max(target_dates)[5:]}"
+        if target_dates
+        else cover_for(date_str)
+    )
+    print(f"\n=== Backfill {date_str} (covers {cover}) ===", flush=True)
     fetch_daily._fetch_raw = _targeted_fetch_raw
+    if target_dates:
+        fetch_daily.target_dates_for = lambda _dt: set(target_dates)
     papers, total_scanned, cover_dates = fetch_daily.fetch_arxiv_papers(date_str)
     print(f"Scanned {total_scanned} papers, {len(papers)} passed relevance + institution filter", flush=True)
 
@@ -75,7 +83,7 @@ def run_fetch(date_str: str) -> int:
     json_path.write_text(json.dumps(papers, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"Report saved to {daily_dir / f'{date_str}.md'}", flush=True)
     print(f"Raw data saved to {json_path}", flush=True)
-    return len(papers)
+    return len(papers), cover
 
 
 def upsert_month_rows(rows: dict[str, tuple[str, str, int]]) -> None:
@@ -128,7 +136,39 @@ def upsert_month_rows(rows: dict[str, tuple[str, str, int]]) -> None:
 
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
-    dates = sys.argv[1:] or [
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("dates", nargs="*")
+    parser.add_argument(
+        "--consolidate",
+        nargs=2,
+        metavar=("START", "END"),
+        help="Create one report from an inclusive submitted-date range.",
+    )
+    parser.add_argument(
+        "--report-date",
+        help="Report date for --consolidate (defaults to today).",
+    )
+    args = parser.parse_args()
+
+    if args.consolidate:
+        start = datetime.strptime(args.consolidate[0], "%Y-%m-%d")
+        end = datetime.strptime(args.consolidate[1], "%Y-%m-%d")
+        if end < start:
+            raise SystemExit("--consolidate END must not be earlier than START")
+        target_dates = {
+            (start + timedelta(days=offset)).strftime("%Y-%m-%d")
+            for offset in range((end - start).days + 1)
+        }
+        report_date = args.report_date or datetime.now().strftime("%Y-%m-%d")
+        count, cover = run_fetch(report_date, target_dates)
+        dt = datetime.strptime(report_date, "%Y-%m-%d")
+        upsert_month_rows({
+            report_date: (DAY_NAMES[dt.weekday()], cover, count)
+        })
+        print(f"Updated consolidated index row: {report_date} -> {count} papers", flush=True)
+        return
+
+    dates = args.dates or [
         "2026-05-13",
         "2026-05-14",
         "2026-05-15",
@@ -141,8 +181,8 @@ def main() -> None:
     rows: dict[str, tuple[str, str, int]] = {}
     for date_str in dates:
         dt = datetime.strptime(date_str, "%Y-%m-%d")
-        count = run_fetch(date_str)
-        rows[date_str] = (DAY_NAMES[dt.weekday()], cover_for(date_str), count)
+        count, cover = run_fetch(date_str)
+        rows[date_str] = (DAY_NAMES[dt.weekday()], cover, count)
         upsert_month_rows(rows)
         print(f"Updated index row: {date_str} -> {count} papers", flush=True)
 

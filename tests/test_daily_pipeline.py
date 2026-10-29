@@ -11,7 +11,13 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from fetch_daily import target_dates_for
 from daily_job import should_send_email
-from rank_daily import CuratedTopicProfile, rank_and_select, score_candidate, load_config
+from rank_daily import (
+    CuratedTopicProfile,
+    _selection_domain,
+    rank_and_select,
+    score_candidate,
+    load_config,
+)
 from render_digest_pdf import build_digest_pdf
 from send_digest_email import render_digest_html, render_digest_text, send_digest
 
@@ -64,6 +70,17 @@ class DailyRankingTests(unittest.TestCase):
             sum(paper["selection_domain"] == "ad" for paper in selected),
             3,
         )
+
+    def test_self_driving_laboratory_does_not_use_driving_quota(self):
+        paper = candidate(200, "SJTU")
+        paper["title"] = "Making Self-Driving Laboratories Auditable"
+        paper["abstract"] = (
+            "Self-driving laboratories automate scientific experiments "
+            "with robot control and measurement feedback."
+        )
+        paper["curated_topic"] = "robot/vla-arch"
+        paper["daily_category"] = "VLA"
+        self.assertEqual(_selection_domain(paper), "robot")
 
     def test_homepage_relevance_beats_broad_cv(self):
         strong = score_candidate(candidate(1), self.profile, self.config)

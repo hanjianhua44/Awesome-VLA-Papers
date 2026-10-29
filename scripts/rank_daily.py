@@ -187,6 +187,11 @@ def _selection_domain(paper: dict) -> str:
     text = f"{paper.get('title', '')} {paper.get('abstract', '')}"
     if paper.get("daily_category") == "Autonomous Driving":
         return "ad"
+    # "Self-driving laboratories" are automated scientific labs, not vehicles.
+    # Exclude them before matching the broader self-driving signal so they do
+    # not consume the autonomous-driving quota.
+    if re.search(r"self.driving laborator(?:y|ies)|\bSDLs?\b", text, re.I):
+        return "robot" if topic.startswith("robot/") else "general"
     if re.search(
         r"autonomous driving|self.driving|end.to.end.{0,12}driv"
         r"|driving.{0,12}(policy|planning|world model|agent)"
