@@ -37,6 +37,18 @@ def run(cmd, cwd=None, check=True):
     return result.stdout.strip()
 
 
+def _push_with_rebase_fallback():
+    """Push directly, rebasing only when the remote actually advanced."""
+    try:
+        run(["git", "push", "origin", "main"])
+        return
+    except RuntimeError:
+        print("Direct push rejected; fetching and rebasing onto origin/main...")
+    run(["git", "fetch", "origin", "main"])
+    run(["git", "rebase", "--autostash", "origin/main"])
+    run(["git", "push", "origin", "main"])
+
+
 def notify_dashboard(content, msg_type="success"):
     """Push a notification to the local personal-dashboard."""
     if not DASHBOARD_PUSH.exists():
@@ -187,11 +199,10 @@ def main():
         except RuntimeError:
             print("Nothing new to commit")
 
-        # Step 4: Git pull + push
+        # Step 4: Push first; fetch/rebase only on a non-fast-forward rejection.
         print("\n[4/5] Syncing with remote...")
         try:
-            run(["git", "pull", "--rebase", "--autostash", "origin", "main"])
-            run(["git", "push", "origin", "main"])
+            _push_with_rebase_fallback()
             sync_ok = True
         except RuntimeError as exc:
             notify_dashboard(f"{date_str} 日报推送失败: {exc}", "error")

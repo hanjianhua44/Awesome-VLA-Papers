@@ -139,6 +139,25 @@ class DailyRankingTests(unittest.TestCase):
             self.assertIn("| 10-29 | Thu | 10-27 ~ 10-28 |", content)
             self.assertEqual(content.count("| 10-27 | Tue |"), 1)
 
+    def test_push_rebases_only_after_direct_push_rejection(self):
+        commands = []
+
+        def fake_run(command, *args, **kwargs):
+            commands.append(command)
+            if len(commands) == 1:
+                raise RuntimeError("non-fast-forward")
+            return ""
+
+        with patch.object(daily_job, "run", side_effect=fake_run):
+            daily_job._push_with_rebase_fallback()
+
+        self.assertEqual(commands, [
+            ["git", "push", "origin", "main"],
+            ["git", "fetch", "origin", "main"],
+            ["git", "rebase", "--autostash", "origin/main"],
+            ["git", "push", "origin", "main"],
+        ])
+
 
 class DigestEmailTests(unittest.TestCase):
     def test_pdf_digest_is_rendered_with_academic_content(self):
