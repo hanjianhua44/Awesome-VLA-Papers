@@ -22,6 +22,7 @@ Papers from the daily feed can be promoted to the [curated main list](../README.
 
 | Date | Day | Covers | Papers | Link |
 |:-----|:----|:-------|-------:|:-----|
+| 11-11 | Wed | 11-09 ~ 11-10 | 20 | [Report](2026/11/2026-11-11.md) |
 | 11-10 | Tue | 11-06 ~ 11-09 | 19 | [Report](2026/11/2026-11-10.md) |
 | 11-09 | Mon | 11-05 ~ 11-08 | 20 | [Report](2026/11/2026-11-09.md) |
 | 11-06 | Fri | 11-04 ~ 11-05 | 20 | [Report](2026/11/2026-11-06.md) |
